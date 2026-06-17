@@ -56,7 +56,7 @@ const getTodayString = (timeZone) => {
 import messiImg from '../assets/players/last-dance/Messi.jpg';
 import ronaldoImg from '../assets/players/last-dance/Cr7.jpg';
 import neymarImg from '../assets/players/last-dance/Neymar.jpg';
-import modricImg from '../assets/players/last-dance/Luka Modrić.jpg';
+import modricImg from '../assets/players/last-dance/Luka Modric.jpg';
 import kdbImg from '../assets/players/last-dance/de bruyne.jpg';
 import neuerImg from '../assets/players/last-dance/Manuel Neur.jpg';
 import vvdImg from '../assets/players/last-dance/vvd.jpg';
@@ -378,7 +378,7 @@ const Home = () => {
               {/* Mockup Slip: Mexico vs South Africa */}
               <div className="hidden lg:flex flex-col gap-4 bg-black/30 p-6 rounded-2xl border border-white/10 w-96 text-white text-xs font-medium shadow-2xl relative overflow-hidden backdrop-blur-sm">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-2xl -mr-8 -mt-8 pointer-events-none" />
-                
+
                 {/* Header */}
                 <div className="flex justify-between items-center border-b border-white/10 pb-3">
                   <span className="font-bold text-[10px] tracking-wider uppercase text-purple-200 flex items-center gap-1">
@@ -389,7 +389,7 @@ const Home = () => {
                     Confidence: Medium
                   </span>
                 </div>
-                
+
                 {/* Matchup */}
                 <div className="flex justify-between items-center py-2 relative z-10">
                   {/* Team A */}
@@ -399,13 +399,13 @@ const Home = () => {
                     </div>
                     <span className="font-bold text-sm text-white">Mexico</span>
                   </div>
-                  
+
                   {/* AI Score */}
                   <div className="flex flex-col items-center px-4">
                     <span className="text-[9px] font-bold text-purple-300 uppercase tracking-widest">Predicted</span>
                     <span className="text-xl font-black text-amber-300 tracking-wider">1 - 1</span>
                   </div>
-                  
+
                   {/* Team B */}
                   <div className="flex items-center gap-2.5 flex-1 justify-end">
                     <span className="font-bold text-sm text-white">South Africa</span>
@@ -482,7 +482,7 @@ const Home = () => {
                   Launch Simulator
                 </Button>
               </div>
-              
+
               {/* Nice Graphic: Mini CSS Bracket Mockup */}
               <div className="hidden lg:flex items-center gap-6 bg-black/10 p-6 rounded-2xl border border-white/10 w-96 justify-center">
                 <div className="flex flex-col gap-8">

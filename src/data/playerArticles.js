@@ -1,7 +1,7 @@
 import messiImg from '../assets/players/last-dance/Messi.jpg';
 import ronaldoImg from '../assets/players/last-dance/Cr7.jpg';
 import neymarImg from '../assets/players/last-dance/Neymar.jpg';
-import modricImg from '../assets/players/last-dance/Luka Modrić.jpg';
+import modricImg from '../assets/players/last-dance/Luka Modric.jpg';
 import kdbImg from '../assets/players/last-dance/de bruyne.jpg';
 import neuerImg from '../assets/players/last-dance/Manuel Neur.jpg';
 import vvdImg from '../assets/players/last-dance/vvd.jpg';
@@ -12,7 +12,7 @@ import yamalImg from '../assets/players/next-gen/yamal.jpg';
 import oliseImg from '../assets/players/next-gen/Michael Olise.jpg';
 import bellinghamImg from '../assets/players/next-gen/bellingham.jpg';
 import pedriImg from '../assets/players/next-gen/pedri.jpg';
-import musialaImg from '../assets/players/next-gen/Musiala.jpg';
+import musialaImg from '../assets/players/next-gen/musiala.jpg';
 import viniciusImg from '../assets/players/next-gen/Vinicius.jpg';
 import dembeleImg from '../assets/players/next-gen/Dembele.jpg';
 import mbappeImg from '../assets/players/next-gen/Mbappe.jpg';
