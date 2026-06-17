@@ -1,0 +1,371 @@
+﻿diff --git a/src/pages/Home.jsx b/src/pages/Home.jsx
+index c615ee1..ba93bb8 100644
+--- a/src/pages/Home.jsx
++++ b/src/pages/Home.jsx
+@@ -1,17 +1,16 @@
+ import React from 'react';
+ import { useTournament } from '../hooks/useTournament';
+-import { usePrediction } from '../hooks/usePrediction';
+ import Navbar from '../components/ui/Navbar';
+ import MatchCard from '../components/match/MatchCard';
+ import GroupTable from '../components/simulator/GroupTable';
+-import PredictionCard from '../components/predictions/PredictionCard';
+ import Button from '../components/ui/Button';
+ import LoadingSpinner from '../components/ui/LoadingSpinner';
+ import { motion } from 'framer-motion';
+-import { Calendar, MapPin, Trophy, Sparkles } from 'lucide-react';
++import { Calendar, MapPin, Trophy, Sparkles, ArrowRightLeft, Calculator } from 'lucide-react';
+ import { useNavigate } from 'react-router-dom';
+ import HeroBackground from '../components/home/HeroBackground';
+ import CinematicSlideshow from '../components/home/CinematicSlideshow';
++import Flag from '../components/ui/Flag';
+ 
+ // Player Images - Last Dance
+ import messiImg from '../assets/players/last-dance/Messi.jpg';
+@@ -35,31 +34,28 @@ const Home = () => {
+   const { teams, matches, groupStandings, loading } = useTournament();
+   const navigate = useNavigate();
+ 
+-  const featuredMatch = matches[0];
+-  const prediction = usePrediction(featuredMatch, teams);
+-
+   if (loading) return <LoadingSpinner size="lg" className="min-h-screen" />;
+ 
+   const nextMatches = matches.slice(0, 5);
+ 
+   const lastDancePlayers = [
+-    { name: 'Lionel Messi', country: 'Argentina', flag: '≡ƒçª≡ƒç╖', image: messiImg, objectPosition: 'top center' },
+-    { name: 'Cristiano Ronaldo', country: 'Portugal', flag: '≡ƒç╡≡ƒç╣', image: ronaldoImg, objectPosition: 'top center' },
+-    { name: 'Neymar Jr', country: 'Brazil', flag: '≡ƒçº≡ƒç╖', image: neymarImg, objectPosition: 'top center' },
+-    { name: 'Luka Modri─ç', country: 'Croatia', flag: '≡ƒç¡≡ƒç╖', image: modricImg, objectPosition: 'top center' },
+-    { name: 'Mohamed Salah', country: 'Egypt', flag: '≡ƒç¬≡ƒç¼', image: salahImg, objectPosition: 'center center' },
+-    { name: 'Son Heung-min', country: 'South Korea', flag: '≡ƒç░≡ƒç╖', image: sonImg, objectPosition: 'top center' },
+-    { name: 'Kevin De Bruyne', country: 'Belgium', flag: '≡ƒçº≡ƒç¬', image: kdbImg, objectPosition: 'center center' },
+-    { name: 'Manuel Neuer', country: 'Germany', flag: '≡ƒç⌐≡ƒç¬', image: neuerImg, objectPosition: 'top center' },
++    { id: 'lionel-messi', name: 'Lionel Messi', country: 'Argentina', flag: '≡ƒçª≡ƒç╖', club: 'Inter Miami CF', image: messiImg, objectPosition: 'top center' },
++    { id: 'cristiano-ronaldo', name: 'Cristiano Ronaldo', country: 'Portugal', flag: '≡ƒç╡≡ƒç╣', club: 'Al Nassr', image: ronaldoImg, objectPosition: 'top center' },
++    { id: 'neymar-jr', name: 'Neymar Jr', country: 'Brazil', flag: '≡ƒçº≡ƒç╖', club: 'Santos', image: neymarImg, objectPosition: 'top center' },
++    { id: 'luka-modric', name: 'Luka Modri─ç', country: 'Croatia', flag: '≡ƒç¡≡ƒç╖', club: 'AC Milan', image: modricImg, objectPosition: 'top center' },
++    { id: 'mohamed-salah', name: 'Mohamed Salah', country: 'Egypt', flag: '≡ƒç¬≡ƒç¼', club: 'Free Agent', image: salahImg, objectPosition: 'center center' },
++    { id: 'son-heung-min', name: 'Son Heung-min', country: 'South Korea', flag: '≡ƒç░≡ƒç╖', club: 'LA Galaxy', image: sonImg, objectPosition: 'top center' },
++    { id: 'kevin-de-bruyne', name: 'Kevin De Bruyne', country: 'Belgium', flag: '≡ƒçº≡ƒç¬', club: 'Napoli', image: kdbImg, objectPosition: 'center center' },
++    { id: 'manuel-neuer', name: 'Manuel Neuer', country: 'Germany', flag: '≡ƒç⌐≡ƒç¬', club: 'FC Bayern Munich', image: neuerImg, objectPosition: 'top center' },
+   ];
+ 
+   const nextGenPlayers = [
+-    { name: 'Lamine Yamal', country: 'Spain', flag: '≡ƒç¬≡ƒç╕', image: yamalImg, objectPosition: 'center 20%' },
+-    { name: 'Jude Bellingham', country: 'England', flag: '≡ƒÅ┤≤áüº≤áüó≤áüÑ≤áü«≤áüº≤áü┐', image: bellinghamImg, objectPosition: 'center 15%' },
+-    { name: 'Vin├¡cius J├║nior', country: 'Brazil', flag: '≡ƒçº≡ƒç╖', image: viniciusImg, objectPosition: 'top center' },
+-    { name: 'Jamal Musiala', country: 'Germany', flag: '≡ƒç⌐≡ƒç¬', image: musialaImg, objectPosition: 'center 20%' },
+-    { name: 'Pedri', country: 'Spain', flag: '≡ƒç¬≡ƒç╕', image: pedriImg, objectPosition: 'top center' },
+-    { name: 'Michael Olise', country: 'France', flag: '≡ƒç½≡ƒç╖', image: oliseImg, objectPosition: 'top center' },
++    { id: 'lamine-yamal', name: 'Lamine Yamal', country: 'Spain', flag: '≡ƒç¬≡ƒç╕', club: 'FC Barcelona', image: yamalImg, objectPosition: 'center 20%' },
++    { id: 'jude-bellingham', name: 'Jude Bellingham', country: 'England', flag: 'EN', club: 'Real Madrid', image: bellinghamImg, objectPosition: 'center 15%' },
++    { id: 'vinicius-junior', name: 'Vin├¡cius J├║nior', country: 'Brazil', flag: '≡ƒçº≡ƒç╖', club: 'Real Madrid', image: viniciusImg, objectPosition: 'top center' },
++    { id: 'jamal-musiala', name: 'Jamal Musiala', country: 'Germany', flag: '≡ƒç⌐≡ƒç¬', club: 'FC Bayern Munich', image: musialaImg, objectPosition: 'center 20%' },
++    { id: 'pedri', name: 'Pedri', country: 'Spain', flag: '≡ƒç¬≡ƒç╕', club: 'FC Barcelona', image: pedriImg, objectPosition: 'top center' },
++    { id: 'michael-olise', name: 'Michael Olise', country: 'France', flag: '≡ƒç½≡ƒç╖', club: 'FC Bayern Munich', image: oliseImg, objectPosition: 'top center' },
+   ];
+ 
+   return (
+@@ -120,33 +116,14 @@ const Home = () => {
+           </div>
+         </section>
+ 
+-        {/* Player Showcase Sections */}
+-        <CinematicSlideshow
+-          label="FIFA WORLD CUP 2026 ┬╖ FAREWELL EDITION"
+-          titleMain="THE LAST"
+-          titleAccent="DANCE"
+-          players={lastDancePlayers}
+-          accentColor="#f5c518"
+-          labelColor="#00ff87"
+-        />
+-
+-        <CinematicSlideshow
+-          label="FIFA WORLD CUP 2026 ┬╖ NEXT GENERATION"
+-          titleMain="HEIR TO THE"
+-          titleAccent="THRONE"
+-          players={nextGenPlayers}
+-          accentColor="#00ff87"
+-          labelColor="#00ff87"
+-        />
+-
+-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
++        <div className="space-y-16">
+           {/* Standings Snapshot */}
+-          <div className="lg:col-span-2">
++          <div>
+             <div className="flex justify-between items-end mb-6">
+               <h2 className="text-2xl font-black text-white tracking-tight">GROUP STANDINGS</h2>
+               <Button variant="secondary" className="text-xs py-1" onClick={() => navigate('/standings')}>Full Standings</Button>
+             </div>
+-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
++            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+               <div>
+                 <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 px-2 border-l-2 border-green-500">Group A</h3>
+                 <GroupTable teams={groupStandings['A']?.slice(0, 4)} />
+@@ -155,41 +132,234 @@ const Home = () => {
+                 <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 px-2 border-l-2 border-blue-500">Group B</h3>
+                 <GroupTable teams={groupStandings['B']?.slice(0, 4)} />
+               </div>
++              <div>
++                <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 px-2 border-l-2 border-yellow-500">Group C</h3>
++                <GroupTable teams={groupStandings['C']?.slice(0, 4)} />
++              </div>
+             </div>
++          </div>
+ 
+-            {/* CTA Cards */}
+-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+-              <motion.div
+-                whileHover={{ scale: 1.02 }}
+-                className="bg-green-500 p-8 rounded-2xl flex flex-col gap-4 cursor-pointer"
+-                onClick={() => navigate('/simulator')}
+-              >
+-                <Trophy className="w-12 h-12 text-gray-950" />
+-                <h3 className="text-2xl font-black text-gray-950 leading-tight">Run Tournament Simulation</h3>
+-                <p className="text-gray-900/70 text-sm font-medium">Predict the entire bracket from group stage to the final with our advanced engine.</p>
+-              </motion.div>
+-              <motion.div
+-                whileHover={{ scale: 1.02 }}
+-                className="bg-gray-900 border border-gray-800 p-8 rounded-2xl flex flex-col gap-4 cursor-pointer"
+-                onClick={() => navigate('/simulator/historical')}
+-              >
+-                <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center">
+-                  <span className="text-2xl">ΓÜí</span>
++          {/* Player Showcase Section */}
++          <CinematicSlideshow
++            categories={[
++              {
++                id: 'farewell',
++                label: 'Farewell Edition',
++                badge: 'FIFA WORLD CUP 2026 ┬╖ FAREWELL EDITION',
++                titleMain: 'THE LAST',
++                titleAccent: 'DANCE',
++                players: lastDancePlayers,
++                accentColor: '#f5c518',
++                labelColor: '#00ff87'
++              },
++              {
++                id: 'nextgen',
++                label: 'Next Generation',
++                badge: 'FIFA WORLD CUP 2026 ┬╖ NEXT GENERATION',
++                titleMain: 'READY TO',
++                titleAccent: 'RISE',
++                players: nextGenPlayers,
++                accentColor: '#00ff87',
++                labelColor: '#00ff87'
++              }
++            ]}
++          />
++
++          {/* Quick Match Predictor Card */}
++          <div>
++            <motion.div
++              whileHover={{ y: -4 }}
++              className="bg-gradient-to-r from-violet-600 to-indigo-700 rounded-3xl p-8 md:p-12 shadow-xl cursor-pointer flex flex-col lg:flex-row items-center gap-8 justify-between"
++              onClick={() => navigate('/predictions')}
++            >
++              <div className="space-y-4 flex-1">
++                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full text-white text-xs font-bold uppercase tracking-widest">
++                  <Calculator className="w-3.5 h-3.5 text-white" />
++                  AI Predictor
+                 </div>
+-                <h3 className="text-2xl font-black text-white leading-tight">Historical Team Simulator</h3>
+-                <p className="text-gray-500 text-sm">What if Brazil 1970 played in the 2026 World Cup? Swap teams and find out.</p>
+-              </motion.div>
+-            </div>
++                <h3 className="text-3xl md:text-4xl font-black text-white leading-none uppercase italic tracking-tighter">
++                  Quick Match Predictor
++                </h3>
++                <p className="text-white/95 text-base font-medium max-w-2xl leading-relaxed">
++                  Put our machine learning engine to the test! Our advanced AI model parses team form, historic head-to-head records, home advantage, and player ratings to generate detailed probability distributions, score forecasts, and custom tactical recommendations for every single match. Log your own score votes and track your prediction accuracy leaderboard against fans worldwide!
++                </p>
++                <Button variant="primary" className="bg-white text-indigo-950 border-none hover:bg-gray-100 px-6 py-3 font-black text-sm uppercase tracking-wider">
++                  Predict Matches
++                </Button>
++              </div>
++
++              {/* Mockup Slip: Mexico vs South Africa */}
++              <div className="hidden lg:flex flex-col gap-4 bg-black/30 p-6 rounded-2xl border border-white/10 w-96 text-white text-xs font-medium shadow-2xl relative overflow-hidden backdrop-blur-sm">
++                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-2xl -mr-8 -mt-8 pointer-events-none" />
++                
++                {/* Header */}
++                <div className="flex justify-between items-center border-b border-white/10 pb-3">
++                  <span className="font-bold text-[10px] tracking-wider uppercase text-purple-200 flex items-center gap-1">
++                    <Sparkles className="w-3 h-3 text-amber-300 animate-pulse" />
++                    AI Forecast Report
++                  </span>
++                  <span className="bg-amber-400 text-gray-950 font-extrabold px-2 py-0.5 rounded text-[9px] uppercase tracking-wider">
++                    Confidence: Medium
++                  </span>
++                </div>
++                
++                {/* Matchup */}
++                <div className="flex justify-between items-center py-2 relative z-10">
++                  {/* Team A */}
++                  <div className="flex items-center gap-2.5 flex-1">
++                    <div className="w-8 h-6 overflow-hidden rounded shadow-sm flex items-center justify-center bg-gray-950">
++                      <Flag code="MX" className="w-full h-auto object-cover" />
++                    </div>
++                    <span className="font-bold text-sm text-white">Mexico</span>
++                  </div>
++                  
++                  {/* AI Score */}
++                  <div className="flex flex-col items-center px-4">
++                    <span className="text-[9px] font-bold text-purple-300 uppercase tracking-widest">Predicted</span>
++                    <span className="text-xl font-black text-amber-300 tracking-wider">1 - 1</span>
++                  </div>
++                  
++                  {/* Team B */}
++                  <div className="flex items-center gap-2.5 flex-1 justify-end">
++                    <span className="font-bold text-sm text-white">South Africa</span>
++                    <div className="w-8 h-6 overflow-hidden rounded shadow-sm flex items-center justify-center bg-gray-950">
++                      <Flag code="ZA" className="w-full h-auto object-cover" />
++                    </div>
++                  </div>
++                </div>
++
++                {/* Horizontal Probabilities */}
++                <div className="space-y-1.5 relative z-10">
++                  <div className="flex justify-between text-[10px] font-bold text-purple-200 uppercase tracking-wider">
++                    <span>WIN 68%</span>
++                    <span>DRAW 22%</span>
++                    <span>WIN 10%</span>
++                  </div>
++                  <div className="h-2 rounded-full overflow-hidden flex bg-white/10 border border-white/5 shadow-inner">
++                    <div className="bg-emerald-400 h-full" style={{ width: '68%' }} />
++                    <div className="bg-gray-400 h-full" style={{ width: '22%' }} />
++                    <div className="bg-blue-400 h-full" style={{ width: '10%' }} />
++                  </div>
++                </div>
++
++                {/* Detail Info Panels */}
++                <div className="grid grid-cols-2 gap-2 text-[10px] relative z-10">
++                  <div className="bg-white/5 p-2.5 rounded-lg border border-white/5 flex flex-col justify-between">
++                    <span className="text-purple-300 uppercase tracking-wider text-[8px] font-bold">Key Insight</span>
++                    <span className="font-bold text-white mt-1 leading-tight">Gim├⌐nez in hot goalscoring form</span>
++                  </div>
++                  <div className="bg-white/5 p-2.5 rounded-lg border border-white/5 flex flex-col justify-between">
++                    <span className="text-purple-300 uppercase tracking-wider text-[8px] font-bold">AI Recommended Tip</span>
++                    <span className="font-bold text-amber-300 mt-1 leading-tight">Double Chance (1X)</span>
++                  </div>
++                </div>
++
++                {/* Comparative Metrics */}
++                <div className="border-t border-white/10 pt-3 grid grid-cols-3 gap-2 text-center text-[9px] relative z-10">
++                  <div className="bg-white/5 py-1.5 px-1 rounded border border-white/5">
++                    <span className="text-purple-300 block mb-0.5 uppercase text-[8px]">AI Predicts</span>
++                    <span className="font-black text-sm text-white">1 - 1</span>
++                  </div>
++                  <div className="bg-white/5 py-1.5 px-1 rounded border border-white/5">
++                    <span className="text-purple-300 block mb-0.5 uppercase text-[8px]">Your Predicts</span>
++                    <span className="font-black text-sm text-white">1 - 0</span>
++                  </div>
++                  <div className="bg-emerald-500/20 py-1.5 px-1 rounded border border-emerald-500/30">
++                    <span className="text-emerald-400 block mb-0.5 uppercase text-[8px]">Actual Score</span>
++                    <span className="font-black text-sm text-emerald-300">2 - 0</span>
++                  </div>
++                </div>
++              </div>
++            </motion.div>
+           </div>
+ 
+-          {/* Prediction Widget */}
++          {/* Tournament Simulation */}
+           <div>
+-            <h2 className="text-2xl font-black text-white tracking-tight mb-6 uppercase">Quick Prediction</h2>
+-            <PredictionCard
+-              match={featuredMatch}
+-              teams={teams}
+-              prediction={prediction}
+-            />
++            <motion.div
++              whileHover={{ y: -4 }}
++              className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-8 md:p-12 shadow-xl cursor-pointer flex flex-col lg:flex-row items-center gap-8 justify-between"
++              onClick={() => navigate('/simulator')}
++            >
++              <div className="space-y-4 flex-1">
++                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full text-white text-xs font-bold uppercase tracking-widest">
++                  <Trophy className="w-3.5 h-3.5 text-white" />
++                  Tournament Engine
++                </div>
++                <h3 className="text-3xl md:text-4xl font-black text-gray-950 leading-none uppercase italic tracking-tighter">
++                  Run Tournament Simulation
++                </h3>
++                <p className="text-gray-900/80 text-base font-medium max-w-2xl leading-relaxed">
++                  Take control of the entire 2026 World Cup bracket! Our advanced simulation engine runs realistic match simulations based on current FIFA rankings, squad values, and historical performance metrics. Play through the Group Stage, resolve third-place wildcard allocations, and guide your team through the intense knockout rounds all the way to the final.
++                </p>
++                <Button variant="primary" className="bg-gray-950 text-white border-none hover:bg-gray-900 px-6 py-3 font-black text-sm uppercase tracking-wider">
++                  Launch Simulator
++                </Button>
++              </div>
++              
++              {/* Nice Graphic: Mini CSS Bracket Mockup */}
++              <div className="hidden lg:flex items-center gap-6 bg-black/10 p-6 rounded-2xl border border-white/10 w-96 justify-center">
++                <div className="flex flex-col gap-8">
++                  <div className="bg-gray-950/80 px-4 py-2 rounded-lg border border-white/10 text-xs font-bold text-center w-28 text-white">
++                    Quarterfinalist A
++                  </div>
++                  <div className="bg-gray-950/80 px-4 py-2 rounded-lg border border-white/10 text-xs font-bold text-center w-28 text-white">
++                    Quarterfinalist B
++                  </div>
++                </div>
++                <div className="w-8 h-0.5 bg-white/30 relative">
++                  <div className="absolute top-1/2 left-full -translate-y-1/2 w-4 h-12 border-y-2 border-r-2 border-white/30 rounded-r" />
++                </div>
++                <div className="bg-gray-950 px-5 py-3 rounded-xl border-2 border-yellow-500 text-xs font-black text-center w-32 text-yellow-400 flex flex-col items-center gap-1 shadow-lg">
++                  <Trophy className="w-4 h-4" />
++                  WORLD CUP FINAL
++                </div>
++              </div>
++            </motion.div>
++          </div>
++
++          {/* Historical Team Simulator */}
++          <div>
++            <motion.div
++              whileHover={{ y: -4 }}
++              className="bg-gray-900 border border-gray-800 rounded-3xl p-8 md:p-12 shadow-xl cursor-pointer flex flex-col lg:flex-row items-center gap-8 justify-between"
++              onClick={() => navigate('/simulator/historical')}
++            >
++              <div className="space-y-4 flex-1">
++                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs font-bold uppercase tracking-widest">
++                  <Sparkles className="w-3.5 h-3.5 text-blue-400" />
++                  History Rewriter
++                </div>
++                <h3 className="text-3xl md:text-4xl font-black text-white leading-none uppercase italic tracking-tighter">
++                  Historical Team Simulator
++                </h3>
++                <p className="text-gray-400 text-base font-medium max-w-2xl leading-relaxed">
++                  What if Pel├⌐'s legendary 1970 Brazil squad or Diego Maradona's 1986 Argentina squad competed in the modern 2026 World Cup? Replace any current qualifying nation with a legendary lineup of the past. Watch them play live, inspect their tactical squads, and see if history repeats itself or if modern tactics prevail!
++                </p>
++                <Button variant="primary" className="bg-blue-600 hover:bg-blue-700 text-white border-none px-6 py-3 font-black text-sm uppercase tracking-wider">
++                  Rewrite History
++                </Button>
++              </div>
++
++              {/* Nice Graphic: Swap Visual Mockup */}
++              <div className="hidden lg:flex items-center gap-6 bg-black/25 p-6 rounded-2xl border border-gray-800 w-96 justify-center">
++                <div className="flex flex-col items-center">
++                  <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center border border-blue-500/30 text-white font-bold text-sm">
++                    ARG
++                  </div>
++                  <span className="text-[9px] font-bold text-gray-500 mt-2 uppercase">Modern</span>
++                </div>
++                <div className="flex flex-col items-center">
++                  <ArrowRightLeft className="w-6 h-6 text-gray-600 animate-pulse" />
++                  <span className="text-[9px] font-bold text-gray-500 mt-2">SWAP</span>
++                </div>
++                <div className="flex flex-col items-center">
++                  <div className="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center border border-yellow-500/40 text-yellow-400 font-bold text-sm shadow-lg">
++                    1986
++                  </div>
++                  <span className="text-[9px] font-bold text-yellow-500 mt-2 uppercase">Legendary</span>
++                </div>
++              </div>
++            </motion.div>
+           </div>
+         </div>
+       </div>

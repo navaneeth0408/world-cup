@@ -1,0 +1,2196 @@
+[
+  {
+    "id": "m1",
+    "homeTeam": "mexico",
+    "awayTeam": "southafrica",
+    "date": "2026-06-11",
+    "time": "18:00",
+    "group": "A",
+    "venue": "azteca",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Julian Quiñones",
+        "teamId": "mexico",
+        "minute": 9,
+        "assist": "Luis Chavez"
+      },
+      {
+        "name": "Raul Jimenez",
+        "teamId": "mexico",
+        "minute": 67,
+        "assist": "Roberto Alvarado"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Teboho Mokoena",
+        "teamId": "southafrica",
+        "type": "yellow",
+        "minute": 17
+      },
+      {
+        "name": "Brian Gutierrez",
+        "teamId": "mexico",
+        "type": "yellow",
+        "minute": 23
+      },
+      {
+        "name": "Sphephelo Sithole",
+        "teamId": "southafrica",
+        "type": "red",
+        "minute": 50
+      },
+      {
+        "name": "Nkosinathi Sibisi",
+        "teamId": "southafrica",
+        "type": "yellow",
+        "minute": 74
+      },
+      {
+        "name": "Themba Zwane",
+        "teamId": "southafrica",
+        "type": "red",
+        "minute": 84
+      },
+      {
+        "name": "Cesar Montes",
+        "teamId": "mexico",
+        "type": "red",
+        "minute": 92
+      }
+    ],
+    "playerOfMatch": "Julian Quinones",
+    "stats": {
+      "possession": [
+        61,
+        39
+      ],
+      "shots": [
+        16,
+        3
+      ],
+      "shotsOnTarget": [
+        5,
+        0
+      ],
+      "passes": [
+        519,
+        325
+      ],
+      "passAccuracy": [
+        86,
+        81
+      ],
+      "corners": [
+        3,
+        1
+      ],
+      "fouls": [
+        14,
+        12
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m2",
+    "homeTeam": "southkorea",
+    "awayTeam": "czechia",
+    "date": "2026-06-11",
+    "time": "18:00",
+    "group": "A",
+    "venue": "akron",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Ladislav Krejci",
+        "teamId": "czechia",
+        "minute": 59,
+        "assist": "Vladimir Coufal"
+      },
+      {
+        "name": "Hwang In-Beom",
+        "teamId": "southkorea",
+        "minute": 67,
+        "assist": "Lee Kang-In"
+      },
+      {
+        "name": "Oh Hyeon-Gyu",
+        "teamId": "southkorea",
+        "minute": 80,
+        "assist": "Hwang In-Beom"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Lee Gi-Hyuk",
+        "teamId": "southkorea",
+        "type": "yellow",
+        "minute": 96
+      }
+    ],
+    "playerOfMatch": "Hwang In-Beom",
+    "stats": {
+      "possession": [
+        62,
+        38
+      ],
+      "shots": [
+        15,
+        8
+      ],
+      "shotsOnTarget": [
+        7,
+        4
+      ],
+      "passes": [
+        498,
+        305
+      ],
+      "passAccuracy": [
+        85,
+        76
+      ],
+      "corners": [
+        4,
+        5
+      ],
+      "fouls": [
+        10,
+        15
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m3",
+    "homeTeam": "canada",
+    "awayTeam": "bosniaandherzegovina",
+    "date": "2026-06-12",
+    "time": "16:00",
+    "group": "B",
+    "venue": "bmo",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Cyle Larin",
+        "teamId": "canada",
+        "minute": "78",
+        "assist": "Promise David"
+      },
+      {
+        "name": "Jovo Lukic",
+        "teamId": "bosniaandherzegovina",
+        "minute": "21",
+        "assist": "Sead Kolasinac"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Alistair Johnston",
+        "teamId": "canada",
+        "type": "yellow",
+        "minute": "11"
+      },
+      {
+        "name": "Jovo Lukic",
+        "teamId": "bosniaandherzegovina",
+        "type": "yellow",
+        "minute": "46"
+      },
+      {
+        "name": "Ermedin Demirovic",
+        "teamId": "bosniaandherzegovina",
+        "type": "yellow",
+        "minute": "45"
+      },
+      {
+        "name": "Luc de Fougerolles",
+        "teamId": "canada",
+        "type": "yellow",
+        "minute": "53"
+      },
+      {
+        "name": "Nikola Katic",
+        "teamId": "bosniaandherzegovina",
+        "type": "yellow",
+        "minute": "93"
+      }
+    ],
+    "playerOfMatch": "Ismaël Koné",
+    "stats": {
+      "possession": [
+        61,
+        39
+      ],
+      "shots": [
+        18,
+        9
+      ],
+      "shotsOnTarget": [
+        6,
+        3
+      ],
+      "passes": [
+        480,
+        310
+      ],
+      "passAccuracy": [
+        84,
+        75
+      ],
+      "corners": [
+        9,
+        3
+      ],
+      "fouls": [
+        12,
+        11
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m4",
+    "homeTeam": "usa",
+    "awayTeam": "paraguay",
+    "date": "2026-06-12",
+    "time": "12:00",
+    "group": "D",
+    "venue": "sofi",
+    "status": "completed",
+    "homeScore": 4,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Damián Bobadilla",
+        "teamId": "usa",
+        "minute": 7,
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      },
+      {
+        "name": "Folarin Balogun",
+        "teamId": "usa",
+        "minute": 31,
+        "assist": "Christian Pulisic"
+      },
+      {
+        "name": "Folarin Balogun",
+        "teamId": "usa",
+        "minute": 45,
+        "assist": "Malik Tillman"
+      },
+      {
+        "name": "Mauricio",
+        "teamId": "paraguay",
+        "minute": 73,
+        "assist": "Julio Enciso"
+      },
+      {
+        "name": "Giovanni Reyna",
+        "teamId": "usa",
+        "minute": 90,
+        "assist": "Alex Freeman"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Juan Jose Cáceres",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "10"
+      },
+      {
+        "name": "Miguel Almirón",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "53"
+      },
+      {
+        "name": "Tyler Adams",
+        "teamId": "usa",
+        "type": "yellow",
+        "minute": "59"
+      },
+      {
+        "name": "Diego Gómez",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "79"
+      },
+      {
+        "name": "Alex Arce",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "88"
+      },
+      {
+        "name": "Júnior Alonso",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "93"
+      }
+    ],
+    "playerOfMatch": "Folarin Balogun",
+    "stats": {
+      "possession": [
+        65,
+        35
+      ],
+      "shots": [
+        17,
+        8
+      ],
+      "shotsOnTarget": [
+        6,
+        1
+      ],
+      "passes": [
+        577,
+        282
+      ],
+      "passAccuracy": [
+        91,
+        74
+      ],
+      "corners": [
+        3,
+        1
+      ],
+      "fouls": [
+        11,
+        14
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m5",
+    "homeTeam": "qatar",
+    "awayTeam": "switzerland",
+    "date": "2026-06-13",
+    "time": "19:00",
+    "group": "B",
+    "venue": "levis",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Breel Embolo",
+        "teamId": "switzerland",
+        "minute": 17,
+        "assist": null
+      },
+      {
+        "name": "Miro Muheim",
+        "teamId": "qatar",
+        "minute": 94,
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Mahmoud Abunada",
+        "teamId": "qatar",
+        "type": "yellow",
+        "minute": 13
+      },
+      {
+        "name": "Jassem Gaber",
+        "teamId": "qatar",
+        "type": "yellow",
+        "minute": "23"
+      },
+      {
+        "name": "Denis Zakaria",
+        "teamId": "switzerland",
+        "type": "yellow",
+        "minute": "42"
+      }
+    ],
+    "playerOfMatch": "Mahmoud Abunada",
+    "stats": {
+      "possession": [
+        36,
+        64
+      ],
+      "shots": [
+        7,
+        26
+      ],
+      "shotsOnTarget": [
+        2,
+        9
+      ],
+      "passes": [
+        290,
+        580
+      ],
+      "passAccuracy": [
+        72,
+        88
+      ],
+      "corners": [
+        2,
+        11
+      ],
+      "fouls": [
+        14,
+        10
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m6",
+    "homeTeam": "brazil",
+    "awayTeam": "morocco",
+    "date": "2026-06-13",
+    "time": "12:00",
+    "group": "C",
+    "venue": "metlife",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Ismael Saibari",
+        "teamId": "morocco",
+        "minute": 21,
+        "assist": "Brahim Díaz"
+      },
+      {
+        "name": "Vinícius Júnior",
+        "teamId": "brazil",
+        "minute": 32,
+        "assist": "Bruno Guimarães"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Casemiro",
+        "teamId": "brazil",
+        "type": "yellow",
+        "minute": 37
+      },
+      {
+        "name": "Roger Ibañez",
+        "teamId": "brazil",
+        "type": "yellow",
+        "minute": 43
+      }
+    ],
+    "playerOfMatch": "Vinícius Júnior",
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "shots": [
+        13,
+        14
+      ],
+      "shotsOnTarget": [
+        5,
+        3
+      ],
+      "passes": [
+        462,
+        448
+      ],
+      "passAccuracy": [
+        84,
+        82
+      ],
+      "corners": [
+        6,
+        2
+      ],
+      "fouls": [
+        12,
+        15
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m7",
+    "homeTeam": "haiti",
+    "awayTeam": "scotland",
+    "date": "2026-06-13",
+    "time": "12:00",
+    "group": "C",
+    "venue": "gillette",
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "John McGinn",
+        "teamId": "scotland",
+        "minute": 28,
+        "assist": null
+      }
+    ],
+    "cards": [
+      {
+        "name": "Aaron Hickey",
+        "teamId": "scotland",
+        "type": "yellow",
+        "minute": "46"
+      },
+      {
+        "name": "Findlay Curtis",
+        "teamId": "scotland",
+        "type": "yellow",
+        "minute": "91"
+      },
+      {
+        "name": "Kenny McLean",
+        "teamId": "scotland",
+        "type": "yellow",
+        "minute": "95"
+      },
+      {
+        "name": "Jean-Ricner Bellegarde",
+        "teamId": "haiti",
+        "type": "yellow",
+        "minute": "39"
+      }
+    ],
+    "playerOfMatch": "John McGinn",
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "shots": [
+        15,
+        9
+      ],
+      "shotsOnTarget": [
+        4,
+        3
+      ],
+      "passes": [
+        420,
+        360
+      ],
+      "passAccuracy": [
+        80,
+        78
+      ],
+      "corners": [
+        4,
+        3
+      ],
+      "fouls": [
+        13,
+        11
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m8",
+    "homeTeam": "australia",
+    "awayTeam": "turkiye",
+    "date": "2026-06-13",
+    "time": "12:00",
+    "group": "D",
+    "venue": "bcplace",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Nestory Irankunda",
+        "teamId": "australia",
+        "minute": 27,
+        "assist": "Paul Okon-Engstler"
+      },
+      {
+        "name": "Connor Metcalfe",
+        "teamId": "australia",
+        "minute": 75,
+        "assist": null
+      }
+    ],
+    "cards": [
+      {
+        "name": "Yunus Akgün",
+        "teamId": "turkiye",
+        "type": "yellow",
+        "minute": "86"
+      }
+    ],
+    "playerOfMatch": "Nestory Irankunda",
+    "stats": {
+      "possession": [
+        28,
+        72
+      ],
+      "shots": [
+        9,
+        30
+      ],
+      "shotsOnTarget": [
+        4,
+        8
+      ],
+      "passes": [
+        240,
+        680
+      ],
+      "passAccuracy": [
+        70,
+        89
+      ],
+      "corners": [
+        5,
+        8
+      ],
+      "fouls": [
+        14,
+        9
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m9",
+    "homeTeam": "germany",
+    "awayTeam": "curacao",
+    "date": "2026-06-14",
+    "time": "17:00",
+    "group": "E",
+    "venue": "nrg",
+    "status": "completed",
+    "homeScore": 7,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Felix Nmecha",
+        "teamId": "germany",
+        "minute": 6,
+        "assist": "Florian Wirtz"
+      },
+      {
+        "name": "Livano Comenencia",
+        "teamId": "curacao",
+        "minute": 21,
+        "assist": null
+      },
+      {
+        "name": "Nico Schlotterbeck",
+        "teamId": "germany",
+        "minute": 38,
+        "assist": "Nathaniel Brown"
+      },
+      {
+        "name": "Kai Havertz",
+        "teamId": "germany",
+        "minute": 45,
+        "assist": null,
+        "ownGoal": false,
+        "penalty": true
+      },
+      {
+        "name": "Jamal Musiala",
+        "teamId": "germany",
+        "minute": 47,
+        "assist": "Joshua Kimmich"
+      },
+      {
+        "name": "Nathaniel Brown",
+        "teamId": "germany",
+        "minute": 68,
+        "assist": "Deniz Undav"
+      },
+      {
+        "name": "Deniz Undav",
+        "teamId": "germany",
+        "minute": 78,
+        "assist": "Joshua Kimmich"
+      },
+      {
+        "name": "Kai Havertz",
+        "teamId": "germany",
+        "minute": 88,
+        "assist": "Deniz Undav"
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "Kai Havertz",
+    "stats": {
+      "possession": [
+        65,
+        35
+      ],
+      "shots": [
+        26,
+        8
+      ],
+      "shotsOnTarget": [
+        12,
+        3
+      ],
+      "passes": [
+        610,
+        310
+      ],
+      "passAccuracy": [
+        92,
+        72
+      ],
+      "corners": [
+        8,
+        1
+      ],
+      "fouls": [
+        8,
+        12
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m10",
+    "homeTeam": "netherlands",
+    "awayTeam": "japan",
+    "date": "2026-06-14",
+    "time": "17:00",
+    "group": "F",
+    "venue": "attstadium",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Virgil van Dijk",
+        "teamId": "netherlands",
+        "minute": 51,
+        "assist": "Ryan Gravenberch"
+      },
+      {
+        "name": "Keito Nakamura",
+        "teamId": "japan",
+        "minute": 57,
+        "assist": "Takefusa Kubo"
+      },
+      {
+        "name": "Crysencio Summerville",
+        "teamId": "netherlands",
+        "minute": 64,
+        "assist": "Ryan Gravenberch"
+      },
+      {
+        "name": "Daichi Kamada",
+        "teamId": "japan",
+        "minute": 89,
+        "assist": "Koki Ogawa"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Crysencio Summerville",
+        "teamId": "netherlands",
+        "type": "yellow",
+        "minute": 61
+      },
+      {
+        "name": "Micky van de Ven",
+        "teamId": "netherlands",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "name": "Memphis Depay",
+        "teamId": "netherlands",
+        "type": "yellow",
+        "minute": "83"
+      }
+    ],
+    "playerOfMatch": "Virgil van Dijk",
+    "stats": {
+      "possession": [
+        59,
+        41
+      ],
+      "shots": [
+        10,
+        10
+      ],
+      "shotsOnTarget": [
+        4,
+        4
+      ],
+      "passes": [
+        520,
+        360
+      ],
+      "passAccuracy": [
+        85,
+        80
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "fouls": [
+        11,
+        10
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m11",
+    "homeTeam": "ivorycoast",
+    "awayTeam": "ecuador",
+    "date": "2026-06-14",
+    "time": "16:00",
+    "group": "E",
+    "venue": "lincoln",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Amad Diallo",
+        "teamId": "ivorycoast",
+        "minute": 90,
+        "assist": "Wilfried Singo"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Seko Fofana",
+        "teamId": "ivorycoast",
+        "type": "yellow",
+        "minute": "28"
+      },
+      {
+        "name": "Jackson Porozo",
+        "teamId": "ecuador",
+        "type": "yellow",
+        "minute": 73
+      },
+      {
+        "name": "Franck Kessie",
+        "teamId": "ivorycoast",
+        "type": "yellow",
+        "minute": "38"
+      },
+      {
+        "name": "Guuela Doue",
+        "teamId": "ivorycoast",
+        "type": "yellow",
+        "minute": "40"
+      }
+    ],
+    "playerOfMatch": "Yan Diomande",
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        15,
+        12
+      ],
+      "shotsOnTarget": [
+        4,
+        3
+      ],
+      "passes": [
+        410,
+        440
+      ],
+      "passAccuracy": [
+        81,
+        83
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "fouls": [
+        14,
+        12
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m12",
+    "homeTeam": "sweden",
+    "awayTeam": "tunisia",
+    "date": "2026-06-14",
+    "time": "18:00",
+    "group": "F",
+    "venue": "akron",
+    "status": "completed",
+    "homeScore": 5,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Yasin Ayari",
+        "teamId": "sweden",
+        "minute": 7,
+        "assist": null
+      },
+      {
+        "name": "Alexander Isak",
+        "teamId": "sweden",
+        "minute": 30,
+        "assist": "Viktor Gyökeres"
+      },
+      {
+        "name": "Omar Rekik",
+        "teamId": "tunisia",
+        "minute": 43,
+        "assist": "Hannibal Mejbri"
+      },
+      {
+        "name": "Viktor Gyökeres",
+        "teamId": "sweden",
+        "minute": 59,
+        "assist": "Alexander Isak"
+      },
+      {
+        "name": "Mattias Svanberg",
+        "teamId": "sweden",
+        "minute": 84,
+        "assist": "Alexander Isak"
+      },
+      {
+        "name": "Yasin Ayari",
+        "teamId": "sweden",
+        "minute": 90,
+        "assist": "Lucas Bergvall"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Rani Khedira",
+        "teamId": "tunisia",
+        "type": "yellow",
+        "minute": "54"
+      }
+    ],
+    "playerOfMatch": "Yasin Ayari",
+    "stats": {
+      "possession": [
+        49,
+        51
+      ],
+      "shots": [
+        13,
+        6
+      ],
+      "shotsOnTarget": [
+        7,
+        2
+      ],
+      "passes": [
+        430,
+        450
+      ],
+      "passAccuracy": [
+        82,
+        83
+      ],
+      "corners": [
+        4,
+        2
+      ],
+      "fouls": [
+        11,
+        13
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m13",
+    "homeTeam": "spain",
+    "awayTeam": "capeverde",
+    "date": "2026-06-15",
+    "time": "16:00",
+    "group": "H",
+    "venue": "mercedesbenz",
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 0,
+    "scorers": [],
+    "cards": [
+      {
+        "name": "Sidny Lopes Cabral",
+        "teamId": "capeverde",
+        "type": "yellow",
+        "minute": "13"
+      },
+      {
+        "name": "Pedri",
+        "teamId": "spain",
+        "type": "yellow",
+        "minute": "93"
+      }
+    ],
+    "playerOfMatch": "Vozinha",
+    "stats": {
+      "possession": [
+        74,
+        26
+      ],
+      "shots": [
+        27,
+        6
+      ],
+      "shotsOnTarget": [
+        7,
+        1
+      ],
+      "passes": [
+        780,
+        240
+      ],
+      "passAccuracy": [
+        91,
+        68
+      ],
+      "corners": [
+        11,
+        1
+      ],
+      "fouls": [
+        9,
+        14
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m14",
+    "homeTeam": "belgium",
+    "awayTeam": "egypt",
+    "date": "2026-06-15",
+    "time": "12:00",
+    "group": "G",
+    "venue": "lumen",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Emam Ashour",
+        "teamId": "egypt",
+        "minute": 19,
+        "assist": "Mohamed Salah"
+      },
+      {
+        "name": "Mohamed Hany",
+        "teamId": "belgium",
+        "minute": 66,
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Marawan Attia",
+        "teamId": "egypt",
+        "type": "yellow",
+        "minute": "13"
+      },
+      {
+        "name": "Timothy Castagne",
+        "teamId": "belgium",
+        "type": "yellow",
+        "minute": "14"
+      },
+      {
+        "name": "Maxim De Cuyper",
+        "teamId": "belgium",
+        "type": "yellow",
+        "minute": "75"
+      }
+    ],
+    "playerOfMatch": "Emam Ashour",
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "shots": [
+        15,
+        14
+      ],
+      "shotsOnTarget": [
+        3,
+        3
+      ],
+      "passes": [
+        510,
+        430
+      ],
+      "passAccuracy": [
+        86,
+        81
+      ],
+      "corners": [
+        2,
+        7
+      ],
+      "fouls": [
+        10,
+        12
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m15",
+    "homeTeam": "saudiarabia",
+    "awayTeam": "uruguay",
+    "date": "2026-06-15",
+    "time": "16:00",
+    "group": "H",
+    "venue": "hardrock",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Abdulelah Al-Amri",
+        "teamId": "saudiarabia",
+        "minute": 41,
+        "assist": ""
+      },
+      {
+        "name": "Maxi Araújo",
+        "teamId": "uruguay",
+        "minute": 80,
+        "assist": ""
+      }
+    ],
+    "cards": [
+      {
+        "name": "Abdulelah Al-Amri",
+        "teamId": "saudiarabia",
+        "type": "yellow",
+        "minute": "44"
+      }
+    ],
+    "playerOfMatch": "Mohammed Al-Owais",
+    "stats": {
+      "possession": [
+        33,
+        67
+      ],
+      "shots": [
+        7,
+        27
+      ],
+      "shotsOnTarget": [
+        3,
+        10
+      ],
+      "passes": [
+        280,
+        590
+      ],
+      "passAccuracy": [
+        73,
+        87
+      ],
+      "corners": [
+        4,
+        14
+      ],
+      "fouls": [
+        15,
+        11
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m16",
+    "homeTeam": "iran",
+    "awayTeam": "newzealand",
+    "date": "2026-06-15",
+    "time": "12:00",
+    "group": "G",
+    "venue": "sofi",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Elijah Just",
+        "teamId": "newzealand",
+        "minute": 7,
+        "assist": "Chris Wood"
+      },
+      {
+        "name": "Ramin Rezaeian",
+        "teamId": "iran",
+        "minute": 32,
+        "assist": null
+      },
+      {
+        "name": "Elijah Just",
+        "teamId": "newzealand",
+        "minute": 54,
+        "assist": "Chris Wood"
+      },
+      {
+        "name": "Mohammad Mohebi",
+        "teamId": "iran",
+        "minute": 64,
+        "assist": "Ramin Rezaeian"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Ehsan Hajsafi",
+        "teamId": "iran",
+        "type": "yellow",
+        "minute": 88
+      }
+    ],
+    "playerOfMatch": "Elijah Just",
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        17,
+        14
+      ],
+      "shotsOnTarget": [
+        4,
+        8
+      ],
+      "passes": [
+        420,
+        460
+      ],
+      "passAccuracy": [
+        80,
+        82
+      ],
+      "corners": [
+        4,
+        1
+      ],
+      "fouls": [
+        12,
+        11
+      ]
+    },
+    "highlightUrl": ""
+  },
+  {
+    "id": "m17",
+    "homeTeam": "france",
+    "awayTeam": "senegal",
+    "date": "2026-06-16",
+    "time": "12:00",
+    "group": "I",
+    "venue": "metlife",
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 1,
+    "highlightUrl": "",
+    "scorers": [
+      {
+        "name": "Kylian Mbappé",
+        "teamId": "france",
+        "minute": "66",
+        "assist": "Michael Olise",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Bradley Barcola",
+        "teamId": "france",
+        "minute": "82",
+        "assist": "Adrien Rabiot",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Kylian Mbappé",
+        "teamId": "france",
+        "minute": "96",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Ibrahim Mbaye",
+        "teamId": "senegal",
+        "minute": "95",
+        "assist": "Iliman Ndiaye",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "Kylian Mbappé"
+  },
+  {
+    "id": "m18",
+    "homeTeam": "iraq",
+    "awayTeam": "norway",
+    "date": "2026-06-16",
+    "time": "12:00",
+    "group": "I",
+    "venue": "gillette",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 4,
+    "highlightUrl": "",
+    "scorers": [
+      {
+        "name": "Erling Haaland",
+        "teamId": "norway",
+        "minute": "29",
+        "assist": "David Moller Wolfe",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Erling Haaland",
+        "teamId": "norway",
+        "minute": "43",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Leo Ostigard",
+        "teamId": "norway",
+        "minute": "76",
+        "assist": "Martin Odegaard",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Aymen Hussein",
+        "teamId": "norway",
+        "minute": "96",
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      },
+      {
+        "name": "Aymen Hussein",
+        "teamId": "iraq",
+        "minute": "39",
+        "assist": "Amir Al-Ammari",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Zaid Tahseen",
+        "teamId": "iraq",
+        "type": "yellow",
+        "minute": "86"
+      }
+    ],
+    "playerOfMatch": "Erling Haaland"
+  },
+  {
+    "id": "m19",
+    "homeTeam": "argentina",
+    "awayTeam": "algeria",
+    "date": "2026-06-16",
+    "time": "17:00",
+    "group": "J",
+    "venue": "arrowhead",
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 0,
+    "highlightUrl": "",
+    "scorers": [
+      {
+        "name": "Lionel Messi",
+        "teamId": "argentina",
+        "minute": "17",
+        "assist": "Rodrigo De Paul",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Lionel Messi",
+        "teamId": "argentina",
+        "minute": "60",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Lionel Messi",
+        "teamId": "argentina",
+        "minute": "76",
+        "assist": "Nicolas Gonzalez",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "Lionel Messi"
+  },
+  {
+    "id": "m20",
+    "homeTeam": "austria",
+    "awayTeam": "jordan",
+    "date": "2026-06-16",
+    "time": "19:00",
+    "group": "J",
+    "venue": "levis",
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 1,
+    "highlightUrl": "",
+    "scorers": [
+      {
+        "name": "Romano Schmid",
+        "teamId": "austria",
+        "minute": "21",
+        "assist": "Xaver Schlager",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Yazan Al-Arab",
+        "teamId": "austria",
+        "minute": "76",
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      },
+      {
+        "name": "Marko Arnautovic",
+        "teamId": "austria",
+        "minute": "102",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": true
+      },
+      {
+        "name": "Ali Olwan",
+        "teamId": "jordan",
+        "minute": "50",
+        "assist": "Noor Al-Rawabdeh",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Marcel Sabitzer",
+        "teamId": "austria",
+        "type": "yellow",
+        "minute": "77"
+      }
+    ],
+    "playerOfMatch": "Marko Arnautovic"
+  },
+  {
+    "id": "m21",
+    "homeTeam": "portugal",
+    "awayTeam": "drcongo",
+    "date": "2026-06-17",
+    "time": "17:00",
+    "group": "K",
+    "venue": "nrg",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m22",
+    "homeTeam": "england",
+    "awayTeam": "croatia",
+    "date": "2026-06-17",
+    "time": "17:00",
+    "group": "L",
+    "venue": "attstadium",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m23",
+    "homeTeam": "ghana",
+    "awayTeam": "panama",
+    "date": "2026-06-17",
+    "time": "16:00",
+    "group": "L",
+    "venue": "bmo",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m24",
+    "homeTeam": "uzbekistan",
+    "awayTeam": "colombia",
+    "date": "2026-06-17",
+    "time": "18:00",
+    "group": "K",
+    "venue": "azteca",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m25",
+    "homeTeam": "czechia",
+    "awayTeam": "southafrica",
+    "date": "2026-06-18",
+    "time": "16:00",
+    "group": "A",
+    "venue": "mercedesbenz",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m26",
+    "homeTeam": "switzerland",
+    "awayTeam": "bosniaandherzegovina",
+    "date": "2026-06-18",
+    "time": "19:00",
+    "group": "B",
+    "venue": "sofi",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m27",
+    "homeTeam": "canada",
+    "awayTeam": "qatar",
+    "date": "2026-06-18",
+    "time": "19:00",
+    "group": "B",
+    "venue": "bcplace",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m28",
+    "homeTeam": "mexico",
+    "awayTeam": "southkorea",
+    "date": "2026-06-18",
+    "time": "18:00",
+    "group": "A",
+    "venue": "akron",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m29",
+    "homeTeam": "usa",
+    "awayTeam": "australia",
+    "date": "2026-06-19",
+    "time": "12:00",
+    "group": "D",
+    "venue": "lumen",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m30",
+    "homeTeam": "scotland",
+    "awayTeam": "morocco",
+    "date": "2026-06-19",
+    "time": "12:00",
+    "group": "C",
+    "venue": "gillette",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m31",
+    "homeTeam": "brazil",
+    "awayTeam": "haiti",
+    "date": "2026-06-19",
+    "time": "12:00",
+    "group": "C",
+    "venue": "lincoln",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m32",
+    "homeTeam": "turkiye",
+    "awayTeam": "paraguay",
+    "date": "2026-06-19",
+    "time": "12:00",
+    "group": "D",
+    "venue": "levis",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m33",
+    "homeTeam": "netherlands",
+    "awayTeam": "sweden",
+    "date": "2026-06-20",
+    "time": "17:00",
+    "group": "F",
+    "venue": "nrg",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m34",
+    "homeTeam": "germany",
+    "awayTeam": "ivorycoast",
+    "date": "2026-06-20",
+    "time": "16:00",
+    "group": "E",
+    "venue": "bmo",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m35",
+    "homeTeam": "ecuador",
+    "awayTeam": "curacao",
+    "date": "2026-06-20",
+    "time": "17:00",
+    "group": "E",
+    "venue": "arrowhead",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m36",
+    "homeTeam": "tunisia",
+    "awayTeam": "japan",
+    "date": "2026-06-20",
+    "time": "16:00",
+    "group": "F",
+    "venue": "akron",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m37",
+    "homeTeam": "spain",
+    "awayTeam": "saudiarabia",
+    "date": "2026-06-21",
+    "time": "16:00",
+    "group": "H",
+    "venue": "mercedesbenz",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m38",
+    "homeTeam": "belgium",
+    "awayTeam": "iran",
+    "date": "2026-06-21",
+    "time": "12:00",
+    "group": "G",
+    "venue": "sofi",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m39",
+    "homeTeam": "uruguay",
+    "awayTeam": "capeverde",
+    "date": "2026-06-21",
+    "time": "16:00",
+    "group": "H",
+    "venue": "hardrock",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m40",
+    "homeTeam": "newzealand",
+    "awayTeam": "egypt",
+    "date": "2026-06-21",
+    "time": "12:00",
+    "group": "G",
+    "venue": "bcplace",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m41",
+    "homeTeam": "argentina",
+    "awayTeam": "austria",
+    "date": "2026-06-22",
+    "time": "17:00",
+    "group": "J",
+    "venue": "attstadium",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m42",
+    "homeTeam": "france",
+    "awayTeam": "iraq",
+    "date": "2026-06-22",
+    "time": "12:00",
+    "group": "I",
+    "venue": "lincoln",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m43",
+    "homeTeam": "norway",
+    "awayTeam": "senegal",
+    "date": "2026-06-22",
+    "time": "12:00",
+    "group": "I",
+    "venue": "bmo",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m44",
+    "homeTeam": "jordan",
+    "awayTeam": "algeria",
+    "date": "2026-06-22",
+    "time": "19:00",
+    "group": "J",
+    "venue": "levis",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m45",
+    "homeTeam": "portugal",
+    "awayTeam": "uzbekistan",
+    "date": "2026-06-23",
+    "time": "17:00",
+    "group": "K",
+    "venue": "nrg",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m46",
+    "homeTeam": "england",
+    "awayTeam": "ghana",
+    "date": "2026-06-23",
+    "time": "16:00",
+    "group": "L",
+    "venue": "gillette",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m47",
+    "homeTeam": "panama",
+    "awayTeam": "croatia",
+    "date": "2026-06-23",
+    "time": "16:00",
+    "group": "L",
+    "venue": "gillette",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m48",
+    "homeTeam": "colombia",
+    "awayTeam": "drcongo",
+    "date": "2026-06-23",
+    "time": "18:00",
+    "group": "K",
+    "venue": "akron",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m49",
+    "homeTeam": "switzerland",
+    "awayTeam": "canada",
+    "date": "2026-06-24",
+    "time": "19:00",
+    "group": "B",
+    "venue": "bcplace",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m50",
+    "homeTeam": "bosniaandherzegovina",
+    "awayTeam": "qatar",
+    "date": "2026-06-24",
+    "time": "19:00",
+    "group": "B",
+    "venue": "lumen",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m51",
+    "homeTeam": "morocco",
+    "awayTeam": "haiti",
+    "date": "2026-06-24",
+    "time": "12:00",
+    "group": "C",
+    "venue": "mercedesbenz",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m52",
+    "homeTeam": "scotland",
+    "awayTeam": "brazil",
+    "date": "2026-06-24",
+    "time": "12:00",
+    "group": "C",
+    "venue": "hardrock",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m53",
+    "homeTeam": "southafrica",
+    "awayTeam": "southkorea",
+    "date": "2026-06-24",
+    "time": "18:00",
+    "group": "A",
+    "venue": "akron",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m54",
+    "homeTeam": "czechia",
+    "awayTeam": "mexico",
+    "date": "2026-06-24",
+    "time": "18:00",
+    "group": "A",
+    "venue": "azteca",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m55",
+    "homeTeam": "curacao",
+    "awayTeam": "ivorycoast",
+    "date": "2026-06-25",
+    "time": "16:00",
+    "group": "E",
+    "venue": "lincoln",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m56",
+    "homeTeam": "ecuador",
+    "awayTeam": "germany",
+    "date": "2026-06-25",
+    "time": "16:00",
+    "group": "E",
+    "venue": "metlife",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m57",
+    "homeTeam": "tunisia",
+    "awayTeam": "netherlands",
+    "date": "2026-06-25",
+    "time": "17:00",
+    "group": "F",
+    "venue": "arrowhead",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m58",
+    "homeTeam": "japan",
+    "awayTeam": "sweden",
+    "date": "2026-06-25",
+    "time": "17:00",
+    "group": "F",
+    "venue": "attstadium",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m59",
+    "homeTeam": "turkiye",
+    "awayTeam": "usa",
+    "date": "2026-06-25",
+    "time": "12:00",
+    "group": "D",
+    "venue": "sofi",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m60",
+    "homeTeam": "paraguay",
+    "awayTeam": "australia",
+    "date": "2026-06-25",
+    "time": "12:00",
+    "group": "D",
+    "venue": "levis",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m61",
+    "homeTeam": "norway",
+    "awayTeam": "france",
+    "date": "2026-06-26",
+    "time": "12:00",
+    "group": "I",
+    "venue": "gillette",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m62",
+    "homeTeam": "senegal",
+    "awayTeam": "iraq",
+    "date": "2026-06-26",
+    "time": "12:00",
+    "group": "I",
+    "venue": "bmo",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m63",
+    "homeTeam": "capeverde",
+    "awayTeam": "saudiarabia",
+    "date": "2026-06-26",
+    "time": "17:00",
+    "group": "H",
+    "venue": "nrg",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m64",
+    "homeTeam": "uruguay",
+    "awayTeam": "spain",
+    "date": "2026-06-26",
+    "time": "18:00",
+    "group": "H",
+    "venue": "akron",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m65",
+    "homeTeam": "newzealand",
+    "awayTeam": "belgium",
+    "date": "2026-06-26",
+    "time": "12:00",
+    "group": "G",
+    "venue": "bcplace",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m66",
+    "homeTeam": "egypt",
+    "awayTeam": "iran",
+    "date": "2026-06-26",
+    "time": "12:00",
+    "group": "G",
+    "venue": "lumen",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m67",
+    "homeTeam": "panama",
+    "awayTeam": "england",
+    "date": "2026-06-27",
+    "time": "16:00",
+    "group": "L",
+    "venue": "metlife",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m68",
+    "homeTeam": "croatia",
+    "awayTeam": "ghana",
+    "date": "2026-06-27",
+    "time": "16:00",
+    "group": "L",
+    "venue": "lincoln",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m69",
+    "homeTeam": "colombia",
+    "awayTeam": "portugal",
+    "date": "2026-06-27",
+    "time": "16:00",
+    "group": "K",
+    "venue": "hardrock",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m70",
+    "homeTeam": "drcongo",
+    "awayTeam": "uzbekistan",
+    "date": "2026-06-27",
+    "time": "16:00",
+    "group": "K",
+    "venue": "mercedesbenz",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m71",
+    "homeTeam": "algeria",
+    "awayTeam": "austria",
+    "date": "2026-06-27",
+    "time": "17:00",
+    "group": "J",
+    "venue": "arrowhead",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  },
+  {
+    "id": "m72",
+    "homeTeam": "jordan",
+    "awayTeam": "argentina",
+    "date": "2026-06-27",
+    "time": "17:00",
+    "group": "J",
+    "venue": "attstadium",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "highlightUrl": ""
+  }
+]

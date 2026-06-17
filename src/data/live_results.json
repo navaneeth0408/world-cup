@@ -1,0 +1,68 @@
+[
+    {
+        "id": "m1",
+        "homeScore": 2,
+        "awayScore": 0,
+        "status": "completed",
+        "scorers": [
+            {
+                "name": "Julian Quiñones",
+                "teamId": "mexico",
+                "minute": 9,
+                "assist": "Luis Chavez"
+            },
+            {
+                "name": "Raul Jimenez",
+                "teamId": "mexico",
+                "minute": 67,
+                "assist": "Julian Quiñones"
+            }
+        ],
+        "cards": [
+            {
+                "name": "Teboho Mokoena",
+                "teamId": "southafrica",
+                "type": "yellow",
+                "minute": 17
+            },
+            {
+                "name": "Brian Gutiérrez",
+                "teamId": "mexico",
+                "type": "yellow",
+                "minute": 23
+            },
+            {
+                "name": "Sphephelo Sithole",
+                "teamId": "southafrica",
+                "type": "red",
+                "minute": 50
+            },
+            {
+                "name": "Nkosinathi Sibisi",
+                "teamId": "southafrica",
+                "type": "yellow",
+                "minute": 74
+            },
+            {
+                "name": "Themba Zwane",
+                "teamId": "southafrica",
+                "type": "red",
+                "minute": 84
+            },
+            {
+                "name": "César Montes",
+                "teamId": "mexico",
+                "type": "red",
+                "minute": 92
+            }
+        ]
+    },
+    {
+        "id": "m2",
+        "homeScore": 0,
+        "awayScore": 0,
+        "status": "upcoming",
+        "scorers": [],
+        "cards": []
+    }
+]

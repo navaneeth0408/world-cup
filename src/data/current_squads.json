@@ -1,0 +1,8990 @@
+[
+  {
+    "id": "algeria",
+    "name": "Algeria",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Melvin Mastil",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Oussama Benbot",
+        "position": "GK",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Luca Zidane",
+        "position": "GK",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Aissa Mandi",
+        "position": "DEF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Achraf Abada",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Mohamed Amine Tougai",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Zineddine Belaid",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Jaouen Hadjam",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Rayan Ait-Nouri",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Rafik Belghali",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Ramy Bensebaini",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Samir Chergui",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Ramiz Zerrouki",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Houssem Aouar",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Fares Chaibi",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Hicham Boudaoui",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Nabil Bentaleb",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Ibrahim Maza",
+        "position": "MID",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Yassine Titraoui",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Riyad Mahrez",
+        "position": "FWD",
+        "age": 35,
+        "captain": true
+      },
+      {
+        "number": 9,
+        "name": "Amine Gouiri",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Anis Hadj Moussa",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Nadhir Benbouali",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Mohamed Amoura",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Adil Boulbina",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Fares Ghedjemis",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "argentina",
+    "name": "Argentina",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Juan Musso",
+        "position": "GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Geronimo Rulli",
+        "position": "GK",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Emiliano Martinez",
+        "position": "GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Marcos Senesi",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Nicolas Tagliafico",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Gonzalo Montiel",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Lisandro Martinez",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Cristian Romero",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Nicolas Otamendi",
+        "position": "DEF",
+        "age": 38,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Facundo Medina",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Nahuel Molina",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Leandro Paredes",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Rodrigo De Paul",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Valentin Barco",
+        "position": "MID",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Giovani Lo Celso",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Exequiel Palacios",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Nicolas Gonzalez",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Alexis Mac Allister",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Enzo Fernandez",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Julian Alvarez",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Lionel Messi",
+        "position": "FWD",
+        "age": 38,
+        "captain": true
+      },
+      {
+        "number": 16,
+        "name": "Thiago Almada",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Giuliano Simeone",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Nico Paz",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Jose Manuel Lopez",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Lautaro Martinez",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "australia",
+    "name": "Australia",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Mathew Ryan",
+        "position": "GK",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 12,
+        "name": "Paul Izzo",
+        "position": "GK",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Patrick Beach",
+        "position": "GK",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Milos Degenek",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Alessandro Circati",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Jacob Italiano",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Jordan Bos",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Jason Geria",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Kai Trewin",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Aziz Behich",
+        "position": "DEF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Harry Souttar",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Cameron Burgess",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Lucas Herrington",
+        "position": "DEF",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Connor Metcalfe",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Ajdin Hrustic",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Awer Mabil",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Aiden O'Neill",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Cameron Devlin",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Cristian Volpato",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Jackson Irvine",
+        "position": "MID",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Paul Okon-Engstler",
+        "position": "MID",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Mathew Leckie",
+        "position": "FWD",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Mohamed Toure",
+        "position": "FWD",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Nestory Irankunda",
+        "position": "FWD",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Nishan Velupillay",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Tete Yengi",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "austria",
+    "name": "Austria",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Alexander Schlager",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Florian Wiegele",
+        "position": "GK",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Patrick Pentz",
+        "position": "GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "David Affengruber",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Kevin Danso",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Stefan Posch",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "David Alaba",
+        "position": "DEF",
+        "age": 33,
+        "captain": true
+      },
+      {
+        "number": 15,
+        "name": "Philipp Lienhart",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Phillipp Mwene",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Alexander Prass",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Marco Friedl",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Michael Svoboda",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Xaver Schlager",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Nicolas Seiwald",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Marcel Sabitzer",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Florian Grillitsch",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Carney Chukwuemeka",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Romano Schmid",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Konrad Laimer",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Patrick Wimmer",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Paul Wanner",
+        "position": "MID",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Alessandro Schopf",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Marko Arnautovic",
+        "position": "FWD",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Michael Gregoritsch",
+        "position": "FWD",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Sasa Kalajdzic",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "belgium",
+    "name": "Belgium",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Matz Sels",
+        "position": "GK",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Maarten Vandevoordt",
+        "position": "GK",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Senne Lammens",
+        "position": "GK",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Thomas Meunier",
+        "position": "DEF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Brandon Mechele",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Timothy Castagne",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Maxim De Cuyper",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Arthur Theate",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Koni De Winter",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Zeno Debast",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Nathan Ngoy",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Joaquin Seys",
+        "position": "DEF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Axel Witsel",
+        "position": "MID",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Kevin De Bruyne",
+        "position": "MID",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 14,
+        "name": "Youri Tielemans",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Nicolas Raskin",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Amadou Onana",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Nathan De Cat",
+        "position": "MID",
+        "age": 17,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Romelu Lukaku",
+        "position": "FWD",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Dodi Lukebakio",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Alexis Saelemaekers",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Loïs Openda",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Jérémy Doku",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Charles De Ketelaere",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Lucas Stassin",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Mika Godts",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "bosniaandherzegovina",
+    "name": "Bosnia and Herzegovina",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Nikola Vasilj",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Mladen Jurkas",
+        "position": "GK",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Martin Zlomislic",
+        "position": "GK",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Nihad Mujakic",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Dennis Hadzikadunic",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Tarik Muharemovic",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Sead Kolasinac",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Amar Dedic",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Nikola Katic",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Stjepan Radeljic",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Nidal Celik",
+        "position": "DEF",
+        "age": 19,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Benjamin Tahirovic",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Armin Gigovic",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Ivan Basic",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Ivan Sunjic",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Amar Memic",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Amir Hadziahmetovic",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Dzenis Burnic",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Ermin Mahmic",
+        "position": "MID",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Samed Bazdar",
+        "position": "FWD",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Ermedin Demirovic",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Edin Dzeko",
+        "position": "FWD",
+        "age": 40,
+        "captain": true
+      },
+      {
+        "number": 19,
+        "name": "Kerim Alajbegovic",
+        "position": "FWD",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Esmir Bajraktarevic",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Haris Tabakovic",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Jovo Lukic",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "brazil",
+    "name": "Brazil",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Alisson Becker",
+        "position": "GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Weverton",
+        "position": "GK",
+        "age": 38,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Ederson",
+        "position": "GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Gabriel Magalhães",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Marquinhos",
+        "position": "DEF",
+        "age": 32,
+        "captain": true
+      },
+      {
+        "number": 6,
+        "name": "Alex Sandro",
+        "position": "DEF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Danilo",
+        "position": "DEF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Bremer",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Léo Pereira",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Douglas Santos",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Roger Ibañez",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Éderson",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Casemiro",
+        "position": "MID",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Bruno Guimarães",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Fabinho",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Danilo Santos",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Lucas Paquetá",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Vinícius Júnior",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Matheus Cunha",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Neymar",
+        "position": "FWD",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Raphinha",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Endrick",
+        "position": "FWD",
+        "age": 19,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Luiz Henrique",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Gabriel Martinelli",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Igor Thiago",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Rayan",
+        "position": "FWD",
+        "age": 19,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "canada",
+    "name": "Canada",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Dayne St. Clair",
+        "position": "GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Maxime Crépeau",
+        "position": "GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Owen Goodman",
+        "position": "GK",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Alistair Johnston",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Alfie Jones",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Luc de Fougerolles",
+        "position": "DEF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Joel Waterman",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Derek Cornelius",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Moïse Bombito",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Alphonso Davies",
+        "position": "DEF",
+        "age": 25,
+        "captain": true
+      },
+      {
+        "number": 22,
+        "name": "Richie Laryea",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Mathieu Choinière",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Stephen Eustáquio",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Ismaël Koné",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Ali Ahmed",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Jonathan Osorio",
+        "position": "MID",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Niko Sigur",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Nathan Saliba",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Cyle Larin",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Jonathan David",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Liam Millar",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Tani Oluwaseyi",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Jacob Shaffelburg",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Tajon Buchanan",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Promise David",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Jayden Nelson",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "capeverde",
+    "name": "Cape Verde",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Vozinha",
+        "position": "GK",
+        "age": 40,
+        "captain": true
+      },
+      {
+        "number": 12,
+        "name": "Marcio Rosa",
+        "position": "GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "CJ dos Santos",
+        "position": "GK",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Stopira",
+        "position": "DEF",
+        "age": 38,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Diney Borges",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Pico Lopes",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Logan Costa",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Sidny Lopes Cabral",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Steven Moreira",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Wagner Pina",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Kelvin Pires",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Kevin Pina",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Joao Paulo",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Jamiro Monteiro",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Deroy Duarte",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Laros Duarte",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Yannick Semedo",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Telmo Arcanjo",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Jovane Cabral",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Gilson Benchimol",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Garry Rodrigues",
+        "position": "FWD",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Willy Semedo",
+        "position": "FWD",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Dailon Livramento",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Ryan Mendes",
+        "position": "FWD",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Nuno da Costa",
+        "position": "FWD",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Helio Varela",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "colombia",
+    "name": "Colombia",
+    "squad": [
+      {
+        "number": 1,
+        "name": "David Ospina",
+        "position": "1GK",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Daniel Muñoz",
+        "position": "2DF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Jhon Lucumí",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Santiago Arias",
+        "position": "2DF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Kevin Castaño",
+        "position": "3MF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Richard Ríos",
+        "position": "3MF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Luis Díaz",
+        "position": "4FW",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Jorge Carrascal",
+        "position": "3MF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Jhon Córdoba",
+        "position": "4FW",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "James Rodríguez",
+        "position": "3MF",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 11,
+        "name": "Jhon Arias",
+        "position": "3MF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Camilo Vargas",
+        "position": "1GK",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Yerry Mina",
+        "position": "2DF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Gustavo Puerta",
+        "position": "2DF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Juan Portilla",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Jefferson Lerma",
+        "position": "3MF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Johan Mojica",
+        "position": "2DF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Willer Ditta",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Cucho Hernández",
+        "position": "4FW",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Juan Fernando Quintero",
+        "position": "3MF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Jaminton Campaz",
+        "position": "4FW",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Deiver Machado",
+        "position": "2DF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Davinson Sánchez",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Álvaro Montero",
+        "position": "1GK",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Luis Suárez",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Andrés Gómez",
+        "position": "4FW",
+        "age": 23,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "croatia",
+    "name": "Croatia",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Dominik Livaković",
+        "position": "1GK",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Josip Stanišić",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Marin Pongračić",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Joško Gvardiol",
+        "position": "2DF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Duje Ćaleta-Car",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Josip Šutalo",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Nikola Moro",
+        "position": "3MF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Mateo Kovačić",
+        "position": "3MF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Andrej Kramarić",
+        "position": "4FW",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Luka Modrić",
+        "position": "3MF",
+        "age": 40,
+        "captain": true
+      },
+      {
+        "number": 11,
+        "name": "Ante Budimir",
+        "position": "4FW",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Ivor Pandur",
+        "position": "1GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Nikola Vlašić",
+        "position": "3MF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Ivan Perišić",
+        "position": "4FW",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Mario Pašalić",
+        "position": "3MF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Martin Baturina",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Petar Sučić",
+        "position": "3MF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Kristijan Jakić",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Toni Fruk",
+        "position": "3MF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Igor Matanović",
+        "position": "4FW",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Luka Sučić",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Luka Vušković",
+        "position": "2DF",
+        "age": 19,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Dominik Kotarski",
+        "position": "1GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Marco Pašalić",
+        "position": "4FW",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Martin Erlić",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Petar Musa",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "curacao",
+    "name": "Curaçao",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Eloy Room",
+        "position": "GK",
+        "age": 37,
+        "captain": true
+      },
+      {
+        "number": 25,
+        "name": "Tyrick Bodak",
+        "position": "GK",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Trevor Doornbusch",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Shurandy Sambo",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Juriën Gaari",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Roshon van Eijma",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Sherel Floranus",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Livano Comenencia",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Tyrese Noslin",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Armando Obispo",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Joshua Brenet",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Riechedly Bazoer",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Deveron Fonville",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Godfried Roemeratoe",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Juninho Bacuna",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Leandro Bacuna",
+        "position": "MID",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Ar'jany Martha",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Tahith Chong",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Kevin Felida",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Jürgen Locadia",
+        "position": "FWD",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Jeremy Antonisse",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Sontje Hansen",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Kenji Gorré",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Jearl Margaritha",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Brandley Kuwas",
+        "position": "FWD",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Gervane Kastaneer",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "czechia",
+    "name": "Czechia",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Matej Kovar",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Jindrich Stanek",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Lukas Hornicek",
+        "position": "GK",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "David Zima",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Tomas Holes",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Robin Hranac",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Vladimir Coufal",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Stepan Chaloupek",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Ladislav Krejci",
+        "position": "DEF",
+        "age": 27,
+        "captain": true
+      },
+      {
+        "number": 14,
+        "name": "David Jurasek",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Jaroslav Zeleny",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Vladimir Darida",
+        "position": "MID",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Lukas Cerv",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Pavel Sulc",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Lukas Provod",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Michal Sadilek",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "David Doudera",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Tomas Soucek",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Alexandr Sojka",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Hugo Sochurek",
+        "position": "MID",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Denis Visinsky",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Adam Hlozek",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Patrik Schick",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Jan Kuchta",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Mojmir Chytil",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Tomas Chory",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "drcongo",
+    "name": "DR Congo",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Lionel Mpasi",
+        "position": "1GK",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Aaron Wan-Bissaka",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Steve Kapuadi",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Axel Tuanzebe",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Dylan Batubinsika",
+        "position": "2DF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Ngal'ayel Mukau",
+        "position": "3MF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Nathanaël Mbuku",
+        "position": "3MF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Samuel Moutoussamy",
+        "position": "3MF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Brian Cipenga",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Théo Bongonda",
+        "position": "3MF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Gaël Kakuta",
+        "position": "4FW",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Joris Kayembe",
+        "position": "2DF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Meschak Elia",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Noah Sadiki",
+        "position": "3MF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Aaron Tshibola",
+        "position": "3MF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Timothy Fayulu",
+        "position": "1GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Cédric Bakambu",
+        "position": "4FW",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Charles Pickel",
+        "position": "3MF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Fiston Mayele",
+        "position": "4FW",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Yoane Wissa",
+        "position": "4FW",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Matthieu Epolo",
+        "position": "1GK",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Chancel Mbemba",
+        "position": "2DF",
+        "age": 31,
+        "captain": true
+      },
+      {
+        "number": 23,
+        "name": "Simon Banza",
+        "position": "4FW",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Gédéon Kalulu",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Edo Kayembe",
+        "position": "3MF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Arthur Masuaku",
+        "position": "2DF",
+        "age": 32,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "ecuador",
+    "name": "Ecuador",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Hernán Galíndez",
+        "position": "GK",
+        "age": 39,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Moisés Ramírez",
+        "position": "GK",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Gonzalo Valle",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Félix Torres",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Piero Hincapié",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Joel Ordóñez",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Willian Pacho",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Pervis Estupiñán",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Ángelo Preciado",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Jackson Porozo",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Yaimar Medina",
+        "position": "DEF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Jordy Alcívar",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Kendry Páez",
+        "position": "MID",
+        "age": 19,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Pedro Vite",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Denil Castillo",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Alan Franco",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Moisés Caicedo",
+        "position": "MID",
+        "age": 24,
+        "captain": true
+      },
+      {
+        "number": 8,
+        "name": "Anthony Valencia",
+        "position": "FWD",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "John Yeboah",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Kevin Rodríguez",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Enner Valencia",
+        "position": "FWD",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Alan Minda",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Jordy Caicedo",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Gonzalo Plata",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Nilson Angulo",
+        "position": "FWD",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Jeremy Arévalo",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "egypt",
+    "name": "Egypt",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Mohamed El Shenawy",
+        "position": "GK",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Mahdy Soliman",
+        "position": "GK",
+        "age": 39,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Mostafa Shoubr",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Mohamed Alaa",
+        "position": "GK",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Yasser Ibrahim",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Mohamed Hany",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Hossam Abdelmaguid",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Ramy Rabia",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Mohamed Abdelmoneim",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Ahmed Fatouh",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Karim Hafez",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Tarek Alaa",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Emam Ashour",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Mostafa Zico",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Hamdy Fathy",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Mohanad Lashin",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Nabil Donga",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Marawan Attia",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Mahmoud Saber",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Trézéguet",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Hamza Abdelkarim",
+        "position": "FWD",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Mohamed Salah",
+        "position": "FWD",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 12,
+        "name": "Haissem Hassan",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Ibrahim Adel",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Omar Marmoush",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Zizo",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "england",
+    "name": "England",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Jordan Pickford",
+        "position": "1GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Ezri Konsa",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Nico O'Reilly",
+        "position": "2DF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Declan Rice",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "John Stones",
+        "position": "2DF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Marc Guéhi",
+        "position": "2DF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Bukayo Saka",
+        "position": "4FW",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Elliot Anderson",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Harry Kane",
+        "position": "4FW",
+        "age": 32,
+        "captain": true
+      },
+      {
+        "number": 10,
+        "name": "Jude Bellingham",
+        "position": "3MF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Marcus Rashford",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Trevoh Chalobah",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Dean Henderson",
+        "position": "1GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Jordan Henderson",
+        "position": "3MF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Dan Burn",
+        "position": "2DF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Kobbie Mainoo",
+        "position": "3MF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Morgan Rogers",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Anthony Gordon",
+        "position": "4FW",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Ollie Watkins",
+        "position": "4FW",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Noni Madueke",
+        "position": "4FW",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Eberechi Eze",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Ivan Toney",
+        "position": "4FW",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "James Trafford",
+        "position": "1GK",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Reece James",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Djed Spence",
+        "position": "2DF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Jarell Quansah",
+        "position": "2DF",
+        "age": 23,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Brice Samba",
+        "position": "1GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Malo Gusto",
+        "position": "2DF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Lucas Digne",
+        "position": "2DF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Dayot Upamecano",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Jules Koundé",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Manu Koné",
+        "position": "3MF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Ousmane Dembélé",
+        "position": "4FW",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Aurélien Tchouaméni",
+        "position": "3MF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Marcus Thuram",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Kylian Mbappé",
+        "position": "4FW",
+        "age": 27,
+        "captain": true
+      },
+      {
+        "number": 11,
+        "name": "Michael Olise",
+        "position": "4FW",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Bradley Barcola",
+        "position": "4FW",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "N'Golo Kanté",
+        "position": "3MF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Adrien Rabiot",
+        "position": "3MF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Ibrahima Konaté",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Mike Maignan",
+        "position": "1GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "William Saliba",
+        "position": "2DF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Warren Zaïre-Emery",
+        "position": "3MF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Théo Hernandez",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Désiré Doué",
+        "position": "4FW",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Lucas Hernandez",
+        "position": "2DF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Jean-Philippe Mateta",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Robin Risser",
+        "position": "1GK",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Rayan Cherki",
+        "position": "3MF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Maghnes Akliouche",
+        "position": "3MF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Maxence Lacroix",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "germany",
+    "name": "Germany",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Manuel Neuer",
+        "position": "GK",
+        "age": 40,
+        "captain": true
+      },
+      {
+        "number": 12,
+        "name": "Oliver Baumann",
+        "position": "GK",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Alexander Nübel",
+        "position": "GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Antonio Rüdiger",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Waldemar Anton",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Jonathan Tah",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Nico Schlotterbeck",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Nathaniel Brown",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "David Raum",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Malick Thiaw",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Aleksandar Pavlović",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Joshua Kimmich",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Leon Goretzka",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Jamal Musiala",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Pascal Groß",
+        "position": "MID",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Angelo Stiller",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Florian Wirtz",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Nadiem Amiri",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Felix Nmecha",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Assan Ouédraogo",
+        "position": "MID",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Kai Havertz",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Jamie Leweling",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Nick Woltemade",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Maximilian Beier",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Leroy Sané",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Deniz Undav",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "ghana",
+    "name": "Ghana",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Lawrence Ati-Zigi",
+        "position": "1GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Alidu Seidu",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Caleb Yirenkyi",
+        "position": "3MF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Jonas Adjetey",
+        "position": "2DF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Thomas Partey",
+        "position": "3MF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Abdul Mumin",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Abdul Fatawu",
+        "position": "4FW",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Kwasi Sibo",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Jordan Ayew",
+        "position": "4FW",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 10,
+        "name": "Brandon Thomas-Asante",
+        "position": "4FW",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Antoine Semenyo",
+        "position": "3MF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Joseph Anang",
+        "position": "1GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Christopher Bonsu Baah",
+        "position": "4FW",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Gideon Mensah",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Elisha Owusu",
+        "position": "3MF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Benjamin Asare",
+        "position": "1GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Abdul Rahman Baba",
+        "position": "2DF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Jerome Opoku",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Iñaki Williams",
+        "position": "4FW",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Augustine Boakye",
+        "position": "3MF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Kojo Peprah Oppong",
+        "position": "2DF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Kamaldeen Sulemana",
+        "position": "4FW",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Derrick Luckassen",
+        "position": "2DF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Ernest Nuamah",
+        "position": "4FW",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Prince Kwabena Adu",
+        "position": "4FW",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Marvin Senaya",
+        "position": "2DF",
+        "age": 25,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "haiti",
+    "name": "Haiti",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Johny Placide",
+        "position": "GK",
+        "age": 38,
+        "captain": true
+      },
+      {
+        "number": 12,
+        "name": "Alexandre Pierre",
+        "position": "GK",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Josué Duverger",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Carlens Arcus",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Keeto Thermoncy",
+        "position": "DEF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Ricardo Adé",
+        "position": "DEF",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Hannes Delcroix",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Martin Expérience",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Markhus Lacroix",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Jean-Kévin Duverne",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Wilguens Paugain",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Carl Sainté",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Jean-Ricner Bellegarde",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Leverton Pierre",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Danley Jean Jacques",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Yassin Fortuné",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Dominique Simon",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Woodensky Pierre",
+        "position": "MID",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Derrick Etienne Jr.",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Duckens Nazon",
+        "position": "FWD",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Louicius Deedson",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Ruben Providence",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Lenny Joseph",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Wilson Isidor",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Frantzdy Pierrot",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Josué Casimir",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "iran",
+    "name": "Iran",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Alireza Beiranvand",
+        "position": "GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Payam Niazmand",
+        "position": "GK",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Hossein Hosseini",
+        "position": "GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Saleh Hardani",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Ehsan Hajsafi",
+        "position": "DEF",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Shoja Khalilzadeh",
+        "position": "DEF",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Milad Mohammadi",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Hossein Kanani",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Arya Yousefi",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Ali Nemati",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Ramin Rezaeian",
+        "position": "DEF",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Danial Iri",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Saeid Ezatolahi",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Alireza Jahanbakhsh",
+        "position": "MID",
+        "age": 32,
+        "captain": true
+      },
+      {
+        "number": 8,
+        "name": "Mohammad Mohebi",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Saman Ghoddos",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Rouzbeh Cheshmi",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Mehdi Torabi",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Mohammad Ghorbani",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Amirmohammad Razaghinia",
+        "position": "MID",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Mehdi Taremi",
+        "position": "FWD",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Mehdi Ghayedi",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Ali Alipour",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Amirhossein Hosseinzadeh",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Shahriyar Moghanlou",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Dennis Eckert",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "iraq",
+    "name": "Iraq",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Fahad Talib",
+        "position": "1GK",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Rebin Sulaka",
+        "position": "2DF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Hussein Ali",
+        "position": "2DF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Zaid Tahseen",
+        "position": "2DF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Akam Hashim",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Manaf Younis",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Youssef Amyn",
+        "position": "3MF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Ibrahim Bayesh",
+        "position": "3MF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Ali Al-Hamadi",
+        "position": "4FW",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Mohanad Ali",
+        "position": "4FW",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Ahmed Qasem",
+        "position": "4FW",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Jalal Hassan",
+        "position": "1GK",
+        "age": 35,
+        "captain": true
+      },
+      {
+        "number": 13,
+        "name": "Ali Yousif",
+        "position": "4FW",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Zidane Iqbal",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Ahmed Maknzi",
+        "position": "2DF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Amir Al-Ammari",
+        "position": "3MF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Ali Jasim",
+        "position": "4FW",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Aymen Hussein",
+        "position": "4FW",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Kevin Yakob",
+        "position": "3MF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Aimar Sher",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Marko Farji",
+        "position": "4FW",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Ahmed Basil",
+        "position": "1GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Merchas Doski",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Zaid Ismail",
+        "position": "3MF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Mustafa Saadoon",
+        "position": "2DF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Frans Putros",
+        "position": "2DF",
+        "age": 32,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "ivorycoast",
+    "name": "Ivory Coast",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Yahia Fofana",
+        "position": "GK",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Mohamed Koné",
+        "position": "GK",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Alban Lafont",
+        "position": "GK",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Ousmane Diomande",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Ghislain Konan",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Wilfried Singo",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Odilon Kossounou",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Christopher Operi",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Guela Doué",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Emmanuel Agbadou",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Evan Ndicka",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Jean Michaël Seri",
+        "position": "MID",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Seko Fofana",
+        "position": "MID",
+        "age": 31,
+        "captain": true
+      },
+      {
+        "number": 8,
+        "name": "Franck Kessié",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Ibrahim Sangaré",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Parfait Guiagon",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Christ Inao Oulai",
+        "position": "MID",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Ange-Yoan Bonny",
+        "position": "FWD",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Simon Adingra",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Yan Diomande",
+        "position": "FWD",
+        "age": 19,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Elye Wahi",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Oumar Diakité",
+        "position": "FWD",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Amad Diallo",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Nicolas Pépé",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Evann Guessand",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Bazoumana Touré",
+        "position": "FWD",
+        "age": 20,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "japan",
+    "name": "Japan",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Zion Suzuki",
+        "position": "GK",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Keisuke Osako",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Tomoki Hayakawa",
+        "position": "GK",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Yukinari Sugawara",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Shogo Taniguchi",
+        "position": "DEF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Ko Itakura",
+        "position": "DEF",
+        "age": 29,
+        "captain": true
+      },
+      {
+        "number": 5,
+        "name": "Yuto Nagatomo",
+        "position": "DEF",
+        "age": 39,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Tsuyoshi Watanabe",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Ayumu Seko",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Hiroki Ito",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Takehiro Tomiyasu",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Junnosuke Suzuki",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Ao Tanaka",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Ritsu Doan",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Daichi Kamada",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Yuito Suzuki",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Kaishu Sano",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Takefusa Kubo",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Keisuke Goto",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Daizen Maeda",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Keito Nakamura",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Junya Ito",
+        "position": "FWD",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Ayase Ueda",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Koki Ogawa",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Kento Shiogai",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Shuto Machino",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "jordan",
+    "name": "Jordan",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Yazeed Abulaila",
+        "position": "1GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Mohammad Abu Hashish",
+        "position": "2DF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Abdallah Nasib",
+        "position": "2DF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Husam Abu Dahab",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Yazan Al-Arab",
+        "position": "2DF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Amer Jamous",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Mohammad Abu Zrayq",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Noor Al-Rawabdeh",
+        "position": "3MF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Ali Olwan",
+        "position": "4FW",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Musa Al-Taamari",
+        "position": "4FW",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Odeh Al-Fakhouri",
+        "position": "4FW",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Nour Bani Attiah",
+        "position": "1GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Mahmoud Al-Mardi",
+        "position": "4FW",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Rajaei Ayed",
+        "position": "3MF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Ibrahim Sadeh",
+        "position": "3MF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Mo Abualnadi",
+        "position": "2DF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Salim Obaid",
+        "position": "2DF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Mohammad Taha",
+        "position": "3MF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Saed Al-Rosan",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Mohannad Abu Taha",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Nizar Al-Rashdan",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Abdallah Al-Fakhouri",
+        "position": "1GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Ihsan Haddad",
+        "position": "2DF",
+        "age": 32,
+        "captain": true
+      },
+      {
+        "number": 24,
+        "name": "Ali Azaizeh",
+        "position": "4FW",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Mohammad Al-Dawoud",
+        "position": "3MF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Anas Badawi",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "mexico",
+    "name": "Mexico",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Raul Rangel",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Carlos Acevedo",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Guillermo Ochoa",
+        "position": "GK",
+        "age": 40,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Jorge Sanchez",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Cesar Montes",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Johan Vazquez",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Israel Reyes",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Mateo Chavez",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Jesus Gallardo",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Edson Alvarez",
+        "position": "MID",
+        "age": 28,
+        "captain": true
+      },
+      {
+        "number": 6,
+        "name": "Erik Lira",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Luis Romo",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Alvaro Fidalgo",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Orbelin Pineda",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Obed Vargas",
+        "position": "MID",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Gilberto Mora",
+        "position": "MID",
+        "age": 17,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Cesar Huerta",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Luis Chavez",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Brian Gutierrez",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Raul Jimenez",
+        "position": "FWD",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Alexis Vega",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Santiago Gimenez",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Armando Gonzalez",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Julian Quinones",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Guillermo Martinez",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Roberto Alvarado",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "morocco",
+    "name": "Morocco",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Yassine Bounou",
+        "position": "1GK",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Achraf Hakimi",
+        "position": "2DF",
+        "age": 27,
+        "captain": true
+      },
+      {
+        "number": 3,
+        "name": "Noussair Mazraoui",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Sofyan Amrabat",
+        "position": "3MF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Marwane Saâdane",
+        "position": "2DF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Ayyoub Bouaddi",
+        "position": "3MF",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Chemsdine Talbi",
+        "position": "3MF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Azzedine Ounahi",
+        "position": "3MF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Soufiane Rahimi",
+        "position": "4FW",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Brahim Díaz",
+        "position": "4FW",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Ismael Saibari",
+        "position": "3MF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Munir Mohamedi",
+        "position": "1GK",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Zakaria El Ouahdi",
+        "position": "2DF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Issa Diop",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Samir El Mourabet",
+        "position": "3MF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Gessime Yassine",
+        "position": "3MF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Amine Sbaï",
+        "position": "4FW",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Chadi Riad",
+        "position": "2DF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Youssef Belammari",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Ayoub El Kaabi",
+        "position": "4FW",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Ayoube Amaimouni",
+        "position": "4FW",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Ahmed Reda Tagnaouti",
+        "position": "1GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Bilal El Khannouss",
+        "position": "3MF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Neil El Aynaoui",
+        "position": "3MF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Redouane Halhal",
+        "position": "2DF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Anass Salah-Eddine",
+        "position": "2DF",
+        "age": 24,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "netherlands",
+    "name": "Netherlands",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Bart Verbruggen",
+        "position": "GK",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Robin Roefs",
+        "position": "GK",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Mark Flekken",
+        "position": "GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Lutsharel Geertruida",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Virgil van Dijk",
+        "position": "DEF",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 5,
+        "name": "Nathan Ake",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Jan Paul van Hecke",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Micky van de Ven",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Denzel Dumfries",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Jorrel Hato",
+        "position": "DEF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Marten de Roon",
+        "position": "MID",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Ryan Gravenberch",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Mats Wieffer",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Tijjani Reijnders",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Guus Til",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Teun Koopmeiners",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Frenkie de Jong",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Justin Kluivert",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Wout Weghorst",
+        "position": "FWD",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Memphis Depay",
+        "position": "FWD",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Cody Gakpo",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Noa Lang",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Donyell Malen",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Brian Brobbey",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Crysencio Summerville",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "newzealand",
+    "name": "New Zealand",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Max Crocombe",
+        "position": "GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Alex Paulsen",
+        "position": "GK",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Michael Woud",
+        "position": "GK",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Tim Payne",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Francis de Vries",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Tyler Bindon",
+        "position": "DEF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Michael Boxall",
+        "position": "DEF",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Liberato Cacace",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Nando Pijnaker",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Finn Surman",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Callan Elliot",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Tommy Smith",
+        "position": "DEF",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Joe Bell",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Matthew Garbett",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Marko Stamenic",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Sarpreet Singh",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Alex Rufer",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Callum McCowatt",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Ryan Thomas",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Lachlan Bayliss",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Chris Wood",
+        "position": "FWD",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 11,
+        "name": "Elijah Just",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Kosta Barbarouses",
+        "position": "FWD",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Ben Waine",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Ben Old",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Jesse Randall",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "norway",
+    "name": "Norway",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Orjan Nyland",
+        "position": "GK",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Matias Dyngeland",
+        "position": "GK",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Egil Selvik",
+        "position": "GK",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Leo Ostigard",
+        "position": "DEF",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Kristoffer Ajer",
+        "position": "DEF",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Andreas Hanche-Olsen",
+        "position": "DEF",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Julian Ryerson",
+        "position": "DEF",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Marcus Pedersen",
+        "position": "DEF",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "David Moller Wolfe",
+        "position": "DEF",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Martin Odegaard",
+        "position": "MID",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": true
+      },
+      {
+        "number": 11,
+        "name": "Sander Berge",
+        "position": "MID",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Patrick Berg",
+        "position": "MID",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Morten Thorsby",
+        "position": "MID",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Kristian Thorstvedt",
+        "position": "MID",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Hugo Vetlesen",
+        "position": "MID",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Osame Sahraoui",
+        "position": "MID",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Erling Haaland",
+        "position": "FWD",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Alexander Sorloth",
+        "position": "FWD",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Jorgen Strand Larsen",
+        "position": "FWD",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Aron Donnum",
+        "position": "FWD",
+        "age": 25,
+        "nationalTeam": "Norway",
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "panama",
+    "name": "Panama",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Luis Mejía",
+        "position": "1GK",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "César Blackman",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "José Córdoba",
+        "position": "2DF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Fidel Escobar",
+        "position": "2DF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Edgardo Fariña",
+        "position": "2DF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Cristian Martínez",
+        "position": "3MF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "José Luis Rodríguez",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Adalberto Carrasquilla",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Tomás Rodríguez",
+        "position": "4FW",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Ismael Díaz",
+        "position": "3MF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Yoel Bárcenas",
+        "position": "3MF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "César Samudio",
+        "position": "1GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Jiovany Ramos",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Carlos Harvey",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Eric Davis",
+        "position": "2DF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Andrés Andrade",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "José Fajardo",
+        "position": "4FW",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Cecilio Waterman",
+        "position": "4FW",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Alberto Quintero",
+        "position": "3MF",
+        "age": 38,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Aníbal Godoy",
+        "position": "3MF",
+        "age": 36,
+        "captain": true
+      },
+      {
+        "number": 21,
+        "name": "César Yanis",
+        "position": "3MF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Orlando Mosquera",
+        "position": "1GK",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Michael Amir Murillo",
+        "position": "2DF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Azarias Londoño",
+        "position": "4FW",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Roderick Miller",
+        "position": "2DF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Jorge Gutiérrez",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "paraguay",
+    "name": "Paraguay",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Gatito Fernández",
+        "position": "GK",
+        "age": 38,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Orlando Gil",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Gastón Oliveira",
+        "position": "GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Gustavo Velázquez",
+        "position": "DEF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Omar Alderete",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Juan Jose Cáceres",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Fabián Balbuena",
+        "position": "DEF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Júnior Alonso",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "José Canale",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Gustavo Gómez",
+        "position": "DEF",
+        "age": 33,
+        "captain": true
+      },
+      {
+        "number": 26,
+        "name": "Alexandro Maidana",
+        "position": "DEF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Diego Gómez",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Mauricio",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Andrés Cubas",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Damián Bobadilla",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Alejandro Romero Gamarra",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Julio Enciso",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Braian Ojeda",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Matías Galarza",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Ramón Sosa",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Antonio Sanabria",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Miguel Almirón",
+        "position": "FWD",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Alex Arce",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Gabriel Ávalos",
+        "position": "FWD",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Gustavo Caballero",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Isidro Pitta",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "portugal",
+    "name": "Portugal",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Diogo Costa",
+        "position": "1GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Nélson Semedo",
+        "position": "2DF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Rúben Dias",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Tomás Araújo",
+        "position": "2DF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Diogo Dalot",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Matheus Nunes",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Cristiano Ronaldo",
+        "position": "4FW",
+        "age": 41,
+        "captain": true
+      },
+      {
+        "number": 8,
+        "name": "Bruno Fernandes",
+        "position": "3MF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Gonçalo Ramos",
+        "position": "4FW",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Bernardo Silva",
+        "position": "3MF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "João Félix",
+        "position": "4FW",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "José Sá",
+        "position": "1GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Renato Veiga",
+        "position": "2DF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Gonçalo Inácio",
+        "position": "2DF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "João Neves",
+        "position": "3MF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Francisco Trincão",
+        "position": "4FW",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Rafael Leão",
+        "position": "4FW",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Pedro Neto",
+        "position": "4FW",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Gonçalo Guedes",
+        "position": "4FW",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "João Cancelo",
+        "position": "2DF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Rúben Neves",
+        "position": "3MF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Rui Silva",
+        "position": "1GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Vitinha",
+        "position": "3MF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Samú Costa",
+        "position": "2DF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Nuno Mendes",
+        "position": "2DF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Francisco Conceição",
+        "position": "4FW",
+        "age": 23,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "qatar",
+    "name": "Qatar",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Mahmoud Abunada",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Salah Zakaria",
+        "position": "GK",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Meshaal Barsham",
+        "position": "GK",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Pedro Miguel",
+        "position": "DEF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Lucas Mendes",
+        "position": "DEF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Issa Laye",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Jassem Gaber",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Ayoub Al-Oui",
+        "position": "DEF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Homam Ahmed",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Boualem Khoukhi",
+        "position": "DEF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Sultan Al-Brake",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Al-Hashmi Al-Hussain",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Abdulaziz Hatem",
+        "position": "MID",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Karim Boudiaf",
+        "position": "MID",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Ahmed Fathy",
+        "position": "MID",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Assim Madibo",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Mohamed Manai",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Ahmed Alaaeldin",
+        "position": "FWD",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Edmilson Junior",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Mohammed Muntari",
+        "position": "FWD",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Hassan Al-Haydos",
+        "position": "FWD",
+        "age": 35,
+        "captain": true
+      },
+      {
+        "number": 11,
+        "name": "Akram Afif",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Yusuf Abdurisag",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Ahmed Al-Ganehi",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Almoez Ali",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Tahsin Jamshid",
+        "position": "FWD",
+        "age": 20,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "saudiarabia",
+    "name": "Saudi Arabia",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Nawaf Al-Aqidi",
+        "position": "GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Mohammed Al-Owais",
+        "position": "GK",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Ahmed Al-Kassar",
+        "position": "GK",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Ali Majrashi",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Ali Lajami",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Abdulelah Al-Amri",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Hassan Al-Tambakti",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Saud Abdulhamid",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Nawaf Boushal",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Hassan Kadish",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Moteb Al-Harbi",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Jehad Thakri",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Nasser Al-Dawsari",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Musab Al-Juwayr",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Aiman Yahya",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Salem Al-Dawsari",
+        "position": "MID",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 15,
+        "name": "Abdullah Al-Khaibari",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Ziyad Al-Johani",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Ala Al-Hajji",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Mohamed Kanno",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Mohammed Abu Al-Shamat",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Feras Al-Brikan",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Saleh Al-Shehri",
+        "position": "FWD",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Khalid Al-Ghannam",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Abdullah Al-Hamdan",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Sultan Mandash",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "scotland",
+    "name": "Scotland",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Angus Gunn",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Liam Kelly",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Craig Gordon",
+        "position": "GK",
+        "age": 43,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Aaron Hickey",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Andy Robertson",
+        "position": "DEF",
+        "age": 32,
+        "captain": true
+      },
+      {
+        "number": 5,
+        "name": "Grant Hanley",
+        "position": "DEF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Kieran Tierney",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Jack Hendry",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "John Souttar",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Dominic Hyam",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Nathan Patterson",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Anthony Ralston",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Scott McKenna",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Scott McTominay",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "John McGinn",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Tyler Fletcher",
+        "position": "MID",
+        "age": 19,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Ryan Christie",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Lewis Ferguson",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Kenny McLean",
+        "position": "MID",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Lyndon Dykes",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Che Adams",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Ross Stewart",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Ben Gannon-Doak",
+        "position": "FWD",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "George Hirst",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Lawrence Shankland",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Findlay Curtis",
+        "position": "FWD",
+        "age": 19,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "senegal",
+    "name": "Senegal",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Yehvann Diouf",
+        "position": "1GK",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Mamadou Sarr",
+        "position": "2DF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Kalidou Koulibaly",
+        "position": "2DF",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 4,
+        "name": "Abdoulaye Seck",
+        "position": "2DF",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Idrissa Gueye",
+        "position": "3MF",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Pathé Ciss",
+        "position": "3MF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Assane Diao",
+        "position": "4FW",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Lamine Camara",
+        "position": "3MF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Bamba Dieng",
+        "position": "4FW",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Sadio Mané",
+        "position": "4FW",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Nicolas Jackson",
+        "position": "4FW",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Cherif Ndiaye",
+        "position": "4FW",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Iliman Ndiaye",
+        "position": "4FW",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Ismail Jakobs",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Krépin Diatta",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Édouard Mendy",
+        "position": "1GK",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Pape Matar Sarr",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Ismaïla Sarr",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Moussa Niakhaté",
+        "position": "2DF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Ibrahim Mbaye",
+        "position": "4FW",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Habib Diarra",
+        "position": "3MF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Bara Sapoko Ndiaye",
+        "position": "3MF",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Mory Diaw",
+        "position": "1GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Antoine Mendy",
+        "position": "2DF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "El Hadji Malick Diouf",
+        "position": "2DF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Pape Gueye",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "south_africa",
+    "name": "South Africa",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Ronwen Williams",
+        "position": "GK",
+        "age": 34,
+        "captain": true
+      },
+      {
+        "number": 16,
+        "name": "Sipho Chaine",
+        "position": "GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Ricardo Goss",
+        "position": "GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Thabang Matuludi",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Khulumani Ndamane",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Aubrey Modiba",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Mbekezeli Mbokazi",
+        "position": "DEF",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Samukele Kabini",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Nkosinathi Sibisi",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Khuliso Mudau",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Ime Okon",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Olwethu Makhanya",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Bradley Cross",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Teboho Mokoena",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Thalente Mbatha",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Themba Zwane",
+        "position": "MID",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Sphephelo Sithole",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Jayden Adams",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Kamogelo Sebelebele",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Oswin Appollis",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Tshepang Moremi",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Lyle Foster",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Relebohile Mofokeng",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Thapelo Maseko",
+        "position": "FWD",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Iqraam Rayners",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Evidence Makgopa",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "south_korea",
+    "name": "South Korea",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Kim Seung-Gyu",
+        "position": "GK",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Song Bum-Keun",
+        "position": "GK",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Jo Hyeon-Woo",
+        "position": "GK",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Lee Han-Beom",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Lee Gi-Hyuk",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Kim Min-Jae",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Kim Tae-Hyeon",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Lee Tae-Seok",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Cho Wi-Je",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Kim Moon-Hwan",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Seol Young-Woo",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Hwang In-Beom",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Paik Seung-Ho",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Lee Jae-Sung",
+        "position": "MID",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Park Jin-Seop",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Bae Jun-Ho",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Lee Kang-In",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Jens Castrop",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Kim Jin-Gyu",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Lee Dong-Gyeong",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Son Heung-Min",
+        "position": "FWD",
+        "age": 33,
+        "captain": true
+      },
+      {
+        "number": 9,
+        "name": "Cho Gue-Sung",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Hwang Hee-Chan",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Oh Hyeon-Gyu",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Yang Hyun-Jun",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Eom Ji-Sung",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "squad": [
+      {
+        "number": 1,
+        "name": "David Raya",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Joan Garcia",
+        "position": "GK",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Unai Simon",
+        "position": "GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Marc Pubill",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Alejandro Grimaldo",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Eric Garcia",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Pedro Porro",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Aymeric Laporte",
+        "position": "DEF",
+        "age": 32,
+        "captain": true
+      },
+      {
+        "number": 22,
+        "name": "Pau Cubarsi",
+        "position": "DEF",
+        "age": 19,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Marc Cucurella",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Marcos Llorente",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Mikel Merino",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Fabian Ruiz",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Gavi",
+        "position": "MID",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Dani Olmo",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Yeremy Pino",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Alex Baena",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Rodri",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Martin Zubimendi",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Pedri",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Ferran Torres",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Nico Williams",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Lamine Yamal",
+        "position": "FWD",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Mikel Oyarzabal",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Victor Munoz",
+        "position": "FWD",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Borja Iglesias",
+        "position": "FWD",
+        "age": 33,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "sweden",
+    "name": "Sweden",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Jacob Widell Zetterström",
+        "position": "GK",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Viktor Johansson",
+        "position": "GK",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Kristoffer Nordfeldt",
+        "position": "GK",
+        "age": 36,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Gustaf Lagerbielke",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Victor Lindelöf",
+        "position": "DEF",
+        "age": 31,
+        "captain": true
+      },
+      {
+        "number": 4,
+        "name": "Isak Hien",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Gabriel Gudmundsson",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Daniel Svensson",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Hjalmar Ekdal",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Carl Starfelt",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Eric Smith",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Herman Johansson",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Lucas Bergvall",
+        "position": "MID",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Ken Sema",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Jesper Karlström",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Yasin Ayari",
+        "position": "MID",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Mattias Svanberg",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Besfort Zeneli",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Elliot Stroud",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Taha Ali",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Alexander Isak",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Benjamin Nygren",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Anthony Elanga",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Viktor Gyökeres",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Alexander Bernhardsson",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Gustaf Nilsson",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "switzerland",
+    "name": "Switzerland",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Gregor Kobel",
+        "position": "GK",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Yvon Mvogo",
+        "position": "GK",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Marvin Keller",
+        "position": "GK",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Miro Muheim",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Silvan Widmer",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Nico Elvedi",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Manuel Akanji",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Ricardo Rodríguez",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Eray Cömert",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Aurèle Amenda",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Luca Jaquez",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Denis Zakaria",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Remo Freuler",
+        "position": "MID",
+        "age": 34,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Johan Manzambi",
+        "position": "MID",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Granit Xhaka",
+        "position": "MID",
+        "age": 33,
+        "captain": true
+      },
+      {
+        "number": 14,
+        "name": "Ardon Jashari",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Djibril Sow",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Christian Fassnacht",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Rubin Vargas",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Michel Aebischer",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Fabian Rieder",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Breel Embolo",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Dan Ndoye",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Noah Okafor",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Zeki Amdouni",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Cedric Itten",
+        "position": "FWD",
+        "age": 29,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "tunisia",
+    "name": "Tunisia",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Mouhib Chamakh",
+        "position": "GK",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Aymen Dahmen",
+        "position": "GK",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Sabri Ben Hassen",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Ali Abdi",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Montassar Talbi",
+        "position": "DEF",
+        "age": 28,
+        "captain": true
+      },
+      {
+        "number": 4,
+        "name": "Omar Rekik",
+        "position": "DEF",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Adem Arous",
+        "position": "DEF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Dylan Bronn",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Yan Valery",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Mohamed Amine Ben Hamida",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Moutaz Nefati",
+        "position": "DEF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Raed Chikhaoui",
+        "position": "DEF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Elias Achouri",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Hannibal Mejbri",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Mortadha Ben Ouanes",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Rani Khedira",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Mohamed Hadj Mahmoud",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Ellyes Skhiri",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Anis Slimane",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Elias Saad",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Hazem Mastouri",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Ismael Gharbi",
+        "position": "FWD",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Khalil Ayari",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Rayan Elloumi",
+        "position": "FWD",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Firas Chaouat",
+        "position": "FWD",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Sebastian Tounekti",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "turkiye",
+    "name": "Türkiye",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Mert Günok",
+        "position": "GK",
+        "age": 37,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Altay Bayındır",
+        "position": "GK",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Uğurcan Çakır",
+        "position": "GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Zeki Çelik",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Merih Demiral",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Çağlar Söyüncü",
+        "position": "DEF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Eren Elmalı",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Abdülkerim Bardakcı",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Ozan Kabak",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Mert Müldür",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Ferdi Kadıoğlu",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Kaan Ayhan",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Samet Akaydın",
+        "position": "DEF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Salih Özcan",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Orkun Kökçü",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Arda Güler",
+        "position": "MID",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Hakan Çalhanoğlu",
+        "position": "MID",
+        "age": 32,
+        "captain": true
+      },
+      {
+        "number": 16,
+        "name": "İsmail Yüksek",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "İrfan Can Kahveci",
+        "position": "MID",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Can Uzun",
+        "position": "MID",
+        "age": 20,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Kerem Aktürkoğlu",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Deniz Gül",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Kenan Yıldız",
+        "position": "FWD",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Yunus Akgün",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Barış Alper Yılmaz",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Oğuz Aydın",
+        "position": "FWD",
+        "age": 25,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "uruguay",
+    "name": "Uruguay",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Sergio Rochet",
+        "position": "GK",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Santiago Mele",
+        "position": "GK",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Fernando Muslera",
+        "position": "GK",
+        "age": 40,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "José María Giménez",
+        "position": "DEF",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Sebastián Cáceres",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Ronald Araújo",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Guillermo Varela",
+        "position": "DEF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Mathías Olivera",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Matías Viña",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Joaquín Piquerez",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Santiago Bueno",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Manuel Ugarte",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Rodrigo Bentancur",
+        "position": "MID",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Nicolás de la Cruz",
+        "position": "MID",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Federico Valverde",
+        "position": "MID",
+        "age": 27,
+        "captain": true
+      },
+      {
+        "number": 10,
+        "name": "Giorgian de Arrascaeta",
+        "position": "MID",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Facundo Pellistri",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Emiliano Martínez",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Maxi Araújo",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Juan Manuel Sanabria",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Rodrigo Zalazar",
+        "position": "MID",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Darwin Núñez",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Agustín Canobbio",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Brian Rodríguez",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Rodrigo Aguirre",
+        "position": "FWD",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Federico Viñas",
+        "position": "FWD",
+        "age": 27,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "usa",
+    "name": "United States",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Matt Turner",
+        "position": "GK",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Matt Freese",
+        "position": "GK",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Chris Brady",
+        "position": "GK",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Sergiño Dest",
+        "position": "DEF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Chris Richards",
+        "position": "DEF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Antonee Robinson",
+        "position": "DEF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Auston Trusty",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Miles Robinson",
+        "position": "DEF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Tim Ream",
+        "position": "DEF",
+        "age": 38,
+        "captain": true
+      },
+      {
+        "number": 16,
+        "name": "Alex Freeman",
+        "position": "DEF",
+        "age": 21,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Mark McKenzie",
+        "position": "DEF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Joe Scally",
+        "position": "DEF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Tyler Adams",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Giovanni Reyna",
+        "position": "MID",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Weston McKennie",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Christian Pulisic",
+        "position": "MID",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Brenden Aaronson",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Sebastian Berhalter",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 15,
+        "name": "Cristian Roldan",
+        "position": "MID",
+        "age": 31,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Malik Tillman",
+        "position": "MID",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Max Arfsten",
+        "position": "MID",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Ricardo Pepi",
+        "position": "FWD",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Haji Wright",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Folarin Balogun",
+        "position": "FWD",
+        "age": 24,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Timothy Weah",
+        "position": "FWD",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Alejandro Zendejas",
+        "position": "FWD",
+        "age": 28,
+        "captain": false
+      }
+    ]
+  },
+  {
+    "id": "uzbekistan",
+    "name": "Uzbekistan",
+    "squad": [
+      {
+        "number": 1,
+        "name": "Utkir Yusupov",
+        "position": "1GK",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 2,
+        "name": "Abdukodir Khusanov",
+        "position": "2DF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 3,
+        "name": "Khojiakbar Alijonov",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 4,
+        "name": "Farrukh Sayfiev",
+        "position": "2DF",
+        "age": 35,
+        "captain": false
+      },
+      {
+        "number": 5,
+        "name": "Rustam Ashurmatov",
+        "position": "2DF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 6,
+        "name": "Akmal Mozgovoy",
+        "position": "3MF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 7,
+        "name": "Otabek Shukurov",
+        "position": "3MF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 8,
+        "name": "Jamshid Iskanderov",
+        "position": "3MF",
+        "age": 32,
+        "captain": false
+      },
+      {
+        "number": 9,
+        "name": "Odiljon Hamrobekov",
+        "position": "3MF",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 10,
+        "name": "Ruslanbek Jiyanov",
+        "position": "4FW",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 11,
+        "name": "Oston Urunov",
+        "position": "3MF",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 12,
+        "name": "Abduvohid Nematov",
+        "position": "1GK",
+        "age": 25,
+        "captain": false
+      },
+      {
+        "number": 13,
+        "name": "Sherzod Nasrullaev",
+        "position": "2DF",
+        "age": 27,
+        "captain": false
+      },
+      {
+        "number": 14,
+        "name": "Eldor Shomurodov",
+        "position": "4FW",
+        "age": 30,
+        "captain": true
+      },
+      {
+        "number": 15,
+        "name": "Umar Eshmurodov",
+        "position": "2DF",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 16,
+        "name": "Botirali Ergashev",
+        "position": "1GK",
+        "age": 30,
+        "captain": false
+      },
+      {
+        "number": 17,
+        "name": "Dostonbek Khamdamov",
+        "position": "3MF",
+        "age": 29,
+        "captain": false
+      },
+      {
+        "number": 18,
+        "name": "Abdulla Abdullaev",
+        "position": "2DF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 19,
+        "name": "Azizjon Ganiev",
+        "position": "3MF",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 20,
+        "name": "Azizbek Amonov",
+        "position": "4FW",
+        "age": 28,
+        "captain": false
+      },
+      {
+        "number": 21,
+        "name": "Igor Sergeev",
+        "position": "4FW",
+        "age": 33,
+        "captain": false
+      },
+      {
+        "number": 22,
+        "name": "Abbosbek Fayzullaev",
+        "position": "3MF",
+        "age": 22,
+        "captain": false
+      },
+      {
+        "number": 23,
+        "name": "Sherzod Esanov",
+        "position": "3MF",
+        "age": 23,
+        "captain": false
+      },
+      {
+        "number": 24,
+        "name": "Bekhruz Karimov",
+        "position": "2DF",
+        "age": 18,
+        "captain": false
+      },
+      {
+        "number": 25,
+        "name": "Avazbek Ulmasaliev",
+        "position": "2DF",
+        "age": 26,
+        "captain": false
+      },
+      {
+        "number": 26,
+        "name": "Jakhongir Urozov",
+        "position": "2DF",
+        "age": 22,
+        "captain": false
+      }
+    ]
+  }
+]

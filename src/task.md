@@ -1,0 +1,5 @@
+- [x] Reposition player slideshow to sit below the Group Standings section in `Home.jsx`.
+- [x] Restructure `CinematicSlideshow.jsx` to separate tab toggles into a top header bar above the slideshow viewport.
+- [x] Adjust slide content height to maintain layout dimensions.
+- [x] Verify the build compiles successfully with `npm run build`.
+- [x] Update walkthrough documentation.
