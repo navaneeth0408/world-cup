@@ -27,7 +27,7 @@ import yamalImg from '../assets/players/next-gen/yamal.jpg';
 import oliseImg from '../assets/players/next-gen/Michael Olise.jpg';
 import bellinghamImg from '../assets/players/next-gen/bellingham.jpg';
 import pedriImg from '../assets/players/next-gen/pedri.jpg';
-import musialaImg from '../assets/players/next-gen/Musiala.jpg';
+import musialaImg from '../assets/players/next-gen/musiala.jpg';
 import viniciusImg from '../assets/players/next-gen/Vinicius.jpg';
 import dembeleImg from '../assets/players/next-gen/Dembele.jpg';
 import mbappeImg from '../assets/players/next-gen/Mbappe.jpg';
