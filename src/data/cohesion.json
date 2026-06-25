@@ -1,0 +1,290 @@
+{
+  "Argentina": {
+    "managerialStability": 100,
+    "squadContinuity": 95,
+    "corePlayerFamiliarity": 96,
+    "cohesionScore": 97.2
+  },
+  "France": {
+    "managerialStability": 100,
+    "squadContinuity": 90,
+    "corePlayerFamiliarity": 92,
+    "cohesionScore": 94.4
+  },
+  "Japan": {
+    "managerialStability": 100,
+    "squadContinuity": 88,
+    "corePlayerFamiliarity": 88,
+    "cohesionScore": 92.8
+  },
+  "Croatia": {
+    "managerialStability": 100,
+    "squadContinuity": 85,
+    "corePlayerFamiliarity": 86,
+    "cohesionScore": 91.2
+  },
+  "Morocco": {
+    "managerialStability": 80,
+    "squadContinuity": 92,
+    "corePlayerFamiliarity": 90,
+    "cohesionScore": 88.0
+  },
+  "South Africa": {
+    "managerialStability": 95,
+    "squadContinuity": 82,
+    "corePlayerFamiliarity": 80,
+    "cohesionScore": 82.8
+  },
+  "Switzerland": {
+    "managerialStability": 90,
+    "squadContinuity": 84,
+    "corePlayerFamiliarity": 85,
+    "cohesionScore": 86.6
+  },
+  "Spain": {
+    "managerialStability": 95,
+    "squadContinuity": 80,
+    "corePlayerFamiliarity": 82,
+    "cohesionScore": 86.4
+  },
+  "Colombia": {
+    "managerialStability": 90,
+    "squadContinuity": 82,
+    "corePlayerFamiliarity": 84,
+    "cohesionScore": 85.6
+  },
+  "Panama": {
+    "managerialStability": 95,
+    "squadContinuity": 78,
+    "corePlayerFamiliarity": 80,
+    "cohesionScore": 84.3
+  },
+  "Norway": {
+    "managerialStability": 95,
+    "squadContinuity": 78,
+    "corePlayerFamiliarity": 80,
+    "cohesionScore": 84.3
+  },
+  "Iran": {
+    "managerialStability": 80,
+    "squadContinuity": 88,
+    "corePlayerFamiliarity": 90,
+    "cohesionScore": 85.2
+  },
+  "Uzbekistan": {
+    "managerialStability": 90,
+    "squadContinuity": 80,
+    "corePlayerFamiliarity": 82,
+    "cohesionScore": 84.4
+  },
+  "Austria": {
+    "managerialStability": 90,
+    "squadContinuity": 80,
+    "corePlayerFamiliarity": 82,
+    "cohesionScore": 84.4
+  },
+  "Cabo Verde": {
+    "managerialStability": 100,
+    "squadContinuity": 70,
+    "corePlayerFamiliarity": 74,
+    "cohesionScore": 82.8
+  },
+  "South Korea": {
+    "managerialStability": 70,
+    "squadContinuity": 82,
+    "corePlayerFamiliarity": 84,
+    "cohesionScore": 77.6
+  },
+  "Scotland": {
+    "managerialStability": 100,
+    "squadContinuity": 68,
+    "corePlayerFamiliarity": 72,
+    "cohesionScore": 81.6
+  },
+  "Portugal": {
+    "managerialStability": 80,
+    "squadContinuity": 80,
+    "corePlayerFamiliarity": 82,
+    "cohesionScore": 80.4
+  },
+  "Senegal": {
+    "managerialStability": 60,
+    "squadContinuity": 88,
+    "corePlayerFamiliarity": 90,
+    "cohesionScore": 77.2
+  },
+  "Belgium": {
+    "managerialStability": 80,
+    "squadContinuity": 78,
+    "corePlayerFamiliarity": 80,
+    "cohesionScore": 79.2
+  },
+  "Uruguay": {
+    "managerialStability": 80,
+    "squadContinuity": 78,
+    "corePlayerFamiliarity": 80,
+    "cohesionScore": 79.2
+  },
+  "DR Congo": {
+    "managerialStability": 80,
+    "squadContinuity": 76,
+    "corePlayerFamiliarity": 78,
+    "cohesionScore": 78.0
+  },
+  "Ivory Coast": {
+    "managerialStability": 80,
+    "squadContinuity": 76,
+    "corePlayerFamiliarity": 78,
+    "cohesionScore": 78.0
+  },
+  "Netherlands": {
+    "managerialStability": 80,
+    "squadContinuity": 76,
+    "corePlayerFamiliarity": 78,
+    "cohesionScore": 78.0
+  },
+  "Iraq": {
+    "managerialStability": 80,
+    "squadContinuity": 76,
+    "corePlayerFamiliarity": 78,
+    "cohesionScore": 78.0
+  },
+  "Qatar": {
+    "managerialStability": 80,
+    "squadContinuity": 75,
+    "corePlayerFamiliarity": 76,
+    "cohesionScore": 77.2
+  },
+  "Egypt": {
+    "managerialStability": 70,
+    "squadContinuity": 75,
+    "corePlayerFamiliarity": 78,
+    "cohesionScore": 73.6
+  },
+  "England": {
+    "managerialStability": 60,
+    "squadContinuity": 84,
+    "corePlayerFamiliarity": 86,
+    "cohesionScore": 76.6
+  },
+  "Türkiye": {
+    "managerialStability": 70,
+    "squadContinuity": 72,
+    "corePlayerFamiliarity": 75,
+    "cohesionScore": 71.8
+  },
+  "Jordan": {
+    "managerialStability": 70,
+    "squadContinuity": 72,
+    "corePlayerFamiliarity": 74,
+    "cohesionScore": 71.6
+  },
+  "Canada": {
+    "managerialStability": 70,
+    "squadContinuity": 72,
+    "corePlayerFamiliarity": 74,
+    "cohesionScore": 71.6
+  },
+  "United States": {
+    "managerialStability": 60,
+    "squadContinuity": 78,
+    "corePlayerFamiliarity": 80,
+    "cohesionScore": 71.2
+  },
+  "New Zealand": {
+    "managerialStability": 70,
+    "squadContinuity": 70,
+    "corePlayerFamiliarity": 72,
+    "cohesionScore": 70.4
+  },
+  "Czech Republic": {
+    "managerialStability": 70,
+    "squadContinuity": 70,
+    "corePlayerFamiliarity": 72,
+    "cohesionScore": 70.4
+  },
+  "Mexico": {
+    "managerialStability": 60,
+    "squadContinuity": 76,
+    "corePlayerFamiliarity": 78,
+    "cohesionScore": 70.0
+  },
+  "Germany": {
+    "managerialStability": 70,
+    "squadContinuity": 70,
+    "corePlayerFamiliarity": 70,
+    "cohesionScore": 70.0
+  },
+  "Ecuador": {
+    "managerialStability": 60,
+    "squadContinuity": 75,
+    "corePlayerFamiliarity": 78,
+    "cohesionScore": 69.6
+  },
+  "Ghana": {
+    "managerialStability": 70,
+    "squadContinuity": 68,
+    "corePlayerFamiliarity": 70,
+    "cohesionScore": 69.2
+  },
+  "Brazil": {
+    "managerialStability": 60,
+    "squadContinuity": 72,
+    "corePlayerFamiliarity": 75,
+    "cohesionScore": 67.8
+  },
+  "Algeria": {
+    "managerialStability": 70,
+    "squadContinuity": 65,
+    "corePlayerFamiliarity": 68,
+    "cohesionScore": 67.6
+  },
+  "Haiti": {
+    "managerialStability": 70,
+    "squadContinuity": 65,
+    "corePlayerFamiliarity": 68,
+    "cohesionScore": 67.6
+  },
+  "Paraguay": {
+    "managerialStability": 60,
+    "squadContinuity": 70,
+    "corePlayerFamiliarity": 72,
+    "cohesionScore": 66.4
+  },
+  "Australia": {
+    "managerialStability": 60,
+    "squadContinuity": 70,
+    "corePlayerFamiliarity": 72,
+    "cohesionScore": 66.4
+  },
+  "Bosnia and Herzegovina": {
+    "managerialStability": 70,
+    "squadContinuity": 60,
+    "corePlayerFamiliarity": 62,
+    "cohesionScore": 64.4
+  },
+  "Sweden": {
+    "managerialStability": 50,
+    "squadContinuity": 68,
+    "corePlayerFamiliarity": 70,
+    "cohesionScore": 61.2
+  },
+  "Saudi Arabia": {
+    "managerialStability": 30,
+    "squadContinuity": 68,
+    "corePlayerFamiliarity": 70,
+    "cohesionScore": 53.2
+  },
+  "Tunisia": {
+    "managerialStability": 10,
+    "squadContinuity": 68,
+    "corePlayerFamiliarity": 70,
+    "cohesionScore": 45.2
+  },
+  "Curaçao": {
+    "managerialStability": 10,
+    "squadContinuity": 65,
+    "corePlayerFamiliarity": 68,
+    "cohesionScore": 43.6
+  }
+}

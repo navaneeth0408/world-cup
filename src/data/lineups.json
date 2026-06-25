@@ -1,0 +1,822 @@
+{
+  "tournament": "2026 FIFA World Cup",
+  "total_teams": 48,
+  "teams": [
+    {
+      "country_name": "Algeria",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Luca Zidane",
+        "RB": "Rafik Belghali",
+        "CB_R": "Aïssa Mandi",
+        "CB_L": "Ramy Bensebaini",
+        "LB": "Rayan Aït-Nouri",
+        "DM": "Hicham Boudaoui",
+        "CM_R": "Nabil Bentaleb",
+        "CM_L": "Ibrahim Maza",
+        "RW": "Anis Hadj Moussa",
+        "CF": "Amine Gouiri",
+        "LW": "Farès Chaïbi"
+      }
+    },
+    {
+      "country_name": "Argentina",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Emiliano Martínez",
+        "RB": "Gonzalo Montiel",
+        "CB_R": "Cristian Romero",
+        "CB_L": "Lisandro Martínez",
+        "LB": "Facundo Medina",
+        "DM": "Rodrigo De Paul",
+        "CM_R": "Alexis Mac Allister",
+        "CM_L": "Enzo Fernández",
+        "RW": "Lionel Messi",
+        "CF": "Lautaro Martínez",
+        "LW": "Thiago Almada"
+      }
+    },
+    {
+      "country_name": "Australia",
+      "formation": "3-4-2-1",
+      "starting_lineup": {
+        "GK": "Patrick Beach",
+        "CB_R": "Alessandro Circati",
+        "CB_C": "Harry Souttar",
+        "CB_L": "Cameron Burgess",
+        "RM": "Jacob Italiano",
+        "CM_R": "Paul Okon-Engstler",
+        "CM_L": "Aiden O'Neill",
+        "LM": "Connor Metcalfe",
+        "LWB": "Jordan Bos",
+        "AM": "Nestory Irankunda",
+        "CF": "Mohamed Touré"
+      }
+    },
+    {
+      "country_name": "Austria",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Alexander Schlager",
+        "RB": "Stefan Posch",
+        "CB_R": "Philipp Lienhart",
+        "CB_L": "David Alaba",
+        "LB": "Phillipp Mwene",
+        "DM": "Nicolas Seiwald",
+        "CM_R": "Xaver Schlager",
+        "CM_L": "Konrad Laimer",
+        "RW": "Romano Schmid",
+        "CF": "Saša Kalajdžić",
+        "LW": "Marcel Sabitzer"
+      }
+    },
+    {
+      "country_name": "Belgium",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Thibaut Courtois",
+        "RB": "Thomas Meunier",
+        "CB_R": "Nathan Ngoy",
+        "CB_L": "Brandon Mechele",
+        "LB": "Timothy Castagne",
+        "DM": "Amadou Onana",
+        "CM_R": "Youri Tielemans",
+        "AM": "Kevin De Bruyne",
+        "RW": "Leandro Trossard",
+        "CF": "Charles De Ketelaere",
+        "LW": "Jérémy Doku"
+      }
+    },
+    {
+      "country_name": "Bosnia and Herzegovina",
+      "formation": "4-4-2",
+      "starting_lineup": {
+        "GK": "Nikola Vasilj",
+        "RB": "Amar Dedić",
+        "CB_R": "Nikola Katić",
+        "CB_L": "Tarik Muharemović",
+        "LB": "Sead Kolašinac",
+        "RM": "Esmir Bajraktarević",
+        "CM_R": "Ivan Bašić",
+        "CM_L": "Benjamin Tahirović",
+        "LM": "Amar Memić",
+        "CF_R": "Ermedin Demirović",
+        "CF_L": "Jovo Lukić"
+      }
+    },
+    {
+      "country_name": "Brazil",
+      "formation": "4-2-3-1",
+      "starting_lineup": {
+        "GK": "Alisson",
+        "RB": "Roger Ibañez",
+        "CB_R": "Marquinhos",
+        "CB_L": "Gabriel",
+        "LB": "Douglas Santos",
+        "DM_R": "Casemiro",
+        "DM_L": "Bruno Guimarães",
+        "AM": "Lucas Paquetá",
+        "RW": "Raphinha",
+        "CF": "Igor Thiago",
+        "LW": "Vinícius Júnior"
+      }
+    },
+    {
+      "country_name": "Canada",
+      "formation": "4-4-2",
+      "starting_lineup": {
+        "GK": "Maxime Crépeau",
+        "RB": "Alistair Johnston",
+        "CB_R": "Derek Cornelius",
+        "CB_L": "Luc De Fougerolles",
+        "LB": "Richie Laryea",
+        "RM": "Tajon Buchanan",
+        "CM_R": "Stephen Eustáquio",
+        "CM_L": "Ismaël Koné",
+        "LM": "Liam Millar",
+        "CF_R": "Jonathan David",
+        "CF_L": "Tani Oluwaseyi"
+      }
+    },
+    {
+      "country_name": "Cape Verde",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Vozinha",
+        "RB": "Steven Moreira",
+        "CB_R": "Pico",
+        "CB_L": "Diney",
+        "LB": "Sidny Lopes Cabral",
+        "DM": "Kevin Pina",
+        "CM_R": "Laros Duarte",
+        "CM_L": "Jamiro Monteiro",
+        "RW": "Ryan Mendes",
+        "CF": "Dailon Livramento",
+        "LW": "Jovane Cabral"
+      }
+    },
+    {
+      "country_name": "Colombia",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Camilo Vargas",
+        "RB": "Daniel Muñoz",
+        "CB_R": "Davinson Sánchez",
+        "CB_L": "Jhon Lucumí",
+        "LB": "Johan Mojica",
+        "DM": "Jefferson Lerma",
+        "CM_R": "Gustavo Puerta",
+        "AM": "James Rodríguez",
+        "RW": "Jhon Arias",
+        "CF": "Luis Suárez",
+        "LW": "Luis Díaz"
+      }
+    },
+    {
+      "country_name": "Croatia",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Dominik Livaković",
+        "RB": "Josip Stanišić",
+        "CB_R": "Josip Šutalo",
+        "CB_L": "Luka Vušković",
+        "LB": "Joško Gvardiol",
+        "DM": "Nikola Moro",
+        "CM_R": "Luka Modrić",
+        "CM_L": "Mario Pašalić",
+        "RW": "Petar Sučić",
+        "CF": "Petar Musa",
+        "LW": "Martin Baturina"
+      }
+    },
+    {
+      "country_name": "Curaçao",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Eloy Room",
+        "RB": "Sherel Floranus",
+        "CB_R": "Riechedly Bazoer",
+        "CB_L": "Armando Obispo",
+        "LB": "Deveron Fonville",
+        "DM": "Leandro Bacuna",
+        "CM_R": "Livano Comenencia",
+        "CM_L": "Tahith Chong",
+        "RW": "Sontje Hansen",
+        "CF": "Jürgen Locadia",
+        "LW": "Juninho Bacuna"
+      }
+    },
+    {
+      "country_name": "Czech Republic",
+      "formation": "3-4-3",
+      "starting_lineup": {
+        "GK": "Matěj Kovář",
+        "CB_R": "Štěpán Chaloupek",
+        "CB_C": "Robin Hranáč",
+        "CB_L": "Ladislav Krejčí",
+        "RM": "Vladimír Coufal",
+        "CM_R": "Tomáš Souček",
+        "CM_L": "Alexandr Sojka",
+        "LM": "Jaroslav Zelený",
+        "RW": "Lukáš Provod",
+        "CF": "Patrik Schick",
+        "LW": "Pavel Šulc"
+      }
+    },
+    {
+      "country_name": "DR Congo",
+      "formation": "5-3-2",
+      "starting_lineup": {
+        "GK": "Lionel Mpasi",
+        "CB_R": "Steve Kapuadi",
+        "CB_C": "Chancel Mbemba",
+        "CB_L": "Axel Tuanzebe",
+        "RWB": "Aaron Wan-Bissaka",
+        "LWB": "Arthur Masuaku",
+        "CM_R": "Ngal'ayel Mukau",
+        "CM_C": "Samuel Moutoussamy",
+        "CM_L": "Edo Kayembe",
+        "CF_R": "Yoane Wissa",
+        "CF_L": "Cédric Bakambu"
+      }
+    },
+    {
+      "country_name": "Ecuador",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Hernán Galíndez",
+        "RB": "Alan Franco",
+        "CB_R": "Joel Ordóñez",
+        "CB_L": "Willian Pacho",
+        "LB": "Piero Hincapié",
+        "DM": "Moisés Caicedo",
+        "CM_R": "Pedro Vite",
+        "CM_L": "Alan Minda",
+        "RW": "John Yeboah",
+        "CF": "Enner Valencia",
+        "LW": "Gonzalo Plata"
+      }
+    },
+    {
+      "country_name": "Egypt",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Mohamed El Shenawy",
+        "RB": "Mohamed Hany",
+        "CB_R": "Mohamed Abdelmonem",
+        "CB_L": "Hossam Abdelmaguid",
+        "LB": "Ahmed Fatouh",
+        "DM": "Marwan Attia",
+        "CM_R": "Mohamed Alaa",
+        "CM_L": "Nabil Emad",
+        "RW": "Mohamed Salah",
+        "CF": "Omar Marmoush",
+        "LW": "Emam Ashour"
+      }
+    },
+    {
+      "country_name": "England",
+      "formation": "4-2-3-1",
+      "starting_lineup": {
+        "GK": "Jordan Pickford",
+        "RB": "Reece James",
+        "CB_R": "Ezri Konsa",
+        "CB_L": "John Stones",
+        "LB": "Nico O'Reilly",
+        "DM_R": "Declan Rice",
+        "DM_L": "Elliot Anderson",
+        "AM": "Jude Bellingham",
+        "RW": "Noni Madueke",
+        "CF": "Harry Kane",
+        "LW": "Anthony Gordon"
+      }
+    },
+    {
+      "country_name": "France",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Mike Maignan",
+        "RB": "Jules Koundé",
+        "CB_R": "Dayot Upamecano",
+        "CB_L": "William Saliba",
+        "LB": "Théo Hernandez",
+        "DM": "Aurélien Tchouaméni",
+        "CM_R": "Adrien Rabiot",
+        "AM": "Michael Olise",
+        "RW": "Ousmane Dembélé",
+        "CF": "Kylian Mbappé",
+        "LW": "Désiré Doué"
+      }
+    },
+    {
+      "country_name": "Germany",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Manuel Neuer",
+        "RB": "Joshua Kimmich",
+        "CB_R": "Jonathan Tah",
+        "CB_L": "Nico Schlotterbeck",
+        "LB": "Nathaniel Brown",
+        "DM": "Aleksandar Pavlović",
+        "CM_R": "Felix Nmecha",
+        "CM_L": "Jamal Musiala",
+        "RW": "Leroy Sané",
+        "CF": "Kai Havertz",
+        "LW": "Florian Wirtz"
+      }
+    },
+    {
+      "country_name": "Ghana",
+      "formation": "4-2-3-1",
+      "starting_lineup": {
+        "GK": "Lawrence Ati-Zigi",
+        "RB": "Marvin Senaya",
+        "CB_R": "Jonas Adjetey",
+        "CB_L": "Jerome Opoku",
+        "LB": "Gideon Mensah",
+        "DM_R": "Elisha Owusu",
+        "DM_L": "Caleb Yirenkyi",
+        "AM": "Kamaldeen Sulemana",
+        "RW": "Ernest Nuamah",
+        "CF": "Jordan Ayew",
+        "LW": "Antoine Semenyo"
+      }
+    },
+    {
+      "country_name": "Haiti",
+      "formation": "4-4-2",
+      "starting_lineup": {
+        "GK": "Johny Placide",
+        "RB": "Carlens Arcus",
+        "CB_R": "Ricardo Adé",
+        "CB_L": "Hannes Delcroix",
+        "LB": "Martin Expérience",
+        "RM": "Deedson Louicius",
+        "CM_R": "Jean-Ricner Bellegarde",
+        "CM_L": "Danley Jean Jacques",
+        "LM": "Ruben Providence",
+        "CF_R": "Wilson Isidor",
+        "CF_L": "Frantzdy Pierrot"
+      }
+    },
+    {
+      "country_name": "Iran",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Alireza Beiranvand",
+        "RB": "Ramin Rezaeian",
+        "CB_R": "Shojae Khalilzadeh",
+        "CB_L": "Ali Nemati",
+        "LB": "Milad Mohammadi",
+        "DM": "Saeid Ezatolahi",
+        "CM_R": "Saman Ghoddos",
+        "CM_L": "Mehdi Taremi",
+        "RW": "Mohammad Mohebi",
+        "CF": "Shahriyar Moghanlou",
+        "LW": "Aria Yousefi"
+      }
+    },
+    {
+      "country_name": "Iraq",
+      "formation": "4-4-2",
+      "starting_lineup": {
+        "GK": "Jalal Hassan",
+        "RB": "Hussein Ali",
+        "CB_R": "Zaid Tahseen",
+        "CB_L": "Akam Hashim",
+        "LB": "Merchas Doski",
+        "RM": "Ibrahim Bayesh",
+        "CM_R": "Zaid Ismail",
+        "CM_L": "Amir Al-Ammari",
+        "LM": "Ali Jasim",
+        "CF_R": "Aymen Hussein",
+        "CF_L": "Ali Al-Hamadi"
+      }
+    },
+    {
+      "country_name": "Ivory Coast",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Yahia Fofana",
+        "RB": "Guéla Doué",
+        "CB_R": "Wilfried Singo",
+        "CB_L": "Emmanuel Agbadou",
+        "LB": "Ghislain Konan",
+        "DM": "Franck Kessié",
+        "CM_R": "Seko Fofana",
+        "CM_L": "Yan Diomande",
+        "RW": "Nicolas Pépé",
+        "CF": "Elye Wahi",
+        "LW": "Bazoumana Touré"
+      }
+    },
+    {
+      "country_name": "Japan",
+      "formation": "3-4-3",
+      "starting_lineup": {
+        "GK": "Zion Suzuki",
+        "CB_R": "Tsuyoshi Watanabe",
+        "CB_C": "Shōgo Taniguchi",
+        "CB_L": "Hiroki Itō",
+        "RM": "Ritsu Dōan",
+        "CM_R": "Kaishū Sano",
+        "CM_L": "Daichi Kamada",
+        "LM": "Keito Nakamura",
+        "RW": "Takefusa Kubo",
+        "CF": "Ayase Ueda",
+        "LW": "Daizen Maeda"
+      }
+    },
+    {
+      "country_name": "Jordan",
+      "formation": "5-3-2",
+      "starting_lineup": {
+        "GK": "Yazeed Abulaila",
+        "CB_R": "Abdallah Nasib",
+        "CB_C": "Mo Abualnadi",
+        "CB_L": "Yazan Al-Arab",
+        "RWB": "Ihsan Haddad",
+        "LWB": "Mohannad Abu Taha",
+        "CM_R": "Noor Al-Rawabdeh",
+        "CM_C": "Nizar Al-Rashdan",
+        "CM_L": "Odeh Al-Fakhouri",
+        "CF_R": "Musa Al-Taamari",
+        "CF_L": "Ali Olwan"
+      }
+    },
+    {
+      "country_name": "Mexico",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Raúl Rangel",
+        "RB": "Israel Reyes",
+        "CB_R": "César Montes",
+        "CB_L": "Johan Vásquez",
+        "LB": "Jesús Gallardo",
+        "DM": "Erik Lira",
+        "CM_R": "Álvaro Fidalgo",
+        "CM_L": "Brian Gutiérrez",
+        "RW": "Roberto Alvarado",
+        "CF": "Raúl Jiménez",
+        "LW": "Julián Quiñones"
+      }
+    },
+    {
+      "country_name": "Morocco",
+      "formation": "4-2-3-1",
+      "starting_lineup": {
+        "GK": "Yassine Bounou",
+        "RB": "Achraf Hakimi",
+        "CB_R": "Issa Diop",
+        "CB_L": "Chadi Riad",
+        "LB": "Noussair Mazraoui",
+        "DM_R": "Neil El Aynaoui",
+        "DM_L": "Ayyoub Bouaddi",
+        "AM": "Azzedine Ounahi",
+        "RW": "Brahim Díaz",
+        "CF": "Ismael Saibari",
+        "LW": "Bilal El Khannouss"
+      }
+    },
+    {
+      "country_name": "Netherlands",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Bart Verbruggen",
+        "RB": "Denzel Dumfries",
+        "CB_R": "Jan Paul van Hecke",
+        "CB_L": "Virgil van Dijk",
+        "LB": "Micky van de Ven",
+        "DM": "Frenkie de Jong",
+        "CM_R": "Ryan Gravenberch",
+        "CM_L": "Tijjani Reijnders",
+        "RW": "Crysencio Summerville",
+        "CF": "Donyell Malen",
+        "LW": "Cody Gakpo"
+      }
+    },
+    {
+      "country_name": "New Zealand",
+      "formation": "4-4-2",
+      "starting_lineup": {
+        "GK": "Max Crocombe",
+        "RB": "Tim Payne",
+        "CB_R": "Finn Surman",
+        "CB_L": "Michael Boxall",
+        "LB": "Liberato Cacace",
+        "RM": "Sarpreet Singh",
+        "CM_R": "Joe Bell",
+        "CM_L": "Marko Stamenić",
+        "LM": "Elijah Just",
+        "CF_R": "Chris Wood",
+        "CF_L": "Callum McCowatt"
+      }
+    },
+    {
+      "country_name": "Norway",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Ørjan Nyland",
+        "RB": "Julian Ryerson",
+        "CB_R": "Kristoffer Ajer",
+        "CB_L": "Torbjørn Heggem",
+        "LB": "David Møller Wolfe",
+        "DM": "Sander Berge",
+        "CM_R": "Martin Ødegaard",
+        "CM_L": "Fredrik Aursnes",
+        "RW": "Alexander Sørloth",
+        "CF": "Erling Haaland",
+        "LW": "Antonio Nusa"
+      }
+    },
+    {
+      "country_name": "Panama",
+      "formation": "4-4-2",
+      "starting_lineup": {
+        "GK": "Orlando Mosquera",
+        "RB": "Michael Amir Murillo",
+        "CB_R": "Jiovany Ramos",
+        "CB_L": "José Córdoba",
+        "LB": "Andrés Andrade",
+        "RM": "César Blackman",
+        "CM_R": "Carlos Harvey",
+        "CM_L": "Cristian Martínez",
+        "LM": "Yoel Bárcenas",
+        "CF_R": "Cecilio Waterman",
+        "CF_L": "José Luis Rodríguez"
+      }
+    },
+    {
+      "country_name": "Paraguay",
+      "formation": "4-4-2",
+      "starting_lineup": {
+        "GK": "Orlando Gill",
+        "RB": "Juan Cáceres",
+        "CB_R": "Gustavo Gómez",
+        "CB_L": "Omar Alderete",
+        "LB": "Júnior Alonso",
+        "RM": "Miguel Almirón",
+        "CM_R": "Damián Bobadilla",
+        "CM_L": "Andrés Cubas",
+        "LM": "Diego Gómez",
+        "CF_R": "Julio Enciso",
+        "CF_L": "Antonio Sanabria"
+      }
+    },
+    {
+      "country_name": "Portugal",
+      "formation": "4-2-3-1",
+      "starting_lineup": {
+        "GK": "Diogo Costa",
+        "RB": "João Cancelo",
+        "CB_R": "Tomás Araújo",
+        "CB_L": "Renato Veiga",
+        "LB": "Nuno Mendes",
+        "DM_R": "Vitinha",
+        "DM_L": "João Neves",
+        "AM": "Bruno Fernandes",
+        "RW": "Bernardo Silva",
+        "CF": "Cristiano Ronaldo",
+        "LW": "Pedro Neto"
+      }
+    },
+    {
+      "country_name": "Qatar",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Mahmud Abunada",
+        "RB": "Hashmi Hussein",
+        "CB_R": "Boualem Khoukhi",
+        "CB_L": "Pedro Miguel",
+        "LB": "Homam Ahmed",
+        "DM": "Ahmed Fathi",
+        "CM_R": "Jassem Gaber",
+        "CM_L": "Assim Madibo",
+        "RW": "Edmilson Junior",
+        "CF": "Yusuf Abdurisag",
+        "LW": "Akram Afif"
+      }
+    },
+    {
+      "country_name": "Saudi Arabia",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Mohammed Al-Owais",
+        "RB": "Saud Abdulhamid",
+        "CB_R": "Hassan Al-Tambakti",
+        "CB_L": "Abdulelah Al-Amri",
+        "LB": "Moteb Al-Harbi",
+        "DM": "Abdullah Al-Khaibari",
+        "CM_R": "Mohammed Abu Al-Shamat",
+        "CM_L": "Mohamed Kanno",
+        "RW": "Musab Al-Juwayr",
+        "CF": "Firas Al-Buraikan",
+        "LW": "Salem Al-Dawsari"
+      }
+    },
+    {
+      "country_name": "Scotland",
+      "formation": "4-4-2",
+      "starting_lineup": {
+        "GK": "Angus Gunn",
+        "RB": "Aaron Hickey",
+        "CB_R": "Grant Hanley",
+        "CB_L": "Jack Hendry",
+        "LB": "Andy Robertson",
+        "RM": "Ben Gannon-Doak",
+        "CM_R": "Scott McTominay",
+        "CM_L": "Lewis Ferguson",
+        "LM": "John McGinn",
+        "CF_R": "Lawrence Shankland",
+        "CF_L": "Ché Adams"
+      }
+    },
+    {
+      "country_name": "Senegal",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Édouard Mendy",
+        "RB": "Krépin Diatta",
+        "CB_R": "Kalidou Koulibaly",
+        "CB_L": "Moussa Niakhaté",
+        "LB": "El Hadji Malick Diouf",
+        "DM": "Lamine Camara",
+        "CM_R": "Idrissa Gueye",
+        "CM_L": "Pape Gueye",
+        "RW": "Ismaïla Sarr",
+        "CF": "Nicolas Jackson",
+        "LW": "Sadio Mané"
+      }
+    },
+    {
+      "country_name": "South Africa",
+      "formation": "5-3-2",
+      "starting_lineup": {
+        "GK": "Ronwen Williams",
+        "CB_R": "Nkosinathi Sibisi",
+        "CB_C": "Ime Okon",
+        "CB_L": "Mbekezeli Mbokazi",
+        "RWB": "Khuliso Mudau",
+        "LWB": "Aubrey Modiba",
+        "CM_R": "Jayden Adams",
+        "CM_C": "Sphephelo Sithole",
+        "CM_L": "Teboho Mokoena",
+        "CF_R": "Lyle Foster",
+        "CF_L": "Iqraam Rayners"
+      }
+    },
+    {
+      "country_name": "South Korea",
+      "formation": "3-4-3",
+      "starting_lineup": {
+        "GK": "Kim Seung-gyu",
+        "CB_R": "Lee Han-beom",
+        "CB_C": "Kim Min-jae",
+        "CB_L": "Lee Gi-hyuk",
+        "RM": "Seol Young-woo",
+        "CM_R": "Hwang In-beom",
+        "CM_L": "Paik Seung-ho",
+        "LM": "Lee Tae-seok",
+        "RW": "Lee Kang-in",
+        "CF": "Son Heung-min",
+        "LW": "Lee Jae-sung"
+      }
+    },
+    {
+      "country_name": "Spain",
+      "formation": "4-3-3",
+      "starting_lineup": {
+        "GK": "Unai Simón",
+        "RB": "Marcos Llorente",
+        "CB_R": "Pau Cubarsí",
+        "CB_L": "Aymeric Laporte",
+        "LB": "Marc Cucurella",
+        "DM": "Rodri",
+        "CM_R": "Pedri",
+        "CM_L": "Fabián Ruiz",
+        "RW": "Lamine Yamal",
+        "CF": "Mikel Oyarzabal",
+        "LW": "Nico Williams"
+      }
+    },
+    {
+      "country_name": "Sweden",
+      "formation": "3-5-2",
+      "starting_lineup": {
+        "GK": "Kristoffer Nordfeldt",
+        "CB_R": "Gustaf Lagerbielke",
+        "CB_C": "Isak Hien",
+        "CB_L": "Victor Lindelöf",
+        "RWB": "Alexander Bernhardsson",
+        "LWB": "Gabriel Gudmundsson",
+        "CM_R": "Jesper Karlström",
+        "CM_L": "Yasin Ayari",
+        "AM": "Benjamin Nygren",
+        "CF_R": "Viktor Gyökeres",
+        "CF_L": "Alexander Isak"
+      }
+    },
+    {
+      "country_name": "Switzerland",
+      "formation": "4-2-3-1",
+      "starting_lineup": {
+        "GK": "Gregor Kobel",
+        "RB": "Denis Zakaria",
+        "CB_R": "Manuel Akanji",
+        "CB_L": "Nico Elvedi",
+        "LB": "Ricardo Rodriguez",
+        "DM_R": "Michel Aebischer",
+        "DM_L": "Granit Xhaka",
+        "AM": "Remo Freuler",
+        "RW": "Dan Ndoye",
+        "CF": "Breel Embolo",
+        "LW": "Rubén Vargas"
+      }
+    },
+    {
+      "country_name": "Tunisia",
+      "formation": "5-3-2",
+      "starting_lineup": {
+        "GK": "Mouhib Chamakh",
+        "CB_R": "Omar Rekik",
+        "CB_C": "Montassar Talbi",
+        "LB": "Mohamed Amine Ben Hamida",
+        "RWB": "Yan Valery",
+        "LWB": "Ali Abdi",
+        "CM_R": "Rani Khedira",
+        "CM_C": "Ellyes Skhiri",
+        "AM": "Hannibal Mejbri",
+        "CF_R": "Elias Saad",
+        "CF_L": "Anis Ben Slimane"
+      }
+    },
+    {
+      "country_name": "Turkey",
+      "formation": "4-2-3-1",
+      "starting_lineup": {
+        "GK": "Uğurcan Çakır",
+        "RB": "Zeki Çelik",
+        "CB_R": "Merih Demiral",
+        "CB_L": "Abdülkerim Bardakcı",
+        "LB": "Ferdi Kadıoğlu",
+        "DM_R": "İsmail Yüksek",
+        "DM_L": "Orkun Kökçü",
+        "AM": "Arda Güler",
+        "RW": "Yunus Akgün",
+        "CF": "Deniz Gül",
+        "LW": "Kenan Yıldız"
+      }
+    },
+    {
+      "country_name": "United States",
+      "formation": "3-4-3",
+      "starting_lineup": {
+        "GK": "Matt Freese",
+        "CB_R": "Alex Freeman",
+        "CB_C": "Chris Richards",
+        "CB_L": "Tim Ream",
+        "RM": "Sergiño Dest",
+        "CM_R": "Tyler Adams",
+        "CM_L": "Malik Tillman",
+        "LM": "Antonee Robinson",
+        "RW": "Weston McKennie",
+        "CF": "Folarin Balogun",
+        "LW": "Christian Pulisic"
+      }
+    },
+    {
+      "country_name": "Uruguay",
+      "formation": "4-4-2",
+      "starting_lineup": {
+        "GK": "Fernando Muslera",
+        "RB": "Guillermo Varela",
+        "CB_R": "Sebastián Cáceres",
+        "CB_L": "Mathías Olivera",
+        "LB": "Matías Viña",
+        "RM": "Federico Valverde",
+        "CM_R": "Manuel Ugarte",
+        "CM_L": "Rodrigo Bentancur",
+        "LM": "Maximiliano Araújo",
+        "CF_R": "Federico Viñas",
+        "CF_L": "Darwin Núñez"
+      }
+    },
+    {
+      "country_name": "Uzbekistan",
+      "formation": "3-4-2-1",
+      "starting_lineup": {
+        "GK": "Utkir Yusupov",
+        "CB_R": "Rustam Ashurmatov",
+        "CB_C": "Abdukodir Khusanov",
+        "CB_L": "Umar Eshmurodov",
+        "RM": "Abdulla Abdullaev",
+        "CM_R": "Otabek Shukurov",
+        "CM_L": "Khojiakbar Alijonov",
+        "LM": "Sherzod Nasrullaev",
+        "AM_R": "Abbosbek Fayzullaev",
+        "AM_L": "Oston Urunov",
+        "CF": "Eldor Shomurodov"
+      }
+    }
+  ]
+}

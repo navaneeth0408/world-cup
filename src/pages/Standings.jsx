@@ -6,6 +6,17 @@ import Flag from '../components/ui/Flag';
 import Card from '../components/ui/Card';
 import Modal from '../components/ui/Modal';
 import { Trophy, Goal, Hand, Shield, Users, BarChart3, AlertCircle, Activity, Sparkles } from 'lucide-react';
+import lineupsData from '../data/lineups.json';
+
+const normalizeName = (name) => {
+    if (!name) return "";
+    return name
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]/g, "")
+        .trim();
+};
 
 const Standings = () => {
     const { teams, matches, loading } = useTournament();
@@ -82,7 +93,27 @@ const Standings = () => {
     }, [teams, matches]);
 
     const getTeamGoalkeeper = (team) => {
-        if (!team || !team.squad) return 'Unknown GK';
+        if (!team) return 'Unknown GK';
+        
+        // Find starting GK in lineupsData
+        const normalizedTeamName = normalizeName(team.name);
+        const lineupInfo = lineupsData?.teams?.find(
+            t => normalizeName(t.country_name) === normalizedTeamName
+        );
+        
+        if (lineupInfo?.starting_lineup?.GK) {
+            const gkName = lineupInfo.starting_lineup.GK;
+            // Match with squad to keep spelling/accents consistent with current_squads.json
+            if (team.squad) {
+                const normalizedGkName = normalizeName(gkName);
+                const squadPlayer = team.squad.find(p => normalizeName(p.name) === normalizedGkName);
+                if (squadPlayer) return squadPlayer.name;
+            }
+            return gkName;
+        }
+
+        // Fallback to squad logic
+        if (!team.squad) return 'Unknown GK';
         const gk = team.squad.find(p => p.position === 'GK' && p.number === 1) || team.squad.find(p => p.position === 'GK');
         return gk ? gk.name : 'Unknown GK';
     };

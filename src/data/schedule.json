@@ -1,0 +1,730 @@
+[
+  {
+    "match_id": 1,
+    "date": "June 12 Friday",
+    "time": "12.30 AM",
+    "match_details": "Mexico vs South Africa",
+    "location": "Mexico City"
+  },
+  {
+    "match_id": 2,
+    "date": "June 12 Friday",
+    "time": "7:30 AM",
+    "match_details": "South Korea vs Czechia",
+    "location": "Zapopan"
+  },
+  {
+    "match_id": 3,
+    "date": "June 13 Saturday",
+    "time": "12.30 AM",
+    "match_details": "Canada vs Bosnia and Herzegovina",
+    "location": "Toronto"
+  },
+  {
+    "match_id": 4,
+    "date": "June 13 Saturday",
+    "time": "6:30 AM",
+    "match_details": "USA vs Paraguay",
+    "location": "Los Angeles"
+  },
+  {
+    "match_id": 5,
+    "date": "June 14 Sunday",
+    "time": "12:30 AM",
+    "match_details": "Qatar vs Switzerland",
+    "location": "Santa Clara"
+  },
+  {
+    "match_id": 6,
+    "date": "June 14 Sunday",
+    "time": "3:30 AM",
+    "match_details": "Brazil vs Morocco",
+    "location": "New Jersey"
+  },
+  {
+    "match_id": 7,
+    "date": "June 14 Sunday",
+    "time": "6:30 AM",
+    "match_details": "Haiti vs Scotland",
+    "location": "Foxborough"
+  },
+  {
+    "match_id": 8,
+    "date": "June 14 Sunday",
+    "time": "9:30 AM",
+    "match_details": "Australia vs Turkey",
+    "location": "Vancouver"
+  },
+  {
+    "match_id": 9,
+    "date": "June 14 Sunday",
+    "time": "10:30 PM",
+    "match_details": "Germany vs Curaçao",
+    "location": "Houston"
+  },
+  {
+    "match_id": 10,
+    "date": "June 15 Monday",
+    "time": "1:30 AM",
+    "match_details": "Netherlands vs Japan",
+    "location": "Arlington"
+  },
+  {
+    "match_id": 11,
+    "date": "June 15 Monday",
+    "time": "4.30 AM",
+    "match_details": "Ivory Coast vs Ecuador",
+    "location": "Philadelphia"
+  },
+  {
+    "match_id": 12,
+    "date": "June 15 Monday",
+    "time": "7:30 AM",
+    "match_details": "Sweden vs Tunisia",
+    "location": "Guadalajara"
+  },
+  {
+    "match_id": 13,
+    "date": "June 15 Monday",
+    "time": "9:30 PM",
+    "match_details": "Spain vs Cape Verde",
+    "location": "Atlanta"
+  },
+  {
+    "match_id": 14,
+    "date": "June 16 Tuesday",
+    "time": "12:30 AM",
+    "match_details": "Belgium vs Egypt",
+    "location": "Seattle"
+  },
+  {
+    "match_id": 15,
+    "date": "June 16 Tuesday",
+    "time": "3:30 AM",
+    "match_details": "Saudi Arabia vs Uruguay",
+    "location": "Miami"
+  },
+  {
+    "match_id": 16,
+    "date": "June 16 Tuesday",
+    "time": "6:30 AM",
+    "match_details": "Iran vs New Zealand",
+    "location": "Los Angeles"
+  },
+  {
+    "match_id": 17,
+    "date": "June 17 Wednesday",
+    "time": "12.30 AM",
+    "match_details": "France vs Senegal",
+    "location": "New Jersey"
+  },
+  {
+    "match_id": 18,
+    "date": "June 17 Wednesday",
+    "time": "3:30 AM",
+    "match_details": "Iraq vs Norway",
+    "location": "Foxborough"
+  },
+  {
+    "match_id": 19,
+    "date": "June 17 Wednesday",
+    "time": "6:30 AM",
+    "match_details": "Argentina vs Algeria",
+    "location": "Kansas City"
+  },
+  {
+    "match_id": 20,
+    "date": "June 17 Wednesday",
+    "time": "9.30 AM",
+    "match_details": "Austria vs Jordan",
+    "location": "Santa Clara"
+  },
+  {
+    "match_id": 21,
+    "date": "June 17 Wednesday",
+    "time": "10:30 PM",
+    "match_details": "Portugal vs DR Congo",
+    "location": "Houston"
+  },
+  {
+    "match_id": 22,
+    "date": "June 18 Thursday",
+    "time": "1.30 AM",
+    "match_details": "England vs Croatia",
+    "location": "Arlington"
+  },
+  {
+    "match_id": 23,
+    "date": "June 18 Thursday",
+    "time": "4:30 AM",
+    "match_details": "Ghana vs Panama",
+    "location": "Toronto"
+  },
+  {
+    "match_id": 24,
+    "date": "June 18 Thursday",
+    "time": "7:30 AM",
+    "match_details": "Uzbekistan vs Colombia",
+    "location": "Mexico City"
+  },
+  {
+    "match_id": 25,
+    "date": "June 18 Thursday",
+    "time": "9:30 PM",
+    "match_details": "Czechia vs South Africa",
+    "location": "Atlanta"
+  },
+  {
+    "match_id": 26,
+    "date": "June 19 Friday",
+    "time": "12:30 AM",
+    "match_details": "Switzerland vs Bosnia and Herzegovina",
+    "location": "Los Angeles"
+  },
+  {
+    "match_id": 27,
+    "date": "June 19 Friday",
+    "time": "3:30 AM",
+    "match_details": "Canada vs Qatar",
+    "location": "Vancouver"
+  },
+  {
+    "match_id": 28,
+    "date": "June 19 Friday",
+    "time": "6.30 AM",
+    "match_details": "Mexico vs South Korea",
+    "location": "Zapopan"
+  },
+  {
+    "match_id": 29,
+    "date": "June 20 Saturday",
+    "time": "12.30 AM",
+    "match_details": "USA vs Australia",
+    "location": "Seattle"
+  },
+  {
+    "match_id": 30,
+    "date": "June 20 Saturday",
+    "time": "3:30 AM",
+    "match_details": "Scotland vs Morocco",
+    "location": "Foxborough"
+  },
+  {
+    "match_id": 31,
+    "date": "June 20 Saturday",
+    "time": "6 AM",
+    "match_details": "Brazil vs Haiti",
+    "location": "Philadelphia"
+  },
+  {
+    "match_id": 32,
+    "date": "June 20 Saturday",
+    "time": "8.30 AM",
+    "match_details": "Turkey vs Paraguay",
+    "location": "Santa Clara"
+  },
+  {
+    "match_id": 33,
+    "date": "June 20 Saturday",
+    "time": "10:30 PM",
+    "match_details": "Netherlands vs Sweden",
+    "location": "Houston"
+  },
+  {
+    "match_id": 34,
+    "date": "June 21 Sunday",
+    "time": "1.30 AM",
+    "match_details": "Germany vs Ivory Coast",
+    "location": "Toronto"
+  },
+  {
+    "match_id": 35,
+    "date": "June 21 Sunday",
+    "time": "5.30 AM",
+    "match_details": "Ecuador vs Curaçao",
+    "location": "Kansas City"
+  },
+  {
+    "match_id": 36,
+    "date": "June 21 Sunday",
+    "time": "9.30 AM",
+    "match_details": "Tunisia vs Japan",
+    "location": "Guadalajara"
+  },
+  {
+    "match_id": 37,
+    "date": "June 21 Sunday",
+    "time": "9:30 PM",
+    "match_details": "Spain vs Saudi Arabia",
+    "location": "Atlanta"
+  },
+  {
+    "match_id": 38,
+    "date": "June 22 Monday",
+    "time": "12.30 AM",
+    "match_details": "Belgium vs Iran",
+    "location": "Los Angeles"
+  },
+  {
+    "match_id": 39,
+    "date": "June 22 Monday",
+    "time": "3.30 AM",
+    "match_details": "Uruguay vs Cape Verde",
+    "location": "Miami"
+  },
+  {
+    "match_id": 40,
+    "date": "June 22 Monday",
+    "time": "6.30 AM",
+    "match_details": "New Zealand vs Egypt",
+    "location": "Vancouver"
+  },
+  {
+    "match_id": 41,
+    "date": "June 22 Monday",
+    "time": "10:30 PM",
+    "match_details": "Argentina vs Austria",
+    "location": "Arlington"
+  },
+  {
+    "match_id": 42,
+    "date": "June 23 Tuesday",
+    "time": "2.30 AM",
+    "match_details": "France vs Iraq",
+    "location": "Philadelphia"
+  },
+  {
+    "match_id": 43,
+    "date": "June 23 Tuesday",
+    "time": "5.30 AM",
+    "match_details": "Norway vs Senegal",
+    "location": "Toronto"
+  },
+  {
+    "match_id": 44,
+    "date": "June 23 Tuesday",
+    "time": "8:30 AM",
+    "match_details": "Jordan vs Algeria",
+    "location": "Santa Clara"
+  },
+  {
+    "match_id": 45,
+    "date": "June 23 Tuesday",
+    "time": "10:30 PM",
+    "match_details": "Portugal vs Uzbekistan",
+    "location": "Houston"
+  },
+  {
+    "match_id": 46,
+    "date": "June 24 Wednesday",
+    "time": "1.30 AM",
+    "match_details": "England vs Ghana",
+    "location": "Foxborough"
+  },
+  {
+    "match_id": 47,
+    "date": "June 24 Wednesday",
+    "time": "4:30 AM",
+    "match_details": "Panama vs Croatia",
+    "location": "Foxborough"
+  },
+  {
+    "match_id": 48,
+    "date": "June 24 Wednesday",
+    "time": "7:30 AM",
+    "match_details": "Colombia vs DR Congo",
+    "location": "Zapopan"
+  },
+  {
+    "match_id": 49,
+    "date": "June 25 Thursday",
+    "time": "12:30 AM",
+    "match_details": "Switzerland vs Canada",
+    "location": "Vancouver"
+  },
+  {
+    "match_id": 50,
+    "date": "June 25 Thursday",
+    "time": "12:30 AM",
+    "match_details": "Bosnia and Herzegovina vs Qatar",
+    "location": "Seattle"
+  },
+  {
+    "match_id": 51,
+    "date": "June 25 Thursday",
+    "time": "3.30 AM",
+    "match_details": "Morocco vs Haiti",
+    "location": "Atlanta"
+  },
+  {
+    "match_id": 52,
+    "date": "June 25 Thursday",
+    "time": "3.30 AM",
+    "match_details": "Scotland vs Brazil",
+    "location": "Miami"
+  },
+  {
+    "match_id": 53,
+    "date": "June 25 Thursday",
+    "time": "6.30 AM",
+    "match_details": "South Africa vs South Korea",
+    "location": "Guadalajara"
+  },
+  {
+    "match_id": 54,
+    "date": "June 25 Thursday",
+    "time": "6.30 AM",
+    "match_details": "Czechia vs Mexico",
+    "location": "Mexico City"
+  },
+  {
+    "match_id": 55,
+    "date": "June 26 Friday",
+    "time": "1.30 AM",
+    "match_details": "Curaçao vs Ivory Coast",
+    "location": "Philadelphia"
+  },
+  {
+    "match_id": 56,
+    "date": "June 26 Friday",
+    "time": "1.30 AM",
+    "match_details": "Ecuador vs Germany",
+    "location": "New Jersey"
+  },
+  {
+    "match_id": 57,
+    "date": "June 26 Friday",
+    "time": "4.30 AM",
+    "match_details": "Tunisia vs Netherlands",
+    "location": "Kansas City"
+  },
+  {
+    "match_id": 58,
+    "date": "June 26 Friday",
+    "time": "4.30 AM",
+    "match_details": "Japan vs Sweden",
+    "location": "Arlington"
+  },
+  {
+    "match_id": 59,
+    "date": "June 26 Friday",
+    "time": "7:30 AM",
+    "match_details": "Turkey vs USA",
+    "location": "Los Angeles"
+  },
+  {
+    "match_id": 60,
+    "date": "June 26 Friday",
+    "time": "7:30 AM",
+    "match_details": "Paraguay vs Australia",
+    "location": "Santa Clara"
+  },
+  {
+    "match_id": 61,
+    "date": "June 27 Saturday",
+    "time": "12.30 AM",
+    "match_details": "Norway vs France",
+    "location": "Foxborough"
+  },
+  {
+    "match_id": 62,
+    "date": "June 27 Saturday",
+    "time": "12.30 AM",
+    "match_details": "Senegal vs Iraq",
+    "location": "Toronto"
+  },
+  {
+    "match_id": 63,
+    "date": "June 27 Saturday",
+    "time": "5.30 AM",
+    "match_details": "Cape Verde vs Saudi Arabia",
+    "location": "Houston"
+  },
+  {
+    "match_id": 64,
+    "date": "June 27 Saturday",
+    "time": "5.30 AM",
+    "match_details": "Uruguay vs Spain",
+    "location": "Zapopan"
+  },
+  {
+    "match_id": 65,
+    "date": "June 27 Saturday",
+    "time": "8:30 AM",
+    "match_details": "New Zealand vs Belgium",
+    "location": "Vancouver"
+  },
+  {
+    "match_id": 66,
+    "date": "June 27 Saturday",
+    "time": "8:30 AM",
+    "match_details": "Egypt vs Iran",
+    "location": "Seattle"
+  },
+  {
+    "match_id": 67,
+    "date": "June 28 Sunday",
+    "time": "2:30 AM",
+    "match_details": "Panama vs England",
+    "location": "New Jersey"
+  },
+  {
+    "match_id": 68,
+    "date": "June 28 Sunday",
+    "time": "2:30 AM",
+    "match_details": "Croatia vs Ghana",
+    "location": "Philadelphia"
+  },
+  {
+    "match_id": 69,
+    "date": "June 28 Sunday",
+    "time": "5 AM",
+    "match_details": "Colombia vs Portugal",
+    "location": "Miami"
+  },
+  {
+    "match_id": 70,
+    "date": "June 28 Sunday",
+    "time": "5 AM",
+    "match_details": "DR Congo vs Uzbekistan",
+    "location": "Atlanta"
+  },
+  {
+    "match_id": 71,
+    "date": "June 28 Sunday",
+    "time": "7.30 AM",
+    "match_details": "Algeria vs Austria",
+    "location": "Kansas City"
+  },
+  {
+    "match_id": 72,
+    "date": "June 28 Sunday",
+    "time": "7.30 AM",
+    "match_details": "Jordan vs Argentina",
+    "location": "Arlington"
+  },
+  {
+    "match_id": 73,
+    "date": "Jun 29 Monday",
+    "time": "12:30 AM",
+    "match_details": "Round of 32: Group A runners-up vs Group B runners-up",
+    "location": "Los Angeles"
+  },
+  {
+    "match_id": 74,
+    "date": "June 29 Monday",
+    "time": "10:30 PM",
+    "match_details": "R-32: Group C winners vs Group F runners-up",
+    "location": "Houston"
+  },
+  {
+    "match_id": 75,
+    "date": "June 30 Tuesday",
+    "time": "2 AM",
+    "match_details": "R-32: Group E winners vs Best Third-Placed Team",
+    "location": "Foxborough"
+  },
+  {
+    "match_id": 76,
+    "date": "June 30 Tuesday",
+    "time": "6:30 AM",
+    "match_details": "R-32: Group F winners vs Group C runners-up",
+    "location": "Guadalajara"
+  },
+  {
+    "match_id": 77,
+    "date": "June 30 Tuesday",
+    "time": "10.30 PM",
+    "match_details": "R-32: Group E runners-up vs Group I runners-up",
+    "location": "Arlington"
+  },
+  {
+    "match_id": 78,
+    "date": "July 1 Wednesday",
+    "time": "2:30 AM",
+    "match_details": "R-32: Group I winners vs Best Third-Placed Team",
+    "location": "New Jersey"
+  },
+  {
+    "match_id": 79,
+    "date": "July 1 Wednesday",
+    "time": "6:30 AM",
+    "match_details": "R-32: Group A winners vs Best Third-Placed Team",
+    "location": "Mexico City"
+  },
+  {
+    "match_id": 80,
+    "date": "July 1 Wednesday",
+    "time": "9:30 PM",
+    "match_details": "R-32: Group L winners vs Best Third-Placed Team",
+    "location": "Atlanta"
+  },
+  {
+    "match_id": 81,
+    "date": "July 2 Thursday",
+    "time": "1.30 AM",
+    "match_details": "R-32: Group G winners vs Best Third-Placed Team",
+    "location": "Seattle"
+  },
+  {
+    "match_id": 82,
+    "date": "July 2 Thursday",
+    "time": "1.30 AM",
+    "match_details": "R-32: Group D winners vs Best Third-Placed Team",
+    "location": "Santa Clara"
+  },
+  {
+    "match_id": 83,
+    "date": "July 2 Thursday",
+    "time": "5:30 AM",
+    "match_details": "R-32: Group H winners vs Group J runners-up",
+    "location": "Los Angeles"
+  },
+  {
+    "match_id": 84,
+    "date": "July 3 Friday",
+    "time": "12:30 AM",
+    "match_details": "R-32: Group K runners-up vs Group L runners-up",
+    "location": "Toronto"
+  },
+  {
+    "match_id": 85,
+    "date": "July 3 Friday",
+    "time": "4:30 AM",
+    "match_details": "R-32: Group B winners vs Best Third-Placed Team",
+    "location": "Vancouver"
+  },
+  {
+    "match_id": 86,
+    "date": "July 3 Friday",
+    "time": "8:30 AM",
+    "match_details": "R-32: Group D runners-up vs Group G runners-up",
+    "location": "Arlington"
+  },
+  {
+    "match_id": 87,
+    "date": "July 3 Friday",
+    "time": "11.30 PM",
+    "match_details": "R-32: Group J winners vs Group H runners-up",
+    "location": "Miami"
+  },
+  {
+    "match_id": 88,
+    "date": "July 4 Saturday",
+    "time": "3:30 AM",
+    "match_details": "R-32: Group K winners vs Best Third-Placed Team",
+    "location": "Kansas City"
+  },
+  {
+    "match_id": 89,
+    "date": "July 4 Saturday",
+    "time": "7:00 AM",
+    "match_details": "Round of 16: Winner Match 73 vs Winner Match 75",
+    "location": "Houston"
+  },
+  {
+    "match_id": 90,
+    "date": "July 4 Saturday",
+    "time": "10:30 PM",
+    "match_details": "R16: Winner Match 74 vs Winner Match 77",
+    "location": "Philadelphia"
+  },
+  {
+    "match_id": 91,
+    "date": "July 5 Sunday",
+    "time": "2:30 AM",
+    "match_details": "R16: Winner Match 76 vs Winner Match 78",
+    "location": "New Jersey"
+  },
+  {
+    "match_id": 92,
+    "date": "July 6 Monday",
+    "time": "1:30 AM",
+    "match_details": "R16: Winner Match 79 vs Winner Match 80",
+    "location": "Mexico City"
+  },
+  {
+    "match_id": 93,
+    "date": "July 6 Monday",
+    "time": "5:30 AM",
+    "match_details": "R16: Winner Match 83 vs Winner Match 84",
+    "location": "Arlington"
+  },
+  {
+    "match_id": 94,
+    "date": "July 7 Tuesday",
+    "time": "1:30 AM",
+    "match_details": "R16: Winner Match 81 vs Winner Match 82",
+    "location": "Seattle"
+  },
+  {
+    "match_id": 95,
+    "date": "July 7 Tuesday",
+    "time": "9:30 PM",
+    "match_details": "R16: Winner Match 86 vs Winner Match 88",
+    "location": "Atlanta"
+  },
+  {
+    "match_id": 96,
+    "date": "July 8 Wednesday",
+    "time": "1:30 AM",
+    "match_details": "R16: Winner Match 85 vs Winner Match 87",
+    "location": "Vancouver"
+  },
+  {
+    "match_id": 97,
+    "date": "July 10 Friday",
+    "time": "1:30 AM",
+    "match_details": "Quarterfinals: Winner Match 89 vs Winner Match 90",
+    "location": "Foxborough"
+  },
+  {
+    "match_id": 98,
+    "date": "July 11 Saturday",
+    "time": "12.30 AM",
+    "match_details": "QF: Winner Match 93 vs Winner Match 94",
+    "location": "Los Angeles"
+  },
+  {
+    "match_id": 99,
+    "date": "July 12 Sunday",
+    "time": "2:30 AM",
+    "match_details": "QF: Winner Match 91 vs Winner Match 92",
+    "location": "Miami"
+  },
+  {
+    "match_id": 100,
+    "date": "July 12 Sunday",
+    "time": "6.30 AM",
+    "match_details": "QF: Winner Match 95 vs Winner Match 96",
+    "location": "Kansas City"
+  },
+  {
+    "match_id": 101,
+    "date": "July 15 Wednesday",
+    "time": "12.30 AM",
+    "match_details": "Semifinal 1: Winner Match 97 vs Winner Match 98",
+    "location": "Arlington"
+  },
+  {
+    "match_id": 102,
+    "date": "July 16 Thursday",
+    "time": "12.30 AM",
+    "match_details": "SF 1: Winner Match 99 vs Winner Match 100",
+    "location": "Atlanta"
+  },
+  {
+    "match_id": 103,
+    "date": "July 19 Sunday",
+    "time": "2:30 AM",
+    "match_details": "Third Place: Loser Match 101 vs Loser Match 102",
+    "location": "Miami"
+  },
+  {
+    "match_id": 104,
+    "date": "July 20 Monday",
+    "time": "12.30 AM",
+    "match_details": "Final: Winner Match 101 vs Winner Match 102",
+    "location": "New Jersey"
+  }
+]

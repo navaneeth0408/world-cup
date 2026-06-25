@@ -89,6 +89,13 @@ export const useTournamentStore = create((set) => ({
     )
   })),
 
+  // NEW: Update a single team's strengths
+  updateTeamStrengths: (teamId, strengths) => set((state) => ({
+    teams: state.teams.map(t =>
+      t.id === teamId ? { ...t, ...strengths } : t
+    )
+  })),
+
   // NEW: Bulk update multiple teams at once (from AI squad sync)
   syncSquads: (updatedTeams) => set((state) => ({
     teams: state.teams.map(t => {

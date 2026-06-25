@@ -1,0 +1,194 @@
+{
+  "Algeria": {
+    "marketValue": 256.9,
+    "squadScore": 59
+  },
+  "Argentina": {
+    "marketValue": 807.5,
+    "squadScore": 85
+  },
+  "Australia": {
+    "marketValue": 77.45,
+    "squadScore": 30
+  },
+  "Austria": {
+    "marketValue": 245.2,
+    "squadScore": 54
+  },
+  "Belgium": {
+    "marketValue": 547.5,
+    "squadScore": 82
+  },
+  "Bosnia and Herzegovina": {
+    "marketValue": 146.4,
+    "squadScore": 40
+  },
+  "Brazil": {
+    "marketValue": 928.2,
+    "squadScore": 90
+  },
+  "Canada": {
+    "marketValue": 198.65,
+    "squadScore": 50
+  },
+  "Cape Verde": {
+    "marketValue": 49.25,
+    "squadScore": 24
+  },
+  "Colombia": {
+    "marketValue": 302.35,
+    "squadScore": 60
+  },
+  "Croatia": {
+    "marketValue": 387.3,
+    "squadScore": 70
+  },
+  "Curacao": {
+    "marketValue": 25.78,
+    "squadScore": 12
+  },
+  "Czechia": {
+    "marketValue": 188.18,
+    "squadScore": 46
+  },
+  "DR Congo": {
+    "marketValue": 143.9,
+    "squadScore": 38
+  },
+  "Ecuador": {
+    "marketValue": 368.7,
+    "squadScore": 66
+  },
+  "Egypt": {
+    "marketValue": 116.48,
+    "squadScore": 34
+  },
+  "England": {
+    "marketValue": 1360.0,
+    "squadScore": 98
+  },
+  "France": {
+    "marketValue": 1520.0,
+    "squadScore": 100
+  },
+  "Germany": {
+    "marketValue": 947.0,
+    "squadScore": 92
+  },
+  "Ghana": {
+    "marketValue": 234.5,
+    "squadScore": 52
+  },
+  "Haiti": {
+    "marketValue": 55.9,
+    "squadScore": 26
+  },
+  "Iran": {
+    "marketValue": 32.05,
+    "squadScore": 14
+  },
+  "Iraq": {
+    "marketValue": 21.2,
+    "squadScore": 10
+  },
+  "Ivory Coast": {
+    "marketValue": 522.1,
+    "squadScore": 80
+  },
+  "Japan": {
+    "marketValue": 270.85,
+    "squadScore": 58
+  },
+  "Jordan": {
+    "marketValue": 20.3,
+    "squadScore": 8
+  },
+  "Mexico": {
+    "marketValue": 191.85,
+    "squadScore": 48
+  },
+  "Morocco": {
+    "marketValue": 447.7,
+    "squadScore": 74
+  },
+  "Netherlands": {
+    "marketValue": 754.2,
+    "squadScore": 86
+  },
+  "New Zealand": {
+    "marketValue": 34.45,
+    "squadScore": 16
+  },
+  "Norway": {
+    "marketValue": 589.9,
+    "squadScore": 84
+  },
+  "Panama": {
+    "marketValue": 34.55,
+    "squadScore": 18
+  },
+  "Paraguay": {
+    "marketValue": 153.65,
+    "squadScore": 42
+  },
+  "Portugal": {
+    "marketValue": 1010.0,
+    "squadScore": 94
+  },
+  "Qatar": {
+    "marketValue": 19.93,
+    "squadScore": 6
+  },
+  "Saudi Arabia": {
+    "marketValue": 40.68,
+    "squadScore": 20
+  },
+  "Scotland": {
+    "marketValue": 170.25,
+    "squadScore": 44
+  },
+  "Senegal": {
+    "marketValue": 478.1,
+    "squadScore": 78
+  },
+  "South Africa": {
+    "marketValue": 49.25,
+    "squadScore": 22
+  },
+  "South Korea": {
+    "marketValue": 139.05,
+    "squadScore": 36
+  },
+  "Spain": {
+    "marketValue": 1220.0,
+    "squadScore": 96
+  },
+  "Sweden": {
+    "marketValue": 406.08,
+    "squadScore": 72
+  },
+  "Switzerland": {
+    "marketValue": 332.5,
+    "squadScore": 62
+  },
+  "Tunisia": {
+    "marketValue": 69.95,
+    "squadScore": 28
+  },
+  "Turkiye": {
+    "marketValue": 473.7,
+    "squadScore": 76
+  },
+  "USA": {
+    "marketValue": 385.6,
+    "squadScore": 68
+  },
+  "Uruguay": {
+    "marketValue": 359.3,
+    "squadScore": 64
+  },
+  "Uzbekistan": {
+    "marketValue": 85.33,
+    "squadScore": 32
+  }
+}

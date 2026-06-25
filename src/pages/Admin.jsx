@@ -6,7 +6,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Badge from '../components/ui/Badge';
 import Flag from '../components/ui/Flag';
-import { Lock, Save, Search, Plus, Trash2, Users, RefreshCw, CheckCircle, AlertCircle, BarChart3, ChevronUp, ChevronDown, Sparkles } from 'lucide-react';
+import { Lock, Save, Search, Plus, Trash2, Users, RefreshCw, CheckCircle, AlertCircle, BarChart3, ChevronUp, ChevronDown, Sparkles, Edit2, X, Check } from 'lucide-react';
 import { getTeamStrengthDetails } from '../utils/simulationHelpers';
 
 const normalizeTeamName = (name) => {
@@ -74,12 +74,66 @@ const Admin = () => {
     const [password, setPassword] = useState('');
     const [isAuthorized, setIsAuthorized] = useState(false);
     const { matches, teams, loading } = useTournament();
-    const { updateMatchScore, syncWithOnline } = useTournamentStore();
+    const { updateMatchScore, syncWithOnline, updateTeamStrengths } = useTournamentStore();
     const [searchTerm, setSearchTerm] = useState('');
     const [localState, setLocalState] = useState({});
     const [isSyncing, setIsSyncing] = useState(false);
     const [syncStatus, setSyncStatus] = useState('');
     const [aiUpdating, setAiUpdating] = useState({});
+
+    // Strengths editing states
+    const [editingTeamId, setEditingTeamId] = useState(null);
+    const [editingStrengths, setEditingStrengths] = useState({});
+    const [isSavingStrengths, setIsSavingStrengths] = useState(false);
+
+    const handleStartEditStrengths = (team) => {
+        setEditingTeamId(team.id);
+        setEditingStrengths({
+            fifaRanking: team.fifaRanking,
+            fifaScore: team.fifaScore,
+            marketValue: team.marketValue,
+            squadScore: team.squadScore,
+            continentalScore: team.continentalScore,
+            historyScore: team.historyScore,
+            worldCupRecentScore: team.worldCupRecentScore
+        });
+    };
+
+    const handleCancelEditStrengths = () => {
+        setEditingTeamId(null);
+        setEditingStrengths({});
+    };
+
+    const handleSaveStrengths = async (teamId, teamName) => {
+        setIsSavingStrengths(true);
+        try {
+            const payload = {
+                teamId,
+                teamName,
+                ...editingStrengths
+            };
+            const response = await fetch('/api/save-team-strengths', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+            const data = await response.json();
+            if (response.ok && data.success) {
+                updateTeamStrengths(teamId, editingStrengths);
+                setEditingTeamId(null);
+                setEditingStrengths({});
+                alert('Team strengths updated successfully!');
+            } else {
+                alert('Failed to update team strengths: ' + (data.error || 'Unknown error'));
+            }
+        } catch (err) {
+            alert('Error updating team strengths: ' + err.message);
+        } finally {
+            setIsSavingStrengths(false);
+        }
+    };
 
     const [activeTab, setActiveTab] = useState('results'); // results | strengths
     const [sortField, setSortField] = useState('powerScore');
@@ -737,7 +791,7 @@ For teamId use lowercase country name without spaces.`;
                         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-800 pb-4 mb-6 gap-2">
                             <div>
                                 <h3 className="text-lg font-black text-white uppercase italic tracking-tight">Team Strengths Dashboard</h3>
-                                <p className="text-xs text-gray-500 font-medium mt-0.5">FIFA Score: 35% | Recent WC: 25% | Continental: 15% | Squad: 15% | History: 10%</p>
+                                <p className="text-xs text-gray-500 font-medium mt-0.5">FIFA Rank: 25% | Squad: 20% | Form: 15% | Cohesion: 15% | Continental: 7.5% | History: 7.5% | Recent WC: 5% | Adaptability: 5% (Hosts USA, Canada, Mexico receive +10% overall Power Score boost)</p>
                             </div>
                             <Badge variant="success" className="bg-green-500/10 text-green-400 border border-green-500/20 font-black">
                                 48 Teams Configured
@@ -745,7 +799,7 @@ For teamId use lowercase country name without spaces.`;
                         </div>
 
                         <div className="overflow-x-auto">
-                            <table className="w-full text-left text-xs border-collapse min-w-[800px]">
+                            <table className="w-full text-left text-xs border-collapse min-w-[1200px]">
                                 <thead>
                                     <tr className="text-[10px] text-gray-500 uppercase tracking-widest border-b border-gray-800">
                                         <th className="px-3 py-3">Rank</th>
@@ -761,27 +815,47 @@ For teamId use lowercase country name without spaces.`;
                                         </th>
                                         <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('fifaScore')}>
                                             <div className="flex items-center justify-center gap-1">
-                                                FIFA (35%) {sortField === 'fifaScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
+                                                FIFA (25%) {sortField === 'fifaScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
                                             </div>
                                         </th>
-                                        <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('worldCupRecentScore')}>
+                                        <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('marketValue')}>
                                             <div className="flex items-center justify-center gap-1">
-                                                Recent WC (25%) {sortField === 'worldCupRecentScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
-                                            </div>
-                                        </th>
-                                        <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('continentalScore')}>
-                                            <div className="flex items-center justify-center gap-1">
-                                                Continental (15%) {sortField === 'continentalScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
+                                                Squad Value (€M) {sortField === 'marketValue' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
                                             </div>
                                         </th>
                                         <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('squadScore')}>
                                             <div className="flex items-center justify-center gap-1">
-                                                Squad (15%) {sortField === 'squadScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
+                                                Squad (20%) {sortField === 'squadScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
+                                            </div>
+                                        </th>
+                                        <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('formScore')}>
+                                            <div className="flex items-center justify-center gap-1">
+                                                Form (15%) {sortField === 'formScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
+                                            </div>
+                                        </th>
+                                        <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('cohesionScore')}>
+                                            <div className="flex items-center justify-center gap-1">
+                                                Cohesion (15%) {sortField === 'cohesionScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
+                                            </div>
+                                        </th>
+                                        <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('continentalScore')}>
+                                            <div className="flex items-center justify-center gap-1">
+                                                Continental (7.5%) {sortField === 'continentalScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
                                             </div>
                                         </th>
                                         <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('historyScore')}>
                                             <div className="flex items-center justify-center gap-1">
-                                                History (10%) {sortField === 'historyScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
+                                                History (7.5%) {sortField === 'historyScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
+                                            </div>
+                                        </th>
+                                        <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('worldCupRecentScore')}>
+                                            <div className="flex items-center justify-center gap-1">
+                                                Recent WC (5%) {sortField === 'worldCupRecentScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
+                                            </div>
+                                        </th>
+                                        <th className="px-3 py-3 text-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('adaptabilityScore')}>
+                                            <div className="flex items-center justify-center gap-1">
+                                                Adaptability (5%) {sortField === 'adaptabilityScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
                                             </div>
                                         </th>
                                         <th className="px-3 py-3 text-right cursor-pointer hover:text-white transition-colors text-green-400 font-bold" onClick={() => handleSort('powerScore')}>
@@ -789,27 +863,156 @@ For teamId use lowercase country name without spaces.`;
                                                 Power Score {sortField === 'powerScore' && (sortDirection === 'asc' ? <ChevronUp className="w-3.5 h-3.5 text-green-400" /> : <ChevronDown className="w-3.5 h-3.5 text-green-400" />)}
                                             </div>
                                         </th>
+                                        <th className="px-3 py-3 text-right text-gray-500 uppercase tracking-widest">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-850/60">
-                                    {filteredAndSortedTeams.map((team, idx) => (
-                                        <tr key={team.id} className="hover:bg-gray-950/40 transition-colors">
-                                            <td className="px-3 py-3.5 font-bold text-gray-500">{idx + 1}</td>
-                                            <td className="px-3 py-3.5">
-                                                <div className="flex items-center gap-3">
-                                                    <Flag code={team.countryCode} style={{ fontSize: '1.2rem' }} />
-                                                    <span className="font-bold text-white uppercase">{team.name}</span>
-                                                </div>
-                                            </td>
-                                            <td className="px-3 py-3.5 text-center text-gray-400 font-bold">#{team.fifaRanking}</td>
-                                            <td className="px-3 py-3.5 text-center text-gray-300 font-medium">{team.fifaScore.toFixed(2)}</td>
-                                            <td className="px-3 py-3.5 text-center text-gray-300 font-medium">{team.worldCupRecentScore.toFixed(2)}</td>
-                                            <td className="px-3 py-3.5 text-center text-gray-300 font-medium">{team.continentalScore.toFixed(2)}</td>
-                                            <td className="px-3 py-3.5 text-center text-gray-300 font-medium">{team.squadScore.toFixed(2)}</td>
-                                            <td className="px-3 py-3.5 text-center text-gray-300 font-medium">{team.historyScore.toFixed(2)}</td>
-                                            <td className="px-3 py-3.5 text-right font-black text-sm text-green-400">{team.powerScore.toFixed(2)}</td>
-                                        </tr>
-                                    ))}
+                                    {filteredAndSortedTeams.map((team, idx) => {
+                                        const isEditing = editingTeamId === team.id;
+                                        return (
+                                            <tr key={team.id} className={`hover:bg-gray-950/40 transition-colors ${isEditing ? 'bg-green-500/5' : ''}`}>
+                                                <td className="px-3 py-3.5 font-bold text-gray-500">{idx + 1}</td>
+                                                <td className="px-3 py-3.5">
+                                                    <div className="flex items-center gap-3">
+                                                        <Flag code={team.countryCode} style={{ fontSize: '1.2rem' }} />
+                                                        <span className="font-bold text-white uppercase">{team.name}</span>
+                                                    </div>
+                                                </td>
+                                                <td className="px-3 py-3.5 text-center text-gray-400 font-bold">
+                                                    {isEditing ? (
+                                                        <input
+                                                            type="number"
+                                                            value={editingStrengths.fifaRanking || ''}
+                                                            onChange={(e) => setEditingStrengths(prev => ({ ...prev, fifaRanking: parseInt(e.target.value) || 0 }))}
+                                                            className="w-16 bg-gray-950 border border-gray-800 rounded px-1.5 py-1 text-center text-xs text-white focus:outline-none focus:border-green-500 font-bold"
+                                                        />
+                                                    ) : (
+                                                        `#${team.fifaRanking}`
+                                                    )}
+                                                </td>
+                                                <td className="px-3 py-3.5 text-center text-gray-300 font-medium">
+                                                    {isEditing ? (
+                                                        <input
+                                                            type="number"
+                                                            step="0.01"
+                                                            value={editingStrengths.fifaScore !== undefined ? editingStrengths.fifaScore : ''}
+                                                            onChange={(e) => setEditingStrengths(prev => ({ ...prev, fifaScore: parseFloat(e.target.value) || 0 }))}
+                                                            className="w-16 bg-gray-950 border border-gray-800 rounded px-1.5 py-1 text-center text-xs text-white focus:outline-none focus:border-green-500"
+                                                        />
+                                                    ) : (
+                                                        team.fifaScore.toFixed(2)
+                                                    )}
+                                                </td>
+                                                <td className="px-3 py-3.5 text-center text-gray-300 font-medium">
+                                                    {isEditing ? (
+                                                        <input
+                                                            type="number"
+                                                            step="0.1"
+                                                            value={editingStrengths.marketValue !== undefined ? editingStrengths.marketValue : ''}
+                                                            onChange={(e) => setEditingStrengths(prev => ({ ...prev, marketValue: parseFloat(e.target.value) || 0 }))}
+                                                            className="w-20 bg-gray-950 border border-gray-800 rounded px-1.5 py-1 text-center text-xs text-white focus:outline-none focus:border-green-500"
+                                                        />
+                                                    ) : (
+                                                        `€${team.marketValue?.toFixed(1) || '0.0'}M`
+                                                    )}
+                                                </td>
+                                                <td className="px-3 py-3.5 text-center text-gray-300 font-medium">
+                                                    {isEditing ? (
+                                                        <input
+                                                            type="number"
+                                                            step="0.01"
+                                                            value={editingStrengths.squadScore !== undefined ? editingStrengths.squadScore : ''}
+                                                            onChange={(e) => setEditingStrengths(prev => ({ ...prev, squadScore: parseFloat(e.target.value) || 0 }))}
+                                                            className="w-16 bg-gray-950 border border-gray-800 rounded px-1.5 py-1 text-center text-xs text-white focus:outline-none focus:border-green-500"
+                                                        />
+                                                    ) : (
+                                                        team.squadScore.toFixed(2)
+                                                    )}
+                                                </td>
+                                                <td className="px-3 py-3.5 text-center text-gray-500 font-medium">{team.formScore.toFixed(2)}</td>
+                                                <td className="px-3 py-3.5 text-center text-gray-500 font-medium">{team.cohesionScore.toFixed(2)}</td>
+                                                <td className="px-3 py-3.5 text-center text-gray-300 font-medium">
+                                                    {isEditing ? (
+                                                        <input
+                                                            type="number"
+                                                            step="0.01"
+                                                            value={editingStrengths.continentalScore !== undefined ? editingStrengths.continentalScore : ''}
+                                                            onChange={(e) => setEditingStrengths(prev => ({ ...prev, continentalScore: parseFloat(e.target.value) || 0 }))}
+                                                            className="w-16 bg-gray-950 border border-gray-800 rounded px-1.5 py-1 text-center text-xs text-white focus:outline-none focus:border-green-500"
+                                                        />
+                                                    ) : (
+                                                        team.continentalScore.toFixed(2)
+                                                    )}
+                                                </td>
+                                                <td className="px-3 py-3.5 text-center text-gray-300 font-medium">
+                                                    {isEditing ? (
+                                                        <input
+                                                            type="number"
+                                                            step="0.01"
+                                                            value={editingStrengths.historyScore !== undefined ? editingStrengths.historyScore : ''}
+                                                            onChange={(e) => setEditingStrengths(prev => ({ ...prev, historyScore: parseFloat(e.target.value) || 0 }))}
+                                                            className="w-16 bg-gray-950 border border-gray-800 rounded px-1.5 py-1 text-center text-xs text-white focus:outline-none focus:border-green-500"
+                                                        />
+                                                    ) : (
+                                                        team.historyScore.toFixed(2)
+                                                    )}
+                                                </td>
+                                                <td className="px-3 py-3.5 text-center text-gray-300 font-medium">
+                                                    {isEditing ? (
+                                                        <input
+                                                            type="number"
+                                                            step="0.01"
+                                                            value={editingStrengths.worldCupRecentScore !== undefined ? editingStrengths.worldCupRecentScore : ''}
+                                                            onChange={(e) => setEditingStrengths(prev => ({ ...prev, worldCupRecentScore: parseFloat(e.target.value) || 0 }))}
+                                                            className="w-16 bg-gray-950 border border-gray-800 rounded px-1.5 py-1 text-center text-xs text-white focus:outline-none focus:border-green-500"
+                                                        />
+                                                    ) : (
+                                                        team.worldCupRecentScore.toFixed(2)
+                                                    )}
+                                                </td>
+                                                <td className="px-3 py-3.5 text-center text-gray-500 font-medium">{team.adaptabilityScore.toFixed(2)}</td>
+                                                <td className="px-3 py-3.5 text-right">
+                                                    <div className="flex flex-col items-end justify-center">
+                                                        <span className="font-black text-sm text-green-400">{team.powerScore.toFixed(2)}</span>
+                                                        {team.isHostBoosted && (
+                                                            <span className="text-[9px] text-blue-400 font-bold uppercase tracking-wider mt-0.5" title="10% host nation advantage applied">
+                                                                Host Boosted
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                </td>
+                                                <td className="px-3 py-3.5 text-right">
+                                                    {isEditing ? (
+                                                        <div className="flex items-center justify-end gap-1.5">
+                                                            <button
+                                                                onClick={() => handleSaveStrengths(team.id, team.name)}
+                                                                disabled={isSavingStrengths}
+                                                                className="p-1 hover:bg-green-500/10 rounded transition-colors text-green-400 disabled:opacity-50"
+                                                                title="Save"
+                                                            >
+                                                                <Check className="w-4 h-4" />
+                                                            </button>
+                                                            <button
+                                                                onClick={handleCancelEditStrengths}
+                                                                className="p-1 hover:bg-red-500/10 rounded transition-colors text-red-400"
+                                                                title="Cancel"
+                                                            >
+                                                                <X className="w-4 h-4" />
+                                                            </button>
+                                                        </div>
+                                                    ) : (
+                                                        <button
+                                                            onClick={() => handleStartEditStrengths(team)}
+                                                            className="p-1 hover:bg-gray-800 rounded transition-colors text-gray-400 hover:text-white"
+                                                            title="Edit"
+                                                        >
+                                                            <Edit2 className="w-4 h-4" />
+                                                        </button>
+                                                    )}
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
                                 </tbody>
                             </table>
                         </div>

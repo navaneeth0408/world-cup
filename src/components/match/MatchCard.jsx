@@ -4,26 +4,7 @@ import Card from '../ui/Card';
 import Badge from '../ui/Badge';
 import Flag from '../ui/Flag';
 import { venues } from '../../data/worldcup2026';
-
-const formatMatchDate = (dateStr, timeStr, timeZone) => {
-    if (!dateStr) return '';
-    const isoStr = `${dateStr}T${timeStr || '00:00'}:00Z`;
-    const date = new Date(isoStr);
-    if (isNaN(date.getTime())) return dateStr;
-    try {
-        const formatter = new Intl.DateTimeFormat('en-US', {
-            timeZone,
-            month: 'short',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: '2-digit',
-            hour12: true
-        });
-        return formatter.format(date);
-    } catch (e) {
-        return dateStr;
-    }
-};
+import { formatMatchDateTimeShort } from '../../utils/schedule';
 
 const MatchCard = ({ match, teams, timeZone = 'UTC' }) => {
     const navigate = useNavigate();
@@ -67,7 +48,7 @@ const MatchCard = ({ match, teams, timeZone = 'UTC' }) => {
                         </div>
                     )}
                     <span className="text-[9px] text-slate-400 uppercase tracking-widest text-center mt-1 leading-normal">
-                        {formatMatchDate(match.date, match.time, timeZone)}
+                        {formatMatchDateTimeShort(match.date, match.time, timeZone)}
                     </span>
                 </div>
 

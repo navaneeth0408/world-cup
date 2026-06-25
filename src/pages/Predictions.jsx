@@ -4,6 +4,7 @@ import { usePrediction } from '../hooks/usePrediction';
 import Navbar from '../components/ui/Navbar';
 import PredictionCard from '../components/predictions/PredictionCard';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
+import { getRoundOf32Pairings } from '../utils/knockoutAllocation';
 import { LayoutGrid, Filter, Trophy, User, Cpu, Award } from 'lucide-react';
 import GroupTable from '../components/simulator/GroupTable';
 import KnockoutBracket from '../components/simulator/KnockoutBracket';
@@ -319,7 +320,8 @@ const Predictions = () => {
                     roundOf16: activeKnockouts.roundOf16,
                     quarterFinals: activeKnockouts.quarterFinals,
                     semiFinals: activeKnockouts.semiFinals,
-                    final: [activeKnockouts.final]
+                    final: [activeKnockouts.final],
+                    thirdPlace: activeKnockouts.thirdPlace
                   }}
                 />
               </div>
@@ -410,59 +412,7 @@ const PredictionInputForm = ({ match, teams, onSave, onCancel, initialHome, init
   );
 };
 
-const assignThirdPlaceTeams = (bestThird) => {
-  const assignments = {
-    E: null, I: null, A: null, L: null, D: null, G: null, B: null, K: null
-  };
-  const allowed = {
-    E: ['A', 'B', 'C', 'D', 'F'],
-    I: ['C', 'D', 'F', 'G', 'H'],
-    A: ['C', 'E', 'F', 'H', 'I'],
-    L: ['E', 'H', 'I', 'J', 'K'],
-    D: ['B', 'E', 'F', 'I', 'J'],
-    G: ['A', 'E', 'H', 'I', 'J'],
-    B: ['E', 'F', 'G', 'I', 'J'],
-    K: ['D', 'E', 'I', 'J', 'L']
-  };
 
-  const pool = [...bestThird];
-  const keys = ['E', 'I', 'A', 'L', 'D', 'G', 'B', 'K'];
-
-  const match = (index) => {
-    if (index === keys.length) return true;
-    const key = keys[index];
-    const allowedGroups = allowed[key];
-
-    for (let i = 0; i < pool.length; i++) {
-      const team = pool[i];
-      if (team && allowedGroups.includes(team.group)) {
-        assignments[key] = team;
-        pool[i] = null;
-        if (match(index + 1)) return true;
-        pool[i] = team;
-        assignments[key] = null;
-      }
-    }
-    return false;
-  };
-
-  const success = match(0);
-
-  if (!success) {
-    const remainingPool = [...bestThird];
-    keys.forEach(key => {
-      if (!assignments[key]) {
-        const idx = remainingPool.findIndex(t => t !== null);
-        if (idx !== -1) {
-          assignments[key] = remainingPool[idx];
-          remainingPool[idx] = null;
-        }
-      }
-    });
-  }
-
-  return assignments;
-};
 
 const computeStandings = (teams, matches, userPredictions, isUser = false) => {
   if (!teams.length || !matches.length) return {};
@@ -585,45 +535,11 @@ const computeKnockouts = (teams, matches, groupStandings) => {
   const w = (group) => groupStandings[group]?.[0];
   const ru = (group) => groupStandings[group]?.[1];
 
-  const thirdPlaceAllocations = assignThirdPlaceTeams(bestThird);
-
-  const pairings = [
-    // Match 73 vs Match 74
-    { t1: getTeam(ru('A'), 'A runner-up'), t2: getTeam(ru('B'), 'B runner-up') },
-    { t1: getTeam(w('E'), 'Group E winner'), t2: getTeam(thirdPlaceAllocations['E'], 'E/A/B/C/D/F 3rd') },
-
-    // Match 75 vs Match 76
-    { t1: getTeam(w('F'), 'Group F winner'), t2: getTeam(ru('C'), 'C runner-up') },
-    { t1: getTeam(w('C'), 'Group C winner'), t2: getTeam(ru('F'), 'F runner-up') },
-
-    // Match 77 vs Match 78
-    { t1: getTeam(w('I'), 'Group I winner'), t2: getTeam(thirdPlaceAllocations['I'], 'I/C/D/F/G/H 3rd') },
-    { t1: getTeam(ru('E'), 'E runner-up'), t2: getTeam(ru('I'), 'I runner-up') },
-
-    // Match 79 vs Match 80
-    { t1: getTeam(w('A'), 'Group A winner'), t2: getTeam(thirdPlaceAllocations['A'], 'A/C/E/F/H/I 3rd') },
-    { t1: getTeam(w('L'), 'Group L winner'), t2: getTeam(thirdPlaceAllocations['L'], 'L/E/H/I/J/K 3rd') },
-
-    // Match 81 vs Match 82
-    { t1: getTeam(w('D'), 'Group D winner'), t2: getTeam(thirdPlaceAllocations['D'], 'D/B/E/F/I/J 3rd') },
-    { t1: getTeam(w('G'), 'Group G winner'), t2: getTeam(thirdPlaceAllocations['G'], 'G/A/E/H/I/J 3rd') },
-
-    // Match 83 vs Match 84
-    { t1: getTeam(ru('K'), 'K runner-up'), t2: getTeam(ru('L'), 'L runner-up') },
-    { t1: getTeam(w('H'), 'Group H winner'), t2: getTeam(ru('J'), 'J runner-up') },
-
-    // Match 85 vs Match 86
-    { t1: getTeam(w('B'), 'Group B winner'), t2: getTeam(thirdPlaceAllocations['B'], 'B/E/F/G/I/J 3rd') },
-    { t1: getTeam(w('J'), 'Group J winner'), t2: getTeam(ru('H'), 'H runner-up') },
-
-    // Match 87 vs Match 88
-    { t1: getTeam(w('K'), 'Group K winner'), t2: getTeam(thirdPlaceAllocations['K'], 'K/D/E/I/J/L 3rd') },
-    { t1: getTeam(ru('D'), 'D runner-up'), t2: getTeam(ru('G'), 'G runner-up') }
-  ];
+  const pairings = getRoundOf32Pairings(w, ru, bestThird, getTeam, false);
 
   const predictKnockoutMatch = (teamA, teamB) => {
     if (!teamA || !teamB || teamA.id === 'tbd' || teamB.id === 'tbd') {
-      return { t1: teamA, t2: teamB, score: [0, 0], winner: teamA || teamB };
+      return { t1: teamA, t2: teamB, score: [0, 0], winner: teamA || teamB, loser: null };
     }
     const pred = getPrediction(teamA, teamB);
     let goalsA = 0;
@@ -662,7 +578,8 @@ const computeKnockouts = (teams, matches, groupStandings) => {
         }
       }
     }
-    return { t1: teamA, t2: teamB, score: [finalGoalsA, finalGoalsB], winner };
+    const loser = (winner && teamA && winner.id === teamA.id) ? teamB : teamA;
+    return { t1: teamA, t2: teamB, score: [finalGoalsA, finalGoalsB], winner, loser };
   };
 
   const runPredictiveKnockoutRound = (roundMatches) => {
@@ -687,6 +604,7 @@ const computeKnockouts = (teams, matches, groupStandings) => {
   const qf = runPredictiveKnockoutRound(r16.matches);
   const sf = runPredictiveKnockoutRound(qf.matches);
   const finalMatch = predictKnockoutMatch(sf.nextRound[0], sf.nextRound[1]);
+  const thirdPlaceMatch = predictKnockoutMatch(sf.matches[0].loser, sf.matches[1].loser);
 
   return {
     roundOf32: r32Matches,
@@ -694,6 +612,7 @@ const computeKnockouts = (teams, matches, groupStandings) => {
     quarterFinals: qf.matches,
     semiFinals: sf.matches,
     final: finalMatch,
+    thirdPlace: thirdPlaceMatch,
     winner: finalMatch.winner
   };
 };

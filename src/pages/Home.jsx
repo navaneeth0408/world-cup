@@ -11,47 +11,6 @@ import { useNavigate } from 'react-router-dom';
 import HeroBackground from '../components/home/HeroBackground';
 import CinematicSlideshow from '../components/home/CinematicSlideshow';
 import Flag from '../components/ui/Flag';
-
-const getLocalDateString = (dateStr, timeStr, timeZone) => {
-  if (!dateStr) return '';
-  const isoStr = `${dateStr}T${timeStr || '00:00'}:00Z`;
-  const date = new Date(isoStr);
-  if (isNaN(date.getTime())) return dateStr;
-  try {
-    const formatter = new Intl.DateTimeFormat('en-US', {
-      timeZone,
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    });
-    const parts = formatter.formatToParts(date);
-    const year = parts.find(p => p.type === 'year').value;
-    const month = parts.find(p => p.type === 'month').value;
-    const day = parts.find(p => p.type === 'day').value;
-    return `${year}-${month}-${day}`;
-  } catch (e) {
-    return dateStr;
-  }
-};
-
-const getTodayString = (timeZone) => {
-  try {
-    const formatter = new Intl.DateTimeFormat('en-US', {
-      timeZone,
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    });
-    const parts = formatter.formatToParts(new Date());
-    const year = parts.find(p => p.type === 'year').value;
-    const month = parts.find(p => p.type === 'month').value;
-    const day = parts.find(p => p.type === 'day').value;
-    return `${year}-${month}-${day}`;
-  } catch (e) {
-    return '2026-06-14';
-  }
-};
-
 // Player Images - Last Dance
 import messiImg from '../assets/players/last-dance/Messi.jpg';
 import ronaldoImg from '../assets/players/last-dance/Cr7.jpg';
@@ -73,6 +32,9 @@ import viniciusImg from '../assets/players/next-gen/Vinicius.jpg';
 import dembeleImg from '../assets/players/next-gen/Dembele.jpg';
 import mbappeImg from '../assets/players/next-gen/Mbappe.jpg';
 import wirtzImg from '../assets/players/next-gen/wirtz.jpg';
+import alvarezImg from '../assets/players/next-gen/Alvarez.jpg';
+import endrickImg from '../assets/players/next-gen/ones-to-watch/endrick.jpg';
+import vitinhaImg from '../assets/players/next-gen/ones-to-watch/vitinha.jpg';
 
 const Home = () => {
   const { teams, matches, groupStandings, loading } = useTournament();
@@ -140,7 +102,7 @@ const Home = () => {
     return upcomingMatches.slice(0, 8);
   }, [upcomingMatches]);
 
-  const lastDancePlayers = [
+  const theLastDance = [
     { id: 'lionel-messi', name: 'Lionel Messi', country: 'Argentina', flag: '🇦🇷', club: 'Inter Miami CF', image: messiImg },
     { id: 'cristiano-ronaldo', name: 'Cristiano Ronaldo', country: 'Portugal', flag: '🇵🇹', club: 'Al Nassr', image: ronaldoImg },
     { id: 'neymar-jr', name: 'Neymar Jr', country: 'Brazil', flag: '🇧🇷', club: 'Santos', image: neymarImg },
@@ -152,16 +114,22 @@ const Home = () => {
     { id: 'harry-kane', name: 'Harry Kane', country: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', club: 'FC Bayern Munich', image: kaneImg },
   ];
 
-  const nextGenPlayers = [
-    { id: 'lamine-yamal', name: 'Lamine Yamal', country: 'Spain', flag: '🇪🇸', club: 'FC Barcelona', image: yamalImg },
+  const readyToTakeOver = [
+    { id: 'kylian-mbappe', name: 'Kylian Mbappé', country: 'France', flag: '🇫🇷', club: 'Real Madrid', image: mbappeImg },
+    { id: 'pedri', name: 'Pedri', country: 'Spain', flag: '🇪🇸', club: 'FC Barcelona', image: pedriImg },
     { id: 'jude-bellingham', name: 'Jude Bellingham', country: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', club: 'Real Madrid', image: bellinghamImg },
     { id: 'vinicius-junior', name: 'Vinícius Júnior', country: 'Brazil', flag: '🇧🇷', club: 'Real Madrid', image: viniciusImg },
-    { id: 'jamal-musiala', name: 'Jamal Musiala', country: 'Germany', flag: '🇩🇪', club: 'FC Bayern Munich', image: musialaImg },
-    { id: 'pedri', name: 'Pedri', country: 'Spain', flag: '🇪🇸', club: 'FC Barcelona', image: pedriImg },
-    { id: 'michael-olise', name: 'Michael Olise', country: 'France', flag: '🇫🇷', club: 'FC Bayern Munich', image: oliseImg },
     { id: 'ousmane-dembele', name: 'Ousmane Dembélé', country: 'France', flag: '🇫🇷', club: 'Paris Saint-Germain', image: dembeleImg },
-    { id: 'kylian-mbappe', name: 'Kylian Mbappé', country: 'France', flag: '🇫🇷', club: 'Real Madrid', image: mbappeImg },
-    { id: 'florian-wirtz', name: 'Florian Wirtz', country: 'Germany', flag: '🇩🇪', club: 'Bayer Leverkusen', image: wirtzImg },
+    { id: 'jamal-musiala', name: 'Jamal Musiala', country: 'Germany', flag: '🇩🇪', club: 'FC Bayern Munich', image: musialaImg },
+    { id: 'julian-alvarez', name: 'Julián Álvarez', country: 'Argentina', flag: '🇦🇷', club: 'Atlético Madrid', image: alvarezImg },
+  ];
+
+  const onesToWatch = [
+    { id: 'michael-olise', name: 'Michael Olise', country: 'France', flag: '🇫🇷', club: 'FC Bayern Munich', image: oliseImg },
+    { id: 'florian-wirtz', name: 'Florian Wirtz', country: 'Germany', flag: '🇩🇪', club: 'Liverpool', image: wirtzImg },
+    { id: 'lamine-yamal', name: 'Lamine Yamal', country: 'Spain', flag: '🇪🇸', club: 'FC Barcelona', image: yamalImg },
+    { id: 'endrick', name: 'Endrick', country: 'Brazil', flag: '🇧🇷', club: 'Real Madrid', image: endrickImg },
+    { id: 'vitinha', name: 'Vitinha', country: 'Portugal', flag: '🇵🇹', club: 'Paris Saint-Germain', image: vitinhaImg },
   ];
 
   if (loading) return <LoadingSpinner size="lg" className="min-h-screen" />;
@@ -211,6 +179,7 @@ const Home = () => {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 -mt-16 relative z-20">
+
         {/* Upcoming Matches Section */}
         <section className="mb-16">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
@@ -330,22 +299,33 @@ const Home = () => {
           <CinematicSlideshow
             categories={[
               {
-                id: 'farewell',
-                label: 'Farewell Edition',
-                badge: 'FIFA WORLD CUP 2026 · FAREWELL EDITION',
+                id: 'lastdance',
+                label: 'THE LAST DANCE',
+                badge: 'FIFA WORLD CUP 2026 · THE LAST DANCE',
                 titleMain: 'THE LAST',
                 titleAccent: 'DANCE',
-                players: lastDancePlayers,
+                players: theLastDance,
                 accentColor: '#f5c518',
                 labelColor: '#00ff87'
               },
               {
-                id: 'nextgen',
-                label: 'Next Generation',
-                badge: 'FIFA WORLD CUP 2026 · NEXT GENERATION',
+                id: 'heirsthrone',
+                label: 'HEIRS TO THE THRONE',
+                badge: 'FIFA WORLD CUP 2026 · HEIRS TO THE THRONE',
+                titleMain: 'TAKE THE',
+                titleAccent: 'REINS',
+                players: readyToTakeOver,
+                subhead: 'Already the focal point of their national teams. This is their tournament to define.',
+                accentColor: '#38bdf8',
+                labelColor: '#38bdf8'
+              },
+              {
+                id: 'onestowatch',
+                label: 'ONES TO WATCH',
+                badge: 'FIFA WORLD CUP 2026 · ONES TO WATCH',
                 titleMain: 'READY TO',
                 titleAccent: 'RISE',
-                players: nextGenPlayers,
+                players: onesToWatch,
                 accentColor: '#00ff87',
                 labelColor: '#00ff87'
               }

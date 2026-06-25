@@ -8,6 +8,30 @@ import vvdImg from '../assets/players/last-dance/vvd.jpg';
 import jamesImg from '../assets/players/last-dance/James Rodriguez.jpg';
 import kaneImg from '../assets/players/last-dance/Harry Kane.jpg';
 
+// Player Article Specific Images (different from the cinematic slideshow)
+import messiArticleImg from '../assets/players/last-dance/player_articles/Messi.jpg';
+import ronaldoArticleImg from '../assets/players/last-dance/player_articles/Cr7.jpg';
+import neymarArticleImg from '../assets/players/last-dance/player_articles/Neymar.jpg';
+import modricArticleImg from '../assets/players/last-dance/player_articles/Modric.jpg';
+import kdbArticleImg from '../assets/players/last-dance/player_articles/de bruyne.jpg';
+import neuerArticleImg from '../assets/players/last-dance/player_articles/Manuel Neur.jpg';
+import vvdArticleImg from '../assets/players/last-dance/player_articles/vvd.jpg';
+import kaneArticleImg from '../assets/players/last-dance/player_articles/Harry Kane.jpg';
+
+// Next Gen Player Articles
+import yamalArticleImg from '../assets/players/next-gen/player_articles/Yamal.jpg';
+import oliseArticleImg from '../assets/players/next-gen/player_articles/Olise.jpg';
+import bellinghamArticleImg from '../assets/players/next-gen/player_articles/bellingham.jpg';
+import pedriArticleImg from '../assets/players/next-gen/player_articles/pedri.jpg';
+import musialaArticleImg from '../assets/players/next-gen/player_articles/Musiala.jpg';
+import viniciusArticleImg from '../assets/players/next-gen/player_articles/Vinicius.jpg';
+import dembeleArticleImg from '../assets/players/next-gen/player_articles/Dembele.jpg';
+import mbappeArticleImg from '../assets/players/next-gen/player_articles/Mbappe.jpg';
+import wirtzArticleImg from '../assets/players/next-gen/player_articles/Wirtz.jpg';
+import alvarezArticleImg from '../assets/players/next-gen/player_articles/alvarez.jpg';
+import endrickArticleImg from '../assets/players/next-gen/player_articles/endrick.jpg';
+import vitinhaArticleImg from '../assets/players/next-gen/player_articles/vitinha.jpg';
+
 import yamalImg from '../assets/players/next-gen/yamal.jpg';
 import oliseImg from '../assets/players/next-gen/Michael Olise.jpg';
 import bellinghamImg from '../assets/players/next-gen/bellingham.jpg';
@@ -27,7 +51,7 @@ export const playerArticles = {
         club: 'Inter Miami CF',
         age: 38,
         section: 'Last Dance',
-        image: messiImg,
+        image: messiArticleImg,
         objectPosition: 'center 70%',
         title: 'The Last Dance of the King',
         content: [
@@ -44,7 +68,7 @@ export const playerArticles = {
         club: 'Al Nassr',
         age: 41,
         section: 'Last Dance',
-        image: ronaldoImg,
+        image: ronaldoArticleImg,
         objectPosition: 'center 50%',
         title: 'The Quest for the Final Glory',
         content: [
@@ -61,7 +85,7 @@ export const playerArticles = {
         club: 'Santos',
         age: 34,
         section: 'Last Dance',
-        image: neymarImg,
+        image: neymarArticleImg,
         objectPosition: 'center 10%',
         title: 'Samba, Scars, and Redemption',
         content: [
@@ -78,7 +102,7 @@ export const playerArticles = {
         club: 'AC Milan',
         age: 40,
         section: 'Last Dance',
-        image: modricImg,
+        image: modricArticleImg,
         objectPosition: 'center 55%',
         title: 'The Timeless Conductor',
         content: [
@@ -95,7 +119,7 @@ export const playerArticles = {
         club: 'Napoli',
         age: 34,
         section: 'Last Dance',
-        image: kdbImg,
+        image: kdbArticleImg,
         objectPosition: 'center 50%',
         title: 'The Genius of the Golden Generation',
         content: [
@@ -112,7 +136,7 @@ export const playerArticles = {
         club: 'FC Bayern Munich',
         age: 40,
         section: 'Last Dance',
-        image: neuerImg,
+        image: neuerArticleImg,
         objectPosition: 'center 10%',
         title: "The Wall's Final Stand",
         content: [
@@ -129,7 +153,7 @@ export const playerArticles = {
         club: 'Liverpool FC',
         age: 34,
         section: 'Last Dance',
-        image: vvdImg,
+        image: vvdArticleImg,
         objectPosition: 'center 10%',
         title: "The Dutch Wall's Final Quest",
         content: [
@@ -163,7 +187,7 @@ export const playerArticles = {
         club: 'FC Bayern Munich',
         age: 32,
         section: 'Last Dance',
-        image: kaneImg,
+        image: kaneArticleImg,
         objectPosition: 'center 30%',
         title: "The Captain's Ultimate Mission",
         content: [
@@ -180,7 +204,7 @@ export const playerArticles = {
         club: 'FC Barcelona',
         age: 18,
         section: 'Next Gen',
-        image: yamalImg,
+        image: yamalArticleImg,
         objectPosition: 'center 20%',
         title: 'The Prodigy of Barcelona',
         content: [
@@ -197,7 +221,7 @@ export const playerArticles = {
         club: 'Real Madrid',
         age: 22,
         section: 'Next Gen',
-        image: bellinghamImg,
+        image: bellinghamArticleImg,
         objectPosition: 'center 15%',
         title: 'The Golden Boy of Madrid',
         content: [
@@ -214,7 +238,7 @@ export const playerArticles = {
         club: 'Real Madrid',
         age: 25,
         section: 'Next Gen',
-        image: viniciusImg,
+        image: viniciusArticleImg,
         objectPosition: 'center 20%',
         title: 'Samba Speed and Ballon d\'Or Dreams',
         content: [
@@ -231,7 +255,7 @@ export const playerArticles = {
         club: 'FC Bayern Munich',
         age: 23,
         section: 'Next Gen',
-        image: musialaImg,
+        image: musialaArticleImg,
         objectPosition: 'center 20%',
         title: "Bambi's Dazzling Magic",
         content: [
@@ -248,7 +272,7 @@ export const playerArticles = {
         club: 'FC Barcelona',
         age: 23,
         section: 'Next Gen',
-        image: pedriImg,
+        image: pedriArticleImg,
         objectPosition: 'center 20%',
         title: 'The Maestro of Tenerife',
         content: [
@@ -265,7 +289,7 @@ export const playerArticles = {
         club: 'FC Bayern Munich',
         age: 24,
         section: 'Next Gen',
-        image: oliseImg,
+        image: oliseArticleImg,
         objectPosition: 'center 15%',
         title: 'The Elegant French Winger',
         content: [
@@ -282,7 +306,7 @@ export const playerArticles = {
         club: 'Paris Saint-Germain',
         age: 29,
         section: 'Next Gen',
-        image: dembeleImg,
+        image: dembeleArticleImg,
         objectPosition: 'center 15%',
         title: 'The Unpredictable Speedster',
         content: [
@@ -299,7 +323,7 @@ export const playerArticles = {
         club: 'Real Madrid',
         age: 27,
         section: 'Next Gen',
-        image: mbappeImg,
+        image: mbappeArticleImg,
         objectPosition: 'center 20%',
         title: 'The King of Paris and Madrid',
         content: [
@@ -313,16 +337,67 @@ export const playerArticles = {
         country: 'Germany',
         flag: '🇩🇪',
         role: 'Playmaking Prodigy',
-        club: 'Bayer Leverkusen',
+        club: 'Liverpool',
         age: 23,
         section: 'Next Gen',
-        image: wirtzImg,
+        image: wirtzArticleImg,
         objectPosition: 'center 20%',
-        title: 'The Architect of Leverkusen',
+        title: "Germany's Golden Creator",
         content: [
             "Florian Wirtz has established himself as one of the most creative playmakers in the world, combining incredible vision, tight control, and tactical maturity. As the engine of Germany's new generation, he is set to orchestrate the attack and lead Die Mannschaft back to international glory.",
             "His ability to unlock defenses with defense-splitting passes and key goals makes him Germany's primary creative weapon.",
             "A new generation has arrived, and he is ready to lead. Germany's playmaker is set to showcase his technical mastery on the global stage. Can Wirtz write a new golden chapter for Germany?"
+        ]
+    },
+    'julian-alvarez': {
+        name: 'Julián Álvarez',
+        country: 'Argentina',
+        flag: '🇦🇷',
+        role: 'Dynamic Forward',
+        club: 'Atlético Madrid',
+        age: 26,
+        section: 'Next Gen',
+        image: alvarezArticleImg,
+        objectPosition: 'center 20%',
+        title: 'The Spider of Argentina',
+        content: [
+            "Julián Álvarez has already achieved what most players can only dream of. Winning the World Cup alongside Lionel Messi in 2022, he announced himself on the global stage with crucial goals and relentless energy. Now, as one of the heirs to Argentina's attacking legacy, Álvarez is ready to step out of the shadows and lead the line.",
+            "His tactical intelligence, pressing ability, and clinical finishing make him an invaluable asset for the reigning champions as they look to defend their crown.",
+            "With the experience of a veteran and the hunger of a youngster, El Araña is ready to spin his web on the world's biggest stage once again."
+        ]
+    },
+    'endrick': {
+        name: 'Endrick',
+        country: 'Brazil',
+        flag: '🇧🇷',
+        role: 'Wonderkid Striker',
+        club: 'Real Madrid',
+        age: 19,
+        section: 'Next Gen',
+        image: endrickArticleImg,
+        objectPosition: 'center 20%',
+        title: 'The Future of the Seleção',
+        content: [
+            "Endrick's rise has been nothing short of meteoric. Drawing comparisons to Brazilian legends of the past, the teenage sensation has already made waves at Real Madrid and is widely considered the future number 9 for the Seleção. As Brazil looks to recapture their past glory, Endrick provides a spark of youthful brilliance.",
+            "His powerful left foot, raw pace, and instinct for goal have made him one of the most exciting teenagers in world football.",
+            "Ready to bear the weight of a nation's expectations, Endrick is out to prove he belongs on the biggest stage. Could this be the tournament where a new Brazilian legend is born?"
+        ]
+    },
+    'vitinha': {
+        name: 'Vitinha',
+        country: 'Portugal',
+        flag: '🇵🇹',
+        role: 'Midfield Maestro',
+        club: 'Paris Saint-Germain',
+        age: 26,
+        section: 'Next Gen',
+        image: vitinhaArticleImg,
+        objectPosition: 'center 20%',
+        title: 'The Engine of Portugal',
+        content: [
+            "Vitinha has quietly developed into one of Europe's premier midfielders, dictating play with his exceptional passing range and composure under pressure. As Portugal transitions into a new era, Vitinha has become the beating heart of their midfield, linking defense and attack seamlessly.",
+            "His tactical awareness and ability to escape tight spaces make him an essential component for a talented Portuguese side aiming for their first World Cup triumph.",
+            "Ready to step into the spotlight, Vitinha is poised to showcase his world-class abilities and orchestrate Portugal's title challenge."
         ]
     }
 };

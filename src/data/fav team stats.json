@@ -1,0 +1,342 @@
+{
+  "tournament": "2026 FIFA World Cup",
+  "total_teams": 48,
+  "teams": [
+    {
+      "name": "Algeria",
+      "appearances": 5,
+      "best_finish": "Round of 16 (2014)",
+      "top_scorer": "Salah Assad, Abdelmoumene Djabou, Islam Slimani (2 goals each)",
+      "most_caps": "Rafik Halliche (7 matches)"
+    },
+    {
+      "name": "Argentina",
+      "appearances": 19,
+      "best_finish": "Winners (1978, 1986, 2022)",
+      "top_scorer": "Lionel Messi (16 goals)",
+      "most_caps": "Lionel Messi (27 matches)"
+    },
+    {
+      "name": "Australia",
+      "appearances": 7,
+      "best_finish": "Round of 16 (2006, 2022)",
+      "top_scorer": "Tim Cahill (5 goals)",
+      "most_caps": "Mathew Ryan, Mathew Leckie (10 matches each)"
+    },
+    {
+      "name": "Austria",
+      "appearances": 8,
+      "best_finish": "Third place (1954)",
+      "top_scorer": "Erich Probst (6 goals)",
+      "most_caps": "Herbert Prohaska, Friedrich Koncilia (11 matches each)"
+    },
+    {
+      "name": "Belgium",
+      "appearances": 15,
+      "best_finish": "Third place (2018)",
+      "top_scorer": "Marc Wilmots, Romelu Lukaku (5 goals each)",
+      "most_caps": "Enzo Scifo (17 matches)"
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "appearances": 2,
+      "best_finish": "Group stage (2014)",
+      "top_scorer": "Edin Džeko, Vedad Ibišević, Miralem Pjanić, Avdija Vršajević (1 goal each)",
+      "most_caps": "Asmir Begović, Muhamed Bešić, Edin Džeko, Miralem Pjanić, Toni Šunjić (3 matches each)"
+    },
+    {
+      "name": "Brazil",
+      "appearances": 23,
+      "best_finish": "Winners (1958, 1962, 1970, 1994, 2002)",
+      "top_scorer": "Ronaldo (15 goals)",
+      "most_caps": "Cafu (20 matches)"
+    },
+    {
+      "name": "Canada",
+      "appearances": 3,
+      "best_finish": "Group stage (all editions)",
+      "top_scorer": "Alphonso Davies (1 goal)",
+      "most_caps": "Atiba Hutchinson, Alphonso Davies, Jonathan David, Cyle Larin, Alistair Johnston, Tajon Buchanan (3 matches each)"
+    },
+    {
+      "name": "Cape Verde",
+      "appearances": 1,
+      "best_finish": "Group stage (2026 Debut)",
+      "top_scorer": "None",
+      "most_caps": "None"
+    },
+    {
+      "name": "Colombia",
+      "appearances": 7,
+      "best_finish": "Quarter-finals (2014)",
+      "top_scorer": "James Rodríguez (6 goals)",
+      "most_caps": "Carlos Valderrama, Freddy Rincón (10 matches each)"
+    },
+    {
+      "name": "Croatia",
+      "appearances": 7,
+      "best_finish": "Runners-up (2018)",
+      "top_scorer": "Davor Šuker, Ivan Perišić (6 goals each)",
+      "most_caps": "Luka Modrić (19 matches)"
+    },
+    {
+      "name": "Curaçao",
+      "appearances": 1,
+      "best_finish": "Group stage (2026 Debut)",
+      "top_scorer": "None",
+      "most_caps": "None"
+    },
+    {
+      "name": "Czech Republic",
+      "appearances": 10,
+      "best_finish": "Runners-up (1934, 1962)",
+      "top_scorer": "Oldřich Nejedlý (7 goals)",
+      "most_caps": "Ladislav Novák (12 matches)"
+    },
+    {
+      "name": "DR Congo",
+      "appearances": 2,
+      "best_finish": "Group stage (1974)",
+      "top_scorer": "None",
+      "most_caps": "Mwamba Kazadi, Ilunga Mwepu, Lobilo Boba (3 matches each)"
+    },
+    {
+      "name": "Ecuador",
+      "appearances": 5,
+      "best_finish": "Round of 16 (2006)",
+      "top_scorer": "Enner Valencia (6 goals)",
+      "most_caps": "Edison Méndez (8 matches)"
+    },
+    {
+      "name": "Egypt",
+      "appearances": 4,
+      "best_finish": "Round of 16 (1934)",
+      "top_scorer": "Abdulrahman Fawzi, Mohamed Salah (2 goals each)",
+      "most_caps": "Hany Ramzy, Hossam Hassan, Ahmed Fathy, Mohamed El-Shenawy (3 matches each)"
+    },
+    {
+      "name": "England",
+      "appearances": 17,
+      "best_finish": "Winners (1966)",
+      "top_scorer": "Gary Lineker, Harry Kane (10 goals each)",
+      "most_caps": "Peter Shilton (17 matches)"
+    },
+    {
+      "name": "France",
+      "appearances": 17,
+      "best_finish": "Winners (1998, 2018)",
+      "top_scorer": "Kylian Mbappé (14 goals)",
+      "most_caps": "Hugo Lloris (20 matches)"
+    },
+    {
+      "name": "Germany",
+      "appearances": 21,
+      "best_finish": "Winners (1954, 1974, 1990, 2014)",
+      "top_scorer": "Miroslav Klose (16 goals)",
+      "most_caps": "Lothar Matthäus (25 matches)"
+    },
+    {
+      "name": "Ghana",
+      "appearances": 5,
+      "best_finish": "Quarter-finals (2010)",
+      "top_scorer": "Asamoah Gyan (6 goals)",
+      "most_caps": "Asamoah Gyan (11 matches)"
+    },
+    {
+      "name": "Haiti",
+      "appearances": 2,
+      "best_finish": "Group stage (1974)",
+      "top_scorer": "Emmanuel Sanon (2 goals)",
+      "most_caps": "Emmanuel Sanon, Henri Francillon, Philippe Vorbe, Jean-Joseph Fritz, Serge Racine, Eddy Antoine (3 matches each)"
+    },
+    {
+      "name": "Iran",
+      "appearances": 7,
+      "best_finish": "Group stage (all editions)",
+      "top_scorer": "Mehdi Taremi (2 goals)",
+      "most_caps": "Ehsan Hajsafi (9 matches)"
+    },
+    {
+      "name": "Iraq",
+      "appearances": 2,
+      "best_finish": "Group stage (1986)",
+      "top_scorer": "Ahmed Radhi (1 goal)",
+      "most_caps": "Ahmed Radhi, Khalil Allawi, Samir Shaker, Basil Gorgis, Natik Hashim, Ali Hussein Shihab (3 matches each)"
+    },
+    {
+      "name": "Ivory Coast",
+      "appearances": 4,
+      "best_finish": "Group stage (all editions)",
+      "top_scorer": "Aruna Dindane, Didier Drogba, Wilfried Bony, Gervinho (2 goals each)",
+      "most_caps": "Didier Zokora, Yaya Touré, Boubacar Barry (9 matches each)"
+    },
+    {
+      "name": "Japan",
+      "appearances": 8,
+      "best_finish": "Round of 16 (2002, 2010, 2018, 2022)",
+      "top_scorer": "Keisuke Honda (4 goals)",
+      "most_caps": "Yuto Nagatomo (15 matches)"
+    },
+    {
+      "name": "Jordan",
+      "appearances": 1,
+      "best_finish": "Group stage (2026 Debut)",
+      "top_scorer": "None",
+      "most_caps": "None"
+    },
+    {
+      "name": "Mexico",
+      "appearances": 18,
+      "best_finish": "Quarter-finals (1970, 1986)",
+      "top_scorer": "Luis Hernández, Javier Hernández (4 goals each)",
+      "most_caps": "Rafael Márquez (19 matches)"
+    },
+    {
+      "name": "Morocco",
+      "appearances": 7,
+      "best_finish": "Fourth place (2022)",
+      "top_scorer": "Youssef En-Nesyri (3 goals)",
+      "most_caps": "Achraf Hakimi, Hakim Ziyech (10 matches each)"
+    },
+    {
+      "name": "Netherlands",
+      "appearances": 12,
+      "best_finish": "Runners-up (1974, 1978, 2010)",
+      "top_scorer": "Johnny Rep (7 goals)",
+      "most_caps": "Wesley Sneijder, Robin van Persie (17 matches each)"
+    },
+    {
+      "name": "New Zealand",
+      "appearances": 3,
+      "best_finish": "Group stage (all editions)",
+      "top_scorer": "Winston Reid, Shane Smeltz, Steve Sumner, Steve Wooddin (1 goal each)",
+      "most_caps": "Winston Reid, Shane Smeltz, Ryan Nelsen, Leo Bertos, Tony Lochhead, Simon Elliott, Chris Killen, Ivan Vicelich, Rory Fallon, Mark Paston, Tommy Smith (3 matches each)"
+    },
+    {
+      "name": "Norway",
+      "appearances": 4,
+      "best_finish": "Round of 16 (1938, 1998)",
+      "top_scorer": "Kjetil Rekdal, Erling Haaland (2 goals each)",
+      "most_caps": "Stig Inge Bjørnebye, Henning Berg, Kjetil Rekdal (7 matches each)"
+    },
+    {
+      "name": "Panama",
+      "appearances": 2,
+      "best_finish": "Group stage (2018)",
+      "top_scorer": "Felipe Baloy (1 goal)",
+      "most_caps": "Gabriel Gómez, Aníbal Godoy, Fidel Escobar, Édgar Bárcenas, Michael Amir Murillo, Roman Torres, Armando Cooper, Jose Luis Rodriguez, Blas Perez (3 matches each)"
+    },
+    {
+      "name": "Paraguay",
+      "appearances": 9,
+      "best_finish": "Quarter-finals (2010)",
+      "top_scorer": "Nelson Cuevas (3 goals)",
+      "most_caps": "Denis Caniza, Roque Santa Cruz (12 matches each)"
+    },
+    {
+      "name": "Portugal",
+      "appearances": 9,
+      "best_finish": "Third place (1966)",
+      "top_scorer": "Eusébio (9 goals)",
+      "most_caps": "Cristiano Ronaldo (22 matches)"
+    },
+    {
+      "name": "Qatar",
+      "appearances": 2,
+      "best_finish": "Group stage (2022)",
+      "top_scorer": "Mohammed Muntari (1 goal)",
+      "most_caps": "Almoez Ali, Akram Afif, Hassan Al-Haydos, Karim Boudiaf, Abdelkarim Hassan, Homam Ahmed, Boualem Khoukhi (3 matches each)"
+    },
+    {
+      "name": "Saudi Arabia",
+      "appearances": 7,
+      "best_finish": "Round of 16 (1994)",
+      "top_scorer": "Sami Al-Jaber, Salem Al-Dawsari (3 goals each)",
+      "most_caps": "Mohammed Al-Deayea (10 matches)"
+    },
+    {
+      "name": "Scotland",
+      "appearances": 9,
+      "best_finish": "Group stage (all editions)",
+      "top_scorer": "Joe Jordan (4 goals)",
+      "most_caps": "Jim Leighton (9 matches)"
+    },
+    {
+      "name": "Senegal",
+      "appearances": 4,
+      "best_finish": "Quarter-finals (2002)",
+      "top_scorer": "Papa Bouba Diop (3 goals)",
+      "most_caps": "Kalidou Koulibaly (7 matches)"
+    },
+    {
+      "name": "South Africa",
+      "appearances": 4,
+      "best_finish": "Group stage (all editions)",
+      "top_scorer": "Shaun Bartlett, Benni McCarthy (2 goals each)",
+      "most_caps": "Lucas Radebe, Pierre Issa, Quinton Fortune, Aaron Mokoena (6 matches each)"
+    },
+    {
+      "name": "South Korea",
+      "appearances": 12,
+      "best_finish": "Fourth place (2002)",
+      "top_scorer": "Ahn Jung-hwan, Park Ji-sung, Son Heung-min (3 goals each)",
+      "most_caps": "Hong Myung-bo (16 matches)"
+    },
+    {
+      "name": "Spain",
+      "appearances": 17,
+      "best_finish": "Winners (2010)",
+      "top_scorer": "David Villa (9 goals)",
+      "most_caps": "Iker Casillas, Sergio Ramos, Sergio Busquets (17 matches each)"
+    },
+    {
+      "name": "Sweden",
+      "appearances": 13,
+      "best_finish": "Runners-up (1958)",
+      "top_scorer": "Kennet Andersson, Henrik Larsson (5 goals each)",
+      "most_caps": "Henrik Larsson (13 matches)"
+    },
+    {
+      "name": "Switzerland",
+      "appearances": 13,
+      "best_finish": "Quarter-finals (1934, 1938, 1954)",
+      "top_scorer": "Josef Hügi (6 goals)",
+      "most_caps": "Xherdan Shaqiri, Granit Xhaka (12 matches each)"
+    },
+    {
+      "name": "Tunisia",
+      "appearances": 7,
+      "best_finish": "Group stage (all editions)",
+      "top_scorer": "Wahbi Khazri (3 goals)",
+      "most_caps": "Riadh Bouazizi, Kaies Ghodhbane, Hatem Trabelsi (9 matches each)"
+    },
+    {
+      "name": "Turkey",
+      "appearances": 3,
+      "best_finish": "Third place (2002)",
+      "top_scorer": "Burhan Sargun, Suat Mamat, İlhan Mansız (3 goals each)",
+      "most_caps": "Rüştü Reçber, Hakan Şükür, Alpay Özalan, Fatih Akyel, Ümit Davala, Tugay Kerimoğlu, Yıldıray Baştürk (7 matches each)"
+    },
+    {
+      "name": "United States",
+      "appearances": 12,
+      "best_finish": "Third place (1930)",
+      "top_scorer": "Landon Donovan (5 goals)",
+      "most_caps": "Landon Donovan (12 matches)"
+    },
+    {
+      "name": "Uruguay",
+      "appearances": 15,
+      "best_finish": "Winners (1930, 1950)",
+      "top_scorer": "Óscar Míguez (8 goals)",
+      "most_caps": "Diego Godín, Edinson Cavani (17 matches each)"
+    },
+    {
+      "name": "Uzbekistan",
+      "appearances": 1,
+      "best_finish": "Group stage (2026 Debut)",
+      "top_scorer": "None",
+      "most_caps": "None"
+    }
+  ]
+}

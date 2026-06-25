@@ -5,8 +5,14 @@ import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Flag from '../components/ui/Flag';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
-import { Calendar, MapPin, ChevronRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Calendar, MapPin, ChevronRight, Play, Trophy, Star, Clock } from 'lucide-react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import {
+  getLocalDateString,
+  formatLocalDateStr,
+  formatLocalTime,
+  getTodayLocalDateString
+} from '../utils/schedule';
 
 interface Match {
     id: string;
@@ -23,6 +29,8 @@ interface Match {
     cards?: { name: string; teamId: string; type: 'yellow' | 'red'; minute?: string | number }[];
     playerOfMatch?: string;
     highlightUrl?: string;
+    stage?: string;
+    location?: string;
 }
 
 interface Player {
@@ -59,6 +67,9 @@ const Matches: React.FC = () => {
     };
     const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming');
     const navigate = useNavigate();
+
+    const [searchParams] = useSearchParams();
+    const teamParam = searchParams.get('team') || '';
 
     const [selectedGroup, setSelectedGroup] = useState<string>('ALL');
     const [selectedDate, setSelectedDate] = useState<string>('ALL');
@@ -99,79 +110,9 @@ const Matches: React.FC = () => {
         return timezoneOptions;
     }, [selectedTimeZone]);
 
-    const getLocalDateString = (dateStr: string, timeStr: string, tz: string) => {
-        if (!dateStr) return '';
-        const isoStr = `${dateStr}T${timeStr || '00:00'}:00Z`;
-        const date = new Date(isoStr);
-        if (isNaN(date.getTime())) return dateStr;
-        try {
-            const formatter = new Intl.DateTimeFormat('en-US', {
-                timeZone: tz,
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit'
-            });
-            const parts = formatter.formatToParts(date);
-            const year = parts.find(p => p.type === 'year')?.value;
-            const month = parts.find(p => p.type === 'month')?.value;
-            const day = parts.find(p => p.type === 'day')?.value;
-            return `${year}-${month}-${day}`;
-        } catch (e) {
-            return dateStr;
-        }
-    };
-
-    const formatLocalDateStr = (localDateStr: string) => {
-        if (!localDateStr) return '';
-        const [y, m, d] = localDateStr.split('-');
-        const dateObj = new Date(Date.UTC(parseInt(y, 10), parseInt(m, 10) - 1, parseInt(d, 10)));
-        const options: Intl.DateTimeFormatOptions = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' };
-        return dateObj.toLocaleDateString('en-GB', options);
-    };
-
-    const formatLocalTime = (dateStr: string, timeStr: string, tz: string) => {
-        if (!dateStr) return timeStr;
-        const isoStr = `${dateStr}T${timeStr || '00:00'}:00Z`;
-        const date = new Date(isoStr);
-        if (isNaN(date.getTime())) return timeStr;
-        try {
-            const formatter = new Intl.DateTimeFormat('en-US', {
-                timeZone: tz,
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true
-            });
-            return formatter.format(date).toUpperCase();
-        } catch (e) {
-            return timeStr;
-        }
-    };
-
-    const getTodayLocalDateString = (tz: string) => {
-        const date = new Date();
-        try {
-            const formatter = new Intl.DateTimeFormat('en-US', {
-                timeZone: tz,
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit'
-            });
-            const parts = formatter.formatToParts(date);
-            const year = parts.find(p => p.type === 'year')?.value;
-            const month = parts.find(p => p.type === 'month')?.value;
-            const day = parts.find(p => p.type === 'day')?.value;
-            return `${year}-${month}-${day}`;
-        } catch (e) {
-            const y = date.getFullYear();
-            const m = String(date.getMonth() + 1).padStart(2, '0');
-            const d = String(date.getDate()).padStart(2, '0');
-            return `${y}-${m}-${d}`;
-        }
-    };
-
     const availableDates = useMemo(() => {
         const datesSet = new Set<string>();
-        (matches as Match[]).forEach((match: Match) => {
+        matches.forEach((match: Match) => {
             if (activeTab === 'upcoming') {
                 if (match.status === 'completed') return;
             } else {
@@ -192,7 +133,7 @@ const Matches: React.FC = () => {
     }, [matches, activeTab, selectedTimeZone]);
 
     const filteredMatches = useMemo(() => {
-        return (matches as Match[]).filter((match: Match) => {
+        return matches.filter((match: Match) => {
             if (activeTab === 'upcoming') {
                 if (match.status === 'completed') return false;
             } else {
@@ -205,6 +146,9 @@ const Matches: React.FC = () => {
                 const localDate = getLocalDateString(match.date, match.time, selectedTimeZone);
                 if (localDate !== selectedDate) return false;
             }
+            if (teamParam) {
+                if (match.homeTeam !== teamParam && match.awayTeam !== teamParam) return false;
+            }
             return true;
         }).sort((a: Match, b: Match) => {
             if (activeTab === 'upcoming') {
@@ -212,7 +156,7 @@ const Matches: React.FC = () => {
             }
             return b.date.localeCompare(a.date) || b.time.localeCompare(a.time);
         });
-    }, [matches, activeTab, selectedGroup, selectedDate, selectedTimeZone]);
+    }, [matches, activeTab, selectedGroup, selectedDate, selectedTimeZone, teamParam]);
 
     const groupedMatches = useMemo(() => {
         const groups: { [key: string]: Match[] } = {};
@@ -271,72 +215,81 @@ const Matches: React.FC = () => {
     if (loading) return <LoadingSpinner size="lg" className="min-h-screen" />;
 
     return (
-        <div className="min-h-screen bg-gray-950 pb-20">
+        <div className="min-h-screen bg-gradient-to-b from-gray-950 via-[#0b0f19] to-gray-950 pb-20 text-slate-100">
             <Navbar />
 
-            <main className="max-w-5xl mx-auto px-4 mt-12">
-                <div className="mb-10">
-                    <h1 className="text-4xl font-black text-white mb-2 uppercase italic tracking-tighter">MATCH SCHEDULE</h1>
-                    <p className="text-gray-500 font-medium text-sm">Follow every match from the biggest stage in football.</p>
+            <main className="max-w-5xl mx-auto px-4 mt-12 animate-in fade-in duration-500">
+                <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-900 pb-8">
+                    <div>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-bold uppercase tracking-wider mb-3">
+                            <Trophy className="w-3.5 h-3.5" /> FIFA World Cup 2026
+                        </div>
+                        <h1 className="text-4xl md:text-5xl font-black text-white uppercase italic tracking-tighter bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+                            MATCH SCHEDULE
+                        </h1>
+                        <p className="text-slate-400 font-medium text-sm mt-1">Follow every fixture live from the stadiums of North America.</p>
+                    </div>
+
+                    {/* Timezone Selector Dropdown */}
+                    <div className="relative inline-block text-left w-fit shrink-0">
+                        <span className="text-[10px] text-slate-500 uppercase tracking-wider block mb-1 font-bold">TIMEZONE</span>
+                        <div className="relative">
+                            <select
+                                value={selectedTimeZone}
+                                onChange={(e) => setSelectedTimeZone(e.target.value)}
+                                className="bg-slate-900/80 border border-slate-800 text-slate-200 text-xs rounded-xl pl-4 pr-10 py-2.5 outline-none focus:border-green-500/50 cursor-pointer appearance-none transition-all font-bold shadow-lg backdrop-blur-md"
+                            >
+                                {finalTimezones.map((tz) => (
+                                    <option key={tz.value} value={tz.value} className="bg-slate-950 text-slate-200">
+                                        {tz.label}
+                                    </option>
+                                ))}
+                            </select>
+                            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-400">
+                                <Clock className="w-3.5 h-3.5" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Tabs & Timezone Selector */}
+                {/* Tabs Selector */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-                    <div className="flex gap-4 bg-gray-900/50 p-1 rounded-xl w-fit border border-gray-800">
+                    <div className="flex gap-2 bg-slate-900/60 backdrop-blur-md p-1 rounded-xl w-fit border border-slate-800/80">
                         <button
                             onClick={() => setActiveTab('upcoming')}
-                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-widest ${activeTab === 'upcoming'
-                                ? 'bg-green-500 text-gray-950 shadow-lg shadow-green-500/20'
-                                : 'text-gray-400 hover:text-white'
+                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'upcoming'
+                                ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10'
+                                : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
                                 }`}
                         >
                             Upcoming
                         </button>
                         <button
                             onClick={() => setActiveTab('past')}
-                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-widest ${activeTab === 'past'
-                                ? 'bg-green-500 text-gray-950 shadow-lg shadow-green-500/20'
-                                : 'text-gray-400 hover:text-white'
+                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'past'
+                                ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10'
+                                : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
                                 }`}
                         >
                             Past (Results)
                         </button>
                     </div>
-
-                    {/* Timezone Selector Dropdown */}
-                    <div className="relative inline-block text-left w-fit self-start sm:self-auto">
-                        <select
-                            value={selectedTimeZone}
-                            onChange={(e) => setSelectedTimeZone(e.target.value)}
-                            className="bg-gray-950 border border-gray-800 text-gray-300 text-[11px] md:text-xs rounded-full px-4 py-1.5 pr-8 outline-none focus:border-green-500/50 cursor-pointer appearance-none transition-colors font-bold shadow-lg"
-                        >
-                            {finalTimezones.map((tz) => (
-                                <option key={tz.value} value={tz.value} className="bg-gray-950 text-gray-200">
-                                    {tz.label}
-                                </option>
-                            ))}
-                        </select>
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500">
-                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-                    </div>
                 </div>
 
                 {/* Filters & Today Button */}
-                <div className="flex flex-wrap items-center justify-between gap-4 mb-8 bg-gray-900/20 p-4 rounded-2xl border border-gray-800/40">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-8 bg-slate-900/30 p-4 rounded-2xl border border-slate-800/40 backdrop-blur-sm shadow-md">
                     <div className="flex flex-wrap gap-1.5 items-center">
+                        <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider mr-2">Groups:</span>
                         {groupsList.map((group) => (
                             <button
                                 key={group}
                                 onClick={() => setSelectedGroup(group)}
                                 className={`px-3 py-1 rounded-full text-xs font-bold transition-all uppercase ${
                                     selectedGroup === group
-                                        ? 'bg-[#22c55e] text-gray-950 shadow-md shadow-[#22c55e]/15'
-                                        : 'bg-transparent text-gray-400 hover:text-white border border-gray-800'
+                                        ? 'bg-green-500 text-gray-950 shadow-sm shadow-green-500/20'
+                                        : 'bg-slate-950/40 text-slate-400 hover:text-white border border-slate-800/60'
                                 }`}
-                                style={{ fontSize: '12px' }}
+                                style={{ fontSize: '11px' }}
                             >
                                 {group}
                             </button>
@@ -349,169 +302,227 @@ const Matches: React.FC = () => {
                             <select
                                 value={selectedDate}
                                 onChange={(e) => setSelectedDate(e.target.value)}
-                                className="bg-gray-950 border border-gray-800 text-gray-300 text-xs rounded-lg px-3 py-1.5 pr-8 outline-none focus:border-green-500/50 cursor-pointer appearance-none transition-colors font-bold shadow-md uppercase"
+                                className="bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-2 pr-9 outline-none focus:border-green-500/50 cursor-pointer appearance-none transition-all font-bold shadow-md uppercase"
                             >
-                                <option value="ALL" className="bg-gray-950 text-gray-200">ALL DATES</option>
+                                <option value="ALL" className="bg-slate-950 text-slate-200">ALL DATES</option>
                                 {availableDates.map((d) => (
-                                    <option key={d.value} value={d.value} className="bg-gray-950 text-gray-200">
+                                    <option key={d.value} value={d.value} className="bg-slate-950 text-slate-200">
                                         {d.label}
                                     </option>
                                 ))}
                             </select>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500">
-                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-400">
+                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
                         </div>
 
                         <button
                             onClick={handleTodayClick}
-                            className="px-3 py-1.5 rounded-md text-xs font-bold border border-[#22c55e] text-[#22c55e] hover:bg-[#22c55e]/10 transition-colors uppercase tracking-wider shrink-0"
-                            style={{ fontSize: '12px' }}
+                            className="px-4 py-2 rounded-xl text-xs font-black border border-green-500 text-green-400 hover:bg-green-500/10 transition-colors uppercase tracking-wider shrink-0 shadow-sm"
+                            style={{ fontSize: '11px' }}
                         >
-                            Today
+                        Today
                         </button>
                     </div>
                 </div>
 
+                {/* Active Team Filter Banner */}
+                {teamParam && (
+                    <div className="mb-6 flex items-center justify-between bg-green-500/10 border border-green-500/25 px-4 py-3 rounded-xl animate-in fade-in slide-in-from-top-1 duration-200">
+                        <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold text-green-400">
+                                Filtering by team: <span className="text-white font-black uppercase">{teams.find(t => t.id === teamParam)?.name || teamParam}</span>
+                            </span>
+                        </div>
+                        <button
+                            onClick={() => navigate('/matches')}
+                            className="text-[10px] text-slate-400 hover:text-white font-black uppercase tracking-wider transition-all bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-800"
+                        >
+                            Clear Filter
+                        </button>
+                    </div>
+                )}
+
                 {/* Match List */}
-                <div className="space-y-12">
+                <div className="space-y-10">
                     {sortedGroupedDates.length === 0 ? (
-                        <div className="text-center py-20 bg-gray-900/30 rounded-3xl border border-gray-800 border-dashed">
-                            <Calendar className="w-12 h-12 text-gray-700 mx-auto mb-4" />
-                            <p className="text-gray-500 font-bold">No matches found for this period.</p>
+                        <div className="text-center py-20 bg-slate-900/10 rounded-3xl border border-slate-800/80 border-dashed animate-pulse">
+                            <Calendar className="w-12 h-12 text-slate-700 mx-auto mb-4" />
+                            <p className="text-slate-500 font-bold text-sm tracking-wide">No matches scheduled for this period.</p>
                         </div>
                     ) : (
                         sortedGroupedDates.map((date) => {
                             const dateMatches = groupedMatches[date];
                             return (
-                                <div key={date} data-date={date}>
-                                    <h3 className="text-xs font-black text-gray-500 uppercase tracking-[0.2em] mb-4 flex items-center gap-4">
-                                        <span className="bg-gray-800 h-[1px] flex-1"></span>
-                                        {formatLocalDateStr(date)}
-                                        <span className="bg-gray-800 h-[1px] flex-1"></span>
-                                    </h3>
-                                    <div className="space-y-3">
+                                <div key={date} data-date={date} className="relative">
+                                    {/* Premium Date Header */}
+                                    <div className="sticky top-0 z-10 py-3 bg-gradient-to-b from-[#0b0f19] via-[#0b0f19] to-transparent mb-4">
+                                        <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] flex items-center gap-3">
+                                            <Calendar className="w-4 h-4 text-green-500 shrink-0" />
+                                            <span>{formatLocalDateStr(date)}</span>
+                                            <span className="flex-1 h-[1px] bg-gradient-to-r from-slate-800 via-slate-800/40 to-transparent"></span>
+                                        </h3>
+                                    </div>
+
+                                    {/* Symmetrical Compact Match Cards */}
+                                    <div className="space-y-3.5">
                                         {dateMatches.map((match: Match) => {
-                                            const homeTeam = (teams as Team[]).find((t: Team) => t.id === match.homeTeam);
-                                            const awayTeam = (teams as Team[]).find((t: Team) => t.id === match.awayTeam);
-                                            const venue = (venues as Venue[]).find((v: Venue) => v.id === match.venue);
+                                            const homeTeam = teams.find(t => t.id === match.homeTeam);
+                                            const awayTeam = teams.find(t => t.id === match.awayTeam);
+                                            const venue = venues.find(v => v.id === match.venue);
 
                                             const homeScorers = match.scorers?.filter(s => s.teamId === match.homeTeam) || [];
                                             const awayScorers = match.scorers?.filter(s => s.teamId === match.awayTeam) || [];
-                                            const homeCards = match.cards?.filter(c => c.teamId === match.homeTeam) || [];
-                                            const awayCards = match.cards?.filter(c => c.teamId === match.awayTeam) || [];
+                                            const homeCards = match.cards?.filter(c => c.teamId === match.homeTeam && c.type === 'red') || [];
+                                            const awayCards = match.cards?.filter(c => c.teamId === match.awayTeam && c.type === 'red') || [];
 
                                             return (
                                                 <div
                                                     key={match.id}
-                                                    className="bg-gradient-to-br from-gray-900/95 to-gray-900/40 backdrop-blur-md border border-gray-800/80 rounded-xl overflow-hidden hover:scale-[1.01] hover:-translate-y-0.5 hover:border-green-500/30 hover:shadow-lg hover:shadow-green-500/5 transition-all duration-300 cursor-pointer group shadow-md shadow-black/25"
+                                                    className="bg-slate-900/20 hover:bg-slate-900/50 backdrop-blur-md border border-slate-800/60 hover:border-green-500/30 rounded-2xl overflow-hidden hover:scale-[1.005] hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-500/5 transition-all duration-300 cursor-pointer group shadow-lg shadow-black/35"
                                                     onClick={() => navigate(`/match/${match.id}`)}
                                                 >
-                                                    <div className="flex items-center p-3 md:p-4 gap-2">
-                                                        {/* Home Team */}
-                                                        <div className="flex flex-col flex-1 items-start min-w-0">
-                                                            <div className="flex items-center gap-3">
-                                                                <Flag code={homeTeam?.countryCode} circular={true} className="w-10 h-10 border border-gray-800/60 shadow-md shrink-0" />
-                                                                <span className="text-xs md:text-sm font-extrabold text-white uppercase truncate tracking-tight">{homeTeam?.name || match.homeTeam}</span>
+                                                    <div className="px-4 py-3.5 md:px-6 md:py-4">
+                                                        {/* Symmetrical Layout */}
+                                                        <div className="flex items-center justify-between gap-1 md:gap-4">
+                                                            {/* Home Team */}
+                                                            <div className="flex items-center justify-end gap-3 flex-1 min-w-0 text-right">
+                                                                <div className="flex flex-col items-end min-w-0">
+                                                                    <span className="text-xs md:text-sm font-black text-white uppercase truncate tracking-tight w-full leading-normal">
+                                                                        {homeTeam?.name || match.homeTeam}
+                                                                    </span>
+                                                                    
+                                                                    {/* Home Events - Aligned Right Under Team Name */}
+                                                                    {activeTab === 'past' && (homeScorers.length > 0 || homeCards.length > 0) && (
+                                                                        <div className="flex flex-col items-end gap-1 mt-1.5 w-full">
+                                                                            {homeScorers.map((s, idx) => (
+                                                                                <span key={`s-${idx}`} className="text-[10px] text-slate-400 font-semibold uppercase flex items-center gap-1 leading-tight text-right">
+                                                                                    <span>⚽</span>
+                                                                                    <span>
+                                                                                        {s.name}
+                                                                                        {s.ownGoal && <span className="text-red-500 lowercase ml-0.5 font-bold">(og)</span>}
+                                                                                        {s.penalty && <span className="text-amber-500 lowercase ml-0.5 font-bold">(pen)</span>}
+                                                                                        {s.minute && <span className="text-slate-500 font-normal ml-0.5">'{s.minute}</span>}
+                                                                                    </span>
+                                                                                </span>
+                                                                            ))}
+                                                                            {homeCards.map((c, idx) => (
+                                                                                <span key={`c-${idx}`} className="text-[10px] text-slate-400 font-semibold uppercase flex items-center gap-1.5 leading-tight text-right">
+                                                                                    <div className="w-1.5 h-2.5 rounded-[1px] bg-red-600 shadow-sm shrink-0" title="Red Card" />
+                                                                                    <span>
+                                                                                        {c.name}
+                                                                                        {c.minute && <span className="text-slate-500 font-normal ml-0.5">'{c.minute}</span>}
+                                                                                    </span>
+                                                                                </span>
+                                                                            ))}
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                                {homeTeam?.countryCode ? (
+                                                                    <Flag code={homeTeam.countryCode} circular={true} className="w-11 h-11 border border-slate-800/80 shadow-md shrink-0 group-hover:border-green-500/20 transition-colors" />
+                                                                ) : (
+                                                                    <div className="w-11 h-11 rounded-full bg-slate-950 border border-slate-850 flex items-center justify-center shrink-0 text-slate-500 font-black text-xs select-none shadow-sm">TBD</div>
+                                                                )}
                                                             </div>
-                                                            {activeTab === 'past' && (homeScorers.length > 0 || homeCards.length > 0) && (
-                                                                <div className="flex flex-col items-start gap-0.5 mt-1.5 pl-[52px]">
-                                                                    {homeScorers.map((s, idx) => (
-                                                                        <span key={idx} className="text-[10px] text-gray-400 font-semibold uppercase flex items-center gap-1 leading-tight">
-                                                                            <span className="text-gray-500">⚽</span>
-                                                                            <span>
-                                                                                {s.name}
-                                                                                {s.ownGoal && <span className="text-red-500 lowercase ml-0.5">(og)</span>}
-                                                                                {s.penalty && <span className="text-yellow-500 lowercase ml-0.5">(pen)</span>}
-                                                                                {s.minute && <span className="text-gray-600 font-normal ml-0.5">'{s.minute}</span>}
-                                                                            </span>
-                                                                        </span>
-                                                                    ))}
-                                                                    {homeCards.map((c, idx) => (
-                                                                        <span key={idx} className="text-[10px] text-gray-400 font-semibold uppercase flex items-center gap-1.5 leading-tight">
-                                                                            <div className={`w-1.5 h-2 rounded-[1px] shrink-0 ${c.type === 'red' ? 'bg-red-500 shadow-sm shadow-red-500/30' : 'bg-yellow-400 shadow-sm shadow-yellow-400/30'}`} title={`${c.name} (${c.minute}')`} />
-                                                                            <span>
-                                                                                {c.name}
-                                                                                {c.minute && <span className="text-gray-600 font-normal ml-0.5">'{c.minute}</span>}
-                                                                            </span>
-                                                                        </span>
-                                                                    ))}
-                                                                </div>
-                                                            )}
-                                                        </div>
 
-                                                        {/* Middle Section: Broadcast Scoreboard */}
-                                                        <div className="flex flex-col items-center justify-center min-w-[130px] md:min-w-[150px] px-2 gap-1 shrink-0">
-                                                            {activeTab === 'past' ? (
-                                                                <div className="flex flex-col items-center">
-                                                                    <div className="flex items-center bg-gray-950/70 border border-gray-800 px-3.5 py-1 rounded-lg gap-2 shadow-inner font-mono">
-                                                                        <span className="text-base md:text-lg font-black text-white group-hover:text-green-400 transition-colors">{match.homeScore}</span>
-                                                                        <span className="text-gray-700 font-bold">:</span>
-                                                                        <span className="text-base md:text-lg font-black text-white group-hover:text-green-400 transition-colors">{match.awayScore}</span>
+                                                            {/* Middle Section: Scoreboard / Time */}
+                                                            <div className="flex flex-col items-center justify-center min-w-[110px] md:min-w-[130px] px-1 md:px-2 shrink-0">
+                                                                {activeTab === 'past' ? (
+                                                                    <div className="flex flex-col items-center gap-1.5">
+                                                                        {/* Large Premium Score */}
+                                                                        <div className="flex items-center bg-slate-950 border border-slate-800/60 px-4 py-1 rounded-xl gap-3 shadow-inner font-mono text-center tracking-tight select-none">
+                                                                            <span className="text-xl md:text-2xl font-black text-white group-hover:text-green-400 transition-colors">{match.homeScore}</span>
+                                                                            <span className="text-slate-800 font-black text-sm">:</span>
+                                                                            <span className="text-xl md:text-2xl font-black text-white group-hover:text-green-400 transition-colors">{match.awayScore}</span>
+                                                                        </div>
+                                                                        
+                                                                        {/* Status and stage details */}
+                                                                        <div className="flex items-center gap-1.5 text-[9px] text-slate-500 font-extrabold uppercase tracking-widest">
+                                                                            <span className="px-1.5 py-0.5 bg-slate-800 border border-slate-700/60 text-slate-300 rounded-md text-[8px] font-black leading-none">FT</span>
+                                                                            {match.stage === 'Group Stage' ? (
+                                                                                <span>Group {match.group}</span>
+                                                                            ) : (
+                                                                                <span className="text-purple-400/90">{match.stage}</span>
+                                                                            )}
+                                                                        </div>
                                                                     </div>
-                                                                    <div className="flex items-center gap-1 mt-1 text-[9px] text-gray-500 font-bold uppercase tracking-wider">
-                                                                        <span className="px-1 py-0.5 bg-gray-800 text-gray-400 border border-gray-700/60 rounded text-[8px] font-black mr-0.5">FT</span>
-                                                                        <span>Group {match.group}</span>
+                                                                ) : (
+                                                                    <div className="flex flex-col items-center gap-1.5">
+                                                                        {/* Kickoff time */}
+                                                                        <div className="flex items-center bg-slate-850/50 border border-slate-800 px-3.5 py-1 rounded-xl text-xs font-black text-slate-200 shadow-sm">
+                                                                            {formatLocalTime(match.date, match.time, selectedTimeZone)}
+                                                                        </div>
+                                                                        
+                                                                        <div className="flex items-center gap-1 text-[9px] text-slate-500 font-extrabold uppercase tracking-widest">
+                                                                            {match.stage === 'Group Stage' ? (
+                                                                                <span>Group {match.group}</span>
+                                                                            ) : (
+                                                                                <span className="text-purple-400/80">{match.stage}</span>
+                                                                            )}
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            ) : (
-                                                                <div className="flex flex-col items-center">
-                                                                    <div className="flex items-center bg-gray-800/40 border border-gray-700/50 px-3 py-1 rounded-lg text-xs font-black text-gray-300">
-                                                                        {formatLocalTime(match.date, match.time, selectedTimeZone)}
-                                                                    </div>
-                                                                    <div className="flex items-center gap-1 mt-1 text-[9px] text-gray-500 font-bold uppercase tracking-wider">
-                                                                        <span>Group {match.group}</span>
-                                                                    </div>
-                                                                </div>
-                                                            )}
-                                                            <span className="text-[8px] text-gray-600 flex items-center gap-1 justify-center whitespace-nowrap uppercase font-bold tracking-tight text-center mt-0.5">
-                                                                <MapPin className="w-2.5 h-2.5 text-gray-500 shrink-0" />
-                                                                <span className="truncate max-w-[110px]">{venue?.name || match.venue}</span>
-                                                            </span>
-                                                        </div>
-
-                                                        {/* Away Team */}
-                                                        <div className="flex flex-col flex-1 items-end min-w-0 text-right">
-                                                            <div className="flex items-center justify-end gap-3 w-full">
-                                                                <span className="text-xs md:text-sm font-extrabold text-white uppercase truncate tracking-tight">{awayTeam?.name || match.awayTeam}</span>
-                                                                <Flag code={awayTeam?.countryCode} circular={true} className="w-10 h-10 border border-gray-800/60 shadow-md shrink-0" />
-                                                                <ChevronRight className="w-4 h-4 text-gray-700 group-hover:text-green-500 transition-colors shrink-0 ml-1.5" />
+                                                                )}
+                                                                {/* Location / Stadium */}
+                                                                <span className="text-[9px] text-slate-500 flex items-center gap-1 justify-center whitespace-nowrap uppercase font-bold tracking-tight text-center mt-1">
+                                                                    <MapPin className="w-2.5 h-2.5 text-slate-600 shrink-0" />
+                                                                    <span className="truncate max-w-[100px]">{venue?.name || match.location || match.venue}</span>
+                                                                </span>
                                                             </div>
-                                                            {activeTab === 'past' && (awayScorers.length > 0 || awayCards.length > 0) && (
-                                                                <div className="flex flex-col items-end gap-0.5 mt-1.5 pr-[52px]">
-                                                                    {awayScorers.map((s, idx) => (
-                                                                        <span key={idx} className="text-[10px] text-gray-400 font-semibold uppercase flex items-center gap-1 justify-end leading-tight">
-                                                                            <span>
-                                                                                {s.name}
-                                                                                {s.ownGoal && <span className="text-red-500 lowercase ml-0.5">(og)</span>}
-                                                                                {s.penalty && <span className="text-yellow-500 lowercase ml-0.5">(pen)</span>}
-                                                                                {s.minute && <span className="text-gray-600 font-normal ml-0.5">'{s.minute}</span>}
-                                                                            </span>
-                                                                            <span className="text-gray-500">⚽</span>
+
+                                                            {/* Away Team */}
+                                                            <div className="flex items-center justify-start gap-3 flex-1 min-w-0 text-left">
+                                                                {awayTeam?.countryCode ? (
+                                                                    <Flag code={awayTeam.countryCode} circular={true} className="w-11 h-11 border border-slate-800/80 shadow-md shrink-0 group-hover:border-green-500/20 transition-colors" />
+                                                                ) : (
+                                                                    <div className="w-11 h-11 rounded-full bg-slate-950 border border-slate-850 flex items-center justify-center shrink-0 text-slate-500 font-black text-xs select-none shadow-sm">TBD</div>
+                                                                )}
+                                                                
+                                                                <div className="flex flex-col items-start min-w-0">
+                                                                    <div className="flex items-center gap-1 w-full">
+                                                                        <span className="text-xs md:text-sm font-black text-white uppercase truncate tracking-tight w-full leading-normal">
+                                                                            {awayTeam?.name || match.awayTeam}
                                                                         </span>
-                                                                    ))}
-                                                                    {awayCards.map((c, idx) => (
-                                                                        <span key={idx} className="text-[10px] text-gray-400 font-semibold uppercase flex items-center gap-1.5 justify-end leading-tight">
-                                                                            <span>
-                                                                                {c.name}
-                                                                                {c.minute && <span className="text-gray-600 font-normal ml-0.5">'{c.minute}</span>}
-                                                                            </span>
-                                                                            <div className={`w-1.5 h-2 rounded-[1px] shrink-0 ${c.type === 'red' ? 'bg-red-500 shadow-sm shadow-red-500/30' : 'bg-yellow-400 shadow-sm shadow-yellow-400/30'}`} title={`${c.name} (${c.minute}')`} />
-                                                                        </span>
-                                                                    ))}
+                                                                        <ChevronRight className="w-4 h-4 text-slate-755 group-hover:text-green-500 transition-all shrink-0 group-hover:translate-x-0.5 duration-200" />
+                                                                    </div>
+                                                                    
+                                                                    {/* Away Events - Aligned Left Under Team Name */}
+                                                                    {activeTab === 'past' && (awayScorers.length > 0 || awayCards.length > 0) && (
+                                                                        <div className="flex flex-col items-start gap-1 mt-1.5 w-full">
+                                                                            {awayScorers.map((s, idx) => (
+                                                                                <span key={`s-${idx}`} className="text-[10px] text-slate-400 font-semibold uppercase flex items-center gap-1 leading-tight text-left">
+                                                                                    <span>⚽</span>
+                                                                                    <span>
+                                                                                        {s.name}
+                                                                                        {s.ownGoal && <span className="text-red-500 lowercase ml-0.5 font-bold">(og)</span>}
+                                                                                        {s.penalty && <span className="text-amber-500 lowercase ml-0.5 font-bold">(pen)</span>}
+                                                                                        {s.minute && <span className="text-slate-500 font-normal ml-0.5">'{s.minute}</span>}
+                                                                                    </span>
+                                                                                </span>
+                                                                            ))}
+                                                                            {awayCards.map((c, idx) => (
+                                                                                <span key={`c-${idx}`} className="text-[10px] text-slate-400 font-semibold uppercase flex items-center gap-1.5 leading-tight text-left">
+                                                                                    <div className="w-1.5 h-2.5 rounded-[1px] bg-red-600 shadow-sm shrink-0" title="Red Card" />
+                                                                                    <span>
+                                                                                        {c.name}
+                                                                                        {c.minute && <span className="text-slate-500 font-normal ml-0.5">'{c.minute}</span>}
+                                                                                    </span>
+                                                                                </span>
+                                                                            ))}
+                                                                        </div>
+                                                                    )}
                                                                 </div>
-                                                            )}
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     {/* Combined POTM & Highlights Row */}
                                                     {(match.playerOfMatch || match.status === 'completed') && (
-                                                        <div className="flex items-center justify-between px-3 md:px-4 py-2 border-t border-gray-800/40 bg-gray-950/20">
+                                                        <div className="flex items-center justify-between px-4 py-2 border-t border-slate-800/40 bg-slate-950/20 backdrop-blur-sm">
                                                             {match.playerOfMatch ? (
-                                                                <div className="flex items-center gap-1.5 text-[9px] text-amber-400 font-extrabold uppercase tracking-wider bg-amber-950/20 border border-amber-500/20 px-2.5 py-0.5 rounded-full select-none shadow-sm shadow-amber-500/5">
-                                                                    <span className="text-[10px]">⭐</span>
+                                                                <div className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-gradient-to-r from-amber-500/15 via-yellow-500/5 to-amber-500/15 border border-amber-500/30 rounded-full text-[9px] font-extrabold uppercase text-amber-400 select-none shadow-sm shadow-amber-500/5">
+                                                                    <Star className="w-2.5 h-2.5 fill-amber-400 mr-0.5" />
                                                                     <span>POTM: {match.playerOfMatch}</span>
                                                                 </div>
                                                             ) : (
@@ -529,9 +540,9 @@ const Matches: React.FC = () => {
                                                                         target="_blank"
                                                                         rel="noopener noreferrer"
                                                                         onClick={(e) => e.stopPropagation()}
-                                                                        className="flex items-center gap-1.5 px-3 py-1 bg-[#ff0000] hover:bg-[#cc0000] text-white text-[10px] font-black uppercase tracking-widest rounded transition-all duration-200 shadow-md shadow-red-600/10 hover:shadow-red-600/20 group/hl-btn"
+                                                                        className="flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-red-650 to-rose-700 hover:from-red-550 hover:to-rose-600 text-white text-[9.5px] font-black uppercase tracking-wider rounded-lg transition-all duration-300 shadow-md shadow-red-950/40 hover:scale-105 hover:shadow-red-650/20 group/hl-btn"
                                                                     >
-                                                                        <span className="text-[9px] select-none">▶</span>
+                                                                        <Play className="w-2.5 h-2.5 fill-white shrink-0" />
                                                                         <span>Highlights</span>
                                                                     </a>
                                                                 );

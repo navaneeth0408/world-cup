@@ -3,7 +3,94 @@
  * Generates scores, goalscorers, assists, clean sheets, and cards using actual squad data.
  */
 
-import { powerRankingData } from '../data/powerRankingData';
+import formScoreData from '../data/form_score.json';
+import cohesionData from '../data/cohesion.json';
+import adaptabilityData from '../data/adaptability_scores_final.json';
+import fifaRankingData from '../data/fifa_ranking.json';
+import squadStrengthData from '../data/squad_strength.json';
+import continentalPerformanceData from '../data/continental_performance.json';
+import wcHistoryData from '../data/wc_history.json';
+import recentWcPerformanceData from '../data/recent_wc_performance.json';
+import lineupsData from '../data/lineups.json';
+
+// Helper to resolve starting lineup from lineups.json or fallback to full squad
+export const getStartingLineupSquad = (team) => {
+  if (!team) return [];
+
+  const normalize = (str) => {
+    if (!str) return '';
+    return str.toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]/g, "")
+      .trim();
+  };
+
+  const normTeamName = normalize(team.name);
+  const lineupInfo = lineupsData?.teams?.find(
+    t => normalize(t.country_name) === normTeamName
+  );
+
+  if (lineupInfo && lineupInfo.starting_lineup) {
+    return Object.entries(lineupInfo.starting_lineup).map(([posKey, name]) => {
+      let position = 'FWD';
+      const pk = posKey.toUpperCase();
+      if (pk.includes('GK')) position = 'GK';
+      else if (pk.includes('B')) position = 'DEF'; // RB, LB, CB, RWB, LWB, etc.
+      else if (pk.includes('M')) position = 'MID'; // DM, CM, AM, RM, LM, etc.
+      else if (pk.includes('W') || pk === 'CF' || pk === 'ST' || pk === 'SS' || pk === 'RF' || pk === 'LF') position = 'FWD';
+
+      const squadPlayer = team.squad?.find(p => normalize(p.name) === normalize(name));
+
+      return {
+        name,
+        position,
+        number: squadPlayer ? squadPlayer.number : 99
+      };
+    });
+  }
+
+  return team.squad || [];
+};
+
+// Helper to match team IDs and names to keys in JSON datasets
+export const getTeamDataKey = (team, data) => {
+  if (!team) return null;
+  const keys = Object.keys(data);
+  const normalize = (str) => {
+    if (!str) return '';
+    return str.toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]/g, "")
+      .trim();
+  };
+
+  const normId = normalize(team.id);
+  const normName = normalize(team.name);
+
+  const specialMappings = {
+    'usa': 'unitedstates',
+    'drcongo': 'drcongo',
+    'bosniaandherzegovina': 'bosniaandherzegovina',
+    'capeverde': 'capeverde',
+    'curacao': 'curacao',
+    'saudiarabia': 'saudiarabia',
+    'southafrica': 'southafrica',
+    'southkorea': 'southkorea',
+    'turkiye': 'turkiye',
+  };
+
+  const match = keys.find(key => {
+    const normKey = normalize(key);
+    if (normKey === normId || normKey === normName) return true;
+    if (specialMappings[normId] && normKey === specialMappings[normId]) return true;
+    if (specialMappings[normName] && normKey === specialMappings[normName]) return true;
+    return false;
+  });
+
+  return match || null;
+};
 
 // Helper to choose a random item from array based on weights
 const chooseWeighted = (items, weightFn) => {
@@ -62,48 +149,73 @@ const selectPlayerForBooking = (squad) => {
 };
 
 export const getTeamStrengthDetails = (team) => {
-  const stats = powerRankingData[team.id] || { wcRecent: 0, continental: 0, marketValue: 10, titles: 0, runnersUp: 0, semis: 0 };
-  
-  // Find highest squad value and history raw dynamically in powerRankingData
-  const teamEntries = Object.values(powerRankingData);
-  const highestTeamValue = Math.max(...teamEntries.map(t => t.marketValue || 0), 1200); // England is 1200
-  const highestHistoryRaw = Math.max(...teamEntries.map(t => (15 * (t.titles || 0)) + (10 * (t.runnersUp || 0)) + (5 * (t.semis || 0))), 125); // Germany is 125
+  // 1. FIFA Ranking Score (25%)
+  const fifaKey = getTeamDataKey(team, fifaRankingData);
+  const fifaScore = team.fifaScore !== undefined ? Number(team.fifaScore) : (fifaKey ? Number((fifaRankingData[fifaKey].fifaScore || 0).toFixed(2)) : 50.00);
 
-  // 1. FIFA Ranking Score (35%)
-  // Formula: ((211 - FIFA_Rank) / 210) * 100
-  const fifaRank = team.fifaRanking || 100;
-  const fifaScore = Number((((211 - fifaRank) / 210) * 100).toFixed(2));
+  // 2. Squad Quality Score (20%)
+  const squadKey = getTeamDataKey(team, squadStrengthData);
+  const squadScore = team.squadScore !== undefined ? Number(team.squadScore) : (squadKey ? Number((squadStrengthData[squadKey].squadScore || 0).toFixed(2)) : 50.00);
 
-  // 2. Recent World Cup Performance Score (25%)
-  // Average of last 3 World Cups (2022, 2018, 2014)
-  const worldCupRecentScore = Number((stats.wcRecent || 0).toFixed(2));
+  // 3. Form Score (15%)
+  const formKey = getTeamDataKey(team, formScoreData);
+  const formScore = team.formScore !== undefined ? Number(team.formScore) : (formKey ? Number((formScoreData[formKey].formScore || 0).toFixed(2)) : 50.00);
 
-  // 3. Continental Tournament Score (15%)
-  // Average of last 2 continental tournament scores
-  const continentalScore = Number((stats.continental || 0).toFixed(2));
+  // 4. Cohesion Score (15%)
+  const cohesionKey = getTeamDataKey(team, cohesionData);
+  const cohesionScore = team.cohesionScore !== undefined ? Number(team.cohesionScore) : (cohesionKey ? Number((cohesionData[cohesionKey].cohesionScore || 0).toFixed(2)) : 50.00);
 
-  // 4. Squad Quality Score (15%)
-  // Formula: (TeamValue / HighestTeamValueAmongAllTeams) * 100
-  const squadScore = Number(((stats.marketValue / highestTeamValue) * 100).toFixed(2));
+  // 5. Continental Tournament Score (7.5%)
+  const continentalKey = getTeamDataKey(team, continentalPerformanceData);
+  const continentalScore = team.continentalScore !== undefined ? Number(team.continentalScore) : (continentalKey ? Number((continentalPerformanceData[continentalKey].continentalScore || 0).toFixed(2)) : 50.00);
 
-  // 5. Historical World Cup Pedigree Score (10%)
-  // Points: WC Title = +15, Runner-up = +10, Semi-final = +5
-  // Formula: (History_Raw / HighestHistoryRawInDataset) * 100, capped at 100
-  const historyRaw = (15 * (stats.titles || 0)) + (10 * (stats.runnersUp || 0)) + (5 * (stats.semis || 0));
-  const historyScore = Number((Math.min(100, (historyRaw / highestHistoryRaw) * 100)).toFixed(2));
+  // 6. Historical World Cup Pedigree Score (7.5%)
+  const historyKey = getTeamDataKey(team, wcHistoryData);
+  const historyScore = team.historyScore !== undefined ? Number(team.historyScore) : (historyKey ? Number((wcHistoryData[historyKey].historyScore || 0).toFixed(2)) : 50.00);
+
+  // 7. Recent World Cup Performance Score (5%)
+  const recentWcKey = getTeamDataKey(team, recentWcPerformanceData);
+  const worldCupRecentScore = team.worldCupRecentScore !== undefined ? Number(team.worldCupRecentScore) : (recentWcKey ? Number((recentWcPerformanceData[recentWcKey].wcRecentScore || 0).toFixed(2)) : 50.00);
+
+  // 8. Adaptability Score (5%)
+  const adaptabilityKey = getTeamDataKey(team, adaptabilityData);
+  const adaptabilityScore = team.adaptabilityScore !== undefined ? Number(team.adaptabilityScore) : (adaptabilityKey ? Number((adaptabilityData[adaptabilityKey].adaptability_score || 0).toFixed(2)) : 50.00);
 
   // FINAL FORMULA
-  // PowerScore = (0.35 * FIFA_Score) + (0.25 * WorldCupRecent_Score) + (0.15 * Continental_Score) + (0.15 * Squad_Score) + (0.10 * History_Score)
-  const strength = (0.35 * fifaScore) + (0.25 * worldCupRecentScore) + (0.15 * continentalScore) + (0.15 * squadScore) + (0.10 * historyScore);
-  const powerScore = Number(strength.toFixed(2));
+  const strength = 
+    (fifaScore * 0.25) +
+    (squadScore * 0.20) +
+    (formScore * 0.15) +
+    (cohesionScore * 0.15) +
+    (continentalScore * 0.075) +
+    (historyScore * 0.075) +
+    (worldCupRecentScore * 0.05) +
+    (adaptabilityScore * 0.05);
+
+  let powerScore = Number(Math.max(0, Math.min(100, strength)).toFixed(2));
+
+  const isHost = team.id === 'usa' || team.id === 'canada' || team.id === 'mexico' || ['usa', 'canada', 'mexico'].includes(team.name?.toLowerCase());
+  if (isHost) {
+    powerScore = Number(Math.max(0, Math.min(100, powerScore * 1.10)).toFixed(2));
+  }
+
+  // Additional metadata details
+  const fifaRanking = team.fifaRanking !== undefined ? team.fifaRanking : (fifaKey ? fifaRankingData[fifaKey].rank : team.fifaRanking || 50);
+  const marketValue = team.marketValue !== undefined ? team.marketValue : (squadKey ? squadStrengthData[squadKey].marketValue : 0);
 
   return {
     powerScore,
+    fifaRanking,
     fifaScore,
+    marketValue,
     worldCupRecentScore,
     continentalScore,
     squadScore,
     historyScore,
+    formScore,
+    cohesionScore,
+    adaptabilityScore,
+    isHostBoosted: isHost,
     total: powerScore, // For backward compatibility with existing code
     leagueScore: worldCupRecentScore, // For backward compatibility
     popScore: continentalScore // For backward compatibility
@@ -121,11 +233,13 @@ const simulatePenaltyShootout = (teamA, teamB, probA, startMinute) => {
   let round = 1;
   let turn = 0; // 0 for A, 1 for B
   
-  // Squad lists (excluding GKs first, then GKs)
-  const squadA = [...(teamA.squad || [])].filter(p => p.position !== 'GK');
-  const squadB = [...(teamB.squad || [])].filter(p => p.position !== 'GK');
-  const gkA = (teamA.squad || []).find(p => p.position === 'GK') || { name: `${teamA.name} GK` };
-  const gkB = (teamB.squad || []).find(p => p.position === 'GK') || { name: `${teamB.name} GK` };
+  // Squad lists (excluding GKs first, then GKs) using starting lineups
+  const squadAAll = getStartingLineupSquad(teamA);
+  const squadBAll = getStartingLineupSquad(teamB);
+  const squadA = squadAAll.filter(p => p.position !== 'GK');
+  const squadB = squadBAll.filter(p => p.position !== 'GK');
+  const gkA = squadAAll.find(p => p.position === 'GK') || { name: `${teamA.name} GK` };
+  const gkB = squadBAll.find(p => p.position === 'GK') || { name: `${teamB.name} GK` };
   
   let indexA = 0;
   let indexB = 0;
@@ -217,9 +331,36 @@ const simulatePenaltyShootout = (teamA, teamB, probA, startMinute) => {
 
 // Main match simulation function with realism styles
 export const simulateMatchWithEvents = (teamA, teamB, isKnockout = false, realismCategory = 'moderate', forcedWinnerId = null) => {
+  // Use starting lineups for selecting scorers, assisters, bookings, etc.
+  const teamAWithStartingSquad = { ...teamA, squad: getStartingLineupSquad(teamA) };
+  const teamBWithStartingSquad = { ...teamB, squad: getStartingLineupSquad(teamB) };
+
   // Compute team strengths (higher is better, range 1-100)
-  const strengthA = calculateTeamStrength(teamA);
-  const strengthB = calculateTeamStrength(teamB);
+  const baseStrengthA = calculateTeamStrength(teamA);
+  const baseStrengthB = calculateTeamStrength(teamB);
+
+  // Apply Randomness Adjustment: min((Power Score Difference / 2), 5)
+  // Only applied in the 'realistic' (Normal) category for now
+  const powerDiff = Math.abs(baseStrengthA - baseStrengthB);
+  const adjustment = realismCategory === 'realistic' ? Math.min(powerDiff / 2, 5) : 0;
+
+  let adjA = baseStrengthA;
+  let adjB = baseStrengthB;
+
+  if (baseStrengthA > baseStrengthB) {
+    adjA = baseStrengthA - adjustment;
+    adjB = baseStrengthB + adjustment;
+  } else if (baseStrengthB > baseStrengthA) {
+    adjA = baseStrengthA + adjustment;
+    adjB = baseStrengthB - adjustment;
+  }
+
+  // Add random variance (±5%)
+  const varianceA = 1 + (Math.random() - 0.5) * 0.1;
+  const varianceB = 1 + (Math.random() - 0.5) * 0.1;
+
+  const strengthA = Math.min(100, Math.max(0, adjA * varianceA));
+  const strengthB = Math.min(100, Math.max(0, adjB * varianceB));
 
   let goalsA = 0;
   let goalsB = 0;
@@ -342,45 +483,27 @@ export const simulateMatchWithEvents = (teamA, teamB, isKnockout = false, realis
     const diff = strengthA - strengthB;
     const probA = strengthA / (strengthA + strengthB);
 
-    if (Math.random() < 0.3) {
-      isAET = true;
-      const extraA = Math.random() < probA ? 1 : 0;
-      const extraB = Math.random() < (1 - probA) && extraA === 0 ? 1 : 0;
-      goalsA += extraA;
-      goalsB += extraB;
+    isAET = true;
+    const extraA = Math.random() < probA ? 1 : 0;
+    const extraB = Math.random() < (1 - probA) && extraA === 0 ? 1 : 0;
+    goalsA += extraA;
+    goalsB += extraB;
 
-      // Force winner in extra time goals if AET didn't end in a draw
-      if (forcedWinnerId && goalsA !== goalsB) {
-        if (forcedWinnerId === teamA.id && goalsA < goalsB) {
-          const temp = goalsA; goalsA = goalsB; goalsB = temp;
-        } else if (forcedWinnerId === teamB.id && goalsB < goalsA) {
-          const temp = goalsA; goalsA = goalsB; goalsB = temp;
-        }
+    // Force winner in extra time goals if AET didn't end in a draw
+    if (forcedWinnerId && goalsA !== goalsB) {
+      if (forcedWinnerId === teamA.id && goalsA < goalsB) {
+        const temp = goalsA; goalsA = goalsB; goalsB = temp;
+      } else if (forcedWinnerId === teamB.id && goalsB < goalsA) {
+        const temp = goalsA; goalsA = goalsB; goalsB = temp;
       }
+    }
 
-      if (goalsA === goalsB) {
-        isPenalties = true;
-        let shootout = simulatePenaltyShootout(teamA, teamB, probA, 121);
-        if (forcedWinnerId) {
-          while (shootout.winner.id !== forcedWinnerId) {
-            shootout = simulatePenaltyShootout(teamA, teamB, probA, 121);
-          }
-        }
-        pensScore = shootout.pensScore;
-        winner = shootout.winner;
-        loser = shootout.loser;
-        shootoutEvents = shootout.kicks;
-        shootoutLastMinute = shootout.lastMinute;
-      } else {
-        winner = goalsA > goalsB ? teamA : teamB;
-        loser = goalsA > goalsB ? teamB : teamA;
-      }
-    } else {
+    if (goalsA === goalsB) {
       isPenalties = true;
-      let shootout = simulatePenaltyShootout(teamA, teamB, probA, 91);
+      let shootout = simulatePenaltyShootout(teamAWithStartingSquad, teamBWithStartingSquad, probA, 121);
       if (forcedWinnerId) {
         while (shootout.winner.id !== forcedWinnerId) {
-          shootout = simulatePenaltyShootout(teamA, teamB, probA, 91);
+          shootout = simulatePenaltyShootout(teamAWithStartingSquad, teamBWithStartingSquad, probA, 121);
         }
       }
       pensScore = shootout.pensScore;
@@ -388,6 +511,9 @@ export const simulateMatchWithEvents = (teamA, teamB, isKnockout = false, realis
       loser = shootout.loser;
       shootoutEvents = shootout.kicks;
       shootoutLastMinute = shootout.lastMinute;
+    } else {
+      winner = goalsA > goalsB ? teamA : teamB;
+      loser = goalsA > goalsB ? teamB : teamA;
     }
   } else {
     winner = goalsA > goalsB ? teamA : goalsB > goalsA ? teamB : null;
@@ -428,14 +554,14 @@ export const simulateMatchWithEvents = (teamA, teamB, isKnockout = false, realis
   const normalGoalsA = isAET ? goalsA - (goalsA > goalsB ? 1 : 0) : goalsA;
   const normalGoalsB = isAET ? goalsB - (goalsB > goalsA ? 1 : 0) : goalsB;
 
-  addGoalsToTimeline(normalGoalsA, teamA, teamB, 1, 90);
-  addGoalsToTimeline(normalGoalsB, teamB, teamA, 1, 90);
+  addGoalsToTimeline(normalGoalsA, teamAWithStartingSquad, teamBWithStartingSquad, 1, 90);
+  addGoalsToTimeline(normalGoalsB, teamBWithStartingSquad, teamAWithStartingSquad, 1, 90);
 
   if (isAET) {
     const etGoalsA = goalsA - normalGoalsA;
     const etGoalsB = goalsB - normalGoalsB;
-    addGoalsToTimeline(etGoalsA, teamA, teamB, 91, 120);
-    addGoalsToTimeline(etGoalsB, teamB, teamA, 91, 120);
+    addGoalsToTimeline(etGoalsA, teamAWithStartingSquad, teamBWithStartingSquad, 91, 120);
+    addGoalsToTimeline(etGoalsB, teamBWithStartingSquad, teamAWithStartingSquad, 91, 120);
   }
 
   // Generate cards
@@ -473,8 +599,8 @@ export const simulateMatchWithEvents = (teamA, teamB, isKnockout = false, realis
     }
   };
 
-  generateCardsForTeam(teamA);
-  generateCardsForTeam(teamB);
+  generateCardsForTeam(teamAWithStartingSquad);
+  generateCardsForTeam(teamBWithStartingSquad);
 
   events.push({ type: 'kickoff', minute: 0, detail: 'Kickoff!' });
   events.push({ type: 'halftime', minute: 45, detail: 'Half Time' });
@@ -516,6 +642,9 @@ export const simulateMatchWithEvents = (teamA, teamB, isKnockout = false, realis
 
 // Generates random scorers and assists matching user-entered manual scores
 export const generateScorersForManualScore = (teamA, teamB, goalsA, goalsB) => {
+  const teamAWithStartingSquad = { ...teamA, squad: getStartingLineupSquad(teamA) };
+  const teamBWithStartingSquad = { ...teamB, squad: getStartingLineupSquad(teamB) };
+
   const scorersList = [];
   const events = [];
   const cardsList = [];
@@ -546,8 +675,8 @@ export const generateScorersForManualScore = (teamA, teamB, goalsA, goalsB) => {
     }
   };
 
-  addGoalsToTimeline(goalsA, teamA, teamB);
-  addGoalsToTimeline(goalsB, teamB, teamA);
+  addGoalsToTimeline(goalsA, teamAWithStartingSquad, teamBWithStartingSquad);
+  addGoalsToTimeline(goalsB, teamBWithStartingSquad, teamAWithStartingSquad);
 
   const generateCardsForTeam = (team) => {
     if (Math.random() < 0.4) {
@@ -569,8 +698,8 @@ export const generateScorersForManualScore = (teamA, teamB, goalsA, goalsB) => {
     }
   };
 
-  generateCardsForTeam(teamA);
-  generateCardsForTeam(teamB);
+  generateCardsForTeam(teamAWithStartingSquad);
+  generateCardsForTeam(teamBWithStartingSquad);
 
   events.push({ type: 'kickoff', minute: 0, detail: 'Kickoff!' });
   events.push({ type: 'halftime', minute: 45, detail: 'Half Time' });

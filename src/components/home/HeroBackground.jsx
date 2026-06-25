@@ -39,13 +39,13 @@ const HeroBackground = () => {
             {/* Overlays */}
             <div className="absolute inset-0 flex flex-col">
                 {/* Base dark layer */}
-                <div className="absolute inset-0 bg-black/35" />
+                <div className="absolute inset-0 bg-black/20" />
 
                 {/* Linear Gradient Overlay (Left to Right) */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/40 to-black/25" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-black/15" />
 
                 {/* Green tint overlay */}
-                <div className="absolute inset-0 bg-[rgba(0,30,15,0.15)]" />
+                <div className="absolute inset-0 bg-[rgba(0,30,15,0.08)]" />
             </div>
 
             {/* Fade Gradients */}

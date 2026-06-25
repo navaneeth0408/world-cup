@@ -1,0 +1,194 @@
+{
+  "Argentina": {
+    "rank": 1,
+    "fifaScore": 100
+  },
+  "Spain": {
+    "rank": 2,
+    "fifaScore": 98
+  },
+  "France": {
+    "rank": 3,
+    "fifaScore": 96
+  },
+  "England": {
+    "rank": 4,
+    "fifaScore": 94
+  },
+  "Portugal": {
+    "rank": 5,
+    "fifaScore": 92
+  },
+  "Brazil": {
+    "rank": 6,
+    "fifaScore": 90
+  },
+  "Morocco": {
+    "rank": 7,
+    "fifaScore": 88
+  },
+  "Netherlands": {
+    "rank": 8,
+    "fifaScore": 86
+  },
+  "Belgium": {
+    "rank": 9,
+    "fifaScore": 84
+  },
+  "Germany": {
+    "rank": 10,
+    "fifaScore": 82
+  },
+  "Croatia": {
+    "rank": 11,
+    "fifaScore": 80
+  },
+  "Colombia": {
+    "rank": 12,
+    "fifaScore": 78
+  },
+  "Mexico": {
+    "rank": 13,
+    "fifaScore": 76
+  },
+  "Senegal": {
+    "rank": 14,
+    "fifaScore": 74
+  },
+  "Uruguay": {
+    "rank": 15,
+    "fifaScore": 72
+  },
+  "United States": {
+    "rank": 16,
+    "fifaScore": 70
+  },
+  "Japan": {
+    "rank": 17,
+    "fifaScore": 68
+  },
+  "Switzerland": {
+    "rank": 18,
+    "fifaScore": 66
+  },
+  "Iran": {
+    "rank": 19,
+    "fifaScore": 64
+  },
+  "Türkiye": {
+    "rank": 20,
+    "fifaScore": 62
+  },
+  "Ecuador": {
+    "rank": 21,
+    "fifaScore": 60
+  },
+  "Austria": {
+    "rank": 22,
+    "fifaScore": 58
+  },
+  "South Korea": {
+    "rank": 23,
+    "fifaScore": 56
+  },
+  "Australia": {
+    "rank": 24,
+    "fifaScore": 54
+  },
+  "Algeria": {
+    "rank": 25,
+    "fifaScore": 52
+  },
+  "Egypt": {
+    "rank": 26,
+    "fifaScore": 50
+  },
+  "Canada": {
+    "rank": 27,
+    "fifaScore": 48
+  },
+  "Norway": {
+    "rank": 28,
+    "fifaScore": 46
+  },
+  "Côte d'Ivoire": {
+    "rank": 29,
+    "fifaScore": 44
+  },
+  "Panama": {
+    "rank": 30,
+    "fifaScore": 42
+  },
+  "Sweden": {
+    "rank": 31,
+    "fifaScore": 40
+  },
+  "Czechia": {
+    "rank": 32,
+    "fifaScore": 38
+  },
+  "Paraguay": {
+    "rank": 33,
+    "fifaScore": 36
+  },
+  "Scotland": {
+    "rank": 34,
+    "fifaScore": 34
+  },
+  "Tunisia": {
+    "rank": 35,
+    "fifaScore": 32
+  },
+  "DR Congo": {
+    "rank": 36,
+    "fifaScore": 30
+  },
+  "Uzbekistan": {
+    "rank": 37,
+    "fifaScore": 28
+  },
+  "Qatar": {
+    "rank": 38,
+    "fifaScore": 26
+  },
+  "Iraq": {
+    "rank": 39,
+    "fifaScore": 24
+  },
+  "South Africa": {
+    "rank": 40,
+    "fifaScore": 22
+  },
+  "Saudi Arabia": {
+    "rank": 41,
+    "fifaScore": 20
+  },
+  "Jordan": {
+    "rank": 42,
+    "fifaScore": 18
+  },
+  "Bosnia and Herzegovina": {
+    "rank": 43,
+    "fifaScore": 16
+  },
+  "Cape Verde": {
+    "rank": 44,
+    "fifaScore": 14
+  },
+  "Ghana": {
+    "rank": 45,
+    "fifaScore": 12
+  },
+  "Curaçao": {
+    "rank": 46,
+    "fifaScore": 10
+  },
+  "Haiti": {
+    "rank": 47,
+    "fifaScore": 8
+  },
+  "New Zealand": {
+    "rank": 48,
+    "fifaScore": 6
+  }
+}

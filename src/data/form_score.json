@@ -1,0 +1,4706 @@
+{
+  "Algeria": {
+    "formScore": 38.3,
+    "wins": 6,
+    "draws": 4,
+    "losses": 5,
+    "recentMatches": [
+      {
+        "opponent": "Argentina",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "D",
+        "weight": 1.4,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Niger",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Somalia",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Uganda",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Guinea",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Angola",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Burkina Faso",
+        "result": "D",
+        "weight": 1.05,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Mauritania",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Senegal",
+        "result": "L",
+        "weight": 0.95,
+        "matchScore": -0.95
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Mozambique",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Egypt",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Argentina": {
+    "formScore": 85.5,
+    "wins": 12,
+    "draws": 3,
+    "losses": 0,
+    "recentMatches": [
+      {
+        "opponent": "Algeria",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Iceland",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Honduras",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Zambia",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Mauritania",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Angola",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Puerto Rico",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Venezuela",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Bolivia",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Colombia",
+        "result": "D",
+        "weight": 1.05,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Colombia",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Canada",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Chile",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Australia": {
+    "formScore": 67.2,
+    "wins": 10,
+    "draws": 2,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "Türkiye",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Bahrain",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "China",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Japan",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Indonesia",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Palestine",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Bangladesh",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Lebanon",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Colombia",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "United States",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Uzbekistan",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Syria",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "India",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "South Korea",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Austria": {
+    "formScore": 67.2,
+    "wins": 10,
+    "draws": 2,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Slovakia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Estonia",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Azerbaijan",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Sweden",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Belgium",
+        "result": "L",
+        "weight": 1.25,
+        "matchScore": -1.25
+      },
+      {
+        "opponent": "Kazakhstan",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Slovenia",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Norway",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Poland",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Turkey",
+        "result": "L",
+        "weight": 0.9,
+        "matchScore": -0.9
+      },
+      {
+        "opponent": "Germany",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Croatia",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Belgium": {
+    "formScore": 85.9,
+    "wins": 13,
+    "draws": 1,
+    "losses": 1,
+    "recentMatches": [
+      {
+        "opponent": "Egypt",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Sweden",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Austria",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Azerbaijan",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Estonia",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Slovakia",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Romania",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Ireland",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Luxembourg",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "England",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Germany",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "weight": 0.95,
+        "matchScore": -0.95
+      },
+      {
+        "opponent": "Italy",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Israel",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Wales",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Bosnia and Herzegovina": {
+    "formScore": 25.5,
+    "wins": 6,
+    "draws": 5,
+    "losses": 4,
+    "recentMatches": [
+      {
+        "opponent": "Switzerland",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Canada",
+        "result": "D",
+        "weight": 1.45,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Liechtenstein",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Iceland",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Slovakia",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Luxembourg",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Portugal",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Ukraine",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Hungary",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Germany",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Finland",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Montenegro",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Romania",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Armenia",
+        "result": "D",
+        "weight": 0.8,
+        "matchScore": 1
+      }
+    ]
+  },
+  "Brazil": {
+    "formScore": 54.1,
+    "wins": 8,
+    "draws": 4,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "Morocco",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Egypt",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Panama",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Croatia",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Senegal",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Japan",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "South Korea",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "D",
+        "weight": 1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "L",
+        "weight": 0.95,
+        "matchScore": -0.95
+      },
+      {
+        "opponent": "Colombia",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Chile",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Canada": {
+    "formScore": 26.6,
+    "wins": 6,
+    "draws": 5,
+    "losses": 4,
+    "recentMatches": [
+      {
+        "opponent": "Qatar",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Bosnia and Herzegovina",
+        "result": "D",
+        "weight": 1.45,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Jamaica",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Honduras",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Cuba",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Suriname",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "United States",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Mexico",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Panama",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Trinidad and Tobago",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Argentina",
+        "result": "L",
+        "weight": 0.95,
+        "matchScore": -0.95
+      },
+      {
+        "opponent": "Colombia",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Guatemala",
+        "result": "D",
+        "weight": 0.8,
+        "matchScore": 1
+      }
+    ]
+  },
+  "Cape Verde": {
+    "formScore": 24.5,
+    "wins": 4,
+    "draws": 5,
+    "losses": 6,
+    "recentMatches": [
+      {
+        "opponent": "Spain",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Mauritania",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Angola",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Eswatini",
+        "result": "D",
+        "weight": 1.35,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Libya",
+        "result": "D",
+        "weight": 1.3,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Cameroon",
+        "result": "L",
+        "weight": 1.25,
+        "matchScore": -1.25
+      },
+      {
+        "opponent": "Nigeria",
+        "result": "L",
+        "weight": 1.2,
+        "matchScore": -1.2
+      },
+      {
+        "opponent": "South Africa",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Morocco",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Senegal",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Togo",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Burkina Faso",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Algeria",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Egypt",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Colombia": {
+    "formScore": 68.7,
+    "wins": 11,
+    "draws": 1,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "Uzbekistan",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "weight": 1.35,
+        "matchScore": -1.35
+      },
+      {
+        "opponent": "Croatia",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "New Zealand",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Canada",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Mexico",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Bolivia",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Argentina",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Panama",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Croatia": {
+    "formScore": 66.1,
+    "wins": 12,
+    "draws": 1,
+    "losses": 2,
+    "recentMatches": [
+      {
+        "opponent": "England",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Brazil",
+        "result": "L",
+        "weight": 1.45,
+        "matchScore": -1.45
+      },
+      {
+        "opponent": "Colombia",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Montenegro",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Faroe Islands",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Czechia",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Montenegro",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Faroe Islands",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Czechia",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Gibraltar",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Poland",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Scotland",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Portugal",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Albania",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Curaçao": {
+    "formScore": 20.5,
+    "wins": 4,
+    "draws": 4,
+    "losses": 7,
+    "recentMatches": [
+      {
+        "opponent": "Germany",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Barbados",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Aruba",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Saint Martin",
+        "result": "D",
+        "weight": 1.35,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Grenada",
+        "result": "D",
+        "weight": 1.3,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Honduras",
+        "result": "L",
+        "weight": 1.25,
+        "matchScore": -1.25
+      },
+      {
+        "opponent": "Canada",
+        "result": "L",
+        "weight": 1.2,
+        "matchScore": -1.2
+      },
+      {
+        "opponent": "Panama",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Trinidad and Tobago",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "El Salvador",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Guatemala",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Jamaica",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Martinique",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "United States",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Czechia": {
+    "formScore": 20.1,
+    "wins": 5,
+    "draws": 5,
+    "losses": 5,
+    "recentMatches": [
+      {
+        "opponent": "South Africa",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "South Korea",
+        "result": "L",
+        "weight": 1.45,
+        "matchScore": -1.45
+      },
+      {
+        "opponent": "Faroe Islands",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Gibraltar",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Montenegro",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Croatia",
+        "result": "L",
+        "weight": 1.25,
+        "matchScore": -1.25
+      },
+      {
+        "opponent": "Faroe Islands",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Montenegro",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Albania",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Poland",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Moldova",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "North Macedonia",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Slovakia",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Armenia",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Ukraine",
+        "result": "D",
+        "weight": 0.8,
+        "matchScore": 1
+      }
+    ]
+  },
+  "DR Congo": {
+    "formScore": 24.5,
+    "wins": 4,
+    "draws": 5,
+    "losses": 6,
+    "recentMatches": [
+      {
+        "opponent": "Portugal",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Mauritania",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Sudan",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Togo",
+        "result": "D",
+        "weight": 1.35,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Senegal",
+        "result": "D",
+        "weight": 1.3,
+        "matchScore": 1
+      },
+      {
+        "opponent": "South Africa",
+        "result": "L",
+        "weight": 1.25,
+        "matchScore": -1.25
+      },
+      {
+        "opponent": "Guinea",
+        "result": "L",
+        "weight": 1.2,
+        "matchScore": -1.2
+      },
+      {
+        "opponent": "Angola",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Morocco",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Gabon",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Sierra Leone",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Congo",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Uganda",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Cameroon",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Ecuador": {
+    "formScore": 60.6,
+    "wins": 9,
+    "draws": 3,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "Ivory Coast",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Bolivia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Chile",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Venezuela",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Colombia",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Argentina",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Brazil",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Guatemala",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Honduras",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Nicaragua",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Jamaica",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Egypt": {
+    "formScore": 64.6,
+    "wins": 9,
+    "draws": 4,
+    "losses": 2,
+    "recentMatches": [
+      {
+        "opponent": "Belgium",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Djibouti",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Sierra Leone",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Burkina Faso",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Guinea-Bissau",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Zambia",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Algeria",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Cape Verde",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Ghana",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Mozambique",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "DR Congo",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Croatia",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "New Zealand",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Senegal",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "England": {
+    "formScore": 85.6,
+    "wins": 13,
+    "draws": 1,
+    "losses": 1,
+    "recentMatches": [
+      {
+        "opponent": "Croatia",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "New Zealand",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Japan",
+        "result": "L",
+        "weight": 1.35,
+        "matchScore": -1.35
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "D",
+        "weight": 1.3,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Albania",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Serbia",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Latvia",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Serbia",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Andorra",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Andorra",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Latvia",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Albania",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Greece",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Finland",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "France": {
+    "formScore": 67.5,
+    "wins": 10,
+    "draws": 2,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "Senegal",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Northern Ireland",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Ivory Coast",
+        "result": "L",
+        "weight": 1.4,
+        "matchScore": -1.4
+      },
+      {
+        "opponent": "Colombia",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Brazil",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Azerbaijan",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Ukraine",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Iceland",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Azerbaijan",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Iceland",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Ukraine",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Belgium",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Italy",
+        "result": "L",
+        "weight": 0.9,
+        "matchScore": -0.9
+      },
+      {
+        "opponent": "Spain",
+        "result": "L",
+        "weight": 0.85,
+        "matchScore": -0.85
+      },
+      {
+        "opponent": "Portugal",
+        "result": "D",
+        "weight": 0.8,
+        "matchScore": 1
+      }
+    ]
+  },
+  "Germany": {
+    "formScore": 82.7,
+    "wins": 12,
+    "draws": 2,
+    "losses": 1,
+    "recentMatches": [
+      {
+        "opponent": "Curaçao",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "United States",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Finland",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Ghana",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Switzerland",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Slovakia",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Luxembourg",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Northern Ireland",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Luxembourg",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Northern Ireland",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Slovakia",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "D",
+        "weight": 0.95,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Hungary",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Bosnia & Herzegovina",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "D",
+        "weight": 0.8,
+        "matchScore": 1
+      }
+    ]
+  },
+  "Ghana": {
+    "formScore": 67.2,
+    "wins": 10,
+    "draws": 2,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "Panama",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Madagascar",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Comoros",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Mali",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Central African Republic",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Germany",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Japan",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Uganda",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Nigeria",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Cape Verde",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Egypt",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Mozambique",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Angola",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Algeria",
+        "result": "L",
+        "weight": 0.85,
+        "matchScore": -0.85
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Haiti": {
+    "formScore": 20.5,
+    "wins": 4,
+    "draws": 4,
+    "losses": 7,
+    "recentMatches": [
+      {
+        "opponent": "Scotland",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Saint Lucia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Barbados",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Sint Maarten",
+        "result": "D",
+        "weight": 1.35,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Aruba",
+        "result": "D",
+        "weight": 1.3,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Jamaica",
+        "result": "L",
+        "weight": 1.25,
+        "matchScore": -1.25
+      },
+      {
+        "opponent": "Honduras",
+        "result": "L",
+        "weight": 1.2,
+        "matchScore": -1.2
+      },
+      {
+        "opponent": "Mexico",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Qatar",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Cuba",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Puerto Rico",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Bermuda",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Suriname",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Guyana",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Canada",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Iran": {
+    "formScore": 64.6,
+    "wins": 9,
+    "draws": 4,
+    "losses": 2,
+    "recentMatches": [
+      {
+        "opponent": "New Zealand",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Hong Kong",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Uzbekistan",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Turkmenistan",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Syria",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Japan",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Qatar",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Palestine",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Burkina Faso",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Jordan",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Angola",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Bulgaria",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Kenya",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Russia",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Iraq",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Iraq": {
+    "formScore": 38.3,
+    "wins": 6,
+    "draws": 4,
+    "losses": 5,
+    "recentMatches": [
+      {
+        "opponent": "Norway",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Indonesia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Vietnam",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Philippines",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Ukraine",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Jordan",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "South Korea",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Japan",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Vietnam",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Spain",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Qatar",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Oman",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Yemen",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Kuwait",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Ivory Coast": {
+    "formScore": 48,
+    "wins": 7,
+    "draws": 4,
+    "losses": 4,
+    "recentMatches": [
+      {
+        "opponent": "Ecuador",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Gambia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Seychelles",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Kenya",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Burundi",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Gabon",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Nigeria",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "DR Congo",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Mali",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Senegal",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Equatorial Guinea",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Guinea-Bissau",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Sierra Leone",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Morocco",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "South Africa",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Japan": {
+    "formScore": 76,
+    "wins": 11,
+    "draws": 3,
+    "losses": 1,
+    "recentMatches": [
+      {
+        "opponent": "Netherlands",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Iceland",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "England",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Scotland",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Bolivia",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Ghana",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Brazil",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "United States",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Mexico",
+        "result": "D",
+        "weight": 1.05,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "China",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Bahrain",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Indonesia",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Jordan": {
+    "formScore": 20.5,
+    "wins": 4,
+    "draws": 4,
+    "losses": 7,
+    "recentMatches": [
+      {
+        "opponent": "Austria",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Tajikistan",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Pakistan",
+        "result": "D",
+        "weight": 1.35,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Qatar",
+        "result": "D",
+        "weight": 1.3,
+        "matchScore": 1
+      },
+      {
+        "opponent": "South Korea",
+        "result": "L",
+        "weight": 1.25,
+        "matchScore": -1.25
+      },
+      {
+        "opponent": "Iraq",
+        "result": "L",
+        "weight": 1.2,
+        "matchScore": -1.2
+      },
+      {
+        "opponent": "Bahrain",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Malaysia",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Japan",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Oman",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Lebanon",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Syria",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Colombia",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Mexico": {
+    "formScore": 46.8,
+    "wins": 11,
+    "draws": 2,
+    "losses": 2,
+    "recentMatches": [
+      {
+        "opponent": "South Korea",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "South Africa",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Jamaica",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Honduras",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Panama",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "United States",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Canada",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Germany",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Uzbekistan",
+        "result": "D",
+        "weight": 1.05,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Australia",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Venezuela",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Brazil",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Morocco": {
+    "formScore": 64.6,
+    "wins": 9,
+    "draws": 4,
+    "losses": 2,
+    "recentMatches": [
+      {
+        "opponent": "Brazil",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Eritrea",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Tanzania",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Zambia",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Congo",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Angola",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Mauritania",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Liberia",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Burkina Faso",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "South Africa",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Ivory Coast",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Cape Verde",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Egypt",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Senegal",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Croatia",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Netherlands": {
+    "formScore": 65.1,
+    "wins": 9,
+    "draws": 5,
+    "losses": 1,
+    "recentMatches": [
+      {
+        "opponent": "Japan",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Uzbekistan",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Algeria",
+        "result": "L",
+        "weight": 1.4,
+        "matchScore": -1.4
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "D",
+        "weight": 1.35,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Norway",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Lithuania",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Poland",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Finland",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Malta",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Lithuania",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Poland",
+        "result": "D",
+        "weight": 1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Malta",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Finland",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Germany",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Bosnia & Herzegovina",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "New Zealand": {
+    "formScore": 42.3,
+    "wins": 6,
+    "draws": 5,
+    "losses": 4,
+    "recentMatches": [
+      {
+        "opponent": "Iran",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "New Caledonia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Vanuatu",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Solomon Islands",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Tahiti",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Fiji",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Papua New Guinea",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Australia",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "China",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Egypt",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Greece",
+        "result": "D",
+        "weight": 0.95,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Ireland",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Sweden",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Colombia",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Norway": {
+    "formScore": 67.2,
+    "wins": 10,
+    "draws": 2,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "Iraq",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Georgia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Cyprus",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Scotland",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Spain",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Kazakhstan",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Austria",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Slovenia",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Denmark",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Slovakia",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Czechia",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Faroe Islands",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Latvia",
+        "result": "L",
+        "weight": 0.85,
+        "matchScore": -0.85
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Panama": {
+    "formScore": 38.3,
+    "wins": 6,
+    "draws": 4,
+    "losses": 5,
+    "recentMatches": [
+      {
+        "opponent": "Ghana",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Montserrat",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Guyana",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Jamaica",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Canada",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Mexico",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "United States",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Qatar",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Martinique",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "El Salvador",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Nicaragua",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Guatemala",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Curaçao",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Brazil",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Paraguay": {
+    "formScore": 38.3,
+    "wins": 6,
+    "draws": 4,
+    "losses": 5,
+    "recentMatches": [
+      {
+        "opponent": "United States",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Bolivia",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Chile",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Venezuela",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Colombia",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Argentina",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Brazil",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Panama",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Nicaragua",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Honduras",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Guatemala",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Japan",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Portugal": {
+    "formScore": 85.9,
+    "wins": 13,
+    "draws": 1,
+    "losses": 1,
+    "recentMatches": [
+      {
+        "opponent": "DR Congo",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Bosnia and Herzegovina",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Slovakia",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Luxembourg",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Iceland",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Liechtenstein",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Turkey",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Georgia",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Czechia",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Poland",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Croatia",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "weight": 0.95,
+        "matchScore": -0.95
+      },
+      {
+        "opponent": "Slovenia",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Scotland",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Finland",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Qatar": {
+    "formScore": 25.5,
+    "wins": 6,
+    "draws": 5,
+    "losses": 4,
+    "recentMatches": [
+      {
+        "opponent": "Canada",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Switzerland",
+        "result": "D",
+        "weight": 1.45,
+        "matchScore": 1
+      },
+      {
+        "opponent": "India",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Afghanistan",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Kuwait",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Palestine",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Uzbekistan",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Iran",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Tajikistan",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Lebanon",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "China",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Haiti",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Honduras",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Panama",
+        "result": "D",
+        "weight": 0.8,
+        "matchScore": 1
+      }
+    ]
+  },
+  "Saudi Arabia": {
+    "formScore": 42.3,
+    "wins": 6,
+    "draws": 5,
+    "losses": 4,
+    "recentMatches": [
+      {
+        "opponent": "Uruguay",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Pakistan",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Tajikistan",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Kyrgyzstan",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Oman",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Thailand",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "South Korea",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Mali",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Nigeria",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Venezuela",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Bolivia",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Yemen",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Iraq",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Scotland": {
+    "formScore": 48,
+    "wins": 7,
+    "draws": 4,
+    "losses": 4,
+    "recentMatches": [
+      {
+        "opponent": "Haiti",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Georgia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Norway",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Cyprus",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Spain",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Croatia",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Portugal",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Poland",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Gibraltar",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Finland",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Hungary",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Switzerland",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Germany",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Northern Ireland",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Senegal": {
+    "formScore": 60.6,
+    "wins": 9,
+    "draws": 3,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "France",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Mauritania",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Sudan",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Togo",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "South Sudan",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Cameroon",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Algeria",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Rwanda",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Benin",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Morocco",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Ivory Coast",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Gambia",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Guinea",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Gabon",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Egypt",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "South Africa": {
+    "formScore": 20.1,
+    "wins": 5,
+    "draws": 5,
+    "losses": 5,
+    "recentMatches": [
+      {
+        "opponent": "Czechia",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Mexico",
+        "result": "L",
+        "weight": 1.45,
+        "matchScore": -1.45
+      },
+      {
+        "opponent": "Nigeria",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Zimbabwe",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Lesotho",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Rwanda",
+        "result": "L",
+        "weight": 1.25,
+        "matchScore": -1.25
+      },
+      {
+        "opponent": "Benin",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Eswatini",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Liberia",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Morocco",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Senegal",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "DR Congo",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Cape Verde",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Andorra",
+        "result": "D",
+        "weight": 0.8,
+        "matchScore": 1
+      }
+    ]
+  },
+  "South Korea": {
+    "formScore": 35.3,
+    "wins": 9,
+    "draws": 2,
+    "losses": 4,
+    "recentMatches": [
+      {
+        "opponent": "Mexico",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Czechia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "China",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Singapore",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Thailand",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "L",
+        "weight": 1.25,
+        "matchScore": -1.25
+      },
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Bahrain",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Iraq",
+        "result": "D",
+        "weight": 1.05,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Vietnam",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "El Salvador",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Peru",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "L",
+        "weight": 0.8,
+        "matchScore": -0.8
+      }
+    ]
+  },
+  "Spain": {
+    "formScore": 66,
+    "wins": 9,
+    "draws": 5,
+    "losses": 1,
+    "recentMatches": [
+      {
+        "opponent": "Cape Verde",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Iraq",
+        "result": "D",
+        "weight": 1.4,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Egypt",
+        "result": "D",
+        "weight": 1.35,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Serbia",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Türkiye",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Georgia",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Bulgaria",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Georgia",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Türkiye",
+        "result": "W",
+        "weight": 1.05,
+        "matchScore": 4.05
+      },
+      {
+        "opponent": "Bulgaria",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Germany",
+        "result": "D",
+        "weight": 0.95,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Croatia",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "weight": 0.85,
+        "matchScore": -0.85
+      },
+      {
+        "opponent": "Colombia",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Sweden": {
+    "formScore": 67.2,
+    "wins": 10,
+    "draws": 2,
+    "losses": 3,
+    "recentMatches": [
+      {
+        "opponent": "Tunisia",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Estonia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Azerbaijan",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Austria",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Belgium",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "New Zealand",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Albania",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Portugal",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Moldova",
+        "result": "D",
+        "weight": 1.1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Algeria",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Poland",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Slovakia",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Slovenia",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Norway",
+        "result": "L",
+        "weight": 0.85,
+        "matchScore": -0.85
+      },
+      {
+        "opponent": "Finland",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Switzerland": {
+    "formScore": 45.1,
+    "wins": 10,
+    "draws": 4,
+    "losses": 1,
+    "recentMatches": [
+      {
+        "opponent": "Bosnia and Herzegovina",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Qatar",
+        "result": "D",
+        "weight": 1.45,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Israel",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Romania",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Kosovo",
+        "result": "W",
+        "weight": 1.3,
+        "matchScore": 4.3
+      },
+      {
+        "opponent": "Andorra",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Belarus",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Germany",
+        "result": "W",
+        "weight": 1.15,
+        "matchScore": 4.15
+      },
+      {
+        "opponent": "Denmark",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Ireland",
+        "result": "D",
+        "weight": 1.05,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Estonia",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Austria",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Hungary",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Scotland",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Italy",
+        "result": "D",
+        "weight": 0.8,
+        "matchScore": 1
+      }
+    ]
+  },
+  "Tunisia": {
+    "formScore": 38.3,
+    "wins": 6,
+    "draws": 4,
+    "losses": 5,
+    "recentMatches": [
+      {
+        "opponent": "Sweden",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Equatorial Guinea",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Namibia",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Liberia",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Malawi",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "São Tomé and Príncipe",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Egypt",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Botswana",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Libya",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Equatorial Guinea",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Croatia",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "New Zealand",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Mauritania",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Cape Verde",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Algeria",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Türkiye": {
+    "formScore": 38.3,
+    "wins": 6,
+    "draws": 4,
+    "losses": 5,
+    "recentMatches": [
+      {
+        "opponent": "Australia",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Armenia",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Croatia",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Latvia",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Wales",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Germany",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Austria",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Hungary",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Georgia",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Portugal",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Czechia",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Montenegro",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Iceland",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Spain",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "United States": {
+    "formScore": 43.1,
+    "wins": 8,
+    "draws": 1,
+    "losses": 6,
+    "recentMatches": [
+      {
+        "opponent": "Paraguay",
+        "result": "W",
+        "weight": 1.5,
+        "matchScore": 4.5
+      },
+      {
+        "opponent": "Germany",
+        "result": "L",
+        "weight": 1.45,
+        "matchScore": -1.45
+      },
+      {
+        "opponent": "Senegal",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Portugal",
+        "result": "L",
+        "weight": 1.35,
+        "matchScore": -1.35
+      },
+      {
+        "opponent": "Belgium",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Japan",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "South Korea",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Switzerland",
+        "result": "L",
+        "weight": 1,
+        "matchScore": -1
+      },
+      {
+        "opponent": "Türkiye",
+        "result": "L",
+        "weight": 0.95,
+        "matchScore": -0.95
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Venezuela",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Nicaragua",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Uruguay": {
+    "formScore": 49.3,
+    "wins": 7,
+    "draws": 6,
+    "losses": 2,
+    "recentMatches": [
+      {
+        "opponent": "Saudi Arabia",
+        "result": "D",
+        "weight": 1.5,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Algeria",
+        "result": "D",
+        "weight": 1.45,
+        "matchScore": 1
+      },
+      {
+        "opponent": "England",
+        "result": "D",
+        "weight": 1.4,
+        "matchScore": 1
+      },
+      {
+        "opponent": "United States",
+        "result": "L",
+        "weight": 1.35,
+        "matchScore": -1.35
+      },
+      {
+        "opponent": "Mexico",
+        "result": "D",
+        "weight": 1.3,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Uzbekistan",
+        "result": "W",
+        "weight": 1.25,
+        "matchScore": 4.25
+      },
+      {
+        "opponent": "Dominican Republic",
+        "result": "W",
+        "weight": 1.2,
+        "matchScore": 4.2
+      },
+      {
+        "opponent": "Bolivia",
+        "result": "D",
+        "weight": 1.15,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "weight": 1.1,
+        "matchScore": 4.1
+      },
+      {
+        "opponent": "Colombia",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "Brazil",
+        "result": "D",
+        "weight": 1,
+        "matchScore": 1
+      },
+      {
+        "opponent": "United States",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Bolivia",
+        "result": "W",
+        "weight": 0.9,
+        "matchScore": 3.9
+      },
+      {
+        "opponent": "Panama",
+        "result": "W",
+        "weight": 0.85,
+        "matchScore": 3.85
+      },
+      {
+        "opponent": "Mexico",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  },
+  "Uzbekistan": {
+    "formScore": 38.3,
+    "wins": 6,
+    "draws": 4,
+    "losses": 5,
+    "recentMatches": [
+      {
+        "opponent": "Colombia",
+        "result": "L",
+        "weight": 1.5,
+        "matchScore": -1.5
+      },
+      {
+        "opponent": "Hong Kong",
+        "result": "W",
+        "weight": 1.45,
+        "matchScore": 4.45
+      },
+      {
+        "opponent": "Iran",
+        "result": "W",
+        "weight": 1.4,
+        "matchScore": 4.4
+      },
+      {
+        "opponent": "Turkmenistan",
+        "result": "W",
+        "weight": 1.35,
+        "matchScore": 4.35
+      },
+      {
+        "opponent": "Syria",
+        "result": "L",
+        "weight": 1.3,
+        "matchScore": -1.3
+      },
+      {
+        "opponent": "India",
+        "result": "D",
+        "weight": 1.25,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Australia",
+        "result": "D",
+        "weight": 1.2,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Thailand",
+        "result": "L",
+        "weight": 1.15,
+        "matchScore": -1.15
+      },
+      {
+        "opponent": "Qatar",
+        "result": "L",
+        "weight": 1.1,
+        "matchScore": -1.1
+      },
+      {
+        "opponent": "Bolivia",
+        "result": "L",
+        "weight": 1.05,
+        "matchScore": -1.05
+      },
+      {
+        "opponent": "United States",
+        "result": "W",
+        "weight": 1,
+        "matchScore": 4
+      },
+      {
+        "opponent": "Mexico",
+        "result": "W",
+        "weight": 0.95,
+        "matchScore": 3.95
+      },
+      {
+        "opponent": "Kuwait",
+        "result": "D",
+        "weight": 0.9,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Oman",
+        "result": "D",
+        "weight": 0.85,
+        "matchScore": 1
+      },
+      {
+        "opponent": "Yemen",
+        "result": "W",
+        "weight": 0.8,
+        "matchScore": 3.8
+      }
+    ]
+  }
+}

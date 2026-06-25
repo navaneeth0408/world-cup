@@ -3,6 +3,16 @@ import { teams as initialTeams, venues as initialVenues } from '../data/worldcup
 import { useTournamentStore } from '../store/tournamentStore';
 import squadsData from '../data/current_squads.json';
 import initialMatches from '../data/match_results.json';
+import { getMergedMatches } from '../utils/schedule';
+import { getTeamDataKey } from '../utils/simulationHelpers';
+import fifaRankingData from '../data/fifa_ranking.json';
+import squadStrengthData from '../data/squad_strength.json';
+import continentalPerformanceData from '../data/continental_performance.json';
+import wcHistoryData from '../data/wc_history.json';
+import recentWcPerformanceData from '../data/recent_wc_performance.json';
+import formScoreData from '../data/form_score.json';
+import cohesionData from '../data/cohesion.json';
+import adaptabilityData from '../data/adaptability_scores_final.json';
 
 export const useTournament = () => {
   const [loading, setLoading] = useState(true);
@@ -13,13 +23,35 @@ export const useTournament = () => {
     if (teams.length === 0) {
       const mergedTeams = initialTeams.map(t => {
         const customSquad = squadsData.find(s => s.id.replace(/_/g, '') === t.id.replace(/_/g, ''));
+        
+        const fifaKey = getTeamDataKey(t, fifaRankingData);
+        const squadKey = getTeamDataKey(t, squadStrengthData);
+        const continentalKey = getTeamDataKey(t, continentalPerformanceData);
+        const historyKey = getTeamDataKey(t, wcHistoryData);
+        const recentWcKey = getTeamDataKey(t, recentWcPerformanceData);
+        const formKey = getTeamDataKey(t, formScoreData);
+        const cohesionKey = getTeamDataKey(t, cohesionData);
+        const adaptabilityKey = getTeamDataKey(t, adaptabilityData);
+
         return {
           ...t,
-          squad: customSquad ? customSquad.squad : (t.squad || [])
+          squad: customSquad ? customSquad.squad : (t.squad || []),
+          fifaRanking: fifaKey ? fifaRankingData[fifaKey].rank : t.fifaRanking,
+          fifaScore: fifaKey ? Number((fifaRankingData[fifaKey].fifaScore || 0).toFixed(2)) : 50.00,
+          marketValue: squadKey ? Number(squadStrengthData[squadKey].marketValue || 0) : 0,
+          squadScore: squadKey ? Number((squadStrengthData[squadKey].squadScore || 0).toFixed(2)) : 50.00,
+          continentalScore: continentalKey ? Number((continentalPerformanceData[continentalKey].continentalScore || 0).toFixed(2)) : 50.00,
+          historyScore: historyKey ? Number((wcHistoryData[historyKey].historyScore || 0).toFixed(2)) : 50.00,
+          worldCupRecentScore: recentWcKey ? Number((recentWcPerformanceData[recentWcKey].wcRecentScore || 0).toFixed(2)) : 50.00,
+          formScore: formKey ? Number((formScoreData[formKey].formScore || 0).toFixed(2)) : 50.00,
+          cohesionScore: cohesionKey ? Number((cohesionData[cohesionKey].cohesionScore || 0).toFixed(2)) : 50.00,
+          adaptabilityScore: adaptabilityKey ? Number((adaptabilityData[adaptabilityKey].adaptability_score || 0).toFixed(2)) : 50.00,
         };
       });
       setTeams(mergedTeams);
-      setMatches(initialMatches);
+      
+      const mergedMatches = getMergedMatches(initialMatches, mergedTeams);
+      setMatches(mergedMatches);
     }
 
     // Simulate loading

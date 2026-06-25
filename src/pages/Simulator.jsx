@@ -9,9 +9,16 @@ import Flag from '../components/ui/Flag';
 import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Trophy, Award, Landmark, Play, Pause, FastForward, RotateCcw, ArrowRight, Save, User, Sparkles } from 'lucide-react';
-import { simulateMatchWithEvents, generateScorersForManualScore } from '../utils/simulationHelpers';
+import { getRoundOf32Pairings } from '../utils/knockoutAllocation';
+import { simulateMatchWithEvents, generateScorersForManualScore, getStartingLineupSquad } from '../utils/simulationHelpers';
 import { useTournamentStore } from '../store/tournamentStore';
 import { getHistoricalTeamDetails } from '../data/historicalData';
+
+const getGoalkeeper = (team) => {
+  if (!team) return { name: 'Unknown GK' };
+  const squad = getStartingLineupSquad(team);
+  return squad.find(p => p.position === 'GK') || { name: `${team.name} GK` };
+};
 
 // Confetti Canvas Component for Celebration
 const ConfettiCanvas = () => {
@@ -84,60 +91,7 @@ const ConfettiCanvas = () => {
   return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-50 w-full h-full" />;
 };
 
-// Best third place team allocator (FIFA 2026 Schedule rules)
-const assignThirdPlaceTeams = (bestThird) => {
-  const assignments = {
-    E: null, I: null, A: null, L: null, D: null, G: null, B: null, K: null
-  };
-  const allowed = {
-    E: ['A', 'B', 'C', 'D', 'F'],
-    I: ['C', 'D', 'F', 'G', 'H'],
-    A: ['C', 'E', 'F', 'H', 'I'],
-    L: ['E', 'H', 'I', 'J', 'K'],
-    D: ['B', 'E', 'F', 'I', 'J'],
-    G: ['A', 'E', 'H', 'I', 'J'],
-    B: ['E', 'F', 'G', 'I', 'J'],
-    K: ['D', 'E', 'I', 'J', 'L']
-  };
 
-  const pool = [...bestThird];
-  const keys = ['E', 'I', 'A', 'L', 'D', 'G', 'B', 'K'];
-
-  const match = (index) => {
-    if (index === keys.length) return true;
-    const key = keys[index];
-    const allowedGroups = allowed[key];
-
-    for (let i = 0; i < pool.length; i++) {
-      const team = pool[i];
-      if (team && allowedGroups.includes(team.group)) {
-        assignments[key] = team;
-        pool[i] = null;
-        if (match(index + 1)) return true;
-        pool[i] = team;
-        assignments[key] = null;
-      }
-    }
-    return false;
-  };
-
-  const success = match(0);
-
-  if (!success) {
-    const assignedIds = new Set(Object.values(assignments).filter(Boolean).map(t => t.id));
-    const remainingPool = bestThird.filter(t => !assignedIds.has(t.id));
-    keys.forEach(key => {
-      if (!assignments[key]) {
-        const team = remainingPool.shift();
-        if (team) {
-          assignments[key] = team;
-        }
-      }
-    });
-  }
-
-  return assignments;
-};
 
 const Simulator = () => {
   const { teams: originalTeams, matches, loading } = useTournament();
@@ -236,9 +190,11 @@ const Simulator = () => {
   });
 
   const [detailedStatsModal, setDetailedStatsModal] = useState(null); // null | { type, title, data }
+  const [knockoutViewTab, setKnockoutViewTab] = useState('bracket'); // bracket | standings
 
   const tickerTimerRef = useRef(null);
   const pauseDelayRef = useRef(null);
+  const savedSimRef = useRef(false);
 
   const groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
 
@@ -579,14 +535,14 @@ const Simulator = () => {
 
       // Update goalkeeper clean sheets
       if (result.homeScore === 0) {
-        const gk = teamB.squad?.find(p => p.position === 'GK') || { name: `${teamB.name} GK` };
+        const gk = getGoalkeeper(teamB);
         newPlayerStats.cleanSheets[gk.name] = {
           count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
           team: teamB
         };
       }
       if (result.awayScore === 0) {
-        const gk = teamA.squad?.find(p => p.position === 'GK') || { name: `${teamA.name} GK` };
+        const gk = getGoalkeeper(teamA);
         newPlayerStats.cleanSheets[gk.name] = {
           count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
           team: teamA
@@ -673,14 +629,14 @@ const Simulator = () => {
           });
 
           if (result.homeScore === 0) {
-            const gk = teamB.squad?.find(p => p.position === 'GK') || { name: `${teamB.name} GK` };
+            const gk = getGoalkeeper(teamB);
             newPlayerStats.cleanSheets[gk.name] = {
               count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
               team: teamB
             };
           }
           if (result.awayScore === 0) {
-            const gk = teamA.squad?.find(p => p.position === 'GK') || { name: `${teamA.name} GK` };
+            const gk = getGoalkeeper(teamA);
             newPlayerStats.cleanSheets[gk.name] = {
               count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
               team: teamA
@@ -736,9 +692,10 @@ const Simulator = () => {
     if (manualScorers) {
       // User manual selections
       manualHomeScorers.forEach(s => {
-        const scorerName = s.name || teamA.squad?.[0]?.name || 'Unknown Scorer';
+        const startingSquad = getStartingLineupSquad(teamA);
+        const scorerName = s.name || startingSquad?.[0]?.name || 'Unknown Scorer';
         const hasAssist = Math.random() < 0.7;
-        const outfieldPlayers = teamA.squad?.filter(p => p.name !== scorerName && p.position !== 'GK') || [];
+        const outfieldPlayers = startingSquad?.filter(p => p.name !== scorerName && p.position !== 'GK') || [];
         const assister = (hasAssist && outfieldPlayers.length > 0)
           ? outfieldPlayers[Math.floor(Math.random() * outfieldPlayers.length)]
           : null;
@@ -761,9 +718,10 @@ const Simulator = () => {
       });
       
       manualAwayScorers.forEach(s => {
-        const scorerName = s.name || teamB.squad?.[0]?.name || 'Unknown Scorer';
+        const startingSquad = getStartingLineupSquad(teamB);
+        const scorerName = s.name || startingSquad?.[0]?.name || 'Unknown Scorer';
         const hasAssist = Math.random() < 0.7;
-        const outfieldPlayers = teamB.squad?.filter(p => p.name !== scorerName && p.position !== 'GK') || [];
+        const outfieldPlayers = startingSquad?.filter(p => p.name !== scorerName && p.position !== 'GK') || [];
         const assister = (hasAssist && outfieldPlayers.length > 0)
           ? outfieldPlayers[Math.floor(Math.random() * outfieldPlayers.length)]
           : null;
@@ -819,14 +777,14 @@ const Simulator = () => {
     });
 
     if (manualHomeScore === 0) {
-      const gk = teamB.squad?.find(p => p.position === 'GK') || { name: `${teamB.name} GK` };
+      const gk = getGoalkeeper(teamB);
       newPlayerStats.cleanSheets[gk.name] = {
         count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
         team: teamB
       };
     }
     if (manualAwayScore === 0) {
-      const gk = teamA.squad?.find(p => p.position === 'GK') || { name: `${teamA.name} GK` };
+      const gk = getGoalkeeper(teamA);
       newPlayerStats.cleanSheets[gk.name] = {
         count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
         team: teamA
@@ -850,27 +808,7 @@ const Simulator = () => {
     const w = (group) => simGroupStandings[group]?.[0];
     const ru = (group) => simGroupStandings[group]?.[1];
 
-    const thirdPlaceAllocations = assignThirdPlaceTeams(bestThirdQualifiers);
-
-    const pairings = [
-      // R32 Pairings
-      { t1: getTeam(ru('A'), 'A runner-up'), t2: getTeam(ru('B'), 'B runner-up'), id: 'm73' },
-      { t1: getTeam(w('E'), 'Group E winner'), t2: getTeam(thirdPlaceAllocations['E'], 'E/A/B/C/D/F 3rd'), id: 'm74' },
-      { t1: getTeam(w('F'), 'Group F winner'), t2: getTeam(ru('C'), 'C runner-up'), id: 'm75' },
-      { t1: getTeam(w('C'), 'Group C winner'), t2: getTeam(ru('F'), 'F runner-up'), id: 'm76' },
-      { t1: getTeam(w('I'), 'Group I winner'), t2: getTeam(thirdPlaceAllocations['I'], 'I/C/D/F/G/H 3rd'), id: 'm77' },
-      { t1: getTeam(ru('E'), 'E runner-up'), t2: getTeam(ru('I'), 'I runner-up'), id: 'm78' },
-      { t1: getTeam(w('A'), 'Group A winner'), t2: getTeam(thirdPlaceAllocations['A'], 'A/C/E/F/H/I 3rd'), id: 'm79' },
-      { t1: getTeam(w('L'), 'Group L winner'), t2: getTeam(thirdPlaceAllocations['L'], 'L/E/H/I/J/K 3rd'), id: 'm80' },
-      { t1: getTeam(w('D'), 'Group D winner'), t2: getTeam(thirdPlaceAllocations['D'], 'D/B/E/F/I/J 3rd'), id: 'm81' },
-      { t1: getTeam(w('G'), 'Group G winner'), t2: getTeam(thirdPlaceAllocations['G'], 'G/A/E/H/I/J 3rd'), id: 'm82' },
-      { t1: getTeam(ru('K'), 'K runner-up'), t2: getTeam(ru('L'), 'L runner-up'), id: 'm83' },
-      { t1: getTeam(w('H'), 'Group H winner'), t2: getTeam(ru('J'), 'J runner-up'), id: 'm84' },
-      { t1: getTeam(w('B'), 'Group B winner'), t2: getTeam(thirdPlaceAllocations['B'], 'B/E/F/G/I/J 3rd'), id: 'm85' },
-      { t1: getTeam(w('J'), 'Group J winner'), t2: getTeam(ru('H'), 'H runner-up'), id: 'm86' },
-      { t1: getTeam(w('K'), 'Group K winner'), t2: getTeam(thirdPlaceAllocations['K'], 'K/D/E/I/J/L 3rd'), id: 'm87' },
-      { t1: getTeam(ru('D'), 'D runner-up'), t2: getTeam(ru('G'), 'G runner-up'), id: 'm88' }
-    ];
+    const pairings = getRoundOf32Pairings(w, ru, bestThirdQualifiers, getTeam, true);
 
     let alignedPairings = [...pairings];
     if (scriptedMatchup.enabled) {
@@ -939,9 +877,10 @@ const Simulator = () => {
 
     if (manualScorers) {
       manualHomeScorers.forEach(s => {
-        const scorerName = s.name || teamA.squad?.[0]?.name || 'Unknown Scorer';
+        const startingSquad = getStartingLineupSquad(teamA);
+        const scorerName = s.name || startingSquad?.[0]?.name || 'Unknown Scorer';
         const hasAssist = Math.random() < 0.7;
-        const outfieldPlayers = teamA.squad?.filter(p => p.name !== scorerName && p.position !== 'GK') || [];
+        const outfieldPlayers = startingSquad?.filter(p => p.name !== scorerName && p.position !== 'GK') || [];
         const assister = (hasAssist && outfieldPlayers.length > 0)
           ? outfieldPlayers[Math.floor(Math.random() * outfieldPlayers.length)]
           : null;
@@ -954,9 +893,10 @@ const Simulator = () => {
         });
       });
       manualAwayScorers.forEach(s => {
-        const scorerName = s.name || teamB.squad?.[0]?.name || 'Unknown Scorer';
+        const startingSquad = getStartingLineupSquad(teamB);
+        const scorerName = s.name || startingSquad?.[0]?.name || 'Unknown Scorer';
         const hasAssist = Math.random() < 0.7;
-        const outfieldPlayers = teamB.squad?.filter(p => p.name !== scorerName && p.position !== 'GK') || [];
+        const outfieldPlayers = startingSquad?.filter(p => p.name !== scorerName && p.position !== 'GK') || [];
         const assister = (hasAssist && outfieldPlayers.length > 0)
           ? outfieldPlayers[Math.floor(Math.random() * outfieldPlayers.length)]
           : null;
@@ -1032,14 +972,14 @@ const Simulator = () => {
     });
 
     if (manualHomeScore === 0) {
-      const gk = teamB.squad?.find(p => p.position === 'GK') || { name: `${teamB.name} GK` };
+      const gk = getGoalkeeper(teamB);
       newPlayerStats.cleanSheets[gk.name] = {
         count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
         team: teamB
       };
     }
     if (manualAwayScore === 0) {
-      const gk = teamA.squad?.find(p => p.position === 'GK') || { name: `${teamA.name} GK` };
+      const gk = getGoalkeeper(teamA);
       newPlayerStats.cleanSheets[gk.name] = {
         count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
         team: teamA
@@ -1095,14 +1035,14 @@ const Simulator = () => {
       });
 
       if (result.homeScore === 0) {
-        const gk = match.t2.squad?.find(p => p.position === 'GK') || { name: `${match.t2.name} GK` };
+        const gk = getGoalkeeper(match.t2);
         newPlayerStats.cleanSheets[gk.name] = {
           count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
           team: match.t2
         };
       }
       if (result.awayScore === 0) {
-        const gk = match.t1.squad?.find(p => p.position === 'GK') || { name: `${match.t1.name} GK` };
+        const gk = getGoalkeeper(match.t1);
         newPlayerStats.cleanSheets[gk.name] = {
           count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
           team: match.t1
@@ -1287,14 +1227,14 @@ const Simulator = () => {
           });
 
           if (result.homeScore === 0) {
-            const gk = teamB.squad?.find(p => p.position === 'GK') || { name: `${teamB.name} GK` };
+            const gk = getGoalkeeper(teamB);
             newPlayerStats.cleanSheets[gk.name] = {
               count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
               team: teamB
             };
           }
           if (result.awayScore === 0) {
-            const gk = teamA.squad?.find(p => p.position === 'GK') || { name: `${teamA.name} GK` };
+            const gk = getGoalkeeper(teamA);
             newPlayerStats.cleanSheets[gk.name] = {
               count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
               team: teamA
@@ -1319,6 +1259,93 @@ const Simulator = () => {
       };
     }
   }, [simState, currentKnockoutRound, currentKnockoutMatchIndex, isPaused, simSpeed, simType]);
+
+  // Reset savedSimRef when simulation is not completed
+  useEffect(() => {
+    if (simState !== 'completed') {
+      savedSimRef.current = false;
+    }
+  }, [simState]);
+
+  // Save simulation results when complete
+  useEffect(() => {
+    if (simState === 'completed' && knockoutRounds.winner && !savedSimRef.current) {
+      savedSimRef.current = true;
+      const formatTeam = (t) => t ? { id: t.id, name: t.name, code: t.code } : null;
+      const simData = {
+        groupMatches: simMatches.map(m => ({
+          id: m.id,
+          homeTeam: m.homeTeam,
+          awayTeam: m.awayTeam,
+          homeScore: m.homeScore,
+          awayScore: m.awayScore,
+          group: m.group
+        })),
+        roundOf32: (knockoutRounds.roundOf32 || []).map(m => ({
+          t1: formatTeam(m.t1),
+          t2: formatTeam(m.t2),
+          score: m.score,
+          winner: formatTeam(m.winner),
+          loser: formatTeam(m.loser)
+        })),
+        roundOf16: (knockoutRounds.roundOf16 || []).map(m => ({
+          t1: formatTeam(m.t1),
+          t2: formatTeam(m.t2),
+          score: m.score,
+          winner: formatTeam(m.winner),
+          loser: formatTeam(m.loser)
+        })),
+        quarterFinals: (knockoutRounds.quarterFinals || []).map(m => ({
+          t1: formatTeam(m.t1),
+          t2: formatTeam(m.t2),
+          score: m.score,
+          winner: formatTeam(m.winner),
+          loser: formatTeam(m.loser)
+        })),
+        semiFinals: (knockoutRounds.semiFinals || []).map(m => ({
+          t1: formatTeam(m.t1),
+          t2: formatTeam(m.t2),
+          score: m.score,
+          winner: formatTeam(m.winner),
+          loser: formatTeam(m.loser)
+        })),
+        final: knockoutRounds.final ? {
+          t1: formatTeam(knockoutRounds.final.t1),
+          t2: formatTeam(knockoutRounds.final.t2),
+          score: knockoutRounds.final.score,
+          winner: formatTeam(knockoutRounds.final.winner)
+        } : null,
+        thirdPlace: knockoutRounds.thirdPlace ? {
+          t1: formatTeam(knockoutRounds.thirdPlace.t1),
+          t2: formatTeam(knockoutRounds.thirdPlace.t2),
+          score: knockoutRounds.thirdPlace.score,
+          winner: formatTeam(knockoutRounds.thirdPlace.winner)
+        } : null,
+        winner: formatTeam(knockoutRounds.winner)
+      };
+
+      const saveSimulation = async () => {
+        try {
+          const response = await fetch('/api/save-simulation', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(simData),
+          });
+          if (response.ok) {
+            console.log('Simulation results saved successfully');
+          } else {
+            console.error('Failed to save simulation results');
+          }
+        } catch (error) {
+          console.error('Error saving simulation results:', error);
+        }
+      };
+
+      saveSimulation();
+    }
+  }, [simState, knockoutRounds, simMatches]);
 
   // Compute final awards
   const finalAwards = useMemo(() => {
@@ -1625,7 +1652,7 @@ const Simulator = () => {
                   <div className="flex flex-col gap-2">
                     {[
                       { id: 'favorites', label: '👑 Favorites Dominate', desc: 'Predictable wins for major powerhouses.' },
-                      { id: 'realistic', label: '📊 Highly Realistic', desc: 'FIFA rankings strongly dictate outputs.' },
+                      { id: 'realistic', label: '📊 Normal', desc: 'Based on team Power Scores.' },
                       { id: 'moderate', label: '⚖️ Moderately Realistic', desc: 'Standard rank-based results with average upsets.' },
                       { id: 'unrealistic', label: '🌀 Wild / Unrealistic', desc: 'Chaos mode. Unpredictable results and scores.' },
                       { id: 'underdog', label: '🐕 Underdog Story', desc: 'Weaker teams receive +30% boost.' }
@@ -1779,7 +1806,7 @@ const Simulator = () => {
               <div className="bg-gray-950 border-b border-gray-800 px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-[10px] text-green-400 font-black uppercase tracking-widest">
-                    Group Stage Simulation ({realismCategory} Mode)
+                    Group Stage Simulation ({realismCategory === 'realistic' ? 'Normal' : realismCategory.charAt(0).toUpperCase() + realismCategory.slice(1)} Mode)
                   </span>
                   <h3 className="text-sm font-bold text-gray-300">
                     Match {currentGroupMatchIndex + 1} of 72
@@ -2381,7 +2408,7 @@ const Simulator = () => {
               <div className="bg-gray-950 border-b border-gray-800 px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-[10px] text-green-400 font-black uppercase tracking-widest">
-                    Knockout Stage ({realismCategory} Mode)
+                    Knockout Stage ({realismCategory === 'realistic' ? 'Normal' : realismCategory.charAt(0).toUpperCase() + realismCategory.slice(1)} Mode)
                   </span>
                   <h3 className="text-sm font-bold text-gray-300">
                     {currentKnockoutRound.replace(/([A-Z])/g, ' $1').toUpperCase()} - Match {currentKnockoutMatchIndex + 1} of {activeRoundMatches?.length}
@@ -2454,7 +2481,9 @@ const Simulator = () => {
 
                   <div className="flex flex-col items-center justify-center px-4 min-w-[150px]">
                     <span className="px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 font-black text-xs uppercase tracking-widest rounded-full mb-3 animate-pulse">
-                      {liveMatchClock}'
+                      {activeSimulationDetails.result.isPenalties && liveMatchClock >= (activeSimulationDetails.result.isAET ? 120 : 90)
+                        ? (activeSimulationDetails.result.isAET ? "120'" : "90'")
+                        : `${liveMatchClock}'`}
                     </span>
                     <div className="text-5xl font-black text-white tracking-tighter italic tabular-nums">
                       {liveScore[0]} - {liveScore[1]}
@@ -2493,7 +2522,9 @@ const Simulator = () => {
                           animate={{ opacity: 1, y: 0 }}
                           className="text-xs leading-relaxed text-gray-400 flex items-start gap-2"
                         >
-                          <span className="font-black text-green-400 min-w-[28px] tabular-nums">{e.minute}'</span>
+                          <span className="font-black text-green-400 min-w-[28px] tabular-nums">
+                            {e.type === 'penalty_kick' || e.type === 'penalties' ? 'PEN' : `${e.minute}'`}
+                          </span>
                           <div>
                             {e.type === 'goal' && (
                               <span className="font-bold text-white flex items-center gap-1">
@@ -2795,18 +2826,132 @@ const Simulator = () => {
             {/* Awards section */}
             {simState === 'completed' && renderAwardsGrid("Tournament Awards")}
 
-            {/* Bracket view */}
-            <section className="bg-gray-900/40 p-6 rounded-3xl border border-gray-800/80 shadow-2xl overflow-x-auto">
-              <h3 className="text-xl font-black text-white uppercase tracking-wider mb-8 border-l-4 border-yellow-500 pl-3">Simulation Knockout Bracket</h3>
-              <KnockoutBracket
-                rounds={{
-                  roundOf32: knockoutRounds.roundOf32 || [],
-                  roundOf16: knockoutRounds.roundOf16 || [],
-                  quarterFinals: knockoutRounds.quarterFinals || [],
-                  semiFinals: knockoutRounds.semiFinals || [],
-                  final: [knockoutRounds.final].filter(Boolean)
-                }}
-              />
+            {/* Bracket/Standings/3rd Place view */}
+            <section className="bg-gray-900/40 p-6 rounded-3xl border border-gray-800/80 shadow-2xl">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8 border-b border-gray-800/50 pb-4">
+                <h3 className="text-xl font-black text-white uppercase tracking-wider border-l-4 border-yellow-500 pl-3">
+                  {knockoutViewTab === 'bracket' 
+                    ? 'Simulation Knockout Bracket' 
+                    : knockoutViewTab === 'standings' 
+                      ? 'Group Stage Standings' 
+                      : 'Best 3rd-Place Leaderboard'}
+                </h3>
+                <div className="flex flex-wrap bg-gray-955/60 p-1 rounded-xl border border-gray-850 self-start lg:self-center gap-1 sm:gap-0">
+                  <button
+                    onClick={() => setKnockoutViewTab('bracket')}
+                    className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                      knockoutViewTab === 'bracket'
+                        ? 'bg-yellow-500 text-gray-950 shadow-md'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Knockout Bracket
+                  </button>
+                  <button
+                    onClick={() => setKnockoutViewTab('standings')}
+                    className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                      knockoutViewTab === 'standings'
+                        ? 'bg-yellow-500 text-gray-950 shadow-md'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Group Standings
+                  </button>
+                  <button
+                    onClick={() => setKnockoutViewTab('thirdPlace')}
+                    className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                      knockoutViewTab === 'thirdPlace'
+                        ? 'bg-yellow-500 text-gray-950 shadow-md'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Best 3rd Place
+                  </button>
+                </div>
+              </div>
+
+              {knockoutViewTab === 'bracket' && (
+                <div className="overflow-x-auto scrollbar-thin">
+                  <KnockoutBracket
+                    rounds={{
+                      roundOf32: knockoutRounds.roundOf32 || [],
+                      roundOf16: knockoutRounds.roundOf16 || [],
+                      quarterFinals: knockoutRounds.quarterFinals || [],
+                      semiFinals: knockoutRounds.semiFinals || [],
+                      final: [knockoutRounds.final].filter(Boolean),
+                      thirdPlace: knockoutRounds.thirdPlace
+                    }}
+                  />
+                </div>
+              )}
+
+              {knockoutViewTab === 'standings' && (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {groups.map(g => (
+                    <div key={g} className="bg-gray-900/60 border border-gray-800 rounded-2xl p-4 shadow-xl">
+                      <h3 className="text-xs font-black text-gray-500 uppercase tracking-widest mb-3 border-b border-gray-800 pb-2">Group {g}</h3>
+                      <GroupTable teams={simGroupStandings[g] || []} />
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {knockoutViewTab === 'thirdPlace' && (
+                <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-xl max-w-4xl mx-auto flex flex-col">
+                  <div className="flex items-center justify-between border-b border-gray-800 pb-3 mb-4">
+                    <h3 className="text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
+                      <Award className="w-5 h-5 text-amber-500" />
+                      Best 3rd-Place Leaderboard
+                    </h3>
+                    <span className="text-[10px] text-gray-500 font-extrabold uppercase bg-gray-955 px-2 py-0.5 rounded">Top 8 Qualify</span>
+                  </div>
+                  
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm">
+                      <thead className="text-[10px] text-gray-500 uppercase tracking-widest border-b border-gray-800">
+                        <tr>
+                          <th className="px-2 py-3">Pos</th>
+                          <th className="px-2 py-3">Team</th>
+                          <th className="px-2 py-3 text-center">Group</th>
+                          <th className="px-2 py-3 text-center">P</th>
+                          <th className="px-2 py-3 text-center">GD</th>
+                          <th className="px-2 py-3 text-center">Pts</th>
+                          <th className="px-2 py-3 text-right">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-800/65">
+                        {bestThirdPlaceTeams.map((team, idx) => {
+                          const qualifies = idx < 8;
+                          return (
+                            <tr key={team.id} className={qualifies ? 'bg-green-500/[0.02]' : 'bg-red-500/[0.02]'}>
+                              <td className="px-2 py-3 font-bold text-gray-400">{idx + 1}</td>
+                              <td className="px-2 py-3">
+                                <div className="flex items-center gap-3">
+                                  <Flag code={team.countryCode} />
+                                  <span className="font-bold text-white">{team.name}</span>
+                                </div>
+                              </td>
+                              <td className="px-2 py-3 text-center font-bold text-gray-400">{team.group}</td>
+                              <td className="px-2 py-3 text-center text-gray-300">{team.played}</td>
+                              <td className="px-2 py-3 text-center text-gray-300">{(team.gd > 0 ? '+' : '') + team.gd}</td>
+                              <td className="px-2 py-3 text-center font-black text-white">{team.pts}</td>
+                              <td className="px-2 py-3 text-right">
+                                <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${
+                                  qualifies 
+                                    ? 'bg-green-500/10 text-green-400 border border-green-500/25' 
+                                    : 'bg-red-500/10 text-red-400 border border-red-500/25'
+                                }`}>
+                                  {qualifies ? 'Qualified' : 'Eliminated'}
+                                </span>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
             </section>
 
           </div>

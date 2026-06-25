@@ -1,60 +1,10 @@
 import { useCallback } from 'react';
 import { useTournamentStore } from '../store/tournamentStore';
 import { getHistoricalTeamDetails } from '../data/historicalData';
+import { calculateTeamStrength } from '../utils/simulationHelpers';
+import { getRoundOf32Pairings } from '../utils/knockoutAllocation';
 
-const assignThirdPlaceTeams = (bestThird) => {
-  const assignments = {
-    E: null, I: null, A: null, L: null, D: null, G: null, B: null, K: null
-  };
-  const allowed = {
-    E: ['A', 'B', 'C', 'D', 'F'],
-    I: ['C', 'D', 'F', 'G', 'H'],
-    A: ['C', 'E', 'F', 'H', 'I'],
-    L: ['E', 'H', 'I', 'J', 'K'],
-    D: ['B', 'E', 'F', 'I', 'J'],
-    G: ['A', 'E', 'H', 'I', 'J'],
-    B: ['E', 'F', 'G', 'I', 'J'],
-    K: ['D', 'E', 'I', 'J', 'L']
-  };
 
-  const pool = [...bestThird];
-  const keys = ['E', 'I', 'A', 'L', 'D', 'G', 'B', 'K'];
-
-  const match = (index) => {
-    if (index === keys.length) return true;
-    const key = keys[index];
-    const allowedGroups = allowed[key];
-
-    for (let i = 0; i < pool.length; i++) {
-      const team = pool[i];
-      if (team && allowedGroups.includes(team.group)) {
-        assignments[key] = team;
-        pool[i] = null;
-        if (match(index + 1)) return true;
-        pool[i] = team;
-        assignments[key] = null;
-      }
-    }
-    return false;
-  };
-
-  const success = match(0);
-
-  if (!success) {
-    const remainingPool = [...bestThird];
-    keys.forEach(key => {
-      if (!assignments[key]) {
-        const idx = remainingPool.findIndex(t => t !== null);
-        if (idx !== -1) {
-          assignments[key] = remainingPool[idx];
-          remainingPool[idx] = null;
-        }
-      }
-    });
-  }
-
-  return assignments;
-};
 
 export const useSimulator = () => {
   const {
@@ -66,14 +16,35 @@ export const useSimulator = () => {
     setIsSimulating
   } = useTournamentStore();
 
-  const simulateMatch = useCallback((teamA, teamB, isKnockout = false) => {
-    // Basic probability based on FIFA ranking (lower ranking is better)
-    // We normalize ranking to a power score
-    const scoreA = Math.max(1, 100 - (teamA.fifaRanking || teamA.ranking || 50));
-    const scoreB = Math.max(1, 100 - (teamB.fifaRanking || teamB.ranking || 50));
+  const simulateMatch = useCallback((teamA, teamB, isKnockout = false, realismCategory = 'realistic') => {
+    const baseStrengthA = calculateTeamStrength(teamA);
+    const baseStrengthB = calculateTeamStrength(teamB);
+    
+    // Apply Randomness Adjustment: min((Power Score Difference / 2), 5)
+    // Only applied in the 'realistic' (Normal) category for now
+    const powerDiff = Math.abs(baseStrengthA - baseStrengthB);
+    const adjustment = realismCategory === 'realistic' ? Math.min(powerDiff / 2, 5) : 0;
+    
+    let adjA = baseStrengthA;
+    let adjB = baseStrengthB;
+    
+    if (baseStrengthA > baseStrengthB) {
+      adjA = baseStrengthA - adjustment;
+      adjB = baseStrengthB + adjustment;
+    } else if (baseStrengthB > baseStrengthA) {
+      adjA = baseStrengthA + adjustment;
+      adjB = baseStrengthB - adjustment;
+    }
+    
+    // Add random variance (±5%)
+    const varianceA = 1 + (Math.random() - 0.5) * 0.1;
+    const varianceB = 1 + (Math.random() - 0.5) * 0.1;
+    
+    const strengthA = Math.min(100, Math.max(0, adjA * varianceA));
+    const strengthB = Math.min(100, Math.max(0, adjB * varianceB));
 
-    const totalScore = scoreA + scoreB;
-    const probA = scoreA / totalScore;
+    const totalScore = strengthA + strengthB;
+    const probA = strengthA / totalScore;
 
     // Simulate goals (Poisson-ish distribution simplified)
     const lambda = 1.5; // Average goals per team
@@ -168,41 +139,7 @@ export const useSimulator = () => {
     const w = (group) => standings[group]?.[0];
     const ru = (group) => standings[group]?.[1];
 
-    const thirdPlaceAllocations = assignThirdPlaceTeams(bestThird);
-
-    const pairings = [
-      // Match 73 vs Match 74
-      { t1: getTeam(ru('A'), 'A runner-up'), t2: getTeam(ru('B'), 'B runner-up') },
-      { t1: getTeam(w('E'), 'Group E winner'), t2: getTeam(thirdPlaceAllocations['E'], 'E/A/B/C/D/F 3rd') },
-
-      // Match 75 vs Match 76
-      { t1: getTeam(w('F'), 'Group F winner'), t2: getTeam(ru('C'), 'C runner-up') },
-      { t1: getTeam(w('C'), 'Group C winner'), t2: getTeam(ru('F'), 'F runner-up') },
-
-      // Match 77 vs Match 78
-      { t1: getTeam(w('I'), 'Group I winner'), t2: getTeam(thirdPlaceAllocations['I'], 'I/C/D/F/G/H 3rd') },
-      { t1: getTeam(ru('E'), 'E runner-up'), t2: getTeam(ru('I'), 'I runner-up') },
-
-      // Match 79 vs Match 80
-      { t1: getTeam(w('A'), 'Group A winner'), t2: getTeam(thirdPlaceAllocations['A'], 'A/C/E/F/H/I 3rd') },
-      { t1: getTeam(w('L'), 'Group L winner'), t2: getTeam(thirdPlaceAllocations['L'], 'L/E/H/I/J/K 3rd') },
-
-      // Match 81 vs Match 82
-      { t1: getTeam(w('D'), 'Group D winner'), t2: getTeam(thirdPlaceAllocations['D'], 'D/B/E/F/I/J 3rd') },
-      { t1: getTeam(w('G'), 'Group G winner'), t2: getTeam(thirdPlaceAllocations['G'], 'G/A/E/H/I/J 3rd') },
-
-      // Match 83 vs Match 84
-      { t1: getTeam(ru('K'), 'K runner-up'), t2: getTeam(ru('L'), 'L runner-up') },
-      { t1: getTeam(w('H'), 'Group H winner'), t2: getTeam(ru('J'), 'J runner-up') },
-
-      // Match 85 vs Match 86
-      { t1: getTeam(w('B'), 'Group B winner'), t2: getTeam(thirdPlaceAllocations['B'], 'B/E/F/G/I/J 3rd') },
-      { t1: getTeam(w('J'), 'Group J winner'), t2: getTeam(ru('H'), 'H runner-up') },
-
-      // Match 87 vs Match 88
-      { t1: getTeam(w('K'), 'Group K winner'), t2: getTeam(thirdPlaceAllocations['K'], 'K/D/E/I/J/L 3rd') },
-      { t1: getTeam(ru('D'), 'D runner-up'), t2: getTeam(ru('G'), 'G runner-up') }
-    ];
+    const pairings = getRoundOf32Pairings(w, ru, bestThird, getTeam, false);
 
     // 3. Knockouts (Official 2026 Schedule)
     const runKnockoutRound = (roundMatches) => {
@@ -253,6 +190,68 @@ export const useSimulator = () => {
       winner: winner,
       thirdPlace: thirdPlaceWinner
     });
+
+    // Save simulation results to server
+    const formatTeam = (t) => t ? { id: t.id, name: t.name, code: t.code } : null;
+    const simData = {
+      groupMatches: simulatedMatches.map(m => ({
+        id: m.id,
+        homeTeam: m.homeTeam,
+        awayTeam: m.awayTeam,
+        homeScore: m.homeScore,
+        awayScore: m.awayScore,
+        group: m.group
+      })),
+      roundOf32: r32Matches.map(m => ({
+        t1: formatTeam(m.t1),
+        t2: formatTeam(m.t2),
+        score: m.score,
+        winner: formatTeam(m.winner),
+        loser: formatTeam(m.loser)
+      })),
+      roundOf16: r16.matches.map(m => ({
+        t1: formatTeam(m.t1),
+        t2: formatTeam(m.t2),
+        score: m.score,
+        winner: formatTeam(m.winner),
+        loser: formatTeam(m.loser)
+      })),
+      quarterFinals: qf.matches.map(m => ({
+        t1: formatTeam(m.t1),
+        t2: formatTeam(m.t2),
+        score: m.score,
+        winner: formatTeam(m.winner),
+        loser: formatTeam(m.loser)
+      })),
+      semiFinals: sf.matches.map(m => ({
+        t1: formatTeam(m.t1),
+        t2: formatTeam(m.t2),
+        score: m.score,
+        winner: formatTeam(m.winner),
+        loser: formatTeam(m.loser)
+      })),
+      final: {
+        t1: formatTeam(sf.nextRound[0]),
+        t2: formatTeam(sf.nextRound[1]),
+        score: [finalRes.goalsA, finalRes.goalsB],
+        winner: formatTeam(winner)
+      },
+      thirdPlace: thirdPlaceWinner ? {
+        t1: formatTeam(sf.matches[0].loser),
+        t2: formatTeam(sf.matches[1].loser),
+        score: [thirdPlaceRes.goalsA, thirdPlaceRes.goalsB],
+        winner: formatTeam(thirdPlaceWinner)
+      } : null,
+      winner: formatTeam(winner)
+    };
+
+    fetch('/api/save-simulation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(simData),
+    }).catch(err => console.error('Failed to save simulation from hook:', err));
 
     setIsSimulating(false);
   }, [teams, matches, historicalSwaps, simulateMatch, setSimulationResults, setIsSimulating]);

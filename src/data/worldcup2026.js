@@ -9655,9 +9655,31 @@ export const matches = [
     "time": "16:00",
     "group": "A",
     "venue": "mercedesbenz",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Michal Sadílek",
+        "teamId": "czechia",
+        "minute": 6,
+        "assist": "Aleksandr Sojka"
+      },
+      {
+        "name": "Teboho Mokoena",
+        "teamId": "southafrica",
+        "minute": 83,
+        "assist": null
+      }
+    ],
+    "cards": [
+      {
+        "name": "Ladislav Krejčí",
+        "teamId": "czechia",
+        "type": "yellow",
+        "minute": 75
+      }
+    ],
     "highlightUrl": ""
   },
   {
@@ -9668,9 +9690,49 @@ export const matches = [
     "time": "19:00",
     "group": "B",
     "venue": "sofi",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 4,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Johan Manzambi",
+        "teamId": "switzerland",
+        "minute": 71,
+        "assist": null
+      },
+      {
+        "name": "Ruben Vargas",
+        "teamId": "switzerland",
+        "minute": 84,
+        "assist": null
+      },
+      {
+        "name": "Johan Manzambi",
+        "teamId": "switzerland",
+        "minute": 90,
+        "assist": "Ruben Vargas"
+      },
+      {
+        "name": "Ermin Mahmic",
+        "teamId": "bosniaandherzegovina",
+        "minute": "90+3",
+        "assist": null
+      },
+      {
+        "name": "Granit Xhaka",
+        "teamId": "switzerland",
+        "minute": "90+7",
+        "assist": null
+      }
+    ],
+    "cards": [
+      {
+        "name": "Tarik Muharemovic",
+        "teamId": "bosniaandherzegovina",
+        "type": "red",
+        "minute": 80
+      }
+    ],
     "highlightUrl": ""
   },
   {
@@ -9681,9 +9743,61 @@ export const matches = [
     "time": "22:00",
     "group": "B",
     "venue": "bcplace",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 6,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Cyle Larin",
+        "teamId": "canada",
+        "minute": 16,
+        "assist": null
+      },
+      {
+        "name": "Jonathan David",
+        "teamId": "canada",
+        "minute": 29,
+        "assist": "Alistair Johnston"
+      },
+      {
+        "name": "Jonathan David",
+        "teamId": "canada",
+        "minute": "45+3",
+        "assist": null
+      },
+      {
+        "name": "Nathan Saliba",
+        "teamId": "canada",
+        "minute": 64,
+        "assist": null
+      },
+      {
+        "name": "Mohamed Manai (OG)",
+        "teamId": "canada",
+        "minute": 75,
+        "assist": null
+      },
+      {
+        "name": "Jonathan David",
+        "teamId": "canada",
+        "minute": "90+2",
+        "assist": "Nathan Saliba"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Homam Ahmed",
+        "teamId": "qatar",
+        "type": "red",
+        "minute": 33
+      },
+      {
+        "name": "Assim Madibo",
+        "teamId": "qatar",
+        "type": "red",
+        "minute": 53
+      }
+    ],
     "highlightUrl": ""
   },
   {
@@ -9694,9 +9808,25 @@ export const matches = [
     "time": "01:00",
     "group": "A",
     "venue": "akron",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Luis Romo",
+        "teamId": "mexico",
+        "minute": 50,
+        "assist": null
+      }
+    ],
+    "cards": [
+      {
+        "name": "Paik Seung-ho",
+        "teamId": "southkorea",
+        "type": "yellow",
+        "minute": 57
+      }
+    ],
     "highlightUrl": ""
   },
   {
@@ -9876,9 +10006,30 @@ export const matches = [
     "time": "21:00",
     "group": "I",
     "venue": "lincoln",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Kylian Mbappé",
+        "teamId": "france",
+        "minute": 14,
+        "assist": "Michael Olise"
+      },
+      {
+        "name": "Kylian Mbappé",
+        "teamId": "france",
+        "minute": 54,
+        "assist": ""
+      },
+      {
+        "name": "Ousmane Dembélé",
+        "teamId": "france",
+        "minute": 66,
+        "assist": "Michael Olise"
+      }
+    ],
+    "cards": [],
     "highlightUrl": ""
   },
   {
@@ -9889,9 +10040,42 @@ export const matches = [
     "time": "00:00",
     "group": "I",
     "venue": "bmo",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Marcus Holmgren Pedersen",
+        "teamId": "norway",
+        "minute": 43,
+        "assist": ""
+      },
+      {
+        "name": "Erling Haaland",
+        "teamId": "norway",
+        "minute": 48,
+        "assist": ""
+      },
+      {
+        "name": "Ismaïla Sarr",
+        "teamId": "senegal",
+        "minute": 53,
+        "assist": ""
+      },
+      {
+        "name": "Erling Haaland",
+        "teamId": "norway",
+        "minute": 58,
+        "assist": "Martin Ødegaard"
+      },
+      {
+        "name": "Ismaïla Sarr",
+        "teamId": "senegal",
+        "minute": "90+3",
+        "assist": ""
+      }
+    ],
+    "cards": [],
     "highlightUrl": ""
   },
   {
@@ -9902,9 +10086,30 @@ export const matches = [
     "time": "03:00",
     "group": "J",
     "venue": "levis",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Nizar Al-Rashdan",
+        "teamId": "jordan",
+        "minute": 36,
+        "assist": "Mousa Al-Tamari"
+      },
+      {
+        "name": "Nadhir Benbouali",
+        "teamId": "algeria",
+        "minute": 69,
+        "assist": "Riyad Mahrez"
+      },
+      {
+        "name": "Amine Gouiri",
+        "teamId": "algeria",
+        "minute": 82,
+        "assist": ""
+      }
+    ],
+    "cards": [],
     "highlightUrl": ""
   },
   {
@@ -9915,9 +10120,50 @@ export const matches = [
     "time": "17:00",
     "group": "K",
     "venue": "nrg",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 5,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Cristiano Ronaldo",
+        "teamId": "portugal",
+        "minute": 6,
+        "assist": "João Cancelo"
+      },
+      {
+        "name": "Nuno Mendes",
+        "teamId": "portugal",
+        "minute": 17,
+        "assist": ""
+      },
+      {
+        "name": "Cristiano Ronaldo",
+        "teamId": "portugal",
+        "minute": 39,
+        "assist": "Bruno Fernandes"
+      },
+      {
+        "name": "Abduvohid Nematov",
+        "teamId": "portugal",
+        "minute": 60,
+        "assist": "",
+        "ownGoal": true
+      },
+      {
+        "name": "Rafael Leão",
+        "teamId": "portugal",
+        "minute": 87,
+        "assist": ""
+      }
+    ],
+    "cards": [
+      {
+        "name": "Odiljon Hamrobekov",
+        "teamId": "uzbekistan",
+        "type": "yellow",
+        "minute": 15
+      }
+    ],
     "highlightUrl": ""
   },
   {
@@ -9928,9 +10174,24 @@ export const matches = [
     "time": "20:00",
     "group": "L",
     "venue": "gillette",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 0,
+    "scorers": [],
+    "cards": [
+      {
+        "name": "Declan Rice",
+        "teamId": "england",
+        "type": "yellow",
+        "minute": 41
+      },
+      {
+        "name": "Iñaki Williams",
+        "teamId": "ghana",
+        "type": "yellow",
+        "minute": 60
+      }
+    ],
     "highlightUrl": ""
   },
   {
@@ -9941,9 +10202,31 @@ export const matches = [
     "time": "23:00",
     "group": "L",
     "venue": "gillette",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Ante Budimir",
+        "teamId": "croatia",
+        "minute": 54,
+        "assist": "Josip Stanišić"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Yoel Bárcenas",
+        "teamId": "panama",
+        "type": "yellow",
+        "minute": 61
+      },
+      {
+        "name": "Petar Sučić",
+        "teamId": "croatia",
+        "type": "yellow",
+        "minute": 91
+      }
+    ],
     "highlightUrl": ""
   },
   {
@@ -9954,9 +10237,37 @@ export const matches = [
     "time": "02:00",
     "group": "K",
     "venue": "akron",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Daniel Muñoz",
+        "teamId": "colombia",
+        "minute": 76,
+        "assist": "Juan Fernando Quintero"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Jhon Lucumí",
+        "teamId": "colombia",
+        "type": "yellow",
+        "minute": 56
+      },
+      {
+        "name": "Charles Pickel",
+        "teamId": "drcongo",
+        "type": "yellow",
+        "minute": 93
+      },
+      {
+        "name": "Jefferson Lerma",
+        "teamId": "colombia",
+        "type": "yellow",
+        "minute": "90+4"
+      }
+    ],
     "highlightUrl": ""
   },
   {

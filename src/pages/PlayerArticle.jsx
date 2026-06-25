@@ -7,6 +7,22 @@ import Flag from '../components/ui/Flag';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Trophy, Star, Shield, Landmark } from 'lucide-react';
 
+const countryCodeMap = {
+    'Argentina': 'AR',
+    'Portugal': 'PT',
+    'Brazil': 'BR',
+    'Croatia': 'HR',
+    'Egypt': 'EG',
+    'South Korea': 'KR',
+    'Belgium': 'BE',
+    'Germany': 'DE',
+    'Spain': 'ES',
+    'England': 'GB-ENG',
+    'France': 'FR',
+    'Netherlands': 'NL',
+    'Colombia': 'CO'
+};
+
 const PlayerArticle = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -54,21 +70,15 @@ const PlayerArticle = () => {
                             }`}>
                                 {article.section}
                             </span>
-                            <div className="flex items-center gap-2 bg-gray-900 border border-gray-800 px-3 py-1 rounded-full text-xs font-medium text-gray-300">
-                                <Flag code={article.country === 'Argentina' ? 'AR' : 
-                                           article.country === 'Portugal' ? 'PT' : 
-                                           article.country === 'Brazil' ? 'BR' : 
-                                           article.country === 'Croatia' ? 'HR' : 
-                                           article.country === 'Egypt' ? 'EG' : 
-                                           article.country === 'South Korea' ? 'KR' : 
-                                           article.country === 'Belgium' ? 'BE' : 
-                                           article.country === 'Germany' ? 'DE' : 
-                                           article.country === 'Spain' ? 'ES' : 
-                                           article.country === 'England' ? 'GB' : 
-                                           article.country === 'France' ? 'FR' : 'US'} 
-                                      className="w-4 h-3 object-cover rounded" />
+                            <button
+                                onClick={() => navigate(`/teams/${article.country.toLowerCase().replace(/\s+/g, '')}`)}
+                                className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 border border-gray-800 px-3 py-1 rounded-full text-xs font-medium text-gray-300 transition-colors duration-200"
+                                title={`View ${article.country} Team Details`}
+                            >
+                                <Flag code={countryCodeMap[article.country] || 'US'} 
+                                       className="w-4 h-3 object-cover rounded" />
                                 {article.country}
-                            </div>
+                            </button>
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-black tracking-tighter uppercase leading-none">
@@ -91,7 +101,7 @@ const PlayerArticle = () => {
                         </div>
                         <div className="space-y-1">
                             <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Club</span>
-                            <span className="text-lg font-black text-white truncate block" title={article.club}>{article.club}</span>
+                            <span className="text-lg font-black text-white block" title={article.club}>{article.club}</span>
                         </div>
                         <div className="space-y-1">
                             <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Confederation</span>
@@ -172,20 +182,16 @@ const PlayerArticle = () => {
                                 <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{article.role}</span>
                                 <h4 className="text-lg font-black uppercase text-white leading-none tracking-tight">{article.name}</h4>
                             </div>
-                            <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                                <Flag code={article.country === 'Argentina' ? 'AR' : 
-                                           article.country === 'Portugal' ? 'PT' : 
-                                           article.country === 'Brazil' ? 'BR' : 
-                                           article.country === 'Croatia' ? 'HR' : 
-                                           article.country === 'Egypt' ? 'EG' : 
-                                           article.country === 'South Korea' ? 'KR' : 
-                                           article.country === 'Belgium' ? 'BE' : 
-                                           article.country === 'Germany' ? 'DE' : 
-                                           article.country === 'Spain' ? 'ES' : 
-                                           article.country === 'England' ? 'GB' : 
-                                           article.country === 'France' ? 'FR' : 'US'} 
-                                      className="w-5 h-4 object-cover rounded-sm shadow-sm" />
-                            </div>
+                            <button 
+                                onClick={() => navigate(`/teams/${article.country.toLowerCase().replace(/\s+/g, '')}`)}
+                                className="w-8 h-8 rounded-full border border-white/10 overflow-hidden flex items-center justify-center hover:scale-110 hover:border-white/30 transition-all duration-200"
+                                title={`View ${article.country} Team Details`}
+                            >
+                                <Flag code={countryCodeMap[article.country] || 'US'} 
+                                       circular={true}
+                                       className="w-full h-full"
+                                       style={{ width: '100%', height: '100%' }} />
+                            </button>
                         </div>
                     </motion.div>
                 </div>

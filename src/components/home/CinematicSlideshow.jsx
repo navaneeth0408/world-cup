@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../ui/Button';
 
 const CinematicSlideshow = ({ categories }) => {
-    const [activeTab, setActiveTab] = useState(categories[0]?.id || 'farewell');
+    const [activeTab, setActiveTab] = useState(categories[0]?.id || 'lastdance');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const navigate = useNavigate();
@@ -15,6 +15,7 @@ const CinematicSlideshow = ({ categories }) => {
         badge,
         titleMain,
         titleAccent,
+        subhead,
         players = [],
         accentColor = '#f5c518',
         labelColor = '#00ff87'
@@ -147,6 +148,12 @@ const CinematicSlideshow = ({ categories }) => {
                                 {titleAccent}
                             </span>
                         </h2>
+
+                        {subhead && (
+                            <p className="text-gray-300/90 text-xs md:text-sm font-semibold max-w-sm mb-6 leading-relaxed">
+                                {subhead}
+                            </p>
+                        )}
      
                         <AnimatePresence mode="wait">
                             <motion.div
