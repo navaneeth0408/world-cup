@@ -6,7 +6,7 @@ import Flag from '../components/ui/Flag';
 import Card from '../components/ui/Card';
 import Modal from '../components/ui/Modal';
 import Button from '../components/ui/Button';
-import { Trophy, Goal, Hand, Shield, Users, BarChart3, AlertCircle, Activity, Sparkles, Award } from 'lucide-react';
+import { Trophy, Goal, Hand, Shield, Users, BarChart3, AlertCircle, Activity, Sparkles, Award, X, Info } from 'lucide-react';
 import lineupsData from '../data/lineups.json';
 
 const normalizeName = (name) => {
@@ -28,13 +28,7 @@ const generateReason = (p) => {
     if (p.assists > 0) factors.push(`${p.assists} assist${p.assists > 1 ? 's' : ''}`);
     if (p.potm > 0) factors.push(`${p.potm} MOTM award${p.potm > 1 ? 's' : ''}`);
 
-    let desc = factors.join(' and ');
-    if (desc) {
-        desc = `${desc} with a ${p.avgRating.toFixed(2)} avg rating`;
-    } else {
-        desc = `${p.avgRating.toFixed(2)} avg rating`;
-    }
-
+    const desc = factors.join(", ");
     return `${desc.charAt(0).toUpperCase() + desc.slice(1)} for ${p.team}.`;
 };
 
@@ -45,6 +39,7 @@ const Standings = () => {
     const [showThirdPlaceModal, setShowThirdPlaceModal] = useState(false);
     const [summaryModalType, setSummaryModalType] = useState(null);
     const [drillDownTeamId, setDrillDownTeamId] = useState(null);
+    const [activeMvpReason, setActiveMvpReason] = useState(null);
     const scrollContainerRef = useRef(null);
 
     const sections = [
@@ -1114,14 +1109,13 @@ const Standings = () => {
                         <Goal className="w-8 h-8 text-green-500" />
                         <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Golden Boot Race</h2>
                     </div>
-                    <Card className="p-0 overflow-hidden border-gray-800 bg-gray-900/50">
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-left">
+                    <Card className="p-0 border-gray-800 bg-gray-900/50">
+                        <div className="overflow-x-auto w-full scrollbar-thin">
+                            <table className="w-full text-left min-w-[380px]">
                                 <thead className="bg-gray-800/50 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                     <tr>
                                         <th className="px-6 py-4">Rank</th>
                                         <th className="px-6 py-4">Player</th>
-                                        <th className="px-6 py-4">Team</th>
                                         <th className="px-6 py-4 text-center">Goals</th>
                                     </tr>
                                 </thead>
@@ -1131,13 +1125,13 @@ const Standings = () => {
                                             <td className="px-6 py-4 font-black text-gray-500 whitespace-nowrap">
                                                 {player.rank === 1 ? <Trophy className="w-4 h-4 text-yellow-500" /> : `#${player.rank}`}
                                             </td>
-                                            <td className="px-6 py-4">
-                                                <span className="font-bold text-white group-hover:text-green-400 transition-colors">{player.name}</span>
-                                            </td>
                                             <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="flex items-center gap-2">
+                                                <div className="flex items-center gap-3">
                                                     <Flag code={player.teamCode} />
-                                                    <span className="text-sm text-gray-400">{player.team}</span>
+                                                    <div className="flex flex-col">
+                                                        <span className="font-bold text-white group-hover:text-green-400 transition-colors leading-tight">{player.name}</span>
+                                                        <span className="text-[10px] text-gray-500">{player.team}</span>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-4 text-center">
@@ -1149,7 +1143,7 @@ const Standings = () => {
                                     ))}
                                     {topScorers.length === 0 && (
                                         <tr>
-                                            <td colSpan="4" className="px-6 py-12 text-center text-gray-500 italic text-sm">
+                                            <td colSpan="3" className="px-6 py-12 text-center text-gray-500 italic text-sm">
                                                 No scorers recorded yet.
                                             </td>
                                         </tr>
@@ -1167,42 +1161,44 @@ const Standings = () => {
                             <Hand className="w-8 h-8 text-green-500" />
                             <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Most Assists</h2>
                         </div>
-                        <Card className="p-0 overflow-hidden border-gray-800 bg-gray-900/50 flex flex-col">
-                            <table className="w-full text-left">
-                                <thead className="bg-gray-800/20 text-[10px] text-gray-400 uppercase tracking-widest font-black">
-                                    <tr>
-                                        <th className="px-6 py-4">Rank</th>
-                                        <th className="px-6 py-4">Player</th>
-                                        <th className="px-6 py-4 text-center">Assists</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-800/40">
-                                    {topAssists.map((player) => (
-                                        <tr key={`${player.name}-${player.team}`} className="hover:bg-white/5 transition-colors group">
-                                            <td className="px-6 py-4 font-black text-gray-500">#{player.rank}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="flex items-center gap-3">
-                                                    <Flag code={player.teamCode} />
-                                                    <div className="flex flex-col">
-                                                        <span className="font-bold text-white leading-tight">{player.name}</span>
-                                                        <span className="text-[10px] text-gray-500">{player.team}</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td className="px-6 py-4 text-center">
-                                                <span className="text-xl font-black text-white">{player.assists}</span>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                    {topAssists.length === 0 && (
+                        <Card className="p-0 border-gray-800 bg-gray-900/50 flex flex-col">
+                            <div className="overflow-x-auto w-full scrollbar-thin">
+                                <table className="w-full text-left min-w-[380px]">
+                                    <thead className="bg-gray-800/20 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                         <tr>
-                                            <td colSpan="3" className="px-6 py-12 text-center text-gray-500 italic text-sm">
-                                                No assists recorded yet.
-                                            </td>
+                                            <th className="px-6 py-4">Rank</th>
+                                            <th className="px-6 py-4">Player</th>
+                                            <th className="px-6 py-4 text-center">Assists</th>
                                         </tr>
-                                    )}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-800/40">
+                                        {topAssists.map((player) => (
+                                            <tr key={`${player.name}-${player.team}`} className="hover:bg-white/5 transition-colors group">
+                                                <td className="px-6 py-4 font-black text-gray-500">#{player.rank}</td>
+                                                <td className="px-6 py-4 whitespace-nowrap">
+                                                    <div className="flex items-center gap-3">
+                                                        <Flag code={player.teamCode} />
+                                                        <div className="flex flex-col">
+                                                            <span className="font-bold text-white leading-tight">{player.name}</span>
+                                                            <span className="text-[10px] text-gray-500">{player.team}</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="px-6 py-4 text-center">
+                                                    <span className="text-xl font-black text-white">{player.assists}</span>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                        {topAssists.length === 0 && (
+                                            <tr>
+                                                <td colSpan="3" className="px-6 py-12 text-center text-gray-500 italic text-sm">
+                                                    No assists recorded yet.
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
                         </Card>
                     </section>
 
@@ -1212,52 +1208,54 @@ const Standings = () => {
                             <Sparkles className="w-8 h-8 text-green-500" />
                             <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Most Goal Involvements (G+A)</h2>
                         </div>
-                        <Card className="p-0 overflow-hidden border-gray-800 bg-gray-900/50 flex flex-col">
-                            <table className="w-full text-left">
-                                <thead className="bg-gray-800/20 text-[10px] text-gray-400 uppercase tracking-widest font-black">
-                                    <tr>
-                                        <th className="px-6 py-4">Rank</th>
-                                        <th className="px-6 py-4">Player</th>
-                                        <th className="px-6 py-4 text-center">Goals</th>
-                                        <th className="px-6 py-4 text-center">Assists</th>
-                                        <th className="px-6 py-4 text-center">G+A</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-800/40">
-                                    {topGA.map((player) => (
-                                        <tr key={`${player.name}-${player.team}`} className="hover:bg-white/5 transition-colors group">
-                                            <td className="px-6 py-4 font-black text-gray-500">#{player.rank}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="flex items-center gap-3">
-                                                    <Flag code={player.teamCode} />
-                                                    <div className="flex flex-col">
-                                                        <span className="font-bold text-white leading-tight">{player.name}</span>
-                                                        <span className="text-[10px] text-gray-500">{player.team}</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td className="px-6 py-4 text-center text-slate-400 font-bold">
-                                                {player.goals}
-                                            </td>
-                                            <td className="px-6 py-4 text-center text-slate-400 font-bold">
-                                                {player.assists}
-                                            </td>
-                                            <td className="px-6 py-4 text-center">
-                                                <span className="inline-block px-3 py-0.5 bg-green-500/10 text-green-400 rounded-full font-black text-sm">
-                                                    {player.ga}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                    {topGA.length === 0 && (
+                        <Card className="p-0 border-gray-800 bg-gray-900/50 flex flex-col">
+                            <div className="overflow-x-auto w-full scrollbar-thin">
+                                <table className="w-full text-left min-w-[480px]">
+                                    <thead className="bg-gray-800/20 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                         <tr>
-                                            <td colSpan="5" className="px-6 py-12 text-center text-gray-500 italic text-sm">
-                                                No goal involvements recorded yet.
-                                            </td>
+                                            <th className="px-6 py-4">Rank</th>
+                                            <th className="px-6 py-4">Player</th>
+                                            <th className="px-6 py-4 text-center">Goals</th>
+                                            <th className="px-6 py-4 text-center">Assists</th>
+                                            <th className="px-6 py-4 text-center">G+A</th>
                                         </tr>
-                                    )}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-800/40">
+                                        {topGA.map((player) => (
+                                            <tr key={`${player.name}-${player.team}`} className="hover:bg-white/5 transition-colors group">
+                                                <td className="px-6 py-4 font-black text-gray-500">#{player.rank}</td>
+                                                <td className="px-6 py-4 whitespace-nowrap">
+                                                    <div className="flex items-center gap-3">
+                                                        <Flag code={player.teamCode} />
+                                                        <div className="flex flex-col">
+                                                            <span className="font-bold text-white leading-tight">{player.name}</span>
+                                                            <span className="text-[10px] text-gray-500">{player.team}</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="px-6 py-4 text-center text-slate-400 font-bold">
+                                                    {player.goals}
+                                                </td>
+                                                <td className="px-6 py-4 text-center text-slate-400 font-bold">
+                                                    {player.assists}
+                                                </td>
+                                                <td className="px-6 py-4 text-center">
+                                                    <span className="inline-block px-3 py-0.5 bg-green-500/10 text-green-400 rounded-full font-black text-sm">
+                                                        {player.ga}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                        {topGA.length === 0 && (
+                                            <tr>
+                                                <td colSpan="5" className="px-6 py-12 text-center text-gray-500 italic text-sm">
+                                                    No goal involvements recorded yet.
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
                         </Card>
                     </section>
                 </div>
@@ -1278,8 +1276,8 @@ const Standings = () => {
                                 LIVE RATINGS
                             </span>
                         </div>
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-left">
+                        <div className="overflow-x-auto w-full scrollbar-thin">
+                            <table className="w-full text-left min-w-[850px]">
                                 <thead className="bg-gray-800/10 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                     <tr>
                                         <th className="px-6 py-4">Rank</th>
@@ -1290,7 +1288,7 @@ const Standings = () => {
                                         <th className="px-6 py-4 text-center">Avg Rating</th>
                                         <th className="px-6 py-4 text-center">MOTM</th>
                                         <th className="px-6 py-4 text-center">MVP Score</th>
-                                        <th className="px-6 py-4">Reason for Ranking</th>
+                                        <th className="px-6 py-4 hidden md:table-cell">Reason for Ranking</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-800/40">
@@ -1300,7 +1298,16 @@ const Standings = () => {
                                                 {player.rank === 1 ? <Trophy className="w-4 h-4 text-yellow-500" /> : `#${player.rank}`}
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">
-                                                <span className="font-bold text-white group-hover:text-green-400 transition-colors">{player.name}</span>
+                                                <div className="flex items-center gap-2">
+                                                    <span className="font-bold text-white group-hover:text-green-400 transition-colors leading-tight">{player.name}</span>
+                                                    <button 
+                                                        onClick={() => setActiveMvpReason({ name: player.name, reason: generateReason(player) })}
+                                                        className="inline-flex md:hidden items-center justify-center p-1 rounded bg-slate-800 text-slate-400 hover:text-white transition-colors"
+                                                        title="View ranking reasoning"
+                                                    >
+                                                        <Info className="w-3.5 h-3.5" />
+                                                    </button>
+                                                </div>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="flex items-center gap-2">
@@ -1325,7 +1332,7 @@ const Standings = () => {
                                                     {player.score.toFixed(1)} / 10
                                                 </span>
                                             </td>
-                                            <td className="px-6 py-4 text-xs text-gray-400 leading-relaxed max-w-sm" title={generateReason(player)}>
+                                            <td className="px-6 py-4 text-xs text-gray-400 leading-relaxed max-w-sm hidden md:table-cell" title={generateReason(player)}>
                                                 {generateReason(player)}
                                             </td>
                                         </tr>
@@ -1399,46 +1406,49 @@ const Standings = () => {
                         <Shield className="w-8 h-8 text-green-500" />
                         <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Golden Glove Race</h2>
                     </div>
-                    <Card className="p-0 overflow-hidden border-gray-800 bg-gray-900/50">
-                        <table className="w-full text-left">
-                            <thead className="bg-gray-800/50 text-[10px] text-gray-400 uppercase tracking-widest font-black">
-                                <tr>
-                                    <th className="px-6 py-4">Rank</th>
-                                    <th className="px-6 py-4">Goalkeeper</th>
-                                    <th className="px-6 py-4">Team</th>
-                                    <th className="px-6 py-4 text-center">Clean Sheets</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-800">
-                                {goalkeepers.map((gk) => (
-                                    <tr key={`${gk.name}-${gk.team}`} className="hover:bg-white/5 transition-colors">
-                                        <td className="px-6 py-4 font-black text-gray-500">#{gk.rank}</td>
-                                        <td className="px-6 py-4 font-bold text-white">{gk.name}</td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-2">
-                                                <Flag code={gk.teamCode} />
-                                                <span className="text-sm text-gray-400">{gk.team}</span>
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4 text-center">
-                                            <div className="flex items-center justify-center gap-1">
-                                                {Array.from({ length: gk.cleanSheets }).map((_, i) => (
-                                                    <Shield key={i} className="w-3 h-3 text-green-400 fill-green-400/20" />
-                                                ))}
-                                                <span className="ml-2 font-black text-white">{gk.cleanSheets}</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ))}
-                                {goalkeepers.length === 0 && (
+                    <Card className="p-0 border-gray-800 bg-gray-900/50">
+                        <div className="overflow-x-auto w-full scrollbar-thin">
+                            <table className="w-full text-left min-w-[420px]">
+                                <thead className="bg-gray-800/50 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                     <tr>
-                                        <td colSpan="4" className="px-6 py-12 text-center text-gray-500 italic text-sm">
-                                            No clean sheets recorded yet.
-                                        </td>
+                                        <th className="px-6 py-4">Rank</th>
+                                        <th className="px-6 py-4">Goalkeeper</th>
+                                        <th className="px-6 py-4 text-center">Clean Sheets</th>
                                     </tr>
-                                )}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody className="divide-y divide-gray-800">
+                                    {goalkeepers.map((gk) => (
+                                        <tr key={`${gk.name}-${gk.team}`} className="hover:bg-white/5 transition-colors">
+                                            <td className="px-6 py-4 font-black text-gray-500">#{gk.rank}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="flex items-center gap-3">
+                                                    <Flag code={gk.teamCode} />
+                                                    <div className="flex flex-col">
+                                                        <span className="font-bold text-white leading-tight">{gk.name}</span>
+                                                        <span className="text-[10px] text-gray-500">{gk.team}</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-4 text-center">
+                                                <div className="flex items-center justify-center gap-1">
+                                                    {Array.from({ length: gk.cleanSheets }).map((_, i) => (
+                                                        <Shield key={i} className="w-3 h-3 text-green-400 fill-green-400/20" />
+                                                    ))}
+                                                    <span className="ml-2 font-black text-white">{gk.cleanSheets}</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                    {goalkeepers.length === 0 && (
+                                        <tr>
+                                            <td colSpan="3" className="px-6 py-12 text-center text-gray-500 italic text-sm">
+                                                No clean sheets recorded yet.
+                                            </td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
                     </Card>
                 </section>
 
@@ -1830,6 +1840,47 @@ const Standings = () => {
                         </div>
                     </div>
                 </Modal>
+                {/* Modal for MVP Reason */}
+                <AnimatePresence>
+                    {activeMvpReason && (
+                        <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                                onClick={() => setActiveMvpReason(null)}
+                            />
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95, y: 15 }}
+                                className="relative w-full max-w-sm bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl overflow-hidden z-10"
+                            >
+                                <button 
+                                    onClick={() => setActiveMvpReason(null)}
+                                    className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
+                                <div className="flex items-center gap-2 mb-3">
+                                    <Trophy className="w-5 h-5 text-yellow-500" />
+                                    <h4 className="font-black text-white uppercase tracking-tight text-sm">MVP Ranking Reason</h4>
+                                </div>
+                                <h5 className="font-bold text-white text-xs mb-1.5">{activeMvpReason.name}</h5>
+                                <p className="text-xs text-slate-400 leading-relaxed mb-5">
+                                    {activeMvpReason.reason}
+                                </p>
+                                <button 
+                                    onClick={() => setActiveMvpReason(null)}
+                                    className="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors"
+                                >
+                                    Close
+                                </button>
+                            </motion.div>
+                        </div>
+                    )}
+                </AnimatePresence>
 
                 <footer className="pt-20 border-t border-gray-900 text-center">
                     <p className="text-gray-600 text-xs uppercase font-black tracking-widest">Statistical Data powered by Opta & AI analysis</p>

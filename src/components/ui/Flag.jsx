@@ -4,7 +4,7 @@ import * as Cards from 'country-flag-icons/react/3x2';
 const Flag = ({ code, className = "", style = {}, circular = false }) => {
     const roundedClass = circular ? "rounded-full" : "rounded-sm";
     const sizeStyle = circular ? { width: '40px', height: '40px', aspectRatio: '1/1' } : { width: '1.5em', height: '1em' };
-    const mediaClass = "w-full h-full object-cover";
+    const mediaClass = circular ? "w-full h-full object-cover" : "w-full h-full object-fill";
 
     if (!code) {
         return (
