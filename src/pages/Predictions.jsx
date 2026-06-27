@@ -439,7 +439,7 @@ const computeStandings = (teams, matches, userPredictions, isUser = false) => {
   });
 
   // Update standings from all group stage matches (real and predicted)
-  matches.filter(m => m.group).forEach(match => {
+  matches.filter(m => m.match_id <= 72).forEach(match => {
     const group = standings[match.group];
     if (!group) return;
 

@@ -85,7 +85,7 @@ export const useTournament = () => {
     });
 
     // Update standings from completed matches
-    matches.filter(m => m.status === 'completed').forEach(match => {
+    matches.filter(m => m.status === 'completed' && m.match_id <= 72).forEach(match => {
       const group = standings[match.group];
       if (!group) return;
 

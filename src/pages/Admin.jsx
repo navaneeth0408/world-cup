@@ -8,6 +8,7 @@ import Badge from '../components/ui/Badge';
 import Flag from '../components/ui/Flag';
 import { Lock, Save, Search, Plus, Trash2, Users, RefreshCw, CheckCircle, AlertCircle, BarChart3, ChevronUp, ChevronDown, Sparkles, Edit2, X, Check } from 'lucide-react';
 import { getTeamStrengthDetails } from '../utils/simulationHelpers';
+import { historicalSquads } from '../data/historicalData';
 
 const normalizeTeamName = (name) => {
     if (!name) return '';
@@ -157,6 +158,43 @@ const Admin = () => {
             };
         });
     }, [teams]);
+
+    const classicalTeamsWithStrengths = useMemo(() => {
+        return Object.entries(historicalSquads).map(([key, squad]) => {
+            const parentId = key.split('-')[0];
+            const parentTeam = teams.find(t => t.id === parentId || t.name.toLowerCase() === squad.teamName.toLowerCase());
+            
+            let powerScore = 50.0;
+            let fifaRanking = 50;
+            let parentCountryCode = '';
+            let details = null;
+            
+            if (parentTeam) {
+                details = getTeamStrengthDetails({ ...parentTeam, id: key, name: `${squad.teamName} (${squad.year})` });
+                powerScore = details.total;
+                fifaRanking = details.fifaRanking;
+                parentCountryCode = parentTeam.countryCode;
+            }
+            
+            return {
+                id: key,
+                name: `${squad.teamName} (${squad.year})`,
+                parentName: squad.teamName,
+                year: squad.year,
+                formation: squad.formation,
+                description: squad.description,
+                notablePlayers: squad.players ? squad.players.slice(0, 3).map(p => p.name).join(', ') : '',
+                powerScore,
+                fifaRanking,
+                parentCountryCode,
+                details
+            };
+        });
+    }, [teams]);
+
+    const sortedClassicalTeams = useMemo(() => {
+        return [...classicalTeamsWithStrengths].sort((a, b) => b.powerScore - a.powerScore);
+    }, [classicalTeamsWithStrengths]);
 
     const filteredAndSortedTeams = useMemo(() => {
         let result = [...teamsWithStrengths];
@@ -787,7 +825,8 @@ For teamId use lowercase country name without spaces.`;
 
                 {/* TAB 2: TEAM STRENGTHS */}
                 {activeTab === 'strengths' && (
-                    <Card className="border-gray-800 bg-gray-900/30 p-6 overflow-hidden shadow-2xl">
+                    <>
+                        <Card className="border-gray-800 bg-gray-900/30 p-6 overflow-hidden shadow-2xl">
                         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-800 pb-4 mb-6 gap-2">
                             <div>
                                 <h3 className="text-lg font-black text-white uppercase italic tracking-tight">Team Strengths Dashboard</h3>
@@ -1017,6 +1056,58 @@ For teamId use lowercase country name without spaces.`;
                             </table>
                         </div>
                     </Card>
+
+                    {/* CLASSICAL TEAMS POWER SCORES */}
+                    <Card className="border-gray-800 bg-gray-900/30 p-6 overflow-hidden shadow-2xl mt-8">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-800 pb-4 mb-6 gap-2">
+                            <div>
+                                <h3 className="text-lg font-black text-white uppercase italic tracking-tight">Classical Teams Power Scores</h3>
+                                <p className="text-xs text-gray-500 font-medium mt-0.5">Calculated strength metrics for historical squads injected into the tournament.</p>
+                            </div>
+                            <Badge variant="info" className="bg-blue-500/10 text-blue-400 border border-blue-500/20 font-black">
+                                {sortedClassicalTeams.length} Classical Teams
+                            </Badge>
+                        </div>
+
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-xs border-collapse">
+                                <thead>
+                                    <tr className="text-[10px] text-gray-500 uppercase tracking-widest border-b border-gray-800">
+                                        <th className="px-3 py-3 w-16">Rank</th>
+                                        <th className="px-3 py-3">Team</th>
+                                        <th className="px-3 py-3 text-center">Formation</th>
+                                        <th className="px-3 py-3">Notable Players</th>
+                                        <th className="px-3 py-3">Base Country</th>
+                                        <th className="px-3 py-3 text-right text-green-400 font-bold">Power Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-gray-850/60">
+                                    {sortedClassicalTeams.map((cTeam, idx) => (
+                                        <tr key={cTeam.id} className="hover:bg-gray-950/40 transition-colors">
+                                            <td className="px-3 py-3.5 font-bold text-gray-500">{idx + 1}</td>
+                                            <td className="px-3 py-3.5">
+                                                <span className="font-bold text-white uppercase">{cTeam.name}</span>
+                                            </td>
+                                            <td className="px-3 py-3.5 text-center text-gray-300 font-medium">{cTeam.formation}</td>
+                                            <td className="px-3 py-3.5 text-gray-400 italic max-w-xs truncate" title={cTeam.description}>
+                                                {cTeam.notablePlayers || 'Roster configured'}
+                                            </td>
+                                            <td className="px-3 py-3.5">
+                                                <div className="flex items-center gap-2">
+                                                    {cTeam.parentCountryCode && <Flag code={cTeam.parentCountryCode} style={{ fontSize: '1rem' }} />}
+                                                    <span className="text-gray-300">{cTeam.parentName}</span>
+                                                </div>
+                                            </td>
+                                            <td className="px-3 py-3.5 text-right font-black text-sm text-green-400">
+                                                {cTeam.powerScore.toFixed(2)}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </Card>
+                    </>
                 )}
             </main>
         </div>

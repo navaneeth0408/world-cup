@@ -148,7 +148,67 @@ const selectPlayerForBooking = (squad) => {
   return squad[Math.floor(Math.random() * squad.length)];
 };
 
+const classicalPowerScores = {
+  'brazil-1970': 99.00,
+  'brazil-2002': 96.75,
+  'france-1998': 95.95,
+  'spain-2010': 95.90,
+  'germany-2014': 95.60,
+  'netherlands-1974': 95.10,
+  'france-2018': 94.65,
+  'argentina-1986': 94.05,
+  'argentina-2022': 92.75,
+  'england-1966': 91.95,
+  'belgium-2018': 91.35,
+  'croatia-2018': 90.30,
+  'croatia-2022': 88.85,
+  'england-2006': 87.85,
+  'senegal-2002': 85.40,
+  'ghana-2010': 82.90,
+  'netherlands-2010': 91.50,
+  'germany-1990': 94.50
+};
+
 export const getTeamStrengthDetails = (team) => {
+  if (!team) return { total: 50, powerScore: 50 };
+
+  const teamId = team.id?.toLowerCase();
+  let classicalKey = null;
+  if (teamId && classicalPowerScores[teamId]) {
+    classicalKey = teamId;
+  } else if (team.name) {
+    const match = team.name.match(/^(.+)\s*\((\d{4})\)$/);
+    if (match) {
+      const country = match[1].toLowerCase().replace(/[^a-z0-9]/g, '');
+      const year = match[2];
+      const key = `${country}-${year}`;
+      if (classicalPowerScores[key]) {
+        classicalKey = key;
+      }
+    }
+  }
+
+  if (classicalKey) {
+    const customScore = classicalPowerScores[classicalKey];
+    return {
+      powerScore: customScore,
+      fifaRanking: 1,
+      fifaScore: customScore,
+      marketValue: 1000,
+      worldCupRecentScore: customScore,
+      continentalScore: customScore,
+      squadScore: customScore,
+      historyScore: customScore,
+      formScore: customScore,
+      cohesionScore: customScore,
+      adaptabilityScore: customScore,
+      isHostBoosted: false,
+      total: customScore,
+      leagueScore: customScore,
+      popScore: customScore
+    };
+  }
+
   // 1. FIFA Ranking Score (25%)
   const fifaKey = getTeamDataKey(team, fifaRankingData);
   const fifaScore = team.fifaScore !== undefined ? Number(team.fifaScore) : (fifaKey ? Number((fifaRankingData[fifaKey].fifaScore || 0).toFixed(2)) : 50.00);

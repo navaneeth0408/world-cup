@@ -1,54 +1,17 @@
 // Detailed data for previous World Cup appearances and legendary winning squads.
 
 export const historicalAppearancesMap = {
-  algeria: [2014, 2010, 1986, 1982],
-  argentina: [2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994, 1990, 1986, 1982, 1978, 1974, 1966, 1962, 1958, 1934, 1930],
-  australia: [2022, 2018, 2014, 2010, 2006, 1974],
-  austria: [1998, 1990, 1982, 1978, 1958, 1954, 1934],
-  belgium: [2022, 2018, 2014, 2002, 1998, 1994, 1990, 1986, 1982, 1970, 1954, 1938, 1934, 1930],
-  bosniaandherzegovina: [2014],
-  brazil: [2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994, 1990, 1986, 1982, 1978, 1974, 1970, 1966, 1962, 1958, 1954, 1950, 1938, 1934, 1930],
-  canada: [2022, 1986],
-  capeverde: [],
-  colombia: [2018, 2014, 1998, 1994, 1990, 1962],
-  croatia: [2022, 2018, 2014, 2006, 2002, 1998],
-  curacao: [],
-  czechia: [2006],
-  drcongo: [1974],
-  ecuador: [2022, 2014, 2006, 2002],
-  egypt: [2018, 1990, 1934],
-  england: [2022, 2018, 2014, 2010, 2006, 2002, 1998, 1990, 1986, 1982, 1970, 1966, 1962, 1958, 1954, 1950],
-  france: [2022, 2018, 2014, 2010, 2006, 2002, 1998, 1986, 1982, 1978, 1966, 1958, 1954, 1938, 1934, 1930],
-  germany: [2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994, 1990, 1986, 1982, 1978, 1974, 1970, 1966, 1962, 1958, 1954, 1938, 1934],
-  ghana: [2022, 2014, 2010, 2006],
-  haiti: [1974],
-  iran: [2022, 2018, 2014, 2006, 1998, 1978],
-  iraq: [1986],
-  ivorycoast: [2014, 2010, 2006],
-  japan: [2022, 2018, 2014, 2010, 2006, 2002, 1998],
-  jordan: [],
-  mexico: [2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994, 1986, 1978, 1970, 1966, 1962, 1958, 1954, 1950, 1930],
-  morocco: [2022, 2018, 1998, 1994, 1986, 1970],
-  netherlands: [2022, 2014, 2010, 2006, 1998, 1994, 1990, 1978, 1974, 1938, 1934],
-  newzealand: [2010, 1982],
-  norway: [1998, 1994, 1938],
-  panama: [2018],
-  paraguay: [2010, 2006, 2002, 1998, 1986, 1958, 1950, 1930],
-  portugal: [2022, 2018, 2014, 2010, 2006, 2002, 1986, 1966],
-  qatar: [2022],
-  saudiarabia: [2022, 2018, 2006, 2002, 1998, 1994],
-  scotland: [1998, 1990, 1986, 1982, 1978, 1974, 1958, 1954],
-  senegal: [2022, 2018, 2002],
-  southafrica: [2010, 2002, 1998],
-  southkorea: [2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994, 1990, 1986, 1954],
-  spain: [2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994, 1990, 1986, 1982, 1978, 1966, 1962, 1950, 1934],
-  sweden: [2018, 2006, 2002, 1994, 1990, 1978, 1974, 1970, 1958, 1950, 1938, 1934],
-  switzerland: [2022, 2018, 2014, 2010, 2006, 1994, 1966, 1962, 1954, 1950, 1938, 1934],
-  tunisia: [2022, 2018, 2006, 2002, 1978],
-  turkiye: [2002, 1954],
-  uruguay: [2022, 2018, 2014, 2010, 2002, 1990, 1986, 1974, 1970, 1966, 1962, 1954, 1950, 1930],
-  usa: [2022, 2014, 2010, 2006, 2002, 1998, 1994, 1990, 1950, 1934, 1930],
-  uzbekistan: []
+  argentina: [2022, 1986],
+  brazil: [2002, 1970],
+  netherlands: [2010, 1974],
+  belgium: [2018],
+  croatia: [2022, 2018],
+  senegal: [2002],
+  ghana: [2010],
+  england: [2006, 1966],
+  france: [2018, 1998],
+  germany: [2014, 1990],
+  spain: [2010]
 };
 
 export const historicalSquads = {
@@ -204,25 +167,6 @@ export const historicalSquads = {
       { name: 'David Villa', position: 'FW', number: 7 }
     ]
   },
-  'italy-2006': {
-    teamName: 'Italy',
-    year: 2006,
-    formation: '4-4-1-1',
-    description: 'Built on a legendary defensive block led by Cannavaro, conceding only two goals throughout the entire tournament.',
-    players: [
-      { name: 'Gianluigi Buffon', position: 'GK', number: 1 },
-      { name: 'Gianluca Zambrotta', position: 'DF', number: 19 },
-      { name: 'Fabio Cannavaro', position: 'DF', number: 5 },
-      { name: 'Marco Materazzi', position: 'DF', number: 23 },
-      { name: 'Fabio Grosso', position: 'DF', number: 3 },
-      { name: 'Mauro Camoranesi', position: 'MF', number: 16 },
-      { name: 'Gennaro Gattuso', position: 'MF', number: 8 },
-      { name: 'Andrea Pirlo', position: 'MF', number: 21 },
-      { name: 'Simone Perrotta', position: 'MF', number: 20 },
-      { name: 'Francesco Totti', position: 'FW', number: 10 },
-      { name: 'Luca Toni', position: 'FW', number: 9 }
-    ]
-  },
   'netherlands-1974': {
     teamName: 'Netherlands',
     year: 1974,
@@ -240,6 +184,177 @@ export const historicalSquads = {
       { name: 'Johnny Rep', position: 'FW', number: 16 },
       { name: 'Johan Cruyff', position: 'FW', number: 14 },
       { name: 'Rob Rensenbrink', position: 'FW', number: 15 }
+    ]
+  },
+  'netherlands-2010': {
+    teamName: 'Netherlands',
+    year: 2010,
+    formation: '4-2-3-1',
+    description: 'Reached the final in South Africa, narrowly losing to Spain in extra time after a dramatic campaign.',
+    players: [
+      { name: 'Maarten Stekelenburg', position: 'GK', number: 1 },
+      { name: 'Gregory van der Wiel', position: 'DF', number: 2 },
+      { name: 'John Heitinga', position: 'DF', number: 3 },
+      { name: 'Joris Mathijsen', position: 'DF', number: 4 },
+      { name: 'Giovanni van Bronckhorst', position: 'DF', number: 5 },
+      { name: 'Mark van Bommel', position: 'MF', number: 6 },
+      { name: 'Nigel de Jong', position: 'MF', number: 8 },
+      { name: 'Wesley Sneijder', position: 'MF', number: 10 },
+      { name: 'Arjen Robben', position: 'FW', number: 11 },
+      { name: 'Dirk Kuyt', position: 'FW', number: 7 },
+      { name: 'Robin van Persie', position: 'FW', number: 9 }
+    ]
+  },
+  'belgium-2018': {
+    teamName: 'Belgium',
+    year: 2018,
+    formation: '3-4-2-1',
+    description: 'The "Golden Generation" achieved Belgium\'s best-ever World Cup finish, defeating Brazil and securing third place.',
+    players: [
+      { name: 'Thibaut Courtois', position: 'GK', number: 1 },
+      { name: 'Toby Alderweireld', position: 'DF', number: 2 },
+      { name: 'Vincent Kompany', position: 'DF', number: 4 },
+      { name: 'Jan Vertonghen', position: 'DF', number: 5 },
+      { name: 'Thomas Meunier', position: 'MF', number: 15 },
+      { name: 'Axel Witsel', position: 'MF', number: 6 },
+      { name: 'Kevin De Bruyne', position: 'MF', number: 7 },
+      { name: 'Yannick Carrasco', position: 'MF', number: 11 },
+      { name: 'Eden Hazard', position: 'FW', number: 10 },
+      { name: 'Dries Mertens', position: 'FW', number: 14 },
+      { name: 'Romelu Lukaku', position: 'FW', number: 9 }
+    ]
+  },
+  'croatia-2018': {
+    teamName: 'Croatia',
+    year: 2018,
+    formation: '4-2-3-1',
+    description: 'Led by Ballon d\'Or winner Luka Modrić, they showed incredible resilience with three extra-time wins to reach the final.',
+    players: [
+      { name: 'Danijel Subasic', position: 'GK', number: 23 },
+      { name: 'Sime Vrsaljko', position: 'DF', number: 2 },
+      { name: 'Dejan Lovren', position: 'DF', number: 6 },
+      { name: 'Domagoj Vida', position: 'DF', number: 21 },
+      { name: 'Ivan Strinic', position: 'DF', number: 3 },
+      { name: 'Ivan Rakitic', position: 'MF', number: 7 },
+      { name: 'Marcelo Brozovic', position: 'MF', number: 11 },
+      { name: 'Luka Modric', position: 'MF', number: 10 },
+      { name: 'Ante Rebic', position: 'FW', number: 18 },
+      { name: 'Ivan Perisic', position: 'FW', number: 4 },
+      { name: 'Mario Mandzukic', position: 'FW', number: 17 }
+    ]
+  },
+  'croatia-2022': {
+    teamName: 'Croatia',
+    year: 2022,
+    formation: '4-3-3',
+    description: 'Defeated tournament favorites Brazil in the quarter-finals and beat Morocco to claim a proud third place.',
+    players: [
+      { name: 'Dominik Livakovic', position: 'GK', number: 1 },
+      { name: 'Josip Juranovic', position: 'DF', number: 22 },
+      { name: 'Dejan Lovren', position: 'DF', number: 6 },
+      { name: 'Josko Gvardiol', position: 'DF', number: 20 },
+      { name: 'Borna Sosa', position: 'DF', number: 19 },
+      { name: 'Luka Modric', position: 'MF', number: 10 },
+      { name: 'Marcelo Brozovic', position: 'MF', number: 11 },
+      { name: 'Mateo Kovacic', position: 'MF', number: 8 },
+      { name: 'Andrej Kramaric', position: 'FW', number: 9 },
+      { name: 'Marko Livaja', position: 'FW', number: 14 },
+      { name: 'Ivan Perisic', position: 'FW', number: 4 }
+    ]
+  },
+  'senegal-2002': {
+    teamName: 'Senegal',
+    year: 2002,
+    formation: '4-4-2',
+    description: 'Stunned holders France in the opening match and became only the second African nation to reach the quarter-finals.',
+    players: [
+      { name: 'Tony Sylva', position: 'GK', number: 1 },
+      { name: 'Lamine Diatta', position: 'DF', number: 13 },
+      { name: 'Papa Malick Diop', position: 'DF', number: 4 },
+      { name: 'Alassane N\'Dour', position: 'DF', number: 2 },
+      { name: 'Omar Daf', position: 'DF', number: 17 },
+      { name: 'Salif Diao', position: 'MF', number: 15 },
+      { name: 'Aliou Cisse', position: 'MF', number: 6 },
+      { name: 'Papa Bouba Diop', position: 'MF', number: 19 },
+      { name: 'Khalilou Fadiga', position: 'MF', number: 10 },
+      { name: 'El Hadji Diouf', position: 'FW', number: 11 },
+      { name: 'Henri Camara', position: 'FW', number: 7 }
+    ]
+  },
+  'ghana-2010': {
+    teamName: 'Ghana',
+    year: 2010,
+    formation: '4-2-3-1',
+    description: 'Enthralled the African continent by reaching the quarter-finals, missing a semi-final berth by the narrowest of margins.',
+    players: [
+      { name: 'Richard Kingson', position: 'GK', number: 22 },
+      { name: 'John Paintsil', position: 'DF', number: 4 },
+      { name: 'John Mensah', position: 'DF', number: 5 },
+      { name: 'Isaac Vorsah', position: 'DF', number: 15 },
+      { name: 'Hans Sarpei', position: 'DF', number: 2 },
+      { name: 'Anthony Annan', position: 'MF', number: 6 },
+      { name: 'Kevin-Prince Boateng', position: 'MF', number: 23 },
+      { name: 'Kwadwo Asamoah', position: 'MF', number: 13 },
+      { name: 'Samuel Inkoom', position: 'FW', number: 7 },
+      { name: 'Andre Ayew', position: 'FW', number: 10 },
+      { name: 'Asamoah Gyan', position: 'FW', number: 3 }
+    ]
+  },
+  'england-2006': {
+    teamName: 'England',
+    year: 2006,
+    formation: '4-4-2',
+    description: 'The star-studded "Golden Generation" featuring Gerrard, Lampard, Beckham, Rooney, and Ferdinand.',
+    players: [
+      { name: 'Paul Robinson', position: 'GK', number: 1 },
+      { name: 'Gary Neville', position: 'DF', number: 2 },
+      { name: 'Rio Ferdinand', position: 'DF', number: 5 },
+      { name: 'John Terry', position: 'DF', number: 6 },
+      { name: 'Ashley Cole', position: 'DF', number: 3 },
+      { name: 'David Beckham', position: 'MF', number: 7 },
+      { name: 'Steven Gerrard', position: 'MF', number: 4 },
+      { name: 'Frank Lampard', position: 'MF', number: 8 },
+      { name: 'Paul Scholes', position: 'MF', number: 11 },
+      { name: 'Wayne Rooney', position: 'FW', number: 9 },
+      { name: 'Michael Owen', position: 'FW', number: 10 }
+    ]
+  },
+  'england-1966': {
+    teamName: 'England',
+    year: 1966,
+    formation: '4-4-2',
+    description: 'The legendary "Wingless Wonders" captained by Bobby Moore that won England\'s first and only World Cup on home soil.',
+    players: [
+      { name: 'Gordon Banks', position: 'GK', number: 1 },
+      { name: 'George Cohen', position: 'DF', number: 2 },
+      { name: 'Jack Charlton', position: 'DF', number: 5 },
+      { name: 'Bobby Moore', position: 'DF', number: 6 },
+      { name: 'Ray Wilson', position: 'DF', number: 3 },
+      { name: 'Nobby Stiles', position: 'MF', number: 4 },
+      { name: 'Alan Ball', position: 'MF', number: 7 },
+      { name: 'Bobby Charlton', position: 'MF', number: 9 },
+      { name: 'Martin Peters', position: 'MF', number: 11 },
+      { name: 'Geoff Hurst', position: 'FW', number: 10 },
+      { name: 'Roger Hunt', position: 'FW', number: 21 }
+    ]
+  },
+  'germany-1990': {
+    teamName: 'Germany',
+    year: 1990,
+    formation: '3-5-2',
+    description: 'Captained by Lothar Matthäus, a tactically supreme West German side claimed their third World Cup title in Italy.',
+    players: [
+      { name: 'Bodo Illgner', position: 'GK', number: 1 },
+      { name: 'Klaus Augenthaler', position: 'DF', number: 5 },
+      { name: 'Jürgen Kohler', position: 'DF', number: 4 },
+      { name: 'Guido Buchwald', position: 'DF', number: 6 },
+      { name: 'Thomas Berthold', position: 'MF', number: 14 },
+      { name: 'Andreas Brehme', position: 'MF', number: 3 },
+      { name: 'Thomas Häßler', position: 'MF', number: 8 },
+      { name: 'Lothar Matthäus', position: 'MF', number: 10 },
+      { name: 'Stefan Reuter', position: 'MF', number: 2 },
+      { name: 'Jürgen Klinsmann', position: 'FW', number: 18 },
+      { name: 'Rudi Völler', position: 'FW', number: 9 }
     ]
   }
 };

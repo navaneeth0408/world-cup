@@ -8,7 +8,7 @@ import Badge from '../components/ui/Badge';
 import Flag from '../components/ui/Flag';
 import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Trophy, Award, Landmark, Play, Pause, FastForward, RotateCcw, ArrowRight, Save, User, Sparkles } from 'lucide-react';
+import { Trophy, Award, Landmark, Play, Pause, FastForward, RotateCcw, ArrowRight, Save, User, Sparkles, ListFilter } from 'lucide-react';
 import { getRoundOf32Pairings } from '../utils/knockoutAllocation';
 import { simulateMatchWithEvents, generateScorersForManualScore, getStartingLineupSquad } from '../utils/simulationHelpers';
 import { useTournamentStore } from '../store/tournamentStore';
@@ -142,6 +142,8 @@ const Simulator = () => {
   
   // Setup configuration states
   const [showSetupModal, setShowSetupModal] = useState(false);
+  const [showAllResultsModal, setShowAllResultsModal] = useState(false);
+  const [resultsModalTab, setResultsModalTab] = useState('groups');
   const [simType, setSimType] = useState('auto'); // auto | manual
   const [realismCategory, setRealismCategory] = useState('realistic'); // favorites | realistic | moderate | unrealistic | underdog
   const [manualScorers, setManualScorers] = useState(false);
@@ -282,6 +284,7 @@ const Simulator = () => {
       }
 
       if (!isCompleted || homeScore === null || awayScore === null) return;
+      if (match.match_id > 72) return; // Only process group stage matches for group standings
       const group = standings[match.group];
       if (!group) return;
 
@@ -1273,6 +1276,7 @@ const Simulator = () => {
       savedSimRef.current = true;
       const formatTeam = (t) => t ? { id: t.id, name: t.name, code: t.code } : null;
       const simData = {
+        realismCategory: realismCategory,
         groupMatches: simMatches.map(m => ({
           id: m.id,
           homeTeam: m.homeTeam,
@@ -2571,14 +2575,27 @@ const Simulator = () => {
                   All 72 matches have been simulated. The top 2 teams from each group and the 8 best 3rd-place teams have advanced to the Round of 32!
                 </p>
               </div>
-              <Button
-                variant="primary"
-                onClick={proceedToKnockouts}
-                className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-black uppercase text-sm tracking-wider rounded-2xl flex items-center gap-3 transition-transform hover:scale-[1.03] shadow-lg shadow-yellow-500/20"
-              >
-                <Trophy className="w-5 h-5 fill-current" />
-                Proceed to Knockout Bracket
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button
+                  variant="secondary"
+                  onClick={() => {
+                    setResultsModalTab('groups');
+                    setShowAllResultsModal(true);
+                  }}
+                  className="px-6 py-4 bg-gray-850 hover:bg-gray-800 text-white font-black uppercase text-sm tracking-wider rounded-2xl flex items-center gap-2 border border-gray-700 transition-transform hover:scale-[1.03]"
+                >
+                  <ListFilter className="w-5 h-5 text-gray-400" />
+                  View Match Results
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={proceedToKnockouts}
+                  className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-black uppercase text-sm tracking-wider rounded-2xl flex items-center gap-3 transition-transform hover:scale-[1.03] shadow-lg shadow-yellow-500/20"
+                >
+                  <Trophy className="w-5 h-5 fill-current" />
+                  Proceed to Knockout Bracket
+                </Button>
+              </div>
             </div>
 
             {/* Dashboards for Qualifiers & Third Place Leaderboard */}
@@ -2836,37 +2853,50 @@ const Simulator = () => {
                       ? 'Group Stage Standings' 
                       : 'Best 3rd-Place Leaderboard'}
                 </h3>
-                <div className="flex flex-wrap bg-gray-955/60 p-1 rounded-xl border border-gray-850 self-start lg:self-center gap-1 sm:gap-0">
-                  <button
-                    onClick={() => setKnockoutViewTab('bracket')}
-                    className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
-                      knockoutViewTab === 'bracket'
-                        ? 'bg-yellow-500 text-gray-950 shadow-md'
-                        : 'text-gray-400 hover:text-white'
-                    }`}
+                <div className="flex flex-wrap items-center gap-3 self-start lg:self-center">
+                  <div className="flex flex-wrap bg-gray-955/60 p-1 rounded-xl border border-gray-850 gap-1 sm:gap-0">
+                    <button
+                      onClick={() => setKnockoutViewTab('bracket')}
+                      className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                        knockoutViewTab === 'bracket'
+                          ? 'bg-yellow-500 text-gray-950 shadow-md'
+                          : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
+                      Knockout Bracket
+                    </button>
+                    <button
+                      onClick={() => setKnockoutViewTab('standings')}
+                      className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                        knockoutViewTab === 'standings'
+                          ? 'bg-yellow-500 text-gray-950 shadow-md'
+                          : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
+                      Group Standings
+                    </button>
+                    <button
+                      onClick={() => setKnockoutViewTab('thirdPlace')}
+                      className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                        knockoutViewTab === 'thirdPlace'
+                          ? 'bg-yellow-500 text-gray-950 shadow-md'
+                          : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
+                      Best 3rd Place
+                    </button>
+                  </div>
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      setResultsModalTab(simState === 'completed' ? 'knockouts' : 'groups');
+                      setShowAllResultsModal(true);
+                    }}
+                    className="px-4 py-2 text-xs font-black uppercase tracking-wider rounded-xl border border-gray-800 hover:bg-gray-855 flex items-center gap-1.5"
                   >
-                    Knockout Bracket
-                  </button>
-                  <button
-                    onClick={() => setKnockoutViewTab('standings')}
-                    className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
-                      knockoutViewTab === 'standings'
-                        ? 'bg-yellow-500 text-gray-950 shadow-md'
-                        : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    Group Standings
-                  </button>
-                  <button
-                    onClick={() => setKnockoutViewTab('thirdPlace')}
-                    className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
-                      knockoutViewTab === 'thirdPlace'
-                        ? 'bg-yellow-500 text-gray-950 shadow-md'
-                        : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    Best 3rd Place
-                  </button>
+                    <ListFilter className="w-3.5 h-3.5 text-gray-400" />
+                    All Match Results
+                  </Button>
                 </div>
               </div>
 
@@ -3015,7 +3045,194 @@ const Simulator = () => {
             </motion.div>
           </div>
         )}
+        
+        {/* VIEW ALL MATCH RESULTS MODAL */}
+        {showAllResultsModal && (
+          <div className="fixed inset-0 bg-gray-955/85 backdrop-blur-md flex items-center justify-center z-50 p-4">
+            <motion.div
+              initial={{ scale: 0.96, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="bg-gray-900 border border-gray-800 rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden p-6 flex flex-col gap-4 max-h-[85vh]"
+            >
+              <div className="flex items-center justify-between border-b border-gray-800 pb-3">
+                <div>
+                  <h3 className="text-lg font-black text-white uppercase italic tracking-tight flex items-center gap-2">
+                    <ListFilter className="w-5 h-5 text-yellow-500" />
+                    Simulation Match Results
+                  </h3>
+                  <p className="text-xs text-gray-500 font-medium">Browse results for all simulated matches in this run.</p>
+                </div>
+                <button
+                  onClick={() => setShowAllResultsModal(false)}
+                  className="text-gray-400 hover:text-white font-bold text-sm bg-gray-800 hover:bg-gray-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                >
+                  ✕
+                </button>
+              </div>
 
+              {/* Tab Selector inside modal if tournament is completed */}
+              {simState === 'completed' && (
+                <div className="flex bg-gray-950 p-1 rounded-xl border border-gray-850 gap-1 self-start">
+                  <button
+                    onClick={() => setResultsModalTab('groups')}
+                    className={`px-4 py-1.5 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                      resultsModalTab === 'groups'
+                        ? 'bg-yellow-500 text-gray-950 shadow-md'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Group Stage
+                  </button>
+                  <button
+                    onClick={() => setResultsModalTab('knockouts')}
+                    className={`px-4 py-1.5 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                      resultsModalTab === 'knockouts'
+                        ? 'bg-yellow-500 text-gray-950 shadow-md'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Knockout Stage
+                  </button>
+                </div>
+              )}
+
+              {/* Scrollable Results List */}
+              <div className="overflow-y-auto flex-1 pr-1 scrollbar-thin space-y-6 my-2">
+                {resultsModalTab === 'groups' ? (
+                  // GROUP STAGE MATCHES
+                  (() => {
+                    const groupedMatches = {};
+                    const groupLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+                    groupLetters.forEach(letter => {
+                      groupedMatches[letter] = [];
+                    });
+
+                    simMatches.forEach(m => {
+                      if (m.match_id <= 72 && m.group && groupedMatches[m.group]) {
+                        groupedMatches[m.group].push(m);
+                      }
+                    });
+
+                    return groupLetters.map(letter => {
+                      const groupM = groupedMatches[letter] || [];
+                      if (groupM.length === 0) return null;
+
+                      return (
+                        <div key={letter} className="space-y-3">
+                          <h4 className="text-xs font-black text-yellow-500 uppercase tracking-widest border-b border-gray-800/80 pb-1.5 pl-1 flex items-center justify-between">
+                            <span>Group {letter}</span>
+                            <span className="text-[9px] text-gray-500 lowercase font-extrabold bg-gray-950 px-1.5 py-0.5 rounded">6 matches</span>
+                          </h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {groupM.map((match, idx) => {
+                              const homeTeam = teams.find(t => t.id === match.homeTeam) || { name: match.homeTeam };
+                              const awayTeam = teams.find(t => t.id === match.awayTeam) || { name: match.awayTeam };
+                              return (
+                                <div key={idx} className="bg-gray-955/30 border border-gray-850/60 p-3 rounded-xl flex items-center justify-between text-xs hover:border-gray-800 transition-colors">
+                                  <div className="flex items-center gap-2 flex-1 min-w-0">
+                                    <Flag code={homeTeam.countryCode} />
+                                    <span className="font-bold text-gray-200 truncate">{homeTeam.name}</span>
+                                  </div>
+                                  <div className="px-3 py-1 bg-gray-900 border border-gray-800 rounded font-black text-white tabular-nums min-w-[50px] text-center mx-2 shadow-sm">
+                                    {match.homeScore} - {match.awayScore}
+                                  </div>
+                                  <div className="flex items-center gap-2 flex-1 min-w-0 justify-end">
+                                    <span className="font-bold text-gray-200 truncate text-right">{awayTeam.name}</span>
+                                    <Flag code={awayTeam.countryCode} />
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    });
+                  })()
+                ) : (
+                  // KNOCKOUT STAGE MATCHES
+                  (() => {
+                    const roundsToRender = [
+                      { key: 'roundOf32', title: 'Round of 32' },
+                      { key: 'roundOf16', title: 'Round of 16' },
+                      { key: 'quarterFinals', title: 'Quarter-Finals' },
+                      { key: 'semiFinals', title: 'Semi-Finals' },
+                      { key: 'thirdPlace', title: 'Third Place Play-off', single: true },
+                      { key: 'final', title: 'Grand Final', single: true }
+                    ];
+
+                    return roundsToRender.map(round => {
+                      let roundMatches = [];
+                      if (round.single) {
+                        const m = knockoutRounds[round.key];
+                        if (m) roundMatches = [m];
+                      } else {
+                        roundMatches = knockoutRounds[round.key] || [];
+                      }
+
+                      if (roundMatches.length === 0) return null;
+
+                      return (
+                        <div key={round.key} className="space-y-3">
+                          <h4 className="text-xs font-black text-yellow-500 uppercase tracking-widest border-b border-gray-800 pb-1 pl-1">
+                            {round.title}
+                          </h4>
+                          <div className="space-y-2.5">
+                            {roundMatches.map((match, idx) => {
+                              const t1 = match.t1 || { name: 'TBD', code: 'TBD' };
+                              const t2 = match.t2 || { name: 'TBD', code: 'TBD' };
+                              const homeScore = match.score ? match.score[0] : null;
+                              const awayScore = match.score ? match.score[1] : null;
+
+                              let penaltyText = '';
+                              if (match.isPenalties && match.pensScore) {
+                                penaltyText = ` (Pens: ${match.pensScore[0]}-${match.pensScore[1]})`;
+                              } else if (match.isAET) {
+                                penaltyText = ' (AET)';
+                              }
+
+                              return (
+                                <div key={idx} className="bg-gray-955/50 border border-gray-850 p-3.5 rounded-xl flex items-center justify-between text-xs hover:border-gray-800 transition-all">
+                                  <div className="flex items-center gap-2.5 flex-1 min-w-0">
+                                    <Flag code={t1.countryCode} />
+                                    <span className="font-bold text-white truncate">{t1.name}</span>
+                                  </div>
+                                  <div className="flex flex-col items-center mx-3 min-w-[90px]">
+                                    <span className="px-3 py-1 bg-gray-900 border border-gray-800 rounded font-black text-white tabular-nums text-center">
+                                      {homeScore !== null ? `${homeScore} - ${awayScore}` : 'vs'}
+                                    </span>
+                                    {penaltyText && (
+                                      <span className="text-[9px] font-black text-yellow-400 mt-1 uppercase tracking-wider">
+                                        {penaltyText}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div className="flex items-center gap-2.5 flex-1 min-w-0 justify-end">
+                                    <span className="font-bold text-white truncate text-right">{t2.name}</span>
+                                    <Flag code={t2.countryCode} />
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    });
+                  })()
+                )}
+              </div>
+
+              <div className="flex justify-end pt-3 border-t border-gray-800">
+                <Button
+                  variant="secondary"
+                  onClick={() => setShowAllResultsModal(false)}
+                  className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl border border-gray-800 hover:bg-gray-850"
+                >
+                  Close
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        )}
       </main>
     </div>
   );

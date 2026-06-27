@@ -183,11 +183,37 @@ export default defineConfig({
             req.on('end', () => {
               try {
                 const data = JSON.parse(body);
+                
+                // Determine realism category using friendly folder names
+                const rawCategory = req.headers['x-realism-category'] || data.realismCategory || 'realistic';
+                const getCategoryFolderName = (id) => {
+                  const mapping = {
+                    'favorites': 'favorites dominate',
+                    'realistic': 'normal',
+                    'moderate': 'moderately realistic',
+                    'unrealistic': 'wild card - unrealistic',
+                    'underdog': 'underdog story',
+                    // support direct folder names
+                    'favorites dominate': 'favorites dominate',
+                    'normal': 'normal',
+                    'moderately realistic': 'moderately realistic',
+                    'wild card - unrealistic': 'wild card - unrealistic',
+                    'underdog story': 'underdog story'
+                  };
+                  return mapping[id] || 'normal';
+                };
+
+                const category = getCategoryFolderName(rawCategory);
+                const allowedFolderNames = ['favorites dominate', 'normal', 'moderately realistic', 'wild card - unrealistic', 'underdog story'];
+
                 const dirPath = path.resolve(__dirname, 'simulation_results');
-                if (!fs.existsSync(dirPath)) {
-                  fs.mkdirSync(dirPath, { recursive: true });
+                const categoryDirPath = path.resolve(dirPath, category);
+                if (!fs.existsSync(categoryDirPath)) {
+                  fs.mkdirSync(categoryDirPath, { recursive: true });
                 }
-                const files = fs.readdirSync(dirPath);
+
+                // Determine next simulation number specifically for this category folder
+                const files = fs.readdirSync(categoryDirPath);
                 let maxSimNum = 0;
                 files.forEach(file => {
                   const match = file.match(/^sim_(\d+)\.json$/);
@@ -199,18 +225,41 @@ export default defineConfig({
                   }
                 });
                 const nextSimNum = maxSimNum + 1;
+
+                // Strip the realismCategory field from results before saving to keep structure clean
+                const results = { ...data };
+                delete results.realismCategory;
+
                 const enrichedData = {
                   title: `sim ${nextSimNum}`,
                   simulation_number: nextSimNum,
-                  results: data
+                  results: results
                 };
                 const filename = `sim_${nextSimNum}.json`;
-                const filePath = path.resolve(dirPath, filename);
+                const filePath = path.resolve(categoryDirPath, filename);
                 fs.writeFileSync(filePath, JSON.stringify(enrichedData, null, 2), 'utf8');
 
-                // Regenerate prediction_percentages.json based on all simulation files
+                // Regenerate prediction_percentages.json based on all simulation files recursively
                 try {
-                  const simFiles = fs.readdirSync(dirPath).filter(f => f.match(/^sim_(\d+)\.json$/));
+                  const getAllSimulationFiles = (dir) => {
+                    let resList = [];
+                    if (!fs.existsSync(dir)) return resList;
+                    const list = fs.readdirSync(dir);
+                    list.forEach(file => {
+                      const fPath = path.resolve(dir, file);
+                      const stat = fs.statSync(fPath);
+                      if (stat && stat.isDirectory()) {
+                        if (allowedFolderNames.includes(file)) {
+                          resList = resList.concat(getAllSimulationFiles(fPath));
+                        }
+                      } else if (file.match(/^sim_(\d+)\.json$/)) {
+                        resList.push(fPath);
+                      }
+                    });
+                    return resList;
+                  };
+
+                  const simFiles = getAllSimulationFiles(dirPath);
                   const totalSims = simFiles.length;
                   if (totalSims > 0) {
                     const matchAggregates = {};
@@ -239,9 +288,8 @@ export default defineConfig({
                       }
                     };
 
-                    simFiles.forEach(file => {
+                    simFiles.forEach(sFilePath => {
                       try {
-                        const sFilePath = path.resolve(dirPath, file);
                         const simContent = JSON.parse(fs.readFileSync(sFilePath, 'utf8'));
                         const results = simContent.results || {};
 

@@ -5,6 +5,7 @@ import Navbar from '../components/ui/Navbar';
 import Flag from '../components/ui/Flag';
 import Card from '../components/ui/Card';
 import Modal from '../components/ui/Modal';
+import Button from '../components/ui/Button';
 import { Trophy, Goal, Hand, Shield, Users, BarChart3, AlertCircle, Activity, Sparkles } from 'lucide-react';
 import lineupsData from '../data/lineups.json';
 
@@ -22,6 +23,7 @@ const Standings = () => {
     const { teams, matches, loading } = useTournament();
     const [activeTab, setActiveTab] = useState('standings');
     const [selectedStatModal, setSelectedStatModal] = useState(null);
+    const [showThirdPlaceModal, setShowThirdPlaceModal] = useState(false);
     const scrollContainerRef = useRef(null);
 
     const sections = [
@@ -51,7 +53,7 @@ const Standings = () => {
                 pts: 0
             }));
 
-            const groupMatches = matches.filter(m => m.group === g && m.status === 'completed');
+            const groupMatches = matches.filter(m => m.match_id <= 72 && m.group === g && m.status === 'completed');
 
             groupMatches.forEach(m => {
                 const home = groupTeams.find(t => t.id === m.homeTeam);
@@ -91,6 +93,24 @@ const Standings = () => {
 
         return standings;
     }, [teams, matches]);
+
+    const thirdPlaceStandings = useMemo(() => {
+        const thirdTeams = [];
+        Object.entries(groupStandings).forEach(([group, groupTeams]) => {
+            if (groupTeams.length >= 3) {
+                thirdTeams.push({
+                    ...groupTeams[2],
+                    group
+                });
+            }
+        });
+        
+        return thirdTeams.sort((a, b) => {
+            if (b.pts !== a.pts) return b.pts - a.pts;
+            if (b.gd !== a.gd) return b.gd - a.gd;
+            return b.gf - a.gf;
+        });
+    }, [groupStandings]);
 
     const getTeamGoalkeeper = (team) => {
         if (!team) return 'Unknown GK';
@@ -536,9 +556,19 @@ const Standings = () => {
 
                 {/* Section 1: Standings */}
                 <section id="standings" className="scroll-mt-36">
-                    <div className="flex items-center gap-3 mb-8">
-                        <Trophy className="w-8 h-8 text-green-500" />
-                        <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Group Standings</h2>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+                        <div className="flex items-center gap-3">
+                            <Trophy className="w-8 h-8 text-green-500" />
+                            <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Group Standings</h2>
+                        </div>
+                        <Button 
+                            variant="secondary" 
+                            className="text-xs font-black uppercase tracking-wider py-2 flex items-center gap-1.5 border-slate-800 bg-slate-900/60 hover:bg-slate-800 hover:border-green-500/25 transition-all text-white self-start sm:self-center"
+                            onClick={() => setShowThirdPlaceModal(true)}
+                        >
+                            <Sparkles className="w-4 h-4 text-green-400" />
+                            3rd Place Standings
+                        </Button>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {Object.entries(groupStandings).map(([group, groupTeams]) => (
@@ -1025,6 +1055,81 @@ const Standings = () => {
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+                </Modal>
+
+                {/* Best 3rd Place Teams Modal */}
+                <Modal
+                    isOpen={showThirdPlaceModal}
+                    onClose={() => setShowThirdPlaceModal(false)}
+                    title="🏆 Best 3rd Place Teams Standings"
+                >
+                    <div className="flex flex-col gap-4">
+                        <p className="text-[10px] text-gray-400 font-semibold leading-relaxed">
+                            The top 8 third-place teams out of all 12 groups advance to the Round of 32. 
+                            Green highlighted rows are currently in qualifying positions.
+                        </p>
+                        
+                        <div className="overflow-x-auto border border-gray-800 rounded-xl bg-slate-950/40">
+                            <table className="w-full text-left text-xs border-collapse">
+                                <thead>
+                                    <tr className="text-gray-500 border-b border-gray-850 uppercase font-black tracking-widest text-[9px]">
+                                        <th className="px-4 py-3 text-center">Rank</th>
+                                        <th className="px-2 py-3">Team</th>
+                                        <th className="px-3 py-3 text-center">Group</th>
+                                        <th className="px-3 py-3 text-center">P</th>
+                                        <th className="px-3 py-3 text-center">GD</th>
+                                        <th className="px-4 py-3 text-center">Pts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {thirdPlaceStandings.map((team, idx) => {
+                                        const isQualified = idx < 8;
+                                        return (
+                                            <tr 
+                                                key={team.id}
+                                                className={`border-b border-gray-905/40 transition-colors hover:bg-gray-900/30 ${
+                                                    isQualified ? 'bg-green-500/5' : ''
+                                                }`}
+                                            >
+                                                <td className="px-4 py-3 text-center font-bold">
+                                                    {isQualified ? (
+                                                        <span className="text-green-400">#{idx + 1}</span>
+                                                    ) : (
+                                                        <span className="text-gray-500">#{idx + 1}</span>
+                                                    )}
+                                                </td>
+                                                <td className="px-2 py-3 font-bold text-white flex items-center gap-2">
+                                                    <Flag code={team.countryCode} style={{ fontSize: '1.2rem' }} className="shadow border border-gray-800" />
+                                                    <span>{team.name}</span>
+                                                    {isQualified && (
+                                                        <span className="text-[8px] bg-green-500/10 border border-green-500/20 text-green-400 px-1.5 py-0.5 rounded-full uppercase tracking-wider font-extrabold scale-90">
+                                                            Q
+                                                        </span>
+                                                    )}
+                                                </td>
+                                                <td className="px-3 py-3 text-center font-black text-slate-400">
+                                                    Group {team.group}
+                                                </td>
+                                                <td className="px-3 py-3 text-center font-medium text-slate-350">
+                                                    {team.played}
+                                                </td>
+                                                <td className={`px-3 py-3 text-center font-black ${
+                                                    team.gd > 0 ? 'text-green-400' : team.gd < 0 ? 'text-red-400' : 'text-slate-400'
+                                                }`}>
+                                                    {team.gd > 0 ? `+${team.gd}` : team.gd}
+                                                </td>
+                                                <td className={`px-4 py-3 text-center font-black ${
+                                                    isQualified ? 'text-green-400 text-sm' : 'text-slate-300'
+                                                }`}>
+                                                    {team.pts}
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </Modal>
 

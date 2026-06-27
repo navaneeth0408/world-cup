@@ -3134,13 +3134,86 @@
     "time": "19:00",
     "venue": "bcplace",
     "group": "B",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Rubin Vargas",
+        "teamId": "switzerland",
+        "minute": 46,
+        "assist": "Johan Manzambi",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Johan Manzambi",
+        "teamId": "switzerland",
+        "minute": 57,
+        "assist": "Breel Embolo",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Promise David",
+        "teamId": "canada",
+        "minute": 76,
+        "assist": "Nathan Saliba",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Cyle Larin",
+        "teamId": "canada",
+        "type": "yellow",
+        "minute": 25
+      },
+      {
+        "name": "Granit Xhaka",
+        "teamId": "switzerland",
+        "type": "yellow",
+        "minute": 32
+      },
+      {
+        "name": "Liam Millar",
+        "teamId": "canada",
+        "type": "yellow",
+        "minute": 86
+      }
+    ],
+    "playerOfMatch": "Johan Manzambi",
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "shots": [
+        12,
+        10
+      ],
+      "shotsOnTarget": [
+        5,
+        4
+      ],
+      "passes": [
+        490,
+        420
+      ],
+      "passAccuracy": [
+        86,
+        82
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "fouls": [
+        11,
+        13
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "switzerland",
     "awayTeam": "canada",
@@ -3154,13 +3227,88 @@
     "time": "19:00",
     "venue": "lumen",
     "group": "B",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Kerim Alajbegovic",
+        "teamId": "bosniaandherzegovina",
+        "minute": 29,
+        "assist": "Ivan Basic",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Mahmoud Abunada",
+        "teamId": "bosniaandherzegovina",
+        "minute": 34,
+        "assist": "Edin Dzeko",
+        "ownGoal": true,
+        "penalty": false
+      },
+      {
+        "name": "Hassan Al-Haydos",
+        "teamId": "qatar",
+        "minute": 42,
+        "assist": "Edmilson Junior",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Ermin Mahmic",
+        "teamId": "bosniaandherzegovina",
+        "minute": 80,
+        "assist": "Dennis Hadzikadunic",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Ahmed Fathy",
+        "teamId": "qatar",
+        "type": "yellow",
+        "minute": 78
+      },
+      {
+        "name": "Ermin Mahmic",
+        "teamId": "bosniaandherzegovina",
+        "type": "yellow",
+        "minute": 82
+      }
+    ],
+    "playerOfMatch": "Kerim Alajbegovic",
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "shots": [
+        16,
+        8
+      ],
+      "shotsOnTarget": [
+        7,
+        3
+      ],
+      "passes": [
+        510,
+        390
+      ],
+      "passAccuracy": [
+        87,
+        78
+      ],
+      "corners": [
+        6,
+        2
+      ],
+      "fouls": [
+        12,
+        14
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "bosniaandherzegovina",
     "awayTeam": "qatar",
@@ -3174,13 +3322,110 @@
     "time": "22:00",
     "venue": "mercedesbenz",
     "group": "C",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 4,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Yassine Bounou",
+        "teamId": "haiti",
+        "minute": 10,
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      },
+      {
+        "name": "Achraf Hakimi",
+        "teamId": "morocco",
+        "minute": 39,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Wilson Isidor",
+        "teamId": "haiti",
+        "minute": 43,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Ismael Saibari",
+        "teamId": "morocco",
+        "minute": 45,
+        "assist": "Achraf Hakimi",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Soufiane Rahimi",
+        "teamId": "morocco",
+        "minute": 78,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Gessime Yassine",
+        "teamId": "morocco",
+        "minute": 89,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Duckens Nazon",
+        "teamId": "haiti",
+        "type": "yellow",
+        "minute": 79
+      },
+      {
+        "name": "Johny Placide",
+        "teamId": "haiti",
+        "type": "yellow",
+        "minute": 80
+      },
+      {
+        "name": "Josue Casimir",
+        "teamId": "haiti",
+        "type": "yellow",
+        "minute": 94
+      }
+    ],
+    "playerOfMatch": "Achraf Hakimi",
+    "stats": {
+      "possession": [
+        63,
+        37
+      ],
+      "shots": [
+        19,
+        7
+      ],
+      "shotsOnTarget": [
+        9,
+        3
+      ],
+      "passes": [
+        580,
+        310
+      ],
+      "passAccuracy": [
+        90,
+        76
+      ],
+      "corners": [
+        7,
+        2
+      ],
+      "fouls": [
+        10,
+        15
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "morocco",
     "awayTeam": "haiti",
@@ -3194,13 +3439,80 @@
     "time": "22:00",
     "venue": "hardrock",
     "group": "C",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 3,
+    "scorers": [
+      {
+        "name": "Vinícius Júnior",
+        "teamId": "brazil",
+        "minute": 7,
+        "assist": "Rayan",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Vinícius Júnior",
+        "teamId": "brazil",
+        "minute": 45,
+        "assist": "Bruno Guimarães",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Matheus Cunha",
+        "teamId": "brazil",
+        "minute": 60,
+        "assist": "Bruno Guimaraes",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Jack Hendry",
+        "teamId": "scotland",
+        "type": "yellow",
+        "minute": 38
+      },
+      {
+        "name": "John McGinn",
+        "teamId": "scotland",
+        "type": "yellow",
+        "minute": 52
+      }
+    ],
+    "playerOfMatch": "Vinicius Junior",
+    "stats": {
+      "possession": [
+        34,
+        66
+      ],
+      "shots": [
+        5,
+        17
+      ],
+      "shotsOnTarget": [
+        1,
+        8
+      ],
+      "passes": [
+        290,
+        590
+      ],
+      "passAccuracy": [
+        78,
+        91
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "fouls": [
+        14,
+        9
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "scotland",
     "awayTeam": "brazil",
@@ -3214,13 +3526,64 @@
     "time": "01:00",
     "venue": "akron",
     "group": "A",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Thapelo Maseko",
+        "teamId": "southafrica",
+        "minute": 63,
+        "assist": "Tshepang Moremi",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Aubrey Modiba",
+        "teamId": "southafrica",
+        "type": "yellow",
+        "minute": 30
+      },
+      {
+        "name": "Cho Gue-sung",
+        "teamId": "southkorea",
+        "type": "yellow",
+        "minute": 75
+      }
+    ],
+    "playerOfMatch": "Thapelo Maseko",
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        10,
+        8
+      ],
+      "shotsOnTarget": [
+        4,
+        2
+      ],
+      "passes": [
+        420,
+        460
+      ],
+      "passAccuracy": [
+        81,
+        83
+      ],
+      "corners": [
+        4,
+        3
+      ],
+      "fouls": [
+        14,
+        11
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "southafrica",
     "awayTeam": "southkorea",
@@ -3234,13 +3597,80 @@
     "time": "01:00",
     "venue": "azteca",
     "group": "A",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 3,
+    "scorers": [
+      {
+        "name": "Mateo Chavez",
+        "teamId": "mexico",
+        "minute": 55,
+        "assist": "Luis Romo",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Julian Quinones",
+        "teamId": "mexico",
+        "minute": 61,
+        "assist": "Luis Chavez",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Alvaro Fidalgo",
+        "teamId": "mexico",
+        "minute": 94,
+        "assist": "Roberto Alvarado",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Luis Chavez",
+        "teamId": "mexico",
+        "type": "yellow",
+        "minute": 44
+      },
+      {
+        "name": "Alvaro Fidalgo",
+        "teamId": "mexico",
+        "type": "yellow",
+        "minute": 82
+      }
+    ],
+    "playerOfMatch": "Mateo Chavez",
+    "stats": {
+      "possession": [
+        38,
+        62
+      ],
+      "shots": [
+        5,
+        16
+      ],
+      "shotsOnTarget": [
+        1,
+        7
+      ],
+      "passes": [
+        310,
+        530
+      ],
+      "passAccuracy": [
+        75,
+        88
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "fouls": [
+        12,
+        10
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "czechia",
     "awayTeam": "mexico",
@@ -3254,13 +3684,78 @@
     "time": "20:00",
     "venue": "lincoln",
     "group": "E",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Nicolas Pépé",
+        "teamId": "ivorycoast",
+        "minute": 7,
+        "assist": "Yan Diomande",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Nicolas Pépé",
+        "teamId": "ivorycoast",
+        "minute": 64,
+        "assist": "Ibrahim Sangare",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Nicolas Pepe",
+        "teamId": "ivorycoast",
+        "type": "yellow",
+        "minute": 35
+      },
+      {
+        "name": "Juninho Bacuna",
+        "teamId": "curacao",
+        "type": "yellow",
+        "minute": 75
+      },
+      {
+        "name": "Gervane Kastaneer",
+        "teamId": "curacao",
+        "type": "yellow",
+        "minute": 82
+      }
+    ],
+    "playerOfMatch": "Nicolas Pépé",
+    "stats": {
+      "possession": [
+        42,
+        58
+      ],
+      "shots": [
+        7,
+        14
+      ],
+      "shotsOnTarget": [
+        2,
+        6
+      ],
+      "passes": [
+        340,
+        510
+      ],
+      "passAccuracy": [
+        78,
+        87
+      ],
+      "corners": [
+        3,
+        6
+      ],
+      "fouls": [
+        12,
+        10
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "curacao",
     "awayTeam": "ivorycoast",
@@ -3274,13 +3769,92 @@
     "time": "20:00",
     "venue": "metlife",
     "group": "E",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Leroy Sané",
+        "teamId": "germany",
+        "minute": 2,
+        "assist": "Florian Wirtz",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Nilson Angulo",
+        "teamId": "ecuador",
+        "minute": 9,
+        "assist": "Pedro Vite",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Gonzalo Plata",
+        "teamId": "ecuador",
+        "minute": 77,
+        "assist": "Kevin Rodriguez",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Aleksandar Pavlovic",
+        "teamId": "germany",
+        "type": "yellow",
+        "minute": 44
+      },
+      {
+        "name": "Alan Franco",
+        "teamId": "ecuador",
+        "type": "yellow",
+        "minute": 64
+      },
+      {
+        "name": "Piero Hincapie",
+        "teamId": "ecuador",
+        "type": "yellow",
+        "minute": 71
+      },
+      {
+        "name": "Gonzalo Plata",
+        "teamId": "ecuador",
+        "type": "yellow",
+        "minute": 88
+      }
+    ],
+    "playerOfMatch": "Gonzalo Plata",
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        11,
+        15
+      ],
+      "shotsOnTarget": [
+        5,
+        4
+      ],
+      "passes": [
+        380,
+        490
+      ],
+      "passAccuracy": [
+        81,
+        88
+      ],
+      "corners": [
+        4,
+        7
+      ],
+      "fouls": [
+        14,
+        11
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "ecuador",
     "awayTeam": "germany",
@@ -3294,13 +3868,82 @@
     "time": "23:00",
     "venue": "arrowhead",
     "group": "F",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 3,
+    "scorers": [
+      {
+        "name": "Ellyes Skhiri",
+        "teamId": "netherlands",
+        "minute": 3,
+        "assist": "Denzel Dumfries",
+        "ownGoal": true,
+        "penalty": false
+      },
+      {
+        "name": "Brian Brobbey",
+        "teamId": "netherlands",
+        "minute": 7,
+        "assist": "Virgil van Dijk",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Hazem Mastouri",
+        "teamId": "tunisia",
+        "minute": 54,
+        "assist": "Hannibal Mejbri",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Jan Paul van Hecke",
+        "teamId": "netherlands",
+        "minute": 62,
+        "assist": "Tijjani Reijnders",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Ellyes Skhiri",
+        "teamId": "tunisia",
+        "type": "yellow",
+        "minute": 41
+      }
+    ],
+    "playerOfMatch": "Brian Brobbey",
+    "stats": {
+      "possession": [
+        36,
+        64
+      ],
+      "shots": [
+        6,
+        17
+      ],
+      "shotsOnTarget": [
+        2,
+        7
+      ],
+      "passes": [
+        290,
+        580
+      ],
+      "passAccuracy": [
+        76,
+        91
+      ],
+      "corners": [
+        2,
+        8
+      ],
+      "fouls": [
+        13,
+        8
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "tunisia",
     "awayTeam": "netherlands",
@@ -3314,13 +3957,66 @@
     "time": "23:00",
     "venue": "attstadium",
     "group": "F",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Daizen Maeda",
+        "teamId": "japan",
+        "minute": 56,
+        "assist": "Ritsu Doan",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Anthony Elanga",
+        "teamId": "sweden",
+        "minute": 62,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Viktor Gyokeres",
+        "teamId": "sweden",
+        "type": "yellow",
+        "minute": 85
+      }
+    ],
+    "playerOfMatch": "Anthony Elanga",
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "shots": [
+        12,
+        10
+      ],
+      "shotsOnTarget": [
+        4,
+        4
+      ],
+      "passes": [
+        460,
+        440
+      ],
+      "passAccuracy": [
+        84,
+        83
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "fouls": [
+        9,
+        12
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "japan",
     "awayTeam": "sweden",
@@ -3334,13 +4030,96 @@
     "time": "02:00",
     "venue": "sofi",
     "group": "D",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Auston Trusty",
+        "teamId": "usa",
+        "minute": 3,
+        "assist": "Sebastian Berhalter",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Arda Güler",
+        "teamId": "turkiye",
+        "minute": 10,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Baris Alper Yilmaz",
+        "teamId": "turkiye",
+        "minute": 31,
+        "assist": "Arda Guler",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Sebastian Berhalter",
+        "teamId": "usa",
+        "minute": 49,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Kaan Ayhan",
+        "teamId": "turkiye",
+        "minute": 98,
+        "assist": "Arda Guler",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Auston Trusty",
+        "teamId": "usa",
+        "type": "yellow",
+        "minute": 45
+      },
+      {
+        "name": "Kaan Ayhan",
+        "teamId": "turkiye",
+        "type": "yellow",
+        "minute": 99
+      }
+    ],
+    "playerOfMatch": "Arda Guler",
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "shots": [
+        14,
+        11
+      ],
+      "shotsOnTarget": [
+        6,
+        5
+      ],
+      "passes": [
+        450,
+        410
+      ],
+      "passAccuracy": [
+        85,
+        82
+      ],
+      "corners": [
+        6,
+        4
+      ],
+      "fouls": [
+        11,
+        14
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "turkiye",
     "awayTeam": "usa",
@@ -3354,13 +4133,55 @@
     "time": "02:00",
     "venue": "levis",
     "group": "D",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 0,
     "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "cards": [
+      {
+        "name": "Jordan Bos",
+        "teamId": "australia",
+        "type": "yellow",
+        "minute": 34
+      },
+      {
+        "name": "Julio Enciso",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": 72
+      }
+    ],
+    "playerOfMatch": "Jordan Bos",
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "shots": [
+        8,
+        9
+      ],
+      "shotsOnTarget": [
+        2,
+        3
+      ],
+      "passes": [
+        390,
+        440
+      ],
+      "passAccuracy": [
+        79,
+        81
+      ],
+      "corners": [
+        3,
+        4
+      ],
+      "fouls": [
+        15,
+        13
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "paraguay",
     "awayTeam": "australia",
@@ -3374,13 +4195,86 @@
     "time": "19:00",
     "venue": "gillette",
     "group": "I",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 4,
+    "scorers": [
+      {
+        "name": "Ousmane Dembélé",
+        "teamId": "france",
+        "minute": 7,
+        "assist": "Kylian Mbappé"
+      },
+      {
+        "name": "Ousmane Dembélé",
+        "teamId": "france",
+        "minute": 20,
+        "assist": ""
+      },
+      {
+        "name": "Thelo Aasgaard",
+        "teamId": "norway",
+        "minute": 21,
+        "assist": ""
+      },
+      {
+        "name": "Ousmane Dembélé",
+        "teamId": "france",
+        "minute": 32,
+        "assist": ""
+      },
+      {
+        "name": "Désiré Doué",
+        "teamId": "france",
+        "minute": 94,
+        "assist": "Bradley Barcola"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Leo Østigård",
+        "teamId": "norway",
+        "type": "yellow",
+        "minute": 34
+      },
+      {
+        "name": "Manu Koné",
+        "teamId": "france",
+        "type": "yellow",
+        "minute": 45
+      }
+    ],
+    "playerOfMatch": "Ousmane Dembélé",
+    "stats": {
+      "possession": [
+        43,
+        57
+      ],
+      "shots": [
+        9,
+        18
+      ],
+      "shotsOnTarget": [
+        3,
+        9
+      ],
+      "passes": [
+        380,
+        520
+      ],
+      "passAccuracy": [
+        80,
+        88
+      ],
+      "corners": [
+        4,
+        5
+      ],
+      "fouls": [
+        8,
+        10
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "norway",
     "awayTeam": "france",
@@ -3394,13 +4288,92 @@
     "time": "19:00",
     "venue": "bmo",
     "group": "I",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 5,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Habib Diarra",
+        "teamId": "senegal",
+        "minute": 4,
+        "assist": ""
+      },
+      {
+        "name": "Ismaïla Sarr",
+        "teamId": "senegal",
+        "minute": 56,
+        "assist": "Illiman Ndiaye"
+      },
+      {
+        "name": "Pape Gueye",
+        "teamId": "senegal",
+        "minute": 59,
+        "assist": "Ismaïla Sarr"
+      },
+      {
+        "name": "Pape Gueye",
+        "teamId": "senegal",
+        "minute": 71,
+        "assist": ""
+      },
+      {
+        "name": "Illiman Ndiaye",
+        "teamId": "senegal",
+        "minute": 82,
+        "assist": "Pape Gueye"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Rebin Sulaka",
+        "teamId": "iraq",
+        "type": "red",
+        "minute": 13
+      },
+      {
+        "name": "Kalidou Koulibaly",
+        "teamId": "senegal",
+        "type": "yellow",
+        "minute": 25
+      },
+      {
+        "name": "Amir Al-Ammari",
+        "teamId": "iraq",
+        "type": "yellow",
+        "minute": 40
+      }
+    ],
+    "playerOfMatch": "Pape Gueye",
+    "stats": {
+      "possession": [
+        67,
+        33
+      ],
+      "shots": [
+        24,
+        4
+      ],
+      "shotsOnTarget": [
+        11,
+        1
+      ],
+      "passes": [
+        610,
+        290
+      ],
+      "passAccuracy": [
+        91,
+        74
+      ],
+      "corners": [
+        8,
+        1
+      ],
+      "fouls": [
+        7,
+        12
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "senegal",
     "awayTeam": "iraq",
@@ -3414,13 +4387,55 @@
     "time": "00:00",
     "venue": "nrg",
     "group": "H",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 0,
     "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "cards": [
+      {
+        "name": "Logan Costa",
+        "teamId": "capeverde",
+        "type": "yellow",
+        "minute": 28
+      },
+      {
+        "name": "Saud Abdulhamid",
+        "teamId": "saudiarabia",
+        "type": "yellow",
+        "minute": 62
+      }
+    ],
+    "playerOfMatch": "Mohammed Al Owais",
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        8,
+        11
+      ],
+      "shotsOnTarget": [
+        2,
+        4
+      ],
+      "passes": [
+        410,
+        440
+      ],
+      "passAccuracy": [
+        81,
+        84
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "fouls": [
+        14,
+        11
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "capeverde",
     "awayTeam": "saudiarabia",
@@ -3434,13 +4449,68 @@
     "time": "00:00",
     "venue": "akron",
     "group": "H",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Alex Baena",
+        "teamId": "spain",
+        "minute": 42,
+        "assist": ""
+      }
+    ],
+    "cards": [
+      {
+        "name": "José María Giménez",
+        "teamId": "uruguay",
+        "type": "yellow",
+        "minute": 31
+      },
+      {
+        "name": "Marc Cucurella",
+        "teamId": "spain",
+        "type": "yellow",
+        "minute": 55
+      },
+      {
+        "name": "Agustín Canobbio",
+        "teamId": "uruguay",
+        "type": "red",
+        "minute": 94
+      }
+    ],
+    "playerOfMatch": "Alex Baena",
+    "stats": {
+      "possession": [
+        38,
+        62
+      ],
+      "shots": [
+        6,
+        11
+      ],
+      "shotsOnTarget": [
+        2,
+        4
+      ],
+      "passes": [
+        350,
+        580
+      ],
+      "passAccuracy": [
+        81,
+        89
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "fouls": [
+        15,
+        12
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "uruguay",
     "awayTeam": "spain",
@@ -3454,13 +4524,92 @@
     "time": "03:00",
     "venue": "bcplace",
     "group": "G",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 5,
+    "scorers": [
+      {
+        "name": "Leandro Trossard",
+        "teamId": "belgium",
+        "minute": 28,
+        "assist": "Kevin De Bruyne"
+      },
+      {
+        "name": "Leandro Trossard",
+        "teamId": "belgium",
+        "minute": 50,
+        "assist": "Kevin De Bruyne"
+      },
+      {
+        "name": "Kevin De Bruyne",
+        "teamId": "belgium",
+        "minute": 66,
+        "assist": ""
+      },
+      {
+        "name": "Elijah Just",
+        "teamId": "newzealand",
+        "minute": 84,
+        "assist": ""
+      },
+      {
+        "name": "Romelu Lukaku",
+        "teamId": "belgium",
+        "minute": 86,
+        "assist": "Nicolas Raskin"
+      },
+      {
+        "name": "Alexis Saelemaekers",
+        "teamId": "belgium",
+        "minute": 94,
+        "assist": ""
+      }
+    ],
+    "cards": [
+      {
+        "name": "Liberato Cacace",
+        "teamId": "newzealand",
+        "type": "yellow",
+        "minute": 18
+      },
+      {
+        "name": "Timothy Castagne",
+        "teamId": "belgium",
+        "type": "yellow",
+        "minute": 42
+      }
+    ],
+    "playerOfMatch": "Leandro Trossard",
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        6,
+        18
+      ],
+      "shotsOnTarget": [
+        2,
+        10
+      ],
+      "passes": [
+        430,
+        520
+      ],
+      "passAccuracy": [
+        85,
+        88
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "fouls": [
+        10,
+        12
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "newzealand",
     "awayTeam": "belgium",
@@ -3474,13 +4623,68 @@
     "time": "03:00",
     "venue": "lumen",
     "group": "G",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Mahmoud Saber",
+        "teamId": "egypt",
+        "minute": 5,
+        "assist": ""
+      },
+      {
+        "name": "Ramin Rezaeian",
+        "teamId": "iran",
+        "minute": 14,
+        "assist": ""
+      }
+    ],
+    "cards": [
+      {
+        "name": "Hamdy Fathy",
+        "teamId": "egypt",
+        "type": "yellow",
+        "minute": 23
+      },
+      {
+        "name": "Shoja Khalilzadeh",
+        "teamId": "iran",
+        "type": "yellow",
+        "minute": 45
+      }
+    ],
+    "playerOfMatch": "Mostafa Shoubr",
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "shots": [
+        10,
+        14
+      ],
+      "shotsOnTarget": [
+        3,
+        6
+      ],
+      "passes": [
+        450,
+        410
+      ],
+      "passAccuracy": [
+        84,
+        81
+      ],
+      "corners": [
+        4,
+        6
+      ],
+      "fouls": [
+        14,
+        16
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "egypt",
     "awayTeam": "iran",
@@ -3622,8 +4826,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group A runners-up",
-    "awayTeam": "Group B runners-up",
+    "homeTeam": "southafrica",
+    "awayTeam": "canada",
     "stage": "Round of 32",
     "location": "Los Angeles"
   },
@@ -3642,8 +4846,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group C winners",
-    "awayTeam": "Group F runners-up",
+    "homeTeam": "brazil",
+    "awayTeam": "japan",
     "stage": "Round of 32",
     "location": "Houston"
   },
@@ -3662,8 +4866,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group E winners",
-    "awayTeam": "Best Third-Placed Team",
+    "homeTeam": "germany",
+    "awayTeam": "paraguay",
     "stage": "Round of 32",
     "location": "Foxborough"
   },
@@ -3682,8 +4886,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group F winners",
-    "awayTeam": "Group C runners-up",
+    "homeTeam": "netherlands",
+    "awayTeam": "morocco",
     "stage": "Round of 32",
     "location": "Guadalajara"
   },
@@ -3702,8 +4906,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group E runners-up",
-    "awayTeam": "Group I runners-up",
+    "homeTeam": "ivorycoast",
+    "awayTeam": "norway",
     "stage": "Round of 32",
     "location": "Arlington"
   },
@@ -3722,8 +4926,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group I winners",
-    "awayTeam": "Best Third-Placed Team",
+    "homeTeam": "france",
+    "awayTeam": "sweden",
     "stage": "Round of 32",
     "location": "New Jersey"
   },
@@ -3802,8 +5006,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group D winners",
-    "awayTeam": "Best Third-Placed Team",
+    "homeTeam": "usa",
+    "awayTeam": "bosniaandherzegovina",
     "stage": "Round of 32",
     "location": "Santa Clara"
   },
@@ -3882,8 +5086,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group D runners-up",
-    "awayTeam": "Group G runners-up",
+    "homeTeam": "australia",
+    "awayTeam": "egypt",
     "stage": "Round of 32",
     "location": "Arlington"
   },

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Teams from './pages/Teams'
 import TeamDetail from './pages/TeamDetail'
+import TeamStats from './pages/TeamStats'
 import Predictions from './pages/Predictions'
 import Standings from './pages/Standings'
 import Simulator from './pages/Simulator'
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/teams/:id" element={<TeamDetail />} />
+        <Route path="/teams/:id/stats" element={<TeamStats />} />
         <Route path="/predictions" element={<Predictions />} />
         <Route path="/standings" element={<Standings />} />
         <Route path="/matches" element={<Matches />} />

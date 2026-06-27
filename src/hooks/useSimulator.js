@@ -104,6 +104,7 @@ export const useSimulator = () => {
     });
 
     simulatedMatches.forEach(m => {
+      if (m.match_id > 72) return;
       const group = standings[m.group];
       const h = group.find(t => t.id === m.homeTeam);
       const a = group.find(t => t.id === m.awayTeam);
@@ -194,6 +195,7 @@ export const useSimulator = () => {
     // Save simulation results to server
     const formatTeam = (t) => t ? { id: t.id, name: t.name, code: t.code } : null;
     const simData = {
+      realismCategory: 'realistic',
       groupMatches: simulatedMatches.map(m => ({
         id: m.id,
         homeTeam: m.homeTeam,

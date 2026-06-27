@@ -224,7 +224,7 @@ const FavoriteTeamHub = ({ teams, matches }) => {
                             <Button 
                                 variant="secondary" 
                                 className="text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/20 flex items-center justify-center gap-1.5 hover:bg-slate-800"
-                                onClick={() => navigate('/standings')}
+                                onClick={() => navigate(`/teams/${favoriteTeam.id}/stats`)}
                             >
                                 <BarChart3 className="w-3.5 h-3.5 text-slate-450" />
                                 Statistics
