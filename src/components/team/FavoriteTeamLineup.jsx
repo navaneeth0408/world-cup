@@ -234,11 +234,55 @@ const FavoriteTeamLineup = ({ team }) => {
         };
     }, [squad, team]);
 
-    // Split starting XI names to display cleanly
+    // Split starting XI names to display cleanly with correct initials (especially for Dutch names like De Jong, Van Dijk, Van de Ven, Van Hecke)
     const getLastName = (fullName) => {
         if (!fullName) return '';
-        const parts = fullName.split(' ');
-        return parts.length > 1 ? parts[parts.length - 1] : fullName;
+        
+        const trimmed = fullName.trim();
+        const lower = trimmed.toLowerCase();
+        
+        // Exact mappings for user request target players
+        if (lower.includes('van dijk')) {
+            return 'Van Dijk';
+        }
+        if (lower.includes('de jong')) {
+            const parts = trimmed.split(' ');
+            const initial = parts[0] ? `${parts[0].charAt(0).toUpperCase()}. ` : '';
+            return `${initial}de Jong`;
+        }
+        if (lower.includes('van de ven')) {
+            const parts = trimmed.split(' ');
+            const initial = parts[0] ? `${parts[0].charAt(0).toUpperCase()}. ` : '';
+            return `${initial}van de Ven`;
+        }
+        if (lower.includes('van hecke')) {
+            const parts = trimmed.split(' ');
+            const initial = parts[0] ? `${parts[0].charAt(0).toUpperCase()}. ` : '';
+            return `${initial}van Hecke`;
+        }
+        
+        const parts = trimmed.split(' ');
+        if (parts.length <= 1) return trimmed;
+        
+        // General Dutch/German/Spanish particles scanner
+        const particles = ['van', 'de', 'der', 'von', 'da', 'di', 'del'];
+        let particleIndex = -1;
+        for (let i = 0; i < parts.length; i++) {
+            if (particles.includes(parts[i].toLowerCase())) {
+                particleIndex = i;
+                break;
+            }
+        }
+        
+        if (particleIndex > 0) {
+            const firstPart = parts[0];
+            const initial = `${firstPart.charAt(0).toUpperCase()}. `;
+            const lastNamePart = parts.slice(particleIndex).join(' ');
+            return `${initial}${lastNamePart}`;
+        }
+        
+        // Default: Return the last part
+        return parts[parts.length - 1];
     };
 
     return (

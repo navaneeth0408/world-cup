@@ -49,6 +49,37 @@ const CinematicSlideshow = ({ categories }) => {
 
     const currentPlayer = players[currentIndex];
 
+    // Swipe gestures state and handlers
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
+
+    const handleTouchStart = (e) => {
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > 50;
+        const isRightSwipe = distance < -50;
+
+        if (isLeftSwipe) {
+            // Next slide
+            setCurrentIndex((prev) => (prev + 1) % players.length);
+        } else if (isRightSwipe) {
+            // Prev slide
+            setCurrentIndex((prev) => (prev - 1 + players.length) % players.length);
+        }
+
+        // Reset
+        setTouchStart(0);
+        setTouchEnd(0);
+    };
+
     if (!currentPlayer) return null;
 
     return (
@@ -89,7 +120,12 @@ const CinematicSlideshow = ({ categories }) => {
             </div>
 
             {/* Slideshow Viewport Card */}
-            <div className="relative w-full h-[580px] overflow-hidden bg-[#0a0a0a] rounded-3xl border border-gray-900 shadow-2xl">
+            <div 
+                className="relative w-full h-[580px] overflow-hidden bg-[#0a0a0a] rounded-3xl border border-gray-900 shadow-2xl"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+            >
                 {/* Foreground Image Layer spanning the entire width */}
                 <div className="absolute inset-0 w-full h-full overflow-hidden z-10">
                     <AnimatePresence initial={false}>

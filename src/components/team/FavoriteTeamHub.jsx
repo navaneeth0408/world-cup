@@ -272,11 +272,11 @@ const FavoriteTeamHub = ({ teams, matches }) => {
                                 <div className="grid grid-cols-2 gap-4 border-b border-slate-800/40 pb-4">
                                     <div>
                                         <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Top Scorer</span>
-                                        <span className="text-xs font-bold text-slate-350 mt-1 block truncate leading-tight" title={records.scorer}>{records.scorer}</span>
+                                        <span className="text-xs font-bold text-slate-350 mt-1 block leading-relaxed" title={records.scorer}>{records.scorer}</span>
                                     </div>
                                     <div>
                                         <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Most Capped</span>
-                                        <span className="text-xs font-bold text-slate-350 mt-1 block truncate leading-tight" title={records.capped}>{records.capped}</span>
+                                        <span className="text-xs font-bold text-slate-350 mt-1 block leading-relaxed" title={records.capped}>{records.capped}</span>
                                     </div>
                                 </div>
                             </div>
