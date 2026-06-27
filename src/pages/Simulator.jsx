@@ -1888,26 +1888,26 @@ const Simulator = () => {
               <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
                 
                 {/* 1. Large Match Card */}
-                <div className="bg-gray-950 border border-gray-800 rounded-3xl p-4 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1">
-                  <div className="flex flex-col items-center gap-1.5 md:gap-3 flex-1 text-center min-w-0">
-                    <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: isMobile ? '2.5rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
+                <div className="bg-gray-950 border border-gray-800 rounded-3xl p-5 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1.5">
+                  <div className="flex flex-col items-center gap-2 md:gap-3 flex-1 text-center min-w-0">
+                    <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: isMobile ? '3.2rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
                     <div className="min-w-0 w-full">
                       <span className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5 truncate">Rank #{activeSimulationDetails.teamA.fifaRanking}</span>
                       <h4 className="text-xs md:text-lg font-black text-white tracking-tight leading-tight uppercase italic truncate w-full" title={activeSimulationDetails.teamA.name}>{activeSimulationDetails.teamA.name}</h4>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center justify-center px-2 md:px-4 min-w-[90px] md:min-w-[150px] flex-shrink-0">
+                  <div className="flex flex-col items-center justify-center px-2 md:px-4 min-w-[100px] md:min-w-[150px] flex-shrink-0">
                     <span className="px-2 py-0.5 md:px-3 md:py-1 bg-green-500/10 border border-green-500/20 text-green-400 font-black text-[9px] md:text-xs uppercase tracking-widest rounded-full mb-2 md:mb-3 animate-pulse">
                       {liveMatchClock}'
                     </span>
-                    <div className="text-2xl md:text-5xl font-black text-white tracking-tighter italic tabular-nums">
+                    <div className="text-3xl md:text-5xl font-black text-white tracking-tighter italic tabular-nums">
                       {liveScore[0]} - {liveScore[1]}
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center gap-1.5 md:gap-3 flex-1 text-center min-w-0">
-                    <Flag code={activeSimulationDetails.teamB.countryCode} style={{ fontSize: isMobile ? '2.5rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
+                  <div className="flex flex-col items-center gap-2 md:gap-3 flex-1 text-center min-w-0">
+                    <Flag code={activeSimulationDetails.teamB.countryCode} style={{ fontSize: isMobile ? '3.2rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
                     <div className="min-w-0 w-full">
                       <span className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5 truncate">Rank #{activeSimulationDetails.teamB.fifaRanking}</span>
                       <h4 className="text-xs md:text-lg font-black text-white tracking-tight leading-tight uppercase italic truncate w-full" title={activeSimulationDetails.teamB.name}>{activeSimulationDetails.teamB.name}</h4>
@@ -1917,7 +1917,7 @@ const Simulator = () => {
 
                 {/* 2. Commentary and Standings */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-gray-950/80 border border-gray-800 rounded-2xl p-4 flex flex-col h-[250px]">
+                  <div className="bg-gray-950/80 border border-gray-800 rounded-2xl p-4 flex flex-col h-[180px] md:h-[250px]">
                     <span className="text-[9px] text-gray-500 uppercase font-black tracking-widest border-b border-gray-900 pb-2 mb-2 block">Match Commentary</span>
                     <div className="flex-1 overflow-y-auto space-y-2.5 pr-2 scrollbar-thin">
                       <AnimatePresence>
@@ -2482,22 +2482,22 @@ const Simulator = () => {
               <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
                 
                 {/* Match Card */}
-                <div className="bg-gray-950 border border-gray-800 rounded-3xl p-4 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1">
-                  <div className="flex flex-col items-center gap-1.5 md:gap-3 flex-1 text-center min-w-0">
-                    <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: isMobile ? '2.5rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
+                <div className="bg-gray-955 border border-gray-800 rounded-3xl p-5 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1.5">
+                  <div className="flex flex-col items-center gap-2 md:gap-3 flex-1 text-center min-w-0">
+                    <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: isMobile ? '3.2rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
                     <div className="min-w-0 w-full">
                       <span className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5 truncate">Rank #{activeSimulationDetails.teamA.fifaRanking}</span>
                       <h4 className="text-xs md:text-lg font-black text-white tracking-tight leading-tight uppercase italic truncate w-full" title={activeSimulationDetails.teamA.name}>{activeSimulationDetails.teamA.name}</h4>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center justify-center px-2 md:px-4 min-w-[90px] md:min-w-[150px] flex-shrink-0">
+                  <div className="flex flex-col items-center justify-center px-2 md:px-4 min-w-[100px] md:min-w-[150px] flex-shrink-0">
                     <span className="px-2 py-0.5 md:px-3 md:py-1 bg-green-500/10 border border-green-500/20 text-green-400 font-black text-[9px] md:text-xs uppercase tracking-widest rounded-full mb-2 md:mb-3 animate-pulse">
                       {activeSimulationDetails.result.isPenalties && liveMatchClock >= (activeSimulationDetails.result.isAET ? 120 : 90)
                         ? (activeSimulationDetails.result.isAET ? "120'" : "90'")
                         : `${liveMatchClock}'`}
                     </span>
-                    <div className="text-2xl md:text-5xl font-black text-white tracking-tighter italic tabular-nums">
+                    <div className="text-3xl md:text-5xl font-black text-white tracking-tighter italic tabular-nums">
                       {liveScore[0]} - {liveScore[1]}
                     </div>
                     {/* Running penalty shootout score */}
@@ -2513,8 +2513,8 @@ const Simulator = () => {
                     )}
                   </div>
 
-                  <div className="flex flex-col items-center gap-1.5 md:gap-3 flex-1 text-center min-w-0">
-                    <Flag code={activeSimulationDetails.teamB.countryCode} style={{ fontSize: isMobile ? '2.5rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
+                  <div className="flex flex-col items-center gap-2 md:gap-3 flex-1 text-center min-w-0">
+                    <Flag code={activeSimulationDetails.teamB.countryCode} style={{ fontSize: isMobile ? '3.2rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
                     <div className="min-w-0 w-full">
                       <span className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5 truncate">Rank #{activeSimulationDetails.teamB.fifaRanking}</span>
                       <h4 className="text-xs md:text-lg font-black text-white tracking-tight leading-tight uppercase italic truncate w-full" title={activeSimulationDetails.teamB.name}>{activeSimulationDetails.teamB.name}</h4>
@@ -2523,7 +2523,7 @@ const Simulator = () => {
                 </div>
 
                 {/* Commentary */}
-                <div className="bg-gray-955 border border-gray-800 rounded-2xl p-4 flex flex-col h-[250px]">
+                <div className="bg-gray-955 border border-gray-800 rounded-2xl p-4 flex flex-col h-[180px] md:h-[250px]">
                   <span className="text-[9px] text-gray-500 uppercase font-black tracking-widest border-b border-gray-900 pb-2 mb-2 block">Match Commentary</span>
                   <div className="flex-1 overflow-y-auto space-y-2.5 pr-2 scrollbar-thin">
                     <AnimatePresence>

@@ -142,7 +142,7 @@ const CinematicSlideshow = ({ categories }) => {
                 />
 
                 {/* Text Zone */}
-                <div className="absolute inset-0 z-20 px-6 md:px-12 pb-12 md:pb-0 flex items-end md:items-center pointer-events-none">
+                <div className="absolute inset-0 z-20 px-6 md:px-12 pb-16 md:pb-0 flex items-end md:items-center pointer-events-none">
                     <div className="w-full md:max-w-[42%] pointer-events-auto">
                         <motion.p
                             key={`badge-${activeTab}`}
@@ -210,7 +210,7 @@ const CinematicSlideshow = ({ categories }) => {
                 </div>
 
                 {/* Navigation Dots */}
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+                <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
                     {players.map((_, index) => (
                         <button
                             key={index}

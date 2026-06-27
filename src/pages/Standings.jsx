@@ -1287,7 +1287,12 @@ const Standings = () => {
                                         <th className="px-6 py-4 text-center">Assists</th>
                                         <th className="px-6 py-4 text-center">Avg Rating</th>
                                         <th className="px-6 py-4 text-center">MOTM</th>
-                                        <th className="px-6 py-4 text-center">MVP Score</th>
+                                        <th className="px-6 py-4 text-center">
+                                            <div className="flex flex-col items-center">
+                                                <span>MVP Score</span>
+                                                <span className="text-[9px] text-gray-500 font-bold lowercase normal-case tracking-normal mt-0.5">(out of 10)</span>
+                                            </div>
+                                        </th>
                                         <th className="px-6 py-4 hidden md:table-cell">Reason for Ranking</th>
                                     </tr>
                                 </thead>
@@ -1327,9 +1332,9 @@ const Standings = () => {
                                             <td className="px-6 py-4 text-center text-slate-300 font-bold">
                                                 {player.potm}
                                             </td>
-                                            <td className="px-6 py-4 text-center">
+                                            <td className="px-6 py-4 text-center whitespace-nowrap">
                                                 <span className="inline-block px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full font-black text-sm text-glow">
-                                                    {player.score.toFixed(1)} / 10
+                                                    {player.score.toFixed(1)}
                                                 </span>
                                             </td>
                                             <td className="px-6 py-4 text-xs text-gray-400 leading-relaxed max-w-sm hidden md:table-cell" title={generateReason(player)}>

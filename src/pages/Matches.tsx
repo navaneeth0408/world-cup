@@ -381,10 +381,10 @@ const Matches: React.FC = () => {
                                             return (
                                                 <div
                                                     key={match.id}
-                                                    className="bg-slate-900/20 hover:bg-slate-900/50 backdrop-blur-md border border-slate-800/60 hover:border-green-500/30 rounded-2xl overflow-hidden hover:scale-[1.005] hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-500/5 transition-all duration-300 cursor-pointer group shadow-lg shadow-black/35"
+                                                    className="bg-slate-900/20 hover:bg-slate-900/50 backdrop-blur-md border border-slate-800/60 hover:border-green-500/30 rounded-2xl overflow-hidden hover:scale-[1.005] hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-500/5 transition-all duration-300 cursor-pointer group shadow-lg shadow-black/35 relative"
                                                     onClick={() => navigate(`/match/${match.id}`)}
                                                 >
-                                                    <div className="px-4 py-3.5 md:px-6 md:py-4">
+                                                    <div className="px-4 py-3.5 pr-8 md:px-6 md:py-4">
                                                         {/* Symmetrical Layout */}
                                                         <div className="flex items-center justify-between gap-1 md:gap-4">
                                                             {/* Home Team */}
@@ -428,7 +428,7 @@ const Matches: React.FC = () => {
                                                             </div>
 
                                                             {/* Middle Section: Scoreboard / Time */}
-                                                            <div className="flex flex-col items-center justify-center min-w-[110px] md:min-w-[130px] px-1 md:px-2 shrink-0">
+                                                            <div className="flex flex-col items-center justify-center min-w-[80px] md:min-w-[130px] px-1 md:px-2 shrink-0">
                                                                 {activeTab === 'past' ? (
                                                                     <div className="flex flex-col items-center gap-1.5">
                                                                         {/* Large Premium Score */}
@@ -480,11 +480,10 @@ const Matches: React.FC = () => {
                                                                 )}
                                                                 
                                                                 <div className="flex flex-col items-start min-w-0">
-                                                                    <div className="flex items-center gap-1 w-full">
+                                                                    <div className="w-full">
                                                                         <span className="text-xs md:text-sm font-black text-white uppercase truncate tracking-tight w-full leading-normal">
                                                                             {awayTeam?.name || match.awayTeam}
                                                                         </span>
-                                                                        <ChevronRight className="w-4 h-4 text-slate-755 group-hover:text-green-500 transition-all shrink-0 group-hover:translate-x-0.5 duration-200" />
                                                                     </div>
                                                                     
                                                                     {/* Away Events - Aligned Left Under Team Name */}
@@ -592,7 +591,9 @@ const Matches: React.FC = () => {
                                                             })()}
                                                         </div>
                                                     )}
-                                                </div>
+                                                        {/* Absolute positioned list indicator Chevron */}
+                                                        <ChevronRight className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-650 group-hover:text-green-500 transition-all pointer-events-none group-hover:translate-x-0.5 duration-200" />
+                                                    </div>
                                             );
                                         })}
                                     </div>
