@@ -8,7 +8,7 @@ import Badge from '../components/ui/Badge';
 import Flag from '../components/ui/Flag';
 import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Trophy, Award, Landmark, Play, Pause, FastForward, RotateCcw, ArrowRight, Save, User, Sparkles, ListFilter } from 'lucide-react';
+import { Trophy, Award, Landmark, Play, Pause, FastForward, RotateCcw, ArrowRight, ArrowLeft, Save, User, Sparkles, ListFilter } from 'lucide-react';
 import { getRoundOf32Pairings } from '../utils/knockoutAllocation';
 import { simulateMatchWithEvents, generateScorersForManualScore, getStartingLineupSquad } from '../utils/simulationHelpers';
 import { useTournamentStore } from '../store/tournamentStore';
@@ -1010,6 +1010,165 @@ const Simulator = () => {
     }
   };
 
+  // Revert last manual group match score and go back
+  const handlePreviousGroupMatch = () => {
+    if (currentGroupMatchIndex <= 0) return;
+    
+    const prevIndex = currentGroupMatchIndex - 1;
+    const prevMatch = simMatches[prevIndex];
+    if (!prevMatch) return;
+    
+    if (prevMatch.status === 'completed') {
+      const newPlayerStats = { ...playerStats };
+      const teamA = teams.find(t => t.name === prevMatch.home);
+      const teamB = teams.find(t => t.name === prevMatch.away);
+      
+      if (prevMatch.scorers) {
+        prevMatch.scorers.forEach(s => {
+          if (newPlayerStats.goals[s.name]) {
+            newPlayerStats.goals[s.name].count = Math.max(0, newPlayerStats.goals[s.name].count - 1);
+            if (newPlayerStats.goals[s.name].count === 0) {
+              delete newPlayerStats.goals[s.name];
+            }
+          }
+          if (s.assist && newPlayerStats.assists[s.assist]) {
+            newPlayerStats.assists[s.assist].count = Math.max(0, newPlayerStats.assists[s.assist].count - 1);
+            if (newPlayerStats.assists[s.assist].count === 0) {
+              delete newPlayerStats.assists[s.assist];
+            }
+          }
+        });
+      }
+      
+      if (teamA && teamB) {
+        if (prevMatch.homeScore === 0) {
+          const gk = getGoalkeeper(teamB);
+          if (newPlayerStats.cleanSheets[gk.name]) {
+            newPlayerStats.cleanSheets[gk.name].count = Math.max(0, newPlayerStats.cleanSheets[gk.name].count - 1);
+            if (newPlayerStats.cleanSheets[gk.name].count === 0) {
+              delete newPlayerStats.cleanSheets[gk.name];
+            }
+          }
+        }
+        if (prevMatch.awayScore === 0) {
+          const gk = getGoalkeeper(teamA);
+          if (newPlayerStats.cleanSheets[gk.name]) {
+            newPlayerStats.cleanSheets[gk.name].count = Math.max(0, newPlayerStats.cleanSheets[gk.name].count - 1);
+            if (newPlayerStats.cleanSheets[gk.name].count === 0) {
+              delete newPlayerStats.cleanSheets[gk.name];
+            }
+          }
+        }
+      }
+      
+      setPlayerStats(newPlayerStats);
+    }
+    
+    const updatedMatches = [...simMatches];
+    updatedMatches[prevIndex] = {
+      ...prevMatch,
+      status: 'upcoming',
+      homeScore: null,
+      awayScore: null,
+      scorers: [],
+      cards: []
+    };
+    setSimMatches(updatedMatches);
+    setCurrentGroupMatchIndex(prevIndex);
+  };
+
+  // Revert last manual knockout match score and go back
+  const handlePreviousKnockoutMatch = () => {
+    if (currentKnockoutMatchIndex <= 0) return;
+    
+    const prevIndex = currentKnockoutMatchIndex - 1;
+    const activeRoundKey = currentKnockoutRound;
+    
+    const roundsCopy = { ...knockoutRounds };
+    let prevMatch = null;
+    if (activeRoundKey === 'final') {
+      if (prevIndex === 0) {
+        prevMatch = roundsCopy.thirdPlace;
+      } else {
+        prevMatch = roundsCopy.final;
+      }
+    } else {
+      prevMatch = roundsCopy[activeRoundKey][prevIndex];
+    }
+    
+    if (!prevMatch) return;
+    
+    if (prevMatch.status === 'completed') {
+      const newPlayerStats = { ...playerStats };
+      const teamA = prevMatch.t1;
+      const teamB = prevMatch.t2;
+      
+      if (prevMatch.scorers) {
+        prevMatch.scorers.forEach(s => {
+          if (newPlayerStats.goals[s.name]) {
+            newPlayerStats.goals[s.name].count = Math.max(0, newPlayerStats.goals[s.name].count - 1);
+            if (newPlayerStats.goals[s.name].count === 0) {
+              delete newPlayerStats.goals[s.name];
+            }
+          }
+          if (s.assist && newPlayerStats.assists[s.assist]) {
+            newPlayerStats.assists[s.assist].count = Math.max(0, newPlayerStats.assists[s.assist].count - 1);
+            if (newPlayerStats.assists[s.assist].count === 0) {
+              delete newPlayerStats.assists[s.assist];
+            }
+          }
+        });
+      }
+      
+      if (teamA && teamB) {
+        if (prevMatch.score[0] === 0) {
+          const gk = getGoalkeeper(teamB);
+          if (newPlayerStats.cleanSheets[gk.name]) {
+            newPlayerStats.cleanSheets[gk.name].count = Math.max(0, newPlayerStats.cleanSheets[gk.name].count - 1);
+            if (newPlayerStats.cleanSheets[gk.name].count === 0) {
+              delete newPlayerStats.cleanSheets[gk.name];
+            }
+          }
+        }
+        if (prevMatch.score[1] === 0) {
+          const gk = getGoalkeeper(teamA);
+          if (newPlayerStats.cleanSheets[gk.name]) {
+            newPlayerStats.cleanSheets[gk.name].count = Math.max(0, newPlayerStats.cleanSheets[gk.name].count - 1);
+            if (newPlayerStats.cleanSheets[gk.name].count === 0) {
+              delete newPlayerStats.cleanSheets[gk.name];
+            }
+          }
+        }
+      }
+      
+      setPlayerStats(newPlayerStats);
+    }
+    
+    const completedMatch = {
+      ...prevMatch,
+      status: 'scheduled',
+      score: [null, null],
+      winner: null,
+      loser: null,
+      scorers: [],
+      cards: [],
+      isPenalties: false
+    };
+    
+    if (activeRoundKey === 'final') {
+      if (prevIndex === 0) {
+        roundsCopy.thirdPlace = completedMatch;
+      } else {
+        roundsCopy.final = completedMatch;
+      }
+    } else {
+      roundsCopy[activeRoundKey][prevIndex] = completedMatch;
+    }
+    
+    setKnockoutRounds(roundsCopy);
+    setCurrentKnockoutMatchIndex(prevIndex);
+  };
+
   // Skip active knockout round simulation instantly (Auto Mode Only)
   const skipKnockoutRoundSimulation = () => {
     if (tickerTimerRef.current) clearInterval(tickerTimerRef.current);
@@ -1892,7 +2051,7 @@ const Simulator = () => {
               <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
                 
                 {/* 1. Large Match Card */}
-                <div className="bg-gray-950 border border-gray-800 rounded-3xl p-5 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1.5">
+                <div className="bg-gray-950 border border-gray-800 rounded-3xl p-5 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1.5 flex-shrink-0">
                   <div className="flex flex-col items-center gap-2 md:gap-3 flex-1 text-center min-w-0">
                     <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: isMobile ? '3.2rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
                     <div className="min-w-0 w-full">
@@ -2169,7 +2328,19 @@ const Simulator = () => {
                 </div>
 
                 {/* Footer Save */}
-                <div className="flex justify-end pt-4 border-t border-gray-800">
+                <div className="flex justify-between items-center pt-4 border-t border-gray-800 gap-3">
+                  <div>
+                    {currentGroupMatchIndex > 0 && (
+                      <Button
+                        variant="secondary"
+                        onClick={handlePreviousGroupMatch}
+                        className="px-4 py-3 border border-gray-800 text-gray-400 hover:text-white font-black uppercase text-xs tracking-wider rounded-xl flex items-center gap-2 bg-gray-900/50 hover:bg-gray-900 transition-colors"
+                      >
+                        <ArrowLeft className="w-4 h-4" />
+                        Previous Match
+                      </Button>
+                    )}
+                  </div>
                   <Button
                     variant="primary"
                     onClick={saveManualGroupMatch}
@@ -2396,7 +2567,19 @@ const Simulator = () => {
                 )}
 
                 {/* Footer Save */}
-                <div className="flex justify-end pt-4 border-t border-gray-800">
+                <div className="flex justify-between items-center pt-4 border-t border-gray-800 gap-3">
+                  <div>
+                    {currentKnockoutMatchIndex > 0 && (
+                      <Button
+                        variant="secondary"
+                        onClick={handlePreviousKnockoutMatch}
+                        className="px-4 py-3 border border-gray-800 text-gray-400 hover:text-white font-black uppercase text-xs tracking-wider rounded-xl flex items-center gap-2 bg-gray-900/50 hover:bg-gray-900 transition-colors"
+                      >
+                        <ArrowLeft className="w-4 h-4" />
+                        Previous Match
+                      </Button>
+                    )}
+                  </div>
                   <Button
                     variant="primary"
                     onClick={saveManualKnockoutMatch}
@@ -2413,7 +2596,7 @@ const Simulator = () => {
         )}
 
         {/* 2.5 AUTO KNOCKOUT POPUP CONSOLE */}
-        {simState === 'simulating_knockouts' && simType === 'auto' && activeSimulationDetails && (
+        {simState === 'simulating_knockouts' && simType === 'auto' && activeSimulationDetails && activeSimulationDetails.result && (
           <div className="fixed inset-0 bg-gray-950/80 backdrop-blur-md flex items-center justify-center z-50 p-4">
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -2490,7 +2673,7 @@ const Simulator = () => {
               <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
                 
                 {/* Match Card */}
-                <div className="bg-gray-955 border border-gray-800 rounded-3xl p-5 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1.5">
+                <div className="bg-gray-955 border border-gray-800 rounded-3xl p-5 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1.5 flex-shrink-0">
                   <div className="flex flex-col items-center gap-2 md:gap-3 flex-1 text-center min-w-0">
                     <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: isMobile ? '3.2rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
                     <div className="min-w-0 w-full">

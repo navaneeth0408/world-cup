@@ -803,14 +803,12 @@ const Standings = () => {
         if (selectedStatModal === 'defense') {
             return [...activeTeams]
                 .sort((a, b) => {
-                    const avgA = a.goalsConceded / a.matchesPlayed;
-                    const avgB = b.goalsConceded / b.matchesPlayed;
-                    return avgA - avgB || b.matchesPlayed - a.matchesPlayed || a.name.localeCompare(b.name);
+                    return a.goalsConceded - b.goalsConceded || b.matchesPlayed - a.matchesPlayed || a.name.localeCompare(b.name);
                 })
                 .slice(0, 10)
                 .map(t => ({
                     ...t,
-                    statValue: `${(t.goalsConceded / t.matchesPlayed).toFixed(2)} Avg (${t.goalsConceded} GA)`
+                    statValue: t.goalsConceded
                 }));
         }
         if (selectedStatModal === 'possession') {
@@ -1634,28 +1632,36 @@ const Standings = () => {
                         selectedStatModal === 'passAccuracy' ? 'Top 10 - Pass Accuracy' : ''
                     }
                 >
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-xs">
+                    <div className="w-full">
+                        <table className="w-full text-left text-xs table-fixed">
+                            <colgroup>
+                                <col className="w-[15%] md:w-[15%]" />
+                                <col className="w-[45%] md:w-[50%]" />
+                                <col className="w-[20%] md:w-[15%]" />
+                                <col className="w-[20%] md:w-[20%]" />
+                            </colgroup>
                             <thead>
-                                <tr className="text-gray-500 border-b border-gray-800 uppercase font-black tracking-widest">
-                                    <th className="px-4 py-3 text-center">Rank</th>
-                                    <th className="px-2 py-3">Team</th>
-                                    <th className="px-4 py-3 text-center">Played</th>
-                                    <th className="px-4 py-3 text-right">Stat Value</th>
+                                <tr className="text-gray-500 border-b border-gray-800 uppercase font-black tracking-widest text-[9px] md:text-[10px]">
+                                    <th className="px-1.5 md:px-4 py-3 text-center">Rank</th>
+                                    <th className="px-1 py-3">Team</th>
+                                    <th className="px-1.5 md:px-4 py-3 text-center">Played</th>
+                                    <th className="px-1.5 md:px-4 py-3 text-right">
+                                        {selectedStatModal === 'goals' ? 'Goals' : selectedStatModal === 'defense' ? 'GA' : 'Value'}
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {top10List.map((team, idx) => (
                                     <tr key={team.id} className="border-b border-gray-800/40 hover:bg-gray-800/20 transition-colors">
-                                        <td className="px-4 py-3 text-center font-black text-gray-400">#{idx + 1}</td>
-                                        <td className="px-2 py-3">
-                                            <div className="flex items-center gap-3">
-                                                <Flag code={team.countryCode} circular={true} className="w-6 h-6 border border-gray-800" style={{ width: '24px', height: '24px' }} />
-                                                <span className="font-bold text-white uppercase">{team.name}</span>
+                                        <td className="px-1.5 md:px-4 py-2.5 md:py-3 text-center font-black text-gray-400">#{idx + 1}</td>
+                                        <td className="px-1 py-2.5 md:py-3 truncate">
+                                            <div className="flex items-center gap-1.5 md:gap-3 min-w-0">
+                                                <Flag code={team.countryCode} circular={true} className="w-5 h-5 md:w-6 md:h-6 border border-gray-800 shrink-0" style={{ width: '20px', height: '20px' }} />
+                                                <span className="font-bold text-white uppercase truncate text-[11px] md:text-xs">{team.name}</span>
                                             </div>
                                         </td>
-                                        <td className="px-4 py-3 text-center font-bold text-slate-300">{team.matchesPlayed}</td>
-                                        <td className="px-4 py-3 text-right font-black text-green-400 text-sm">
+                                        <td className="px-1.5 md:px-4 py-2.5 md:py-3 text-center font-bold text-slate-350">{team.matchesPlayed}</td>
+                                        <td className="px-1.5 md:px-4 py-2.5 md:py-3 text-right font-black text-green-400 text-xs md:text-sm">
                                             {team.statValue}
                                         </td>
                                     </tr>
@@ -1738,7 +1744,7 @@ const Standings = () => {
                                                             <span className="font-bold text-white uppercase">{team.name}</span>
                                                         </div>
                                                     </td>
-                                                    <td className="px-4 py-3 text-right font-black text-green-400 text-sm">{team.goalsScored} Goals</td>
+                                                    <td className="px-4 py-3 text-right font-black text-green-400 text-sm">{team.goalsScored}</td>
                                                 </tr>
                                             ))
                                         ) : (
@@ -1815,14 +1821,18 @@ const Standings = () => {
                                                         <span className="text-gray-500">#{idx + 1}</span>
                                                     )}
                                                 </td>
-                                                <td className="px-2 py-3 font-bold text-white flex items-center gap-2">
-                                                    <Flag code={team.countryCode} style={{ fontSize: '1.2rem' }} className="shadow border border-gray-800" />
-                                                    <span>{team.name}</span>
-                                                    {isQualified && (
-                                                        <span className="text-[8px] bg-green-500/10 border border-green-500/20 text-green-400 px-1.5 py-0.5 rounded-full uppercase tracking-wider font-extrabold scale-90">
-                                                            Q
-                                                        </span>
-                                                    )}
+                                                <td className="px-2 py-3 font-bold text-white">
+                                                    <div className="flex items-center justify-between w-full">
+                                                        <div className="flex items-center gap-2">
+                                                            <Flag code={team.countryCode} style={{ fontSize: '1.2rem' }} className="shadow border border-gray-800" />
+                                                            <span>{team.name}</span>
+                                                        </div>
+                                                        {isQualified && (
+                                                            <span className="text-[8px] bg-green-500/10 border border-green-500/20 text-green-400 px-1.5 py-0.5 rounded-full uppercase tracking-wider font-extrabold mr-2">
+                                                                Q
+                                                            </span>
+                                                        )}
+                                                    </div>
                                                 </td>
                                                 <td className="px-3 py-3 text-center font-black text-slate-400">
                                                     Group {team.group}
