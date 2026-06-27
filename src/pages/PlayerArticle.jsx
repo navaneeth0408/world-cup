@@ -48,7 +48,7 @@ const PlayerArticle = () => {
             <Navbar />
 
             {/* Back Navigation Bar */}
-            <div className="max-w-7xl mx-auto px-4 pt-24 pb-6 relative z-30">
+            <div className="max-w-7xl mx-auto px-4 pt-8 pb-6 relative z-30">
                 <button
                     onClick={() => navigate(-1)}
                     className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 font-bold text-sm uppercase tracking-wider group"
