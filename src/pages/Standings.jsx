@@ -40,6 +40,7 @@ const Standings = () => {
     const [summaryModalType, setSummaryModalType] = useState(null);
     const [drillDownTeamId, setDrillDownTeamId] = useState(null);
     const [activeMvpReason, setActiveMvpReason] = useState(null);
+    const [showMvpFormulaModal, setShowMvpFormulaModal] = useState(false);
     const scrollContainerRef = useRef(null);
 
     const sections = [
@@ -1111,21 +1112,21 @@ const Standings = () => {
                     </div>
                     <Card className="p-0 border-gray-800 bg-gray-900/50">
                         <div className="overflow-x-auto w-full scrollbar-thin">
-                            <table className="w-full text-left min-w-[380px]">
+                            <table className="w-full text-left">
                                 <thead className="bg-gray-800/50 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                     <tr>
-                                        <th className="px-6 py-4">Rank</th>
-                                        <th className="px-6 py-4">Player</th>
-                                        <th className="px-6 py-4 text-center">Goals</th>
+                                        <th className="px-3 md:px-6 py-3 md:py-4">Rank</th>
+                                        <th className="px-3 md:px-6 py-3 md:py-4">Player</th>
+                                        <th className="px-3 md:px-6 py-3 md:py-4 text-center">Goals</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-800">
                                     {topScorers.map((player) => (
                                         <tr key={`${player.name}-${player.team}`} className="hover:bg-white/5 transition-colors group">
-                                            <td className="px-6 py-4 font-black text-gray-500 whitespace-nowrap">
+                                            <td className="px-3 md:px-6 py-3 md:py-4 font-black text-gray-500 whitespace-nowrap">
                                                 {player.rank === 1 ? <Trophy className="w-4 h-4 text-yellow-500" /> : `#${player.rank}`}
                                             </td>
-                                            <td className="px-6 py-4 whitespace-nowrap">
+                                            <td className="px-3 md:px-6 py-3 md:py-4 whitespace-nowrap">
                                                 <div className="flex items-center gap-3">
                                                     <Flag code={player.teamCode} />
                                                     <div className="flex flex-col">
@@ -1134,7 +1135,7 @@ const Standings = () => {
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td className="px-6 py-4 text-center">
+                                            <td className="px-3 md:px-6 py-3 md:py-4 text-center">
                                                 <span className="inline-block px-3 py-1 bg-green-500/10 text-green-400 rounded-full font-black text-sm">
                                                     {player.goals}
                                                 </span>
@@ -1163,19 +1164,19 @@ const Standings = () => {
                         </div>
                         <Card className="p-0 border-gray-800 bg-gray-900/50 flex flex-col">
                             <div className="overflow-x-auto w-full scrollbar-thin">
-                                <table className="w-full text-left min-w-[380px]">
+                                <table className="w-full text-left">
                                     <thead className="bg-gray-800/20 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                         <tr>
-                                            <th className="px-6 py-4">Rank</th>
-                                            <th className="px-6 py-4">Player</th>
-                                            <th className="px-6 py-4 text-center">Assists</th>
+                                            <th className="px-3 md:px-6 py-3 md:py-4">Rank</th>
+                                            <th className="px-3 md:px-6 py-3 md:py-4">Player</th>
+                                            <th className="px-3 md:px-6 py-3 md:py-4 text-center">Assists</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-800/40">
                                         {topAssists.map((player) => (
                                             <tr key={`${player.name}-${player.team}`} className="hover:bg-white/5 transition-colors group">
-                                                <td className="px-6 py-4 font-black text-gray-500">#{player.rank}</td>
-                                                <td className="px-6 py-4 whitespace-nowrap">
+                                                <td className="px-3 md:px-6 py-3 md:py-4 font-black text-gray-500">#{player.rank}</td>
+                                                <td className="px-3 md:px-6 py-3 md:py-4 whitespace-nowrap">
                                                     <div className="flex items-center gap-3">
                                                         <Flag code={player.teamCode} />
                                                         <div className="flex flex-col">
@@ -1184,7 +1185,7 @@ const Standings = () => {
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td className="px-6 py-4 text-center">
+                                                <td className="px-3 md:px-6 py-3 md:py-4 text-center">
                                                     <span className="text-xl font-black text-white">{player.assists}</span>
                                                 </td>
                                             </tr>
@@ -1210,21 +1211,21 @@ const Standings = () => {
                         </div>
                         <Card className="p-0 border-gray-800 bg-gray-900/50 flex flex-col">
                             <div className="overflow-x-auto w-full scrollbar-thin">
-                                <table className="w-full text-left min-w-[480px]">
+                                <table className="w-full text-left">
                                     <thead className="bg-gray-800/20 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                         <tr>
-                                            <th className="px-6 py-4">Rank</th>
-                                            <th className="px-6 py-4">Player</th>
-                                            <th className="px-6 py-4 text-center">Goals</th>
-                                            <th className="px-6 py-4 text-center">Assists</th>
-                                            <th className="px-6 py-4 text-center">G+A</th>
+                                            <th className="px-2 md:px-6 py-3 md:py-4">Rank</th>
+                                            <th className="px-2 md:px-6 py-3 md:py-4">Player</th>
+                                            <th className="px-2 md:px-6 py-3 md:py-4 text-center">Goals</th>
+                                            <th className="px-2 md:px-6 py-3 md:py-4 text-center">Assists</th>
+                                            <th className="px-2 md:px-6 py-3 md:py-4 text-center">G+A</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-800/40">
                                         {topGA.map((player) => (
                                             <tr key={`${player.name}-${player.team}`} className="hover:bg-white/5 transition-colors group">
-                                                <td className="px-6 py-4 font-black text-gray-500">#{player.rank}</td>
-                                                <td className="px-6 py-4 whitespace-nowrap">
+                                                <td className="px-2 md:px-6 py-3 md:py-4 font-black text-gray-500">#{player.rank}</td>
+                                                <td className="px-2 md:px-6 py-3 md:py-4 whitespace-nowrap">
                                                     <div className="flex items-center gap-3">
                                                         <Flag code={player.teamCode} />
                                                         <div className="flex flex-col">
@@ -1233,13 +1234,13 @@ const Standings = () => {
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td className="px-6 py-4 text-center text-slate-400 font-bold">
+                                                <td className="px-2 md:px-6 py-3 md:py-4 text-center text-slate-400 font-bold">
                                                     {player.goals}
                                                 </td>
-                                                <td className="px-6 py-4 text-center text-slate-400 font-bold">
+                                                <td className="px-2 md:px-6 py-3 md:py-4 text-center text-slate-400 font-bold">
                                                     {player.assists}
                                                 </td>
-                                                <td className="px-6 py-4 text-center">
+                                                <td className="px-2 md:px-6 py-3 md:py-4 text-center">
                                                     <span className="inline-block px-3 py-0.5 bg-green-500/10 text-green-400 rounded-full font-black text-sm">
                                                         {player.ga}
                                                     </span>
@@ -1270,19 +1271,23 @@ const Standings = () => {
                         <div className="bg-gray-800/20 px-6 py-5 border-b border-gray-800 flex justify-between items-center">
                             <div>
                                 <h3 className="font-bold text-white text-sm uppercase tracking-wider">MVP Score Leaderboard</h3>
-                                <p className="text-[10px] text-gray-400 font-semibold leading-tight mt-1">Weighted Formula: 25% Goals (stage-weighted) + 15% Assists (stage-weighted) + 35% Avg Match Rating + 10% MOTM + 10% Team Progress + 5% Big Match Impact</p>
+                                <button 
+                                    onClick={() => setShowMvpFormulaModal(true)} 
+                                    className="inline-flex items-center gap-1 text-[10px] text-green-400 hover:text-green-300 font-black uppercase tracking-wider mt-1 border-none bg-transparent cursor-pointer transition-colors"
+                                >
+                                    <span>How is this calculated?</span>
+                                </button>
                             </div>
                             <span className="text-[10px] bg-green-500/10 border border-green-500/20 text-green-400 px-3 py-1 rounded-full uppercase tracking-wider font-extrabold">
                                 LIVE RATINGS
                             </span>
                         </div>
                         <div className="overflow-x-auto w-full scrollbar-thin">
-                            <table className="w-full text-left min-w-[850px]">
+                            <table className="w-full text-left min-w-[650px]">
                                 <thead className="bg-gray-800/10 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                     <tr>
                                         <th className="px-6 py-4">Rank</th>
                                         <th className="px-6 py-4">Player</th>
-                                        <th className="px-6 py-4">Country</th>
                                         <th className="px-6 py-4 text-center">Goals</th>
                                         <th className="px-6 py-4 text-center">Assists</th>
                                         <th className="px-6 py-4 text-center">Avg Rating</th>
@@ -1303,21 +1308,21 @@ const Standings = () => {
                                                 {player.rank === 1 ? <Trophy className="w-4 h-4 text-yellow-500" /> : `#${player.rank}`}
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="flex items-center gap-2">
-                                                    <span className="font-bold text-white group-hover:text-green-400 transition-colors leading-tight">{player.name}</span>
-                                                    <button 
-                                                        onClick={() => setActiveMvpReason({ name: player.name, reason: generateReason(player) })}
-                                                        className="inline-flex md:hidden items-center justify-center p-1 rounded bg-slate-800 text-slate-400 hover:text-white transition-colors"
-                                                        title="View ranking reasoning"
-                                                    >
-                                                        <Info className="w-3.5 h-3.5" />
-                                                    </button>
-                                                </div>
-                                            </td>
-                                            <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="flex items-center gap-2">
+                                                <div className="flex items-center gap-3">
                                                     <Flag code={player.teamCode} />
-                                                    <span className="text-gray-400">{player.team}</span>
+                                                    <div className="flex flex-col">
+                                                        <div className="flex items-center gap-2">
+                                                            <span className="font-bold text-white group-hover:text-green-400 transition-colors leading-tight">{player.name}</span>
+                                                            <button 
+                                                                onClick={() => setActiveMvpReason({ name: player.name, reason: generateReason(player) })}
+                                                                className="inline-flex md:hidden items-center justify-center p-1 rounded bg-slate-800 text-slate-400 hover:text-white transition-colors"
+                                                                title="View ranking reasoning"
+                                                            >
+                                                                <Info className="w-3.5 h-3.5" />
+                                                            </button>
+                                                        </div>
+                                                        <span className="text-[10px] text-gray-500 mt-0.5">{player.team}</span>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-4 text-center text-slate-300 font-bold">
@@ -1413,19 +1418,19 @@ const Standings = () => {
                     </div>
                     <Card className="p-0 border-gray-800 bg-gray-900/50">
                         <div className="overflow-x-auto w-full scrollbar-thin">
-                            <table className="w-full text-left min-w-[420px]">
+                            <table className="w-full text-left">
                                 <thead className="bg-gray-800/50 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                     <tr>
-                                        <th className="px-6 py-4">Rank</th>
-                                        <th className="px-6 py-4">Goalkeeper</th>
-                                        <th className="px-6 py-4 text-center">Clean Sheets</th>
+                                        <th className="px-3 md:px-6 py-3 md:py-4">Rank</th>
+                                        <th className="px-3 md:px-6 py-3 md:py-4">Goalkeeper</th>
+                                        <th className="px-3 md:px-6 py-3 md:py-4 text-center">Clean Sheets</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-800">
                                     {goalkeepers.map((gk) => (
                                         <tr key={`${gk.name}-${gk.team}`} className="hover:bg-white/5 transition-colors">
-                                            <td className="px-6 py-4 font-black text-gray-500">#{gk.rank}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap">
+                                            <td className="px-3 md:px-6 py-3 md:py-4 font-black text-gray-500">#{gk.rank}</td>
+                                            <td className="px-3 md:px-6 py-3 md:py-4 whitespace-nowrap">
                                                 <div className="flex items-center gap-3">
                                                     <Flag code={gk.teamCode} />
                                                     <div className="flex flex-col">
@@ -1434,12 +1439,10 @@ const Standings = () => {
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td className="px-6 py-4 text-center">
-                                                <div className="flex items-center justify-center gap-1">
-                                                    {Array.from({ length: gk.cleanSheets }).map((_, i) => (
-                                                        <Shield key={i} className="w-3 h-3 text-green-400 fill-green-400/20" />
-                                                    ))}
-                                                    <span className="ml-2 font-black text-white">{gk.cleanSheets}</span>
+                                            <td className="px-3 md:px-6 py-3 md:py-4 text-center">
+                                                <div className="flex items-center justify-center gap-1.5">
+                                                    <Shield className="w-3.5 h-3.5 text-green-400 fill-green-400/20 shrink-0" />
+                                                    <span className="font-black text-white text-sm md:text-base">{gk.cleanSheets}</span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -1879,6 +1882,63 @@ const Standings = () => {
                                 <button 
                                     onClick={() => setActiveMvpReason(null)}
                                     className="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors"
+                                >
+                                    Close
+                                </button>
+                            </motion.div>
+                        </div>
+                    )}
+                </AnimatePresence>
+
+                {/* Modal for MVP Calculation Formula */}
+                <AnimatePresence>
+                    {showMvpFormulaModal && (
+                        <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                                onClick={() => setShowMvpFormulaModal(false)}
+                            />
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95, y: 15 }}
+                                className="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl overflow-hidden z-10"
+                            >
+                                <button 
+                                    onClick={() => setShowMvpFormulaModal(false)}
+                                    className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors border-none bg-transparent cursor-pointer"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
+                                <div className="flex items-center gap-2 mb-4">
+                                    <Award className="w-5 h-5 text-green-400" />
+                                    <h4 className="font-black text-white uppercase tracking-tight text-sm">MVP Score Calculation</h4>
+                                </div>
+                                <div className="space-y-4 text-xs text-slate-300 leading-relaxed">
+                                    <p>
+                                        The Tournament MVP score is a dynamic rating out of 10 calculated after every match using the following weighted formula:
+                                    </p>
+                                    <div className="bg-slate-950 p-4 border border-slate-800 rounded-2xl font-mono text-[10px] text-green-400">
+                                        <p className="font-bold mb-1">MVP SCORE WEIGHTS:</p>
+                                        <ul className="list-disc pl-4 space-y-1">
+                                            <li>⚽ Goals (Stage-Weighted): 25%</li>
+                                            <li>👟 Assists (Stage-Weighted): 15%</li>
+                                            <li>⭐ Avg Match Rating: 35%</li>
+                                            <li>🏆 Man of the Match: 10%</li>
+                                            <li>📈 Team Progression: 10%</li>
+                                            <li>⚡ Big Match Impact: 5%</li>
+                                        </ul>
+                                    </div>
+                                    <p className="text-[10px] text-slate-550">
+                                        Stage multipliers reward goals and assists scored in knockout stages: Group Stage (x1.0), Round of 32 (x1.2), Round of 16 (x1.4), Quarter-finals (x1.6), Semi-finals (x1.8), and Finals (x2.0).
+                                    </p>
+                                </div>
+                                <button 
+                                    onClick={() => setShowMvpFormulaModal(false)}
+                                    className="w-full mt-6 py-2.5 bg-slate-850 hover:bg-slate-800 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors border-none cursor-pointer"
                                 >
                                     Close
                                 </button>

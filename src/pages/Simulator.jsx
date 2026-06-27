@@ -1833,54 +1833,58 @@ const Simulator = () => {
                 </div>
 
                 {/* Controller Panel */}
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => setIsPaused(!isPaused)}
-                    className="p-2 bg-gray-900 border border-gray-800 hover:border-gray-700 text-gray-400 hover:text-white rounded-xl transition-all"
-                  >
-                    {isPaused ? <Play className="w-4 h-4 fill-current text-green-400" /> : <Pause className="w-4 h-4 text-amber-500" />}
-                  </button>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
+                  <div className="flex items-center gap-2 justify-between sm:justify-start w-full sm:w-auto">
+                    <button
+                      onClick={() => setIsPaused(!isPaused)}
+                      className="p-2 bg-gray-900 border border-gray-800 hover:border-gray-700 text-gray-400 hover:text-white rounded-xl transition-all shrink-0"
+                    >
+                      {isPaused ? <Play className="w-4 h-4 fill-current text-green-400" /> : <Pause className="w-4 h-4 text-amber-500" />}
+                    </button>
 
-                  <div className="flex bg-gray-900 border border-gray-800 rounded-xl p-1 text-xs">
-                    {[1, 2, 5].map(speed => (
+                    <div className="flex bg-gray-900 border border-gray-800 rounded-xl p-1 text-xs">
+                      {[1, 2, 5].map(speed => (
+                        <button
+                          key={speed}
+                          onClick={() => setSimSpeed(speed)}
+                          className={`px-2.5 py-1 rounded-lg font-bold uppercase transition-all ${
+                            simSpeed === speed ? 'bg-green-500 text-gray-950' : 'text-gray-500'
+                          }`}
+                        >
+                          {speed}x
+                        </button>
+                      ))}
                       <button
-                        key={speed}
-                        onClick={() => setSimSpeed(speed)}
+                        onClick={() => setSimSpeed(100)}
                         className={`px-2.5 py-1 rounded-lg font-bold uppercase transition-all ${
-                          simSpeed === speed ? 'bg-green-500 text-gray-950' : 'text-gray-500'
+                          simSpeed === 100 ? 'bg-amber-500 text-gray-950' : 'text-gray-500'
                         }`}
                       >
-                        {speed}x
+                        Instant
                       </button>
-                    ))}
-                    <button
-                      onClick={() => setSimSpeed(100)}
-                      className={`px-2.5 py-1 rounded-lg font-bold uppercase transition-all ${
-                        simSpeed === 100 ? 'bg-amber-500 text-gray-950' : 'text-gray-500'
-                      }`}
-                    >
-                      Instant
-                    </button>
+                    </div>
                   </div>
 
-                  <button
-                    onClick={() => {
-                      setIsPaused(true);
-                      setSimType('manual');
-                    }}
-                    className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-500 hover:bg-blue-400 rounded-xl text-[10px] font-black text-white uppercase tracking-wider shadow-md shadow-blue-500/25"
-                  >
-                    <User className="w-3.5 h-3.5" />
-                    Enter Manually
-                  </button>
+                  <div className="flex flex-col sm:flex-row gap-1.5 w-full sm:w-auto">
+                    <button
+                      onClick={skipGroupStageSimulation}
+                      className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-1.5 bg-gray-950 border border-gray-800 hover:bg-gray-900 rounded-xl text-[10px] font-black text-gray-400 hover:text-white uppercase tracking-wider"
+                    >
+                      <FastForward className="w-3.5 h-3.5" />
+                      Skip Stage
+                    </button>
 
-                  <button
-                    onClick={skipGroupStageSimulation}
-                    className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-950 border border-gray-800 hover:bg-gray-900 rounded-xl text-[10px] font-black text-gray-400 hover:text-white uppercase tracking-wider"
-                  >
-                    <FastForward className="w-3.5 h-3.5" />
-                    Skip Stage
-                  </button>
+                    <button
+                      onClick={() => {
+                        setIsPaused(true);
+                        setSimType('manual');
+                      }}
+                      className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-1.5 bg-blue-500 hover:bg-blue-400 rounded-xl text-[10px] font-black text-white uppercase tracking-wider shadow-md shadow-blue-500/25"
+                    >
+                      <User className="w-3.5 h-3.5" />
+                      Enter Manually
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -2426,58 +2430,62 @@ const Simulator = () => {
                     {currentKnockoutRound.replace(/([A-Z])/g, ' $1').toUpperCase()} - Match {currentKnockoutMatchIndex + 1} of {activeRoundMatches?.length}
                   </h3>
                 </div>
+                       {/* Controller Panel */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
+                  <div className="flex items-center gap-2 justify-between sm:justify-start w-full sm:w-auto">
+                    <button
+                      onClick={() => setIsPaused(!isPaused)}
+                      className="p-2 bg-gray-900 border border-gray-800 hover:border-gray-700 text-gray-400 hover:text-white rounded-xl transition-all shrink-0"
+                    >
+                      {isPaused ? <Play className="w-4 h-4 fill-current text-green-400" /> : <Pause className="w-4 h-4 text-amber-500" />}
+                    </button>
 
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => setIsPaused(!isPaused)}
-                    className="p-2 bg-gray-900 border border-gray-800 hover:border-gray-700 text-gray-400 hover:text-white rounded-xl transition-all"
-                  >
-                    {isPaused ? <Play className="w-4 h-4 fill-current text-green-400" /> : <Pause className="w-4 h-4 text-amber-500" />}
-                  </button>
-
-                  <div className="flex bg-gray-900 border border-gray-800 rounded-xl p-1 text-xs">
-                    {[1, 2, 5].map(speed => (
+                    <div className="flex bg-gray-900 border border-gray-800 rounded-xl p-1 text-xs">
+                      {[1, 2, 5].map(speed => (
+                        <button
+                          key={speed}
+                          onClick={() => setSimSpeed(speed)}
+                          className={`px-2.5 py-1 rounded-lg font-bold uppercase transition-all ${
+                            simSpeed === speed ? 'bg-green-500 text-gray-950' : 'text-gray-500'
+                          }`}
+                        >
+                          {speed}x
+                        </button>
+                      ))}
                       <button
-                        key={speed}
-                        onClick={() => setSimSpeed(speed)}
+                        onClick={() => setSimSpeed(100)}
                         className={`px-2.5 py-1 rounded-lg font-bold uppercase transition-all ${
-                          simSpeed === speed ? 'bg-green-500 text-gray-950' : 'text-gray-500'
+                          simSpeed === 100 ? 'bg-amber-500 text-gray-950' : 'text-gray-500'
                         }`}
                       >
-                        {speed}x
+                        Instant
                       </button>
-                    ))}
-                    <button
-                      onClick={() => setSimSpeed(100)}
-                      className={`px-2.5 py-1 rounded-lg font-bold uppercase transition-all ${
-                        simSpeed === 100 ? 'bg-amber-500 text-gray-950' : 'text-gray-500'
-                      }`}
-                    >
-                      Instant
-                    </button>
+                    </div>
                   </div>
 
-                  <button
-                    onClick={() => {
-                      setIsPaused(true);
-                      setSimType('manual');
-                    }}
-                    className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-500 hover:bg-blue-400 rounded-xl text-[10px] font-black text-white uppercase tracking-wider shadow-md shadow-blue-500/25"
-                  >
-                    <User className="w-3.5 h-3.5" />
-                    Enter Manually
-                  </button>
+                  <div className="flex flex-col sm:flex-row gap-1.5 w-full sm:w-auto">
+                    <button
+                      onClick={skipKnockoutRoundSimulation}
+                      className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-1.5 bg-gray-950 border border-gray-800 hover:bg-gray-900 rounded-xl text-[10px] font-black text-gray-400 hover:text-white uppercase tracking-wider"
+                    >
+                      <FastForward className="w-3.5 h-3.5" />
+                      Skip Round
+                    </button>
 
-                  <button
-                    onClick={skipKnockoutRoundSimulation}
-                    className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-950 border border-gray-800 hover:bg-gray-900 rounded-xl text-[10px] font-black text-gray-400 hover:text-white uppercase tracking-wider"
-                  >
-                    <FastForward className="w-3.5 h-3.5" />
-                    Skip Round
-                  </button>
+                    <button
+                      onClick={() => {
+                        setIsPaused(true);
+                        setSimType('manual');
+                      }}
+                      className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-1.5 bg-blue-500 hover:bg-blue-400 rounded-xl text-[10px] font-black text-white uppercase tracking-wider shadow-md shadow-blue-500/25"
+                    >
+                      <User className="w-3.5 h-3.5" />
+                      Enter Manually
+                    </button>
+                  </div>
                 </div>
               </div>
-
+              
               {/* Body */}
               <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
                 
