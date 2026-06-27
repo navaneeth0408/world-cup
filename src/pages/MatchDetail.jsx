@@ -65,16 +65,16 @@ const MatchDetail = () => {
 
         {/* Scoreboard / Hero */}
         <section className="mb-12">
-          <Card className="p-12 relative overflow-hidden border-blue-500/20 backdrop-blur-xl bg-gray-900/50">
+          <Card className="p-6 md:p-12 relative overflow-hidden border-blue-500/20 backdrop-blur-xl bg-gray-900/50">
             <div className="absolute top-0 right-0 p-4">
               <Badge variant={match.status === 'completed' ? 'green' : 'gray'}>
                 {match.status.toUpperCase()}
               </Badge>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
               <div className="flex flex-col items-center gap-4 flex-1">
-                <Flag code={homeTeam.countryCode} style={{ fontSize: '8rem' }} />
+                <Flag code={homeTeam.countryCode} className="text-5xl md:text-[8rem] shadow-xl rounded-2xl" />
                 <span className="text-2xl font-black text-white text-center uppercase tracking-tight">{homeTeam.name}</span>
                 <Badge variant="blue">RANK #{homeTeam.fifaRanking}</Badge>
                 {match.scorers && match.scorers.some(s => s.teamId === homeTeam.id) && (
@@ -103,20 +103,20 @@ const MatchDetail = () => {
 
               <div className="flex flex-col items-center gap-4">
                 {match.status === 'completed' ? (
-                  <div className="text-7xl font-black text-white flex items-center gap-6">
+                  <div className="text-5xl md:text-7xl font-black text-white flex items-center gap-6">
                     <span>{match.homeScore}</span>
                     <span className="text-gray-700">-</span>
                     <span>{match.awayScore}</span>
                   </div>
                 ) : (
-                  <div className="text-5xl font-black text-white/10 italic">VS</div>
+                  <div className="text-3xl md:text-5xl font-black text-white/10 italic">VS</div>
                 )}
                 <div className="flex flex-col items-center text-gray-500 font-medium gap-2">
-                  <div className="flex items-center gap-2 text-xs">
-                    <MapPin className="w-3 h-3 text-blue-500" />
-                    {venues.find(v => v.id === match.venue)?.name || match.venue}, {venues.find(v => v.id === match.venue)?.city || ''}
+                  <div className="flex items-center gap-2 text-xs text-center justify-center">
+                    <MapPin className="w-3 h-3 text-blue-500 shrink-0" />
+                    <span className="leading-tight">{venues.find(v => v.id === match.venue)?.name || match.venue}, {venues.find(v => v.id === match.venue)?.city || ''}</span>
                   </div>
-                  <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-400">
+                  <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-400">
                     <div className="flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5 text-blue-500" />
                       {match.date}
@@ -135,7 +135,7 @@ const MatchDetail = () => {
               </div>
 
               <div className="flex flex-col items-center gap-4 flex-1">
-                <Flag code={awayTeam.countryCode} style={{ fontSize: '8rem' }} />
+                <Flag code={awayTeam.countryCode} className="text-5xl md:text-[8rem] shadow-xl rounded-2xl" />
                 <span className="text-2xl font-black text-white text-center uppercase tracking-tight">{awayTeam.name}</span>
                 <Badge variant="blue">RANK #{awayTeam.fifaRanking}</Badge>
                 {match.scorers && match.scorers.some(s => s.teamId === awayTeam.id) && (

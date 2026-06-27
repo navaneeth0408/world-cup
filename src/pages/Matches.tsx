@@ -396,7 +396,7 @@ const Matches: React.FC = () => {
                                                                     
                                                                     {/* Home Events - Aligned Right Under Team Name */}
                                                                     {activeTab === 'past' && (homeScorers.length > 0 || homeCards.length > 0) && (
-                                                                        <div className="flex flex-col items-end gap-1 mt-1.5 w-full">
+                                                                        <div className="hidden md:flex flex-col items-end gap-1 mt-1.5 w-full">
                                                                             {homeScorers.map((s, idx) => (
                                                                                 <span key={`s-${idx}`} className="text-[10px] text-slate-400 font-semibold uppercase flex items-center gap-1 leading-tight text-right">
                                                                                     <span>⚽</span>
@@ -421,9 +421,9 @@ const Matches: React.FC = () => {
                                                                     )}
                                                                 </div>
                                                                 {homeTeam?.countryCode ? (
-                                                                    <Flag code={homeTeam.countryCode} circular={true} className="w-11 h-11 border border-slate-800/80 shadow-md shrink-0 group-hover:border-green-500/20 transition-colors" />
+                                                                    <Flag code={homeTeam.countryCode} circular={true} className="w-8 h-8 md:w-11 md:h-11 border border-slate-800/80 shadow-md shrink-0 group-hover:border-green-500/20 transition-colors" />
                                                                 ) : (
-                                                                    <div className="w-11 h-11 rounded-full bg-slate-950 border border-slate-850 flex items-center justify-center shrink-0 text-slate-500 font-black text-xs select-none shadow-sm">TBD</div>
+                                                                    <div className="w-8 h-8 md:w-11 md:h-11 rounded-full bg-slate-950 border border-slate-850 flex items-center justify-center shrink-0 text-slate-500 font-black text-[9px] md:text-xs select-none shadow-sm">TBD</div>
                                                                 )}
                                                             </div>
 
@@ -474,9 +474,9 @@ const Matches: React.FC = () => {
                                                             {/* Away Team */}
                                                             <div className="flex items-center justify-start gap-3 flex-1 min-w-0 text-left">
                                                                 {awayTeam?.countryCode ? (
-                                                                    <Flag code={awayTeam.countryCode} circular={true} className="w-11 h-11 border border-slate-800/80 shadow-md shrink-0 group-hover:border-green-500/20 transition-colors" />
+                                                                    <Flag code={awayTeam.countryCode} circular={true} className="w-8 h-8 md:w-11 md:h-11 border border-slate-800/80 shadow-md shrink-0 group-hover:border-green-500/20 transition-colors" />
                                                                 ) : (
-                                                                    <div className="w-11 h-11 rounded-full bg-slate-950 border border-slate-850 flex items-center justify-center shrink-0 text-slate-500 font-black text-xs select-none shadow-sm">TBD</div>
+                                                                    <div className="w-8 h-8 md:w-11 md:h-11 rounded-full bg-slate-950 border border-slate-850 flex items-center justify-center shrink-0 text-slate-500 font-black text-[9px] md:text-xs select-none shadow-sm">TBD</div>
                                                                 )}
                                                                 
                                                                 <div className="flex flex-col items-start min-w-0">
@@ -489,7 +489,7 @@ const Matches: React.FC = () => {
                                                                     
                                                                     {/* Away Events - Aligned Left Under Team Name */}
                                                                     {activeTab === 'past' && (awayScorers.length > 0 || awayCards.length > 0) && (
-                                                                        <div className="flex flex-col items-start gap-1 mt-1.5 w-full">
+                                                                        <div className="hidden md:flex flex-col items-start gap-1 mt-1.5 w-full">
                                                                             {awayScorers.map((s, idx) => (
                                                                                 <span key={`s-${idx}`} className="text-[10px] text-slate-400 font-semibold uppercase flex items-center gap-1 leading-tight text-left">
                                                                                     <span>⚽</span>
@@ -515,6 +515,49 @@ const Matches: React.FC = () => {
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        {/* Mobile Scorers & Cards list (shown below the main row on mobile only) */}
+                                                        {activeTab === 'past' && (homeScorers.length > 0 || awayScorers.length > 0 || homeCards.length > 0 || awayCards.length > 0) && (
+                                                            <div className="mt-3.5 pt-3 border-t border-slate-800/40 flex flex-col gap-1 text-[10px] text-slate-400 font-bold uppercase tracking-wide md:hidden">
+                                                                <div className="grid grid-cols-2 gap-4">
+                                                                    {/* Home Events */}
+                                                                    <div className="flex flex-col items-end gap-1 border-r border-slate-800/50 pr-3 min-w-0">
+                                                                        {homeScorers.map((s, idx) => (
+                                                                            <div key={`ms-h-${idx}`} className="flex items-center gap-1 justify-end w-full min-w-0">
+                                                                                <span className="truncate">{s.name}</span>
+                                                                                <span className="text-[9px] text-slate-500 font-normal shrink-0">'{s.minute}</span>
+                                                                                <span className="shrink-0">⚽</span>
+                                                                            </div>
+                                                                        ))}
+                                                                        {homeCards.map((c, idx) => (
+                                                                            <div key={`mc-h-${idx}`} className="flex items-center gap-1 justify-end w-full min-w-0">
+                                                                                <span className="truncate">{c.name}</span>
+                                                                                <span className="text-[9px] text-slate-500 font-normal shrink-0">'{c.minute}</span>
+                                                                                <div className="w-1.5 h-2.5 rounded-[1px] bg-red-600 shrink-0" />
+                                                                            </div>
+                                                                        ))}
+                                                                    </div>
+
+                                                                    {/* Away Events */}
+                                                                    <div className="flex flex-col items-start gap-1 pl-3 min-w-0">
+                                                                        {awayScorers.map((s, idx) => (
+                                                                            <div key={`ms-a-${idx}`} className="flex items-center gap-1 justify-start w-full min-w-0">
+                                                                                <span className="shrink-0">⚽</span>
+                                                                                <span className="truncate">{s.name}</span>
+                                                                                <span className="text-[9px] text-slate-500 font-normal shrink-0">'{s.minute}</span>
+                                                                            </div>
+                                                                        ))}
+                                                                        {awayCards.map((c, idx) => (
+                                                                            <div key={`mc-a-${idx}`} className="flex items-center gap-1 justify-start w-full min-w-0">
+                                                                                <div className="w-1.5 h-2.5 rounded-[1px] bg-red-600 shrink-0" />
+                                                                                <span className="truncate">{c.name}</span>
+                                                                                <span className="text-[9px] text-slate-500 font-normal shrink-0">'{c.minute}</span>
+                                                                            </div>
+                                                                        ))}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        )}
                                                     </div>
 
                                                     {/* Combined POTM & Highlights Row */}

@@ -96,6 +96,14 @@ const ConfettiCanvas = () => {
 const Simulator = () => {
   const { teams: originalTeams, matches, loading } = useTournament();
   const { historicalSwaps } = useTournamentStore();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const teams = useMemo(() => {
     if (!historicalSwaps || Object.keys(historicalSwaps).length === 0) return originalTeams;
@@ -1880,29 +1888,29 @@ const Simulator = () => {
               <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
                 
                 {/* 1. Large Match Card */}
-                <div className="bg-gray-950 border border-gray-800 rounded-3xl p-6 relative overflow-hidden flex items-center justify-between shadow-inner">
-                  <div className="flex flex-col items-center gap-3 flex-1 text-center">
-                    <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: '4.5rem' }} className="shadow-lg" />
-                    <div>
-                      <span className="text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5">Rank #{activeSimulationDetails.teamA.fifaRanking}</span>
-                      <h4 className="text-lg font-black text-white tracking-tight leading-tight uppercase italic">{activeSimulationDetails.teamA.name}</h4>
+                <div className="bg-gray-950 border border-gray-800 rounded-3xl p-4 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1">
+                  <div className="flex flex-col items-center gap-1.5 md:gap-3 flex-1 text-center min-w-0">
+                    <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: isMobile ? '2.5rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
+                    <div className="min-w-0 w-full">
+                      <span className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5 truncate">Rank #{activeSimulationDetails.teamA.fifaRanking}</span>
+                      <h4 className="text-xs md:text-lg font-black text-white tracking-tight leading-tight uppercase italic truncate w-full" title={activeSimulationDetails.teamA.name}>{activeSimulationDetails.teamA.name}</h4>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center justify-center px-4 min-w-[150px]">
-                    <span className="px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 font-black text-xs uppercase tracking-widest rounded-full mb-3 animate-pulse">
+                  <div className="flex flex-col items-center justify-center px-2 md:px-4 min-w-[90px] md:min-w-[150px] flex-shrink-0">
+                    <span className="px-2 py-0.5 md:px-3 md:py-1 bg-green-500/10 border border-green-500/20 text-green-400 font-black text-[9px] md:text-xs uppercase tracking-widest rounded-full mb-2 md:mb-3 animate-pulse">
                       {liveMatchClock}'
                     </span>
-                    <div className="text-5xl font-black text-white tracking-tighter italic tabular-nums">
+                    <div className="text-2xl md:text-5xl font-black text-white tracking-tighter italic tabular-nums">
                       {liveScore[0]} - {liveScore[1]}
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center gap-3 flex-1 text-center">
-                    <Flag code={activeSimulationDetails.teamB.countryCode} style={{ fontSize: '4.5rem' }} className="shadow-lg" />
-                    <div>
-                      <span className="text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5">Rank #{activeSimulationDetails.teamB.fifaRanking}</span>
-                      <h4 className="text-lg font-black text-white tracking-tight leading-tight uppercase italic">{activeSimulationDetails.teamB.name}</h4>
+                  <div className="flex flex-col items-center gap-1.5 md:gap-3 flex-1 text-center min-w-0">
+                    <Flag code={activeSimulationDetails.teamB.countryCode} style={{ fontSize: isMobile ? '2.5rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
+                    <div className="min-w-0 w-full">
+                      <span className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5 truncate">Rank #{activeSimulationDetails.teamB.fifaRanking}</span>
+                      <h4 className="text-xs md:text-lg font-black text-white tracking-tight leading-tight uppercase italic truncate w-full" title={activeSimulationDetails.teamB.name}>{activeSimulationDetails.teamB.name}</h4>
                     </div>
                   </div>
                 </div>
@@ -2474,27 +2482,27 @@ const Simulator = () => {
               <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
                 
                 {/* Match Card */}
-                <div className="bg-gray-950 border border-gray-800 rounded-3xl p-6 relative overflow-hidden flex items-center justify-between shadow-inner">
-                  <div className="flex flex-col items-center gap-3 flex-1 text-center">
-                    <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: '4.5rem' }} className="shadow-lg" />
-                    <div>
-                      <span className="text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5">Rank #{activeSimulationDetails.teamA.fifaRanking}</span>
-                      <h4 className="text-lg font-black text-white tracking-tight leading-tight uppercase italic">{activeSimulationDetails.teamA.name}</h4>
+                <div className="bg-gray-950 border border-gray-800 rounded-3xl p-4 md:p-6 relative overflow-hidden flex items-center justify-between shadow-inner gap-1">
+                  <div className="flex flex-col items-center gap-1.5 md:gap-3 flex-1 text-center min-w-0">
+                    <Flag code={activeSimulationDetails.teamA.countryCode} style={{ fontSize: isMobile ? '2.5rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
+                    <div className="min-w-0 w-full">
+                      <span className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5 truncate">Rank #{activeSimulationDetails.teamA.fifaRanking}</span>
+                      <h4 className="text-xs md:text-lg font-black text-white tracking-tight leading-tight uppercase italic truncate w-full" title={activeSimulationDetails.teamA.name}>{activeSimulationDetails.teamA.name}</h4>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center justify-center px-4 min-w-[150px]">
-                    <span className="px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 font-black text-xs uppercase tracking-widest rounded-full mb-3 animate-pulse">
+                  <div className="flex flex-col items-center justify-center px-2 md:px-4 min-w-[90px] md:min-w-[150px] flex-shrink-0">
+                    <span className="px-2 py-0.5 md:px-3 md:py-1 bg-green-500/10 border border-green-500/20 text-green-400 font-black text-[9px] md:text-xs uppercase tracking-widest rounded-full mb-2 md:mb-3 animate-pulse">
                       {activeSimulationDetails.result.isPenalties && liveMatchClock >= (activeSimulationDetails.result.isAET ? 120 : 90)
                         ? (activeSimulationDetails.result.isAET ? "120'" : "90'")
                         : `${liveMatchClock}'`}
                     </span>
-                    <div className="text-5xl font-black text-white tracking-tighter italic tabular-nums">
+                    <div className="text-2xl md:text-5xl font-black text-white tracking-tighter italic tabular-nums">
                       {liveScore[0]} - {liveScore[1]}
                     </div>
                     {/* Running penalty shootout score */}
                     {activeSimulationDetails.result.isPenalties && liveMatchClock > (activeSimulationDetails.result.isAET ? 120 : 90) && (
-                      <div className="mt-2 text-sm font-black text-yellow-500 uppercase tracking-widest animate-pulse">
+                      <div className="mt-2 text-xs font-black text-yellow-500 uppercase tracking-widest animate-pulse">
                         Pens: {
                           (() => {
                             const latestKick = [...liveEvents].reverse().find(e => e.type === 'penalty_kick');
@@ -2505,11 +2513,11 @@ const Simulator = () => {
                     )}
                   </div>
 
-                  <div className="flex flex-col items-center gap-3 flex-1 text-center">
-                    <Flag code={activeSimulationDetails.teamB.countryCode} style={{ fontSize: '4.5rem' }} className="shadow-lg" />
-                    <div>
-                      <span className="text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5">Rank #{activeSimulationDetails.teamB.fifaRanking}</span>
-                      <h4 className="text-lg font-black text-white tracking-tight leading-tight uppercase italic">{activeSimulationDetails.teamB.name}</h4>
+                  <div className="flex flex-col items-center gap-1.5 md:gap-3 flex-1 text-center min-w-0">
+                    <Flag code={activeSimulationDetails.teamB.countryCode} style={{ fontSize: isMobile ? '2.5rem' : '4.5rem' }} className="shadow-lg flex-shrink-0" />
+                    <div className="min-w-0 w-full">
+                      <span className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-widest block mb-0.5 truncate">Rank #{activeSimulationDetails.teamB.fifaRanking}</span>
+                      <h4 className="text-xs md:text-lg font-black text-white tracking-tight leading-tight uppercase italic truncate w-full" title={activeSimulationDetails.teamB.name}>{activeSimulationDetails.teamB.name}</h4>
                     </div>
                   </div>
                 </div>
