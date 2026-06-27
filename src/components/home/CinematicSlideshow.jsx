@@ -8,6 +8,14 @@ const CinematicSlideshow = ({ categories }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const navigate = useNavigate();
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Get active category configuration
     const currentCategory = categories.find(c => c.id === activeTab) || categories[0];
@@ -95,7 +103,7 @@ const CinematicSlideshow = ({ categories }) => {
                         >
                             {currentPlayer.image ? (
                                 <motion.img
-                                    src={currentPlayer.image}
+                                    src={isMobile && currentPlayer.mobileImage ? currentPlayer.mobileImage : currentPlayer.image}
                                     alt={currentPlayer.name}
                                     className="absolute inset-0 w-full h-full object-cover object-center"
                                     animate={{

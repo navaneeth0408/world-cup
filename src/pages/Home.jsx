@@ -22,6 +22,17 @@ import vvdImg from '../assets/players/last-dance/vvd.jpg';
 import jamesImg from '../assets/players/last-dance/James Rodriguez.jpg';
 import kaneImg from '../assets/players/last-dance/Harry Kane.jpg';
 
+// Player Images - Last Dance (Mobile View)
+import messiImgMobile from '../assets/players/mobile-view/last-dance/Messi.jpg';
+import ronaldoImgMobile from '../assets/players/mobile-view/last-dance/Cr7.jpg';
+import neymarImgMobile from '../assets/players/mobile-view/last-dance/Neymar.jpg';
+import modricImgMobile from '../assets/players/mobile-view/last-dance/Luka Modric.jpg';
+import kdbImgMobile from '../assets/players/mobile-view/last-dance/de bruyne.jpg';
+import neuerImgMobile from '../assets/players/mobile-view/last-dance/Manuel Neur.jpg';
+import vvdImgMobile from '../assets/players/mobile-view/last-dance/vvd.jpg';
+import jamesImgMobile from '../assets/players/mobile-view/last-dance/James Rodriguez.jpg';
+import kaneImgMobile from '../assets/players/mobile-view/last-dance/Harry Kane.jpg';
+
 // Player Images - Next Gen
 import yamalImg from '../assets/players/next-gen/yamal.jpg';
 import oliseImg from '../assets/players/next-gen/Michael Olise.jpg';
@@ -35,6 +46,20 @@ import wirtzImg from '../assets/players/next-gen/wirtz.jpg';
 import alvarezImg from '../assets/players/next-gen/Alvarez.jpg';
 import endrickImg from '../assets/players/next-gen/ones-to-watch/endrick.jpg';
 import vitinhaImg from '../assets/players/next-gen/ones-to-watch/vitinha.jpg';
+
+// Player Images - Next Gen (Mobile View)
+import yamalImgMobile from '../assets/players/mobile-view/next-gen/yamal.jpg';
+import oliseImgMobile from '../assets/players/mobile-view/next-gen/Michael Olise.jpg';
+import bellinghamImgMobile from '../assets/players/mobile-view/next-gen/bellingham.jpg';
+import pedriImgMobile from '../assets/players/mobile-view/next-gen/pedri.jpg';
+import musialaImgMobile from '../assets/players/mobile-view/next-gen/Musiala.jpg';
+import viniciusImgMobile from '../assets/players/mobile-view/next-gen/Vinicius.jpg';
+import dembeleImgMobile from '../assets/players/mobile-view/next-gen/Dembele.jpg';
+import mbappeImgMobile from '../assets/players/mobile-view/next-gen/Mbappe.jpg';
+import wirtzImgMobile from '../assets/players/mobile-view/next-gen/wirtz.jpg';
+import alvarezImgMobile from '../assets/players/mobile-view/next-gen/Alvarez.jpg';
+import endrickImgMobile from '../assets/players/mobile-view/next-gen/ones-to-watch/endrick.jpg';
+import vitinhaImgMobile from '../assets/players/mobile-view/next-gen/ones-to-watch/vitinha.jpg';
 
 const Home = () => {
   const { teams, matches, groupStandings, loading } = useTournament();
@@ -103,33 +128,33 @@ const Home = () => {
   }, [upcomingMatches]);
 
   const theLastDance = [
-    { id: 'lionel-messi', name: 'Lionel Messi', country: 'Argentina', flag: '🇦🇷', club: 'Inter Miami CF', image: messiImg },
-    { id: 'cristiano-ronaldo', name: 'Cristiano Ronaldo', country: 'Portugal', flag: '🇵🇹', club: 'Al Nassr', image: ronaldoImg },
-    { id: 'neymar-jr', name: 'Neymar Jr', country: 'Brazil', flag: '🇧🇷', club: 'Santos', image: neymarImg },
-    { id: 'luka-modric', name: 'Luka Modrić', country: 'Croatia', flag: '🇭🇷', club: 'AC Milan', image: modricImg },
-    { id: 'kevin-de-bruyne', name: 'Kevin De Bruyne', country: 'Belgium', flag: '🇧🇪', club: 'Napoli', image: kdbImg },
-    { id: 'manuel-neuer', name: 'Manuel Neuer', country: 'Germany', flag: '🇩🇪', club: 'FC Bayern Munich', image: neuerImg },
-    { id: 'virgil-van-dijk', name: 'Virgil van Dijk', country: 'Netherlands', flag: '🇳🇱', club: 'Liverpool FC', image: vvdImg },
-    { id: 'james-rodriguez', name: 'James Rodríguez', country: 'Colombia', flag: '🇨🇴', club: 'Rayo Vallecano', image: jamesImg },
-    { id: 'harry-kane', name: 'Harry Kane', country: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', club: 'FC Bayern Munich', image: kaneImg },
+    { id: 'lionel-messi', name: 'Lionel Messi', country: 'Argentina', flag: '🇦🇷', club: 'Inter Miami CF', image: messiImg, mobileImage: messiImgMobile },
+    { id: 'cristiano-ronaldo', name: 'Cristiano Ronaldo', country: 'Portugal', flag: '🇵🇹', club: 'Al Nassr', image: ronaldoImg, mobileImage: ronaldoImgMobile },
+    { id: 'neymar-jr', name: 'Neymar Jr', country: 'Brazil', flag: '🇧🇷', club: 'Santos', image: neymarImg, mobileImage: neymarImgMobile },
+    { id: 'luka-modric', name: 'Luka Modrić', country: 'Croatia', flag: '🇭🇷', club: 'AC Milan', image: modricImg, mobileImage: modricImgMobile },
+    { id: 'kevin-de-bruyne', name: 'Kevin De Bruyne', country: 'Belgium', flag: '🇧🇪', club: 'Napoli', image: kdbImg, mobileImage: kdbImgMobile },
+    { id: 'manuel-neuer', name: 'Manuel Neuer', country: 'Germany', flag: '🇩🇪', club: 'FC Bayern Munich', image: neuerImg, mobileImage: neuerImgMobile },
+    { id: 'virgil-van-dijk', name: 'Virgil van Dijk', country: 'Netherlands', flag: '🇳🇱', club: 'Liverpool FC', image: vvdImg, mobileImage: vvdImgMobile },
+    { id: 'james-rodriguez', name: 'James Rodríguez', country: 'Colombia', flag: '🇨🇴', club: 'Rayo Vallecano', image: jamesImg, mobileImage: jamesImgMobile },
+    { id: 'harry-kane', name: 'Harry Kane', country: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', club: 'FC Bayern Munich', image: kaneImg, mobileImage: kaneImgMobile },
   ];
 
   const readyToTakeOver = [
-    { id: 'kylian-mbappe', name: 'Kylian Mbappé', country: 'France', flag: '🇫🇷', club: 'Real Madrid', image: mbappeImg },
-    { id: 'pedri', name: 'Pedri', country: 'Spain', flag: '🇪🇸', club: 'FC Barcelona', image: pedriImg },
-    { id: 'jude-bellingham', name: 'Jude Bellingham', country: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', club: 'Real Madrid', image: bellinghamImg },
-    { id: 'vinicius-junior', name: 'Vinícius Júnior', country: 'Brazil', flag: '🇧🇷', club: 'Real Madrid', image: viniciusImg },
-    { id: 'ousmane-dembele', name: 'Ousmane Dembélé', country: 'France', flag: '🇫🇷', club: 'Paris Saint-Germain', image: dembeleImg },
-    { id: 'jamal-musiala', name: 'Jamal Musiala', country: 'Germany', flag: '🇩🇪', club: 'FC Bayern Munich', image: musialaImg },
-    { id: 'julian-alvarez', name: 'Julián Álvarez', country: 'Argentina', flag: '🇦🇷', club: 'Atlético Madrid', image: alvarezImg },
+    { id: 'kylian-mbappe', name: 'Kylian Mbappé', country: 'France', flag: '🇫🇷', club: 'Real Madrid', image: mbappeImg, mobileImage: mbappeImgMobile },
+    { id: 'pedri', name: 'Pedri', country: 'Spain', flag: '🇪🇸', club: 'FC Barcelona', image: pedriImg, mobileImage: pedriImgMobile },
+    { id: 'jude-bellingham', name: 'Jude Bellingham', country: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', club: 'Real Madrid', image: bellinghamImg, mobileImage: bellinghamImgMobile },
+    { id: 'vinicius-junior', name: 'Vinícius Júnior', country: 'Brazil', flag: '🇧🇷', club: 'Real Madrid', image: viniciusImg, mobileImage: viniciusImgMobile },
+    { id: 'ousmane-dembele', name: 'Ousmane Dembélé', country: 'France', flag: '🇫🇷', club: 'Paris Saint-Germain', image: dembeleImg, mobileImage: dembeleImgMobile },
+    { id: 'jamal-musiala', name: 'Jamal Musiala', country: 'Germany', flag: '🇩🇪', club: 'FC Bayern Munich', image: musialaImg, mobileImage: musialaImgMobile },
+    { id: 'julian-alvarez', name: 'Julián Álvarez', country: 'Argentina', flag: '🇦🇷', club: 'Atlético Madrid', image: alvarezImg, mobileImage: alvarezImgMobile },
   ];
 
   const onesToWatch = [
-    { id: 'michael-olise', name: 'Michael Olise', country: 'France', flag: '🇫🇷', club: 'FC Bayern Munich', image: oliseImg },
-    { id: 'florian-wirtz', name: 'Florian Wirtz', country: 'Germany', flag: '🇩🇪', club: 'Liverpool', image: wirtzImg },
-    { id: 'lamine-yamal', name: 'Lamine Yamal', country: 'Spain', flag: '🇪🇸', club: 'FC Barcelona', image: yamalImg },
-    { id: 'endrick', name: 'Endrick', country: 'Brazil', flag: '🇧🇷', club: 'Real Madrid', image: endrickImg },
-    { id: 'vitinha', name: 'Vitinha', country: 'Portugal', flag: '🇵🇹', club: 'Paris Saint-Germain', image: vitinhaImg },
+    { id: 'michael-olise', name: 'Michael Olise', country: 'France', flag: '🇫🇷', club: 'FC Bayern Munich', image: oliseImg, mobileImage: oliseImgMobile },
+    { id: 'florian-wirtz', name: 'Florian Wirtz', country: 'Germany', flag: '🇩🇪', club: 'Liverpool', image: wirtzImg, mobileImage: wirtzImgMobile },
+    { id: 'lamine-yamal', name: 'Lamine Yamal', country: 'Spain', flag: '🇪🇸', club: 'FC Barcelona', image: yamalImg, mobileImage: yamalImgMobile },
+    { id: 'endrick', name: 'Endrick', country: 'Brazil', flag: '🇧🇷', club: 'Real Madrid', image: endrickImg, mobileImage: endrickImgMobile },
+    { id: 'vitinha', name: 'Vitinha', country: 'Portugal', flag: '🇵🇹', club: 'Paris Saint-Germain', image: vitinhaImg, mobileImage: vitinhaImgMobile },
   ];
 
   if (loading) return <LoadingSpinner size="lg" className="min-h-screen" />;

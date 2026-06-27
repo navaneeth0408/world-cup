@@ -61,7 +61,7 @@ const PlayerArticle = () => {
             {/* Main Content Layout */}
             <main className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-20">
                 {/* Left side: Article text & stats (7 cols) */}
-                <article className="lg:col-span-7 space-y-8">
+                <article className="lg:col-span-7 space-y-8 order-2 lg:order-1">
                     {/* Header */}
                     <div className="space-y-4">
                         <div className="flex items-center gap-3">
@@ -154,7 +154,7 @@ const PlayerArticle = () => {
                 </article>
 
                 {/* Right side: Giant glowing player card (5 cols) */}
-                <div className="lg:col-span-5 flex justify-center">
+                <div className="lg:col-span-5 flex justify-center order-1 lg:order-2">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
