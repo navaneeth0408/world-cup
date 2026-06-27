@@ -50,8 +50,8 @@ const CinematicSlideshow = ({ categories }) => {
             onMouseLeave={() => setIsPaused(false)}
         >
             {/* Tab Toggles Header */}
-            <div className="w-full mb-8 flex justify-center relative z-30">
-                <div className="flex gap-2">
+            <div className="w-full mb-8 flex justify-start md:justify-center overflow-x-auto no-scrollbar py-2 px-4 relative z-30">
+                <div className="flex gap-2 mx-auto whitespace-nowrap">
                     {categories.map((category) => {
                         const isActive = activeTab === category.id;
                         return (
@@ -115,29 +115,38 @@ const CinematicSlideshow = ({ categories }) => {
                     </AnimatePresence>
                 </div>
 
-                {/* Left side dark gradient overlay for text readability */}
+                {/* Left side dark gradient overlay for text readability (desktop) */}
                 <div 
-                    className="absolute inset-0 pointer-events-none"
+                    className="absolute inset-0 pointer-events-none hidden md:block"
                     style={{
                         background: 'linear-gradient(to right, rgba(10, 10, 20, 0.85) 0%, rgba(10, 10, 20, 0.4) 40%, transparent 65%)',
                         zIndex: 15
                     }}
                 />
+                
+                {/* Bottom dark gradient overlay for text readability (mobile) */}
+                <div 
+                    className="absolute inset-0 pointer-events-none block md:hidden"
+                    style={{
+                        background: 'linear-gradient(to top, rgba(10, 10, 20, 0.95) 0%, rgba(10, 10, 20, 0.4) 50%, transparent 100%)',
+                        zIndex: 15
+                    }}
+                />
 
-                {/* Left Text Zone (40%) */}
-                <div className="absolute inset-0 z-20 px-12 flex items-center pointer-events-none">
-                    <div className="max-w-[42%] w-full pointer-events-auto">
+                {/* Text Zone */}
+                <div className="absolute inset-0 z-20 px-6 md:px-12 pb-12 md:pb-0 flex items-end md:items-center pointer-events-none">
+                    <div className="w-full md:max-w-[42%] pointer-events-auto">
                         <motion.p
                             key={`badge-${activeTab}`}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-4"
+                            className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-4 hidden md:block"
                             style={{ color: labelColor }}
                         >
                             {badge}
                         </motion.p>
      
-                        <h2 className="flex flex-col gap-0 mb-8 leading-none">
+                        <h2 className="flex flex-col gap-0 mb-8 leading-none hidden md:flex">
                             <span className="text-white font-black text-5xl md:text-6xl lg:text-7xl tracking-tighter uppercase whitespace-normal break-words leading-none">
                                 {titleMain}
                             </span>
@@ -150,7 +159,7 @@ const CinematicSlideshow = ({ categories }) => {
                         </h2>
 
                         {subhead && (
-                            <p className="text-gray-300/90 text-xs md:text-sm font-semibold max-w-sm mb-6 leading-relaxed">
+                            <p className="text-gray-300/90 text-xs md:text-sm font-semibold max-w-sm mb-6 leading-relaxed hidden md:block">
                                 {subhead}
                             </p>
                         )}
@@ -163,24 +172,30 @@ const CinematicSlideshow = ({ categories }) => {
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.4 }}
                             >
-                                <h3 className="text-white text-2xl md:text-3xl font-bold mb-1">
+                                <span className="inline-block md:hidden text-[9px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded mb-3" style={{ backgroundColor: accentColor + '20', color: accentColor }}>
+                                    {badge || 'FEATURED'}
+                                </span>
+                                <h3 className="text-white text-3xl md:text-3xl font-black italic uppercase tracking-tight mb-1">
                                     {currentPlayer.name}
                                 </h3>
-                                <p className="text-gray-400 text-sm md:text-base font-medium mb-3">
-                                    {currentPlayer.country} {currentPlayer.club && `· ${currentPlayer.club}`}
+                                <p className="text-gray-300 text-sm md:text-base font-semibold mb-4 flex items-center gap-1.5">
+                                    <span>{currentPlayer.flag}</span>
+                                    <span>{currentPlayer.country}</span>
+                                    {currentPlayer.club && (
+                                        <>
+                                            <span className="text-gray-600">•</span>
+                                            <span className="text-gray-400">{currentPlayer.club}</span>
+                                        </>
+                                    )}
                                 </p>
                                 <Button
                                     variant="primary"
-                                    className="flex items-center gap-1.5 px-4 py-2 font-black text-[10px] uppercase tracking-wider cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 shadow-md border-none"
+                                    className="flex items-center gap-1.5 px-5 py-2.5 font-black text-[10px] uppercase tracking-wider cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 shadow-md border-none"
                                     style={{ backgroundColor: accentColor, color: '#090d16' }}
                                     onClick={() => navigate(`/player/${currentPlayer.id}`)}
                                 >
-                                    Read More
+                                    Read Profile
                                 </Button>
-                                <div
-                                    className="h-1 w-16 mt-4 rounded-full"
-                                    style={{ backgroundColor: accentColor }}
-                                />
                             </motion.div>
                         </AnimatePresence>
                     </div>

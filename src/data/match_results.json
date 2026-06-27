@@ -3168,7 +3168,7 @@
         "name": "Cyle Larin",
         "teamId": "canada",
         "type": "yellow",
-        "minute": 25
+        "minute": "32"
       },
       {
         "name": "Granit Xhaka",
@@ -3180,7 +3180,7 @@
         "name": "Liam Millar",
         "teamId": "canada",
         "type": "yellow",
-        "minute": 86
+        "minute": "87"
       }
     ],
     "playerOfMatch": "Johan Manzambi",
@@ -3346,7 +3346,7 @@
         "name": "Wilson Isidor",
         "teamId": "haiti",
         "minute": 43,
-        "assist": "",
+        "assist": "Jean-Kévin Duverne",
         "ownGoal": false,
         "penalty": false
       },
@@ -3362,7 +3362,7 @@
         "name": "Soufiane Rahimi",
         "teamId": "morocco",
         "minute": 78,
-        "assist": "",
+        "assist": "Chadi Riad",
         "ownGoal": false,
         "penalty": false
       },
@@ -3370,7 +3370,7 @@
         "name": "Gessime Yassine",
         "teamId": "morocco",
         "minute": 89,
-        "assist": "",
+        "assist": "Soufiane Rahimi",
         "ownGoal": false,
         "penalty": false
       }
@@ -3380,13 +3380,13 @@
         "name": "Duckens Nazon",
         "teamId": "haiti",
         "type": "yellow",
-        "minute": 79
+        "minute": "80"
       },
       {
         "name": "Johny Placide",
         "teamId": "haiti",
         "type": "yellow",
-        "minute": 80
+        "minute": "79"
       },
       {
         "name": "Josue Casimir",
@@ -3463,26 +3463,32 @@
         "name": "Matheus Cunha",
         "teamId": "brazil",
         "minute": 60,
-        "assist": "Bruno Guimaraes",
+        "assist": "Bruno Guimarães",
         "ownGoal": false,
         "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Jack Hendry",
+        "name": "Ryan Christie",
         "teamId": "scotland",
         "type": "yellow",
-        "minute": 38
+        "minute": "89"
       },
       {
-        "name": "John McGinn",
-        "teamId": "scotland",
+        "name": "Fabinho",
+        "teamId": "brazil",
         "type": "yellow",
-        "minute": 52
+        "minute": "82"
+      },
+      {
+        "name": "Danilo",
+        "teamId": "brazil",
+        "type": "yellow",
+        "minute": "62"
       }
     ],
-    "playerOfMatch": "Vinicius Junior",
+    "playerOfMatch": "Vinícius Júnior",
     "stats": {
       "possession": [
         34,
@@ -3544,13 +3550,13 @@
         "name": "Aubrey Modiba",
         "teamId": "southafrica",
         "type": "yellow",
-        "minute": 30
+        "minute": "73"
       },
       {
-        "name": "Cho Gue-sung",
+        "name": "Cho Gue-Sung",
         "teamId": "southkorea",
         "type": "yellow",
-        "minute": 75
+        "minute": "79"
       }
     ],
     "playerOfMatch": "Thapelo Maseko",
@@ -3613,7 +3619,7 @@
         "name": "Julian Quinones",
         "teamId": "mexico",
         "minute": 61,
-        "assist": "Luis Chavez",
+        "assist": "Jorge Sanchez",
         "ownGoal": false,
         "penalty": false
       },
@@ -3628,16 +3634,10 @@
     ],
     "cards": [
       {
-        "name": "Luis Chavez",
+        "name": "Edson Alvarez",
         "teamId": "mexico",
         "type": "yellow",
-        "minute": 44
-      },
-      {
-        "name": "Alvaro Fidalgo",
-        "teamId": "mexico",
-        "type": "yellow",
-        "minute": 82
+        "minute": "64"
       }
     ],
     "playerOfMatch": "Mateo Chavez",
@@ -3700,14 +3700,14 @@
         "name": "Nicolas Pépé",
         "teamId": "ivorycoast",
         "minute": 64,
-        "assist": "Ibrahim Sangare",
+        "assist": "Ibrahim Sangaré",
         "ownGoal": false,
         "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Nicolas Pepe",
+        "name": "Nicolas Pépé",
         "teamId": "ivorycoast",
         "type": "yellow",
         "minute": 35
@@ -3722,7 +3722,7 @@
         "name": "Gervane Kastaneer",
         "teamId": "curacao",
         "type": "yellow",
-        "minute": 82
+        "minute": "83"
       }
     ],
     "playerOfMatch": "Nicolas Pépé",
@@ -3793,38 +3793,38 @@
         "name": "Gonzalo Plata",
         "teamId": "ecuador",
         "minute": 77,
-        "assist": "Kevin Rodriguez",
+        "assist": "Kevin Rodríguez",
         "ownGoal": false,
         "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Aleksandar Pavlovic",
+        "name": "Aleksandar Pavlović",
         "teamId": "germany",
         "type": "yellow",
         "minute": 44
       },
       {
+        "name": "Piero Hincapié",
+        "teamId": "ecuador",
+        "type": "yellow",
+        "minute": "43"
+      },
+      {
         "name": "Alan Franco",
         "teamId": "ecuador",
         "type": "yellow",
-        "minute": 64
-      },
-      {
-        "name": "Piero Hincapie",
-        "teamId": "ecuador",
-        "type": "yellow",
-        "minute": 71
+        "minute": "50"
       },
       {
         "name": "Gonzalo Plata",
         "teamId": "ecuador",
         "type": "yellow",
-        "minute": 88
+        "minute": "89"
       }
     ],
-    "playerOfMatch": "Gonzalo Plata",
+    "playerOfMatch": "Nilson Angulo",
     "stats": {
       "possession": [
         45,
@@ -3905,14 +3905,7 @@
         "penalty": false
       }
     ],
-    "cards": [
-      {
-        "name": "Ellyes Skhiri",
-        "teamId": "tunisia",
-        "type": "yellow",
-        "minute": 41
-      }
-    ],
+    "cards": [],
     "playerOfMatch": "Brian Brobbey",
     "stats": {
       "possession": [
@@ -3973,17 +3966,29 @@
         "name": "Anthony Elanga",
         "teamId": "sweden",
         "minute": 62,
-        "assist": "",
+        "assist": "Viktor Gyökeres",
         "ownGoal": false,
         "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Viktor Gyokeres",
+        "name": "Isak Hien",
         "teamId": "sweden",
         "type": "yellow",
-        "minute": 85
+        "minute": "32"
+      },
+      {
+        "name": "Viktor Gyökeres",
+        "teamId": "sweden",
+        "type": "yellow",
+        "minute": "85"
+      },
+      {
+        "name": "Shogo Taniguchi",
+        "teamId": "japan",
+        "type": "yellow",
+        "minute": "77"
       }
     ],
     "playerOfMatch": "Anthony Elanga",
@@ -4046,15 +4051,15 @@
         "name": "Arda Güler",
         "teamId": "turkiye",
         "minute": 10,
-        "assist": "",
+        "assist": "Barış Alper Yılmaz",
         "ownGoal": false,
         "penalty": false
       },
       {
-        "name": "Baris Alper Yilmaz",
+        "name": "Barış Alper Yılmaz",
         "teamId": "turkiye",
         "minute": 31,
-        "assist": "Arda Guler",
+        "assist": "Orkun Kökçü",
         "ownGoal": false,
         "penalty": false
       },
@@ -4077,19 +4082,13 @@
     ],
     "cards": [
       {
-        "name": "Auston Trusty",
+        "name": "Sebastian Berhalter",
         "teamId": "usa",
         "type": "yellow",
-        "minute": 45
-      },
-      {
-        "name": "Kaan Ayhan",
-        "teamId": "turkiye",
-        "type": "yellow",
-        "minute": 99
+        "minute": "19"
       }
     ],
-    "playerOfMatch": "Arda Guler",
+    "playerOfMatch": "Arda Güler",
     "stats": {
       "possession": [
         52,
@@ -4139,19 +4138,19 @@
     "scorers": [],
     "cards": [
       {
-        "name": "Jordan Bos",
+        "name": "Jackson Irvine",
         "teamId": "australia",
         "type": "yellow",
-        "minute": 34
+        "minute": "46"
       },
       {
-        "name": "Julio Enciso",
+        "name": "Diego Gómez",
         "teamId": "paraguay",
         "type": "yellow",
-        "minute": 72
+        "minute": "77"
       }
     ],
-    "playerOfMatch": "Jordan Bos",
+    "playerOfMatch": "Aiden O'Neill",
     "stats": {
       "possession": [
         47,
@@ -4209,19 +4208,19 @@
         "name": "Ousmane Dembélé",
         "teamId": "france",
         "minute": 20,
-        "assist": ""
+        "assist": "Kylian Mbappé"
       },
       {
         "name": "Thelo Aasgaard",
         "teamId": "norway",
         "minute": 21,
-        "assist": ""
+        "assist": "Andreas Schjelderup"
       },
       {
         "name": "Ousmane Dembélé",
         "teamId": "france",
         "minute": 32,
-        "assist": ""
+        "assist": "Aurélien Tchouaméni"
       },
       {
         "name": "Désiré Doué",
@@ -4232,16 +4231,16 @@
     ],
     "cards": [
       {
-        "name": "Leo Østigård",
+        "name": "Patrick Berg",
         "teamId": "norway",
         "type": "yellow",
-        "minute": 34
+        "minute": "10"
       },
       {
-        "name": "Manu Koné",
+        "name": "Aurélien Tchouaméni",
         "teamId": "france",
         "type": "yellow",
-        "minute": 45
+        "minute": "74"
       }
     ],
     "playerOfMatch": "Ousmane Dembélé",
@@ -4296,13 +4295,13 @@
         "name": "Habib Diarra",
         "teamId": "senegal",
         "minute": 4,
-        "assist": ""
+        "assist": "Abdoulaye Seck"
       },
       {
         "name": "Ismaïla Sarr",
         "teamId": "senegal",
         "minute": 56,
-        "assist": "Illiman Ndiaye"
+        "assist": "Lamine Camara"
       },
       {
         "name": "Pape Gueye",
@@ -4314,7 +4313,7 @@
         "name": "Pape Gueye",
         "teamId": "senegal",
         "minute": 71,
-        "assist": ""
+        "assist": "Illiman Ndiaye"
       },
       {
         "name": "Illiman Ndiaye",
@@ -4331,16 +4330,28 @@
         "minute": 13
       },
       {
-        "name": "Kalidou Koulibaly",
+        "name": "Abdoulaye Seck",
         "teamId": "senegal",
         "type": "yellow",
-        "minute": 25
+        "minute": "18"
       },
       {
         "name": "Amir Al-Ammari",
         "teamId": "iraq",
         "type": "yellow",
-        "minute": 40
+        "minute": "75"
+      },
+      {
+        "name": "Merchas Doski",
+        "teamId": "iraq",
+        "type": "yellow",
+        "minute": "90"
+      },
+      {
+        "name": "Pape Gueye",
+        "teamId": "senegal",
+        "type": "yellow",
+        "minute": "81"
       }
     ],
     "playerOfMatch": "Pape Gueye",
@@ -4393,19 +4404,31 @@
     "scorers": [],
     "cards": [
       {
-        "name": "Logan Costa",
+        "name": "Wagner Pina",
         "teamId": "capeverde",
         "type": "yellow",
-        "minute": 28
+        "minute": "8"
       },
       {
         "name": "Saud Abdulhamid",
         "teamId": "saudiarabia",
         "type": "yellow",
-        "minute": 62
+        "minute": "4"
+      },
+      {
+        "name": "Nasser Al-Dawsari",
+        "teamId": "saudiarabia",
+        "type": "yellow",
+        "minute": "67"
+      },
+      {
+        "name": "Feras Al-Brikan",
+        "teamId": "saudiarabia",
+        "type": "yellow",
+        "minute": "93"
       }
     ],
-    "playerOfMatch": "Mohammed Al Owais",
+    "playerOfMatch": "Deroy Duarte",
     "stats": {
       "possession": [
         48,
@@ -4457,27 +4480,39 @@
         "name": "Alex Baena",
         "teamId": "spain",
         "minute": 42,
-        "assist": ""
+        "assist": "Marcos Llorente"
       }
     ],
     "cards": [
       {
-        "name": "José María Giménez",
+        "name": "Juan Manuel Sanabria",
         "teamId": "uruguay",
         "type": "yellow",
-        "minute": 31
+        "minute": "54"
       },
       {
-        "name": "Marc Cucurella",
+        "name": "Alex Baena",
         "teamId": "spain",
         "type": "yellow",
-        "minute": 55
+        "minute": "46"
       },
       {
         "name": "Agustín Canobbio",
         "teamId": "uruguay",
         "type": "red",
-        "minute": 94
+        "minute": "95"
+      },
+      {
+        "name": "Guillermo Varela",
+        "teamId": "uruguay",
+        "type": "yellow",
+        "minute": "58"
+      },
+      {
+        "name": "Nicolás de la Cruz",
+        "teamId": "uruguay",
+        "type": "yellow",
+        "minute": "93"
       }
     ],
     "playerOfMatch": "Alex Baena",
@@ -4532,13 +4567,13 @@
         "name": "Leandro Trossard",
         "teamId": "belgium",
         "minute": 28,
-        "assist": "Kevin De Bruyne"
+        "assist": ""
       },
       {
         "name": "Leandro Trossard",
         "teamId": "belgium",
         "minute": 50,
-        "assist": "Kevin De Bruyne"
+        "assist": "Hans Vanaken"
       },
       {
         "name": "Kevin De Bruyne",
@@ -4562,21 +4597,27 @@
         "name": "Alexis Saelemaekers",
         "teamId": "belgium",
         "minute": 94,
-        "assist": ""
+        "assist": "Romelu Lukaku"
       }
     ],
     "cards": [
       {
-        "name": "Liberato Cacace",
+        "name": "Marko Stamenic",
         "teamId": "newzealand",
         "type": "yellow",
-        "minute": 18
+        "minute": "46"
       },
       {
         "name": "Timothy Castagne",
         "teamId": "belgium",
         "type": "yellow",
         "minute": 42
+      },
+      {
+        "name": "Elijah Just",
+        "teamId": "newzealand",
+        "type": "yellow",
+        "minute": "56"
       }
     ],
     "playerOfMatch": "Leandro Trossard",
@@ -4631,7 +4672,7 @@
         "name": "Mahmoud Saber",
         "teamId": "egypt",
         "minute": 5,
-        "assist": ""
+        "assist": "Trézéguet"
       },
       {
         "name": "Ramin Rezaeian",
@@ -4645,16 +4686,46 @@
         "name": "Hamdy Fathy",
         "teamId": "egypt",
         "type": "yellow",
-        "minute": 23
+        "minute": "20"
+      },
+      {
+        "name": "Hossein Kanani",
+        "teamId": "iran",
+        "type": "yellow",
+        "minute": "19"
+      },
+      {
+        "name": "Ali Nemati",
+        "teamId": "iran",
+        "type": "yellow",
+        "minute": "43"
+      },
+      {
+        "name": "Saeid Ezatolahi",
+        "teamId": "iran",
+        "type": "yellow",
+        "minute": "79"
       },
       {
         "name": "Shoja Khalilzadeh",
         "teamId": "iran",
         "type": "yellow",
-        "minute": 45
+        "minute": "94"
+      },
+      {
+        "name": "Yasser Ibrahim",
+        "teamId": "egypt",
+        "type": "yellow",
+        "minute": "42"
+      },
+      {
+        "name": "Mohanad Lashin",
+        "teamId": "egypt",
+        "type": "yellow",
+        "minute": "92"
       }
     ],
-    "playerOfMatch": "Mostafa Shoubr",
+    "playerOfMatch": "Ramin Rezaeian",
     "stats": {
       "possession": [
         52,

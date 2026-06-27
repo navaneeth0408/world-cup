@@ -6,7 +6,7 @@ import Flag from '../components/ui/Flag';
 import Card from '../components/ui/Card';
 import Modal from '../components/ui/Modal';
 import Button from '../components/ui/Button';
-import { Trophy, Goal, Hand, Shield, Users, BarChart3, AlertCircle, Activity, Sparkles } from 'lucide-react';
+import { Trophy, Goal, Hand, Shield, Users, BarChart3, AlertCircle, Activity, Sparkles, Award } from 'lucide-react';
 import lineupsData from '../data/lineups.json';
 
 const normalizeName = (name) => {
@@ -19,17 +19,39 @@ const normalizeName = (name) => {
         .trim();
 };
 
+const generateReason = (p) => {
+    if (p.rank === 1) {
+        return `Tournament leader with ${p.score.toFixed(1)}/10 rating, driving ${p.team}'s campaign with ${p.goals} goals and ${p.potm} MOTM awards.`;
+    }
+    const factors = [];
+    if (p.goals > 0) factors.push(`${p.goals} goal${p.goals > 1 ? 's' : ''}`);
+    if (p.assists > 0) factors.push(`${p.assists} assist${p.assists > 1 ? 's' : ''}`);
+    if (p.potm > 0) factors.push(`${p.potm} MOTM award${p.potm > 1 ? 's' : ''}`);
+
+    let desc = factors.join(' and ');
+    if (desc) {
+        desc = `${desc} with a ${p.avgRating.toFixed(2)} avg rating`;
+    } else {
+        desc = `${p.avgRating.toFixed(2)} avg rating`;
+    }
+
+    return `${desc.charAt(0).toUpperCase() + desc.slice(1)} for ${p.team}.`;
+};
+
 const Standings = () => {
     const { teams, matches, loading } = useTournament();
     const [activeTab, setActiveTab] = useState('standings');
     const [selectedStatModal, setSelectedStatModal] = useState(null);
     const [showThirdPlaceModal, setShowThirdPlaceModal] = useState(false);
+    const [summaryModalType, setSummaryModalType] = useState(null);
+    const [drillDownTeamId, setDrillDownTeamId] = useState(null);
     const scrollContainerRef = useRef(null);
 
     const sections = [
         { id: 'standings', name: 'Standings', icon: Trophy },
         { id: 'scorers', name: 'Top Scorers', icon: Goal },
-        { id: 'assists', name: 'Assists', icon: Hand },
+        { id: 'assists', name: 'Assists & G+A', icon: Hand },
+        { id: 'mvp', name: 'Tournament MVP', icon: Award },
         { id: 'discipline', name: 'Discipline', icon: AlertCircle },
         { id: 'goalkeepers', name: 'Goalkeepers', icon: Shield },
         { id: 'tournament-summary', name: 'Overview', icon: Activity },
@@ -223,6 +245,364 @@ const Standings = () => {
             .map((p, idx) => ({ ...p, rank: idx + 1 }))
             .slice(0, 10);
     }, [completedMatches, teams]);
+
+    const topGA = useMemo(() => {
+        const players = {};
+
+        completedMatches.forEach(m => {
+            const scorers = m.scorers || [];
+            scorers.forEach(s => {
+                if (!s.name || s.name.includes('(OG)') || s.name.includes('Own Goal') || s.ownGoal) return;
+                const team = teams.find(t => t.id === s.teamId);
+                const teamName = team ? team.name : s.teamId;
+                const teamCode = team ? team.countryCode : '';
+                const key = `${s.name}-${s.teamId}`;
+
+                if (!players[key]) {
+                    players[key] = {
+                        name: s.name,
+                        team: teamName,
+                        teamCode: teamCode,
+                        goals: 0,
+                        assists: 0,
+                        ga: 0
+                    };
+                }
+                players[key].goals += 1;
+                players[key].ga += 1;
+            });
+
+            scorers.forEach(s => {
+                if (!s.assist || s.name.includes('(OG)') || s.name.includes('Own Goal') || s.ownGoal) return;
+                const team = teams.find(t => t.id === s.teamId);
+                const teamName = team ? team.name : s.teamId;
+                const teamCode = team ? team.countryCode : '';
+                const key = `${s.assist}-${s.teamId}`;
+
+                if (!players[key]) {
+                    players[key] = {
+                        name: s.assist,
+                        team: teamName,
+                        teamCode: teamCode,
+                        goals: 0,
+                        assists: 0,
+                        ga: 0
+                    };
+                }
+                players[key].assists += 1;
+                players[key].ga += 1;
+            });
+        });
+
+        return Object.values(players)
+            .filter(p => p.ga > 0)
+            .sort((a, b) => b.ga - a.ga || b.goals - a.goals || a.name.localeCompare(b.name))
+            .map((p, idx) => ({ ...p, rank: idx + 1 }))
+            .slice(0, 10);
+    }, [completedMatches, teams]);
+
+    const mvpCandidates = useMemo(() => {
+        const players = {};
+        
+        // Helper to get player's position
+        const getPlayerPosition = (name, teamId) => {
+            const teamLineup = lineupsData.teams.find(t => t.country_name.toLowerCase() === teamId.toLowerCase());
+            if (!teamLineup) return 'MF';
+            const entry = Object.entries(teamLineup.starting_lineup).find(([pos, pName]) => pName.toLowerCase() === name.toLowerCase());
+            if (!entry) return 'MF';
+            const posCode = entry[0];
+            if (posCode === 'GK') return 'GK';
+            if (posCode.includes('B') || posCode.includes('LWB') || posCode.includes('RWB')) return 'DF';
+            if (posCode.includes('M') || posCode.includes('DM') || posCode.includes('CM') || posCode.includes('AM')) return 'MF';
+            if (posCode.includes('W') || posCode.includes('CF') || posCode.includes('ST') || posCode.includes('F')) return 'FW';
+            return 'MF';
+        };
+
+        // Gather all players who have participated (starts/scorers/assists/cards/POTM)
+        teams.forEach(t => {
+            const teamLineup = lineupsData.teams.find(l => l.country_name.toLowerCase() === t.name.toLowerCase() || l.country_name.toLowerCase() === t.id.toLowerCase());
+            if (teamLineup) {
+                Object.values(teamLineup.starting_lineup).forEach(name => {
+                    const key = `${name}-${t.id}`;
+                    players[key] = {
+                        name,
+                        team: t.name,
+                        teamId: t.id,
+                        teamCode: t.countryCode,
+                        goals: 0,
+                        assists: 0,
+                        potm: 0,
+                        yellows: 0,
+                        reds: 0,
+                        matchRatings: [],
+                        weightedGoals: 0,
+                        weightedAssists: 0,
+                        bigMatchPoints: 0,
+                        matchesPlayed: 0
+                    };
+                });
+            }
+        });
+
+        const getOrCreatePlayer = (name, teamId) => {
+            const key = `${name}-${teamId}`;
+            if (!players[key]) {
+                const team = teams.find(t => t.id === teamId);
+                players[key] = {
+                    name,
+                    team: team ? team.name : teamId,
+                    teamId,
+                    teamCode: team ? team.countryCode : '',
+                    goals: 0,
+                    assists: 0,
+                    potm: 0,
+                    yellows: 0,
+                    reds: 0,
+                    matchRatings: [],
+                    weightedGoals: 0,
+                    weightedAssists: 0,
+                    bigMatchPoints: 0,
+                    matchesPlayed: 0
+                };
+            }
+            return players[key];
+        };
+
+        const STAGE_MULTIPLIERS = {
+            'Group Stage': 1.0,
+            'Round of 32': 1.2,
+            'Round of 16': 1.4,
+            'Quarter-finals': 1.6,
+            'Semi-finals': 1.8,
+            'Final': 2.0,
+            'Third Place': 1.0
+        };
+
+        completedMatches.forEach(m => {
+            const stage = m.stage || 'Group Stage';
+            const mult = STAGE_MULTIPLIERS[stage] || 1.0;
+            const isKnockout = m.match_id > 72;
+
+            const matchPlayers = new Set();
+            
+            // Home starters
+            const homeLineup = lineupsData.teams.find(t => t.country_name.toLowerCase() === m.homeTeam.toLowerCase());
+            if (homeLineup) {
+                Object.values(homeLineup.starting_lineup).forEach(name => {
+                    const key = `${name}-${m.homeTeam}`;
+                    matchPlayers.add(key);
+                });
+            }
+
+            // Away starters
+            const awayLineup = lineupsData.teams.find(t => t.country_name.toLowerCase() === m.awayTeam.toLowerCase());
+            if (awayLineup) {
+                Object.values(awayLineup.starting_lineup).forEach(name => {
+                    const key = `${name}-${m.awayTeam}`;
+                    matchPlayers.add(key);
+                });
+            }
+
+            // Scorers & Assists
+            const scorers = m.scorers || [];
+            scorers.forEach(s => {
+                if (!s.name || s.name.includes('(OG)') || s.name.includes('Own Goal') || s.ownGoal) return;
+                const p = getOrCreatePlayer(s.name, s.teamId);
+                matchPlayers.add(`${s.name}-${s.teamId}`);
+                p.goals += 1;
+                p.weightedGoals += 1 * mult;
+
+                if (isKnockout) {
+                    p.bigMatchPoints += 0.20; // Goal in knockout
+                    const isWinner = (s.teamId === m.homeTeam && m.homeScore >= m.awayScore) || (s.teamId === m.awayTeam && m.awayScore >= m.homeScore);
+                    if (isWinner) {
+                        p.bigMatchPoints += 0.20; // Winning goal
+                    }
+                    if (m.homeScore === m.awayScore) {
+                        p.bigMatchPoints += 0.15; // Equalizer
+                    }
+                }
+            });
+
+            scorers.forEach(s => {
+                if (!s.assist) return;
+                const p = getOrCreatePlayer(s.assist, s.teamId);
+                matchPlayers.add(`${s.assist}-${s.teamId}`);
+                p.assists += 1;
+                p.weightedAssists += 1 * mult;
+
+                if (isKnockout) {
+                    p.bigMatchPoints += 0.15; // Assist in knockout
+                }
+            });
+
+            // POTM
+            if (m.playerOfMatch) {
+                let potmTeamId = m.homeTeam;
+                const normalizedPotm = m.playerOfMatch.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+                teams.forEach(t => {
+                    if (t.squad && t.squad.some(p => p.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() === normalizedPotm)) {
+                        potmTeamId = t.id;
+                    }
+                });
+
+                const p = getOrCreatePlayer(m.playerOfMatch, potmTeamId);
+                matchPlayers.add(`${m.playerOfMatch}-${potmTeamId}`);
+                p.potm += 1;
+
+                if (isKnockout) {
+                    p.bigMatchPoints += 0.30; // POTM in knockout
+                }
+            }
+
+            // Cards
+            const cards = m.cards || [];
+            cards.forEach(c => {
+                if (!c.name) return;
+                const p = getOrCreatePlayer(c.name, c.teamId);
+                matchPlayers.add(`${c.name}-${c.teamId}`);
+                if (c.type === 'yellow') p.yellows += 1;
+                if (c.type === 'red') p.reds += 1;
+            });
+
+            // Calculate match rating for each participant
+            matchPlayers.forEach(key => {
+                const p = players[key];
+                if (!p) return;
+
+                p.matchesPlayed += 1;
+
+                let matchRating = 6.5; // base
+
+                const isHome = p.teamId === m.homeTeam;
+                const myScore = isHome ? m.homeScore : m.awayScore;
+                const oppScore = isHome ? m.awayScore : m.homeScore;
+
+                if (myScore > oppScore) {
+                    matchRating += 0.5;
+                } else if (myScore === oppScore) {
+                    matchRating += 0.1;
+                } else {
+                    matchRating -= 0.2;
+                }
+
+                const pos = getPlayerPosition(p.name, p.teamId);
+                const isCleanSheet = oppScore === 0;
+                if (isCleanSheet && (pos === 'GK' || pos === 'DF')) {
+                    matchRating += 0.8;
+                    if (isKnockout && pos === 'GK') {
+                        p.bigMatchPoints += 0.15; // clean sheet bonus
+                    }
+                }
+
+                const matchGoals = (m.scorers || []).filter(s => s.name === p.name && s.teamId === p.teamId && !s.ownGoal).length;
+                const matchAssists = (m.scorers || []).filter(s => s.assist === p.name && s.teamId === p.teamId).length;
+                const isPOTM = m.playerOfMatch === p.name;
+                const hasYellow = (m.cards || []).some(c => c.name === p.name && c.teamId === p.teamId && c.type === 'yellow');
+                const hasRed = (m.cards || []).some(c => c.name === p.name && c.teamId === p.teamId && c.type === 'red');
+
+                matchRating += matchGoals * 0.8;
+                matchRating += matchAssists * 0.6;
+                if (isPOTM) matchRating += 1.0;
+                if (hasYellow) matchRating -= 0.2;
+                if (hasRed) matchRating -= 1.0;
+
+                if (isKnockout) {
+                    matchRating += 0.3;
+                    // Penalty Shootout Hero bonus (assume win on penalties)
+                    const isDraw = m.homeScore === m.awayScore;
+                    if (isDraw && m.status === 'completed') {
+                        // Check if team advanced
+                        const winner = (m.winner || m.winnerId || '').toLowerCase();
+                        const wonShootout = winner === p.teamId.toLowerCase() || winner === p.team.toLowerCase();
+                        if (wonShootout) {
+                            if (pos === 'GK') p.bigMatchPoints += 0.40; // Penalty shootout GK hero
+                            else if (isPOTM) p.bigMatchPoints += 0.40; // Penalty shootout outfield hero
+                        }
+                    }
+                }
+
+                const hashValue = ((p.name.charCodeAt(0) * 7 + p.name.charCodeAt(p.name.length - 1) * 3 + m.match_id) % 11) - 5;
+                matchRating += hashValue * 0.05;
+
+                matchRating = Math.max(3.0, Math.min(10.0, matchRating));
+                p.matchRatings.push(matchRating);
+            });
+        });
+
+        // Find leaders
+        let maxWeightedGoals = 0.1;
+        let maxWeightedAssists = 0.1;
+        let maxMOTM = 0.1;
+        let maxBigMatchPoints = 0.1;
+
+        Object.values(players).forEach(p => {
+            if (p.weightedGoals > maxWeightedGoals) maxWeightedGoals = p.weightedGoals;
+            if (p.weightedAssists > maxWeightedAssists) maxWeightedAssists = p.weightedAssists;
+            if (p.potm > maxMOTM) maxMOTM = p.potm;
+            if (p.bigMatchPoints > maxBigMatchPoints) maxBigMatchPoints = p.bigMatchPoints;
+        });
+
+        const getTeamProgressScore = (tId) => {
+            const teamMatches = matches.filter(m => m.homeTeam === tId || m.awayTeam === tId);
+            let maxStage = 'Group Stage';
+
+            teamMatches.forEach(m => {
+                const stage = m.stage || 'Group Stage';
+                const stageOrder = {
+                    'Group Stage': 1,
+                    'Round of 32': 2,
+                    'Round of 16': 3,
+                    'Quarter-finals': 4,
+                    'Semi-finals': 5,
+                    'Final': 6
+                };
+                if ((stageOrder[stage] || 0) > (stageOrder[maxStage] || 0)) {
+                    maxStage = stage;
+                }
+            });
+
+            if (maxStage === 'Final') {
+                const finalMatch = teamMatches.find(m => m.stage === 'Final');
+                if (finalMatch && finalMatch.status === 'completed') {
+                    const winner = finalMatch.winner || finalMatch.winnerId || (finalMatch.homeScore > finalMatch.awayScore ? finalMatch.homeTeam : finalMatch.awayTeam);
+                    if (winner === tId) return 10;
+                }
+                return 9;
+            }
+            if (maxStage === 'Semi-finals') return 8;
+            if (maxStage === 'Quarter-finals') return 7;
+            if (maxStage === 'Round of 16') return 6;
+            if (maxStage === 'Round of 32') return 5;
+            return 3;
+        };
+
+        return Object.values(players)
+            .filter(p => p.matchesPlayed > 0)
+            .map(p => {
+                const goalScore = Math.max(0, Math.min(10, (p.weightedGoals / maxWeightedGoals) * 10));
+                const assistScore = Math.max(0, Math.min(10, (p.weightedAssists / maxWeightedAssists) * 10));
+                
+                const avgRating = p.matchRatings.reduce((sum, r) => sum + r, 0) / p.matchRatings.length;
+                const ratingScore = avgRating;
+
+                const motmScore = Math.max(0, Math.min(10, (p.potm / maxMOTM) * 10));
+                const teamProgressScore = getTeamProgressScore(p.teamId);
+                const bigMatchScore = Math.max(0, Math.min(10, (p.bigMatchPoints / maxBigMatchPoints) * 10));
+
+                const finalMvpScore = (0.25 * goalScore) + (0.15 * assistScore) + (0.35 * ratingScore) + (0.10 * motmScore) + (0.10 * teamProgressScore) + (0.05 * bigMatchScore);
+                const clampedMvpScore = Math.max(0.0, Math.min(10.0, finalMvpScore));
+
+                return {
+                    ...p,
+                    avgRating,
+                    score: clampedMvpScore
+                };
+            })
+            .sort((a, b) => b.score - a.score || b.goals - a.goals || a.name.localeCompare(b.name))
+            .map((p, idx) => ({ ...p, rank: idx + 1 }))
+            .slice(0, 20);
+    }, [completedMatches, teams, matches]);
 
     const discipline = useMemo(() => {
         const yellowCards = {};
@@ -505,6 +885,76 @@ const Standings = () => {
         };
     }, [completedMatches]);
 
+    const summaryBreakdownData = useMemo(() => {
+        const data = {
+            goals: [],
+            yellowCards: {},
+            redCards: {},
+            penalties: {},
+            ownGoals: {}
+        };
+
+        // 1. Goals (all active teams sorted by goalsScored)
+        data.goals = [...allTeamStats]
+            .filter(t => t.matchesPlayed > 0)
+            .sort((a, b) => b.goalsScored - a.goalsScored || a.name.localeCompare(b.name));
+
+        const addEvent = (category, teamId, playerName) => {
+            const team = teams.find(t => t.id === teamId);
+            if (!team) return;
+
+            if (!data[category][teamId]) {
+                data[category][teamId] = {
+                    id: teamId,
+                    name: team.name,
+                    countryCode: team.countryCode,
+                    count: 0,
+                    players: {}
+                };
+            }
+            data[category][teamId].count += 1;
+            data[category][teamId].players[playerName] = (data[category][teamId].players[playerName] || 0) + 1;
+        };
+
+        completedMatches.forEach(m => {
+            // Cards
+            const cards = m.cards || [];
+            cards.forEach(c => {
+                if (!c.name || !c.teamId) return;
+                if (c.type === 'yellow') {
+                    addEvent('yellowCards', c.teamId, c.name);
+                } else if (c.type === 'red') {
+                    addEvent('redCards', c.teamId, c.name);
+                }
+            });
+
+            // Scorers (penalties & own goals)
+            const scorers = m.scorers || [];
+            scorers.forEach(s => {
+                if (!s.name || !s.teamId) return;
+                if (s.penalty) {
+                    addEvent('penalties', s.teamId, s.name);
+                }
+                if (s.ownGoal) {
+                    addEvent('ownGoals', s.teamId, s.name);
+                }
+            });
+        });
+
+        const sortCategory = (cat) => {
+            return Object.values(data[cat])
+                .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+        };
+
+        return {
+            goals: data.goals,
+            yellowCards: sortCategory('yellowCards'),
+            redCards: sortCategory('redCards'),
+            penalties: sortCategory('penalties'),
+            ownGoals: sortCategory('ownGoals')
+        };
+    }, [completedMatches, teams, allTeamStats]);
+
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
@@ -710,23 +1160,23 @@ const Standings = () => {
                     </Card>
                 </section>
 
-                {/* Section 3: Assists */}
-                <section id="assists" className="scroll-mt-36">
-                    <div className="flex items-center gap-3 mb-8">
-                        <Hand className="w-8 h-8 text-green-500" />
-                        <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Most Assists</h2>
-                    </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <Card className="p-0 overflow-hidden border-gray-800 bg-gray-900/50">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                    {/* Section: Most Assists */}
+                    <section id="assists" className="scroll-mt-36">
+                        <div className="flex items-center gap-3 mb-8">
+                            <Hand className="w-8 h-8 text-green-500" />
+                            <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Most Assists</h2>
+                        </div>
+                        <Card className="p-0 overflow-hidden border-gray-800 bg-gray-900/50 flex flex-col">
                             <table className="w-full text-left">
-                                <thead className="bg-gray-800/50 text-[10px] text-gray-400 uppercase tracking-widest font-black">
+                                <thead className="bg-gray-800/20 text-[10px] text-gray-400 uppercase tracking-widest font-black">
                                     <tr>
                                         <th className="px-6 py-4">Rank</th>
                                         <th className="px-6 py-4">Player</th>
                                         <th className="px-6 py-4 text-center">Assists</th>
                                     </tr>
                                 </thead>
-                                <tbody className="divide-y divide-gray-800">
+                                <tbody className="divide-y divide-gray-800/40">
                                     {topAssists.map((player) => (
                                         <tr key={`${player.name}-${player.team}`} className="hover:bg-white/5 transition-colors group">
                                             <td className="px-6 py-4 font-black text-gray-500">#{player.rank}</td>
@@ -754,19 +1204,143 @@ const Standings = () => {
                                 </tbody>
                             </table>
                         </Card>
-                        <div className="flex flex-col justify-center gap-6">
-                            <div className="bg-green-500/5 border border-green-500/20 rounded-2xl p-8">
-                                <h4 className="text-sm font-black text-green-400 uppercase tracking-widest mb-2 text-glow">Stat Fact</h4>
-                                <p className="text-gray-400 leading-relaxed">
-                                    {topAssists.length > 0 ? (
-                                        `${topAssists[0].name} has registered ${topAssists[0].assists} assists so far this tournament, leading the playmaking charts.`
-                                    ) : (
-                                        "Kevin De Bruyne has averaged 1.2 big chances created per 90 minutes so far this tournament, the highest among all midfielders with at least 180 minutes played."
-                                    )}
-                                </p>
-                            </div>
+                    </section>
+
+                    {/* Section: Most G+A */}
+                    <section id="ga" className="scroll-mt-36">
+                        <div className="flex items-center gap-3 mb-8">
+                            <Sparkles className="w-8 h-8 text-green-500" />
+                            <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Most Goal Involvements (G+A)</h2>
                         </div>
+                        <Card className="p-0 overflow-hidden border-gray-800 bg-gray-900/50 flex flex-col">
+                            <table className="w-full text-left">
+                                <thead className="bg-gray-800/20 text-[10px] text-gray-400 uppercase tracking-widest font-black">
+                                    <tr>
+                                        <th className="px-6 py-4">Rank</th>
+                                        <th className="px-6 py-4">Player</th>
+                                        <th className="px-6 py-4 text-center">Goals</th>
+                                        <th className="px-6 py-4 text-center">Assists</th>
+                                        <th className="px-6 py-4 text-center">G+A</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-gray-800/40">
+                                    {topGA.map((player) => (
+                                        <tr key={`${player.name}-${player.team}`} className="hover:bg-white/5 transition-colors group">
+                                            <td className="px-6 py-4 font-black text-gray-500">#{player.rank}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="flex items-center gap-3">
+                                                    <Flag code={player.teamCode} />
+                                                    <div className="flex flex-col">
+                                                        <span className="font-bold text-white leading-tight">{player.name}</span>
+                                                        <span className="text-[10px] text-gray-500">{player.team}</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-4 text-center text-slate-400 font-bold">
+                                                {player.goals}
+                                            </td>
+                                            <td className="px-6 py-4 text-center text-slate-400 font-bold">
+                                                {player.assists}
+                                            </td>
+                                            <td className="px-6 py-4 text-center">
+                                                <span className="inline-block px-3 py-0.5 bg-green-500/10 text-green-400 rounded-full font-black text-sm">
+                                                    {player.ga}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                    {topGA.length === 0 && (
+                                        <tr>
+                                            <td colSpan="5" className="px-6 py-12 text-center text-gray-500 italic text-sm">
+                                                No goal involvements recorded yet.
+                                            </td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
+                        </Card>
+                    </section>
+                </div>
+
+                {/* Section: Tournament MVP */}
+                <section id="mvp" className="scroll-mt-36">
+                    <div className="flex items-center gap-3 mb-8">
+                        <Award className="w-8 h-8 text-green-500" />
+                        <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Tournament MVP Race</h2>
                     </div>
+                    <Card className="p-0 overflow-hidden border-gray-800 bg-gray-900/50">
+                        <div className="bg-gray-800/20 px-6 py-5 border-b border-gray-800 flex justify-between items-center">
+                            <div>
+                                <h3 className="font-bold text-white text-sm uppercase tracking-wider">MVP Score Leaderboard</h3>
+                                <p className="text-[10px] text-gray-400 font-semibold leading-tight mt-1">Weighted Formula: 25% Goals (stage-weighted) + 15% Assists (stage-weighted) + 35% Avg Match Rating + 10% MOTM + 10% Team Progress + 5% Big Match Impact</p>
+                            </div>
+                            <span className="text-[10px] bg-green-500/10 border border-green-500/20 text-green-400 px-3 py-1 rounded-full uppercase tracking-wider font-extrabold">
+                                LIVE RATINGS
+                            </span>
+                        </div>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left">
+                                <thead className="bg-gray-800/10 text-[10px] text-gray-400 uppercase tracking-widest font-black">
+                                    <tr>
+                                        <th className="px-6 py-4">Rank</th>
+                                        <th className="px-6 py-4">Player</th>
+                                        <th className="px-6 py-4">Country</th>
+                                        <th className="px-6 py-4 text-center">Goals</th>
+                                        <th className="px-6 py-4 text-center">Assists</th>
+                                        <th className="px-6 py-4 text-center">Avg Rating</th>
+                                        <th className="px-6 py-4 text-center">MOTM</th>
+                                        <th className="px-6 py-4 text-center">MVP Score</th>
+                                        <th className="px-6 py-4">Reason for Ranking</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-gray-800/40">
+                                    {mvpCandidates.map((player) => (
+                                        <tr key={`${player.name}-${player.teamId}`} className="hover:bg-white/5 transition-colors group text-sm">
+                                            <td className="px-6 py-4 font-black text-gray-500 whitespace-nowrap">
+                                                {player.rank === 1 ? <Trophy className="w-4 h-4 text-yellow-500" /> : `#${player.rank}`}
+                                            </td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <span className="font-bold text-white group-hover:text-green-400 transition-colors">{player.name}</span>
+                                            </td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="flex items-center gap-2">
+                                                    <Flag code={player.teamCode} />
+                                                    <span className="text-gray-400">{player.team}</span>
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-4 text-center text-slate-300 font-bold">
+                                                {player.goals}
+                                            </td>
+                                            <td className="px-6 py-4 text-center text-slate-300 font-bold">
+                                                {player.assists}
+                                            </td>
+                                            <td className="px-6 py-4 text-center text-slate-300 font-bold">
+                                                {player.avgRating.toFixed(2)}
+                                            </td>
+                                            <td className="px-6 py-4 text-center text-slate-300 font-bold">
+                                                {player.potm}
+                                            </td>
+                                            <td className="px-6 py-4 text-center">
+                                                <span className="inline-block px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full font-black text-sm text-glow">
+                                                    {player.score.toFixed(1)} / 10
+                                                </span>
+                                            </td>
+                                            <td className="px-6 py-4 text-xs text-gray-400 leading-relaxed max-w-sm" title={generateReason(player)}>
+                                                {generateReason(player)}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                    {mvpCandidates.length === 0 && (
+                                        <tr>
+                                            <td colSpan="9" className="px-6 py-12 text-center text-gray-500 italic text-sm">
+                                                No completed matches recorded yet.
+                                            </td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
+                    </Card>
                 </section>
 
                 {/* Section 4: Discipline */}
@@ -876,10 +1450,13 @@ const Standings = () => {
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card className="text-center p-4 border-gray-800 bg-gray-900/50 h-full flex flex-col justify-between hover:border-green-500/20 transition-all duration-300">
+                            <Card 
+                                onClick={() => { setSummaryModalType('goals'); setDrillDownTeamId(null); }}
+                                className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-green-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
+                            >
                                 <div>
                                     <Goal className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                                    <p className="text-[9px] text-gray-500 font-black uppercase tracking-widest mb-1">Total Goals</p>
+                                    <p className="text-[9px] text-gray-505 font-black uppercase tracking-widest mb-1 group-hover:text-green-400 transition-colors">Total Goals</p>
                                 </div>
                                 <div className="mt-3">
                                     <h4 className="text-2xl font-black text-white mb-1">{tournamentSummaryStats.totalGoals}</h4>
@@ -890,10 +1467,13 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card className="text-center p-4 border-gray-800 bg-gray-900/50 h-full flex flex-col justify-between hover:border-yellow-500/20 transition-all duration-300">
+                            <Card 
+                                onClick={() => { setSummaryModalType('yellowCards'); setDrillDownTeamId(null); }}
+                                className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-yellow-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
+                            >
                                 <div>
                                     <div className="w-4 h-5.5 bg-yellow-400 rounded-sm mx-auto mb-3 border border-yellow-300/30 shadow-md shadow-yellow-500/20" />
-                                    <p className="text-[9px] text-gray-500 font-black uppercase tracking-widest mb-1">Yellow Cards</p>
+                                    <p className="text-[9px] text-gray-550 font-black uppercase tracking-widest mb-1 group-hover:text-yellow-400 transition-colors">Yellow Cards</p>
                                 </div>
                                 <div className="mt-3">
                                     <h4 className="text-2xl font-black text-white mb-1">{tournamentSummaryStats.totalYellowCards}</h4>
@@ -904,10 +1484,13 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card className="text-center p-4 border-gray-800 bg-gray-900/50 h-full flex flex-col justify-between hover:border-red-500/20 transition-all duration-300">
+                            <Card 
+                                onClick={() => { setSummaryModalType('redCards'); setDrillDownTeamId(null); }}
+                                className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-red-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
+                            >
                                 <div>
                                     <div className="w-4 h-5.5 bg-red-500 rounded-sm mx-auto mb-3 border border-red-400/30 shadow-md shadow-red-500/20" />
-                                    <p className="text-[9px] text-gray-500 font-black uppercase tracking-widest mb-1">Red Cards</p>
+                                    <p className="text-[9px] text-gray-550 font-black uppercase tracking-widest mb-1 group-hover:text-red-500 transition-colors">Red Cards</p>
                                 </div>
                                 <div className="mt-3">
                                     <h4 className="text-2xl font-black text-white mb-1">{tournamentSummaryStats.totalRedCards}</h4>
@@ -918,10 +1501,13 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card className="text-center p-4 border-gray-800 bg-gray-900/50 h-full flex flex-col justify-between hover:border-purple-500/20 transition-all duration-300">
+                            <Card 
+                                onClick={() => { setSummaryModalType('penalties'); setDrillDownTeamId(null); }}
+                                className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-purple-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
+                            >
                                 <div>
                                     <Sparkles className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                                    <p className="text-[9px] text-gray-500 font-black uppercase tracking-widest mb-1">Penalties</p>
+                                    <p className="text-[9px] text-gray-550 font-black uppercase tracking-widest mb-1 group-hover:text-purple-400 transition-colors">Penalties</p>
                                 </div>
                                 <div className="mt-3">
                                     <h4 className="text-2xl font-black text-white mb-1">{tournamentSummaryStats.totalPenaltiesConceded}</h4>
@@ -930,10 +1516,13 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card className="text-center p-4 border-gray-800 bg-gray-900/50 h-full flex flex-col justify-between hover:border-amber-500/20 transition-all duration-300">
+                            <Card 
+                                onClick={() => { setSummaryModalType('ownGoals'); setDrillDownTeamId(null); }}
+                                className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-amber-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
+                            >
                                 <div>
                                     <AlertCircle className="w-6 h-6 text-amber-400 mx-auto mb-2" />
-                                    <p className="text-[9px] text-gray-500 font-black uppercase tracking-widest mb-1">Own Goals</p>
+                                    <p className="text-[9px] text-gray-550 font-black uppercase tracking-widest mb-1 group-hover:text-amber-400 transition-colors">Own Goals</p>
                                 </div>
                                 <div className="mt-3">
                                     <h4 className="text-2xl font-black text-white mb-1">{tournamentSummaryStats.totalOwnGoals}</h4>
@@ -942,7 +1531,7 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card className="text-center p-4 border-gray-800 bg-gray-900/50 h-full flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
+                            <Card className="text-center p-4 border-gray-800 bg-gray-900/50 h-full flex flex-col justify-between transition-all duration-300">
                                 <div>
                                     <Activity className="w-6 h-6 text-blue-400 mx-auto mb-2" />
                                     <p className="text-[9px] text-gray-500 font-black uppercase tracking-widest mb-1">Total Fouls</p>
@@ -1056,6 +1645,115 @@ const Standings = () => {
                             </tbody>
                         </table>
                     </div>
+                </Modal>
+
+                {/* Summary Stats Detail Modal */}
+                <Modal
+                    isOpen={!!summaryModalType}
+                    onClose={() => {
+                        setSummaryModalType(null);
+                        setDrillDownTeamId(null);
+                    }}
+                    title={
+                        summaryModalType === 'goals' ? 'Tournament Goals - All Teams' :
+                        summaryModalType === 'yellowCards' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Yellow Cards Breakdown` : 'Yellow Cards by Team') :
+                        summaryModalType === 'redCards' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Red Cards Breakdown` : 'Red Cards by Team') :
+                        summaryModalType === 'penalties' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Penalties Breakdown` : 'Penalties Scored by Team') :
+                        summaryModalType === 'ownGoals' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Own Goals Breakdown` : 'Own Goals Conceded by Team') : ''
+                    }
+                >
+                    {drillDownTeamId ? (
+                        <div className="flex flex-col gap-4">
+                            <button
+                                onClick={() => setDrillDownTeamId(null)}
+                                className="text-left text-xs font-black text-green-400 hover:text-green-300 uppercase tracking-widest flex items-center gap-1.5 cursor-pointer border-none bg-transparent"
+                            >
+                                ← Back to Team List
+                            </button>
+                            <div className="overflow-x-auto border border-gray-800 rounded-xl bg-slate-950/40">
+                                <table className="w-full text-left text-xs">
+                                    <thead>
+                                        <tr className="text-gray-500 border-b border-gray-800 uppercase font-black tracking-widest">
+                                            <th className="px-6 py-3">Player</th>
+                                            <th className="px-6 py-3 text-right">Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-800/40">
+                                        {Object.entries(
+                                            summaryBreakdownData[summaryModalType]?.find(t => t.id === drillDownTeamId)?.players || {}
+                                        )
+                                            .sort((a, b) => b[1] - a[1])
+                                            .map(([playerName, count]) => (
+                                                <tr key={playerName} className="hover:bg-gray-800/10 transition-colors">
+                                                    <td className="px-6 py-3 font-bold text-white uppercase">{playerName}</td>
+                                                    <td className="px-6 py-3 text-right font-black text-green-400 text-sm">x{count}</td>
+                                                </tr>
+                                            ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="flex flex-col gap-2">
+                            {summaryModalType !== 'goals' && (
+                                <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wider mb-2">
+                                    Click on a team name to view the player-wise breakdown.
+                                </p>
+                            )}
+                            <div className="overflow-x-auto border border-gray-800 rounded-xl bg-slate-950/40 max-h-[60vh]">
+                                <table className="w-full text-left text-xs">
+                                    <thead>
+                                        <tr className="text-gray-500 border-b border-gray-800 uppercase font-black tracking-widest">
+                                            <th className="px-4 py-3 text-center">Rank</th>
+                                            <th className="px-2 py-3">Team</th>
+                                            <th className="px-4 py-3 text-right">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-800/40">
+                                        {summaryModalType === 'goals' ? (
+                                            summaryBreakdownData.goals.map((team, idx) => (
+                                                <tr key={team.id} className="border-b border-gray-800/40 hover:bg-gray-800/20 transition-colors">
+                                                    <td className="px-4 py-3 text-center font-black text-gray-400">#{idx + 1}</td>
+                                                    <td className="px-2 py-3">
+                                                        <div className="flex items-center gap-3">
+                                                            <Flag code={team.countryCode} circular={true} className="w-6 h-6 border border-gray-800" style={{ width: '24px', height: '24px' }} />
+                                                            <span className="font-bold text-white uppercase">{team.name}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td className="px-4 py-3 text-right font-black text-green-400 text-sm">{team.goalsScored} Goals</td>
+                                                </tr>
+                                            ))
+                                        ) : (
+                                            (summaryBreakdownData[summaryModalType] || []).map((team, idx) => (
+                                                <tr key={team.id} className="border-b border-gray-800/40 hover:bg-gray-800/20 transition-colors">
+                                                    <td className="px-4 py-3 text-center font-black text-gray-400">#{idx + 1}</td>
+                                                    <td className="px-2 py-3">
+                                                        <button
+                                                            onClick={() => setDrillDownTeamId(team.id)}
+                                                            className="flex items-center gap-3 border-none bg-transparent cursor-pointer text-left group"
+                                                        >
+                                                            <Flag code={team.countryCode} circular={true} className="w-6 h-6 border border-gray-800" style={{ width: '24px', height: '24px' }} />
+                                                            <span className="font-bold text-white uppercase group-hover:text-green-400 transition-colors underline decoration-dotted decoration-gray-500 group-hover:decoration-green-400">
+                                                                {team.name}
+                                                            </span>
+                                                        </button>
+                                                    </td>
+                                                    <td className="px-4 py-3 text-right font-black text-green-400 text-sm">x{team.count}</td>
+                                                </tr>
+                                            ))
+                                        )}
+                                        {summaryModalType && summaryBreakdownData[summaryModalType]?.length === 0 && (
+                                            <tr>
+                                                <td colSpan="3" className="px-6 py-12 text-center text-gray-500 italic text-sm">
+                                                    No statistics recorded yet.
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    )}
                 </Modal>
 
                 {/* Best 3rd Place Teams Modal */}
