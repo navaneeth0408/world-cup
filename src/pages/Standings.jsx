@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTournament } from '../hooks/useTournament';
 import Navbar from '../components/ui/Navbar';
@@ -8,6 +8,8 @@ import Modal from '../components/ui/Modal';
 import Button from '../components/ui/Button';
 import { Trophy, Goal, Hand, Shield, Users, BarChart3, AlertCircle, Activity, Sparkles, Award, X, Info } from 'lucide-react';
 import lineupsData from '../data/lineups.json';
+import currentSquadsData from '../data/current_squads.json';
+import playerMatchRatingsData from '../data/player match ratings.json';
 
 const normalizeName = (name) => {
     if (!name) return "";
@@ -20,16 +22,58 @@ const normalizeName = (name) => {
 };
 
 const generateReason = (p) => {
-    if (p.rank === 1) {
-        return `Tournament leader with ${p.score.toFixed(1)}/10 rating, driving ${p.team}'s campaign with ${p.goals} goals and ${p.potm} MOTM awards.`;
-    }
+    const pos = p.position || 'FW';
     const factors = [];
-    if (p.goals > 0) factors.push(`${p.goals} goal${p.goals > 1 ? 's' : ''}`);
-    if (p.assists > 0) factors.push(`${p.assists} assist${p.assists > 1 ? 's' : ''}`);
-    if (p.potm > 0) factors.push(`${p.potm} MOTM award${p.potm > 1 ? 's' : ''}`);
+
+    if (pos === 'GK') {
+        if (p.cleanSheets > 0) {
+            factors.push(`${p.cleanSheets} clean sheet${p.cleanSheets > 1 ? 's' : ''}`);
+        }
+        if (p.penaltySaves > 0) {
+            factors.push(`${p.penaltySaves} penalty save${p.penaltySaves > 1 ? 's' : ''}`);
+        }
+        if (factors.length === 0) {
+            factors.push("solid presence in goal");
+        }
+        if (p.potm > 0) {
+            factors.push(`${p.potm} MOTM award${p.potm > 1 ? 's' : ''}`);
+        }
+    } else if (pos === 'DF') {
+        if (p.cleanSheets > 0) {
+            factors.push(`${p.cleanSheets} clean sheet${p.cleanSheets > 1 ? 's' : ''}`);
+        }
+        factors.push("key defensive contributions");
+        if (p.goals > 0) factors.push(`${p.goals} goal${p.goals > 1 ? 's' : ''}`);
+        if (p.assists > 0) factors.push(`${p.assists} assist${p.assists > 1 ? 's' : ''}`);
+        if (p.potm > 0) factors.push(`${p.potm} MOTM award${p.potm > 1 ? 's' : ''}`);
+    } else if (pos === 'MF') {
+        if (p.goals > 0) factors.push(`${p.goals} goal${p.goals > 1 ? 's' : ''}`);
+        if (p.assists > 0) factors.push(`${p.assists} assist${p.assists > 1 ? 's' : ''}`);
+        factors.push("key midfield contributions");
+        if (p.potm > 0) factors.push(`${p.potm} MOTM award${p.potm > 1 ? 's' : ''}`);
+    } else {
+        // FW / default: goals, assists, MOTM
+        if (p.goals > 0) factors.push(`${p.goals} goal${p.goals > 1 ? 's' : ''}`);
+        if (p.assists > 0) factors.push(`${p.assists} assist${p.assists > 1 ? 's' : ''}`);
+        if (p.potm > 0) factors.push(`${p.potm} MOTM award${p.potm > 1 ? 's' : ''}`);
+    }
 
     const desc = factors.join(", ");
-    return `${desc.charAt(0).toUpperCase() + desc.slice(1)} for ${p.team}.`;
+    const reasonPrefix = desc ? desc.charAt(0).toUpperCase() + desc.slice(1) : "Key contributions";
+
+    if (p.rank === 1) {
+        return `Tournament leader with ${p.score.toFixed(1)}/10 rating, ${reasonPrefix.toLowerCase()} for ${p.team}.`;
+    }
+    return `${reasonPrefix} for ${p.team}.`;
+};
+
+// Small buffer to partially compensate for unavailable advanced stats (key passes, interceptions etc.)
+// Kept very small so it can't override actual goal contributions
+const getPositionBuffer = (avgRating) => {
+    const rating = Math.round(avgRating * 10) / 10;
+    if (rating < 6.5) return 0.00;
+    if (rating >= 9.0) return 0.25;
+    return parseFloat(((rating - 6.5) / (9.0 - 6.5) * 0.25).toFixed(2));
 };
 
 const Standings = () => {
@@ -42,6 +86,18 @@ const Standings = () => {
     const [activeMvpReason, setActiveMvpReason] = useState(null);
     const [showMvpFormulaModal, setShowMvpFormulaModal] = useState(false);
     const scrollContainerRef = useRef(null);
+
+    useEffect(() => {
+        const isModalOpen = !!(selectedStatModal || showThirdPlaceModal || summaryModalType || activeMvpReason || showMvpFormulaModal);
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [selectedStatModal, showThirdPlaceModal, summaryModalType, activeMvpReason, showMvpFormulaModal]);
 
     const sections = [
         { id: 'standings', name: 'Standings', icon: Trophy },
@@ -122,7 +178,7 @@ const Standings = () => {
                 });
             }
         });
-        
+
         return thirdTeams.sort((a, b) => {
             if (b.pts !== a.pts) return b.pts - a.pts;
             if (b.gd !== a.gd) return b.gd - a.gd;
@@ -132,13 +188,13 @@ const Standings = () => {
 
     const getTeamGoalkeeper = (team) => {
         if (!team) return 'Unknown GK';
-        
+
         // Find starting GK in lineupsData
         const normalizedTeamName = normalizeName(team.name);
         const lineupInfo = lineupsData?.teams?.find(
             t => normalizeName(t.country_name) === normalizedTeamName
         );
-        
+
         if (lineupInfo?.starting_lineup?.GK) {
             const gkName = lineupInfo.starting_lineup.GK;
             // Match with squad to keep spelling/accents consistent with current_squads.json
@@ -299,19 +355,36 @@ const Standings = () => {
 
     const mvpCandidates = useMemo(() => {
         const players = {};
-        
-        // Helper to get player's position
+
+        // Helper to get player's position from current_squads.json
         const getPlayerPosition = (name, teamId) => {
-            const teamLineup = lineupsData.teams.find(t => t.country_name.toLowerCase() === teamId.toLowerCase());
-            if (!teamLineup) return 'MF';
-            const entry = Object.entries(teamLineup.starting_lineup).find(([pos, pName]) => pName.toLowerCase() === name.toLowerCase());
-            if (!entry) return 'MF';
-            const posCode = entry[0];
-            if (posCode === 'GK') return 'GK';
-            if (posCode.includes('B') || posCode.includes('LWB') || posCode.includes('RWB')) return 'DF';
-            if (posCode.includes('M') || posCode.includes('DM') || posCode.includes('CM') || posCode.includes('AM')) return 'MF';
-            if (posCode.includes('W') || posCode.includes('CF') || posCode.includes('ST') || posCode.includes('F')) return 'FW';
-            return 'MF';
+            const teamSquad = currentSquadsData.find(t => t.id.toLowerCase() === teamId.toLowerCase() || t.name.toLowerCase() === teamId.toLowerCase());
+            if (!teamSquad) return 'FW';
+
+            const normalizedTarget = normalizeName(name);
+            const foundPlayer = teamSquad.squad.find(p => normalizeName(p.name) === normalizedTarget);
+
+            if (!foundPlayer) {
+                // Global fallback search
+                for (const t of currentSquadsData) {
+                    const p = t.squad.find(p => normalizeName(p.name) === normalizedTarget);
+                    if (p) {
+                        const pos = p.position;
+                        if (pos === 'GK') return 'GK';
+                        if (pos === 'DEF') return 'DF';
+                        if (pos === 'MID') return 'MF';
+                        if (pos === 'FWD' || pos === 'FW') return 'FW';
+                    }
+                }
+                return 'FW';
+            }
+
+            const pos = foundPlayer.position;
+            if (pos === 'GK') return 'GK';
+            if (pos === 'DEF') return 'DF';
+            if (pos === 'MID') return 'MF';
+            if (pos === 'FWD' || pos === 'FW') return 'FW';
+            return 'FW';
         };
 
         // Gather all players who have participated (starts/scorers/assists/cards/POTM)
@@ -325,11 +398,16 @@ const Standings = () => {
                         team: t.name,
                         teamId: t.id,
                         teamCode: t.countryCode,
+                        position: getPlayerPosition(name, t.id),
                         goals: 0,
                         assists: 0,
                         potm: 0,
                         yellows: 0,
                         reds: 0,
+                        cleanSheets: 0,
+                        penaltySaves: 0,
+                        braces: 0,
+                        hatTricks: 0,
                         matchRatings: [],
                         weightedGoals: 0,
                         weightedAssists: 0,
@@ -349,11 +427,16 @@ const Standings = () => {
                     team: team ? team.name : teamId,
                     teamId,
                     teamCode: team ? team.countryCode : '',
+                    position: getPlayerPosition(name, teamId),
                     goals: 0,
                     assists: 0,
                     potm: 0,
                     yellows: 0,
                     reds: 0,
+                    cleanSheets: 0,
+                    penaltySaves: 0,
+                    braces: 0,
+                    hatTricks: 0,
                     matchRatings: [],
                     weightedGoals: 0,
                     weightedAssists: 0,
@@ -362,6 +445,11 @@ const Standings = () => {
                 };
             }
             return players[key];
+        };
+
+        const getTeamName = (teamId) => {
+            const team = teams.find(t => t.id === teamId);
+            return team ? team.name.toLowerCase() : teamId.toLowerCase();
         };
 
         const STAGE_MULTIPLIERS = {
@@ -380,7 +468,7 @@ const Standings = () => {
             const isKnockout = m.match_id > 72;
 
             const matchPlayers = new Set();
-            
+
             // Home starters
             const homeLineup = lineupsData.teams.find(t => t.country_name.toLowerCase() === m.homeTeam.toLowerCase());
             if (homeLineup) {
@@ -468,60 +556,108 @@ const Standings = () => {
 
                 p.matchesPlayed += 1;
 
-                let matchRating = 6.5; // base
+                let matchRating = null;
+
+                // Attempt to lookup FotMob rating from player match ratings.json
+                const homeName = getTeamName(m.homeTeam);
+                const awayName = getTeamName(m.awayTeam);
+                const matchKey1 = `${homeName} vs ${awayName}`;
+                const matchKey2 = `${awayName} vs ${homeName}`;
+
+                let matchRatingsObj = null;
+                for (const groupKey in playerMatchRatingsData) {
+                    const groupMatches = playerMatchRatingsData[groupKey];
+                    if (groupMatches[matchKey1]) {
+                        matchRatingsObj = groupMatches[matchKey1];
+                        break;
+                    }
+                    if (groupMatches[matchKey2]) {
+                        matchRatingsObj = groupMatches[matchKey2];
+                        break;
+                    }
+                }
+
+                if (matchRatingsObj) {
+                    const normalizedTarget = normalizeName(p.name);
+                    const foundKey = Object.keys(matchRatingsObj).find(k => normalizeName(k) === normalizedTarget);
+                    if (foundKey) {
+                        const info = matchRatingsObj[foundKey];
+                        // User requested: "use fotmob ratings only for consideration"
+                        if (info.fotmob !== undefined) {
+                            matchRating = info.fotmob;
+                        } else if (info.sofascore !== undefined) {
+                            matchRating = info.sofascore;
+                        }
+                    }
+                }
 
                 const isHome = p.teamId === m.homeTeam;
                 const myScore = isHome ? m.homeScore : m.awayScore;
                 const oppScore = isHome ? m.awayScore : m.homeScore;
 
-                if (myScore > oppScore) {
-                    matchRating += 0.5;
-                } else if (myScore === oppScore) {
-                    matchRating += 0.1;
-                } else {
-                    matchRating -= 0.2;
-                }
-
-                const pos = getPlayerPosition(p.name, p.teamId);
-                const isCleanSheet = oppScore === 0;
-                if (isCleanSheet && (pos === 'GK' || pos === 'DF')) {
-                    matchRating += 0.8;
-                    if (isKnockout && pos === 'GK') {
-                        p.bigMatchPoints += 0.15; // clean sheet bonus
-                    }
+                if (oppScore === 0) {
+                    p.cleanSheets = (p.cleanSheets || 0) + 1;
                 }
 
                 const matchGoals = (m.scorers || []).filter(s => s.name === p.name && s.teamId === p.teamId && !s.ownGoal).length;
-                const matchAssists = (m.scorers || []).filter(s => s.assist === p.name && s.teamId === p.teamId).length;
-                const isPOTM = m.playerOfMatch === p.name;
-                const hasYellow = (m.cards || []).some(c => c.name === p.name && c.teamId === p.teamId && c.type === 'yellow');
-                const hasRed = (m.cards || []).some(c => c.name === p.name && c.teamId === p.teamId && c.type === 'red');
-
-                matchRating += matchGoals * 0.8;
-                matchRating += matchAssists * 0.6;
-                if (isPOTM) matchRating += 1.0;
-                if (hasYellow) matchRating -= 0.2;
-                if (hasRed) matchRating -= 1.0;
-
-                if (isKnockout) {
-                    matchRating += 0.3;
-                    // Penalty Shootout Hero bonus (assume win on penalties)
-                    const isDraw = m.homeScore === m.awayScore;
-                    if (isDraw && m.status === 'completed') {
-                        // Check if team advanced
-                        const winner = (m.winner || m.winnerId || '').toLowerCase();
-                        const wonShootout = winner === p.teamId.toLowerCase() || winner === p.team.toLowerCase();
-                        if (wonShootout) {
-                            if (pos === 'GK') p.bigMatchPoints += 0.40; // Penalty shootout GK hero
-                            else if (isPOTM) p.bigMatchPoints += 0.40; // Penalty shootout outfield hero
-                        }
-                    }
+                if (matchGoals === 2) {
+                    p.braces = (p.braces || 0) + 1;
+                } else if (matchGoals >= 3) {
+                    p.hatTricks = (p.hatTricks || 0) + 1;
                 }
 
-                const hashValue = ((p.name.charCodeAt(0) * 7 + p.name.charCodeAt(p.name.length - 1) * 3 + m.match_id) % 11) - 5;
-                matchRating += hashValue * 0.05;
+                // Fallback to simulated rating if not found (e.g. knockouts or missing matches)
+                if (matchRating === null) {
+                    matchRating = 6.5; // base
 
-                matchRating = Math.max(3.0, Math.min(10.0, matchRating));
+                    if (myScore > oppScore) {
+                        matchRating += 0.5;
+                    } else if (myScore === oppScore) {
+                        matchRating += 0.1;
+                    } else {
+                        matchRating -= 0.2;
+                    }
+
+                    const pos = p.position;
+                    const isCleanSheet = oppScore === 0;
+                    if (isCleanSheet && (pos === 'GK' || pos === 'DF')) {
+                        matchRating += 0.8;
+                        if (isKnockout && pos === 'GK') {
+                            p.bigMatchPoints += 0.15; // clean sheet bonus
+                        }
+                    }
+
+                    const matchAssists = (m.scorers || []).filter(s => s.assist === p.name && s.teamId === p.teamId).length;
+                    const isPOTM = m.playerOfMatch === p.name;
+                    const hasYellow = (m.cards || []).some(c => c.name === p.name && c.teamId === p.teamId && c.type === 'yellow');
+                    const hasRed = (m.cards || []).some(c => c.name === p.name && c.teamId === p.teamId && c.type === 'red');
+
+                    matchRating += matchGoals * 0.8;
+                    matchRating += matchAssists * 0.6;
+                    if (hasYellow) matchRating -= 0.2;
+                    if (hasRed) matchRating -= 1.0;
+
+                    if (isKnockout) {
+                        matchRating += 0.3;
+                        // Penalty Shootout Hero bonus (assume win on penalties)
+                        const isDraw = m.homeScore === m.awayScore;
+                        if (isDraw && m.status === 'completed') {
+                            // Check if team advanced
+                            const winner = (m.winner || m.winnerId || '').toLowerCase();
+                            const wonShootout = winner === p.teamId.toLowerCase() || winner === p.team.toLowerCase();
+                            if (wonShootout) {
+                                if (pos === 'GK') p.bigMatchPoints += 0.40; // Penalty shootout GK hero
+                                else if (isPOTM) p.bigMatchPoints += 0.40; // Penalty shootout outfield hero
+                            }
+                        }
+                    }
+
+                    const hashValue = ((p.name.charCodeAt(0) * 7 + p.name.charCodeAt(p.name.length - 1) * 3 + m.match_id) % 11) - 5;
+                    matchRating += hashValue * 0.05;
+
+                    matchRating = Math.max(3.0, Math.min(10.0, matchRating));
+                }
+
                 p.matchRatings.push(matchRating);
             });
         });
@@ -539,55 +675,82 @@ const Standings = () => {
             if (p.bigMatchPoints > maxBigMatchPoints) maxBigMatchPoints = p.bigMatchPoints;
         });
 
-        const getTeamProgressScore = (tId) => {
-            const teamMatches = matches.filter(m => m.homeTeam === tId || m.awayTeam === tId);
-            let maxStage = 'Group Stage';
+        const qualifiedTeamIds = new Set();
 
-            teamMatches.forEach(m => {
-                const stage = m.stage || 'Group Stage';
-                const stageOrder = {
-                    'Group Stage': 1,
-                    'Round of 32': 2,
-                    'Round of 16': 3,
-                    'Quarter-finals': 4,
-                    'Semi-finals': 5,
-                    'Final': 6
-                };
-                if ((stageOrder[stage] || 0) > (stageOrder[maxStage] || 0)) {
-                    maxStage = stage;
-                }
+        // 1. Add top 2 from each group
+        Object.values(groupStandings).forEach(groupTeams => {
+            groupTeams.slice(0, 2).forEach(t => {
+                qualifiedTeamIds.add(t.id);
             });
+        });
 
-            if (maxStage === 'Final') {
-                const finalMatch = teamMatches.find(m => m.stage === 'Final');
-                if (finalMatch && finalMatch.status === 'completed') {
-                    const winner = finalMatch.winner || finalMatch.winnerId || (finalMatch.homeScore > finalMatch.awayScore ? finalMatch.homeTeam : finalMatch.awayTeam);
-                    if (winner === tId) return 10;
-                }
-                return 9;
-            }
-            if (maxStage === 'Semi-finals') return 8;
-            if (maxStage === 'Quarter-finals') return 7;
-            if (maxStage === 'Round of 16') return 6;
-            if (maxStage === 'Round of 32') return 5;
-            return 3;
+        // 2. Add top 8 third-place teams
+        thirdPlaceStandings.slice(0, 8).forEach(t => {
+            qualifiedTeamIds.add(t.id);
+        });
+
+        const getTeamProgressScore = (tId) => {
+            if (qualifiedTeamIds.has(tId)) return 1.0;
+            const teamMatches = matches.filter(m => m.homeTeam === tId || m.awayTeam === tId);
+            const hasKnockoutMatch = teamMatches.some(m => m.match_id > 72);
+            return hasKnockoutMatch ? 1.0 : 0.0;
         };
 
         return Object.values(players)
             .filter(p => p.matchesPlayed > 0)
             .map(p => {
-                const goalScore = Math.max(0, Math.min(10, (p.weightedGoals / maxWeightedGoals) * 10));
-                const assistScore = Math.max(0, Math.min(10, (p.weightedAssists / maxWeightedAssists) * 10));
-                
                 const avgRating = p.matchRatings.reduce((sum, r) => sum + r, 0) / p.matchRatings.length;
-                const ratingScore = avgRating;
-
-                const motmScore = Math.max(0, Math.min(10, (p.potm / maxMOTM) * 10));
+                const motmScore = p.matchesPlayed > 0 ? Math.min(1.0, p.potm / p.matchesPlayed) : 0;
                 const teamProgressScore = getTeamProgressScore(p.teamId);
-                const bigMatchScore = Math.max(0, Math.min(10, (p.bigMatchPoints / maxBigMatchPoints) * 10));
 
-                const finalMvpScore = (0.25 * goalScore) + (0.15 * assistScore) + (0.35 * ratingScore) + (0.10 * motmScore) + (0.10 * teamProgressScore) + (0.05 * bigMatchScore);
-                const clampedMvpScore = Math.max(0.0, Math.min(10.0, finalMvpScore));
+                let score = 0;
+                const pos = p.position || 'FW';
+
+                if (pos === 'FW') {
+                    // G+A treated equally — goal or assist, both count as 1.0, combined cap at 8.0
+                    const gaScore = Math.min(8.0, p.goals * 1.0 + p.assists * 1.0);
+                    // Rating contributes modestly (max 1.0)
+                    const matchRatingScore = Math.min(1.0, (avgRating - 6.0) / 4.0);
+
+                    score = gaScore + motmScore + teamProgressScore + matchRatingScore;
+
+                    // Brace / hat-trick bonuses
+                    const braceBonus = (p.braces || 0) * 0.25;
+                    const hatTrickBonus = (p.hatTricks || 0) * 0.50;
+                    score += braceBonus + hatTrickBonus;
+                } else if (pos === 'MF') {
+                    // Midfielders rewarded for assists, goals, and consistent ratings
+                    const assistScore = Math.min(3.0, p.assists * 0.75);
+                    const goalScore = Math.min(3.0, p.goals * 0.6);
+                    // Rating max 3.0 — only top-rated MFs approach this
+                    const matchRatingScore = Math.min(3.0, Math.max(0, (avgRating - 6.0) / 4.0) * 3.0);
+                    const buffer = getPositionBuffer(avgRating);
+
+                    score = matchRatingScore + assistScore + goalScore + motmScore + teamProgressScore + buffer;
+
+                    // Brace / hat-trick bonuses
+                    const braceBonus = (p.braces || 0) * 0.25;
+                    const hatTrickBonus = (p.hatTricks || 0) * 0.50;
+                    score += braceBonus + hatTrickBonus;
+                } else if (pos === 'DF') {
+                    // Defenders: rating (max 3.0) + clean sheet rate (max 2.0) + small goal/assist bonus
+                    const matchRatingScore = Math.min(3.0, Math.max(0, (avgRating - 6.0) / 4.0) * 3.0);
+                    const cleanSheetScore = p.matchesPlayed > 0 ? Math.min(2.0, (p.cleanSheets / p.matchesPlayed) * 2) : 0;
+                    const goalScore = Math.min(1.0, p.goals * 0.33);
+                    const assistScore = Math.min(1.0, p.assists * 0.33);
+                    const buffer = getPositionBuffer(avgRating);
+
+                    score = matchRatingScore + cleanSheetScore + motmScore + goalScore + assistScore + teamProgressScore + buffer;
+                } else if (pos === 'GK') {
+                    // GKs: rating (max 3.0) + clean sheet rate (max 2.5) — exceptional GKs top out around 8
+                    const matchRatingScore = Math.min(3.0, Math.max(0, (avgRating - 6.0) / 4.0) * 3.0);
+                    const cleanSheetScore = p.matchesPlayed > 0 ? Math.min(2.5, (p.cleanSheets / p.matchesPlayed) * 2.5) : 0;
+                    const buffer = getPositionBuffer(avgRating);
+
+                    score = matchRatingScore + cleanSheetScore + motmScore + teamProgressScore + buffer;
+                }
+
+                const clampedMvpScore = Math.max(0.0, score);
 
                 return {
                     ...p,
@@ -598,7 +761,7 @@ const Standings = () => {
             .sort((a, b) => b.score - a.score || b.goals - a.goals || a.name.localeCompare(b.name))
             .map((p, idx) => ({ ...p, rank: idx + 1 }))
             .slice(0, 20);
-    }, [completedMatches, teams, matches]);
+    }, [completedMatches, teams, matches, groupStandings, thirdPlaceStandings]);
 
     const discipline = useMemo(() => {
         const yellowCards = {};
@@ -1005,8 +1168,8 @@ const Standings = () => {
                             <Trophy className="w-8 h-8 text-green-500" />
                             <h2 className="text-3xl font-black text-white uppercase italic tracking-tight">Group Standings</h2>
                         </div>
-                        <Button 
-                            variant="secondary" 
+                        <Button
+                            variant="secondary"
                             className="text-xs font-black uppercase tracking-wider py-2 flex items-center gap-1.5 border-slate-800 bg-slate-900/60 hover:bg-slate-800 hover:border-green-500/25 transition-all text-white self-start sm:self-center"
                             onClick={() => setShowThirdPlaceModal(true)}
                         >
@@ -1059,7 +1222,7 @@ const Standings = () => {
 
                                                     return (
                                                         <tr key={team.id} className={`border-b border-gray-800/50 last:border-0 ${bgClass}`}>
-                                                            <td 
+                                                            <td
                                                                 className="px-4 py-3 font-bold text-gray-400"
                                                                 style={{ borderLeft: borderLeftStyle }}
                                                             >
@@ -1087,18 +1250,18 @@ const Standings = () => {
 
                     {/* Qualification Legend */}
                     <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-[10px] text-gray-400 font-bold uppercase tracking-wider">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
-                        <span>Qualify to Round of 32</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-[#f59e0b]" />
-                        <span>Best 8 third-place teams qualify</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-[#ef4444]" />
-                        <span>Eliminated</span>
-                      </div>
+                        <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
+                            <span>Qualify to Round of 32</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-[#f59e0b]" />
+                            <span>Best 8 third-place teams qualify</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-[#ef4444]" />
+                            <span>Eliminated</span>
+                        </div>
                     </div>
                 </section>
 
@@ -1214,9 +1377,9 @@ const Standings = () => {
                                         <tr>
                                             <th className="px-2 md:px-6 py-3 md:py-4">Rank</th>
                                             <th className="px-2 md:px-6 py-3 md:py-4">Player</th>
+                                            <th className="px-2 md:px-6 py-3 md:py-4 text-center">G+A</th>
                                             <th className="px-2 md:px-6 py-3 md:py-4 text-center">Goals</th>
                                             <th className="px-2 md:px-6 py-3 md:py-4 text-center">Assists</th>
-                                            <th className="px-2 md:px-6 py-3 md:py-4 text-center">G+A</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-800/40">
@@ -1232,16 +1395,16 @@ const Standings = () => {
                                                         </div>
                                                     </div>
                                                 </td>
+                                                <td className="px-2 md:px-6 py-3 md:py-4 text-center">
+                                                    <span className="inline-block px-3 py-0.5 bg-green-500/10 text-green-400 rounded-full font-black text-sm">
+                                                        {player.ga}
+                                                    </span>
+                                                </td>
                                                 <td className="px-2 md:px-6 py-3 md:py-4 text-center text-slate-400 font-bold">
                                                     {player.goals}
                                                 </td>
                                                 <td className="px-2 md:px-6 py-3 md:py-4 text-center text-slate-400 font-bold">
                                                     {player.assists}
-                                                </td>
-                                                <td className="px-2 md:px-6 py-3 md:py-4 text-center">
-                                                    <span className="inline-block px-3 py-0.5 bg-green-500/10 text-green-400 rounded-full font-black text-sm">
-                                                        {player.ga}
-                                                    </span>
                                                 </td>
                                             </tr>
                                         ))}
@@ -1269,8 +1432,8 @@ const Standings = () => {
                         <div className="bg-gray-800/20 px-6 py-5 border-b border-gray-800 flex justify-between items-center">
                             <div>
                                 <h3 className="font-bold text-white text-sm uppercase tracking-wider">MVP Score Leaderboard</h3>
-                                <button 
-                                    onClick={() => setShowMvpFormulaModal(true)} 
+                                <button
+                                    onClick={() => setShowMvpFormulaModal(true)}
                                     className="inline-flex items-center gap-1 text-[10px] text-green-400 hover:text-green-300 font-black uppercase tracking-wider mt-1 border-none bg-transparent cursor-pointer transition-colors"
                                 >
                                     <span>How is this calculated?</span>
@@ -1286,16 +1449,16 @@ const Standings = () => {
                                     <tr>
                                         <th className="px-6 py-4">Rank</th>
                                         <th className="px-6 py-4">Player</th>
-                                        <th className="px-6 py-4 text-center">Goals</th>
-                                        <th className="px-6 py-4 text-center">Assists</th>
-                                        <th className="px-6 py-4 text-center">Avg Rating</th>
-                                        <th className="px-6 py-4 text-center">MOTM</th>
                                         <th className="px-6 py-4 text-center">
                                             <div className="flex flex-col items-center">
                                                 <span>MVP Score</span>
                                                 <span className="text-[9px] text-gray-500 font-bold lowercase normal-case tracking-normal mt-0.5">(out of 10)</span>
                                             </div>
                                         </th>
+                                        <th className="px-6 py-4 text-center">Goals</th>
+                                        <th className="px-6 py-4 text-center">Assists</th>
+                                        <th className="px-6 py-4 text-center">Avg Rating</th>
+                                        <th className="px-6 py-4 text-center">MOTM</th>
                                         <th className="px-6 py-4 hidden md:table-cell">Reason for Ranking</th>
                                     </tr>
                                 </thead>
@@ -1311,7 +1474,7 @@ const Standings = () => {
                                                     <div className="flex flex-col">
                                                         <div className="flex items-center gap-2">
                                                             <span className="font-bold text-white group-hover:text-green-400 transition-colors leading-tight">{player.name}</span>
-                                                            <button 
+                                                            <button
                                                                 onClick={() => setActiveMvpReason({ name: player.name, reason: generateReason(player) })}
                                                                 className="inline-flex md:hidden items-center justify-center p-1 rounded bg-slate-800 text-slate-400 hover:text-white transition-colors"
                                                                 title="View ranking reasoning"
@@ -1322,6 +1485,11 @@ const Standings = () => {
                                                         <span className="text-[10px] text-gray-500 mt-0.5">{player.team}</span>
                                                     </div>
                                                 </div>
+                                            </td>
+                                            <td className="px-6 py-4 text-center whitespace-nowrap">
+                                                <span className="inline-block px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full font-black text-sm text-glow">
+                                                    {player.score.toFixed(1)}
+                                                </span>
                                             </td>
                                             <td className="px-6 py-4 text-center text-slate-300 font-bold">
                                                 {player.goals}
@@ -1335,11 +1503,6 @@ const Standings = () => {
                                             <td className="px-6 py-4 text-center text-slate-300 font-bold">
                                                 {player.potm}
                                             </td>
-                                            <td className="px-6 py-4 text-center whitespace-nowrap">
-                                                <span className="inline-block px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full font-black text-sm text-glow">
-                                                    {player.score.toFixed(1)}
-                                                </span>
-                                            </td>
                                             <td className="px-6 py-4 text-xs text-gray-400 leading-relaxed max-w-sm hidden md:table-cell" title={generateReason(player)}>
                                                 {generateReason(player)}
                                             </td>
@@ -1347,7 +1510,7 @@ const Standings = () => {
                                     ))}
                                     {mvpCandidates.length === 0 && (
                                         <tr>
-                                            <td colSpan="9" className="px-6 py-12 text-center text-gray-500 italic text-sm">
+                                            <td colSpan="8" className="px-6 py-12 text-center text-gray-500 italic text-sm">
                                                 No completed matches recorded yet.
                                             </td>
                                         </tr>
@@ -1466,7 +1629,7 @@ const Standings = () => {
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card 
+                            <Card
                                 onClick={() => { setSummaryModalType('goals'); setDrillDownTeamId(null); }}
                                 className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-green-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
                             >
@@ -1483,7 +1646,7 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card 
+                            <Card
                                 onClick={() => { setSummaryModalType('yellowCards'); setDrillDownTeamId(null); }}
                                 className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-yellow-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
                             >
@@ -1500,7 +1663,7 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card 
+                            <Card
                                 onClick={() => { setSummaryModalType('redCards'); setDrillDownTeamId(null); }}
                                 className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-red-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
                             >
@@ -1517,7 +1680,7 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card 
+                            <Card
                                 onClick={() => { setSummaryModalType('penalties'); setDrillDownTeamId(null); }}
                                 className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-purple-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
                             >
@@ -1532,7 +1695,7 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card 
+                            <Card
                                 onClick={() => { setSummaryModalType('ownGoals'); setDrillDownTeamId(null); }}
                                 className="text-center p-4 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-amber-500/30 cursor-pointer h-full flex flex-col justify-between transition-all duration-300 group"
                             >
@@ -1571,7 +1734,7 @@ const Standings = () => {
                     </div>
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card 
+                            <Card
                                 onClick={() => setSelectedStatModal('goals')}
                                 className="text-center p-4 md:p-6 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-green-500/30 cursor-pointer transition-all duration-300 h-full group"
                             >
@@ -1583,7 +1746,7 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card 
+                            <Card
                                 onClick={() => setSelectedStatModal('defense')}
                                 className="text-center p-4 md:p-6 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-blue-500/30 cursor-pointer transition-all duration-300 h-full group"
                             >
@@ -1595,7 +1758,7 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card 
+                            <Card
                                 onClick={() => setSelectedStatModal('possession')}
                                 className="text-center p-4 md:p-6 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-purple-500/30 cursor-pointer transition-all duration-300 h-full group"
                             >
@@ -1607,7 +1770,7 @@ const Standings = () => {
                             </Card>
                         </motion.div>
                         <motion.div whileHover={{ y: -5 }}>
-                            <Card 
+                            <Card
                                 onClick={() => setSelectedStatModal('passAccuracy')}
                                 className="text-center p-4 md:p-6 border-gray-800 bg-gray-900/50 hover:bg-gray-800/30 hover:border-yellow-500/30 cursor-pointer transition-all duration-300 h-full group"
                             >
@@ -1627,9 +1790,9 @@ const Standings = () => {
                     onClose={() => setSelectedStatModal(null)}
                     title={
                         selectedStatModal === 'goals' ? 'Top 10 - Most Goals Scored' :
-                        selectedStatModal === 'defense' ? 'Top 10 - Best Defense' :
-                        selectedStatModal === 'possession' ? 'Top 10 - Average Possession' :
-                        selectedStatModal === 'passAccuracy' ? 'Top 10 - Pass Accuracy' : ''
+                            selectedStatModal === 'defense' ? 'Top 10 - Best Defense' :
+                                selectedStatModal === 'possession' ? 'Top 10 - Average Possession' :
+                                    selectedStatModal === 'passAccuracy' ? 'Top 10 - Pass Accuracy' : ''
                     }
                 >
                     <div className="w-full">
@@ -1680,10 +1843,10 @@ const Standings = () => {
                     }}
                     title={
                         summaryModalType === 'goals' ? 'Tournament Goals - All Teams' :
-                        summaryModalType === 'yellowCards' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Yellow Cards Breakdown` : 'Yellow Cards by Team') :
-                        summaryModalType === 'redCards' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Red Cards Breakdown` : 'Red Cards by Team') :
-                        summaryModalType === 'penalties' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Penalties Breakdown` : 'Penalties Scored by Team') :
-                        summaryModalType === 'ownGoals' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Own Goals Breakdown` : 'Own Goals Conceded by Team') : ''
+                            summaryModalType === 'yellowCards' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Yellow Cards Breakdown` : 'Yellow Cards by Team') :
+                                summaryModalType === 'redCards' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Red Cards Breakdown` : 'Red Cards by Team') :
+                                    summaryModalType === 'penalties' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Penalties Breakdown` : 'Penalties Scored by Team') :
+                                        summaryModalType === 'ownGoals' ? (drillDownTeamId ? `${teams.find(t => t.id === drillDownTeamId)?.name} - Own Goals Breakdown` : 'Own Goals Conceded by Team') : ''
                     }
                 >
                     {drillDownTeamId ? (
@@ -1788,10 +1951,10 @@ const Standings = () => {
                 >
                     <div className="flex flex-col gap-4">
                         <p className="text-[10px] text-gray-400 font-semibold leading-relaxed">
-                            The top 8 third-place teams out of all 12 groups advance to the Round of 32. 
+                            The top 8 third-place teams out of all 12 groups advance to the Round of 32.
                             Green highlighted rows are currently in qualifying positions.
                         </p>
-                        
+
                         <div className="overflow-x-auto border border-gray-800 rounded-xl bg-slate-950/40">
                             <table className="w-full text-left text-xs border-collapse">
                                 <thead>
@@ -1808,11 +1971,10 @@ const Standings = () => {
                                     {thirdPlaceStandings.map((team, idx) => {
                                         const isQualified = idx < 8;
                                         return (
-                                            <tr 
+                                            <tr
                                                 key={team.id}
-                                                className={`border-b border-gray-905/40 transition-colors hover:bg-gray-900/30 ${
-                                                    isQualified ? 'bg-green-500/5' : ''
-                                                }`}
+                                                className={`border-b border-gray-905/40 transition-colors hover:bg-gray-900/30 ${isQualified ? 'bg-green-500/5' : ''
+                                                    }`}
                                             >
                                                 <td className="px-4 py-3 text-center font-bold">
                                                     {isQualified ? (
@@ -1840,14 +2002,12 @@ const Standings = () => {
                                                 <td className="px-3 py-3 text-center font-medium text-slate-350">
                                                     {team.played}
                                                 </td>
-                                                <td className={`px-3 py-3 text-center font-black ${
-                                                    team.gd > 0 ? 'text-green-400' : team.gd < 0 ? 'text-red-400' : 'text-slate-400'
-                                                }`}>
+                                                <td className={`px-3 py-3 text-center font-black ${team.gd > 0 ? 'text-green-400' : team.gd < 0 ? 'text-red-400' : 'text-slate-400'
+                                                    }`}>
                                                     {team.gd > 0 ? `+${team.gd}` : team.gd}
                                                 </td>
-                                                <td className={`px-4 py-3 text-center font-black ${
-                                                    isQualified ? 'text-green-400 text-sm' : 'text-slate-300'
-                                                }`}>
+                                                <td className={`px-4 py-3 text-center font-black ${isQualified ? 'text-green-400 text-sm' : 'text-slate-300'
+                                                    }`}>
                                                     {team.pts}
                                                 </td>
                                             </tr>
@@ -1875,7 +2035,7 @@ const Standings = () => {
                                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
                                 className="relative w-full max-w-sm bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl overflow-hidden z-10"
                             >
-                                <button 
+                                <button
                                     onClick={() => setActiveMvpReason(null)}
                                     className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors"
                                 >
@@ -1889,7 +2049,7 @@ const Standings = () => {
                                 <p className="text-xs text-slate-400 leading-relaxed mb-5">
                                     {activeMvpReason.reason}
                                 </p>
-                                <button 
+                                <button
                                     onClick={() => setActiveMvpReason(null)}
                                     className="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors"
                                 >
@@ -1917,7 +2077,7 @@ const Standings = () => {
                                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
                                 className="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl overflow-hidden z-10"
                             >
-                                <button 
+                                <button
                                     onClick={() => setShowMvpFormulaModal(false)}
                                     className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors border-none bg-transparent cursor-pointer"
                                 >
@@ -1927,26 +2087,58 @@ const Standings = () => {
                                     <Award className="w-5 h-5 text-green-400" />
                                     <h4 className="font-black text-white uppercase tracking-tight text-sm">MVP Score Calculation</h4>
                                 </div>
-                                <div className="space-y-4 text-xs text-slate-300 leading-relaxed">
+                                <div className="space-y-4 text-xs text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
                                     <p>
-                                        The Tournament MVP score is a dynamic rating out of 10 calculated after every match using the following weighted formula:
+                                        The Tournament MVP score is calculated dynamically based on player position:
                                     </p>
-                                    <div className="bg-slate-950 p-4 border border-slate-800 rounded-2xl font-mono text-[10px] text-green-400">
-                                        <p className="font-bold mb-1">MVP SCORE WEIGHTS:</p>
-                                        <ul className="list-disc pl-4 space-y-1">
-                                            <li>⚽ Goals (Stage-Weighted): 25%</li>
-                                            <li>👟 Assists (Stage-Weighted): 15%</li>
-                                            <li>⭐ Avg Match Rating: 35%</li>
-                                            <li>🏆 Man of the Match: 10%</li>
-                                            <li>📈 Team Progression: 10%</li>
-                                            <li>⚡ Big Match Impact: 5%</li>
-                                        </ul>
+                                    <div className="space-y-3 font-mono text-[9px] text-green-400">
+                                        <div className="bg-slate-950 p-3 border border-slate-800 rounded-2xl">
+                                            <p className="font-bold text-white mb-1">🔥 FORWARDS (FW):</p>
+                                            <ul className="list-disc pl-4 space-y-0.5 text-slate-300">
+                                                <li>⚽ Goals + Assists: 1.0 each, combined cap at 8.0</li>
+                                                <li>🏆 MOTM Ratio: Max 1.0 (MOTM / Played)</li>
+                                                <li>📈 Team Progression: Max 1.0</li>
+                                                <li>⭐ Rating Bonus: Max 1.0 (scales above 6.0 avg)</li>
+                                                <li>⚡ Bonuses: Brace (+0.25), Hat-trick (+0.50)</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-slate-950 p-3 border border-slate-800 rounded-2xl">
+                                            <p className="font-bold text-white mb-1">⚡ MIDFIELDERS (MF):</p>
+                                            <ul className="list-disc pl-4 space-y-0.5 text-slate-300">
+                                                <li>⭐ Rating: Max 3.0 (scales above 6.0 avg)</li>
+                                                <li>👟 Assists: 0.75 per assist, max 3.0</li>
+                                                <li>⚽ Goals: 0.6 per goal, max 3.0</li>
+                                                <li>🏆 MOTM Ratio: Max 1.0</li>
+                                                <li>📈 Team Progression: Max 1.0</li>
+                                                <li>⚡ Bonuses: Brace (+0.25), Hat-trick (+0.50)</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-slate-950 p-3 border border-slate-800 rounded-2xl">
+                                            <p className="font-bold text-white mb-1">🛡️ DEFENDERS (DF):</p>
+                                            <ul className="list-disc pl-4 space-y-0.5 text-slate-300">
+                                                <li>⭐ Rating: Max 3.0 (scales above 6.0 avg)</li>
+                                                <li>🧤 Clean Sheets: Max 2.0 (CS rate × 2)</li>
+                                                <li>🏆 MOTM Ratio: Max 1.0</li>
+                                                <li>⚽ Goals: 0.33 per goal, max 1.0</li>
+                                                <li>👟 Assists: 0.33 per assist, max 1.0</li>
+                                                <li>📈 Team Progression: Max 1.0</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-slate-950 p-3 border border-slate-800 rounded-2xl">
+                                            <p className="font-bold text-white mb-1">🧤 GOALKEEPERS (GK):</p>
+                                            <ul className="list-disc pl-4 space-y-0.5 text-slate-300">
+                                                <li>⭐ Rating: Max 3.0 (scales above 6.0 avg)</li>
+                                                <li>🛡️ Clean Sheets: Max 2.5 (CS rate × 2.5)</li>
+                                                <li>🏆 MOTM Ratio: Max 1.0</li>
+                                                <li>📈 Team Progression: Max 1.0</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <p className="text-[10px] text-slate-550">
-                                        Stage multipliers reward goals and assists scored in knockout stages: Group Stage (x1.0), Round of 32 (x1.2), Round of 16 (x1.4), Quarter-finals (x1.6), Semi-finals (x1.8), and Finals (x2.0).
+                                    <p className="text-[9px] text-slate-500">
+                                        * Goals are the primary differentiator for forwards. Non-FW positions use rating-scaled scoring so they can compete on merit without advanced stats — but a prolific striker will always rank higher than a solid defender.
                                     </p>
                                 </div>
-                                <button 
+                                <button
                                     onClick={() => setShowMvpFormulaModal(false)}
                                     className="w-full mt-6 py-2.5 bg-slate-850 hover:bg-slate-800 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors border-none cursor-pointer"
                                 >

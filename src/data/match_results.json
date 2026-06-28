@@ -5816,13 +5816,76 @@
     "time": "21:00",
     "venue": "metlife",
     "group": "L",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Jude Bellingham",
+        "teamId": "england",
+        "minute": 62,
+        "assist": "Bukayo Saka",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Harry Kane",
+        "teamId": "england",
+        "minute": 67,
+        "assist": "Jude Bellingham",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Aníbal Godoy",
+        "teamId": "panama",
+        "type": "yellow",
+        "minute": 28
+      },
+      {
+        "name": "Declan Rice",
+        "teamId": "england",
+        "type": "yellow",
+        "minute": 45
+      }
+    ],
+    "playerOfMatch": "Jude Bellingham",
+    "stats": {
+      "possession": [
+        35,
+        65
+      ],
+      "expectedGoals": [
+        0.45,
+        1.85
+      ],
+      "shots": [
+        6,
+        15
+      ],
+      "shotsOnTarget": [
+        2,
+        6
+      ],
+      "passes": [
+        280,
+        580
+      ],
+      "passAccuracy": [
+        78,
+        88
+      ],
+      "corners": [
+        2,
+        8
+      ],
+      "fouls": [
+        14,
+        10
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "panama",
     "awayTeam": "england",
@@ -5836,13 +5899,78 @@
     "time": "21:00",
     "venue": "lincoln",
     "group": "L",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Petar Sučić",
+        "teamId": "croatia",
+        "minute": 31,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Derrick Luckassen",
+        "teamId": "ghana",
+        "minute": 73,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Nikola Vlašić",
+        "teamId": "croatia",
+        "minute": 83,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Kojo Peprah Oppong",
+        "teamId": "ghana",
+        "type": "yellow",
+        "minute": 93
+      }
+    ],
+    "playerOfMatch": "Petar Sučić",
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "expectedGoals": [
+        1.4,
+        1.1
+      ],
+      "shots": [
+        12,
+        10
+      ],
+      "shotsOnTarget": [
+        5,
+        4
+      ],
+      "passes": [
+        420,
+        390
+      ],
+      "passAccuracy": [
+        83,
+        81
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "fouls": [
+        11,
+        15
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "croatia",
     "awayTeam": "ghana",
@@ -5856,13 +5984,59 @@
     "time": "23:30",
     "venue": "hardrock",
     "group": "K",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 0,
     "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "cards": [
+      {
+        "name": "Davinson Sanchez",
+        "teamId": "colombia",
+        "type": "yellow",
+        "minute": 34
+      },
+      {
+        "name": "Ruben Dias",
+        "teamId": "portugal",
+        "type": "yellow",
+        "minute": 62
+      }
+    ],
+    "playerOfMatch": "Camilo Vargas",
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "expectedGoals": [
+        1.25,
+        0.95
+      ],
+      "shots": [
+        12,
+        9
+      ],
+      "shotsOnTarget": [
+        4,
+        3
+      ],
+      "passes": [
+        480,
+        410
+      ],
+      "passAccuracy": [
+        86,
+        84
+      ],
+      "corners": [
+        6,
+        4
+      ],
+      "fouls": [
+        12,
+        11
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "colombia",
     "awayTeam": "portugal",
@@ -5876,13 +6050,92 @@
     "time": "23:30",
     "venue": "mercedesbenz",
     "group": "K",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Eldor Shomurodov",
+        "teamId": "uzbekistan",
+        "minute": 10,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Yoane Wissa",
+        "teamId": "drcongo",
+        "minute": 68,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": true
+      },
+      {
+        "name": "Fiston Mayele",
+        "teamId": "drcongo",
+        "minute": 78,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Yoane Wissa",
+        "teamId": "drcongo",
+        "minute": 91,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Chancel Mbemba",
+        "teamId": "drcongo",
+        "type": "yellow",
+        "minute": 32
+      },
+      {
+        "name": "Otabek Shukurov",
+        "teamId": "uzbekistan",
+        "type": "yellow",
+        "minute": 70
+      }
+    ],
+    "playerOfMatch": "Yoane Wissa",
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "expectedGoals": [
+        2.1,
+        0.95
+      ],
+      "shots": [
+        14,
+        8
+      ],
+      "shotsOnTarget": [
+        7,
+        3
+      ],
+      "passes": [
+        380,
+        440
+      ],
+      "passAccuracy": [
+        81,
+        83
+      ],
+      "corners": [
+        6,
+        3
+      ],
+      "fouls": [
+        13,
+        12
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "drcongo",
     "awayTeam": "uzbekistan",
@@ -5896,13 +6149,102 @@
     "time": "02:00",
     "venue": "arrowhead",
     "group": "J",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 3,
+    "scorers": [
+      {
+        "name": "Marko Arnautovic",
+        "teamId": "austria",
+        "minute": 28,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Rafik Belghali",
+        "teamId": "algeria",
+        "minute": 41,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Marcel Sabitzer",
+        "teamId": "austria",
+        "minute": 55,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Riyad Mahrez",
+        "teamId": "algeria",
+        "minute": 60,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Riyad Mahrez",
+        "teamId": "algeria",
+        "minute": 93,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Sasa Kalajdzic",
+        "teamId": "austria",
+        "minute": 96,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Marko Arnautovic",
+        "teamId": "austria",
+        "type": "yellow",
+        "minute": 15
+      }
+    ],
+    "playerOfMatch": "Riyad Mahrez",
+    "stats": {
+      "possession": [
+        65,
+        35
+      ],
+      "expectedGoals": [
+        2.3,
+        1.8
+      ],
+      "shots": [
+        12,
+        10
+      ],
+      "shotsOnTarget": [
+        6,
+        5
+      ],
+      "passes": [
+        755,
+        396
+      ],
+      "passAccuracy": [
+        89,
+        78
+      ],
+      "corners": [
+        7,
+        4
+      ],
+      "fouls": [
+        8,
+        10
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "algeria",
     "awayTeam": "austria",
@@ -5916,13 +6258,92 @@
     "time": "02:00",
     "venue": "attstadium",
     "group": "J",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 3,
+    "scorers": [
+      {
+        "name": "Giovani Lo Celso",
+        "teamId": "argentina",
+        "minute": 19,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Lautaro Martinez",
+        "teamId": "argentina",
+        "minute": 31,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": true
+      },
+      {
+        "name": "Mousa Al-Tamari",
+        "teamId": "jordan",
+        "minute": 55,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Lionel Messi",
+        "teamId": "argentina",
+        "minute": 80,
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Yazan Al-Arab",
+        "teamId": "jordan",
+        "type": "yellow",
+        "minute": 30
+      },
+      {
+        "name": "Leandro Paredes",
+        "teamId": "argentina",
+        "type": "yellow",
+        "minute": 72
+      }
+    ],
+    "playerOfMatch": "Giovani Lo Celso",
+    "stats": {
+      "possession": [
+        30,
+        70
+      ],
+      "expectedGoals": [
+        0.65,
+        2.45
+      ],
+      "shots": [
+        5,
+        18
+      ],
+      "shotsOnTarget": [
+        2,
+        8
+      ],
+      "passes": [
+        240,
+        680
+      ],
+      "passAccuracy": [
+        74,
+        91
+      ],
+      "corners": [
+        1,
+        9
+      ],
+      "fouls": [
+        14,
+        9
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "jordan",
     "awayTeam": "argentina",
