@@ -42,14 +42,14 @@ export const getRoundOf32Pairings = (w, ru, bestThird, getTeam, includeIds = fal
   const pairings = [
     // Match 73
     { t1: getTeam(ru('A'), 'A runner-up'), t2: getTeam(ru('B'), 'B runner-up') },
-    // Match 74
-    { t1: getTeam(w('E'), 'Group E winner'), t2: getThirdTeam(allocationRow["1E vs"]) },
     // Match 75
     { t1: getTeam(w('F'), 'Group F winner'), t2: getTeam(ru('C'), 'C runner-up') },
-    // Match 76
-    { t1: getTeam(w('C'), 'Group C winner'), t2: getTeam(ru('F'), 'F runner-up') },
+    // Match 74
+    { t1: getTeam(w('E'), 'Group E winner'), t2: getThirdTeam(allocationRow["1E vs"]) },
     // Match 77
     { t1: getTeam(w('I'), 'Group I winner'), t2: getThirdTeam(allocationRow["1I vs"]) },
+    // Match 76
+    { t1: getTeam(w('C'), 'Group C winner'), t2: getTeam(ru('F'), 'F runner-up') },
     // Match 78
     { t1: getTeam(ru('E'), 'E runner-up'), t2: getTeam(ru('I'), 'I runner-up') },
     // Match 79
@@ -66,10 +66,10 @@ export const getRoundOf32Pairings = (w, ru, bestThird, getTeam, includeIds = fal
     { t1: getTeam(w('H'), 'Group H winner'), t2: getTeam(ru('J'), 'J runner-up') },
     // Match 85
     { t1: getTeam(w('B'), 'Group B winner'), t2: getThirdTeam(allocationRow["1B vs"]) },
-    // Match 86
-    { t1: getTeam(w('J'), 'Group J winner'), t2: getTeam(ru('H'), 'H runner-up') },
     // Match 87
     { t1: getTeam(w('K'), 'Group K winner'), t2: getThirdTeam(allocationRow["1K vs"]) },
+    // Match 86
+    { t1: getTeam(w('J'), 'Group J winner'), t2: getTeam(ru('H'), 'H runner-up') },
     // Match 88
     { t1: getTeam(ru('D'), 'D runner-up'), t2: getTeam(ru('G'), 'G runner-up') }
   ];

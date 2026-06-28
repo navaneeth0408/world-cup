@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FavoriteTeamHero from './FavoriteTeamHero';
-import FavoriteTeamNews from './FavoriteTeamNews';
 import FavoriteTeamFixtures from './FavoriteTeamFixtures';
 import FavoriteTeamStats from './FavoriteTeamStats';
 import FavoriteTeamPredictions from './FavoriteTeamPredictions';
@@ -167,131 +166,127 @@ const FavoriteTeamHub = ({ teams, matches }) => {
             </div>
 
             {/* Grid Dashboard Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                
-                {/* Hero Widget: spans all 3 columns */}
-                <div className="lg:col-span-3">
-                    <FavoriteTeamHero 
-                        team={favoriteTeam} 
-                        nextMatch={teamMatchesData.nextMatch} 
-                        opponent={teamMatchesData.opponent}
-                        onChangeTeam={handleOpenChangeTeam}
-                    />
-                </div>
+            <div className="flex flex-col gap-6">
+                {/* Hero Widget: spans full width */}
+                <FavoriteTeamHero 
+                    team={favoriteTeam} 
+                    nextMatch={teamMatchesData.nextMatch} 
+                    opponent={teamMatchesData.opponent}
+                    onChangeTeam={handleOpenChangeTeam}
+                />
 
-                {/* Left Side: news & upcoming fixtures (2 cols) */}
-                <div className="lg:col-span-2 flex flex-col gap-8">
-                    {/* Reusable News Component */}
-                    <FavoriteTeamNews team={favoriteTeam} />
+                {/* Dashboard Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
                     
-                    {/* Reusable Fixtures Component */}
-                    <FavoriteTeamFixtures 
-                        team={favoriteTeam} 
-                        teamMatches={teamMatchesData.upcoming}
-                        teams={teams}
-                    />
-                </div>
+                    {/* Left Column (2/3 width on large screens): Fixtures & Lineup */}
+                    <div className="lg:col-span-2 flex flex-col gap-6">
+                        {/* Reusable Fixtures Component */}
+                        <FavoriteTeamFixtures 
+                            team={favoriteTeam} 
+                            teamMatches={teamMatchesData.upcoming}
+                            teams={teams}
+                        />
 
-                {/* Right Side: stats & predictions (1 col) */}
-                <div className="flex flex-col gap-6">
-                    {/* Reusable Predictions Component */}
-                    <FavoriteTeamPredictions team={favoriteTeam} />
+                        {/* Predicted Starting XI Lineup */}
+                        <FavoriteTeamLineup team={favoriteTeam} />
+                    </div>
 
-                    {/* Quick Actions Card */}
-                    <Card className="bg-slate-900/30 border border-slate-800/80 backdrop-blur-md p-6 rounded-3xl relative overflow-hidden shadow-xl hover:border-green-500/20 transition-all duration-300">
-                        <div className="flex items-center gap-2 border-b border-slate-800 pb-3 mb-4">
-                            <Trophy className="w-5 h-5 text-green-500" />
-                            <h3 className="font-bold text-white uppercase tracking-wider text-sm">Quick Actions</h3>
-                        </div>
-                        
-                        <div className="grid grid-cols-2 gap-2.5">
-                            <Button 
-                                variant="secondary" 
-                                className="text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/20 flex items-center justify-center gap-1.5 hover:bg-slate-800"
-                                onClick={() => navigate(`/teams/${favoriteTeam.id}`)}
-                            >
-                                <Users className="w-3.5 h-3.5 text-slate-450" />
-                                View Squad
-                            </Button>
-                            <Button 
-                                variant="secondary" 
-                                className="text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/20 flex items-center justify-center gap-1.5 hover:bg-slate-800"
-                                onClick={() => navigate(`/matches?team=${favoriteTeam.id}`)}
-                            >
-                                <Calendar className="w-3.5 h-3.5 text-slate-450" />
-                                Fixtures
-                            </Button>
-                            <Button 
-                                variant="secondary" 
-                                className="text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/20 flex items-center justify-center gap-1.5 hover:bg-slate-800"
-                                onClick={() => navigate(`/teams/${favoriteTeam.id}/stats`)}
-                            >
-                                <BarChart3 className="w-3.5 h-3.5 text-slate-450" />
-                                Statistics
-                            </Button>
-                            <Button 
-                                variant="secondary" 
-                                className="text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/20 flex items-center justify-center gap-1.5 hover:bg-slate-800"
-                                onClick={() => navigate('/simulator')}
-                            >
-                                <Calculator className="w-3.5 h-3.5 text-slate-450" />
-                                Simulation
-                            </Button>
-                            <Button 
-                                variant="secondary" 
-                                className="col-span-2 text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/30 flex items-center justify-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800/80"
-                                onClick={handleSearchTransfermarkt}
-                            >
-                                <ExternalLink className="w-3.5 h-3.5 text-blue-400" />
-                                Transfermarkt Profiles
-                            </Button>
-                        </div>
-                    </Card>
+                    {/* Right Column (1/3 width on large screens): Stats, Actions, & Players */}
+                    <div className="lg:col-span-1 flex flex-col gap-6">
+                        {/* Reusable Predictions Component */}
+                        <FavoriteTeamPredictions team={favoriteTeam} />
 
-                    {/* Fan Experience: facts, historical records */}
-                    {records && (
+                        {/* Quick Actions Card */}
                         <Card className="bg-slate-900/30 border border-slate-800/80 backdrop-blur-md p-6 rounded-3xl relative overflow-hidden shadow-xl hover:border-green-500/20 transition-all duration-300">
                             <div className="flex items-center gap-2 border-b border-slate-800 pb-3 mb-4">
-                                <Award className="w-5 h-5 text-green-500" />
-                                <h3 className="font-bold text-white uppercase tracking-wider text-sm">Fan Experience</h3>
+                                <Trophy className="w-5 h-5 text-green-500" />
+                                <h3 className="font-bold text-white uppercase tracking-wider text-sm">Quick Actions</h3>
                             </div>
                             
-                            <div className="space-y-4">
-                                <div className="grid grid-cols-2 gap-4 border-b border-slate-800/40 pb-4">
-                                    <div>
-                                        <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Best Finish</span>
-                                        <span className="text-xs font-black text-white mt-1 block leading-tight">{records.best}</span>
-                                    </div>
-                                    <div>
-                                        <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Appearances</span>
-                                        <span className="text-xs font-black text-white mt-1 block leading-tight">
-                                            {records.appearances ? `${records.appearances} tournaments` : 'TBD'}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="grid grid-cols-2 gap-4 border-b border-slate-800/40 pb-4">
-                                    <div>
-                                        <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Top Scorer</span>
-                                        <span className="text-xs font-bold text-slate-350 mt-1 block leading-relaxed" title={records.scorer}>{records.scorer}</span>
-                                    </div>
-                                    <div>
-                                        <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Most Capped</span>
-                                        <span className="text-xs font-bold text-slate-350 mt-1 block leading-relaxed" title={records.capped}>{records.capped}</span>
-                                    </div>
-                                </div>
+                            <div className="grid grid-cols-2 gap-2.5">
+                                <Button 
+                                    variant="secondary" 
+                                    className="text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/20 flex items-center justify-center gap-1.5 hover:bg-slate-800"
+                                    onClick={() => navigate(`/teams/${favoriteTeam.id}`)}
+                                >
+                                    <Users className="w-3.5 h-3.5 text-slate-450" />
+                                    View Squad
+                                </Button>
+                                <Button 
+                                    variant="secondary" 
+                                    className="text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/20 flex items-center justify-center gap-1.5 hover:bg-slate-800"
+                                    onClick={() => navigate(`/matches?team=${favoriteTeam.id}`)}
+                                >
+                                    <Calendar className="w-3.5 h-3.5 text-slate-450" />
+                                    Fixtures
+                                </Button>
+                                <Button 
+                                    variant="secondary" 
+                                    className="text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/20 flex items-center justify-center gap-1.5 hover:bg-slate-850"
+                                    onClick={() => navigate(`/teams/${favoriteTeam.id}/stats`)}
+                                >
+                                    <BarChart3 className="w-3.5 h-3.5 text-slate-450" />
+                                    Statistics
+                                </Button>
+                                <Button 
+                                    variant="secondary" 
+                                    className="text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/20 flex items-center justify-center gap-1.5 hover:bg-slate-850"
+                                    onClick={() => navigate('/simulator')}
+                                >
+                                    <Calculator className="w-3.5 h-3.5 text-slate-450" />
+                                    Simulation
+                                </Button>
+                                <Button 
+                                    variant="secondary" 
+                                    className="col-span-2 text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/30 flex items-center justify-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800/80"
+                                    onClick={handleSearchTransfermarkt}
+                                >
+                                    <ExternalLink className="w-3.5 h-3.5 text-blue-400" />
+                                    Transfermarkt Profiles
+                                </Button>
                             </div>
                         </Card>
-                    )}
-                </div>
 
-                {/* Bottom line: Lineup predicted & Key players */}
-                <div className="lg:col-span-2">
-                    <FavoriteTeamLineup team={favoriteTeam} />
-                </div>
-                <div className="lg:col-span-1">
-                    <FavoriteTeamPlayers team={favoriteTeam} />
-                </div>
+                        {/* Fan Experience: facts, historical records */}
+                        {records && (
+                            <Card className="bg-slate-900/30 border border-slate-800/80 backdrop-blur-md p-6 rounded-3xl relative overflow-hidden shadow-xl hover:border-green-500/20 transition-all duration-300">
+                                <div className="flex items-center gap-2 border-b border-slate-800 pb-3 mb-4">
+                                    <Award className="w-5 h-5 text-green-500" />
+                                    <h3 className="font-bold text-white uppercase tracking-wider text-sm">Fan Experience</h3>
+                                </div>
+                                
+                                <div className="space-y-4">
+                                    <div className="grid grid-cols-2 gap-4 border-b border-slate-800/40 pb-4">
+                                        <div>
+                                            <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Best Finish</span>
+                                            <span className="text-xs font-black text-white mt-1 block leading-tight">{records.best}</span>
+                                        </div>
+                                        <div>
+                                            <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Appearances</span>
+                                            <span className="text-xs font-black text-white mt-1 block leading-tight">
+                                                {records.appearances ? `${records.appearances} tournaments` : 'TBD'}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-4 border-b border-slate-800/40 pb-4">
+                                        <div>
+                                            <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Top Scorer</span>
+                                            <span className="text-xs font-bold text-slate-350 mt-1 block leading-relaxed" title={records.scorer}>{records.scorer}</span>
+                                        </div>
+                                        <div>
+                                            <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest block">Most Capped</span>
+                                            <span className="text-xs font-bold text-slate-350 mt-1 block leading-relaxed" title={records.capped}>{records.capped}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Card>
+                        )}
 
+                        {/* Key Squad Players List */}
+                        <FavoriteTeamPlayers team={favoriteTeam} />
+                    </div>
+
+                </div>
             </div>
 
             {/* Change Favorite Team Modal */}

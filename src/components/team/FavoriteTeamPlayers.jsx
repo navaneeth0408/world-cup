@@ -186,7 +186,7 @@ const FavoriteTeamPlayers = ({ team }) => {
         if (countryData && countryData.top_market_value_players && countryData.top_market_value_players.length > 0) {
             basePlayers = countryData.top_market_value_players.map((p, index) => {
                 const positionMapped = mapPosition(p.position);
-                const club = getClubForPlayer(p.name, team.confederation, index);
+                const club = p.club_name || getClubForPlayer(p.name, team.confederation, index);
                 const displayVal = formatMarketValue(p.market_value_eur);
                 return {
                     name: p.name,
@@ -287,8 +287,12 @@ const FavoriteTeamPlayers = ({ team }) => {
                                 </div>
                                 <div className="flex items-center gap-1.5 text-[9px] text-slate-500 font-extrabold uppercase mt-0.5 tracking-wider">
                                     <span className="text-green-400">{player.position}</span>
-                                    <span>·</span>
-                                    <span className="truncate max-w-[120px]">{player.club}</span>
+                                    {player.club && (
+                                        <>
+                                            <span>·</span>
+                                            <span className="truncate max-w-[120px]">{player.club}</span>
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </div>

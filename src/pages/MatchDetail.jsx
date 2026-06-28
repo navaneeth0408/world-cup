@@ -254,6 +254,12 @@ const MatchDetail = () => {
                       widths: { home: `${match.stats.possession[0]}%`, away: `${match.stats.possession[1]}%` }
                     },
                     {
+                      label: 'Expected Goals (xG)',
+                      h: match.stats.expectedGoals ? Number(match.stats.expectedGoals[0]).toFixed(2) : '0.00',
+                      a: match.stats.expectedGoals ? Number(match.stats.expectedGoals[1]).toFixed(2) : '0.00',
+                      widths: calculateStatWidth(match.stats.expectedGoals ? match.stats.expectedGoals[0] : 0, match.stats.expectedGoals ? match.stats.expectedGoals[1] : 0)
+                    },
+                    {
                       label: 'Shots',
                       h: match.stats.shots[0],
                       a: match.stats.shots[1],

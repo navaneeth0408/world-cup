@@ -67,6 +67,10 @@
         61,
         39
       ],
+      "expectedGoals": [
+        1.86,
+        0.62
+      ],
       "shots": [
         16,
         3
@@ -141,6 +145,10 @@
       "possession": [
         62,
         38
+      ],
+      "expectedGoals": [
+        1.85,
+        1.35
       ],
       "shots": [
         15,
@@ -234,6 +242,10 @@
       "possession": [
         61,
         39
+      ],
+      "expectedGoals": [
+        1.07,
+        1.23
       ],
       "shots": [
         18,
@@ -354,6 +366,10 @@
         65,
         35
       ],
+      "expectedGoals": [
+        3.73,
+        1.22
+      ],
       "shots": [
         17,
         8
@@ -437,6 +453,10 @@
         36,
         64
       ],
+      "expectedGoals": [
+        1.06,
+        0.97
+      ],
       "shots": [
         7,
         26
@@ -511,6 +531,10 @@
       "possession": [
         51,
         49
+      ],
+      "expectedGoals": [
+        1.04,
+        1.23
       ],
       "shots": [
         13,
@@ -593,6 +617,10 @@
         54,
         46
       ],
+      "expectedGoals": [
+        0.43,
+        0.93
+      ],
       "shots": [
         15,
         9
@@ -661,6 +689,10 @@
       "possession": [
         28,
         72
+      ],
+      "expectedGoals": [
+        1.83,
+        0.46
       ],
       "shots": [
         9,
@@ -762,6 +794,10 @@
         65,
         35
       ],
+      "expectedGoals": [
+        6.1,
+        1.06
+      ],
       "shots": [
         26,
         8
@@ -855,6 +891,10 @@
         59,
         41
       ],
+      "expectedGoals": [
+        2.11,
+        1.97
+      ],
       "shots": [
         10,
         10
@@ -935,6 +975,10 @@
       "possession": [
         48,
         52
+      ],
+      "expectedGoals": [
+        1.22,
+        0.2
       ],
       "shots": [
         15,
@@ -1029,6 +1073,10 @@
         49,
         51
       ],
+      "expectedGoals": [
+        4.21,
+        1.33
+      ],
       "shots": [
         13,
         6
@@ -1090,6 +1138,10 @@
       "possession": [
         74,
         26
+      ],
+      "expectedGoals": [
+        0.21,
+        0.59
       ],
       "shots": [
         27,
@@ -1174,6 +1226,10 @@
         54,
         46
       ],
+      "expectedGoals": [
+        1.34,
+        1.16
+      ],
       "shots": [
         15,
         14
@@ -1242,6 +1298,10 @@
       "possession": [
         33,
         67
+      ],
+      "expectedGoals": [
+        1.04,
+        1.06
       ],
       "shots": [
         7,
@@ -1324,6 +1384,10 @@
         48,
         52
       ],
+      "expectedGoals": [
+        1.76,
+        1.97
+      ],
       "shots": [
         17,
         14
@@ -1401,7 +1465,40 @@
     ],
     "cards": [],
     "playerOfMatch": "Kylian Mbappé",
-    "stats": null,
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "expectedGoals": [
+        2.75,
+        1.32
+      ],
+      "shots": [
+        12,
+        7
+      ],
+      "shotsOnTarget": [
+        4,
+        2
+      ],
+      "passes": [
+        460,
+        411
+      ],
+      "passAccuracy": [
+        83,
+        78
+      ],
+      "corners": [
+        5,
+        5
+      ],
+      "fouls": [
+        14,
+        11
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "france",
     "awayTeam": "senegal",
@@ -1469,7 +1566,40 @@
       }
     ],
     "playerOfMatch": "Erling Haaland",
-    "stats": null,
+    "stats": {
+      "possession": [
+        49,
+        51
+      ],
+      "expectedGoals": [
+        1.33,
+        3.68
+      ],
+      "shots": [
+        6,
+        12
+      ],
+      "shotsOnTarget": [
+        4,
+        5
+      ],
+      "passes": [
+        477,
+        424
+      ],
+      "passAccuracy": [
+        85,
+        78
+      ],
+      "corners": [
+        4,
+        4
+      ],
+      "fouls": [
+        10,
+        9
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "iraq",
     "awayTeam": "norway",
@@ -1514,7 +1644,40 @@
     ],
     "cards": [],
     "playerOfMatch": "Lionel Messi",
-    "stats": null,
+    "stats": {
+      "possession": [
+        59,
+        41
+      ],
+      "expectedGoals": [
+        2.98,
+        0.18
+      ],
+      "shots": [
+        14,
+        6
+      ],
+      "shotsOnTarget": [
+        4,
+        1
+      ],
+      "passes": [
+        463,
+        512
+      ],
+      "passAccuracy": [
+        84,
+        85
+      ],
+      "corners": [
+        6,
+        7
+      ],
+      "fouls": [
+        13,
+        14
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "argentina",
     "awayTeam": "algeria",
@@ -1574,7 +1737,40 @@
       }
     ],
     "playerOfMatch": "Marko Arnautovic",
-    "stats": null,
+    "stats": {
+      "possession": [
+        49,
+        51
+      ],
+      "expectedGoals": [
+        2.86,
+        0.98
+      ],
+      "shots": [
+        13,
+        5
+      ],
+      "shotsOnTarget": [
+        6,
+        4
+      ],
+      "passes": [
+        403,
+        473
+      ],
+      "passAccuracy": [
+        82,
+        79
+      ],
+      "corners": [
+        2,
+        5
+      ],
+      "fouls": [
+        7,
+        12
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "austria",
     "awayTeam": "jordan",
@@ -1607,7 +1803,40 @@
     ],
     "cards": [],
     "playerOfMatch": "",
-    "stats": null,
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "expectedGoals": [
+        1.42,
+        1.34
+      ],
+      "shots": [
+        6,
+        10
+      ],
+      "shotsOnTarget": [
+        4,
+        3
+      ],
+      "passes": [
+        471,
+        415
+      ],
+      "passAccuracy": [
+        87,
+        85
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "fouls": [
+        13,
+        11
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "portugal",
     "awayTeam": "drcongo",
@@ -1664,7 +1893,40 @@
     ],
     "cards": [],
     "playerOfMatch": "",
-    "stats": null,
+    "stats": {
+      "possession": [
+        56,
+        44
+      ],
+      "expectedGoals": [
+        3.53,
+        2.16
+      ],
+      "shots": [
+        12,
+        6
+      ],
+      "shotsOnTarget": [
+        5,
+        5
+      ],
+      "passes": [
+        407,
+        451
+      ],
+      "passAccuracy": [
+        83,
+        82
+      ],
+      "corners": [
+        5,
+        2
+      ],
+      "fouls": [
+        7,
+        14
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "england",
     "awayTeam": "croatia",
@@ -1710,7 +1972,40 @@
       }
     ],
     "playerOfMatch": "",
-    "stats": null,
+    "stats": {
+      "possession": [
+        59,
+        41
+      ],
+      "expectedGoals": [
+        1.22,
+        0.16
+      ],
+      "shots": [
+        10,
+        5
+      ],
+      "shotsOnTarget": [
+        4,
+        3
+      ],
+      "passes": [
+        528,
+        425
+      ],
+      "passAccuracy": [
+        89,
+        78
+      ],
+      "corners": [
+        2,
+        3
+      ],
+      "fouls": [
+        11,
+        11
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "ghana",
     "awayTeam": "panama",
@@ -1767,7 +2062,40 @@
       }
     ],
     "playerOfMatch": "",
-    "stats": null,
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "expectedGoals": [
+        0.93,
+        2.75
+      ],
+      "shots": [
+        8,
+        14
+      ],
+      "shotsOnTarget": [
+        4,
+        6
+      ],
+      "passes": [
+        417,
+        471
+      ],
+      "passAccuracy": [
+        88,
+        82
+      ],
+      "corners": [
+        7,
+        2
+      ],
+      "fouls": [
+        12,
+        9
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "uzbekistan",
     "awayTeam": "colombia",
@@ -1825,6 +2153,10 @@
       "possession": [
         38,
         62
+      ],
+      "expectedGoals": [
+        1.28,
+        1.41
       ],
       "shots": [
         12,
@@ -1932,6 +2264,10 @@
       "possession": [
         62,
         38
+      ],
+      "expectedGoals": [
+        3.66,
+        1.08
       ],
       "shots": [
         13,
@@ -2046,6 +2382,10 @@
         79,
         21
       ],
+      "expectedGoals": [
+        5.17,
+        0.18
+      ],
       "shots": [
         32,
         2
@@ -2114,6 +2454,10 @@
       "possession": [
         45,
         55
+      ],
+      "expectedGoals": [
+        0.94,
+        0.48
       ],
       "shots": [
         8,
@@ -2187,7 +2531,40 @@
       }
     ],
     "playerOfMatch": "Alex Freeman",
-    "stats": null,
+    "stats": {
+      "possession": [
+        55,
+        45
+      ],
+      "expectedGoals": [
+        1.75,
+        0.52
+      ],
+      "shots": [
+        7,
+        5
+      ],
+      "shotsOnTarget": [
+        5,
+        1
+      ],
+      "passes": [
+        422,
+        415
+      ],
+      "passAccuracy": [
+        89,
+        86
+      ],
+      "corners": [
+        5,
+        3
+      ],
+      "fouls": [
+        8,
+        13
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "usa",
     "awayTeam": "australia",
@@ -2227,7 +2604,40 @@
       }
     ],
     "playerOfMatch": "Ismael Saibari",
-    "stats": null,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "expectedGoals": [
+        0.26,
+        1.33
+      ],
+      "shots": [
+        6,
+        10
+      ],
+      "shotsOnTarget": [
+        1,
+        3
+      ],
+      "passes": [
+        413,
+        393
+      ],
+      "passAccuracy": [
+        87,
+        80
+      ],
+      "corners": [
+        7,
+        5
+      ],
+      "fouls": [
+        8,
+        14
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "scotland",
     "awayTeam": "morocco",
@@ -2285,7 +2695,40 @@
       }
     ],
     "playerOfMatch": "Vinícius Júnior",
-    "stats": null,
+    "stats": {
+      "possession": [
+        53,
+        47
+      ],
+      "expectedGoals": [
+        2.93,
+        0.43
+      ],
+      "shots": [
+        11,
+        9
+      ],
+      "shotsOnTarget": [
+        4,
+        1
+      ],
+      "passes": [
+        506,
+        518
+      ],
+      "passAccuracy": [
+        79,
+        81
+      ],
+      "corners": [
+        6,
+        6
+      ],
+      "fouls": [
+        14,
+        8
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "brazil",
     "awayTeam": "haiti",
@@ -2331,7 +2774,40 @@
       }
     ],
     "playerOfMatch": "Matías Galarza",
-    "stats": null,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "expectedGoals": [
+        0.36,
+        1.35
+      ],
+      "shots": [
+        9,
+        6
+      ],
+      "shotsOnTarget": [
+        1,
+        2
+      ],
+      "passes": [
+        501,
+        492
+      ],
+      "passAccuracy": [
+        89,
+        89
+      ],
+      "corners": [
+        2,
+        2
+      ],
+      "fouls": [
+        10,
+        9
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "turkiye",
     "awayTeam": "paraguay",
@@ -2407,7 +2883,40 @@
       }
     ],
     "playerOfMatch": "Cody Gakpo",
-    "stats": null,
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "expectedGoals": [
+        4.09,
+        1.22
+      ],
+      "shots": [
+        16,
+        9
+      ],
+      "shotsOnTarget": [
+        6,
+        3
+      ],
+      "passes": [
+        431,
+        493
+      ],
+      "passAccuracy": [
+        82,
+        84
+      ],
+      "corners": [
+        5,
+        2
+      ],
+      "fouls": [
+        13,
+        8
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "netherlands",
     "awayTeam": "sweden",
@@ -2446,7 +2955,40 @@
     ],
     "cards": [],
     "playerOfMatch": "Deniz Undav",
-    "stats": null,
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "expectedGoals": [
+        1.82,
+        1.41
+      ],
+      "shots": [
+        6,
+        5
+      ],
+      "shotsOnTarget": [
+        5,
+        3
+      ],
+      "passes": [
+        516,
+        491
+      ],
+      "passAccuracy": [
+        80,
+        87
+      ],
+      "corners": [
+        2,
+        4
+      ],
+      "fouls": [
+        14,
+        10
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "germany",
     "awayTeam": "ivorycoast",
@@ -2473,7 +3015,40 @@
       }
     ],
     "playerOfMatch": "Eloy Room",
-    "stats": null,
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "expectedGoals": [
+        0.24,
+        0.23
+      ],
+      "shots": [
+        5,
+        5
+      ],
+      "shotsOnTarget": [
+        3,
+        3
+      ],
+      "passes": [
+        396,
+        512
+      ],
+      "passAccuracy": [
+        79,
+        78
+      ],
+      "corners": [
+        5,
+        5
+      ],
+      "fouls": [
+        10,
+        11
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "ecuador",
     "awayTeam": "curacao",
@@ -2518,7 +3093,40 @@
     ],
     "cards": [],
     "playerOfMatch": "Ayase Ueda",
-    "stats": null,
+    "stats": {
+      "possession": [
+        41,
+        59
+      ],
+      "expectedGoals": [
+        0.34,
+        3.53
+      ],
+      "shots": [
+        7,
+        15
+      ],
+      "shotsOnTarget": [
+        2,
+        5
+      ],
+      "passes": [
+        437,
+        422
+      ],
+      "passAccuracy": [
+        80,
+        82
+      ],
+      "corners": [
+        2,
+        3
+      ],
+      "fouls": [
+        14,
+        14
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "tunisia",
     "awayTeam": "japan",
@@ -2565,7 +3173,40 @@
     ],
     "cards": [],
     "playerOfMatch": "Mikel Oyarzabal",
-    "stats": null,
+    "stats": {
+      "possession": [
+        60,
+        40
+      ],
+      "expectedGoals": [
+        3.33,
+        0.63
+      ],
+      "shots": [
+        15,
+        7
+      ],
+      "shotsOnTarget": [
+        6,
+        1
+      ],
+      "passes": [
+        514,
+        525
+      ],
+      "passAccuracy": [
+        88,
+        89
+      ],
+      "corners": [
+        7,
+        6
+      ],
+      "fouls": [
+        11,
+        8
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "spain",
     "awayTeam": "saudiarabia",
@@ -2604,7 +3245,40 @@
       }
     ],
     "playerOfMatch": "Alireza Beiranvand",
-    "stats": null,
+    "stats": {
+      "possession": [
+        53,
+        47
+      ],
+      "expectedGoals": [
+        0.21,
+        0.42
+      ],
+      "shots": [
+        8,
+        6
+      ],
+      "shotsOnTarget": [
+        2,
+        3
+      ],
+      "passes": [
+        523,
+        439
+      ],
+      "passAccuracy": [
+        87,
+        85
+      ],
+      "corners": [
+        5,
+        6
+      ],
+      "fouls": [
+        11,
+        9
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "belgium",
     "awayTeam": "iran",
@@ -2662,7 +3336,40 @@
       }
     ],
     "playerOfMatch": "Maxi Araújo",
-    "stats": null,
+    "stats": {
+      "possession": [
+        46,
+        54
+      ],
+      "expectedGoals": [
+        2.1,
+        1.85
+      ],
+      "shots": [
+        8,
+        11
+      ],
+      "shotsOnTarget": [
+        5,
+        5
+      ],
+      "passes": [
+        553,
+        546
+      ],
+      "passAccuracy": [
+        89,
+        85
+      ],
+      "corners": [
+        5,
+        6
+      ],
+      "fouls": [
+        13,
+        12
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "uruguay",
     "awayTeam": "capeverde",
@@ -2726,7 +3433,40 @@
       }
     ],
     "playerOfMatch": "Mohamed Salah",
-    "stats": null,
+    "stats": {
+      "possession": [
+        46,
+        54
+      ],
+      "expectedGoals": [
+        1.17,
+        2.65
+      ],
+      "shots": [
+        7,
+        9
+      ],
+      "shotsOnTarget": [
+        3,
+        4
+      ],
+      "passes": [
+        539,
+        428
+      ],
+      "passAccuracy": [
+        89,
+        79
+      ],
+      "corners": [
+        5,
+        7
+      ],
+      "fouls": [
+        7,
+        7
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "newzealand",
     "awayTeam": "egypt",
@@ -2784,7 +3524,40 @@
       }
     ],
     "playerOfMatch": "Lionel Messi",
-    "stats": null,
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "expectedGoals": [
+        2.1,
+        0.25
+      ],
+      "shots": [
+        10,
+        8
+      ],
+      "shotsOnTarget": [
+        3,
+        3
+      ],
+      "passes": [
+        459,
+        488
+      ],
+      "passAccuracy": [
+        78,
+        84
+      ],
+      "corners": [
+        3,
+        2
+      ],
+      "fouls": [
+        8,
+        12
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "argentina",
     "awayTeam": "austria",
@@ -2823,7 +3596,40 @@
     ],
     "cards": [],
     "playerOfMatch": "Kylian Mbappé",
-    "stats": null,
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "expectedGoals": [
+        2.72,
+        0.43
+      ],
+      "shots": [
+        12,
+        8
+      ],
+      "shotsOnTarget": [
+        4,
+        2
+      ],
+      "passes": [
+        474,
+        509
+      ],
+      "passAccuracy": [
+        81,
+        83
+      ],
+      "corners": [
+        6,
+        6
+      ],
+      "fouls": [
+        9,
+        8
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "france",
     "awayTeam": "iraq",
@@ -2874,7 +3680,40 @@
     ],
     "cards": [],
     "playerOfMatch": "Erling Haaland",
-    "stats": null,
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "expectedGoals": [
+        2.66,
+        2.05
+      ],
+      "shots": [
+        11,
+        8
+      ],
+      "shotsOnTarget": [
+        6,
+        4
+      ],
+      "passes": [
+        429,
+        473
+      ],
+      "passAccuracy": [
+        85,
+        85
+      ],
+      "corners": [
+        4,
+        3
+      ],
+      "fouls": [
+        12,
+        9
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "norway",
     "awayTeam": "senegal",
@@ -2913,7 +3752,40 @@
     ],
     "cards": [],
     "playerOfMatch": "Ibrahim Maza",
-    "stats": null,
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "expectedGoals": [
+        1.29,
+        1.75
+      ],
+      "shots": [
+        7,
+        10
+      ],
+      "shotsOnTarget": [
+        2,
+        3
+      ],
+      "passes": [
+        397,
+        473
+      ],
+      "passAccuracy": [
+        85,
+        85
+      ],
+      "corners": [
+        4,
+        5
+      ],
+      "fouls": [
+        14,
+        9
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "jordan",
     "awayTeam": "algeria",
@@ -2972,7 +3844,40 @@
       }
     ],
     "playerOfMatch": "Nuno Mendes",
-    "stats": null,
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "expectedGoals": [
+        4.17,
+        0.41
+      ],
+      "shots": [
+        15,
+        10
+      ],
+      "shotsOnTarget": [
+        7,
+        1
+      ],
+      "passes": [
+        509,
+        411
+      ],
+      "passAccuracy": [
+        88,
+        81
+      ],
+      "corners": [
+        7,
+        4
+      ],
+      "fouls": [
+        14,
+        14
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "portugal",
     "awayTeam": "uzbekistan",
@@ -3009,6 +3914,10 @@
       "possession": [
         78,
         22
+      ],
+      "expectedGoals": [
+        0.55,
+        0.22
       ],
       "shots": [
         18,
@@ -3074,7 +3983,40 @@
       }
     ],
     "playerOfMatch": "Cristian Martinez",
-    "stats": null,
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "expectedGoals": [
+        0.55,
+        1.43
+      ],
+      "shots": [
+        10,
+        9
+      ],
+      "shotsOnTarget": [
+        2,
+        3
+      ],
+      "passes": [
+        549,
+        482
+      ],
+      "passAccuracy": [
+        88,
+        84
+      ],
+      "corners": [
+        7,
+        4
+      ],
+      "fouls": [
+        11,
+        9
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "panama",
     "awayTeam": "croatia",
@@ -3120,7 +4062,40 @@
       }
     ],
     "playerOfMatch": "Daniel Muñoz",
-    "stats": null,
+    "stats": {
+      "possession": [
+        60,
+        40
+      ],
+      "expectedGoals": [
+        1.14,
+        0.36
+      ],
+      "shots": [
+        8,
+        6
+      ],
+      "shotsOnTarget": [
+        3,
+        2
+      ],
+      "passes": [
+        545,
+        387
+      ],
+      "passAccuracy": [
+        83,
+        81
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "fouls": [
+        12,
+        11
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "colombia",
     "awayTeam": "drcongo",
@@ -3188,6 +4163,10 @@
       "possession": [
         54,
         46
+      ],
+      "expectedGoals": [
+        2.19,
+        1.3
       ],
       "shots": [
         12,
@@ -3283,6 +4262,10 @@
       "possession": [
         58,
         42
+      ],
+      "expectedGoals": [
+        2.89,
+        1.11
       ],
       "shots": [
         16,
@@ -3401,6 +4384,10 @@
         63,
         37
       ],
+      "expectedGoals": [
+        3.59,
+        1.98
+      ],
       "shots": [
         19,
         7
@@ -3494,6 +4481,10 @@
         34,
         66
       ],
+      "expectedGoals": [
+        0.52,
+        2.57
+      ],
       "shots": [
         5,
         17
@@ -3564,6 +4555,10 @@
       "possession": [
         48,
         52
+      ],
+      "expectedGoals": [
+        1.13,
+        0.23
       ],
       "shots": [
         10,
@@ -3645,6 +4640,10 @@
       "possession": [
         38,
         62
+      ],
+      "expectedGoals": [
+        0.42,
+        2.52
       ],
       "shots": [
         5,
@@ -3730,6 +4729,10 @@
       "possession": [
         42,
         58
+      ],
+      "expectedGoals": [
+        0.58,
+        1.78
       ],
       "shots": [
         7,
@@ -3830,6 +4833,10 @@
         45,
         55
       ],
+      "expectedGoals": [
+        1.82,
+        0.97
+      ],
       "shots": [
         11,
         15
@@ -3911,6 +4918,10 @@
       "possession": [
         36,
         64
+      ],
+      "expectedGoals": [
+        0.98,
+        2.81
       ],
       "shots": [
         6,
@@ -3996,6 +5007,10 @@
       "possession": [
         51,
         49
+      ],
+      "expectedGoals": [
+        1.09,
+        1.21
       ],
       "shots": [
         12,
@@ -4094,6 +5109,10 @@
         52,
         48
       ],
+      "expectedGoals": [
+        2.62,
+        1.98
+      ],
       "shots": [
         14,
         11
@@ -4155,6 +5174,10 @@
       "possession": [
         47,
         53
+      ],
+      "expectedGoals": [
+        0.61,
+        0.57
       ],
       "shots": [
         8,
@@ -4248,6 +5271,10 @@
       "possession": [
         43,
         57
+      ],
+      "expectedGoals": [
+        1.2,
+        3.46
       ],
       "shots": [
         9,
@@ -4360,6 +5387,10 @@
         67,
         33
       ],
+      "expectedGoals": [
+        4.43,
+        0.51
+      ],
       "shots": [
         24,
         4
@@ -4433,6 +5464,10 @@
       "possession": [
         48,
         52
+      ],
+      "expectedGoals": [
+        0.63,
+        0.45
       ],
       "shots": [
         8,
@@ -4520,6 +5555,10 @@
       "possession": [
         38,
         62
+      ],
+      "expectedGoals": [
+        0.37,
+        1.04
       ],
       "shots": [
         6,
@@ -4626,6 +5665,10 @@
         45,
         55
       ],
+      "expectedGoals": [
+        1.05,
+        4.32
+      ],
       "shots": [
         6,
         18
@@ -4730,6 +5773,10 @@
       "possession": [
         52,
         48
+      ],
+      "expectedGoals": [
+        1.09,
+        1.37
       ],
       "shots": [
         10,

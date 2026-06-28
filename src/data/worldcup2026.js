@@ -8886,18 +8886,17 @@ export const teams = [
 export const matches = [
   {
     "id": "m1",
-    "homeTeam": "mexico",
-    "awayTeam": "southafrica",
+    "match_id": 1,
     "date": "2026-06-11",
     "time": "19:00",
-    "group": "A",
     "venue": "azteca",
+    "group": "A",
     "status": "completed",
     "homeScore": 2,
     "awayScore": 0,
     "scorers": [
       {
-        "name": "Julian Quiñones",
+        "name": "Julian Quinones",
         "teamId": "mexico",
         "minute": 9,
         "assist": "Luis Chavez"
@@ -8947,16 +8946,54 @@ export const matches = [
         "minute": 92
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Julian Quinones",
+    "stats": {
+      "possession": [
+        61,
+        39
+      ],
+      "expectedGoals": [
+        1.86,
+        0.62
+      ],
+      "shots": [
+        16,
+        3
+      ],
+      "shotsOnTarget": [
+        5,
+        0
+      ],
+      "passes": [
+        519,
+        325
+      ],
+      "passAccuracy": [
+        86,
+        81
+      ],
+      "corners": [
+        3,
+        1
+      ],
+      "fouls": [
+        14,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "mexico",
+    "awayTeam": "southafrica",
+    "stage": "Group Stage",
+    "location": "Mexico City"
   },
   {
     "id": "m2",
-    "homeTeam": "southkorea",
-    "awayTeam": "czechia",
+    "match_id": 2,
     "date": "2026-06-12",
     "time": "02:00",
-    "group": "A",
     "venue": "akron",
+    "group": "A",
     "status": "completed",
     "homeScore": 2,
     "awayScore": 1,
@@ -8988,16 +9025,54 @@ export const matches = [
         "minute": 96
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Hwang In-Beom",
+    "stats": {
+      "possession": [
+        62,
+        38
+      ],
+      "expectedGoals": [
+        1.85,
+        1.35
+      ],
+      "shots": [
+        15,
+        8
+      ],
+      "shotsOnTarget": [
+        7,
+        4
+      ],
+      "passes": [
+        498,
+        305
+      ],
+      "passAccuracy": [
+        85,
+        76
+      ],
+      "corners": [
+        4,
+        5
+      ],
+      "fouls": [
+        10,
+        15
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "southkorea",
+    "awayTeam": "czechia",
+    "stage": "Group Stage",
+    "location": "Zapopan"
   },
   {
     "id": "m3",
-    "homeTeam": "canada",
-    "awayTeam": "bosniaandherzegovina",
+    "match_id": 3,
     "date": "2026-06-12",
     "time": "19:00",
-    "group": "B",
     "venue": "bmo",
+    "group": "B",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 1,
@@ -9005,13 +9080,13 @@ export const matches = [
       {
         "name": "Cyle Larin",
         "teamId": "canada",
-        "minute": "",
+        "minute": "78",
         "assist": "Promise David"
       },
       {
         "name": "Jovo Lukic",
         "teamId": "bosniaandherzegovina",
-        "minute": "",
+        "minute": "21",
         "assist": "Sead Kolasinac"
       }
     ],
@@ -9020,52 +9095,92 @@ export const matches = [
         "name": "Alistair Johnston",
         "teamId": "canada",
         "type": "yellow",
-        "minute": ""
+        "minute": "11"
       },
       {
         "name": "Jovo Lukic",
         "teamId": "bosniaandherzegovina",
         "type": "yellow",
-        "minute": ""
+        "minute": "46"
       },
       {
         "name": "Ermedin Demirovic",
         "teamId": "bosniaandherzegovina",
         "type": "yellow",
-        "minute": ""
+        "minute": "45"
       },
       {
         "name": "Luc de Fougerolles",
         "teamId": "canada",
         "type": "yellow",
-        "minute": ""
+        "minute": "53"
       },
       {
         "name": "Nikola Katic",
         "teamId": "bosniaandherzegovina",
         "type": "yellow",
-        "minute": ""
+        "minute": "93"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Ismaël Koné",
+    "stats": {
+      "possession": [
+        61,
+        39
+      ],
+      "expectedGoals": [
+        1.07,
+        1.23
+      ],
+      "shots": [
+        18,
+        9
+      ],
+      "shotsOnTarget": [
+        6,
+        3
+      ],
+      "passes": [
+        480,
+        310
+      ],
+      "passAccuracy": [
+        84,
+        75
+      ],
+      "corners": [
+        9,
+        3
+      ],
+      "fouls": [
+        12,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "canada",
+    "awayTeam": "bosniaandherzegovina",
+    "stage": "Group Stage",
+    "location": "Toronto"
   },
   {
     "id": "m4",
-    "homeTeam": "usa",
-    "awayTeam": "paraguay",
+    "match_id": 4,
     "date": "2026-06-13",
     "time": "01:00",
-    "group": "D",
     "venue": "sofi",
+    "group": "D",
     "status": "completed",
     "homeScore": 4,
     "awayScore": 1,
     "scorers": [
       {
-        "name": "Damián Bobadilla (OG)",
+        "name": "Damián Bobadilla",
         "teamId": "usa",
         "minute": 7,
-        "assist": ""
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
       },
       {
         "name": "Folarin Balogun",
@@ -9080,29 +9195,104 @@ export const matches = [
         "assist": "Malik Tillman"
       },
       {
-        "name": "Maurício",
+        "name": "Mauricio",
         "teamId": "paraguay",
         "minute": 73,
         "assist": "Julio Enciso"
       },
       {
-        "name": "Gio Reyna",
+        "name": "Giovanni Reyna",
         "teamId": "usa",
         "minute": 90,
         "assist": "Alex Freeman"
       }
     ],
-    "cards": [],
-    "highlightUrl": ""
+    "cards": [
+      {
+        "name": "Juan Jose Cáceres",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "10"
+      },
+      {
+        "name": "Miguel Almirón",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "53"
+      },
+      {
+        "name": "Tyler Adams",
+        "teamId": "usa",
+        "type": "yellow",
+        "minute": "59"
+      },
+      {
+        "name": "Diego Gómez",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "79"
+      },
+      {
+        "name": "Alex Arce",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "88"
+      },
+      {
+        "name": "Júnior Alonso",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": "93"
+      }
+    ],
+    "playerOfMatch": "Folarin Balogun",
+    "stats": {
+      "possession": [
+        65,
+        35
+      ],
+      "expectedGoals": [
+        3.73,
+        1.22
+      ],
+      "shots": [
+        17,
+        8
+      ],
+      "shotsOnTarget": [
+        6,
+        1
+      ],
+      "passes": [
+        577,
+        282
+      ],
+      "passAccuracy": [
+        91,
+        74
+      ],
+      "corners": [
+        3,
+        1
+      ],
+      "fouls": [
+        11,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "usa",
+    "awayTeam": "paraguay",
+    "stage": "Group Stage",
+    "location": "Los Angeles"
   },
   {
     "id": "m5",
-    "homeTeam": "qatar",
-    "awayTeam": "switzerland",
+    "match_id": 5,
     "date": "2026-06-13",
     "time": "19:00",
-    "group": "B",
     "venue": "levis",
+    "group": "B",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 1,
@@ -9114,10 +9304,12 @@ export const matches = [
         "assist": null
       },
       {
-        "name": "Boualem Khoukhi",
+        "name": "Miro Muheim",
         "teamId": "qatar",
         "minute": 94,
-        "assist": "Homam El Amin"
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
       }
     ],
     "cards": [
@@ -9126,18 +9318,68 @@ export const matches = [
         "teamId": "qatar",
         "type": "yellow",
         "minute": 13
+      },
+      {
+        "name": "Jassem Gaber",
+        "teamId": "qatar",
+        "type": "yellow",
+        "minute": "23"
+      },
+      {
+        "name": "Denis Zakaria",
+        "teamId": "switzerland",
+        "type": "yellow",
+        "minute": "42"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Mahmoud Abunada",
+    "stats": {
+      "possession": [
+        36,
+        64
+      ],
+      "expectedGoals": [
+        1.06,
+        0.97
+      ],
+      "shots": [
+        7,
+        26
+      ],
+      "shotsOnTarget": [
+        2,
+        9
+      ],
+      "passes": [
+        290,
+        580
+      ],
+      "passAccuracy": [
+        72,
+        88
+      ],
+      "corners": [
+        2,
+        11
+      ],
+      "fouls": [
+        14,
+        10
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "qatar",
+    "awayTeam": "switzerland",
+    "stage": "Group Stage",
+    "location": "Santa Clara"
   },
   {
     "id": "m6",
-    "homeTeam": "brazil",
-    "awayTeam": "morocco",
+    "match_id": 6,
     "date": "2026-06-13",
     "time": "22:00",
-    "group": "C",
     "venue": "metlife",
+    "group": "C",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 1,
@@ -9146,13 +9388,13 @@ export const matches = [
         "name": "Ismael Saibari",
         "teamId": "morocco",
         "minute": 21,
-        "assist": "Brahim Diaz"
+        "assist": "Brahim Díaz"
       },
       {
         "name": "Vinícius Júnior",
         "teamId": "brazil",
         "minute": 32,
-        "assist": "Bruno Guimaraes"
+        "assist": "Bruno Guimarães"
       }
     ],
     "cards": [
@@ -9169,16 +9411,54 @@ export const matches = [
         "minute": 43
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Vinícius Júnior",
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "expectedGoals": [
+        1.04,
+        1.23
+      ],
+      "shots": [
+        13,
+        14
+      ],
+      "shotsOnTarget": [
+        5,
+        3
+      ],
+      "passes": [
+        462,
+        448
+      ],
+      "passAccuracy": [
+        84,
+        82
+      ],
+      "corners": [
+        6,
+        2
+      ],
+      "fouls": [
+        12,
+        15
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "brazil",
+    "awayTeam": "morocco",
+    "stage": "Group Stage",
+    "location": "New Jersey"
   },
   {
     "id": "m7",
-    "homeTeam": "haiti",
-    "awayTeam": "scotland",
+    "match_id": 7,
     "date": "2026-06-14",
     "time": "01:00",
-    "group": "C",
     "venue": "gillette",
+    "group": "C",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 1,
@@ -9190,17 +9470,80 @@ export const matches = [
         "assist": null
       }
     ],
-    "cards": [],
-    "highlightUrl": ""
+    "cards": [
+      {
+        "name": "Aaron Hickey",
+        "teamId": "scotland",
+        "type": "yellow",
+        "minute": "46"
+      },
+      {
+        "name": "Findlay Curtis",
+        "teamId": "scotland",
+        "type": "yellow",
+        "minute": "91"
+      },
+      {
+        "name": "Kenny McLean",
+        "teamId": "scotland",
+        "type": "yellow",
+        "minute": "95"
+      },
+      {
+        "name": "Jean-Ricner Bellegarde",
+        "teamId": "haiti",
+        "type": "yellow",
+        "minute": "39"
+      }
+    ],
+    "playerOfMatch": "John McGinn",
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "expectedGoals": [
+        0.43,
+        0.93
+      ],
+      "shots": [
+        15,
+        9
+      ],
+      "shotsOnTarget": [
+        4,
+        3
+      ],
+      "passes": [
+        420,
+        360
+      ],
+      "passAccuracy": [
+        80,
+        78
+      ],
+      "corners": [
+        4,
+        3
+      ],
+      "fouls": [
+        13,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "haiti",
+    "awayTeam": "scotland",
+    "stage": "Group Stage",
+    "location": "Foxborough"
   },
   {
     "id": "m8",
-    "homeTeam": "australia",
-    "awayTeam": "turkiye",
+    "match_id": 8,
     "date": "2026-06-14",
     "time": "04:00",
-    "group": "D",
     "venue": "bcplace",
+    "group": "D",
     "status": "completed",
     "homeScore": 2,
     "awayScore": 0,
@@ -9218,17 +9561,62 @@ export const matches = [
         "assist": null
       }
     ],
-    "cards": [],
-    "highlightUrl": ""
+    "cards": [
+      {
+        "name": "Yunus Akgün",
+        "teamId": "turkiye",
+        "type": "yellow",
+        "minute": "86"
+      }
+    ],
+    "playerOfMatch": "Nestory Irankunda",
+    "stats": {
+      "possession": [
+        28,
+        72
+      ],
+      "expectedGoals": [
+        1.83,
+        0.46
+      ],
+      "shots": [
+        9,
+        30
+      ],
+      "shotsOnTarget": [
+        4,
+        8
+      ],
+      "passes": [
+        240,
+        680
+      ],
+      "passAccuracy": [
+        70,
+        89
+      ],
+      "corners": [
+        5,
+        8
+      ],
+      "fouls": [
+        14,
+        9
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "australia",
+    "awayTeam": "turkiye",
+    "stage": "Group Stage",
+    "location": "Vancouver"
   },
   {
     "id": "m9",
-    "homeTeam": "germany",
-    "awayTeam": "curacao",
-    "date": "2026-06-15",
+    "match_id": 9,
+    "date": "2026-06-14",
     "time": "17:00",
-    "group": "E",
     "venue": "nrg",
+    "group": "E",
     "status": "completed",
     "homeScore": 7,
     "awayScore": 1,
@@ -9255,7 +9643,9 @@ export const matches = [
         "name": "Kai Havertz",
         "teamId": "germany",
         "minute": 45,
-        "assist": null
+        "assist": null,
+        "ownGoal": false,
+        "penalty": true
       },
       {
         "name": "Jamal Musiala",
@@ -9283,16 +9673,54 @@ export const matches = [
       }
     ],
     "cards": [],
-    "highlightUrl": ""
+    "playerOfMatch": "Kai Havertz",
+    "stats": {
+      "possession": [
+        65,
+        35
+      ],
+      "expectedGoals": [
+        6.1,
+        1.06
+      ],
+      "shots": [
+        26,
+        8
+      ],
+      "shotsOnTarget": [
+        12,
+        3
+      ],
+      "passes": [
+        610,
+        310
+      ],
+      "passAccuracy": [
+        92,
+        72
+      ],
+      "corners": [
+        8,
+        1
+      ],
+      "fouls": [
+        8,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "germany",
+    "awayTeam": "curacao",
+    "stage": "Group Stage",
+    "location": "Houston"
   },
   {
     "id": "m10",
-    "homeTeam": "netherlands",
-    "awayTeam": "japan",
+    "match_id": 10,
     "date": "2026-06-14",
     "time": "20:00",
-    "group": "F",
     "venue": "attstadium",
+    "group": "F",
     "status": "completed",
     "homeScore": 2,
     "awayScore": 2,
@@ -9334,18 +9762,62 @@ export const matches = [
         "teamId": "netherlands",
         "type": "yellow",
         "minute": 90
+      },
+      {
+        "name": "Memphis Depay",
+        "teamId": "netherlands",
+        "type": "yellow",
+        "minute": "83"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Virgil van Dijk",
+    "stats": {
+      "possession": [
+        59,
+        41
+      ],
+      "expectedGoals": [
+        2.11,
+        1.97
+      ],
+      "shots": [
+        10,
+        10
+      ],
+      "shotsOnTarget": [
+        4,
+        4
+      ],
+      "passes": [
+        520,
+        360
+      ],
+      "passAccuracy": [
+        85,
+        80
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "fouls": [
+        11,
+        10
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "netherlands",
+    "awayTeam": "japan",
+    "stage": "Group Stage",
+    "location": "Arlington"
   },
   {
     "id": "m11",
-    "homeTeam": "ivorycoast",
-    "awayTeam": "ecuador",
+    "match_id": 11,
     "date": "2026-06-14",
     "time": "23:00",
-    "group": "E",
     "venue": "lincoln",
+    "group": "E",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 0,
@@ -9359,28 +9831,78 @@ export const matches = [
     ],
     "cards": [
       {
-        "name": "Franck Kessié",
+        "name": "Seko Fofana",
         "teamId": "ivorycoast",
         "type": "yellow",
-        "minute": 4
+        "minute": "28"
       },
       {
         "name": "Jackson Porozo",
         "teamId": "ecuador",
         "type": "yellow",
         "minute": 73
+      },
+      {
+        "name": "Franck Kessié",
+        "teamId": "ivorycoast",
+        "type": "yellow",
+        "minute": "38"
+      },
+      {
+        "name": "Guela Doué",
+        "teamId": "ivorycoast",
+        "type": "yellow",
+        "minute": "40"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Yan Diomande",
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "expectedGoals": [
+        1.22,
+        0.2
+      ],
+      "shots": [
+        15,
+        12
+      ],
+      "shotsOnTarget": [
+        4,
+        3
+      ],
+      "passes": [
+        410,
+        440
+      ],
+      "passAccuracy": [
+        81,
+        83
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "fouls": [
+        14,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "ivorycoast",
+    "awayTeam": "ecuador",
+    "stage": "Group Stage",
+    "location": "Philadelphia"
   },
   {
     "id": "m12",
-    "homeTeam": "sweden",
-    "awayTeam": "tunisia",
+    "match_id": 12,
     "date": "2026-06-15",
     "time": "02:00",
-    "group": "F",
     "venue": "akron",
+    "group": "F",
     "status": "completed",
     "homeScore": 5,
     "awayScore": 1,
@@ -9401,7 +9923,7 @@ export const matches = [
         "name": "Omar Rekik",
         "teamId": "tunisia",
         "minute": 43,
-        "assist": null
+        "assist": "Hannibal Mejbri"
       },
       {
         "name": "Viktor Gyökeres",
@@ -9419,35 +9941,131 @@ export const matches = [
         "name": "Yasin Ayari",
         "teamId": "sweden",
         "minute": 90,
-        "assist": null
+        "assist": "Lucas Bergvall"
       }
     ],
-    "cards": [],
-    "highlightUrl": ""
+    "cards": [
+      {
+        "name": "Rani Khedira",
+        "teamId": "tunisia",
+        "type": "yellow",
+        "minute": "54"
+      }
+    ],
+    "playerOfMatch": "Yasin Ayari",
+    "stats": {
+      "possession": [
+        49,
+        51
+      ],
+      "expectedGoals": [
+        4.21,
+        1.33
+      ],
+      "shots": [
+        13,
+        6
+      ],
+      "shotsOnTarget": [
+        7,
+        2
+      ],
+      "passes": [
+        430,
+        450
+      ],
+      "passAccuracy": [
+        82,
+        83
+      ],
+      "corners": [
+        4,
+        2
+      ],
+      "fouls": [
+        11,
+        13
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "sweden",
+    "awayTeam": "tunisia",
+    "stage": "Group Stage",
+    "location": "Guadalajara"
   },
   {
     "id": "m13",
-    "homeTeam": "spain",
-    "awayTeam": "capeverde",
+    "match_id": 13,
     "date": "2026-06-15",
     "time": "16:00",
-    "group": "H",
     "venue": "mercedesbenz",
+    "group": "H",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 0,
     "scorers": [],
-    "cards": [],
-    "highlightUrl": ""
+    "cards": [
+      {
+        "name": "Sidny Lopes Cabral",
+        "teamId": "capeverde",
+        "type": "yellow",
+        "minute": "13"
+      },
+      {
+        "name": "Pedri",
+        "teamId": "spain",
+        "type": "yellow",
+        "minute": "93"
+      }
+    ],
+    "playerOfMatch": "Vozinha",
+    "stats": {
+      "possession": [
+        74,
+        26
+      ],
+      "expectedGoals": [
+        0.21,
+        0.59
+      ],
+      "shots": [
+        27,
+        6
+      ],
+      "shotsOnTarget": [
+        7,
+        1
+      ],
+      "passes": [
+        780,
+        240
+      ],
+      "passAccuracy": [
+        91,
+        68
+      ],
+      "corners": [
+        11,
+        1
+      ],
+      "fouls": [
+        9,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "spain",
+    "awayTeam": "capeverde",
+    "stage": "Group Stage",
+    "location": "Atlanta"
   },
   {
     "id": "m14",
-    "homeTeam": "belgium",
-    "awayTeam": "egypt",
+    "match_id": 14,
     "date": "2026-06-15",
     "time": "19:00",
-    "group": "G",
     "venue": "lumen",
+    "group": "G",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 1,
@@ -9459,23 +10077,82 @@ export const matches = [
         "assist": "Mohamed Salah"
       },
       {
-        "name": "Mohamed Hany (OG)",
+        "name": "Mohamed Hany",
         "teamId": "belgium",
         "minute": 66,
-        "assist": null
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
       }
     ],
-    "cards": [],
-    "highlightUrl": ""
+    "cards": [
+      {
+        "name": "Marawan Attia",
+        "teamId": "egypt",
+        "type": "yellow",
+        "minute": "13"
+      },
+      {
+        "name": "Timothy Castagne",
+        "teamId": "belgium",
+        "type": "yellow",
+        "minute": "14"
+      },
+      {
+        "name": "Maxim De Cuyper",
+        "teamId": "belgium",
+        "type": "yellow",
+        "minute": "75"
+      }
+    ],
+    "playerOfMatch": "Emam Ashour",
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "expectedGoals": [
+        1.34,
+        1.16
+      ],
+      "shots": [
+        15,
+        14
+      ],
+      "shotsOnTarget": [
+        3,
+        3
+      ],
+      "passes": [
+        510,
+        430
+      ],
+      "passAccuracy": [
+        86,
+        81
+      ],
+      "corners": [
+        2,
+        7
+      ],
+      "fouls": [
+        10,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "belgium",
+    "awayTeam": "egypt",
+    "stage": "Group Stage",
+    "location": "Seattle"
   },
   {
     "id": "m15",
-    "homeTeam": "saudiarabia",
-    "awayTeam": "uruguay",
+    "match_id": 15,
     "date": "2026-06-15",
     "time": "22:00",
-    "group": "H",
     "venue": "hardrock",
+    "group": "H",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 1,
@@ -9484,26 +10161,71 @@ export const matches = [
         "name": "Abdulelah Al-Amri",
         "teamId": "saudiarabia",
         "minute": 41,
-        "assist": "Mohamed Kanno"
+        "assist": ""
       },
       {
-        "name": "Maxi Araujo",
+        "name": "Maxi Araújo",
         "teamId": "uruguay",
         "minute": 80,
-        "assist": "Federico Viñas"
+        "assist": ""
       }
     ],
-    "cards": [],
-    "highlightUrl": ""
+    "cards": [
+      {
+        "name": "Abdulelah Al-Amri",
+        "teamId": "saudiarabia",
+        "type": "yellow",
+        "minute": "44"
+      }
+    ],
+    "playerOfMatch": "Mohammed Al-Owais",
+    "stats": {
+      "possession": [
+        33,
+        67
+      ],
+      "expectedGoals": [
+        1.04,
+        1.06
+      ],
+      "shots": [
+        7,
+        27
+      ],
+      "shotsOnTarget": [
+        3,
+        10
+      ],
+      "passes": [
+        280,
+        590
+      ],
+      "passAccuracy": [
+        73,
+        87
+      ],
+      "corners": [
+        4,
+        14
+      ],
+      "fouls": [
+        15,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "saudiarabia",
+    "awayTeam": "uruguay",
+    "stage": "Group Stage",
+    "location": "Miami"
   },
   {
     "id": "m16",
-    "homeTeam": "iran",
-    "awayTeam": "newzealand",
+    "match_id": 16,
     "date": "2026-06-16",
     "time": "01:00",
-    "group": "G",
     "venue": "sofi",
+    "group": "G",
     "status": "completed",
     "homeScore": 2,
     "awayScore": 2,
@@ -9527,7 +10249,7 @@ export const matches = [
         "assist": "Chris Wood"
       },
       {
-        "name": "Mohammad Mohebbi",
+        "name": "Mohammad Mohebi",
         "teamId": "iran",
         "minute": 64,
         "assist": "Ramin Rezaeian"
@@ -9541,155 +10263,824 @@ export const matches = [
         "minute": 88
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Elijah Just",
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "expectedGoals": [
+        1.76,
+        1.97
+      ],
+      "shots": [
+        17,
+        14
+      ],
+      "shotsOnTarget": [
+        4,
+        8
+      ],
+      "passes": [
+        420,
+        460
+      ],
+      "passAccuracy": [
+        80,
+        82
+      ],
+      "corners": [
+        4,
+        1
+      ],
+      "fouls": [
+        12,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "iran",
+    "awayTeam": "newzealand",
+    "stage": "Group Stage",
+    "location": "Los Angeles"
   },
   {
     "id": "m17",
-    "homeTeam": "france",
-    "awayTeam": "senegal",
+    "match_id": 17,
     "date": "2026-06-16",
     "time": "19:00",
-    "group": "I",
     "venue": "metlife",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "I",
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Kylian Mbappé",
+        "teamId": "france",
+        "minute": "66",
+        "assist": "Michael Olise",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Bradley Barcola",
+        "teamId": "france",
+        "minute": "82",
+        "assist": "Adrien Rabiot",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Kylian Mbappé",
+        "teamId": "france",
+        "minute": "96",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Ibrahim Mbaye",
+        "teamId": "senegal",
+        "minute": "95",
+        "assist": "Iliman Ndiaye",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "Kylian Mbappé",
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "expectedGoals": [
+        2.75,
+        1.32
+      ],
+      "shots": [
+        12,
+        7
+      ],
+      "shotsOnTarget": [
+        4,
+        2
+      ],
+      "passes": [
+        460,
+        411
+      ],
+      "passAccuracy": [
+        83,
+        78
+      ],
+      "corners": [
+        5,
+        5
+      ],
+      "fouls": [
+        14,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "france",
+    "awayTeam": "senegal",
+    "stage": "Group Stage",
+    "location": "New Jersey"
   },
   {
     "id": "m18",
-    "homeTeam": "iraq",
-    "awayTeam": "norway",
+    "match_id": 18,
     "date": "2026-06-16",
     "time": "22:00",
-    "group": "I",
     "venue": "gillette",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "I",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 4,
+    "scorers": [
+      {
+        "name": "Erling Haaland",
+        "teamId": "norway",
+        "minute": "29",
+        "assist": "David Møller Wolfe",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Erling Haaland",
+        "teamId": "norway",
+        "minute": "43",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Leo Østigård",
+        "teamId": "norway",
+        "minute": "76",
+        "assist": "Martin Ødegaard",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Aymen Hussein",
+        "teamId": "norway",
+        "minute": "96",
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      },
+      {
+        "name": "Aymen Hussein",
+        "teamId": "iraq",
+        "minute": "39",
+        "assist": "Amir Al-Ammari",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Zaid Tahseen",
+        "teamId": "iraq",
+        "type": "yellow",
+        "minute": "86"
+      }
+    ],
+    "playerOfMatch": "Erling Haaland",
+    "stats": {
+      "possession": [
+        49,
+        51
+      ],
+      "expectedGoals": [
+        1.33,
+        3.68
+      ],
+      "shots": [
+        6,
+        12
+      ],
+      "shotsOnTarget": [
+        4,
+        5
+      ],
+      "passes": [
+        477,
+        424
+      ],
+      "passAccuracy": [
+        85,
+        78
+      ],
+      "corners": [
+        4,
+        4
+      ],
+      "fouls": [
+        10,
+        9
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "iraq",
+    "awayTeam": "norway",
+    "stage": "Group Stage",
+    "location": "Foxborough"
   },
   {
     "id": "m19",
-    "homeTeam": "argentina",
-    "awayTeam": "algeria",
+    "match_id": 19,
     "date": "2026-06-17",
     "time": "01:00",
-    "group": "J",
     "venue": "arrowhead",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "J",
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Lionel Messi",
+        "teamId": "argentina",
+        "minute": "17",
+        "assist": "Rodrigo De Paul",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Lionel Messi",
+        "teamId": "argentina",
+        "minute": "60",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Lionel Messi",
+        "teamId": "argentina",
+        "minute": "76",
+        "assist": "Nicolas Gonzalez",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "Lionel Messi",
+    "stats": {
+      "possession": [
+        59,
+        41
+      ],
+      "expectedGoals": [
+        2.98,
+        0.18
+      ],
+      "shots": [
+        14,
+        6
+      ],
+      "shotsOnTarget": [
+        4,
+        1
+      ],
+      "passes": [
+        463,
+        512
+      ],
+      "passAccuracy": [
+        84,
+        85
+      ],
+      "corners": [
+        6,
+        7
+      ],
+      "fouls": [
+        13,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "argentina",
+    "awayTeam": "algeria",
+    "stage": "Group Stage",
+    "location": "Kansas City"
   },
   {
     "id": "m20",
-    "homeTeam": "austria",
-    "awayTeam": "jordan",
+    "match_id": 20,
     "date": "2026-06-17",
     "time": "04:00",
-    "group": "J",
     "venue": "levis",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "J",
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Romano Schmid",
+        "teamId": "austria",
+        "minute": "21",
+        "assist": "Xaver Schlager",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Yazan Al-Arab",
+        "teamId": "austria",
+        "minute": "76",
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      },
+      {
+        "name": "Marko Arnautovic",
+        "teamId": "austria",
+        "minute": "102",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": true
+      },
+      {
+        "name": "Ali Olwan",
+        "teamId": "jordan",
+        "minute": "50",
+        "assist": "Noor Al-Rawabdeh",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Marcel Sabitzer",
+        "teamId": "austria",
+        "type": "yellow",
+        "minute": "77"
+      }
+    ],
+    "playerOfMatch": "Marko Arnautovic",
+    "stats": {
+      "possession": [
+        49,
+        51
+      ],
+      "expectedGoals": [
+        2.86,
+        0.98
+      ],
+      "shots": [
+        13,
+        5
+      ],
+      "shotsOnTarget": [
+        6,
+        4
+      ],
+      "passes": [
+        403,
+        473
+      ],
+      "passAccuracy": [
+        82,
+        79
+      ],
+      "corners": [
+        2,
+        5
+      ],
+      "fouls": [
+        7,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "austria",
+    "awayTeam": "jordan",
+    "stage": "Group Stage",
+    "location": "Santa Clara"
   },
   {
     "id": "m21",
-    "homeTeam": "portugal",
-    "awayTeam": "drcongo",
+    "match_id": 21,
     "date": "2026-06-17",
     "time": "17:00",
-    "group": "K",
     "venue": "nrg",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
-  },
-  {
-    "id": "m22",
-    "homeTeam": "england",
-    "awayTeam": "croatia",
-    "date": "2026-06-17",
-    "time": "20:00",
-    "group": "L",
-    "venue": "attstadium",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
-  },
-  {
-    "id": "m23",
-    "homeTeam": "ghana",
-    "awayTeam": "panama",
-    "date": "2026-06-17",
-    "time": "23:00",
-    "group": "L",
-    "venue": "bmo",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
-  },
-  {
-    "id": "m24",
-    "homeTeam": "uzbekistan",
-    "awayTeam": "colombia",
-    "date": "2026-06-18",
-    "time": "02:00",
     "group": "K",
-    "venue": "azteca",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
-  },
-  {
-    "id": "m25",
-    "homeTeam": "czechia",
-    "awayTeam": "southafrica",
-    "date": "2026-06-18",
-    "time": "16:00",
-    "group": "A",
-    "venue": "mercedesbenz",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 1,
     "scorers": [
       {
-        "name": "Michal Sadílek",
+        "name": "João Neves",
+        "teamId": "portugal",
+        "minute": 6,
+        "assist": "Pedro Neto"
+      },
+      {
+        "name": "Yoane Wissa",
+        "teamId": "drcongo",
+        "minute": "45+5",
+        "assist": "Arthur Masuaku"
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "expectedGoals": [
+        1.42,
+        1.34
+      ],
+      "shots": [
+        6,
+        10
+      ],
+      "shotsOnTarget": [
+        4,
+        3
+      ],
+      "passes": [
+        471,
+        415
+      ],
+      "passAccuracy": [
+        87,
+        85
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "fouls": [
+        13,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "portugal",
+    "awayTeam": "drcongo",
+    "stage": "Group Stage",
+    "location": "Houston"
+  },
+  {
+    "id": "m22",
+    "match_id": 22,
+    "date": "2026-06-17",
+    "time": "20:00",
+    "venue": "attstadium",
+    "group": "L",
+    "status": "completed",
+    "homeScore": 4,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Harry Kane",
+        "teamId": "england",
+        "minute": 12,
+        "penalty": true
+      },
+      {
+        "name": "Harry Kane",
+        "teamId": "england",
+        "minute": 42,
+        "assist": "Declan Rice"
+      },
+      {
+        "name": "Jude Bellingham",
+        "teamId": "england",
+        "minute": 47,
+        "assist": "Elliot Anderson"
+      },
+      {
+        "name": "Marcus Rashford",
+        "teamId": "england",
+        "minute": 85,
+        "assist": "Bukayo Saka"
+      },
+      {
+        "name": "Martin Baturina",
+        "teamId": "croatia",
+        "minute": 36,
+        "assist": "Petar Sučić"
+      },
+      {
+        "name": "Petar Musa",
+        "teamId": "croatia",
+        "minute": "45+5",
+        "assist": "Ivan Perišić"
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": {
+      "possession": [
+        56,
+        44
+      ],
+      "expectedGoals": [
+        3.53,
+        2.16
+      ],
+      "shots": [
+        12,
+        6
+      ],
+      "shotsOnTarget": [
+        5,
+        5
+      ],
+      "passes": [
+        407,
+        451
+      ],
+      "passAccuracy": [
+        83,
+        82
+      ],
+      "corners": [
+        5,
+        2
+      ],
+      "fouls": [
+        7,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "england",
+    "awayTeam": "croatia",
+    "stage": "Group Stage",
+    "location": "Arlington"
+  },
+  {
+    "id": "m23",
+    "match_id": 23,
+    "date": "2026-06-17",
+    "time": "23:00",
+    "venue": "bmo",
+    "group": "L",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Caleb Yirenkyi",
+        "teamId": "ghana",
+        "minute": "90+5",
+        "assist": "Brandon Thomas-Asante"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Carlos Harvey",
+        "teamId": "panama",
+        "type": "yellow",
+        "minute": ""
+      },
+      {
+        "name": "César Blackman",
+        "teamId": "panama",
+        "type": "yellow",
+        "minute": ""
+      },
+      {
+        "name": "Caleb Yirenkyi",
+        "teamId": "ghana",
+        "type": "yellow",
+        "minute": ""
+      }
+    ],
+    "playerOfMatch": "",
+    "stats": {
+      "possession": [
+        59,
+        41
+      ],
+      "expectedGoals": [
+        1.22,
+        0.16
+      ],
+      "shots": [
+        10,
+        5
+      ],
+      "shotsOnTarget": [
+        4,
+        3
+      ],
+      "passes": [
+        528,
+        425
+      ],
+      "passAccuracy": [
+        89,
+        78
+      ],
+      "corners": [
+        2,
+        3
+      ],
+      "fouls": [
+        11,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "ghana",
+    "awayTeam": "panama",
+    "stage": "Group Stage",
+    "location": "Toronto"
+  },
+  {
+    "id": "m24",
+    "match_id": 24,
+    "date": "2026-06-18",
+    "time": "02:00",
+    "venue": "azteca",
+    "group": "K",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 3,
+    "scorers": [
+      {
+        "name": "Abbosbek Fayzullaev",
+        "teamId": "uzbekistan",
+        "minute": 60
+      },
+      {
+        "name": "Daniel Muñoz",
+        "teamId": "colombia",
+        "minute": 41,
+        "assist": "Luis Díaz"
+      },
+      {
+        "name": "Luis Díaz",
+        "teamId": "colombia",
+        "minute": 65,
+        "assist": "Gustavo Puerta"
+      },
+      {
+        "name": "Jáminton Campaz",
+        "teamId": "colombia",
+        "minute": "90+9",
+        "assist": "Cucho Hernández"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Abdukodir Khusanov",
+        "teamId": "uzbekistan",
+        "type": "yellow",
+        "minute": ""
+      },
+      {
+        "name": "Johan Mojica",
+        "teamId": "colombia",
+        "type": "yellow",
+        "minute": ""
+      }
+    ],
+    "playerOfMatch": "",
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "expectedGoals": [
+        0.93,
+        2.75
+      ],
+      "shots": [
+        8,
+        14
+      ],
+      "shotsOnTarget": [
+        4,
+        6
+      ],
+      "passes": [
+        417,
+        471
+      ],
+      "passAccuracy": [
+        88,
+        82
+      ],
+      "corners": [
+        7,
+        2
+      ],
+      "fouls": [
+        12,
+        9
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "uzbekistan",
+    "awayTeam": "colombia",
+    "stage": "Group Stage",
+    "location": "Mexico City"
+  },
+  {
+    "id": "m25",
+    "match_id": 25,
+    "date": "2026-06-18",
+    "time": "16:00",
+    "venue": "mercedesbenz",
+    "group": "A",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Michal Sadilek",
         "teamId": "czechia",
         "minute": 6,
-        "assist": "Aleksandr Sojka"
+        "assist": "Alexandr Sojka"
       },
       {
         "name": "Teboho Mokoena",
         "teamId": "southafrica",
         "minute": 83,
-        "assist": null
+        "assist": "",
+        "ownGoal": false,
+        "penalty": true
       }
     ],
     "cards": [
       {
-        "name": "Ladislav Krejčí",
+        "name": "Ladislav Krejci",
         "teamId": "czechia",
         "type": "yellow",
         "minute": 75
+      },
+      {
+        "name": "Teboho Mokoena",
+        "teamId": "southafrica",
+        "type": "yellow",
+        "minute": "33"
+      },
+      {
+        "name": "Thalente Mbatha",
+        "teamId": "southafrica",
+        "type": "yellow",
+        "minute": "40"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Teboho Mokoena",
+    "stats": {
+      "possession": [
+        38,
+        62
+      ],
+      "expectedGoals": [
+        1.28,
+        1.41
+      ],
+      "shots": [
+        12,
+        17
+      ],
+      "shotsOnTarget": [
+        3,
+        5
+      ],
+      "passes": [
+        300,
+        500
+      ],
+      "passAccuracy": [
+        80,
+        90
+      ],
+      "corners": [
+        5,
+        5
+      ],
+      "fouls": [
+        12,
+        10
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "czechia",
+    "awayTeam": "southafrica",
+    "stage": "Group Stage",
+    "location": "Atlanta"
   },
   {
     "id": "m26",
-    "homeTeam": "switzerland",
-    "awayTeam": "bosniaandherzegovina",
+    "match_id": 26,
     "date": "2026-06-18",
     "time": "19:00",
-    "group": "B",
     "venue": "sofi",
+    "group": "B",
     "status": "completed",
     "homeScore": 4,
     "awayScore": 1,
@@ -9701,16 +11092,16 @@ export const matches = [
         "assist": null
       },
       {
-        "name": "Ruben Vargas",
+        "name": "Rubin Vargas",
         "teamId": "switzerland",
         "minute": 84,
-        "assist": null
+        "assist": "Breel Embolo"
       },
       {
         "name": "Johan Manzambi",
         "teamId": "switzerland",
         "minute": 90,
-        "assist": "Ruben Vargas"
+        "assist": "Rubin Vargas"
       },
       {
         "name": "Ermin Mahmic",
@@ -9722,7 +11113,9 @@ export const matches = [
         "name": "Granit Xhaka",
         "teamId": "switzerland",
         "minute": "90+7",
-        "assist": null
+        "assist": "",
+        "ownGoal": false,
+        "penalty": true
       }
     ],
     "cards": [
@@ -9731,18 +11124,74 @@ export const matches = [
         "teamId": "bosniaandherzegovina",
         "type": "red",
         "minute": 80
+      },
+      {
+        "name": "Edin Dzeko",
+        "teamId": "bosniaandherzegovina",
+        "type": "yellow",
+        "minute": "61"
+      },
+      {
+        "name": "Amar Dedic",
+        "teamId": "bosniaandherzegovina",
+        "type": "yellow",
+        "minute": "59"
+      },
+      {
+        "name": "Nico Elvedi",
+        "teamId": "switzerland",
+        "type": "yellow",
+        "minute": "65"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Johan Manzambi",
+    "stats": {
+      "possession": [
+        62,
+        38
+      ],
+      "expectedGoals": [
+        3.66,
+        1.08
+      ],
+      "shots": [
+        13,
+        4
+      ],
+      "shotsOnTarget": [
+        8,
+        3
+      ],
+      "passes": [
+        586,
+        354
+      ],
+      "passAccuracy": [
+        88,
+        81
+      ],
+      "corners": [
+        7,
+        3
+      ],
+      "fouls": [
+        7,
+        18
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "switzerland",
+    "awayTeam": "bosniaandherzegovina",
+    "stage": "Group Stage",
+    "location": "Los Angeles"
   },
   {
     "id": "m27",
-    "homeTeam": "canada",
-    "awayTeam": "qatar",
+    "match_id": 27,
     "date": "2026-06-18",
     "time": "22:00",
-    "group": "B",
     "venue": "bcplace",
+    "group": "B",
     "status": "completed",
     "homeScore": 6,
     "awayScore": 0,
@@ -9772,10 +11221,12 @@ export const matches = [
         "assist": null
       },
       {
-        "name": "Mohamed Manai (OG)",
+        "name": "Mohamed Manai",
         "teamId": "canada",
         "minute": 75,
-        "assist": null
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
       },
       {
         "name": "Jonathan David",
@@ -9796,18 +11247,68 @@ export const matches = [
         "teamId": "qatar",
         "type": "red",
         "minute": 53
+      },
+      {
+        "name": "Derek Cornelius",
+        "teamId": "canada",
+        "type": "yellow",
+        "minute": "9"
+      },
+      {
+        "name": "Ahmed Fathy",
+        "teamId": "qatar",
+        "type": "yellow",
+        "minute": "62"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Jonathan David",
+    "stats": {
+      "possession": [
+        79,
+        21
+      ],
+      "expectedGoals": [
+        5.17,
+        0.18
+      ],
+      "shots": [
+        32,
+        2
+      ],
+      "shotsOnTarget": [
+        10,
+        0
+      ],
+      "passes": [
+        567,
+        162
+      ],
+      "passAccuracy": [
+        91,
+        64
+      ],
+      "corners": [
+        19,
+        1
+      ],
+      "fouls": [
+        9,
+        16
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "canada",
+    "awayTeam": "qatar",
+    "stage": "Group Stage",
+    "location": "Vancouver"
   },
   {
     "id": "m28",
-    "homeTeam": "mexico",
-    "awayTeam": "southkorea",
+    "match_id": 28,
     "date": "2026-06-19",
     "time": "01:00",
-    "group": "A",
     "venue": "akron",
+    "group": "A",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 0,
@@ -9821,191 +11322,1140 @@ export const matches = [
     ],
     "cards": [
       {
-        "name": "Paik Seung-ho",
+        "name": "Lee Kang-In",
         "teamId": "southkorea",
         "type": "yellow",
-        "minute": 57
+        "minute": "4"
+      },
+      {
+        "name": "Paik Seung-Ho",
+        "teamId": "southkorea",
+        "type": "yellow",
+        "minute": "58"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Luis Romo",
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "expectedGoals": [
+        0.94,
+        0.48
+      ],
+      "shots": [
+        8,
+        9
+      ],
+      "shotsOnTarget": [
+        4,
+        2
+      ],
+      "passes": [
+        350,
+        420
+      ],
+      "passAccuracy": [
+        76,
+        79
+      ],
+      "corners": [
+        0,
+        2
+      ],
+      "fouls": [
+        9,
+        7
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "mexico",
+    "awayTeam": "southkorea",
+    "stage": "Group Stage",
+    "location": "Zapopan"
   },
   {
     "id": "m29",
-    "homeTeam": "usa",
-    "awayTeam": "australia",
+    "match_id": 29,
     "date": "2026-06-19",
     "time": "19:00",
-    "group": "D",
     "venue": "lumen",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "D",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Cameron Burgess",
+        "teamId": "usa",
+        "minute": 11,
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      },
+      {
+        "name": "Alex Freeman",
+        "teamId": "usa",
+        "minute": 43,
+        "assist": "Sergiño Dest"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Jacob Italiano",
+        "teamId": "australia",
+        "type": "yellow",
+        "minute": 88
+      },
+      {
+        "name": "Chris Richards",
+        "teamId": "usa",
+        "type": "yellow",
+        "minute": "90+2"
+      }
+    ],
+    "playerOfMatch": "Alex Freeman",
+    "stats": {
+      "possession": [
+        55,
+        45
+      ],
+      "expectedGoals": [
+        1.75,
+        0.52
+      ],
+      "shots": [
+        7,
+        5
+      ],
+      "shotsOnTarget": [
+        5,
+        1
+      ],
+      "passes": [
+        422,
+        415
+      ],
+      "passAccuracy": [
+        89,
+        86
+      ],
+      "corners": [
+        5,
+        3
+      ],
+      "fouls": [
+        8,
+        13
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "usa",
+    "awayTeam": "australia",
+    "stage": "Group Stage",
+    "location": "Seattle"
   },
   {
     "id": "m30",
-    "homeTeam": "scotland",
-    "awayTeam": "morocco",
+    "match_id": 30,
     "date": "2026-06-19",
     "time": "22:00",
-    "group": "C",
     "venue": "gillette",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "C",
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Ismael Saibari",
+        "teamId": "morocco",
+        "minute": 2,
+        "assist": "Brahim Díaz"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Issa Diop",
+        "teamId": "morocco",
+        "type": "yellow",
+        "minute": 23
+      },
+      {
+        "name": "Andy Robertson",
+        "teamId": "scotland",
+        "type": "yellow",
+        "minute": 65
+      }
+    ],
+    "playerOfMatch": "Ismael Saibari",
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "expectedGoals": [
+        0.26,
+        1.33
+      ],
+      "shots": [
+        6,
+        10
+      ],
+      "shotsOnTarget": [
+        1,
+        3
+      ],
+      "passes": [
+        413,
+        393
+      ],
+      "passAccuracy": [
+        87,
+        80
+      ],
+      "corners": [
+        7,
+        5
+      ],
+      "fouls": [
+        8,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "scotland",
+    "awayTeam": "morocco",
+    "stage": "Group Stage",
+    "location": "Foxborough"
   },
   {
     "id": "m31",
-    "homeTeam": "brazil",
-    "awayTeam": "haiti",
+    "match_id": 31,
     "date": "2026-06-20",
     "time": "00:30",
-    "group": "C",
     "venue": "lincoln",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "C",
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Matheus Cunha",
+        "teamId": "brazil",
+        "minute": 23,
+        "assist": ""
+      },
+      {
+        "name": "Matheus Cunha",
+        "teamId": "brazil",
+        "minute": 36,
+        "assist": "Vinícius Júnior"
+      },
+      {
+        "name": "Vinícius Júnior",
+        "teamId": "brazil",
+        "minute": "45+3",
+        "assist": "Lucas Paquetá"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Carlens Arcus",
+        "teamId": "haiti",
+        "type": "yellow",
+        "minute": 4
+      },
+      {
+        "name": "Douglas Santos",
+        "teamId": "brazil",
+        "type": "yellow",
+        "minute": 64
+      },
+      {
+        "name": "Danley Jean Jacques",
+        "teamId": "haiti",
+        "type": "yellow",
+        "minute": 72
+      }
+    ],
+    "playerOfMatch": "Vinícius Júnior",
+    "stats": {
+      "possession": [
+        53,
+        47
+      ],
+      "expectedGoals": [
+        2.93,
+        0.43
+      ],
+      "shots": [
+        11,
+        9
+      ],
+      "shotsOnTarget": [
+        4,
+        1
+      ],
+      "passes": [
+        506,
+        518
+      ],
+      "passAccuracy": [
+        79,
+        81
+      ],
+      "corners": [
+        6,
+        6
+      ],
+      "fouls": [
+        14,
+        8
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "brazil",
+    "awayTeam": "haiti",
+    "stage": "Group Stage",
+    "location": "Philadelphia"
   },
   {
     "id": "m32",
-    "homeTeam": "turkiye",
-    "awayTeam": "paraguay",
+    "match_id": 32,
     "date": "2026-06-20",
     "time": "03:00",
-    "group": "D",
     "venue": "levis",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "D",
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Matías Galarza",
+        "teamId": "paraguay",
+        "minute": 1,
+        "assist": "Julio Enciso"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Matías Galarza",
+        "teamId": "paraguay",
+        "type": "yellow",
+        "minute": 4
+      },
+      {
+        "name": "Miguel Almirón",
+        "teamId": "paraguay",
+        "type": "red",
+        "minute": "45+3"
+      },
+      {
+        "name": "Eren Elmalı",
+        "teamId": "turkiye",
+        "type": "yellow",
+        "minute": 75
+      }
+    ],
+    "playerOfMatch": "Matías Galarza",
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "expectedGoals": [
+        0.36,
+        1.35
+      ],
+      "shots": [
+        9,
+        6
+      ],
+      "shotsOnTarget": [
+        1,
+        2
+      ],
+      "passes": [
+        501,
+        492
+      ],
+      "passAccuracy": [
+        89,
+        89
+      ],
+      "corners": [
+        2,
+        2
+      ],
+      "fouls": [
+        10,
+        9
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "turkiye",
+    "awayTeam": "paraguay",
+    "stage": "Group Stage",
+    "location": "Santa Clara"
   },
   {
     "id": "m33",
-    "homeTeam": "netherlands",
-    "awayTeam": "sweden",
+    "match_id": 33,
     "date": "2026-06-20",
     "time": "17:00",
-    "group": "F",
     "venue": "nrg",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "F",
+    "status": "completed",
+    "homeScore": 5,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Brian Brobbey",
+        "teamId": "netherlands",
+        "minute": 5,
+        "assist": "Cody Gakpo"
+      },
+      {
+        "name": "Brian Brobbey",
+        "teamId": "netherlands",
+        "minute": 17,
+        "assist": "Denzel Dumfries"
+      },
+      {
+        "name": "Cody Gakpo",
+        "teamId": "netherlands",
+        "minute": 47,
+        "assist": "Denzel Dumfries"
+      },
+      {
+        "name": "Cody Gakpo",
+        "teamId": "netherlands",
+        "minute": 54,
+        "assist": "Crysencio Summerville"
+      },
+      {
+        "name": "Anthony Elanga",
+        "teamId": "sweden",
+        "minute": 59,
+        "assist": "Alexander Isak"
+      },
+      {
+        "name": "Crysencio Summerville",
+        "teamId": "netherlands",
+        "minute": 89,
+        "assist": "Memphis Depay"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Gabriel Gudmundsson",
+        "teamId": "sweden",
+        "type": "yellow",
+        "minute": 53
+      },
+      {
+        "name": "Yasin Ayari",
+        "teamId": "sweden",
+        "type": "yellow",
+        "minute": 75
+      },
+      {
+        "name": "Lucas Bergvall",
+        "teamId": "sweden",
+        "type": "yellow",
+        "minute": 80
+      }
+    ],
+    "playerOfMatch": "Cody Gakpo",
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "expectedGoals": [
+        4.09,
+        1.22
+      ],
+      "shots": [
+        16,
+        9
+      ],
+      "shotsOnTarget": [
+        6,
+        3
+      ],
+      "passes": [
+        431,
+        493
+      ],
+      "passAccuracy": [
+        82,
+        84
+      ],
+      "corners": [
+        5,
+        2
+      ],
+      "fouls": [
+        13,
+        8
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "netherlands",
+    "awayTeam": "sweden",
+    "stage": "Group Stage",
+    "location": "Houston"
   },
   {
     "id": "m34",
-    "homeTeam": "germany",
-    "awayTeam": "ivorycoast",
+    "match_id": 34,
     "date": "2026-06-20",
     "time": "20:00",
-    "group": "E",
     "venue": "bmo",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "E",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Franck Kessié",
+        "teamId": "ivorycoast",
+        "minute": 30,
+        "assist": null
+      },
+      {
+        "name": "Deniz Undav",
+        "teamId": "germany",
+        "minute": 68,
+        "assist": "Nadiem Amiri"
+      },
+      {
+        "name": "Deniz Undav",
+        "teamId": "germany",
+        "minute": "90+4",
+        "assist": "Felix Nmecha"
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "Deniz Undav",
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "expectedGoals": [
+        1.82,
+        1.41
+      ],
+      "shots": [
+        6,
+        5
+      ],
+      "shotsOnTarget": [
+        5,
+        3
+      ],
+      "passes": [
+        516,
+        491
+      ],
+      "passAccuracy": [
+        80,
+        87
+      ],
+      "corners": [
+        2,
+        4
+      ],
+      "fouls": [
+        14,
+        10
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "germany",
+    "awayTeam": "ivorycoast",
+    "stage": "Group Stage",
+    "location": "Toronto"
   },
   {
     "id": "m35",
-    "homeTeam": "ecuador",
-    "awayTeam": "curacao",
+    "match_id": 35,
     "date": "2026-06-21",
     "time": "00:00",
-    "group": "E",
     "venue": "arrowhead",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "E",
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 0,
+    "scorers": [],
+    "cards": [
+      {
+        "name": "Gervane Kastaneer",
+        "teamId": "curacao",
+        "type": "yellow",
+        "minute": "90+1"
+      }
+    ],
+    "playerOfMatch": "Eloy Room",
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "expectedGoals": [
+        0.24,
+        0.23
+      ],
+      "shots": [
+        5,
+        5
+      ],
+      "shotsOnTarget": [
+        3,
+        3
+      ],
+      "passes": [
+        396,
+        512
+      ],
+      "passAccuracy": [
+        79,
+        78
+      ],
+      "corners": [
+        5,
+        5
+      ],
+      "fouls": [
+        10,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "ecuador",
+    "awayTeam": "curacao",
+    "stage": "Group Stage",
+    "location": "Kansas City"
   },
   {
     "id": "m36",
-    "homeTeam": "tunisia",
-    "awayTeam": "japan",
+    "match_id": 36,
     "date": "2026-06-21",
     "time": "04:00",
-    "group": "F",
     "venue": "akron",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "F",
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 4,
+    "scorers": [
+      {
+        "name": "Daichi Kamada",
+        "teamId": "japan",
+        "minute": 4,
+        "assist": "Keito Nakamura"
+      },
+      {
+        "name": "Ayase Ueda",
+        "teamId": "japan",
+        "minute": 31,
+        "assist": "Ko Itakura"
+      },
+      {
+        "name": "Junya Ito",
+        "teamId": "japan",
+        "minute": 69,
+        "assist": "Ayase Ueda"
+      },
+      {
+        "name": "Ayase Ueda",
+        "teamId": "japan",
+        "minute": 83,
+        "assist": "Kaishu Sano"
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "Ayase Ueda",
+    "stats": {
+      "possession": [
+        41,
+        59
+      ],
+      "expectedGoals": [
+        0.34,
+        3.53
+      ],
+      "shots": [
+        7,
+        15
+      ],
+      "shotsOnTarget": [
+        2,
+        5
+      ],
+      "passes": [
+        437,
+        422
+      ],
+      "passAccuracy": [
+        80,
+        82
+      ],
+      "corners": [
+        2,
+        3
+      ],
+      "fouls": [
+        14,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "tunisia",
+    "awayTeam": "japan",
+    "stage": "Group Stage",
+    "location": "Guadalajara"
   },
   {
     "id": "m37",
-    "homeTeam": "spain",
-    "awayTeam": "saudiarabia",
+    "match_id": 37,
     "date": "2026-06-21",
     "time": "16:00",
-    "group": "H",
     "venue": "mercedesbenz",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "H",
+    "status": "completed",
+    "homeScore": 4,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Lamine Yamal",
+        "teamId": "spain",
+        "minute": 10,
+        "assist": "Mikel Oyarzabal"
+      },
+      {
+        "name": "Mikel Oyarzabal",
+        "teamId": "spain",
+        "minute": 21,
+        "assist": "Aymeric Laporte"
+      },
+      {
+        "name": "Mikel Oyarzabal",
+        "teamId": "spain",
+        "minute": 24,
+        "assist": "Dani Olmo"
+      },
+      {
+        "name": "Hassan Al-Tambakti",
+        "teamId": "spain",
+        "minute": 49,
+        "assist": "",
+        "ownGoal": true,
+        "penalty": false
+      }
+    ],
+    "cards": [],
+    "playerOfMatch": "Mikel Oyarzabal",
+    "stats": {
+      "possession": [
+        60,
+        40
+      ],
+      "expectedGoals": [
+        3.33,
+        0.63
+      ],
+      "shots": [
+        15,
+        7
+      ],
+      "shotsOnTarget": [
+        6,
+        1
+      ],
+      "passes": [
+        514,
+        525
+      ],
+      "passAccuracy": [
+        88,
+        89
+      ],
+      "corners": [
+        7,
+        6
+      ],
+      "fouls": [
+        11,
+        8
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "spain",
+    "awayTeam": "saudiarabia",
+    "stage": "Group Stage",
+    "location": "Atlanta"
   },
   {
     "id": "m38",
-    "homeTeam": "belgium",
-    "awayTeam": "iran",
+    "match_id": 38,
     "date": "2026-06-21",
     "time": "19:00",
-    "group": "G",
     "venue": "sofi",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "G",
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 0,
+    "scorers": [],
+    "cards": [
+      {
+        "name": "Romelu Lukaku",
+        "teamId": "belgium",
+        "type": "yellow",
+        "minute": 3
+      },
+      {
+        "name": "Saeid Ezatolahi",
+        "teamId": "iran",
+        "type": "yellow",
+        "minute": 33
+      },
+      {
+        "name": "Nathan Ngoy",
+        "teamId": "belgium",
+        "type": "red",
+        "minute": 66
+      }
+    ],
+    "playerOfMatch": "Alireza Beiranvand",
+    "stats": {
+      "possession": [
+        53,
+        47
+      ],
+      "expectedGoals": [
+        0.21,
+        0.42
+      ],
+      "shots": [
+        8,
+        6
+      ],
+      "shotsOnTarget": [
+        2,
+        3
+      ],
+      "passes": [
+        523,
+        439
+      ],
+      "passAccuracy": [
+        87,
+        85
+      ],
+      "corners": [
+        5,
+        6
+      ],
+      "fouls": [
+        11,
+        9
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "belgium",
+    "awayTeam": "iran",
+    "stage": "Group Stage",
+    "location": "Los Angeles"
   },
   {
     "id": "m39",
-    "homeTeam": "uruguay",
-    "awayTeam": "capeverde",
+    "match_id": 39,
     "date": "2026-06-21",
     "time": "22:00",
-    "group": "H",
     "venue": "hardrock",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "H",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Kevin Pina",
+        "teamId": "capeverde",
+        "minute": 21,
+        "assist": null
+      },
+      {
+        "name": "Maxi Araújo",
+        "teamId": "uruguay",
+        "minute": 44,
+        "assist": null
+      },
+      {
+        "name": "Agustín Canobbio",
+        "teamId": "uruguay",
+        "minute": "45+6",
+        "assist": "Maxi Araújo"
+      },
+      {
+        "name": "Helio Varela",
+        "teamId": "capeverde",
+        "minute": 61,
+        "assist": null
+      }
+    ],
+    "cards": [
+      {
+        "name": "Rodrigo Bentancur",
+        "teamId": "uruguay",
+        "type": "yellow",
+        "minute": 19
+      },
+      {
+        "name": "Diney Borges",
+        "teamId": "capeverde",
+        "type": "yellow",
+        "minute": "90+2"
+      }
+    ],
+    "playerOfMatch": "Maxi Araújo",
+    "stats": {
+      "possession": [
+        46,
+        54
+      ],
+      "expectedGoals": [
+        2.1,
+        1.85
+      ],
+      "shots": [
+        8,
+        11
+      ],
+      "shotsOnTarget": [
+        5,
+        5
+      ],
+      "passes": [
+        553,
+        546
+      ],
+      "passAccuracy": [
+        89,
+        85
+      ],
+      "corners": [
+        5,
+        6
+      ],
+      "fouls": [
+        13,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "uruguay",
+    "awayTeam": "capeverde",
+    "stage": "Group Stage",
+    "location": "Miami"
   },
   {
     "id": "m40",
-    "homeTeam": "newzealand",
-    "awayTeam": "egypt",
+    "match_id": 40,
     "date": "2026-06-22",
     "time": "01:00",
-    "group": "G",
     "venue": "bcplace",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "G",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 3,
+    "scorers": [
+      {
+        "name": "Finn Surman",
+        "teamId": "newzealand",
+        "minute": 15,
+        "assist": "Tim Payne"
+      },
+      {
+        "name": "Mostafa Zico",
+        "teamId": "egypt",
+        "minute": 58,
+        "assist": "Mohamed Hany"
+      },
+      {
+        "name": "Mohamed Salah",
+        "teamId": "egypt",
+        "minute": 67,
+        "assist": "Mostafa Zico"
+      },
+      {
+        "name": "Trézéguet",
+        "teamId": "egypt",
+        "minute": 82,
+        "assist": "Mohamed Salah"
+      }
+    ],
+    "cards": [
+      {
+        "name": "Mohanad Lashin",
+        "teamId": "egypt",
+        "type": "yellow",
+        "minute": 17
+      },
+      {
+        "name": "Sarpreet Singh",
+        "teamId": "newzealand",
+        "type": "yellow",
+        "minute": 20
+      },
+      {
+        "name": "Callum McCowatt",
+        "teamId": "newzealand",
+        "type": "yellow",
+        "minute": 34
+      }
+    ],
+    "playerOfMatch": "Mohamed Salah",
+    "stats": {
+      "possession": [
+        46,
+        54
+      ],
+      "expectedGoals": [
+        1.17,
+        2.65
+      ],
+      "shots": [
+        7,
+        9
+      ],
+      "shotsOnTarget": [
+        3,
+        4
+      ],
+      "passes": [
+        539,
+        428
+      ],
+      "passAccuracy": [
+        89,
+        79
+      ],
+      "corners": [
+        5,
+        7
+      ],
+      "fouls": [
+        7,
+        7
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "newzealand",
+    "awayTeam": "egypt",
+    "stage": "Group Stage",
+    "location": "Vancouver"
   },
   {
     "id": "m41",
-    "homeTeam": "argentina",
-    "awayTeam": "austria",
+    "match_id": 41,
     "date": "2026-06-22",
     "time": "17:00",
-    "group": "J",
     "venue": "attstadium",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "highlightUrl": ""
+    "group": "J",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Lionel Messi",
+        "teamId": "argentina",
+        "minute": 38,
+        "assist": "Facundo Medina"
+      },
+      {
+        "name": "Lionel Messi",
+        "teamId": "argentina",
+        "minute": "90+5",
+        "assist": null
+      }
+    ],
+    "cards": [
+      {
+        "name": "Stefan Posch",
+        "teamId": "austria",
+        "type": "yellow",
+        "minute": 40
+      },
+      {
+        "name": "Facundo Medina",
+        "teamId": "argentina",
+        "type": "yellow",
+        "minute": 76
+      },
+      {
+        "name": "Konrad Laimer",
+        "teamId": "austria",
+        "type": "yellow",
+        "minute": 76
+      },
+      {
+        "name": "Leandro Paredes",
+        "teamId": "argentina",
+        "type": "yellow",
+        "minute": "90+2"
+      }
+    ],
+    "playerOfMatch": "Lionel Messi",
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "expectedGoals": [
+        2.1,
+        0.25
+      ],
+      "shots": [
+        10,
+        8
+      ],
+      "shotsOnTarget": [
+        3,
+        3
+      ],
+      "passes": [
+        459,
+        488
+      ],
+      "passAccuracy": [
+        78,
+        84
+      ],
+      "corners": [
+        3,
+        2
+      ],
+      "fouls": [
+        8,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "argentina",
+    "awayTeam": "austria",
+    "stage": "Group Stage",
+    "location": "Arlington"
   },
   {
     "id": "m42",
-    "homeTeam": "france",
-    "awayTeam": "iraq",
+    "match_id": 42,
     "date": "2026-06-22",
     "time": "21:00",
-    "group": "I",
     "venue": "lincoln",
+    "group": "I",
     "status": "completed",
     "homeScore": 3,
     "awayScore": 0,
@@ -10030,16 +12480,54 @@ export const matches = [
       }
     ],
     "cards": [],
-    "highlightUrl": ""
+    "playerOfMatch": "Kylian Mbappé",
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "expectedGoals": [
+        2.72,
+        0.43
+      ],
+      "shots": [
+        12,
+        8
+      ],
+      "shotsOnTarget": [
+        4,
+        2
+      ],
+      "passes": [
+        474,
+        509
+      ],
+      "passAccuracy": [
+        81,
+        83
+      ],
+      "corners": [
+        6,
+        6
+      ],
+      "fouls": [
+        9,
+        8
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "france",
+    "awayTeam": "iraq",
+    "stage": "Group Stage",
+    "location": "Philadelphia"
   },
   {
     "id": "m43",
-    "homeTeam": "norway",
-    "awayTeam": "senegal",
+    "match_id": 43,
     "date": "2026-06-23",
     "time": "00:00",
-    "group": "I",
     "venue": "bmo",
+    "group": "I",
     "status": "completed",
     "homeScore": 3,
     "awayScore": 2,
@@ -10076,16 +12564,54 @@ export const matches = [
       }
     ],
     "cards": [],
-    "highlightUrl": ""
+    "playerOfMatch": "Erling Haaland",
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "expectedGoals": [
+        2.66,
+        2.05
+      ],
+      "shots": [
+        11,
+        8
+      ],
+      "shotsOnTarget": [
+        6,
+        4
+      ],
+      "passes": [
+        429,
+        473
+      ],
+      "passAccuracy": [
+        85,
+        85
+      ],
+      "corners": [
+        4,
+        3
+      ],
+      "fouls": [
+        12,
+        9
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "norway",
+    "awayTeam": "senegal",
+    "stage": "Group Stage",
+    "location": "Toronto"
   },
   {
     "id": "m44",
-    "homeTeam": "jordan",
-    "awayTeam": "algeria",
+    "match_id": 44,
     "date": "2026-06-23",
     "time": "03:00",
-    "group": "J",
     "venue": "levis",
+    "group": "J",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 2,
@@ -10110,16 +12636,54 @@ export const matches = [
       }
     ],
     "cards": [],
-    "highlightUrl": ""
+    "playerOfMatch": "Ibrahim Maza",
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "expectedGoals": [
+        1.29,
+        1.75
+      ],
+      "shots": [
+        7,
+        10
+      ],
+      "shotsOnTarget": [
+        2,
+        3
+      ],
+      "passes": [
+        397,
+        473
+      ],
+      "passAccuracy": [
+        85,
+        85
+      ],
+      "corners": [
+        4,
+        5
+      ],
+      "fouls": [
+        14,
+        9
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "jordan",
+    "awayTeam": "algeria",
+    "stage": "Group Stage",
+    "location": "Santa Clara"
   },
   {
     "id": "m45",
-    "homeTeam": "portugal",
-    "awayTeam": "uzbekistan",
+    "match_id": 45,
     "date": "2026-06-23",
     "time": "17:00",
-    "group": "K",
     "venue": "nrg",
+    "group": "K",
     "status": "completed",
     "homeScore": 5,
     "awayScore": 0,
@@ -10164,16 +12728,54 @@ export const matches = [
         "minute": 15
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Nuno Mendes",
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "expectedGoals": [
+        4.17,
+        0.41
+      ],
+      "shots": [
+        15,
+        10
+      ],
+      "shotsOnTarget": [
+        7,
+        1
+      ],
+      "passes": [
+        509,
+        411
+      ],
+      "passAccuracy": [
+        88,
+        81
+      ],
+      "corners": [
+        7,
+        4
+      ],
+      "fouls": [
+        14,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "portugal",
+    "awayTeam": "uzbekistan",
+    "stage": "Group Stage",
+    "location": "Houston"
   },
   {
     "id": "m46",
-    "homeTeam": "england",
-    "awayTeam": "ghana",
+    "match_id": 46,
     "date": "2026-06-23",
     "time": "20:00",
-    "group": "L",
     "venue": "gillette",
+    "group": "L",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 0,
@@ -10192,16 +12794,54 @@ export const matches = [
         "minute": 60
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Jude Bellingham",
+    "stats": {
+      "possession": [
+        78,
+        22
+      ],
+      "expectedGoals": [
+        0.55,
+        0.22
+      ],
+      "shots": [
+        18,
+        1
+      ],
+      "shotsOnTarget": [
+        3,
+        0
+      ],
+      "passes": [
+        720,
+        205
+      ],
+      "passAccuracy": [
+        88,
+        71
+      ],
+      "corners": [
+        8,
+        1
+      ],
+      "fouls": [
+        9,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "england",
+    "awayTeam": "ghana",
+    "stage": "Group Stage",
+    "location": "Foxborough"
   },
   {
     "id": "m47",
-    "homeTeam": "panama",
-    "awayTeam": "croatia",
+    "match_id": 47,
     "date": "2026-06-23",
     "time": "23:00",
-    "group": "L",
     "venue": "gillette",
+    "group": "L",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 1,
@@ -10227,16 +12867,54 @@ export const matches = [
         "minute": 91
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Cristian Martinez",
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "expectedGoals": [
+        0.55,
+        1.43
+      ],
+      "shots": [
+        10,
+        9
+      ],
+      "shotsOnTarget": [
+        2,
+        3
+      ],
+      "passes": [
+        549,
+        482
+      ],
+      "passAccuracy": [
+        88,
+        84
+      ],
+      "corners": [
+        7,
+        4
+      ],
+      "fouls": [
+        11,
+        9
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "panama",
+    "awayTeam": "croatia",
+    "stage": "Group Stage",
+    "location": "Foxborough"
   },
   {
     "id": "m48",
-    "homeTeam": "colombia",
-    "awayTeam": "drcongo",
+    "match_id": 48,
     "date": "2026-06-24",
     "time": "02:00",
-    "group": "K",
     "venue": "akron",
+    "group": "K",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 0,
@@ -10268,37 +12946,81 @@ export const matches = [
         "minute": "90+4"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Daniel Muñoz",
+    "stats": {
+      "possession": [
+        60,
+        40
+      ],
+      "expectedGoals": [
+        1.14,
+        0.36
+      ],
+      "shots": [
+        8,
+        6
+      ],
+      "shotsOnTarget": [
+        3,
+        2
+      ],
+      "passes": [
+        545,
+        387
+      ],
+      "passAccuracy": [
+        83,
+        81
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "fouls": [
+        12,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "colombia",
+    "awayTeam": "drcongo",
+    "stage": "Group Stage",
+    "location": "Zapopan"
   },
   {
     "id": "m49",
-    "homeTeam": "switzerland",
-    "awayTeam": "canada",
+    "match_id": 49,
     "date": "2026-06-24",
     "time": "19:00",
-    "group": "B",
     "venue": "bcplace",
+    "group": "B",
     "status": "completed",
     "homeScore": 2,
     "awayScore": 1,
     "scorers": [
       {
-        "name": "Ruben Vargas",
+        "name": "Rubin Vargas",
         "teamId": "switzerland",
         "minute": 46,
-        "assist": "Johan Manzambi"
+        "assist": "Johan Manzambi",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Johan Manzambi",
         "teamId": "switzerland",
         "minute": 57,
-        "assist": "Breel Embolo"
+        "assist": "Breel Embolo",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Promise David",
         "teamId": "canada",
         "minute": 76,
-        "assist": "Nathan Saliba"
+        "assist": "Nathan Saliba",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
@@ -10306,7 +13028,7 @@ export const matches = [
         "name": "Cyle Larin",
         "teamId": "canada",
         "type": "yellow",
-        "minute": 25
+        "minute": "32"
       },
       {
         "name": "Granit Xhaka",
@@ -10318,19 +13040,57 @@ export const matches = [
         "name": "Liam Millar",
         "teamId": "canada",
         "type": "yellow",
-        "minute": 86
+        "minute": "87"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Johan Manzambi",
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "expectedGoals": [
+        2.19,
+        1.3
+      ],
+      "shots": [
+        12,
+        10
+      ],
+      "shotsOnTarget": [
+        5,
+        4
+      ],
+      "passes": [
+        490,
+        420
+      ],
+      "passAccuracy": [
+        86,
+        82
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "fouls": [
+        11,
+        13
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "switzerland",
+    "awayTeam": "canada",
+    "stage": "Group Stage",
+    "location": "Vancouver"
   },
   {
     "id": "m50",
-    "homeTeam": "bosniaandherzegovina",
-    "awayTeam": "qatar",
+    "match_id": 50,
     "date": "2026-06-24",
     "time": "19:00",
-    "group": "B",
     "venue": "lumen",
+    "group": "B",
     "status": "completed",
     "homeScore": 3,
     "awayScore": 1,
@@ -10339,26 +13099,33 @@ export const matches = [
         "name": "Kerim Alajbegovic",
         "teamId": "bosniaandherzegovina",
         "minute": 29,
-        "assist": "Ivan Basic"
+        "assist": "Ivan Basic",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Mahmoud Abunada",
         "teamId": "bosniaandherzegovina",
         "minute": 34,
         "assist": "Edin Dzeko",
-        "ownGoal": true
+        "ownGoal": true,
+        "penalty": false
       },
       {
         "name": "Hassan Al-Haydos",
         "teamId": "qatar",
         "minute": 42,
-        "assist": "Edmilson Junior"
+        "assist": "Edmilson Junior",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Ermin Mahmic",
         "teamId": "bosniaandherzegovina",
         "minute": 80,
-        "assist": "Dennis Hadzikadunic"
+        "assist": "Dennis Hadzikadunic",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
@@ -10375,16 +13142,54 @@ export const matches = [
         "minute": 82
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Kerim Alajbegovic",
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "expectedGoals": [
+        2.89,
+        1.11
+      ],
+      "shots": [
+        16,
+        8
+      ],
+      "shotsOnTarget": [
+        7,
+        3
+      ],
+      "passes": [
+        510,
+        390
+      ],
+      "passAccuracy": [
+        87,
+        78
+      ],
+      "corners": [
+        6,
+        2
+      ],
+      "fouls": [
+        12,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "bosniaandherzegovina",
+    "awayTeam": "qatar",
+    "stage": "Group Stage",
+    "location": "Seattle"
   },
   {
     "id": "m51",
-    "homeTeam": "morocco",
-    "awayTeam": "haiti",
+    "match_id": 51,
     "date": "2026-06-24",
     "time": "22:00",
-    "group": "C",
     "venue": "mercedesbenz",
+    "group": "C",
     "status": "completed",
     "homeScore": 4,
     "awayScore": 2,
@@ -10394,37 +13199,48 @@ export const matches = [
         "teamId": "haiti",
         "minute": 10,
         "assist": "",
-        "ownGoal": true
+        "ownGoal": true,
+        "penalty": false
       },
       {
         "name": "Achraf Hakimi",
         "teamId": "morocco",
         "minute": 39,
-        "assist": ""
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Wilson Isidor",
         "teamId": "haiti",
         "minute": 43,
-        "assist": ""
+        "assist": "Jean-Kévin Duverne",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Ismael Saibari",
         "teamId": "morocco",
         "minute": 45,
-        "assist": "Achraf Hakimi"
+        "assist": "Achraf Hakimi",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Soufiane Rahimi",
         "teamId": "morocco",
         "minute": 78,
-        "assist": ""
+        "assist": "Chadi Riad",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Gessime Yassine",
         "teamId": "morocco",
         "minute": 89,
-        "assist": ""
+        "assist": "Soufiane Rahimi",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
@@ -10432,13 +13248,13 @@ export const matches = [
         "name": "Duckens Nazon",
         "teamId": "haiti",
         "type": "yellow",
-        "minute": 79
+        "minute": "80"
       },
       {
         "name": "Johny Placide",
         "teamId": "haiti",
         "type": "yellow",
-        "minute": 80
+        "minute": "79"
       },
       {
         "name": "Josue Casimir",
@@ -10447,63 +13263,151 @@ export const matches = [
         "minute": 94
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Achraf Hakimi",
+    "stats": {
+      "possession": [
+        63,
+        37
+      ],
+      "expectedGoals": [
+        3.59,
+        1.98
+      ],
+      "shots": [
+        19,
+        7
+      ],
+      "shotsOnTarget": [
+        9,
+        3
+      ],
+      "passes": [
+        580,
+        310
+      ],
+      "passAccuracy": [
+        90,
+        76
+      ],
+      "corners": [
+        7,
+        2
+      ],
+      "fouls": [
+        10,
+        15
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "morocco",
+    "awayTeam": "haiti",
+    "stage": "Group Stage",
+    "location": "Atlanta"
   },
   {
     "id": "m52",
-    "homeTeam": "scotland",
-    "awayTeam": "brazil",
+    "match_id": 52,
     "date": "2026-06-24",
     "time": "22:00",
-    "group": "C",
     "venue": "hardrock",
+    "group": "C",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 3,
     "scorers": [
       {
-        "name": "Vinicius Junior",
+        "name": "Vinícius Júnior",
         "teamId": "brazil",
         "minute": 7,
-        "assist": "Rayan"
+        "assist": "Rayan",
+        "ownGoal": false,
+        "penalty": false
       },
       {
-        "name": "Vinicius Junior",
+        "name": "Vinícius Júnior",
         "teamId": "brazil",
         "minute": 45,
-        "assist": "Bruno Guimaraes"
+        "assist": "Bruno Guimarães",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Matheus Cunha",
         "teamId": "brazil",
         "minute": 60,
-        "assist": "Bruno Guimaraes"
+        "assist": "Bruno Guimarães",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Jack Hendry",
+        "name": "Ryan Christie",
         "teamId": "scotland",
         "type": "yellow",
-        "minute": 38
+        "minute": "89"
       },
       {
-        "name": "John McGinn",
-        "teamId": "scotland",
+        "name": "Fabinho",
+        "teamId": "brazil",
         "type": "yellow",
-        "minute": 52
+        "minute": "82"
+      },
+      {
+        "name": "Danilo",
+        "teamId": "brazil",
+        "type": "yellow",
+        "minute": "62"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Vinícius Júnior",
+    "stats": {
+      "possession": [
+        34,
+        66
+      ],
+      "expectedGoals": [
+        0.52,
+        2.57
+      ],
+      "shots": [
+        5,
+        17
+      ],
+      "shotsOnTarget": [
+        1,
+        8
+      ],
+      "passes": [
+        290,
+        590
+      ],
+      "passAccuracy": [
+        78,
+        91
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "fouls": [
+        14,
+        9
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "scotland",
+    "awayTeam": "brazil",
+    "stage": "Group Stage",
+    "location": "Miami"
   },
   {
     "id": "m53",
-    "homeTeam": "southafrica",
-    "awayTeam": "southkorea",
+    "match_id": 53,
     "date": "2026-06-25",
     "time": "01:00",
-    "group": "A",
     "venue": "akron",
+    "group": "A",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 0,
@@ -10512,7 +13416,9 @@ export const matches = [
         "name": "Thapelo Maseko",
         "teamId": "southafrica",
         "minute": 63,
-        "assist": "Tshepang Moremi"
+        "assist": "Tshepang Moremi",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
@@ -10520,25 +13426,63 @@ export const matches = [
         "name": "Aubrey Modiba",
         "teamId": "southafrica",
         "type": "yellow",
-        "minute": 30
+        "minute": "73"
       },
       {
-        "name": "Cho Gue-sung",
+        "name": "Cho Gue-Sung",
         "teamId": "southkorea",
         "type": "yellow",
-        "minute": 75
+        "minute": "79"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Thapelo Maseko",
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "expectedGoals": [
+        1.13,
+        0.23
+      ],
+      "shots": [
+        10,
+        8
+      ],
+      "shotsOnTarget": [
+        4,
+        2
+      ],
+      "passes": [
+        420,
+        460
+      ],
+      "passAccuracy": [
+        81,
+        83
+      ],
+      "corners": [
+        4,
+        3
+      ],
+      "fouls": [
+        14,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "southafrica",
+    "awayTeam": "southkorea",
+    "stage": "Group Stage",
+    "location": "Guadalajara"
   },
   {
     "id": "m54",
-    "homeTeam": "czechia",
-    "awayTeam": "mexico",
+    "match_id": 54,
     "date": "2026-06-25",
     "time": "01:00",
-    "group": "A",
     "venue": "azteca",
+    "group": "A",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 3,
@@ -10547,65 +13491,107 @@ export const matches = [
         "name": "Mateo Chavez",
         "teamId": "mexico",
         "minute": 55,
-        "assist": "Luis Romo"
+        "assist": "Luis Romo",
+        "ownGoal": false,
+        "penalty": false
       },
       {
-        "name": "Julian Quiñones",
+        "name": "Julian Quinones",
         "teamId": "mexico",
         "minute": 61,
-        "assist": "Luis Chavez"
+        "assist": "Jorge Sanchez",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Alvaro Fidalgo",
         "teamId": "mexico",
         "minute": 94,
-        "assist": "Roberto Alvarado"
+        "assist": "Roberto Alvarado",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Luis Chavez",
+        "name": "Edson Alvarez",
         "teamId": "mexico",
         "type": "yellow",
-        "minute": 44
-      },
-      {
-        "name": "Alvaro Fidalgo",
-        "teamId": "mexico",
-        "type": "yellow",
-        "minute": 82
+        "minute": "64"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Mateo Chavez",
+    "stats": {
+      "possession": [
+        38,
+        62
+      ],
+      "expectedGoals": [
+        0.42,
+        2.52
+      ],
+      "shots": [
+        5,
+        16
+      ],
+      "shotsOnTarget": [
+        1,
+        7
+      ],
+      "passes": [
+        310,
+        530
+      ],
+      "passAccuracy": [
+        75,
+        88
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "fouls": [
+        12,
+        10
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "czechia",
+    "awayTeam": "mexico",
+    "stage": "Group Stage",
+    "location": "Mexico City"
   },
   {
     "id": "m55",
-    "homeTeam": "curacao",
-    "awayTeam": "ivorycoast",
+    "match_id": 55,
     "date": "2026-06-25",
     "time": "20:00",
-    "group": "E",
     "venue": "lincoln",
+    "group": "E",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 2,
     "scorers": [
       {
-        "name": "Nicolas Pepe",
+        "name": "Nicolas Pépé",
         "teamId": "ivorycoast",
         "minute": 7,
-        "assist": "Yan Diomande"
+        "assist": "Yan Diomande",
+        "ownGoal": false,
+        "penalty": false
       },
       {
-        "name": "Nicolas Pepe",
+        "name": "Nicolas Pépé",
         "teamId": "ivorycoast",
         "minute": 64,
-        "assist": "Ibrahim Sangare"
+        "assist": "Ibrahim Sangaré",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Nicolas Pepe",
+        "name": "Nicolas Pépé",
         "teamId": "ivorycoast",
         "type": "yellow",
         "minute": 35
@@ -10620,78 +13606,160 @@ export const matches = [
         "name": "Gervane Kastaneer",
         "teamId": "curacao",
         "type": "yellow",
-        "minute": 82
+        "minute": "83"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Nicolas Pépé",
+    "stats": {
+      "possession": [
+        42,
+        58
+      ],
+      "expectedGoals": [
+        0.58,
+        1.78
+      ],
+      "shots": [
+        7,
+        14
+      ],
+      "shotsOnTarget": [
+        2,
+        6
+      ],
+      "passes": [
+        340,
+        510
+      ],
+      "passAccuracy": [
+        78,
+        87
+      ],
+      "corners": [
+        3,
+        6
+      ],
+      "fouls": [
+        12,
+        10
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "curacao",
+    "awayTeam": "ivorycoast",
+    "stage": "Group Stage",
+    "location": "Philadelphia"
   },
   {
     "id": "m56",
-    "homeTeam": "ecuador",
-    "awayTeam": "germany",
+    "match_id": 56,
     "date": "2026-06-25",
     "time": "20:00",
-    "group": "E",
     "venue": "metlife",
+    "group": "E",
     "status": "completed",
     "homeScore": 2,
     "awayScore": 1,
     "scorers": [
       {
-        "name": "Leroy Sane",
+        "name": "Leroy Sané",
         "teamId": "germany",
         "minute": 2,
-        "assist": "Florian Wirtz"
+        "assist": "Florian Wirtz",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Nilson Angulo",
         "teamId": "ecuador",
         "minute": 9,
-        "assist": "Pedro Vite"
+        "assist": "Pedro Vite",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Gonzalo Plata",
         "teamId": "ecuador",
         "minute": 77,
-        "assist": "Kevin Rodriguez"
+        "assist": "Kevin Rodríguez",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Aleksandar Pavlovic",
+        "name": "Aleksandar Pavlović",
         "teamId": "germany",
         "type": "yellow",
         "minute": 44
       },
       {
+        "name": "Piero Hincapié",
+        "teamId": "ecuador",
+        "type": "yellow",
+        "minute": "43"
+      },
+      {
         "name": "Alan Franco",
         "teamId": "ecuador",
         "type": "yellow",
-        "minute": 64
-      },
-      {
-        "name": "Piero Hincapie",
-        "teamId": "ecuador",
-        "type": "yellow",
-        "minute": 71
+        "minute": "50"
       },
       {
         "name": "Gonzalo Plata",
         "teamId": "ecuador",
         "type": "yellow",
-        "minute": 88
+        "minute": "89"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Nilson Angulo",
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "expectedGoals": [
+        1.82,
+        0.97
+      ],
+      "shots": [
+        11,
+        15
+      ],
+      "shotsOnTarget": [
+        5,
+        4
+      ],
+      "passes": [
+        380,
+        490
+      ],
+      "passAccuracy": [
+        81,
+        88
+      ],
+      "corners": [
+        4,
+        7
+      ],
+      "fouls": [
+        14,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "ecuador",
+    "awayTeam": "germany",
+    "stage": "Group Stage",
+    "location": "New Jersey"
   },
   {
     "id": "m57",
-    "homeTeam": "tunisia",
-    "awayTeam": "netherlands",
+    "match_id": 57,
     "date": "2026-06-25",
     "time": "23:00",
-    "group": "F",
     "venue": "arrowhead",
+    "group": "F",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 3,
@@ -10701,45 +13769,83 @@ export const matches = [
         "teamId": "netherlands",
         "minute": 3,
         "assist": "Denzel Dumfries",
-        "ownGoal": true
+        "ownGoal": true,
+        "penalty": false
       },
       {
         "name": "Brian Brobbey",
         "teamId": "netherlands",
         "minute": 7,
-        "assist": "Virgil van Dijk"
+        "assist": "Virgil van Dijk",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Hazem Mastouri",
         "teamId": "tunisia",
         "minute": 54,
-        "assist": "Hannibal Mejbri"
+        "assist": "Hannibal Mejbri",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Jan Paul van Hecke",
         "teamId": "netherlands",
         "minute": 62,
-        "assist": "Tijjani Reijnders"
+        "assist": "Tijjani Reijnders",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
-    "cards": [
-      {
-        "name": "Ellyes Skhiri",
-        "teamId": "tunisia",
-        "type": "yellow",
-        "minute": 41
-      }
-    ],
-    "highlightUrl": ""
+    "cards": [],
+    "playerOfMatch": "Brian Brobbey",
+    "stats": {
+      "possession": [
+        36,
+        64
+      ],
+      "expectedGoals": [
+        0.98,
+        2.81
+      ],
+      "shots": [
+        6,
+        17
+      ],
+      "shotsOnTarget": [
+        2,
+        7
+      ],
+      "passes": [
+        290,
+        580
+      ],
+      "passAccuracy": [
+        76,
+        91
+      ],
+      "corners": [
+        2,
+        8
+      ],
+      "fouls": [
+        13,
+        8
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "tunisia",
+    "awayTeam": "netherlands",
+    "stage": "Group Stage",
+    "location": "Kansas City"
   },
   {
     "id": "m58",
-    "homeTeam": "japan",
-    "awayTeam": "sweden",
+    "match_id": 58,
     "date": "2026-06-25",
     "time": "23:00",
-    "group": "F",
     "venue": "attstadium",
+    "group": "F",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 1,
@@ -10748,33 +13854,87 @@ export const matches = [
         "name": "Daizen Maeda",
         "teamId": "japan",
         "minute": 56,
-        "assist": "Ritsu Doan"
+        "assist": "Ritsu Doan",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Anthony Elanga",
         "teamId": "sweden",
         "minute": 62,
-        "assist": ""
+        "assist": "Viktor Gyökeres",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Viktor Gyokeres",
+        "name": "Isak Hien",
         "teamId": "sweden",
         "type": "yellow",
-        "minute": 85
+        "minute": "32"
+      },
+      {
+        "name": "Viktor Gyökeres",
+        "teamId": "sweden",
+        "type": "yellow",
+        "minute": "85"
+      },
+      {
+        "name": "Shogo Taniguchi",
+        "teamId": "japan",
+        "type": "yellow",
+        "minute": "77"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Anthony Elanga",
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "expectedGoals": [
+        1.09,
+        1.21
+      ],
+      "shots": [
+        12,
+        10
+      ],
+      "shotsOnTarget": [
+        4,
+        4
+      ],
+      "passes": [
+        460,
+        440
+      ],
+      "passAccuracy": [
+        84,
+        83
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "fouls": [
+        9,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "japan",
+    "awayTeam": "sweden",
+    "stage": "Group Stage",
+    "location": "Arlington"
   },
   {
     "id": "m59",
-    "homeTeam": "turkiye",
-    "awayTeam": "usa",
+    "match_id": 59,
     "date": "2026-06-26",
     "time": "02:00",
-    "group": "D",
     "venue": "sofi",
+    "group": "D",
     "status": "completed",
     "homeScore": 3,
     "awayScore": 2,
@@ -10783,85 +13943,165 @@ export const matches = [
         "name": "Auston Trusty",
         "teamId": "usa",
         "minute": 3,
-        "assist": "Sebastian Berhalter"
+        "assist": "Sebastian Berhalter",
+        "ownGoal": false,
+        "penalty": false
       },
       {
-        "name": "Arda Guler",
+        "name": "Arda Güler",
         "teamId": "turkiye",
         "minute": 10,
-        "assist": ""
+        "assist": "Barış Alper Yılmaz",
+        "ownGoal": false,
+        "penalty": false
       },
       {
-        "name": "Baris Alper Yilmaz",
+        "name": "Barış Alper Yılmaz",
         "teamId": "turkiye",
         "minute": 31,
-        "assist": "Arda Guler"
+        "assist": "Orkun Kökçü",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Sebastian Berhalter",
         "teamId": "usa",
         "minute": 49,
-        "assist": ""
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
       },
       {
         "name": "Kaan Ayhan",
         "teamId": "turkiye",
         "minute": 98,
-        "assist": "Arda Guler"
+        "assist": "Arda Guler",
+        "ownGoal": false,
+        "penalty": false
       }
     ],
     "cards": [
       {
-        "name": "Auston Trusty",
+        "name": "Sebastian Berhalter",
         "teamId": "usa",
         "type": "yellow",
-        "minute": 45
-      },
-      {
-        "name": "Kaan Ayhan",
-        "teamId": "turkiye",
-        "type": "yellow",
-        "minute": 99
+        "minute": "19"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Arda Güler",
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "expectedGoals": [
+        2.62,
+        1.98
+      ],
+      "shots": [
+        14,
+        11
+      ],
+      "shotsOnTarget": [
+        6,
+        5
+      ],
+      "passes": [
+        450,
+        410
+      ],
+      "passAccuracy": [
+        85,
+        82
+      ],
+      "corners": [
+        6,
+        4
+      ],
+      "fouls": [
+        11,
+        14
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "turkiye",
+    "awayTeam": "usa",
+    "stage": "Group Stage",
+    "location": "Los Angeles"
   },
   {
     "id": "m60",
-    "homeTeam": "paraguay",
-    "awayTeam": "australia",
+    "match_id": 60,
     "date": "2026-06-26",
     "time": "02:00",
-    "group": "D",
     "venue": "levis",
+    "group": "D",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 0,
     "scorers": [],
     "cards": [
       {
-        "name": "Jordan Bos",
+        "name": "Jackson Irvine",
         "teamId": "australia",
         "type": "yellow",
-        "minute": 34
+        "minute": "46"
       },
       {
-        "name": "Julio Enciso",
+        "name": "Diego Gómez",
         "teamId": "paraguay",
         "type": "yellow",
-        "minute": 72
+        "minute": "77"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Aiden O'Neill",
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "expectedGoals": [
+        0.61,
+        0.57
+      ],
+      "shots": [
+        8,
+        9
+      ],
+      "shotsOnTarget": [
+        2,
+        3
+      ],
+      "passes": [
+        390,
+        440
+      ],
+      "passAccuracy": [
+        79,
+        81
+      ],
+      "corners": [
+        3,
+        4
+      ],
+      "fouls": [
+        15,
+        13
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "paraguay",
+    "awayTeam": "australia",
+    "stage": "Group Stage",
+    "location": "Santa Clara"
   },
   {
     "id": "m61",
-    "homeTeam": "norway",
-    "awayTeam": "france",
+    "match_id": 61,
     "date": "2026-06-26",
     "time": "19:00",
-    "group": "I",
     "venue": "gillette",
+    "group": "I",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 4,
@@ -10876,19 +14116,19 @@ export const matches = [
         "name": "Ousmane Dembélé",
         "teamId": "france",
         "minute": 20,
-        "assist": ""
+        "assist": "Kylian Mbappé"
       },
       {
         "name": "Thelo Aasgaard",
         "teamId": "norway",
         "minute": 21,
-        "assist": ""
+        "assist": "Andreas Schjelderup"
       },
       {
         "name": "Ousmane Dembélé",
         "teamId": "france",
         "minute": 32,
-        "assist": ""
+        "assist": "Aurélien Tchouaméni"
       },
       {
         "name": "Désiré Doué",
@@ -10899,28 +14139,66 @@ export const matches = [
     ],
     "cards": [
       {
-        "name": "Leo Østigård",
+        "name": "Patrick Berg",
         "teamId": "norway",
         "type": "yellow",
-        "minute": 34
+        "minute": "10"
       },
       {
-        "name": "Manu Koné",
+        "name": "Aurélien Tchouaméni",
         "teamId": "france",
         "type": "yellow",
-        "minute": 45
+        "minute": "74"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Ousmane Dembélé",
+    "stats": {
+      "possession": [
+        43,
+        57
+      ],
+      "expectedGoals": [
+        1.2,
+        3.46
+      ],
+      "shots": [
+        9,
+        18
+      ],
+      "shotsOnTarget": [
+        3,
+        9
+      ],
+      "passes": [
+        380,
+        520
+      ],
+      "passAccuracy": [
+        80,
+        88
+      ],
+      "corners": [
+        4,
+        5
+      ],
+      "fouls": [
+        8,
+        10
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "norway",
+    "awayTeam": "france",
+    "stage": "Group Stage",
+    "location": "Foxborough"
   },
   {
     "id": "m62",
-    "homeTeam": "senegal",
-    "awayTeam": "iraq",
+    "match_id": 62,
     "date": "2026-06-26",
     "time": "19:00",
-    "group": "I",
     "venue": "bmo",
+    "group": "I",
     "status": "completed",
     "homeScore": 5,
     "awayScore": 0,
@@ -10929,13 +14207,13 @@ export const matches = [
         "name": "Habib Diarra",
         "teamId": "senegal",
         "minute": 4,
-        "assist": ""
+        "assist": "Abdoulaye Seck"
       },
       {
         "name": "Ismaïla Sarr",
         "teamId": "senegal",
         "minute": 56,
-        "assist": "Illiman Ndiaye"
+        "assist": "Lamine Camara"
       },
       {
         "name": "Pape Gueye",
@@ -10947,7 +14225,7 @@ export const matches = [
         "name": "Pape Gueye",
         "teamId": "senegal",
         "minute": 71,
-        "assist": ""
+        "assist": "Illiman Ndiaye"
       },
       {
         "name": "Illiman Ndiaye",
@@ -10964,56 +14242,156 @@ export const matches = [
         "minute": 13
       },
       {
-        "name": "Kalidou Koulibaly",
+        "name": "Abdoulaye Seck",
         "teamId": "senegal",
         "type": "yellow",
-        "minute": 25
+        "minute": "18"
       },
       {
         "name": "Amir Al-Ammari",
         "teamId": "iraq",
         "type": "yellow",
-        "minute": 40
+        "minute": "75"
+      },
+      {
+        "name": "Merchas Doski",
+        "teamId": "iraq",
+        "type": "yellow",
+        "minute": "90"
+      },
+      {
+        "name": "Pape Gueye",
+        "teamId": "senegal",
+        "type": "yellow",
+        "minute": "81"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Pape Gueye",
+    "stats": {
+      "possession": [
+        67,
+        33
+      ],
+      "expectedGoals": [
+        4.43,
+        0.51
+      ],
+      "shots": [
+        24,
+        4
+      ],
+      "shotsOnTarget": [
+        11,
+        1
+      ],
+      "passes": [
+        610,
+        290
+      ],
+      "passAccuracy": [
+        91,
+        74
+      ],
+      "corners": [
+        8,
+        1
+      ],
+      "fouls": [
+        7,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "senegal",
+    "awayTeam": "iraq",
+    "stage": "Group Stage",
+    "location": "Toronto"
   },
   {
     "id": "m63",
-    "homeTeam": "capeverde",
-    "awayTeam": "saudiarabia",
+    "match_id": 63,
     "date": "2026-06-27",
     "time": "00:00",
-    "group": "H",
     "venue": "nrg",
+    "group": "H",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 0,
     "scorers": [],
     "cards": [
       {
-        "name": "Logan Costa",
+        "name": "Wagner Pina",
         "teamId": "capeverde",
         "type": "yellow",
-        "minute": 28
+        "minute": "8"
       },
       {
         "name": "Saud Abdulhamid",
         "teamId": "saudiarabia",
         "type": "yellow",
-        "minute": 62
+        "minute": "4"
+      },
+      {
+        "name": "Nasser Al-Dawsari",
+        "teamId": "saudiarabia",
+        "type": "yellow",
+        "minute": "67"
+      },
+      {
+        "name": "Feras Al-Brikan",
+        "teamId": "saudiarabia",
+        "type": "yellow",
+        "minute": "93"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Deroy Duarte",
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "expectedGoals": [
+        0.63,
+        0.45
+      ],
+      "shots": [
+        8,
+        11
+      ],
+      "shotsOnTarget": [
+        2,
+        4
+      ],
+      "passes": [
+        410,
+        440
+      ],
+      "passAccuracy": [
+        81,
+        84
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "fouls": [
+        14,
+        11
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "capeverde",
+    "awayTeam": "saudiarabia",
+    "stage": "Group Stage",
+    "location": "Houston"
   },
   {
     "id": "m64",
-    "homeTeam": "uruguay",
-    "awayTeam": "spain",
+    "match_id": 64,
     "date": "2026-06-27",
     "time": "00:00",
-    "group": "H",
     "venue": "akron",
+    "group": "H",
     "status": "completed",
     "homeScore": 0,
     "awayScore": 1,
@@ -11022,39 +14400,89 @@ export const matches = [
         "name": "Alex Baena",
         "teamId": "spain",
         "minute": 42,
-        "assist": ""
+        "assist": "Marcos Llorente"
       }
     ],
     "cards": [
       {
-        "name": "José María Giménez",
+        "name": "Juan Manuel Sanabria",
         "teamId": "uruguay",
         "type": "yellow",
-        "minute": 31
+        "minute": "54"
       },
       {
-        "name": "Marc Cucurella",
+        "name": "Alex Baena",
         "teamId": "spain",
         "type": "yellow",
-        "minute": 55
+        "minute": "46"
       },
       {
         "name": "Agustín Canobbio",
         "teamId": "uruguay",
         "type": "red",
-        "minute": 94
+        "minute": "95"
+      },
+      {
+        "name": "Guillermo Varela",
+        "teamId": "uruguay",
+        "type": "yellow",
+        "minute": "58"
+      },
+      {
+        "name": "Nicolás de la Cruz",
+        "teamId": "uruguay",
+        "type": "yellow",
+        "minute": "93"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Alex Baena",
+    "stats": {
+      "possession": [
+        38,
+        62
+      ],
+      "expectedGoals": [
+        0.37,
+        1.04
+      ],
+      "shots": [
+        6,
+        11
+      ],
+      "shotsOnTarget": [
+        2,
+        4
+      ],
+      "passes": [
+        350,
+        580
+      ],
+      "passAccuracy": [
+        81,
+        89
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "fouls": [
+        15,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "uruguay",
+    "awayTeam": "spain",
+    "stage": "Group Stage",
+    "location": "Zapopan"
   },
   {
     "id": "m65",
-    "homeTeam": "newzealand",
-    "awayTeam": "belgium",
+    "match_id": 65,
     "date": "2026-06-27",
     "time": "03:00",
-    "group": "G",
     "venue": "bcplace",
+    "group": "G",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 5,
@@ -11063,13 +14491,13 @@ export const matches = [
         "name": "Leandro Trossard",
         "teamId": "belgium",
         "minute": 28,
-        "assist": "Kevin De Bruyne"
+        "assist": ""
       },
       {
         "name": "Leandro Trossard",
         "teamId": "belgium",
         "minute": 50,
-        "assist": "Kevin De Bruyne"
+        "assist": "Hans Vanaken"
       },
       {
         "name": "Kevin De Bruyne",
@@ -11093,33 +14521,77 @@ export const matches = [
         "name": "Alexis Saelemaekers",
         "teamId": "belgium",
         "minute": 94,
-        "assist": ""
+        "assist": "Romelu Lukaku"
       }
     ],
     "cards": [
       {
-        "name": "Liberato Cacace",
+        "name": "Marko Stamenic",
         "teamId": "newzealand",
         "type": "yellow",
-        "minute": 18
+        "minute": "46"
       },
       {
         "name": "Timothy Castagne",
         "teamId": "belgium",
         "type": "yellow",
         "minute": 42
+      },
+      {
+        "name": "Elijah Just",
+        "teamId": "newzealand",
+        "type": "yellow",
+        "minute": "56"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Leandro Trossard",
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "expectedGoals": [
+        1.05,
+        4.32
+      ],
+      "shots": [
+        6,
+        18
+      ],
+      "shotsOnTarget": [
+        2,
+        10
+      ],
+      "passes": [
+        430,
+        520
+      ],
+      "passAccuracy": [
+        85,
+        88
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "fouls": [
+        10,
+        12
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "newzealand",
+    "awayTeam": "belgium",
+    "stage": "Group Stage",
+    "location": "Vancouver"
   },
   {
     "id": "m66",
-    "homeTeam": "egypt",
-    "awayTeam": "iran",
+    "match_id": 66,
     "date": "2026-06-27",
     "time": "03:00",
-    "group": "G",
     "venue": "lumen",
+    "group": "G",
     "status": "completed",
     "homeScore": 1,
     "awayScore": 1,
@@ -11128,7 +14600,7 @@ export const matches = [
         "name": "Mahmoud Saber",
         "teamId": "egypt",
         "minute": 5,
-        "assist": ""
+        "assist": "Trézéguet"
       },
       {
         "name": "Ramin Rezaeian",
@@ -11142,104 +14614,844 @@ export const matches = [
         "name": "Hamdy Fathy",
         "teamId": "egypt",
         "type": "yellow",
-        "minute": 23
+        "minute": "20"
+      },
+      {
+        "name": "Hossein Kanani",
+        "teamId": "iran",
+        "type": "yellow",
+        "minute": "19"
+      },
+      {
+        "name": "Ali Nemati",
+        "teamId": "iran",
+        "type": "yellow",
+        "minute": "43"
+      },
+      {
+        "name": "Saeid Ezatolahi",
+        "teamId": "iran",
+        "type": "yellow",
+        "minute": "79"
       },
       {
         "name": "Shoja Khalilzadeh",
         "teamId": "iran",
         "type": "yellow",
-        "minute": 45
+        "minute": "94"
+      },
+      {
+        "name": "Yasser Ibrahim",
+        "teamId": "egypt",
+        "type": "yellow",
+        "minute": "42"
+      },
+      {
+        "name": "Mohanad Lashin",
+        "teamId": "egypt",
+        "type": "yellow",
+        "minute": "92"
       }
     ],
-    "highlightUrl": ""
+    "playerOfMatch": "Ramin Rezaeian",
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "expectedGoals": [
+        1.09,
+        1.37
+      ],
+      "shots": [
+        10,
+        14
+      ],
+      "shotsOnTarget": [
+        3,
+        6
+      ],
+      "passes": [
+        450,
+        410
+      ],
+      "passAccuracy": [
+        84,
+        81
+      ],
+      "corners": [
+        4,
+        6
+      ],
+      "fouls": [
+        14,
+        16
+      ]
+    },
+    "highlightUrl": "",
+    "homeTeam": "egypt",
+    "awayTeam": "iran",
+    "stage": "Group Stage",
+    "location": "Seattle"
   },
   {
     "id": "m67",
-    "homeTeam": "panama",
-    "awayTeam": "england",
+    "match_id": 67,
     "date": "2026-06-27",
     "time": "21:00",
-    "group": "L",
     "venue": "metlife",
+    "group": "L",
     "status": "upcoming",
     "homeScore": null,
     "awayScore": null,
-    "highlightUrl": ""
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "panama",
+    "awayTeam": "england",
+    "stage": "Group Stage",
+    "location": "New Jersey"
   },
   {
     "id": "m68",
-    "homeTeam": "croatia",
-    "awayTeam": "ghana",
+    "match_id": 68,
     "date": "2026-06-27",
     "time": "21:00",
-    "group": "L",
     "venue": "lincoln",
+    "group": "L",
     "status": "upcoming",
     "homeScore": null,
     "awayScore": null,
-    "highlightUrl": ""
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "croatia",
+    "awayTeam": "ghana",
+    "stage": "Group Stage",
+    "location": "Philadelphia"
   },
   {
     "id": "m69",
-    "homeTeam": "colombia",
-    "awayTeam": "portugal",
+    "match_id": 69,
     "date": "2026-06-27",
     "time": "23:30",
-    "group": "K",
     "venue": "hardrock",
+    "group": "K",
     "status": "upcoming",
     "homeScore": null,
     "awayScore": null,
-    "highlightUrl": ""
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "colombia",
+    "awayTeam": "portugal",
+    "stage": "Group Stage",
+    "location": "Miami"
   },
   {
     "id": "m70",
-    "homeTeam": "drcongo",
-    "awayTeam": "uzbekistan",
+    "match_id": 70,
     "date": "2026-06-27",
     "time": "23:30",
-    "group": "K",
     "venue": "mercedesbenz",
+    "group": "K",
     "status": "upcoming",
     "homeScore": null,
     "awayScore": null,
-    "highlightUrl": ""
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "drcongo",
+    "awayTeam": "uzbekistan",
+    "stage": "Group Stage",
+    "location": "Atlanta"
   },
   {
     "id": "m71",
-    "homeTeam": "algeria",
-    "awayTeam": "austria",
+    "match_id": 71,
     "date": "2026-06-28",
     "time": "02:00",
-    "group": "J",
     "venue": "arrowhead",
+    "group": "J",
     "status": "upcoming",
     "homeScore": null,
     "awayScore": null,
-    "highlightUrl": ""
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "algeria",
+    "awayTeam": "austria",
+    "stage": "Group Stage",
+    "location": "Kansas City"
   },
   {
     "id": "m72",
-    "homeTeam": "jordan",
-    "awayTeam": "argentina",
+    "match_id": 72,
     "date": "2026-06-28",
     "time": "02:00",
-    "group": "J",
     "venue": "attstadium",
+    "group": "J",
     "status": "upcoming",
     "homeScore": null,
     "awayScore": null,
-    "highlightUrl": ""
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "jordan",
+    "awayTeam": "argentina",
+    "stage": "Group Stage",
+    "location": "Arlington"
+  },
+  {
+    "id": "m73",
+    "match_id": 73,
+    "date": "2026-06-28",
+    "time": "19:00",
+    "venue": "sofi",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "southafrica",
+    "awayTeam": "canada",
+    "stage": "Round of 32",
+    "location": "Los Angeles"
+  },
+  {
+    "id": "m74",
+    "match_id": 74,
+    "date": "2026-06-29",
+    "time": "17:00",
+    "venue": "nrg",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "brazil",
+    "awayTeam": "japan",
+    "stage": "Round of 32",
+    "location": "Houston"
+  },
+  {
+    "id": "m75",
+    "match_id": 75,
+    "date": "2026-06-29",
+    "time": "20:30",
+    "venue": "gillette",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "germany",
+    "awayTeam": "paraguay",
+    "stage": "Round of 32",
+    "location": "Foxborough"
+  },
+  {
+    "id": "m76",
+    "match_id": 76,
+    "date": "2026-06-30",
+    "time": "01:00",
+    "venue": "akron",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "netherlands",
+    "awayTeam": "morocco",
+    "stage": "Round of 32",
+    "location": "Guadalajara"
+  },
+  {
+    "id": "m77",
+    "match_id": 77,
+    "date": "2026-06-30",
+    "time": "17:00",
+    "venue": "attstadium",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "ivorycoast",
+    "awayTeam": "norway",
+    "stage": "Round of 32",
+    "location": "Arlington"
+  },
+  {
+    "id": "m78",
+    "match_id": 78,
+    "date": "2026-06-30",
+    "time": "21:00",
+    "venue": "metlife",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "france",
+    "awayTeam": "sweden",
+    "stage": "Round of 32",
+    "location": "New Jersey"
+  },
+  {
+    "id": "m79",
+    "match_id": 79,
+    "date": "2026-07-01",
+    "time": "01:00",
+    "venue": "azteca",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Group A winners",
+    "awayTeam": "Best Third-Placed Team",
+    "stage": "Round of 32",
+    "location": "Mexico City"
+  },
+  {
+    "id": "m80",
+    "match_id": 80,
+    "date": "2026-07-01",
+    "time": "16:00",
+    "venue": "mercedesbenz",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Group L winners",
+    "awayTeam": "Best Third-Placed Team",
+    "stage": "Round of 32",
+    "location": "Atlanta"
+  },
+  {
+    "id": "m81",
+    "match_id": 81,
+    "date": "2026-07-01",
+    "time": "20:00",
+    "venue": "lumen",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Group G winners",
+    "awayTeam": "Best Third-Placed Team",
+    "stage": "Round of 32",
+    "location": "Seattle"
+  },
+  {
+    "id": "m82",
+    "match_id": 82,
+    "date": "2026-07-01",
+    "time": "20:00",
+    "venue": "levis",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "usa",
+    "awayTeam": "bosniaandherzegovina",
+    "stage": "Round of 32",
+    "location": "Santa Clara"
+  },
+  {
+    "id": "m83",
+    "match_id": 83,
+    "date": "2026-07-02",
+    "time": "00:00",
+    "venue": "sofi",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Group H winners",
+    "awayTeam": "Group J runners-up",
+    "stage": "Round of 32",
+    "location": "Los Angeles"
+  },
+  {
+    "id": "m84",
+    "match_id": 84,
+    "date": "2026-07-02",
+    "time": "19:00",
+    "venue": "bmo",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Group K runners-up",
+    "awayTeam": "Group L runners-up",
+    "stage": "Round of 32",
+    "location": "Toronto"
+  },
+  {
+    "id": "m85",
+    "match_id": 85,
+    "date": "2026-07-02",
+    "time": "23:00",
+    "venue": "bcplace",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Group B winners",
+    "awayTeam": "Best Third-Placed Team",
+    "stage": "Round of 32",
+    "location": "Vancouver"
+  },
+  {
+    "id": "m86",
+    "match_id": 86,
+    "date": "2026-07-03",
+    "time": "03:00",
+    "venue": "attstadium",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "australia",
+    "awayTeam": "egypt",
+    "stage": "Round of 32",
+    "location": "Arlington"
+  },
+  {
+    "id": "m87",
+    "match_id": 87,
+    "date": "2026-07-03",
+    "time": "18:00",
+    "venue": "hardrock",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Group J winners",
+    "awayTeam": "Group H runners-up",
+    "stage": "Round of 32",
+    "location": "Miami"
+  },
+  {
+    "id": "m88",
+    "match_id": 88,
+    "date": "2026-07-03",
+    "time": "22:00",
+    "venue": "arrowhead",
+    "group": "R32",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Group K winners",
+    "awayTeam": "Best Third-Placed Team",
+    "stage": "Round of 32",
+    "location": "Kansas City"
+  },
+  {
+    "id": "m89",
+    "match_id": 89,
+    "date": "2026-07-04",
+    "time": "01:30",
+    "venue": "nrg",
+    "group": "R16",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 73",
+    "awayTeam": "Winner Match 75",
+    "stage": "Round of 16",
+    "location": "Houston"
+  },
+  {
+    "id": "m90",
+    "match_id": 90,
+    "date": "2026-07-04",
+    "time": "17:00",
+    "venue": "lincoln",
+    "group": "R16",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 74",
+    "awayTeam": "Winner Match 77",
+    "stage": "Round of 16",
+    "location": "Philadelphia"
+  },
+  {
+    "id": "m91",
+    "match_id": 91,
+    "date": "2026-07-04",
+    "time": "21:00",
+    "venue": "metlife",
+    "group": "R16",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 76",
+    "awayTeam": "Winner Match 78",
+    "stage": "Round of 16",
+    "location": "New Jersey"
+  },
+  {
+    "id": "m92",
+    "match_id": 92,
+    "date": "2026-07-05",
+    "time": "20:00",
+    "venue": "azteca",
+    "group": "R16",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 79",
+    "awayTeam": "Winner Match 80",
+    "stage": "Round of 16",
+    "location": "Mexico City"
+  },
+  {
+    "id": "m93",
+    "match_id": 93,
+    "date": "2026-07-06",
+    "time": "00:00",
+    "venue": "attstadium",
+    "group": "R16",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 83",
+    "awayTeam": "Winner Match 84",
+    "stage": "Round of 16",
+    "location": "Arlington"
+  },
+  {
+    "id": "m94",
+    "match_id": 94,
+    "date": "2026-07-06",
+    "time": "20:00",
+    "venue": "lumen",
+    "group": "R16",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 81",
+    "awayTeam": "Winner Match 82",
+    "stage": "Round of 16",
+    "location": "Seattle"
+  },
+  {
+    "id": "m95",
+    "match_id": 95,
+    "date": "2026-07-07",
+    "time": "16:00",
+    "venue": "mercedesbenz",
+    "group": "R16",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 86",
+    "awayTeam": "Winner Match 88",
+    "stage": "Round of 16",
+    "location": "Atlanta"
+  },
+  {
+    "id": "m96",
+    "match_id": 96,
+    "date": "2026-07-07",
+    "time": "20:00",
+    "venue": "bcplace",
+    "group": "R16",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 85",
+    "awayTeam": "Winner Match 87",
+    "stage": "Round of 16",
+    "location": "Vancouver"
+  },
+  {
+    "id": "m97",
+    "match_id": 97,
+    "date": "2026-07-09",
+    "time": "20:00",
+    "venue": "gillette",
+    "group": "QF",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 89",
+    "awayTeam": "Winner Match 90",
+    "stage": "Quarter-finals",
+    "location": "Foxborough"
+  },
+  {
+    "id": "m98",
+    "match_id": 98,
+    "date": "2026-07-10",
+    "time": "19:00",
+    "venue": "sofi",
+    "group": "QF",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 93",
+    "awayTeam": "Winner Match 94",
+    "stage": "Quarter-finals",
+    "location": "Los Angeles"
+  },
+  {
+    "id": "m99",
+    "match_id": 99,
+    "date": "2026-07-11",
+    "time": "21:00",
+    "venue": "hardrock",
+    "group": "QF",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 91",
+    "awayTeam": "Winner Match 92",
+    "stage": "Quarter-finals",
+    "location": "Miami"
+  },
+  {
+    "id": "m100",
+    "match_id": 100,
+    "date": "2026-07-12",
+    "time": "01:00",
+    "venue": "arrowhead",
+    "group": "QF",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 95",
+    "awayTeam": "Winner Match 96",
+    "stage": "Quarter-finals",
+    "location": "Kansas City"
+  },
+  {
+    "id": "m101",
+    "match_id": 101,
+    "date": "2026-07-14",
+    "time": "19:00",
+    "venue": "attstadium",
+    "group": "SF",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 97",
+    "awayTeam": "Winner Match 98",
+    "stage": "Semi-finals",
+    "location": "Arlington"
+  },
+  {
+    "id": "m102",
+    "match_id": 102,
+    "date": "2026-07-15",
+    "time": "19:00",
+    "venue": "mercedesbenz",
+    "group": "SF",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 99",
+    "awayTeam": "Winner Match 100",
+    "stage": "Semi-finals",
+    "location": "Atlanta"
+  },
+  {
+    "id": "m103",
+    "match_id": 103,
+    "date": "2026-07-18",
+    "time": "21:00",
+    "venue": "hardrock",
+    "group": "3RD",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Loser Match 101",
+    "awayTeam": "Loser Match 102",
+    "stage": "Third Place",
+    "location": "Miami"
+  },
+  {
+    "id": "m104",
+    "match_id": 104,
+    "date": "2026-07-19",
+    "time": "19:00",
+    "venue": "metlife",
+    "group": "F",
+    "status": "upcoming",
+    "homeScore": null,
+    "awayScore": null,
+    "scorers": [],
+    "cards": [],
+    "playerOfMatch": "",
+    "stats": null,
+    "highlightUrl": "",
+    "homeTeam": "Winner Match 101",
+    "awayTeam": "Winner Match 102",
+    "stage": "Final",
+    "location": "New Jersey"
   }
-];
-
-export const historicalTeams = [
-  { id: 'brazil-2002', year: 2002, teamName: 'Brazil', formation: '3-4-3', notablePlayers: ['Ronaldo', 'Rivaldo', 'Ronaldinho'], description: 'The unstoppable trio of the 3 R-s led Brazil to their fifth title with a perfect record.' },
-  { id: 'brazil-1970', year: 1970, teamName: 'Brazil', formation: '4-3-3', notablePlayers: ['Pel-e', 'Jairzinho', 'Carlos Alberto'], description: 'Often cited as the greatest football team of all time, redefining the beautiful game.' },
-  { id: 'germany-2014', year: 2014, teamName: 'Germany', formation: '4-2-3-1', notablePlayers: ['Thomas M-uller', 'Manuel Neuer', 'Philipp Lahm'], description: 'A clinical and cohesive unit that culminated in the 7-1 demolition of Brazil.' },
-  { id: 'spain-2010', year: 2010, teamName: 'Spain', formation: '4-3-3', notablePlayers: ['Andr-es Iniesta', 'Xavi', 'Iker Casillas'], description: 'The pinnacle of Tiki-Taka, dominating world and European football.' },
-  { id: 'france-1998', year: 1998, teamName: 'France', formation: '4-3-2-1', notablePlayers: ['Zinedine Zidane', 'Thierry Henry', 'Patrick Vieira'], description: 'The "Rainbow Team" that united a nation and won on home soil.' },
-  { id: 'argentina-1986', year: 1986, teamName: 'Argentina', formation: '3-5-1-1', notablePlayers: ['Diego Maradona', 'Jorge Valdano', 'Oscar Ruggeri'], description: 'Defined by the genius of Maradona and the "Hand of God".' },
-  { id: 'netherlands-1974', year: 1974, teamName: 'Netherlands', formation: '4-3-3', notablePlayers: ['Johan Cruyff', 'Johan Neeskens', 'Johnny Rep'], description: 'The masters of Total Football who changed the sport forever despite not winning.' },
-  { id: 'italy-2006', year: 2006, teamName: 'Italy', formation: '4-4-1-1', notablePlayers: ['Fabio Cannavaro', 'Andrea Pirlo', 'Gigi Buffon'], description: 'An impenetrable defense that conceded only two goals in the entire tournament.' },
 ];

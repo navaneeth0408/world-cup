@@ -234,37 +234,16 @@ const FavoriteTeamLineup = ({ team }) => {
         };
     }, [squad, team]);
 
-    // Split starting XI names to display cleanly with correct initials (especially for Dutch names like De Jong, Van Dijk, Van de Ven, Van Hecke)
+    // Split starting XI names to display cleanly with correct initials for all players across all teams
     const getLastName = (fullName) => {
         if (!fullName) return '';
         
         const trimmed = fullName.trim();
-        const lower = trimmed.toLowerCase();
-        
-        // Exact mappings for user request target players
-        if (lower.includes('van dijk')) {
-            return 'Van Dijk';
-        }
-        if (lower.includes('de jong')) {
-            const parts = trimmed.split(' ');
-            const initial = parts[0] ? `${parts[0].charAt(0).toUpperCase()}. ` : '';
-            return `${initial}de Jong`;
-        }
-        if (lower.includes('van de ven')) {
-            const parts = trimmed.split(' ');
-            const initial = parts[0] ? `${parts[0].charAt(0).toUpperCase()}. ` : '';
-            return `${initial}van de Ven`;
-        }
-        if (lower.includes('van hecke')) {
-            const parts = trimmed.split(' ');
-            const initial = parts[0] ? `${parts[0].charAt(0).toUpperCase()}. ` : '';
-            return `${initial}van Hecke`;
-        }
         
         const parts = trimmed.split(' ');
         if (parts.length <= 1) return trimmed;
-        
-        // General Dutch/German/Spanish particles scanner
+
+        // Find if there is a Dutch/Spanish/German particle (van, de, der, von, etc.)
         const particles = ['van', 'de', 'der', 'von', 'da', 'di', 'del'];
         let particleIndex = -1;
         for (let i = 0; i < parts.length; i++) {
@@ -273,16 +252,18 @@ const FavoriteTeamLineup = ({ team }) => {
                 break;
             }
         }
-        
+
+        const initial = `${parts[0].charAt(0).toUpperCase()}. `;
+
         if (particleIndex > 0) {
-            const firstPart = parts[0];
-            const initial = `${firstPart.charAt(0).toUpperCase()}. `;
+            // e.g., "Micky van de Ven" -> "M. van de Ven"
             const lastNamePart = parts.slice(particleIndex).join(' ');
             return `${initial}${lastNamePart}`;
         }
-        
-        // Default: Return the last part
-        return parts[parts.length - 1];
+
+        // Standard: "Lionel Messi" -> "L. Messi"
+        const lastNamePart = parts[parts.length - 1];
+        return `${initial}${lastNamePart}`;
     };
 
     return (
@@ -341,7 +322,7 @@ const FavoriteTeamLineup = ({ team }) => {
                                     {player.number}
                                 </div>
                                 {/* Player Name Tag */}
-                                <div className="mt-1 bg-slate-900/90 border border-slate-800 rounded px-1.5 py-0.5 max-w-[80px] truncate text-[9px] font-bold text-white text-center shadow group-hover:border-green-500/30 transition-colors">
+                                <div className="mt-1 bg-slate-900/90 border border-slate-800 rounded px-1 py-0.5 max-w-[75px] sm:max-w-[95px] truncate text-[8px] sm:text-[9px] font-bold text-white text-center shadow group-hover:border-green-500/30 transition-colors whitespace-nowrap">
                                     {getLastName(player.name)}
                                 </div>
                             </div>
