@@ -148,25 +148,31 @@ const selectPlayerForBooking = (squad) => {
   return squad[Math.floor(Math.random() * squad.length)];
 };
 
+// Power scores derived from 8-factor weighted formula:
+// Elo (25%) + Player Quality (20%) + Tournament Form (15%) + Cohesion (15%)
+// + Continental (7.5%) + WC History (7.5%) + Tournament Context (5%) + Adaptability (5%)
+// Tournament Context = (thisWCResult × 0.8) + (prevWCResult × 0.2)
+// Source: eloratings.net Elo ratings + historical WC records
+// Do not manually edit these scores — regenerate from classicalTeamFactors if needed.
 const classicalPowerScores = {
-  'brazil-1970': 99.00,
-  'brazil-2002': 96.75,
-  'france-1998': 95.95,
-  'spain-2010': 95.90,
-  'germany-2014': 95.60,
-  'netherlands-1974': 95.10,
-  'france-2018': 94.65,
-  'argentina-1986': 94.05,
-  'argentina-2022': 92.75,
-  'england-1966': 91.95,
-  'belgium-2018': 91.35,
-  'croatia-2018': 90.30,
-  'croatia-2022': 88.85,
-  'england-2006': 87.85,
-  'senegal-2002': 85.40,
-  'ghana-2010': 82.90,
-  'netherlands-2010': 91.50,
-  'germany-1990': 94.50
+  'brazil-1970': 91.00,
+  'brazil-2002': 86.10,
+  'france-1998': 82.45,
+  'spain-2010': 85.30,
+  'germany-2014': 84.75,
+  'netherlands-1974': 80.20,
+  'france-2018': 83.60,
+  'argentina-1986': 83.15,
+  'argentina-2022': 84.40,
+  'england-1966': 74.80,
+  'belgium-2018': 72.30,
+  'croatia-2018': 71.40,
+  'croatia-2022': 68.95,
+  'england-2006': 66.20,
+  'senegal-2002': 58.75,
+  'ghana-2010': 55.00,
+  'netherlands-2010': 76.55,
+  'germany-1990': 82.90
 };
 
 export const getTeamStrengthDetails = (team) => {
