@@ -6,6 +6,7 @@ import Flag from '../components/ui/Flag';
 import Card from '../components/ui/Card';
 import Modal from '../components/ui/Modal';
 import Button from '../components/ui/Button';
+import Badge from '../components/ui/Badge';
 import { Trophy, Goal, Hand, Shield, Users, BarChart3, AlertCircle, Activity, Sparkles, Award, X, Info } from 'lucide-react';
 import lineupsData from '../data/lineups.json';
 import currentSquadsData from '../data/current_squads.json';
@@ -19,6 +20,31 @@ const normalizeName = (name) => {
         .replace(/[\u0300-\u036f]/g, "")
         .replace(/[^a-z0-9]/g, "")
         .trim();
+};
+
+const getLastName = (fullName) => {
+    if (!fullName) return '';
+    const parts = fullName.trim().split(/\s+/);
+    if (parts.length <= 1) return fullName;
+    
+    const particles = ['de', 'di', 'da', 'del', 'du', 'von', 'van', 'la', 'le', 'der'];
+    let particleIndex = -1;
+    for (let i = 0; i < parts.length; i++) {
+        if (particles.includes(parts[i].toLowerCase())) {
+            particleIndex = i;
+            break;
+        }
+    }
+
+    const initial = `${parts[0].charAt(0).toUpperCase()}. `;
+
+    if (particleIndex > 0) {
+        const lastNamePart = parts.slice(particleIndex).join(' ');
+        return `${initial}${lastNamePart}`;
+    }
+
+    const lastNamePart = parts[parts.length - 1];
+    return `${initial}${lastNamePart}`;
 };
 
 const generateReason = (p) => {
@@ -104,6 +130,7 @@ const Standings = () => {
         { id: 'scorers', name: 'Top Scorers', icon: Goal },
         { id: 'assists', name: 'Assists & G+A', icon: Hand },
         { id: 'mvp', name: 'Tournament MVP', icon: Award },
+        { id: 'best-11', name: 'Best XI', icon: Users },
         { id: 'discipline', name: 'Discipline', icon: AlertCircle },
         { id: 'goalkeepers', name: 'Goalkeepers', icon: Shield },
         { id: 'tournament-summary', name: 'Overview', icon: Activity },
@@ -353,7 +380,7 @@ const Standings = () => {
             .slice(0, 10);
     }, [completedMatches, teams]);
 
-    const mvpCandidates = useMemo(() => {
+    const allMvpCandidates = useMemo(() => {
         const players = {};
 
         // Helper to get player's position from current_squads.json
@@ -387,6 +414,22 @@ const Standings = () => {
             return 'FW';
         };
 
+        // Helper to get player's detailed position from current_squads.json
+        const getPlayerDetailedPosition = (name, teamId) => {
+            const teamSquad = currentSquadsData.find(t => t.id.toLowerCase() === teamId.toLowerCase() || t.name.toLowerCase() === teamId.toLowerCase());
+            const normalizedTarget = normalizeName(name);
+            if (teamSquad) {
+                const foundPlayer = teamSquad.squad.find(p => normalizeName(p.name) === normalizedTarget);
+                if (foundPlayer) return foundPlayer.position;
+            }
+            // Global fallback search
+            for (const t of currentSquadsData) {
+                const p = t.squad.find(p => normalizeName(p.name) === normalizedTarget);
+                if (p) return p.position;
+            }
+            return '';
+        };
+
         // Gather all players who have participated (starts/scorers/assists/cards/POTM)
         teams.forEach(t => {
             const teamLineup = lineupsData.teams.find(l => l.country_name.toLowerCase() === t.name.toLowerCase() || l.country_name.toLowerCase() === t.id.toLowerCase());
@@ -399,6 +442,7 @@ const Standings = () => {
                         teamId: t.id,
                         teamCode: t.countryCode,
                         position: getPlayerPosition(name, t.id),
+                        detailedPosition: getPlayerDetailedPosition(name, t.id),
                         goals: 0,
                         assists: 0,
                         potm: 0,
@@ -428,6 +472,7 @@ const Standings = () => {
                     teamId,
                     teamCode: team ? team.countryCode : '',
                     position: getPlayerPosition(name, teamId),
+                    detailedPosition: getPlayerDetailedPosition(name, teamId),
                     goals: 0,
                     assists: 0,
                     potm: 0,
@@ -759,9 +804,72 @@ const Standings = () => {
                 };
             })
             .sort((a, b) => b.score - a.score || b.goals - a.goals || a.name.localeCompare(b.name))
-            .map((p, idx) => ({ ...p, rank: idx + 1 }))
-            .slice(0, 20);
+            .map((p, idx) => ({ ...p, rank: idx + 1 }));
     }, [completedMatches, teams, matches, groupStandings, thirdPlaceStandings]);
+
+    const mvpCandidates = useMemo(() => {
+        return allMvpCandidates.slice(0, 20);
+    }, [allMvpCandidates]);
+
+    const bestXI = useMemo(() => {
+        if (!allMvpCandidates || allMvpCandidates.length === 0) return null;
+
+        const filterByPosition = (posKeywords) => {
+            return allMvpCandidates.filter(p => {
+                const playerPos = (p.detailedPosition || '').toLowerCase();
+                return posKeywords.some(keyword => playerPos === keyword.toLowerCase());
+            });
+        };
+
+        const gkList = filterByPosition(['Goalkeeper']);
+        const cbList = filterByPosition(['Center Back']);
+        const lbList = filterByPosition(['Left Back']);
+        const rbList = filterByPosition(['Right Back']);
+        const dmList = filterByPosition(['Defensive Midfielder']);
+        const cmList = filterByPosition(['Central Midfielder', 'Center Midfielder']);
+        const amList = filterByPosition(['Attacking Midfielder']);
+        const lwList = filterByPosition(['Left Wing', 'Left Winger']);
+        const rwList = filterByPosition(['Right Wing', 'Right Winger']);
+        const cfList = filterByPosition(['Center Forward']);
+
+        const selectedKeys = new Set();
+        const pickBest = (list, fallbackPosList = []) => {
+            for (const p of list) {
+                const key = `${p.teamId}-${p.name}`;
+                if (!selectedKeys.has(key)) {
+                    selectedKeys.add(key);
+                    return p;
+                }
+            }
+            if (fallbackPosList.length > 0) {
+                const fallbackList = allMvpCandidates.filter(p => fallbackPosList.includes(p.position));
+                for (const p of fallbackList) {
+                    const key = `${p.teamId}-${p.name}`;
+                    if (!selectedKeys.has(key)) {
+                        selectedKeys.add(key);
+                        return p;
+                    }
+                }
+            }
+            return null;
+        };
+
+        const lineup = {
+            GK: pickBest(gkList, ['GK']),
+            LB: pickBest(lbList, ['DF']),
+            CB_L: pickBest(cbList, ['DF']),
+            CB_R: pickBest(cbList, ['DF']),
+            RB: pickBest(rbList, ['DF']),
+            DM: pickBest(dmList, ['MF']),
+            CM: pickBest(cmList, ['MF']),
+            AM: pickBest(amList, ['MF']),
+            LW: pickBest(lwList, ['FW']),
+            CF: pickBest(cfList, ['FW']),
+            RW: pickBest(rwList, ['FW'])
+        };
+
+        return lineup;
+    }, [allMvpCandidates]);
 
     const discipline = useMemo(() => {
         const yellowCards = {};
@@ -1519,6 +1627,142 @@ const Standings = () => {
                             </table>
                         </div>
                     </Card>
+                </section>
+
+                {/* Section: Tournament Best XI */}
+                <section id="best-11" className="scroll-mt-36">
+                    <div className="flex items-center gap-3 mb-8">
+                        <Users className="w-8 h-8 text-green-500" />
+                        <h2 className="text-3xl font-black text-white uppercase italic tracking-tight font-display">Tournament Best XI</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {/* Soccer Field */}
+                        <div className="lg:col-span-2 relative bg-emerald-950/20 border border-emerald-900/40 rounded-3xl aspect-[3/4] sm:aspect-[4/3] lg:aspect-[3/4] overflow-hidden p-6 shadow-2xl flex flex-col justify-between">
+                            {/* Pitch markings */}
+                            <div className="absolute inset-6 border-2 border-white/10 rounded-2xl pointer-events-none">
+                                {/* Center line */}
+                                <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-white/10" />
+                                {/* Center circle */}
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 border-2 border-white/10 rounded-full" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white/15 rounded-full" />
+
+                                {/* Penalty Area Top */}
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-24 border-x-2 border-b-2 border-white/10">
+                                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-2 h-2 bg-white/15 rounded-full" />
+                                    {/* Penalty Arc */}
+                                    <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-24 h-12 border-b-2 border-x-2 border-dashed border-white/10 rounded-b-full" />
+                                </div>
+                                {/* Goal Area Top */}
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-8 border-x-2 border-b-2 border-white/10" />
+
+                                {/* Penalty Area Bottom */}
+                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-24 border-x-2 border-t-2 border-white/10">
+                                    <div className="absolute top-4 left-1/2 -translate-x-1/2 w-2 h-2 bg-white/15 rounded-full" />
+                                    {/* Penalty Arc */}
+                                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-12 border-t-2 border-x-2 border-dashed border-white/10 rounded-t-full" />
+                                </div>
+                                {/* Goal Area Bottom */}
+                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-8 border-x-2 border-t-2 border-white/10" />
+                            </div>
+
+                            {/* Pitch Players */}
+                            <div className="absolute inset-0 w-full h-full">
+                                {bestXI && Object.entries(bestXI).map(([posKey, player]) => {
+                                    if (!player) return null;
+                                    
+                                    const coords = {
+                                        GK: { x: 50, y: 88 },
+                                        LB: { x: 15, y: 72 },
+                                        CB_L: { x: 35, y: 75 },
+                                        CB_R: { x: 65, y: 75 },
+                                        RB: { x: 85, y: 72 },
+                                        DM: { x: 35, y: 58 },
+                                        CM: { x: 65, y: 58 },
+                                        AM: { x: 50, y: 44 },
+                                        LW: { x: 20, y: 22 },
+                                        CF: { x: 50, y: 16 },
+                                        RW: { x: 80, y: 22 }
+                                    }[posKey] || { x: 50, y: 50 };
+
+                                    return (
+                                        <div 
+                                            key={posKey}
+                                            className="absolute flex flex-col items-center -translate-x-1/2 -translate-y-1/2 group z-10"
+                                            style={{ left: `${coords.x}%`, top: `${coords.y}%` }}
+                                        >
+                                            {/* Player Node Container with flag & rating */}
+                                            <div className="relative cursor-pointer transition-all duration-300 transform group-hover:scale-110 flex flex-col items-center">
+                                                {/* Position Label */}
+                                                <span className="text-[8px] font-black text-green-400 bg-emerald-950/80 border border-emerald-500/30 px-1.5 py-0.25 rounded-md uppercase tracking-wider mb-1 leading-none shadow-md">
+                                                    {posKey.replace('_L', '').replace('_R', '')}
+                                                </span>
+                                                
+                                                {/* Player Jersey Circle */}
+                                                <div className="w-12 h-12 rounded-full bg-slate-950 border-2 border-green-500 flex items-center justify-center shadow-lg group-hover:border-yellow-400 group-hover:shadow-yellow-500/20 transition-all">
+                                                    <Flag code={player.teamCode} style={{ fontSize: '20px' }} />
+                                                </div>
+
+                                                {/* Rating badge overlapping jersey */}
+                                                <div className="absolute -bottom-1 -right-1 bg-green-500 text-slate-950 font-black text-[9px] w-5 h-5 rounded-full flex items-center justify-center border border-slate-950 shadow-md">
+                                                    {player.score.toFixed(1)}
+                                                </div>
+                                            </div>
+                                            
+                                            {/* Player Name */}
+                                            <div className="mt-2 bg-slate-900/95 border border-slate-800 rounded-lg px-2 py-1 max-w-[85px] sm:max-w-[100px] truncate text-[9px] font-bold text-white text-center shadow-lg group-hover:border-green-500/30 transition-colors whitespace-nowrap">
+                                                {getLastName(player.name)}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* List Detail Sidebar */}
+                        <div className="flex flex-col gap-4 max-h-[600px] overflow-y-auto pr-1 select-none">
+                            <Card className="p-4 border-gray-800 bg-gray-900/50 flex flex-col h-full">
+                                <div className="border-b border-gray-800 pb-3 mb-4 flex items-center justify-between">
+                                    <h3 className="font-bold text-white uppercase tracking-wider text-xs">Best XI Squad</h3>
+                                    <Badge variant="green">MVP Form</Badge>
+                                </div>
+                                <div className="flex flex-col gap-2.5 overflow-y-auto flex-grow">
+                                    {bestXI && Object.entries(bestXI).map(([posKey, player]) => {
+                                        if (!player) return null;
+                                        return (
+                                            <div 
+                                                key={posKey}
+                                                className="flex items-center justify-between p-3 bg-gray-950/40 border border-gray-850 rounded-xl hover:border-slate-800 transition-colors"
+                                            >
+                                                <div className="flex items-center gap-3 min-w-0">
+                                                    <span className="w-8 shrink-0 text-[10px] font-black text-green-400 bg-emerald-950/40 border border-emerald-500/20 px-1 py-0.5 rounded text-center uppercase tracking-wider">
+                                                        {posKey.replace('_L', '').replace('_R', '')}
+                                                    </span>
+                                                    <div className="flex flex-col min-w-0">
+                                                        <div className="flex items-center gap-1.5">
+                                                            <Flag code={player.teamCode} />
+                                                            <span className="font-semibold text-slate-200 text-xs truncate leading-snug">{player.name}</span>
+                                                        </div>
+                                                        <span className="text-[10px] text-slate-500 leading-none mt-1">{player.team}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-center gap-3 shrink-0">
+                                                    {/* Mini stats */}
+                                                    <div className="flex items-center gap-1 text-[10px] text-gray-500 font-medium">
+                                                        {player.goals > 0 && <span>{player.goals}⚽</span>}
+                                                        {player.assists > 0 && <span>{player.assists}🅰️</span>}
+                                                    </div>
+                                                    <span className="inline-block px-2.5 py-1 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full font-black text-xs">
+                                                        {player.score.toFixed(1)}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </Card>
+                        </div>
+                    </div>
                 </section>
 
                 {/* Section 4: Discipline */}

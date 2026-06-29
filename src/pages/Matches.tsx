@@ -65,7 +65,7 @@ const Matches: React.FC = () => {
         venues: Venue[],
         loading: boolean
     };
-    const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming');
+    const [activeTab, setActiveTab] = useState<'upcoming' | 'past' | 'powerhouse'>('upcoming');
     const navigate = useNavigate();
 
     const [searchParams] = useSearchParams();
@@ -74,10 +74,13 @@ const Matches: React.FC = () => {
     const [selectedGroup, setSelectedGroup] = useState<string>('ALL');
     const [selectedDate, setSelectedDate] = useState<string>('ALL');
     const shouldScrollToTodayRef = useRef(false);
+    const [selectedMatchup, setSelectedMatchup] = useState<any | null>(null);
+    const [selectedPowerhouseTeam, setSelectedPowerhouseTeam] = useState<string>('ALL');
 
     useEffect(() => {
         setSelectedGroup('ALL');
         setSelectedDate('ALL');
+        setSelectedPowerhouseTeam('ALL');
     }, [activeTab]);
 
     const [selectedTimeZone, setSelectedTimeZone] = useState<string>(() => {
@@ -179,6 +182,336 @@ const Matches: React.FC = () => {
         });
     }, [groupedMatches, activeTab]);
 
+    const ALLOWED_PAIRS = [
+        // Argentina
+        ['argentina', 'brazil'],
+        ['argentina', 'england'],
+        ['argentina', 'mexico'],
+        ['argentina', 'portugal'],
+        ['argentina', 'spain'],
+        ['argentina', 'france'],
+        ['argentina', 'germany'],
+        ['argentina', 'netherlands'],
+        ['argentina', 'belgium'],
+        ['argentina', 'colombia'],
+
+        // England
+        ['england', 'mexico'],
+        ['england', 'brazil'],
+        ['england', 'argentina'],
+        ['england', 'germany'],
+        ['england', 'netherlands'],
+        ['england', 'france'],
+        ['england', 'portugal'],
+        ['england', 'spain'],
+        ['england', 'usa'],
+        ['england', 'belgium'],
+
+        // Brazil
+        ['brazil', 'england'],
+        ['brazil', 'argentina'],
+        ['brazil', 'germany'],
+        ['brazil', 'netherlands'],
+        ['brazil', 'france'],
+        ['brazil', 'portugal'],
+        ['brazil', 'spain'],
+        ['brazil', 'usa'],
+        ['brazil', 'belgium'],
+        ['brazil', 'japan'],
+
+        // Portugal
+        ['portugal', 'croatia'],
+        ['portugal', 'spain'],
+        ['portugal', 'usa'],
+        ['portugal', 'belgium'],
+        ['portugal', 'france'],
+        ['portugal', 'germany'],
+        ['portugal', 'netherlands'],
+
+        // Spain
+        ['spain', 'usa'],
+        ['spain', 'belgium'],
+        ['spain', 'germany'],
+        ['spain', 'netherlands'],
+        ['spain', 'france'],
+
+        // USA
+        ['usa', 'belgium'],
+        ['usa', 'netherlands'],
+        ['usa', 'france'],
+        ['usa', 'germany'],
+        ['usa', 'mexico'],
+        ['usa', 'japan'],
+
+        // Belgium
+        ['belgium', 'netherlands'],
+        ['belgium', 'france'],
+        ['belgium', 'germany'],
+        ['belgium', 'mexico'],
+
+        // France
+        ['france', 'germany'],
+        ['france', 'netherlands'],
+
+        // Germany
+        ['germany', 'netherlands'],
+
+        // Netherlands
+        ['netherlands', 'morocco']
+    ];
+
+    const powerhouseMatchups = useMemo(() => {
+        if (!matches || matches.length === 0 || !teams || teams.length === 0) return [];
+
+        const advancesTo: { [key: number]: { parent: number, slot: 'home' | 'away' } } = {};
+        matches.forEach(m => {
+            const matchIdNum = m.match_id;
+            if (matchIdNum > 72) {
+                const parseWinnerMatch = (teamString: any) => {
+                    if (typeof teamString !== 'string') return null;
+                    const match = teamString.match(/Winner Match\s+(\d+)/i);
+                    return match ? parseInt(match[1], 10) : null;
+                };
+
+                const homeParentMatch = parseWinnerMatch(m.homeTeam);
+                const awayParentMatch = parseWinnerMatch(m.awayTeam);
+                
+                if (homeParentMatch) {
+                    advancesTo[homeParentMatch] = { parent: matchIdNum, slot: 'home' };
+                }
+                if (awayParentMatch) {
+                    advancesTo[awayParentMatch] = { parent: matchIdNum, slot: 'away' };
+                }
+            }
+        });
+
+        const getMatchPath = (startMatchId: number) => {
+            const path: number[] = [];
+            let current: number | null = startMatchId;
+            while (current) {
+                path.push(current);
+                const next = advancesTo[current];
+                current = next ? next.parent : null;
+            }
+            return path;
+        };
+
+        const r32Matches = matches.filter(m => m.match_id >= 73 && m.match_id <= 88);
+
+        const getStageName = (matchId: number) => {
+            if (matchId >= 73 && matchId <= 88) return 'Round of 32';
+            if (matchId >= 89 && matchId <= 96) return 'Round of 16';
+            if (matchId >= 97 && matchId <= 100) return 'Quarter-finals';
+            if (matchId === 101 || matchId === 102) return 'Semi-finals';
+            if (matchId === 103) return 'Third Place';
+            if (matchId === 104) return 'Final';
+            return '';
+        };
+
+        const isAllowedClash = (idA: string, idB: string) => {
+            const lowA = idA.toLowerCase();
+            const lowB = idB.toLowerCase();
+            return ALLOWED_PAIRS.some(pair => 
+                (pair[0] === lowA && pair[1] === lowB) || 
+                (pair[0] === lowB && pair[1] === lowA)
+            );
+        };
+
+        const results: any[] = [];
+        for (let i = 0; i < teams.length; i++) {
+            for (let j = i + 1; j < teams.length; j++) {
+                const teamA = teams[i];
+                const teamB = teams[j];
+
+                const startMatchA = r32Matches.find(m => 
+                    m.homeTeam.toLowerCase() === teamA.id.toLowerCase() || 
+                    m.awayTeam.toLowerCase() === teamA.id.toLowerCase()
+                );
+                const startMatchB = r32Matches.find(m => 
+                    m.homeTeam.toLowerCase() === teamB.id.toLowerCase() || 
+                    m.awayTeam.toLowerCase() === teamB.id.toLowerCase()
+                );
+
+                if (!startMatchA || !startMatchB) continue;
+
+                const pathA = getMatchPath(startMatchA.match_id);
+                const pathB = getMatchPath(startMatchB.match_id);
+
+                const commonMatchId = pathA.find(id => pathB.includes(id));
+                if (!commonMatchId) continue;
+
+                const stage = getStageName(commonMatchId);
+                
+                if (!isAllowedClash(teamA.id, teamB.id)) continue;
+
+                const meetingMatch = matches.find(m => m.match_id === commonMatchId);
+
+                results.push({
+                    teamA,
+                    teamB,
+                    stage,
+                    matchId: commonMatchId,
+                    venue: meetingMatch ? venues.find(v => v.id === meetingMatch.venue) : null,
+                    match: meetingMatch
+                });
+            }
+        }
+
+        const stagePriority: { [key: string]: number } = {
+            'Round of 32': 1,
+            'Round of 16': 2,
+            'Quarter-finals': 3,
+            'Semi-finals': 4,
+            'Final': 5
+        };
+
+        return results.sort((a, b) => (stagePriority[a.stage] || 99) - (stagePriority[b.stage] || 99));
+    }, [matches, teams, venues]);
+
+    const uniquePowerhouseTeams = useMemo(() => {
+        if (!teams || teams.length === 0) return [];
+        const teamMap = new Map<string, Team>();
+        powerhouseMatchups.forEach(pm => {
+            if (pm.teamA) teamMap.set(pm.teamA.id, pm.teamA);
+            if (pm.teamB) teamMap.set(pm.teamB.id, pm.teamB);
+        });
+        return Array.from(teamMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+    }, [powerhouseMatchups, teams]);
+
+    const filteredPowerhouseMatchups = useMemo(() => {
+        if (selectedPowerhouseTeam === 'ALL') return powerhouseMatchups;
+        return powerhouseMatchups.filter(pm => 
+            pm.teamA.id.toLowerCase() === selectedPowerhouseTeam.toLowerCase() || 
+            pm.teamB.id.toLowerCase() === selectedPowerhouseTeam.toLowerCase()
+        );
+    }, [powerhouseMatchups, selectedPowerhouseTeam]);
+
+    const getLeafTeamsForMatch = (matchId: number): string[] => {
+        if (!matches || matches.length === 0) return [];
+        const m = matches.find(x => x.match_id === matchId);
+        if (!m) return [];
+        if (matchId >= 73 && matchId <= 88) {
+            return [m.homeTeam, m.awayTeam].filter(Boolean);
+        }
+        
+        const parseWinnerMatch = (teamString: any) => {
+            if (typeof teamString !== 'string') return null;
+            const match = teamString.match(/Winner Match\s+(\d+)/i);
+            return match ? parseInt(match[1], 10) : null;
+        };
+
+        const homeParent = parseWinnerMatch(m.homeTeam);
+        const awayParent = parseWinnerMatch(m.awayTeam);
+        
+        let leaves: string[] = [];
+        if (homeParent) {
+            leaves = leaves.concat(getLeafTeamsForMatch(homeParent));
+        } else if (m.homeTeam) {
+            leaves.push(m.homeTeam);
+        }
+        if (awayParent) {
+            leaves = leaves.concat(getLeafTeamsForMatch(awayParent));
+        } else if (m.awayTeam) {
+            leaves.push(m.awayTeam);
+        }
+        return leaves;
+    };
+
+    const getPathStepsForTeam = (team: Team, startMatchId: number, targetMatchId: number) => {
+        if (!matches || matches.length === 0) return [];
+        const path: number[] = [];
+        
+        const advancesToMap: { [key: number]: number } = {};
+        matches.forEach(m => {
+            if (m.match_id > 72) {
+                const parseWinnerMatch = (tStr: any) => {
+                    if (typeof tStr !== 'string') return null;
+                    const match = tStr.match(/Winner Match\s+(\d+)/i);
+                    return match ? parseInt(match[1], 10) : null;
+                };
+                const homeParent = parseWinnerMatch(m.homeTeam);
+                const awayParent = parseWinnerMatch(m.awayTeam);
+                if (homeParent) advancesToMap[homeParent] = m.match_id;
+                if (awayParent) advancesToMap[awayParent] = m.match_id;
+            }
+        });
+
+        let curr = startMatchId;
+        while (curr) {
+            path.push(curr);
+            if (curr === targetMatchId) break;
+            curr = advancesToMap[curr];
+        }
+
+        const steps: any[] = [];
+        for (let i = 0; i < path.length - 1; i++) {
+            const mId = path[i];
+            const nextMId = path[i+1];
+            const matchObj = matches.find(m => m.match_id === mId);
+            
+            const nextMatchObj = matches.find(m => m.match_id === nextMId);
+            let opponentLabel = '';
+            let potentialOpponents: string[] = [];
+
+            if (nextMatchObj) {
+                const parseWinnerMatch = (tStr: any) => {
+                    if (typeof tStr !== 'string') return null;
+                    const match = tStr.match(/Winner Match\s+(\d+)/i);
+                    return match ? parseInt(match[1], 10) : null;
+                };
+
+                const nextHomeParent = parseWinnerMatch(nextMatchObj.homeTeam);
+                const nextAwayParent = parseWinnerMatch(nextMatchObj.awayTeam);
+
+                if (nextHomeParent === mId) {
+                    if (nextAwayParent) {
+                        opponentLabel = `Winner of Match ${nextAwayParent}`;
+                        potentialOpponents = getLeafTeamsForMatch(nextAwayParent);
+                    } else {
+                        opponentLabel = nextMatchObj.awayTeam;
+                        potentialOpponents = [nextMatchObj.awayTeam];
+                    }
+                } else if (nextAwayParent === mId) {
+                    if (nextHomeParent) {
+                        opponentLabel = `Winner of Match ${nextHomeParent}`;
+                        potentialOpponents = getLeafTeamsForMatch(nextHomeParent);
+                    } else {
+                        opponentLabel = nextMatchObj.homeTeam;
+                        potentialOpponents = [nextMatchObj.homeTeam];
+                    }
+                }
+            }
+
+            const getStageName = (matchId: number) => {
+                if (matchId >= 73 && matchId <= 88) return 'Round of 32';
+                if (matchId >= 89 && matchId <= 96) return 'Round of 16';
+                if (matchId >= 97 && matchId <= 100) return 'Quarter-finals';
+                if (matchId === 101 || matchId === 102) return 'Semi-finals';
+                return 'Knockouts';
+            };
+
+            steps.push({
+                matchId: mId,
+                stage: getStageName(mId),
+                match: matchObj,
+                teamToWin: team,
+                opponentLabel,
+                potentialOpponents: potentialOpponents.map(id => {
+                    const t = teams.find(x => x.id.toLowerCase() === id.toLowerCase());
+                    return t ? t.name : id;
+                })
+            });
+        }
+
+        return steps;
+    };
+
+    const getTeamName = (id: string) => {
+        if (!id) return '';
+        const t = teams.find(x => x.id.toLowerCase() === id.toLowerCase());
+        return t ? t.name : id;
+    };
+
     const scrollToToday = () => {
         const todayStr = getTodayLocalDateString(selectedTimeZone);
         const targetDate = sortedGroupedDates.find(dateStr => dateStr >= todayStr);
@@ -273,11 +606,22 @@ const Matches: React.FC = () => {
                         >
                             Past (Results)
                         </button>
+                        <button
+                            onClick={() => setActiveTab('powerhouse')}
+                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'powerhouse'
+                                ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10'
+                                : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
+                                }`}
+                        >
+                            Powerhouse Clashes
+                        </button>
                     </div>
                 </div>
 
-                {/* Filters & Today Button */}
-                <div className="flex flex-wrap items-center justify-between gap-4 mb-8 bg-slate-900/30 p-4 rounded-2xl border border-slate-800/40 backdrop-blur-sm shadow-md">
+                {activeTab !== 'powerhouse' && (
+                    <>
+                        {/* Filters & Today Button */}
+                        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 bg-slate-900/30 p-4 rounded-2xl border border-slate-800/40 backdrop-blur-sm shadow-md">
                     <div className="flex flex-wrap gap-1.5 items-center">
                         <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider mr-2">Groups:</span>
                         {groupsList.map((group) => (
@@ -344,9 +688,134 @@ const Matches: React.FC = () => {
                         </button>
                     </div>
                 )}
+                    </>
+                )}
+
+                {/* Powerhouse Matchups */}
+                {activeTab === 'powerhouse' && (
+                    <div className="space-y-8 animate-in fade-in duration-500">
+                        <div className="bg-slate-900/30 border border-slate-800/40 backdrop-blur-sm p-6 rounded-3xl relative overflow-hidden shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div className="space-y-1">
+                                <h3 className="font-bold text-white uppercase tracking-wider text-sm flex items-center gap-2">
+                                    <Star className="w-4 h-4 text-yellow-500 fill-yellow-500/10" />
+                                    Potential Powerhouse Clashes
+                                </h3>
+                                <p className="text-xs text-slate-400 leading-relaxed max-w-2xl">
+                                    Below are the possible knockout match-ups between powerhouse nations. Meeting stages are mathematically determined based on the official tournament bracket. Both teams must qualify and win all their prior matches to face each other.
+                                </p>
+                            </div>
+                        </div>
+
+                        {uniquePowerhouseTeams.length > 0 && (
+                            <div className="flex flex-wrap items-center gap-2 mb-8 bg-slate-900/30 p-4 rounded-2xl border border-slate-800/40 backdrop-blur-sm shadow-md">
+                                <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider mr-2">Filter by Team:</span>
+                                <button
+                                    onClick={() => setSelectedPowerhouseTeam('ALL')}
+                                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all uppercase border ${
+                                        selectedPowerhouseTeam === 'ALL'
+                                            ? 'bg-green-500 text-gray-950 border-green-500 shadow-sm shadow-green-500/20'
+                                            : 'bg-slate-950/40 text-slate-400 border-slate-800/60 hover:text-white'
+                                    }`}
+                                    style={{ fontSize: '11px' }}
+                                >
+                                    All
+                                </button>
+                                {uniquePowerhouseTeams.map((team) => (
+                                    <button
+                                        key={team.id}
+                                        onClick={() => setSelectedPowerhouseTeam(team.id)}
+                                        className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all uppercase flex items-center gap-1.5 border ${
+                                            selectedPowerhouseTeam === team.id
+                                                ? 'bg-green-500 text-gray-950 border-green-500 shadow-sm shadow-green-500/20'
+                                                : 'bg-slate-950/40 text-slate-400 border-slate-800/60 hover:text-white'
+                                        }`}
+                                        style={{ fontSize: '11px' }}
+                                    >
+                                        <Flag code={team.countryCode} style={{ fontSize: '12px' }} />
+                                        {team.name}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {filteredPowerhouseMatchups.map((pm, idx) => {
+                                const borderColors: { [key: string]: string } = {
+                                    'Final': 'border-yellow-500/30 hover:border-yellow-500/50 shadow-yellow-500/5',
+                                    'Semi-finals': 'border-green-500/30 hover:border-green-500/50 shadow-green-500/5',
+                                    'Quarter-finals': 'border-blue-500/30 hover:border-blue-500/50 shadow-blue-500/5',
+                                    'Round of 16': 'border-purple-500/30 hover:border-purple-500/50 shadow-purple-500/5',
+                                    'Round of 32': 'border-slate-800 hover:border-slate-700'
+                                };
+                                const badgeColors: { [key: string]: string } = {
+                                    'Final': 'bg-yellow-500/10 border-yellow-500/20 text-yellow-400',
+                                    'Semi-finals': 'bg-green-500/10 border-green-500/20 text-green-400',
+                                    'Quarter-finals': 'bg-blue-500/10 border-blue-500/20 text-blue-400',
+                                    'Round of 16': 'bg-purple-500/10 border-purple-500/20 text-purple-400',
+                                    'Round of 32': 'bg-slate-800 border-slate-700 text-slate-400'
+                                };
+
+                                return (
+                                    <div 
+                                        key={idx}
+                                        className={`bg-slate-900/20 hover:bg-slate-900/50 border rounded-3xl p-5 md:p-6 transition-all duration-300 shadow-lg relative group cursor-pointer hover:scale-[1.01] hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-500/5 ${borderColors[pm.stage] || 'border-slate-800'}`}
+                                        onClick={() => setSelectedMatchup(pm)}
+                                    >
+                                        <div className="flex justify-between items-start mb-4">
+                                            <span className={`text-[9px] font-black uppercase tracking-wider px-2.5 py-1 border rounded-full ${badgeColors[pm.stage] || 'bg-slate-800 border-slate-700 text-slate-400'}`}>
+                                                {pm.stage}
+                                            </span>
+                                            {pm.match && (
+                                                <span className="text-[9px] text-slate-500 font-extrabold uppercase tracking-widest bg-slate-950 border border-slate-900 px-2 py-0.5 rounded-md">
+                                                    Match {pm.matchId}
+                                                </span>
+                                            )}
+                                        </div>
+
+                                        <div className="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-slate-850/60">
+                                            <div className="flex flex-col items-center flex-1 text-center min-w-0">
+                                                <div className="w-12 h-8 rounded overflow-hidden shadow-sm mb-2 shrink-0 flex items-center justify-center bg-slate-950/20 group-hover:scale-105 transition-transform">
+                                                    <Flag code={pm.teamA.countryCode} style={{ fontSize: '24px' }} />
+                                                </div>
+                                                <span className="font-black text-white text-xs sm:text-sm uppercase tracking-tight truncate w-full">{pm.teamA.name}</span>
+                                            </div>
+
+                                            <div className="text-[10px] font-black text-slate-500 border border-slate-850 bg-slate-950 rounded-full w-7 h-7 flex items-center justify-center shrink-0">
+                                                VS
+                                            </div>
+
+                                            <div className="flex flex-col items-center flex-1 text-center min-w-0">
+                                                <div className="w-12 h-8 rounded overflow-hidden shadow-sm mb-2 shrink-0 flex items-center justify-center bg-slate-950/20 group-hover:scale-105 transition-transform">
+                                                    <Flag code={pm.teamB.countryCode} style={{ fontSize: '24px' }} />
+                                                </div>
+                                                <span className="font-black text-white text-xs sm:text-sm uppercase tracking-tight truncate w-full">{pm.teamB.name}</span>
+                                            </div>
+                                        </div>
+
+                                        {pm.match && (
+                                            <div className="space-y-2">
+                                                <div className="flex items-center gap-2 text-[10px] text-slate-400 font-semibold uppercase">
+                                                    <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                                                    <span className="truncate">{pm.venue?.name || pm.match.location || 'Stadium TBD'}</span>
+                                                </div>
+                                                <div className="flex items-center gap-2 text-[10px] text-slate-400 font-semibold uppercase">
+                                                    <Calendar className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                                                    <span>
+                                                        {formatLocalDateStr(pm.match.date)}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
 
                 {/* Match List */}
-                <div className="space-y-10">
+                {activeTab !== 'powerhouse' && (
+                    <div className="space-y-10">
                     {sortedGroupedDates.length === 0 ? (
                         <div className="text-center py-20 bg-slate-900/10 rounded-3xl border border-slate-800/80 border-dashed animate-pulse">
                             <Calendar className="w-12 h-12 text-slate-700 mx-auto mb-4" />
@@ -602,7 +1071,161 @@ const Matches: React.FC = () => {
                         })
                     )}
                 </div>
+                )}
             </main>
+
+            {/* Path Modal Overlay */}
+            {selectedMatchup && (
+                <div 
+                    className="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
+                    onClick={() => setSelectedMatchup(null)}
+                >
+                    <div 
+                        className="bg-[#0b0f19] border border-slate-800/80 rounded-3xl w-full max-w-2xl max-h-[85vh] overflow-y-auto shadow-2xl p-6 md:p-8 space-y-6 relative animate-in zoom-in-95 duration-200"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close button */}
+                        <button 
+                            className="absolute top-4 right-4 text-slate-500 hover:text-white transition-colors"
+                            onClick={() => setSelectedMatchup(null)}
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        {/* Modal Header */}
+                        <div className="text-center pb-4 border-b border-slate-900">
+                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-yellow-500 bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20 mb-3 inline-block">
+                                Potential Stage: {selectedMatchup.stage}
+                            </span>
+                            <div className="flex items-center justify-center gap-6 my-2">
+                                <div className="flex flex-col items-center">
+                                    <div className="w-16 h-10 rounded overflow-hidden shadow-md flex items-center justify-center bg-slate-950/40 border border-slate-800 mb-2">
+                                        <Flag code={selectedMatchup.teamA.countryCode} style={{ fontSize: '32px' }} />
+                                    </div>
+                                    <span className="font-black text-white text-sm uppercase tracking-tight">{selectedMatchup.teamA.name}</span>
+                                </div>
+                                <span className="text-xs font-black text-slate-500">VS</span>
+                                <div className="flex flex-col items-center">
+                                    <div className="w-16 h-10 rounded overflow-hidden shadow-md flex items-center justify-center bg-slate-950/40 border border-slate-800 mb-2">
+                                        <Flag code={selectedMatchup.teamB.countryCode} style={{ fontSize: '32px' }} />
+                                    </div>
+                                    <span className="font-black text-white text-sm uppercase tracking-tight">{selectedMatchup.teamB.name}</span>
+                                </div>
+                            </div>
+                            <p className="text-xs text-slate-400 mt-2">
+                                Required results path to set up this powerhouse clash in <span className="text-white font-bold">Match {selectedMatchup.matchId}</span>.
+                            </p>
+                        </div>
+
+                        {/* Path Details */}
+                        <div className="space-y-6">
+                            {selectedMatchup.stage === 'Round of 32' ? (
+                                <div className="text-center py-6 bg-slate-900/10 border border-slate-800/40 rounded-2xl">
+                                    <Trophy className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
+                                    <p className="text-xs text-slate-350 font-bold uppercase tracking-wider">Direct Matchup</p>
+                                    <p className="text-[11px] text-slate-500 mt-1 max-w-sm mx-auto leading-relaxed">
+                                        These teams play each other directly in the Round of 32. No prior results are required!
+                                    </p>
+                                </div>
+                            ) : (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {/* Team A Path */}
+                                    <div className="space-y-4 border-r border-slate-900/50 pr-0 md:pr-4">
+                                        <h4 className="text-xs font-black text-green-400 uppercase tracking-widest border-b border-slate-900 pb-2 flex items-center gap-2">
+                                            <Flag code={selectedMatchup.teamA.countryCode} style={{ fontSize: '14px' }} />
+                                            {selectedMatchup.teamA.name} Path
+                                        </h4>
+                                        <div className="relative pl-4 border-l border-slate-800 space-y-5">
+                                            {getPathStepsForTeam(
+                                                selectedMatchup.teamA, 
+                                                matches.find(m => m.match_id >= 73 && m.match_id <= 88 && (m.homeTeam.toLowerCase() === selectedMatchup.teamA.id.toLowerCase() || m.awayTeam.toLowerCase() === selectedMatchup.teamA.id.toLowerCase()))?.match_id || 0,
+                                                selectedMatchup.matchId
+                                            ).map((step, sIdx) => (
+                                                <div key={sIdx} className="relative">
+                                                    <div className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-green-500 border border-slate-950 shadow-sm" />
+                                                    <div className="space-y-1">
+                                                        <div className="flex justify-between items-center">
+                                                            <span className="text-[9px] font-black uppercase text-slate-500 tracking-wider">{step.stage}</span>
+                                                            <span className="text-[8px] font-bold text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Match {step.matchId}</span>
+                                                        </div>
+                                                        <p className="text-[11px] font-bold text-slate-200">
+                                                            Must win vs <span className="text-white font-extrabold">{getTeamName(step.match?.homeTeam.toLowerCase() === step.teamToWin.id.toLowerCase() ? step.match?.awayTeam : step.match?.homeTeam)}</span>
+                                                        </p>
+                                                        {step.potentialOpponents.length > 1 && (
+                                                            <p className="text-[9px] text-slate-500 italic leading-tight">
+                                                                (Or vs {step.opponentLabel}: {step.potentialOpponents.filter(x => x.toLowerCase() !== step.teamToWin.name.toLowerCase()).slice(0, 3).join(', ')}...)
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            <div className="relative">
+                                                <div className="absolute -left-[22px] top-1 w-3.5 h-3.5 rounded-full bg-yellow-500 border border-slate-950 flex items-center justify-center shadow-md">
+                                                    <Star className="w-2 h-2 text-slate-950 fill-slate-950" />
+                                                </div>
+                                                <div className="space-y-1 pl-1">
+                                                    <span className="text-[9px] font-black uppercase text-yellow-500 tracking-wider">Clash Stage</span>
+                                                    <p className="text-[11px] font-black text-white uppercase tracking-tight">Reaches {selectedMatchup.stage}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Team B Path */}
+                                    <div className="space-y-4">
+                                        <h4 className="text-xs font-black text-green-400 uppercase tracking-widest border-b border-slate-900 pb-2 flex items-center gap-2">
+                                            <Flag code={selectedMatchup.teamB.countryCode} style={{ fontSize: '14px' }} />
+                                            {selectedMatchup.teamB.name} Path
+                                        </h4>
+                                        <div className="relative pl-4 border-l border-slate-800 space-y-5">
+                                            {getPathStepsForTeam(
+                                                selectedMatchup.teamB, 
+                                                matches.find(m => m.match_id >= 73 && m.match_id <= 88 && (m.homeTeam.toLowerCase() === selectedMatchup.teamB.id.toLowerCase() || m.awayTeam.toLowerCase() === selectedMatchup.teamB.id.toLowerCase()))?.match_id || 0,
+                                                selectedMatchup.matchId
+                                            ).map((step, sIdx) => (
+                                                <div key={sIdx} className="relative">
+                                                    <div className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-green-500 border border-slate-950 shadow-sm" />
+                                                    <div className="space-y-1">
+                                                        <div className="flex justify-between items-center">
+                                                            <span className="text-[9px] font-black uppercase text-slate-500 tracking-wider">{step.stage}</span>
+                                                            <span className="text-[8px] font-bold text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Match {step.matchId}</span>
+                                                        </div>
+                                                        <p className="text-[11px] font-bold text-slate-200">
+                                                            Must win vs <span className="text-white font-extrabold">{getTeamName(step.match?.homeTeam.toLowerCase() === step.teamToWin.id.toLowerCase() ? step.match?.awayTeam : step.match?.homeTeam)}</span>
+                                                        </p>
+                                                        {step.potentialOpponents.length > 1 && (
+                                                            <p className="text-[9px] text-slate-500 italic leading-tight">
+                                                                (Or vs {step.opponentLabel}: {step.potentialOpponents.filter(x => x.toLowerCase() !== step.teamToWin.name.toLowerCase()).slice(0, 3).join(', ')}...)
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            <div className="relative">
+                                                <div className="absolute -left-[22px] top-1 w-3.5 h-3.5 rounded-full bg-yellow-500 border border-slate-950 flex items-center justify-center shadow-md">
+                                                    <Star className="w-2 h-2 text-slate-950 fill-slate-950" />
+                                                </div>
+                                                <div className="space-y-1 pl-1">
+                                                    <span className="text-[9px] font-black uppercase text-yellow-500 tracking-wider">Clash Stage</span>
+                                                    <p className="text-[11px] font-black text-white uppercase tracking-tight">Reaches {selectedMatchup.stage}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Footer Info */}
+                        <div className="pt-4 border-t border-slate-900 flex justify-between items-center text-[10px] text-slate-500">
+                            <span>FIFA World Cup 2026</span>
+                            <span>Calculated mathematically from bracket tree</span>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

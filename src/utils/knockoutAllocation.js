@@ -40,44 +40,46 @@ export const getRoundOf32Pairings = (w, ru, bestThird, getTeam, includeIds = fal
   };
 
   const pairings = [
+    // --- Left hand side ---
     // Match 73
-    { t1: getTeam(ru('A'), 'A runner-up'), t2: getTeam(ru('B'), 'B runner-up') },
+    { match_id: 73, t1: getTeam(ru('A'), 'A runner-up'), t2: getTeam(ru('B'), 'B runner-up') },
     // Match 75
-    { t1: getTeam(w('F'), 'Group F winner'), t2: getTeam(ru('C'), 'C runner-up') },
-    // Match 74
-    { t1: getTeam(w('E'), 'Group E winner'), t2: getThirdTeam(allocationRow["1E vs"]) },
-    // Match 77
-    { t1: getTeam(w('I'), 'Group I winner'), t2: getThirdTeam(allocationRow["1I vs"]) },
-    // Match 76
-    { t1: getTeam(w('C'), 'Group C winner'), t2: getTeam(ru('F'), 'F runner-up') },
-    // Match 78
-    { t1: getTeam(ru('E'), 'E runner-up'), t2: getTeam(ru('I'), 'I runner-up') },
-    // Match 79
-    { t1: getTeam(w('A'), 'Group A winner'), t2: getThirdTeam(allocationRow["1A vs"]) },
-    // Match 80
-    { t1: getTeam(w('L'), 'Group L winner'), t2: getThirdTeam(allocationRow["1L vs"]) },
-    // Match 81
-    { t1: getTeam(w('D'), 'Group D winner'), t2: getThirdTeam(allocationRow["1D vs"]) },
+    { match_id: 75, t1: getTeam(w('F'), 'Group F winner'), t2: getTeam(ru('C'), 'C runner-up') },
     // Match 82
-    { t1: getTeam(w('G'), 'Group G winner'), t2: getThirdTeam(allocationRow["1G vs"]) },
-    // Match 83
-    { t1: getTeam(ru('K'), 'K runner-up'), t2: getTeam(ru('L'), 'L runner-up') },
+    { match_id: 82, t1: getTeam(w('E'), 'Group E winner'), t2: getThirdTeam(allocationRow["1E vs"]) },
+    // Match 81
+    { match_id: 81, t1: getTeam(w('I'), 'Group I winner'), t2: getThirdTeam(allocationRow["1I vs"]) },
+    // Match 77
+    { match_id: 77, t1: getTeam(w('G'), 'Group G winner'), t2: getThirdTeam(allocationRow["1G vs"]) },
+    // Match 74
+    { match_id: 74, t1: getTeam(w('D'), 'Group D winner'), t2: getThirdTeam(allocationRow["1D vs"]) },
+    // Match 80
+    { match_id: 80, t1: getTeam(w('H'), 'Group H winner'), t2: getTeam(ru('J'), 'J runner-up') },
+    // Match 79
+    { match_id: 79, t1: getTeam(ru('K'), 'K runner-up'), t2: getTeam(ru('L'), 'L runner-up') },
+
+    // --- Right hand side ---
+    // Match 76    
+    { match_id: 76, t1: getTeam(w('C'), 'Group C winner'), t2: getTeam(ru('F'), 'F runner-up') },
+    // Match 78
+    { match_id: 78, t1: getTeam(ru('E'), 'E runner-up'), t2: getTeam(ru('I'), 'I runner-up') },
     // Match 84
-    { t1: getTeam(w('H'), 'Group H winner'), t2: getTeam(ru('J'), 'J runner-up') },
+    { match_id: 84, t1: getTeam(w('L'), 'Group L winner'), t2: getThirdTeam(allocationRow["1L vs"]) },
+    // Match 83
+    { match_id: 83, t1: getTeam(w('A'), 'Group A winner'), t2: getThirdTeam(allocationRow["1A vs"]) },
     // Match 85
-    { t1: getTeam(w('B'), 'Group B winner'), t2: getThirdTeam(allocationRow["1B vs"]) },
+    { match_id: 85, t1: getTeam(w('B'), 'Group B winner'), t2: getThirdTeam(allocationRow["1B vs"]) },
     // Match 87
-    { t1: getTeam(w('K'), 'Group K winner'), t2: getThirdTeam(allocationRow["1K vs"]) },
-    // Match 86
-    { t1: getTeam(w('J'), 'Group J winner'), t2: getTeam(ru('H'), 'H runner-up') },
+    { match_id: 87, t1: getTeam(w('K'), 'Group K winner'), t2: getThirdTeam(allocationRow["1K vs"]) },
     // Match 88
-    { t1: getTeam(ru('D'), 'D runner-up'), t2: getTeam(ru('G'), 'G runner-up') }
+    { match_id: 88, t1: getTeam(ru('D'), 'D runner-up'), t2: getTeam(ru('G'), 'G runner-up') },
+    // Match 86
+    { match_id: 86, t1: getTeam(w('J'), 'Group J winner'), t2: getTeam(ru('H'), 'H runner-up') }
   ];
 
   if (includeIds) {
-    let matchId = 73;
     pairings.forEach(p => {
-      p.id = `m${matchId++}`;
+      p.id = `m${p.match_id}`;
     });
   }
 

@@ -143,19 +143,29 @@ const Simulator = () => {
   }, [originalTeams, historicalSwaps]);
 
 
+  const savedState = useMemo(() => {
+    try {
+      const saved = localStorage.getItem('wc2026_simulator_save');
+      return saved ? JSON.parse(saved) : null;
+    } catch (e) {
+      console.error(e);
+      return null;
+    }
+  }, []);
+
   // local simulation state variables (clean slate, independent of db matches)
-  const [simState, setSimState] = useState('idle'); // idle | simulating_groups | groups_completed | simulating_knockouts | completed
-  const [simMatches, setSimMatches] = useState([]);
-  const [currentGroupMatchIndex, setCurrentGroupMatchIndex] = useState(0);
+  const [simState, setSimState] = useState(() => savedState ? savedState.simState : 'idle'); // idle | simulating_groups | groups_completed | simulating_knockouts | completed
+  const [simMatches, setSimMatches] = useState(() => savedState ? savedState.simMatches : []);
+  const [currentGroupMatchIndex, setCurrentGroupMatchIndex] = useState(() => savedState ? savedState.currentGroupMatchIndex : 0);
   
   // Setup configuration states
   const [showSetupModal, setShowSetupModal] = useState(false);
   const [showAllResultsModal, setShowAllResultsModal] = useState(false);
   const [resultsModalTab, setResultsModalTab] = useState('groups');
-  const [simType, setSimType] = useState('auto'); // auto | manual
-  const [realismCategory, setRealismCategory] = useState('realistic'); // favorites | realistic | moderate | unrealistic | underdog
-  const [manualScorers, setManualScorers] = useState(false);
-  const [scriptedMatchup, setScriptedMatchup] = useState({
+  const [simType, setSimType] = useState(() => savedState ? savedState.simType : 'auto'); // auto | manual
+  const [realismCategory, setRealismCategory] = useState(() => savedState ? savedState.realismCategory : 'realistic'); // favorites | realistic | moderate | unrealistic | underdog
+  const [manualScorers, setManualScorers] = useState(() => savedState ? savedState.manualScorers : false);
+  const [scriptedMatchup, setScriptedMatchup] = useState(() => savedState ? savedState.scriptedMatchup : {
     enabled: false,
     team1: '',
     team2: '',
@@ -180,7 +190,7 @@ const Simulator = () => {
   const [manualKnockoutWinner, setManualKnockoutWinner] = useState('home'); // home | away
 
   // Knockout brackets simulation state
-  const [knockoutRounds, setKnockoutRounds] = useState({
+  const [knockoutRounds, setKnockoutRounds] = useState(() => savedState ? savedState.knockoutRounds : {
     roundOf32: [],
     roundOf16: [],
     quarterFinals: [],
@@ -189,11 +199,11 @@ const Simulator = () => {
     final: null,
     winner: null
   });
-  const [currentKnockoutRound, setCurrentKnockoutRound] = useState('roundOf32'); // roundOf32 | roundOf16 | quarterFinals | semiFinals | thirdPlace/final
-  const [currentKnockoutMatchIndex, setCurrentKnockoutMatchIndex] = useState(0);
+  const [currentKnockoutRound, setCurrentKnockoutRound] = useState(() => savedState ? savedState.currentKnockoutRound : 'roundOf32'); // roundOf32 | roundOf16 | quarterFinals | semiFinals | thirdPlace/final
+  const [currentKnockoutMatchIndex, setCurrentKnockoutMatchIndex] = useState(() => savedState ? savedState.currentKnockoutMatchIndex : 0);
 
   // Player Stats for Awards
-  const [playerStats, setPlayerStats] = useState({
+  const [playerStats, setPlayerStats] = useState(() => savedState ? savedState.playerStats : {
     goals: {}, // name -> { count, team }
     assists: {}, // name -> { count, team }
     cleanSheets: {} // name -> { count, team }
@@ -202,15 +212,17 @@ const Simulator = () => {
   const [detailedStatsModal, setDetailedStatsModal] = useState(null); // null | { type, title, data }
   const [knockoutViewTab, setKnockoutViewTab] = useState('bracket'); // bracket | standings
 
+
+
   const tickerTimerRef = useRef(null);
   const pauseDelayRef = useRef(null);
   const savedSimRef = useRef(false);
 
   const groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
 
-  // Initialize clean matches on first load
+  // Initialize clean matches on first load only if there is no saved state in localStorage
   useEffect(() => {
-    if (matches.length > 0) {
+    if (matches.length > 0 && !localStorage.getItem('wc2026_simulator_save')) {
       const cleaned = matches.map(m => ({
         ...m,
         status: 'upcoming',
@@ -222,6 +234,45 @@ const Simulator = () => {
       setSimMatches(cleaned);
     }
   }, [matches]);
+
+  // Automatically persist simulator state to localStorage on changes
+  useEffect(() => {
+    if (simState === 'idle' && currentGroupMatchIndex === 0 && (!knockoutRounds.roundOf32 || knockoutRounds.roundOf32.length === 0)) {
+      localStorage.removeItem('wc2026_simulator_save');
+      return;
+    }
+
+    try {
+      const stateToSave = {
+        simState,
+        simMatches,
+        currentGroupMatchIndex,
+        simType,
+        realismCategory,
+        manualScorers,
+        scriptedMatchup,
+        knockoutRounds,
+        currentKnockoutRound,
+        currentKnockoutMatchIndex,
+        playerStats
+      };
+      localStorage.setItem('wc2026_simulator_save', JSON.stringify(stateToSave));
+    } catch (e) {
+      console.error('Failed to save simulator state to localStorage:', e);
+    }
+  }, [
+    simState,
+    simMatches,
+    currentGroupMatchIndex,
+    simType,
+    realismCategory,
+    manualScorers,
+    scriptedMatchup,
+    knockoutRounds,
+    currentKnockoutRound,
+    currentKnockoutMatchIndex,
+    playerStats
+  ]);
 
   // Adjust manual scorers array when scores change
   useEffect(() => {
@@ -804,10 +855,15 @@ const Simulator = () => {
     setPlayerStats(newPlayerStats);
 
     // Proceed
-    if (currentGroupMatchIndex < 71) {
-      setCurrentGroupMatchIndex(prev => prev + 1);
-    } else {
+    const allMatchesCompleted = updatedMatches.every(m => m.status === 'completed');
+    if (allMatchesCompleted) {
       setSimState('groups_completed');
+    } else {
+      if (currentGroupMatchIndex < 71) {
+        setCurrentGroupMatchIndex(prev => prev + 1);
+      } else {
+        setSimState('groups_completed');
+      }
     }
   };
 
@@ -1676,9 +1732,79 @@ const Simulator = () => {
     );
   };
 
+  const resetToStartOfKnockouts = () => {
+    if (tickerTimerRef.current) clearInterval(tickerTimerRef.current);
+    if (pauseDelayRef.current) clearTimeout(pauseDelayRef.current);
+
+    savedSimRef.current = false;
+
+    // 1. Reset knockout rounds
+    setKnockoutRounds({
+      roundOf32: [],
+      roundOf16: [],
+      quarterFinals: [],
+      semiFinals: [],
+      thirdPlace: null,
+      final: null,
+      winner: null
+    });
+    setCurrentKnockoutRound('roundOf32');
+    setCurrentKnockoutMatchIndex(0);
+
+    // 2. Re-calculate player stats from group stage matches only
+    const newPlayerStats = { goals: {}, assists: {}, cleanSheets: {} };
+    simMatches.forEach(m => {
+      if (m.match_id <= 72 && m.status === 'completed') {
+        const teamA = teams.find(t => t.id === m.homeTeam);
+        const teamB = teams.find(t => t.id === m.awayTeam);
+        
+        m.scorers?.forEach(s => {
+          if (teamA && teamB) {
+            newPlayerStats.goals[s.name] = {
+              count: (newPlayerStats.goals[s.name]?.count || 0) + 1,
+              team: s.teamId === m.homeTeam ? teamA : teamB
+            };
+            if (s.assist) {
+              newPlayerStats.assists[s.assist] = {
+                count: (newPlayerStats.assists[s.assist]?.count || 0) + 1,
+                team: s.teamId === m.homeTeam ? teamA : teamB
+              };
+            }
+          }
+        });
+
+        if (m.homeScore === 0 && teamB) {
+          const gk = getGoalkeeper(teamB);
+          if (gk) {
+            newPlayerStats.cleanSheets[gk.name] = {
+              count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
+              team: teamB
+            };
+          }
+        }
+        if (m.awayScore === 0 && teamA) {
+          const gk = getGoalkeeper(teamA);
+          if (gk) {
+            newPlayerStats.cleanSheets[gk.name] = {
+              count: (newPlayerStats.cleanSheets[gk.name]?.count || 0) + 1,
+              team: teamA
+            };
+          }
+        }
+      }
+    });
+    setPlayerStats(newPlayerStats);
+
+    // 3. Set simState to groups_completed
+    setSimState('groups_completed');
+  };
+
   const resetSimulatorState = () => {
     if (tickerTimerRef.current) clearInterval(tickerTimerRef.current);
     if (pauseDelayRef.current) clearTimeout(pauseDelayRef.current);
+
+    // Clear saved simulation state from localStorage
+    localStorage.removeItem('wc2026_simulator_save');
 
     const cleaned = matches.map(m => ({
       ...m,
@@ -1693,6 +1819,25 @@ const Simulator = () => {
     setLiveMatchClock(0);
     setLiveEvents([]);
     setIsPaused(false);
+    
+    // Reset knockout and player stats
+    setKnockoutRounds({
+      roundOf32: [],
+      roundOf16: [],
+      quarterFinals: [],
+      semiFinals: [],
+      thirdPlace: null,
+      final: null,
+      winner: null
+    });
+    setCurrentKnockoutRound('roundOf32');
+    setCurrentKnockoutMatchIndex(0);
+    setPlayerStats({
+      goals: {},
+      assists: {},
+      cleanSheets: {}
+    });
+
     setSimState('idle');
   };
 
@@ -1746,16 +1891,19 @@ const Simulator = () => {
                 <p className="text-gray-400 text-sm leading-relaxed max-w-md mb-6 font-medium">
                   Experience a realistic 48-team simulation. Choose to run automatically with custom realism categories, or manually dictate scorelines and goal scorers!
                 </p>
-                <Button
-                  variant="primary"
-                  onClick={() => setShowSetupModal(true)}
-                  className="px-8 py-4 rounded-2xl text-sm font-black uppercase tracking-wider bg-green-500 text-gray-950 hover:bg-green-400 shadow-lg shadow-green-500/25 flex items-center gap-3 transition-transform hover:scale-[1.03]"
-                >
-                  <Play className="w-5 h-5 fill-current" />
-                  Run Tournament Simulation
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 mt-2 justify-center">
+                  <Button
+                    variant="primary"
+                    onClick={() => setShowSetupModal(true)}
+                    className="px-8 py-4 rounded-2xl text-sm font-black uppercase tracking-wider bg-green-500 text-gray-950 hover:bg-green-400 shadow-lg shadow-green-500/25 flex items-center gap-3 transition-transform hover:scale-[1.03]"
+                  >
+                    <Play className="w-5 h-5 fill-current" />
+                    Run Tournament Simulation
+                  </Button>
+                </div>
               </div>
             </div>
+
 
             {/* Standings clean view */}
             <div>
@@ -3014,6 +3162,29 @@ const Simulator = () => {
                   >
                     🏆 WORLD CUP 2026 CHAMPION 🏆
                   </motion.p>
+                  <motion.div
+                    initial={{ y: 10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="mt-6 flex flex-col sm:flex-row gap-3 relative z-25"
+                  >
+                    <Button
+                      variant="primary"
+                      onClick={resetToStartOfKnockouts}
+                      className="px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-black uppercase text-xs tracking-wider rounded-xl flex items-center gap-2 transition-transform hover:scale-[1.03]"
+                    >
+                      <RotateCcw className="w-4 h-4" />
+                      Rewind to Start of Knockouts
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      onClick={resetSimulatorState}
+                      className="px-6 py-3 bg-gray-900 border border-gray-800 text-white hover:bg-gray-850 font-black uppercase text-xs tracking-wider rounded-xl flex items-center gap-2 transition-transform hover:scale-[1.03]"
+                    >
+                      <RotateCcw className="w-4 h-4 text-gray-400" />
+                      Reset Simulation
+                    </Button>
+                  </motion.div>
                 </div>
               </section>
             )}
@@ -3327,7 +3498,24 @@ const Simulator = () => {
                               const homeTeam = teams.find(t => t.id === match.homeTeam) || { name: match.homeTeam };
                               const awayTeam = teams.find(t => t.id === match.awayTeam) || { name: match.awayTeam };
                               return (
-                                <div key={idx} className="bg-gray-955/30 border border-gray-850/60 p-3 rounded-xl flex items-center justify-between text-xs hover:border-gray-800 transition-colors">
+                                <div
+                                  key={idx}
+                                  onClick={() => {
+                                    if (simState === 'groups_completed' && simType === 'manual') {
+                                      const matchIndex = simMatches.findIndex(m => m.id === match.id);
+                                      if (matchIndex !== -1) {
+                                        setCurrentGroupMatchIndex(matchIndex);
+                                        setSimState('simulating_groups');
+                                        setShowAllResultsModal(false);
+                                      }
+                                    }
+                                  }}
+                                  className={`bg-gray-955/30 border border-gray-850/60 p-3 rounded-xl flex items-center justify-between text-xs hover:border-gray-800 transition-colors ${
+                                    simState === 'groups_completed' && simType === 'manual'
+                                      ? 'cursor-pointer hover:bg-gray-900 hover:border-yellow-500/50'
+                                      : ''
+                                  }`}
+                                >
                                   <div className="flex items-center gap-2 flex-1 min-w-0">
                                     <Flag code={homeTeam.countryCode} />
                                     <span className="font-bold text-gray-200 truncate">{homeTeam.name}</span>

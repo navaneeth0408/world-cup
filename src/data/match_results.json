@@ -1736,7 +1736,7 @@
         "minute": "77"
       }
     ],
-    "playerOfMatch": "Marko Arnautovic",
+    "playerOfMatch": "Ali Olwan",
     "stats": {
       "possession": [
         49,
@@ -1801,8 +1801,33 @@
         "assist": "Arthur Masuaku"
       }
     ],
-    "cards": [],
-    "playerOfMatch": "",
+    "cards": [
+      {
+        "name": "Bernardo Silva",
+        "teamId": "portugal",
+        "type": "yellow",
+        "minute": "13"
+      },
+      {
+        "name": "Nélson Semedo",
+        "teamId": "portugal",
+        "type": "yellow",
+        "minute": "88"
+      },
+      {
+        "name": "Tomás Araújo",
+        "teamId": "portugal",
+        "type": "yellow",
+        "minute": "92"
+      },
+      {
+        "name": "Chancel Mbemba",
+        "teamId": "drcongo",
+        "type": "yellow",
+        "minute": "32"
+      }
+    ],
+    "playerOfMatch": "João Neves",
     "stats": {
       "possession": [
         50,
@@ -1892,7 +1917,7 @@
       }
     ],
     "cards": [],
-    "playerOfMatch": "",
+    "playerOfMatch": "Harry Kane",
     "stats": {
       "possession": [
         56,
@@ -1971,7 +1996,7 @@
         "minute": ""
       }
     ],
-    "playerOfMatch": "",
+    "playerOfMatch": "Antoine Semenyo",
     "stats": {
       "possession": [
         59,
@@ -2061,7 +2086,7 @@
         "minute": ""
       }
     ],
-    "playerOfMatch": "",
+    "playerOfMatch": "Luis Díaz",
     "stats": {
       "possession": [
         48,
@@ -2321,7 +2346,7 @@
         "name": "Jonathan David",
         "teamId": "canada",
         "minute": 29,
-        "assist": "Alistair Johnston"
+        "assist": ""
       },
       {
         "name": "Jonathan David",
@@ -2528,6 +2553,36 @@
         "teamId": "usa",
         "type": "yellow",
         "minute": "90+2"
+      },
+      {
+        "name": "Harry Souttar",
+        "teamId": "australia",
+        "type": "yellow",
+        "minute": "88"
+      },
+      {
+        "name": "Alessandro Circati",
+        "teamId": "australia",
+        "type": "yellow",
+        "minute": "32"
+      },
+      {
+        "name": "Jordan Bos",
+        "teamId": "australia",
+        "type": "yellow",
+        "minute": "16"
+      },
+      {
+        "name": "Folarin Balogun",
+        "teamId": "usa",
+        "type": "yellow",
+        "minute": "89"
+      },
+      {
+        "name": "Antonee Robinson",
+        "teamId": "usa",
+        "type": "yellow",
+        "minute": "56"
       }
     ],
     "playerOfMatch": "Alex Freeman",
@@ -2692,6 +2747,12 @@
         "teamId": "haiti",
         "type": "yellow",
         "minute": 72
+      },
+      {
+        "name": "Frantzdy Pierrot",
+        "teamId": "haiti",
+        "type": "yellow",
+        "minute": "49"
       }
     ],
     "playerOfMatch": "Vinícius Júnior",
@@ -2749,7 +2810,7 @@
       {
         "name": "Matías Galarza",
         "teamId": "paraguay",
-        "minute": 1,
+        "minute": "2",
         "assist": "Julio Enciso"
       }
     ],
@@ -3012,6 +3073,36 @@
         "teamId": "curacao",
         "type": "yellow",
         "minute": "90+1"
+      },
+      {
+        "name": "Jordy Alcívar",
+        "teamId": "ecuador",
+        "type": "yellow",
+        "minute": "38"
+      },
+      {
+        "name": "Juriën Gaari",
+        "teamId": "curacao",
+        "type": "yellow",
+        "minute": "75"
+      },
+      {
+        "name": "Livano Comenencia",
+        "teamId": "curacao",
+        "type": "yellow",
+        "minute": "56"
+      },
+      {
+        "name": "Juninho Bacuna",
+        "teamId": "curacao",
+        "type": "yellow",
+        "minute": "53"
+      },
+      {
+        "name": "Leandro Bacuna",
+        "teamId": "curacao",
+        "type": "yellow",
+        "minute": "39"
       }
     ],
     "playerOfMatch": "Eloy Room",
@@ -3171,7 +3262,20 @@
         "penalty": false
       }
     ],
-    "cards": [],
+    "cards": [
+      {
+        "name": "Salem Al-Dawsari",
+        "teamId": "saudiarabia",
+        "type": "yellow",
+        "minute": "30"
+      },
+      {
+        "name": "Mohamed Kanno",
+        "teamId": "saudiarabia",
+        "type": "yellow",
+        "minute": "60"
+      }
+    ],
     "playerOfMatch": "Mikel Oyarzabal",
     "stats": {
       "possession": [
@@ -3333,9 +3437,21 @@
         "teamId": "capeverde",
         "type": "yellow",
         "minute": "90+2"
+      },
+      {
+        "name": "Mathías Olivera",
+        "teamId": "uruguay",
+        "type": "yellow",
+        "minute": "58"
+      },
+      {
+        "name": "Sidny Lopes Cabral",
+        "teamId": "capeverde",
+        "type": "yellow",
+        "minute": "5"
       }
     ],
-    "playerOfMatch": "Maxi Araújo",
+    "playerOfMatch": "Kevin Pina",
     "stats": {
       "possession": [
         46,
@@ -3585,7 +3701,7 @@
         "name": "Kylian Mbappé",
         "teamId": "france",
         "minute": 54,
-        "assist": ""
+        "assist": "Ousmane Dembélé"
       },
       {
         "name": "Ousmane Dembélé",
@@ -3594,7 +3710,14 @@
         "assist": "Michael Olise"
       }
     ],
-    "cards": [],
+    "cards": [
+      {
+        "name": "Amir Al-Ammari",
+        "teamId": "iraq",
+        "type": "yellow",
+        "minute": "6"
+      }
+    ],
     "playerOfMatch": "Kylian Mbappé",
     "stats": {
       "possession": [
@@ -3657,25 +3780,25 @@
         "name": "Erling Haaland",
         "teamId": "norway",
         "minute": 48,
-        "assist": ""
-      },
-      {
-        "name": "Ismaïla Sarr",
-        "teamId": "senegal",
-        "minute": 53,
-        "assist": ""
-      },
-      {
-        "name": "Erling Haaland",
-        "teamId": "norway",
-        "minute": 58,
         "assist": "Martin Ødegaard"
       },
       {
         "name": "Ismaïla Sarr",
         "teamId": "senegal",
+        "minute": 53,
+        "assist": "Sadio Mané"
+      },
+      {
+        "name": "Erling Haaland",
+        "teamId": "norway",
+        "minute": 58,
+        "assist": "Patrick Berg"
+      },
+      {
+        "name": "Ismaïla Sarr",
+        "teamId": "senegal",
         "minute": "90+3",
-        "assist": ""
+        "assist": "Nicolas Jackson"
       }
     ],
     "cards": [],
@@ -3750,7 +3873,20 @@
         "assist": ""
       }
     ],
-    "cards": [],
+    "cards": [
+      {
+        "name": "Husam Abu Dahab",
+        "teamId": "jordan",
+        "type": "yellow",
+        "minute": "64"
+      },
+      {
+        "name": "Ramiz Zerrouki",
+        "teamId": "algeria",
+        "type": "yellow",
+        "minute": ""
+      }
+    ],
     "playerOfMatch": "Ibrahim Maza",
     "stats": {
       "possession": [
@@ -3837,13 +3973,19 @@
     ],
     "cards": [
       {
-        "name": "Odiljon Hamrobekov",
+        "name": "Odiljon Xamrobekov",
         "teamId": "uzbekistan",
         "type": "yellow",
         "minute": 15
+      },
+      {
+        "name": "Renato Veiga",
+        "teamId": "portugal",
+        "type": "yellow",
+        "minute": "68"
       }
     ],
-    "playerOfMatch": "Nuno Mendes",
+    "playerOfMatch": "Cristiano Ronaldo",
     "stats": {
       "possession": [
         58,
@@ -3970,7 +4112,7 @@
     ],
     "cards": [
       {
-        "name": "Yoel Bárcenas",
+        "name": "Édgar Yoel Bárcenas",
         "teamId": "panama",
         "type": "yellow",
         "minute": 61
@@ -3979,10 +4121,10 @@
         "name": "Petar Sučić",
         "teamId": "croatia",
         "type": "yellow",
-        "minute": 91
+        "minute": "92"
       }
     ],
-    "playerOfMatch": "Cristian Martinez",
+    "playerOfMatch": "Cristian Martínez",
     "stats": {
       "possession": [
         45,
@@ -6357,10 +6499,19 @@
     "time": "19:00",
     "venue": "sofi",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
+    "status": "completed",
+    "homeScore": 0,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Stephen Eustáquio",
+        "teamId": "canada",
+        "minute": "",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
     "cards": [],
     "playerOfMatch": "",
     "stats": null,
@@ -6385,8 +6536,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "brazil",
-    "awayTeam": "japan",
+    "homeTeam": "usa",
+    "awayTeam": "bosniaandherzegovina",
     "stage": "Round of 32",
     "location": "Houston"
   },
@@ -6445,8 +6596,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "ivorycoast",
-    "awayTeam": "norway",
+    "homeTeam": "belgium",
+    "awayTeam": "senegal",
     "stage": "Round of 32",
     "location": "Arlington"
   },
@@ -6485,8 +6636,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group A winners",
-    "awayTeam": "Best Third-Placed Team",
+    "homeTeam": "portugal",
+    "awayTeam": "croatia",
     "stage": "Round of 32",
     "location": "Mexico City"
   },
@@ -6505,8 +6656,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group L winners",
-    "awayTeam": "Best Third-Placed Team",
+    "homeTeam": "spain",
+    "awayTeam": "austria",
     "stage": "Round of 32",
     "location": "Atlanta"
   },
@@ -6525,8 +6676,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group G winners",
-    "awayTeam": "Best Third-Placed Team",
+    "homeTeam": "ivorycoast",
+    "awayTeam": "norway",
     "stage": "Round of 32",
     "location": "Seattle"
   },
@@ -6545,8 +6696,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "usa",
-    "awayTeam": "bosniaandherzegovina",
+    "homeTeam": "brazil",
+    "awayTeam": "japan",
     "stage": "Round of 32",
     "location": "Santa Clara"
   },
@@ -6565,8 +6716,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group H winners",
-    "awayTeam": "Group J runners-up",
+    "homeTeam": "england",
+    "awayTeam": "drcongo",
     "stage": "Round of 32",
     "location": "Los Angeles"
   },
@@ -6585,8 +6736,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group K runners-up",
-    "awayTeam": "Group L runners-up",
+    "homeTeam": "mexico",
+    "awayTeam": "ecuador",
     "stage": "Round of 32",
     "location": "Toronto"
   },
@@ -6605,8 +6756,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group B winners",
-    "awayTeam": "Best Third-Placed Team",
+    "homeTeam": "switzerland",
+    "awayTeam": "algeria",
     "stage": "Round of 32",
     "location": "Vancouver"
   },
@@ -6645,8 +6796,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group J winners",
-    "awayTeam": "Group H runners-up",
+    "homeTeam": "argentina",
+    "awayTeam": "capeverde",
     "stage": "Round of 32",
     "location": "Miami"
   },
@@ -6665,8 +6816,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Group K winners",
-    "awayTeam": "Best Third-Placed Team",
+    "homeTeam": "colombia",
+    "awayTeam": "ghana",
     "stage": "Round of 32",
     "location": "Kansas City"
   },
@@ -6685,8 +6836,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 73",
-    "awayTeam": "Winner Match 75",
+    "homeTeam": "Winner Match 75",
+    "awayTeam": "Winner Match 78",
     "stage": "Round of 16",
     "location": "Houston"
   },
@@ -6705,8 +6856,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 74",
-    "awayTeam": "Winner Match 77",
+    "homeTeam": "Winner Match 82",
+    "awayTeam": "Winner Match 81",
     "stage": "Round of 16",
     "location": "Philadelphia"
   },
@@ -6725,8 +6876,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 76",
-    "awayTeam": "Winner Match 78",
+    "homeTeam": "canada",
+    "awayTeam": "Winner Match 76",
     "stage": "Round of 16",
     "location": "New Jersey"
   },
@@ -6745,8 +6896,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 79",
-    "awayTeam": "Winner Match 80",
+    "homeTeam": "Winner Match 84",
+    "awayTeam": "Winner Match 83",
     "stage": "Round of 16",
     "location": "Mexico City"
   },
@@ -6765,8 +6916,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 83",
-    "awayTeam": "Winner Match 84",
+    "homeTeam": "Winner Match 80",
+    "awayTeam": "Winner Match 79",
     "stage": "Round of 16",
     "location": "Arlington"
   },
@@ -6785,8 +6936,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 81",
-    "awayTeam": "Winner Match 82",
+    "homeTeam": "Winner Match 77",
+    "awayTeam": "Winner Match 74",
     "stage": "Round of 16",
     "location": "Seattle"
   },
@@ -6805,7 +6956,7 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 86",
+    "homeTeam": "Winner Match 85",
     "awayTeam": "Winner Match 88",
     "stage": "Round of 16",
     "location": "Atlanta"
@@ -6825,7 +6976,7 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 85",
+    "homeTeam": "Winner Match 86",
     "awayTeam": "Winner Match 87",
     "stage": "Round of 16",
     "location": "Vancouver"
@@ -6845,8 +6996,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 89",
-    "awayTeam": "Winner Match 90",
+    "homeTeam": "Winner Match 90",
+    "awayTeam": "Winner Match 92",
     "stage": "Quarter-finals",
     "location": "Foxborough"
   },
@@ -6885,8 +7036,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 91",
-    "awayTeam": "Winner Match 92",
+    "homeTeam": "Winner Match 89",
+    "awayTeam": "Winner Match 91",
     "stage": "Quarter-finals",
     "location": "Miami"
   },
@@ -6926,7 +7077,7 @@
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "Winner Match 97",
-    "awayTeam": "Winner Match 98",
+    "awayTeam": "Winner Match 100",
     "stage": "Semi-finals",
     "location": "Arlington"
   },
@@ -6945,8 +7096,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 99",
-    "awayTeam": "Winner Match 100",
+    "homeTeam": "Winner Match 98",
+    "awayTeam": "Winner Match 99",
     "stage": "Semi-finals",
     "location": "Atlanta"
   },
