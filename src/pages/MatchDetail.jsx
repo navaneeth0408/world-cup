@@ -72,95 +72,108 @@ const MatchDetail = () => {
               </Badge>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
-              <div className="flex flex-col items-center gap-4 flex-1">
-                <Flag code={homeTeam.countryCode} className="text-5xl md:text-[8rem] shadow-xl rounded-2xl" />
-                <span className="text-2xl font-black text-white text-center uppercase tracking-tight">{homeTeam.name}</span>
-                <Badge variant="blue">RANK #{homeTeam.fifaRanking}</Badge>
+            <div className="grid grid-cols-3 items-start gap-2 md:gap-12 w-full pt-4 md:pt-0">
+              {/* Home Team */}
+              <div className="flex flex-col items-center gap-2.5 md:gap-4 min-w-0 text-center">
+                <Flag code={homeTeam.countryCode} className="text-4xl sm:text-7xl md:text-[8rem] shadow-xl rounded-xl md:rounded-2xl shrink-0" />
+                <span className="text-xs sm:text-2xl font-black text-white uppercase tracking-tight truncate w-full" title={homeTeam.name}>
+                  {homeTeam.name}
+                </span>
+                <Badge variant="blue" className="text-[8px] sm:text-xs">RANK #{homeTeam.fifaRanking}</Badge>
                 {match.scorers && match.scorers.some(s => s.teamId === homeTeam.id) && (
-                  <div className="mt-4 flex flex-col items-center gap-1">
+                  <div className="mt-2 flex flex-col items-center gap-0.5 w-full">
                     {match.scorers.filter(s => s.teamId === homeTeam.id).map((s, idx) => (
-                      <span key={idx} className="text-[10px] font-bold text-gray-400 uppercase">
+                      <span key={idx} className="text-[8px] sm:text-[10px] font-bold text-gray-400 uppercase text-center leading-tight break-words max-w-full">
                         {s.name}
-                        {s.ownGoal && <span className="text-red-500 font-black lowercase ml-1">(og)</span>}
-                        {s.penalty && <span className="text-yellow-500 font-black lowercase ml-1">(pen)</span>}
+                        {s.ownGoal && <span className="text-red-500 font-black lowercase ml-0.5">(og)</span>}
+                        {s.penalty && <span className="text-yellow-500 font-black lowercase ml-0.5">(pen)</span>}
                         {s.minute ? ` (${s.minute}')` : ''}
                       </span>
                     ))}
                   </div>
                 )}
                 {match.cards && match.cards.some(c => c.teamId === homeTeam.id) && (
-                  <div className="mt-2 flex flex-col items-center gap-1">
+                  <div className="mt-1 flex flex-col items-center gap-0.5 w-full">
                     {match.cards.filter(c => c.teamId === homeTeam.id).map((c, idx) => (
-                      <div key={idx} className="flex items-center gap-1.5">
-                        <div className={`w-2 h-2.5 rounded-[1px] ${c.type === 'red' ? 'bg-red-600' : 'bg-yellow-400'}`} />
-                        <span className="text-[9px] font-bold text-gray-500 uppercase">{c.name}</span>
+                      <div key={idx} className="flex items-center gap-1 justify-center max-w-full">
+                        <div className={`w-1.5 h-2 rounded-[1px] ${c.type === 'red' ? 'bg-red-600' : 'bg-yellow-400'} shrink-0`} />
+                        <span className="text-[8px] sm:text-[9px] font-bold text-gray-500 uppercase truncate">{c.name}</span>
                       </div>
                     ))}
                   </div>
                 )}
               </div>
 
-              <div className="flex flex-col items-center gap-4">
+              {/* Score / VS display in Center */}
+              <div className="flex flex-col items-center justify-center pt-3 sm:pt-6 md:pt-10 shrink-0">
                 {match.status === 'completed' ? (
-                  <div className="text-5xl md:text-7xl font-black text-white flex items-center gap-6">
+                  <div className="text-2xl sm:text-5xl md:text-7xl font-black text-white flex items-center gap-2 sm:gap-6">
                     <span>{match.homeScore}</span>
                     <span className="text-gray-700">-</span>
                     <span>{match.awayScore}</span>
                   </div>
                 ) : (
-                  <div className="text-3xl md:text-5xl font-black text-white/10 italic">VS</div>
-                )}
-                <div className="flex flex-col items-center text-gray-500 font-medium gap-2">
-                  <div className="flex items-center gap-2 text-xs text-center justify-center">
-                    <MapPin className="w-3 h-3 text-blue-500 shrink-0" />
-                    <span className="leading-tight">{venues.find(v => v.id === match.venue)?.name || match.venue}, {venues.find(v => v.id === match.venue)?.city || ''}</span>
-                  </div>
-                  <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-400">
-                    <div className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-blue-500" />
-                      {match.date}
-                    </div>
-                    <div className="flex items-center gap-1.5 border-l border-gray-800 pl-4">
-                      <Clock className="w-3.5 h-3.5 text-blue-500" />
-                      {match.time}
-                    </div>
-                  </div>
-                </div>
-                {match.playerOfMatch && (
-                  <div className="mt-4 flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-[10px] font-bold uppercase tracking-wider shadow-lg shadow-amber-500/5">
-                    <span>⭐ POTM: {match.playerOfMatch}</span>
-                  </div>
+                  <div className="text-xl sm:text-4xl md:text-5xl font-black text-white/10 italic">VS</div>
                 )}
               </div>
 
-              <div className="flex flex-col items-center gap-4 flex-1">
-                <Flag code={awayTeam.countryCode} className="text-5xl md:text-[8rem] shadow-xl rounded-2xl" />
-                <span className="text-2xl font-black text-white text-center uppercase tracking-tight">{awayTeam.name}</span>
-                <Badge variant="blue">RANK #{awayTeam.fifaRanking}</Badge>
+              {/* Away Team */}
+              <div className="flex flex-col items-center gap-2.5 md:gap-4 min-w-0 text-center">
+                <Flag code={awayTeam.countryCode} className="text-4xl sm:text-7xl md:text-[8rem] shadow-xl rounded-xl md:rounded-2xl shrink-0" />
+                <span className="text-xs sm:text-2xl font-black text-white uppercase tracking-tight truncate w-full" title={awayTeam.name}>
+                  {awayTeam.name}
+                </span>
+                <Badge variant="blue" className="text-[8px] sm:text-xs">RANK #{awayTeam.fifaRanking}</Badge>
                 {match.scorers && match.scorers.some(s => s.teamId === awayTeam.id) && (
-                  <div className="mt-4 flex flex-col items-center gap-1">
+                  <div className="mt-2 flex flex-col items-center gap-0.5 w-full">
                     {match.scorers.filter(s => s.teamId === awayTeam.id).map((s, idx) => (
-                      <span key={idx} className="text-[10px] font-bold text-gray-400 uppercase">
+                      <span key={idx} className="text-[8px] sm:text-[10px] font-bold text-gray-400 uppercase text-center leading-tight break-words max-w-full">
                         {s.name}
-                        {s.ownGoal && <span className="text-red-500 font-black lowercase ml-1">(og)</span>}
-                        {s.penalty && <span className="text-yellow-500 font-black lowercase ml-1">(pen)</span>}
+                        {s.ownGoal && <span className="text-red-500 font-black lowercase ml-0.5">(og)</span>}
+                        {s.penalty && <span className="text-yellow-500 font-black lowercase ml-0.5">(pen)</span>}
                         {s.minute ? ` (${s.minute}')` : ''}
                       </span>
                     ))}
                   </div>
                 )}
                 {match.cards && match.cards.some(c => c.teamId === awayTeam.id) && (
-                  <div className="mt-2 flex flex-col items-center gap-1">
+                  <div className="mt-1 flex flex-col items-center gap-0.5 w-full">
                     {match.cards.filter(c => c.teamId === awayTeam.id).map((c, idx) => (
-                      <div key={idx} className="flex items-center gap-1.5">
-                        <span className="text-[9px] font-bold text-gray-500 uppercase">{c.name}</span>
-                        <div className={`w-2 h-2.5 rounded-[1px] ${c.type === 'red' ? 'bg-red-600' : 'bg-yellow-400'}`} />
+                      <div key={idx} className="flex items-center gap-1 justify-center max-w-full">
+                        <span className="text-[8px] sm:text-[9px] font-bold text-gray-500 uppercase truncate">{c.name}</span>
+                        <div className={`w-1.5 h-2 rounded-[1px] ${c.type === 'red' ? 'bg-red-600' : 'bg-yellow-400'} shrink-0`} />
                       </div>
                     ))}
                   </div>
                 )}
               </div>
+            </div>
+
+            {/* Bottom Info Details Row */}
+            <div className="mt-8 pt-6 border-t border-white/5 flex flex-col items-center gap-3.5">
+              <div className="flex flex-col items-center text-gray-500 font-medium gap-1 text-center">
+                <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-center justify-center">
+                  <MapPin className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                  <span className="leading-tight">
+                    {venues.find(v => v.id === match.venue)?.name || match.venue}, {venues.find(v => v.id === match.venue)?.city || ''}
+                  </span>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-3 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-gray-400 mt-1">
+                  <div className="flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-blue-500" />
+                    {match.date}
+                  </div>
+                  <div className="flex items-center gap-1.5 border-l border-gray-800 pl-3">
+                    <Clock className="w-3.5 h-3.5 text-blue-500" />
+                    {match.time}
+                  </div>
+                </div>
+              </div>
+              {match.playerOfMatch && (
+                <div className="mt-2 flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-[10px] font-bold uppercase tracking-wider shadow-lg shadow-amber-500/5">
+                  <span>⭐ POTM: {match.playerOfMatch}</span>
+                </div>
+              )}
             </div>
           </Card>
         </section>

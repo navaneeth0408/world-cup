@@ -3162,11 +3162,43 @@ const Simulator = () => {
                   >
                     🏆 WORLD CUP 2026 CHAMPION 🏆
                   </motion.p>
+
+                  {/* Podium / Top 3 Teams */}
+                  <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-2xl border-t border-yellow-500/10 pt-8">
+                    {/* Runner-Up */}
+                    {knockoutRounds.final?.loser && (
+                      <div className="bg-slate-800/10 border border-slate-700/20 rounded-2xl p-4 flex flex-col items-center shadow-md relative overflow-hidden order-2 sm:order-1">
+                        <div className="absolute top-2 right-2 text-slate-400 text-lg font-bold">🥈</div>
+                        <Flag code={knockoutRounds.final.loser.countryCode} style={{ fontSize: '2.5rem' }} className="mb-2" />
+                        <span className="text-white font-bold text-sm uppercase tracking-wider line-clamp-1">{knockoutRounds.final.loser.name}</span>
+                        <span className="text-slate-400 text-[10px] font-bold uppercase mt-1">Runner-up</span>
+                      </div>
+                    )}
+
+                    {/* Champion */}
+                    <div className="bg-yellow-500/5 border border-yellow-500/20 rounded-2xl p-4 flex flex-col items-center shadow-lg relative overflow-hidden order-1 sm:order-2 scale-105 sm:scale-110">
+                      <div className="absolute top-2 right-2 text-yellow-500 text-lg font-bold">🥇</div>
+                      <Flag code={knockoutRounds.winner.countryCode} style={{ fontSize: '3rem' }} className="mb-2 animate-bounce" />
+                      <span className="text-white font-black text-sm uppercase tracking-wider line-clamp-1">{knockoutRounds.winner.name}</span>
+                      <span className="text-yellow-500 text-[10px] font-black uppercase mt-1">Champion</span>
+                    </div>
+
+                    {/* Third Place */}
+                    {knockoutRounds.thirdPlace?.winner && (
+                      <div className="bg-amber-900/5 border border-amber-900/20 rounded-2xl p-4 flex flex-col items-center shadow-md relative overflow-hidden order-3 sm:order-3">
+                        <div className="absolute top-2 right-2 text-amber-600 text-lg font-bold">🥉</div>
+                        <Flag code={knockoutRounds.thirdPlace.winner.countryCode} style={{ fontSize: '2.5rem' }} className="mb-2" />
+                        <span className="text-white font-bold text-sm uppercase tracking-wider line-clamp-1">{knockoutRounds.thirdPlace.winner.name}</span>
+                        <span className="text-amber-500 text-[10px] font-bold uppercase mt-1">Third Place</span>
+                      </div>
+                    )}
+                  </div>
+
                   <motion.div
                     initial={{ y: 10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.6 }}
-                    className="mt-6 flex flex-col sm:flex-row gap-3 relative z-25"
+                    className="mt-10 flex flex-col sm:flex-row gap-3 relative z-25"
                   >
                     <Button
                       variant="primary"
@@ -3577,11 +3609,32 @@ const Simulator = () => {
                                 penaltyText = ' (AET)';
                               }
 
+                              const isT1Winner = match.winner && t1.id && match.winner.id === t1.id;
+                              const isT2Winner = match.winner && t2.id && match.winner.id === t2.id;
+                              const isT1Loser = match.loser && t1.id && match.loser.id === t1.id;
+                              const isT2Loser = match.loser && t2.id && match.loser.id === t2.id;
+
+                              let t1Suffix = '';
+                              let t2Suffix = '';
+                              if (match.status === 'completed') {
+                                if (round.key === 'final') {
+                                  if (isT1Winner) t1Suffix = ' 🏆';
+                                  if (isT2Winner) t2Suffix = ' 🏆';
+                                  if (isT1Loser) t1Suffix = ' 🥈';
+                                  if (isT2Loser) t2Suffix = ' 🥈';
+                                } else if (round.key === 'thirdPlace') {
+                                  if (isT1Winner) t1Suffix = ' 🥉';
+                                  if (isT2Winner) t2Suffix = ' 🥉';
+                                }
+                              }
+
                               return (
-                                <div key={idx} className="bg-gray-955/50 border border-gray-850 p-3.5 rounded-xl flex items-center justify-between text-xs hover:border-gray-800 transition-all">
+                                <div key={idx} className={`bg-gray-955/50 border border-gray-850 p-3.5 rounded-xl flex items-center justify-between text-xs hover:border-gray-800 transition-all ${isT1Winner || isT2Winner ? 'bg-green-500/[0.02] border-green-500/10' : ''}`}>
                                   <div className="flex items-center gap-2.5 flex-1 min-w-0">
                                     <Flag code={t1.countryCode} />
-                                    <span className="font-bold text-white truncate">{t1.name}</span>
+                                    <span className={`font-bold truncate ${isT1Winner ? 'text-green-400 font-black' : isT1Loser ? 'text-gray-400' : 'text-white'}`}>
+                                      {t1.name}{t1Suffix}
+                                    </span>
                                   </div>
                                   <div className="flex flex-col items-center mx-3 min-w-[90px]">
                                     <span className="px-3 py-1 bg-gray-900 border border-gray-800 rounded font-black text-white tabular-nums text-center">
@@ -3594,7 +3647,9 @@ const Simulator = () => {
                                     )}
                                   </div>
                                   <div className="flex items-center gap-2.5 flex-1 min-w-0 justify-end">
-                                    <span className="font-bold text-white truncate text-right">{t2.name}</span>
+                                    <span className={`font-bold truncate text-right ${isT2Winner ? 'text-green-400 font-black' : isT2Loser ? 'text-gray-400' : 'text-white'}`}>
+                                      {t2.name}{t2Suffix}
+                                    </span>
                                     <Flag code={t2.countryCode} />
                                   </div>
                                 </div>

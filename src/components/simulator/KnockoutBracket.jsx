@@ -184,8 +184,23 @@ const KnockoutBracket = ({ rounds }) => {
                                 className="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-3 w-full text-center flex flex-col items-center gap-1.5 shadow-lg shadow-yellow-500/5"
                             >
                                 <span className="text-[9px] uppercase font-black tracking-widest text-yellow-500">🏆 Champion 🏆</span>
-                                <Flag code={rounds.final[0].winner.countryCode} style={{ fontSize: '2.2rem' }} className="shadow-md" />
+                                <Flag code={rounds.final[0].winner.countryCode} style={{ fontSize: '2.2rem' }} className="shadow-md animate-bounce" />
                                 <h3 className="text-xs font-black text-white uppercase italic tracking-tight">{rounds.final[0].winner.name}</h3>
+                                
+                                {rounds.final[0].loser && (
+                                    <div className="mt-2 border-t border-gray-800/40 pt-2 w-full flex items-center justify-center gap-1 text-[9px] text-gray-400">
+                                        <span>🥈 2nd:</span>
+                                        <Flag code={rounds.final[0].loser.countryCode} />
+                                        <span className="font-bold text-white truncate max-w-[80px]">{rounds.final[0].loser.code || rounds.final[0].loser.name}</span>
+                                    </div>
+                                )}
+                                {rounds.thirdPlace && rounds.thirdPlace.winner && (
+                                    <div className="mt-1 w-full flex items-center justify-center gap-1 text-[9px] text-gray-400">
+                                        <span>🥉 3rd:</span>
+                                        <Flag code={rounds.thirdPlace.winner.countryCode} />
+                                        <span className="font-bold text-white truncate max-w-[80px]">{rounds.thirdPlace.winner.code || rounds.thirdPlace.winner.name}</span>
+                                    </div>
+                                )}
                             </motion.div>
                         ) : (
                             <div className="bg-gray-955/20 border border-gray-850 rounded-2xl p-3.5 w-full text-center flex flex-col items-center gap-1 select-none opacity-30">

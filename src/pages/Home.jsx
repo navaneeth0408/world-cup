@@ -164,42 +164,80 @@ const Home = () => {
       <Navbar />
 
       {/* Hero Banner */}
-      <section className="relative overflow-hidden pt-16 pb-32 px-4 min-h-[420px] md:min-h-[500px] flex items-center">
+      <section className="relative overflow-hidden pt-28 pb-16 md:pt-16 md:pb-32 px-4 min-h-[460px] md:min-h-[500px] flex items-end md:items-center justify-center">
         <HeroBackground />
 
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs font-bold uppercase tracking-widest mb-6"
-          >
-            <Sparkles className="w-3 h-3" />
-            FIFA World Cup 2026
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8"
-          >
-            THE WORLD'S <br />
-            <span className="text-green-500">BIGGEST STAGE</span>
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-6 text-gray-400 text-sm font-medium"
-          >
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-green-500" />
-              USA · Canada · Mexico
-            </div>
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-green-500" />
-              June 11 – July 19 2026
-            </div>
-          </motion.div>
+        <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
+          {/* Mobile view only text - small, bottom-aligned, non-overshadowing */}
+          <div className="md:hidden flex flex-col items-center justify-end w-full px-2">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-[10px] font-bold uppercase tracking-widest mb-3"
+            >
+              <Sparkles className="w-2.5 h-2.5" />
+              FIFA World Cup 2026
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl font-black text-white tracking-tight mb-3 leading-tight"
+            >
+              THE WORLD'S <span className="text-green-500">BIGGEST STAGE</span>
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col gap-2 items-center text-gray-300 text-xs font-semibold"
+            >
+              <div className="flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-green-500" />
+                USA · Canada · Mexico
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-green-500" />
+                June 11 – July 19 2026
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Desktop view only text - large, centered */}
+          <div className="hidden md:block">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs font-bold uppercase tracking-widest mb-6"
+            >
+              <Sparkles className="w-3 h-3" />
+              FIFA World Cup 2026
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8"
+            >
+              THE WORLD'S <br />
+              <span className="text-green-500">BIGGEST STAGE</span>
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-wrap justify-center gap-6 text-gray-400 text-sm font-medium"
+            >
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-green-500" />
+                USA · Canada · Mexico
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-green-500" />
+                June 11 – July 19 2026
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -558,7 +596,7 @@ const Home = () => {
 
       <footer className="mt-6 border-t border-gray-900 pt-6 pb-6 text-center">
         <p className="text-gray-600 text-sm font-medium">
-          Built for World Cup 2026 | Powered by AI Analysis
+          Built for World Cup 2026
         </p>
       </footer>
     </div>

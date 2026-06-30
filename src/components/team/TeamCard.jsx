@@ -13,8 +13,8 @@ const TeamCard = ({ team }) => {
             className="flex flex-col items-center gap-1.5 md:gap-3 p-3 md:p-5 min-w-0 w-full hover:scale-[1.02] transition-transform duration-300"
         >
             <div className="w-full flex justify-between items-start">
-                <Badge variant="blue" className="text-[8px] md:text-[10px] px-1.5 py-0.5 md:px-2.5">RANK #{team.fifaRanking}</Badge>
-                <Badge variant="gray" className="text-[8px] md:text-[10px] px-1.5 py-0.5 md:px-2.5">Group {team.group}</Badge>
+                <Badge variant="blue" className="text-[8px] md:text-[10px] px-1.5 py-0.5 md:px-2.5 whitespace-nowrap">RANK #{team.fifaRanking}</Badge>
+                <Badge variant="gray" className="text-[8px] md:text-[10px] px-1.5 py-0.5 md:px-2.5 whitespace-nowrap">Group {team.group}</Badge>
             </div>
 
             <Flag code={team.countryCode} style={{ fontSize: 'inherit' }} className="my-1 md:my-2 text-[2.2rem] md:text-[4rem] flex-shrink-0" />

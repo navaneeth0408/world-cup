@@ -2393,9 +2393,6 @@ const Standings = () => {
                     )}
                 </AnimatePresence>
 
-                <footer className="pt-20 border-t border-gray-900 text-center">
-                    <p className="text-gray-600 text-xs uppercase font-black tracking-widest">Statistical Data powered by Opta & AI analysis</p>
-                </footer>
             </main>
         </div>
     );

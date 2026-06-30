@@ -24,22 +24,22 @@
         "homeTeam": "canada",
         "awayTeam": "bosniaandherzegovina",
         "homeScore": 2,
-        "awayScore": 0,
+        "awayScore": 1,
         "group": "B"
       },
       {
         "id": "m4",
         "homeTeam": "usa",
         "awayTeam": "paraguay",
-        "homeScore": 1,
-        "awayScore": 0,
+        "homeScore": 2,
+        "awayScore": 1,
         "group": "D"
       },
       {
         "id": "m5",
         "homeTeam": "qatar",
         "awayTeam": "switzerland",
-        "homeScore": 0,
+        "homeScore": 1,
         "awayScore": 2,
         "group": "B"
       },
@@ -56,15 +56,15 @@
         "homeTeam": "haiti",
         "awayTeam": "scotland",
         "homeScore": 2,
-        "awayScore": 2,
+        "awayScore": 1,
         "group": "C"
       },
       {
         "id": "m8",
         "homeTeam": "australia",
         "awayTeam": "turkiye",
-        "homeScore": 2,
-        "awayScore": 2,
+        "homeScore": 1,
+        "awayScore": 1,
         "group": "D"
       },
       {
@@ -79,15 +79,15 @@
         "id": "m10",
         "homeTeam": "netherlands",
         "awayTeam": "japan",
-        "homeScore": 2,
-        "awayScore": 0,
+        "homeScore": 1,
+        "awayScore": 1,
         "group": "F"
       },
       {
         "id": "m11",
         "homeTeam": "ivorycoast",
         "awayTeam": "ecuador",
-        "homeScore": 1,
+        "homeScore": 2,
         "awayScore": 1,
         "group": "E"
       },
@@ -103,8 +103,8 @@
         "id": "m13",
         "homeTeam": "spain",
         "awayTeam": "capeverde",
-        "homeScore": 3,
-        "awayScore": 0,
+        "homeScore": 4,
+        "awayScore": 1,
         "group": "H"
       },
       {
@@ -119,7 +119,7 @@
         "id": "m15",
         "homeTeam": "saudiarabia",
         "awayTeam": "uruguay",
-        "homeScore": 1,
+        "homeScore": 0,
         "awayScore": 2,
         "group": "H"
       },
@@ -127,7 +127,7 @@
         "id": "m16",
         "homeTeam": "iran",
         "awayTeam": "newzealand",
-        "homeScore": 1,
+        "homeScore": 2,
         "awayScore": 1,
         "group": "G"
       },
@@ -143,16 +143,16 @@
         "id": "m18",
         "homeTeam": "iraq",
         "awayTeam": "norway",
-        "homeScore": 2,
-        "awayScore": 2,
+        "homeScore": 1,
+        "awayScore": 1,
         "group": "I"
       },
       {
         "id": "m19",
         "homeTeam": "argentina",
         "awayTeam": "algeria",
-        "homeScore": 2,
-        "awayScore": 1,
+        "homeScore": 3,
+        "awayScore": 0,
         "group": "J"
       },
       {
@@ -167,7 +167,7 @@
         "id": "m21",
         "homeTeam": "portugal",
         "awayTeam": "drcongo",
-        "homeScore": 3,
+        "homeScore": 2,
         "awayScore": 0,
         "group": "K"
       },
@@ -175,7 +175,7 @@
         "id": "m22",
         "homeTeam": "england",
         "awayTeam": "croatia",
-        "homeScore": 2,
+        "homeScore": 1,
         "awayScore": 0,
         "group": "L"
       },
@@ -191,7 +191,7 @@
         "id": "m24",
         "homeTeam": "uzbekistan",
         "awayTeam": "colombia",
-        "homeScore": 0,
+        "homeScore": 1,
         "awayScore": 2,
         "group": "K"
       },
@@ -199,8 +199,8 @@
         "id": "m25",
         "homeTeam": "czechia",
         "awayTeam": "southafrica",
-        "homeScore": 1,
-        "awayScore": 1,
+        "homeScore": 2,
+        "awayScore": 2,
         "group": "A"
       },
       {
@@ -208,14 +208,14 @@
         "homeTeam": "switzerland",
         "awayTeam": "bosniaandherzegovina",
         "homeScore": 2,
-        "awayScore": 0,
+        "awayScore": 1,
         "group": "B"
       },
       {
         "id": "m27",
         "homeTeam": "canada",
         "awayTeam": "qatar",
-        "homeScore": 2,
+        "homeScore": 1,
         "awayScore": 0,
         "group": "B"
       },
@@ -231,8 +231,8 @@
         "id": "m29",
         "homeTeam": "usa",
         "awayTeam": "australia",
-        "homeScore": 1,
-        "awayScore": 0,
+        "homeScore": 2,
+        "awayScore": 1,
         "group": "D"
       },
       {
@@ -240,23 +240,23 @@
         "homeTeam": "scotland",
         "awayTeam": "morocco",
         "homeScore": 0,
-        "awayScore": 3,
+        "awayScore": 2,
         "group": "C"
       },
       {
         "id": "m31",
         "homeTeam": "brazil",
         "awayTeam": "haiti",
-        "homeScore": 4,
-        "awayScore": 0,
+        "homeScore": 3,
+        "awayScore": 1,
         "group": "C"
       },
       {
         "id": "m32",
         "homeTeam": "turkiye",
         "awayTeam": "paraguay",
-        "homeScore": 2,
-        "awayScore": 0,
+        "homeScore": 1,
+        "awayScore": 2,
         "group": "D"
       },
       {
@@ -264,23 +264,23 @@
         "homeTeam": "netherlands",
         "awayTeam": "sweden",
         "homeScore": 2,
-        "awayScore": 1,
+        "awayScore": 0,
         "group": "F"
       },
       {
         "id": "m34",
         "homeTeam": "germany",
         "awayTeam": "ivorycoast",
-        "homeScore": 1,
-        "awayScore": 2,
+        "homeScore": 2,
+        "awayScore": 1,
         "group": "E"
       },
       {
         "id": "m35",
         "homeTeam": "ecuador",
         "awayTeam": "curacao",
-        "homeScore": 2,
-        "awayScore": 0,
+        "homeScore": 3,
+        "awayScore": 1,
         "group": "E"
       },
       {
@@ -288,14 +288,14 @@
         "homeTeam": "tunisia",
         "awayTeam": "japan",
         "homeScore": 0,
-        "awayScore": 2,
+        "awayScore": 3,
         "group": "F"
       },
       {
         "id": "m37",
         "homeTeam": "spain",
         "awayTeam": "saudiarabia",
-        "homeScore": 4,
+        "homeScore": 3,
         "awayScore": 0,
         "group": "H"
       },
@@ -304,14 +304,14 @@
         "homeTeam": "belgium",
         "awayTeam": "iran",
         "homeScore": 1,
-        "awayScore": 1,
+        "awayScore": 0,
         "group": "G"
       },
       {
         "id": "m39",
         "homeTeam": "uruguay",
         "awayTeam": "capeverde",
-        "homeScore": 2,
+        "homeScore": 3,
         "awayScore": 0,
         "group": "H"
       },
@@ -320,14 +320,14 @@
         "homeTeam": "newzealand",
         "awayTeam": "egypt",
         "homeScore": 1,
-        "awayScore": 2,
+        "awayScore": 1,
         "group": "G"
       },
       {
         "id": "m41",
         "homeTeam": "argentina",
         "awayTeam": "austria",
-        "homeScore": 2,
+        "homeScore": 3,
         "awayScore": 1,
         "group": "J"
       },
@@ -335,8 +335,8 @@
         "id": "m42",
         "homeTeam": "france",
         "awayTeam": "iraq",
-        "homeScore": 4,
-        "awayScore": 1,
+        "homeScore": 3,
+        "awayScore": 0,
         "group": "I"
       },
       {
@@ -352,7 +352,7 @@
         "homeTeam": "jordan",
         "awayTeam": "algeria",
         "homeScore": 1,
-        "awayScore": 2,
+        "awayScore": 1,
         "group": "J"
       },
       {
@@ -360,15 +360,15 @@
         "homeTeam": "portugal",
         "awayTeam": "uzbekistan",
         "homeScore": 3,
-        "awayScore": 0,
+        "awayScore": 1,
         "group": "K"
       },
       {
         "id": "m46",
         "homeTeam": "england",
         "awayTeam": "ghana",
-        "homeScore": 2,
-        "awayScore": 1,
+        "homeScore": 3,
+        "awayScore": 0,
         "group": "L"
       },
       {
@@ -391,7 +391,7 @@
         "id": "m49",
         "homeTeam": "switzerland",
         "awayTeam": "canada",
-        "homeScore": 1,
+        "homeScore": 2,
         "awayScore": 1,
         "group": "B"
       },
@@ -399,15 +399,15 @@
         "id": "m50",
         "homeTeam": "bosniaandherzegovina",
         "awayTeam": "qatar",
-        "homeScore": 2,
-        "awayScore": 2,
+        "homeScore": 0,
+        "awayScore": 1,
         "group": "B"
       },
       {
         "id": "m51",
         "homeTeam": "morocco",
         "awayTeam": "haiti",
-        "homeScore": 3,
+        "homeScore": 4,
         "awayScore": 0,
         "group": "C"
       },
@@ -415,7 +415,7 @@
         "id": "m52",
         "homeTeam": "scotland",
         "awayTeam": "brazil",
-        "homeScore": 0,
+        "homeScore": 1,
         "awayScore": 3,
         "group": "C"
       },
@@ -423,7 +423,7 @@
         "id": "m53",
         "homeTeam": "southafrica",
         "awayTeam": "southkorea",
-        "homeScore": 1,
+        "homeScore": 0,
         "awayScore": 1,
         "group": "A"
       },
@@ -439,15 +439,15 @@
         "id": "m55",
         "homeTeam": "curacao",
         "awayTeam": "ivorycoast",
-        "homeScore": 1,
-        "awayScore": 2,
+        "homeScore": 0,
+        "awayScore": 3,
         "group": "E"
       },
       {
         "id": "m56",
         "homeTeam": "ecuador",
         "awayTeam": "germany",
-        "homeScore": 1,
+        "homeScore": 0,
         "awayScore": 1,
         "group": "E"
       },
@@ -456,30 +456,30 @@
         "homeTeam": "tunisia",
         "awayTeam": "netherlands",
         "homeScore": 1,
-        "awayScore": 2,
+        "awayScore": 3,
         "group": "F"
       },
       {
         "id": "m58",
         "homeTeam": "japan",
         "awayTeam": "sweden",
-        "homeScore": 2,
-        "awayScore": 2,
+        "homeScore": 1,
+        "awayScore": 1,
         "group": "F"
       },
       {
         "id": "m59",
         "homeTeam": "turkiye",
         "awayTeam": "usa",
-        "homeScore": 2,
-        "awayScore": 1,
+        "homeScore": 1,
+        "awayScore": 2,
         "group": "D"
       },
       {
         "id": "m60",
         "homeTeam": "paraguay",
         "awayTeam": "australia",
-        "homeScore": 1,
+        "homeScore": 0,
         "awayScore": 2,
         "group": "D"
       },
@@ -487,7 +487,7 @@
         "id": "m61",
         "homeTeam": "norway",
         "awayTeam": "france",
-        "homeScore": 0,
+        "homeScore": 1,
         "awayScore": 3,
         "group": "I"
       },
@@ -495,16 +495,16 @@
         "id": "m62",
         "homeTeam": "senegal",
         "awayTeam": "iraq",
-        "homeScore": 3,
-        "awayScore": 1,
+        "homeScore": 2,
+        "awayScore": 0,
         "group": "I"
       },
       {
         "id": "m63",
         "homeTeam": "capeverde",
         "awayTeam": "saudiarabia",
-        "homeScore": 1,
-        "awayScore": 1,
+        "homeScore": 2,
+        "awayScore": 0,
         "group": "H"
       },
       {
@@ -512,22 +512,22 @@
         "homeTeam": "uruguay",
         "awayTeam": "spain",
         "homeScore": 1,
-        "awayScore": 1,
+        "awayScore": 2,
         "group": "H"
       },
       {
         "id": "m65",
         "homeTeam": "newzealand",
         "awayTeam": "belgium",
-        "homeScore": 1,
-        "awayScore": 3,
+        "homeScore": 0,
+        "awayScore": 2,
         "group": "G"
       },
       {
         "id": "m66",
         "homeTeam": "egypt",
         "awayTeam": "iran",
-        "homeScore": 2,
+        "homeScore": 1,
         "awayScore": 1,
         "group": "G"
       },
@@ -535,7 +535,7 @@
         "id": "m67",
         "homeTeam": "panama",
         "awayTeam": "england",
-        "homeScore": 0,
+        "homeScore": 1,
         "awayScore": 3,
         "group": "L"
       },
@@ -543,7 +543,7 @@
         "id": "m68",
         "homeTeam": "croatia",
         "awayTeam": "ghana",
-        "homeScore": 3,
+        "homeScore": 2,
         "awayScore": 1,
         "group": "L"
       },
@@ -551,7 +551,7 @@
         "id": "m69",
         "homeTeam": "colombia",
         "awayTeam": "portugal",
-        "homeScore": 1,
+        "homeScore": 0,
         "awayScore": 1,
         "group": "K"
       },
@@ -567,7 +567,7 @@
         "id": "m71",
         "homeTeam": "algeria",
         "awayTeam": "austria",
-        "homeScore": 1,
+        "homeScore": 2,
         "awayScore": 2,
         "group": "J"
       },
@@ -589,8 +589,8 @@
       },
       {
         "id": "m74",
-        "homeTeam": "brazil",
-        "awayTeam": "japan",
+        "homeTeam": "usa",
+        "awayTeam": "bosniaandherzegovina",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
@@ -613,8 +613,8 @@
       },
       {
         "id": "m77",
-        "homeTeam": "ivorycoast",
-        "awayTeam": "norway",
+        "homeTeam": "belgium",
+        "awayTeam": "senegal",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
@@ -629,56 +629,56 @@
       },
       {
         "id": "m79",
-        "homeTeam": "Group A winners",
-        "awayTeam": "Best Third-Placed Team",
+        "homeTeam": "portugal",
+        "awayTeam": "croatia",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
       },
       {
         "id": "m80",
-        "homeTeam": "Group L winners",
-        "awayTeam": "Best Third-Placed Team",
+        "homeTeam": "spain",
+        "awayTeam": "austria",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
       },
       {
         "id": "m81",
-        "homeTeam": "Group G winners",
-        "awayTeam": "Best Third-Placed Team",
+        "homeTeam": "ivorycoast",
+        "awayTeam": "norway",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
       },
       {
         "id": "m82",
-        "homeTeam": "usa",
-        "awayTeam": "bosniaandherzegovina",
+        "homeTeam": "brazil",
+        "awayTeam": "japan",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
       },
       {
         "id": "m83",
-        "homeTeam": "Group H winners",
-        "awayTeam": "Group J runners-up",
+        "homeTeam": "england",
+        "awayTeam": "drcongo",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
       },
       {
         "id": "m84",
-        "homeTeam": "Group K runners-up",
-        "awayTeam": "Group L runners-up",
+        "homeTeam": "mexico",
+        "awayTeam": "ecuador",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
       },
       {
         "id": "m85",
-        "homeTeam": "Group B winners",
-        "awayTeam": "Best Third-Placed Team",
+        "homeTeam": "switzerland",
+        "awayTeam": "algeria",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
@@ -693,71 +693,71 @@
       },
       {
         "id": "m87",
-        "homeTeam": "Group J winners",
-        "awayTeam": "Group H runners-up",
+        "homeTeam": "argentina",
+        "awayTeam": "capeverde",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
       },
       {
         "id": "m88",
-        "homeTeam": "Group K winners",
-        "awayTeam": "Best Third-Placed Team",
+        "homeTeam": "colombia",
+        "awayTeam": "ghana",
         "homeScore": null,
         "awayScore": null,
         "group": "R32"
       },
       {
         "id": "m89",
-        "homeTeam": "Winner Match 73",
-        "awayTeam": "Winner Match 75",
-        "homeScore": null,
-        "awayScore": null,
-        "group": "R16"
-      },
-      {
-        "id": "m90",
-        "homeTeam": "Winner Match 74",
-        "awayTeam": "Winner Match 77",
-        "homeScore": null,
-        "awayScore": null,
-        "group": "R16"
-      },
-      {
-        "id": "m91",
-        "homeTeam": "Winner Match 76",
+        "homeTeam": "Winner Match 75",
         "awayTeam": "Winner Match 78",
         "homeScore": null,
         "awayScore": null,
         "group": "R16"
       },
       {
+        "id": "m90",
+        "homeTeam": "Winner Match 82",
+        "awayTeam": "Winner Match 81",
+        "homeScore": null,
+        "awayScore": null,
+        "group": "R16"
+      },
+      {
+        "id": "m91",
+        "homeTeam": "canada",
+        "awayTeam": "Winner Match 76",
+        "homeScore": null,
+        "awayScore": null,
+        "group": "R16"
+      },
+      {
         "id": "m92",
-        "homeTeam": "Winner Match 79",
-        "awayTeam": "Winner Match 80",
+        "homeTeam": "Winner Match 84",
+        "awayTeam": "Winner Match 83",
         "homeScore": null,
         "awayScore": null,
         "group": "R16"
       },
       {
         "id": "m93",
-        "homeTeam": "Winner Match 83",
-        "awayTeam": "Winner Match 84",
+        "homeTeam": "Winner Match 80",
+        "awayTeam": "Winner Match 79",
         "homeScore": null,
         "awayScore": null,
         "group": "R16"
       },
       {
         "id": "m94",
-        "homeTeam": "Winner Match 81",
-        "awayTeam": "Winner Match 82",
+        "homeTeam": "Winner Match 77",
+        "awayTeam": "Winner Match 74",
         "homeScore": null,
         "awayScore": null,
         "group": "R16"
       },
       {
         "id": "m95",
-        "homeTeam": "Winner Match 86",
+        "homeTeam": "Winner Match 85",
         "awayTeam": "Winner Match 88",
         "homeScore": null,
         "awayScore": null,
@@ -765,7 +765,7 @@
       },
       {
         "id": "m96",
-        "homeTeam": "Winner Match 85",
+        "homeTeam": "Winner Match 86",
         "awayTeam": "Winner Match 87",
         "homeScore": null,
         "awayScore": null,
@@ -773,8 +773,8 @@
       },
       {
         "id": "m97",
-        "homeTeam": "Winner Match 89",
-        "awayTeam": "Winner Match 90",
+        "homeTeam": "Winner Match 90",
+        "awayTeam": "Winner Match 92",
         "homeScore": null,
         "awayScore": null,
         "group": "QF"
@@ -789,8 +789,8 @@
       },
       {
         "id": "m99",
-        "homeTeam": "Winner Match 91",
-        "awayTeam": "Winner Match 92",
+        "homeTeam": "Winner Match 89",
+        "awayTeam": "Winner Match 91",
         "homeScore": null,
         "awayScore": null,
         "group": "QF"
@@ -806,15 +806,15 @@
       {
         "id": "m101",
         "homeTeam": "Winner Match 97",
-        "awayTeam": "Winner Match 98",
+        "awayTeam": "Winner Match 100",
         "homeScore": null,
         "awayScore": null,
         "group": "SF"
       },
       {
         "id": "m102",
-        "homeTeam": "Winner Match 99",
-        "awayTeam": "Winner Match 100",
+        "homeTeam": "Winner Match 98",
+        "awayTeam": "Winner Match 99",
         "homeScore": null,
         "awayScore": null,
         "group": "SF"
@@ -844,13 +844,13 @@
           "code": "KOR"
         },
         "t2": {
-          "id": "switzerland",
-          "name": "Switzerland",
-          "code": "SUI"
+          "id": "canada",
+          "name": "Canada",
+          "code": "CAN"
         },
         "score": [
-          2,
-          1
+          1,
+          0
         ],
         "winner": {
           "id": "southkorea",
@@ -858,6 +858,318 @@
           "code": "KOR"
         },
         "loser": {
+          "id": "canada",
+          "name": "Canada",
+          "code": "CAN"
+        }
+      },
+      {
+        "t1": {
+          "id": "netherlands",
+          "name": "Netherlands",
+          "code": "NED"
+        },
+        "t2": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "netherlands",
+          "name": "Netherlands",
+          "code": "NED"
+        },
+        "loser": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        }
+      },
+      {
+        "t1": {
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
+        },
+        "t2": {
+          "id": "paraguay",
+          "name": "Paraguay",
+          "code": "PAR"
+        },
+        "score": [
+          2,
+          0
+        ],
+        "winner": {
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
+        },
+        "loser": {
+          "id": "paraguay",
+          "name": "Paraguay",
+          "code": "PAR"
+        }
+      },
+      {
+        "t1": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "t2": {
+          "id": "sweden",
+          "name": "Sweden",
+          "code": "SWE"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "loser": {
+          "id": "sweden",
+          "name": "Sweden",
+          "code": "SWE"
+        }
+      },
+      {
+        "t1": {
+          "id": "belgium",
+          "name": "Belgium",
+          "code": "BEL"
+        },
+        "t2": {
+          "id": "capeverde",
+          "name": "Cape Verde",
+          "code": "CPV"
+        },
+        "score": [
+          3,
+          1
+        ],
+        "winner": {
+          "id": "belgium",
+          "name": "Belgium",
+          "code": "BEL"
+        },
+        "loser": {
+          "id": "capeverde",
+          "name": "Cape Verde",
+          "code": "CPV"
+        }
+      },
+      {
+        "t1": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        },
+        "t2": {
+          "id": "qatar",
+          "name": "Qatar",
+          "code": "QAT"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        },
+        "loser": {
+          "id": "qatar",
+          "name": "Qatar",
+          "code": "QAT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        },
+        "t2": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        },
+        "loser": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        }
+      },
+      {
+        "t1": {
+          "id": "morocco",
+          "name": "Morocco",
+          "code": "MAR"
+        },
+        "t2": {
+          "id": "japan",
+          "name": "Japan",
+          "code": "JPN"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "morocco",
+          "name": "Morocco",
+          "code": "MAR"
+        },
+        "loser": {
+          "id": "japan",
+          "name": "Japan",
+          "code": "JPN"
+        }
+      },
+      {
+        "t1": {
+          "id": "ivorycoast",
+          "name": "Ivory Coast",
+          "code": "CIV"
+        },
+        "t2": {
+          "id": "senegal",
+          "name": "Senegal",
+          "code": "SEN"
+        },
+        "score": [
+          2,
+          3
+        ],
+        "winner": {
+          "id": "senegal",
+          "name": "Senegal",
+          "code": "SEN"
+        },
+        "loser": {
+          "id": "ivorycoast",
+          "name": "Ivory Coast",
+          "code": "CIV"
+        }
+      },
+      {
+        "t1": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "t2": {
+          "id": "drcongo",
+          "name": "DR Congo",
+          "code": "COD"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "loser": {
+          "id": "drcongo",
+          "name": "DR Congo",
+          "code": "COD"
+        }
+      },
+      {
+        "t1": {
+          "id": "mexico",
+          "name": "Mexico",
+          "code": "MEX"
+        },
+        "t2": {
+          "id": "haiti",
+          "name": "Haiti",
+          "code": "HAI"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "mexico",
+          "name": "Mexico",
+          "code": "MEX"
+        },
+        "loser": {
+          "id": "haiti",
+          "name": "Haiti",
+          "code": "HAI"
+        }
+      },
+      {
+        "t1": {
+          "id": "switzerland",
+          "name": "Switzerland",
+          "code": "SUI"
+        },
+        "t2": {
+          "id": "egypt",
+          "name": "Egypt",
+          "code": "EGY"
+        },
+        "score": [
+          1,
+          2
+        ],
+        "winner": {
+          "id": "egypt",
+          "name": "Egypt",
+          "code": "EGY"
+        },
+        "loser": {
           "id": "switzerland",
           "name": "Switzerland",
           "code": "SUI"
@@ -865,127 +1177,23 @@
       },
       {
         "t1": {
-          "id": "netherlands",
-          "name": "Netherlands",
-          "code": "NED"
+          "id": "portugal",
+          "name": "Portugal",
+          "code": "POR"
         },
         "t2": {
-          "id": "morocco",
-          "name": "Morocco",
-          "code": "MAR"
-        },
-        "score": [
-          2,
-          1
-        ],
-        "winner": {
-          "id": "netherlands",
-          "name": "Netherlands",
-          "code": "NED"
-        },
-        "loser": {
-          "id": "morocco",
-          "name": "Morocco",
-          "code": "MAR"
-        }
-      },
-      {
-        "t1": {
-          "id": "ivorycoast",
-          "name": "Ivory Coast",
-          "code": "CIV"
-        },
-        "t2": {
-          "id": "australia",
-          "name": "Australia",
-          "code": "AUS"
-        },
-        "score": [
-          1,
-          2
-        ],
-        "winner": {
-          "id": "australia",
-          "name": "Australia",
-          "code": "AUS"
-        },
-        "loser": {
-          "id": "ivorycoast",
-          "name": "Ivory Coast",
-          "code": "CIV"
-        }
-      },
-      {
-        "t1": {
-          "id": "france",
-          "name": "France",
-          "code": "FRA"
-        },
-        "t2": {
-          "id": "sweden",
-          "name": "Sweden",
-          "code": "SWE"
-        },
-        "score": [
-          2,
-          0
-        ],
-        "winner": {
-          "id": "france",
-          "name": "France",
-          "code": "FRA"
-        },
-        "loser": {
-          "id": "sweden",
-          "name": "Sweden",
-          "code": "SWE"
-        }
-      },
-      {
-        "t1": {
-          "id": "brazil",
-          "name": "Brazil",
-          "code": "BRA"
-        },
-        "t2": {
-          "id": "japan",
-          "name": "Japan",
-          "code": "JPN"
-        },
-        "score": [
-          1,
-          2
-        ],
-        "winner": {
-          "id": "japan",
-          "name": "Japan",
-          "code": "JPN"
-        },
-        "loser": {
-          "id": "brazil",
-          "name": "Brazil",
-          "code": "BRA"
-        }
-      },
-      {
-        "t1": {
           "id": "ecuador",
           "name": "Ecuador",
           "code": "ECU"
         },
-        "t2": {
-          "id": "senegal",
-          "name": "Senegal",
-          "code": "SEN"
-        },
         "score": [
-          1,
+          2,
           1
         ],
         "winner": {
-          "id": "senegal",
-          "name": "Senegal",
-          "code": "SEN"
+          "id": "portugal",
+          "name": "Portugal",
+          "code": "POR"
         },
         "loser": {
           "id": "ecuador",
@@ -995,226 +1203,44 @@
       },
       {
         "t1": {
-          "id": "mexico",
-          "name": "Mexico",
-          "code": "MEX"
+          "id": "australia",
+          "name": "Australia",
+          "code": "AUS"
         },
         "t2": {
-          "id": "germany",
-          "name": "Germany",
-          "code": "GER"
+          "id": "iran",
+          "name": "Iran",
+          "code": "IRN"
         },
         "score": [
           1,
           2
         ],
         "winner": {
-          "id": "germany",
-          "name": "Germany",
-          "code": "GER"
+          "id": "iran",
+          "name": "Iran",
+          "code": "IRN"
         },
         "loser": {
-          "id": "mexico",
-          "name": "Mexico",
-          "code": "MEX"
+          "id": "australia",
+          "name": "Australia",
+          "code": "AUS"
         }
       },
       {
         "t1": {
-          "id": "england",
-          "name": "England",
-          "code": "ENG"
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
         },
         "t2": {
-          "id": "drcongo",
-          "name": "DR Congo",
-          "code": "COD"
+          "id": "uruguay",
+          "name": "Uruguay",
+          "code": "URU"
         },
         "score": [
           3,
-          0
-        ],
-        "winner": {
-          "id": "england",
-          "name": "England",
-          "code": "ENG"
-        },
-        "loser": {
-          "id": "drcongo",
-          "name": "DR Congo",
-          "code": "COD"
-        }
-      },
-      {
-        "t1": {
-          "id": "turkiye",
-          "name": "Turkiye",
-          "code": "TUR"
-        },
-        "t2": {
-          "id": "algeria",
-          "name": "Algeria",
-          "code": "ALG"
-        },
-        "score": [
-          2,
           1
-        ],
-        "winner": {
-          "id": "turkiye",
-          "name": "Turkiye",
-          "code": "TUR"
-        },
-        "loser": {
-          "id": "algeria",
-          "name": "Algeria",
-          "code": "ALG"
-        }
-      },
-      {
-        "t1": {
-          "id": "belgium",
-          "name": "Belgium",
-          "code": "BEL"
-        },
-        "t2": {
-          "id": "southafrica",
-          "name": "South Africa",
-          "code": "RSA"
-        },
-        "score": [
-          2,
-          0
-        ],
-        "winner": {
-          "id": "belgium",
-          "name": "Belgium",
-          "code": "BEL"
-        },
-        "loser": {
-          "id": "southafrica",
-          "name": "South Africa",
-          "code": "RSA"
-        }
-      },
-      {
-        "t1": {
-          "id": "colombia",
-          "name": "Colombia",
-          "code": "COL"
-        },
-        "t2": {
-          "id": "croatia",
-          "name": "Croatia",
-          "code": "CRO"
-        },
-        "score": [
-          2,
-          1
-        ],
-        "winner": {
-          "id": "colombia",
-          "name": "Colombia",
-          "code": "COL"
-        },
-        "loser": {
-          "id": "croatia",
-          "name": "Croatia",
-          "code": "CRO"
-        }
-      },
-      {
-        "t1": {
-          "id": "spain",
-          "name": "Spain",
-          "code": "ESP"
-        },
-        "t2": {
-          "id": "austria",
-          "name": "Austria",
-          "code": "AUT"
-        },
-        "score": [
-          2,
-          0
-        ],
-        "winner": {
-          "id": "spain",
-          "name": "Spain",
-          "code": "ESP"
-        },
-        "loser": {
-          "id": "austria",
-          "name": "Austria",
-          "code": "AUT"
-        }
-      },
-      {
-        "t1": {
-          "id": "canada",
-          "name": "Canada",
-          "code": "CAN"
-        },
-        "t2": {
-          "id": "iran",
-          "name": "Iran",
-          "code": "IRN"
-        },
-        "score": [
-          2,
-          1
-        ],
-        "winner": {
-          "id": "canada",
-          "name": "Canada",
-          "code": "CAN"
-        },
-        "loser": {
-          "id": "iran",
-          "name": "Iran",
-          "code": "IRN"
-        }
-      },
-      {
-        "t1": {
-          "id": "portugal",
-          "name": "Portugal",
-          "code": "POR"
-        },
-        "t2": {
-          "id": "ghana",
-          "name": "Ghana",
-          "code": "GHA"
-        },
-        "score": [
-          2,
-          1
-        ],
-        "winner": {
-          "id": "portugal",
-          "name": "Portugal",
-          "code": "POR"
-        },
-        "loser": {
-          "id": "ghana",
-          "name": "Ghana",
-          "code": "GHA"
-        }
-      },
-      {
-        "t1": {
-          "id": "argentina",
-          "name": "Argentina",
-          "code": "ARG"
-        },
-        "t2": {
-          "id": "uruguay",
-          "name": "Uruguay",
-          "code": "URU"
-        },
-        "score": [
-          2,
-          0
         ],
         "winner": {
           "id": "argentina",
@@ -1225,32 +1251,6 @@
           "id": "uruguay",
           "name": "Uruguay",
           "code": "URU"
-        }
-      },
-      {
-        "t1": {
-          "id": "usa",
-          "name": "USA",
-          "code": "USA"
-        },
-        "t2": {
-          "id": "egypt",
-          "name": "Egypt",
-          "code": "EGY"
-        },
-        "score": [
-          2,
-          1
-        ],
-        "winner": {
-          "id": "usa",
-          "name": "USA",
-          "code": "USA"
-        },
-        "loser": {
-          "id": "egypt",
-          "name": "Egypt",
-          "code": "EGY"
         }
       }
     ],
@@ -1268,7 +1268,7 @@
         },
         "score": [
           0,
-          2
+          3
         ],
         "winner": {
           "id": "netherlands",
@@ -1283,9 +1283,9 @@
       },
       {
         "t1": {
-          "id": "australia",
-          "name": "Australia",
-          "code": "AUS"
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
         },
         "t2": {
           "id": "france",
@@ -1294,24 +1294,76 @@
         },
         "score": [
           1,
-          2
+          0
         ],
         "winner": {
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
+        },
+        "loser": {
           "id": "france",
           "name": "France",
           "code": "FRA"
-        },
-        "loser": {
-          "id": "australia",
-          "name": "Australia",
-          "code": "AUS"
         }
       },
       {
         "t1": {
-          "id": "japan",
-          "name": "Japan",
-          "code": "JPN"
+          "id": "belgium",
+          "name": "Belgium",
+          "code": "BEL"
+        },
+        "t2": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        },
+        "score": [
+          1,
+          1
+        ],
+        "winner": {
+          "id": "belgium",
+          "name": "Belgium",
+          "code": "BEL"
+        },
+        "loser": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        },
+        "score": [
+          1,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        }
+      },
+      {
+        "t1": {
+          "id": "morocco",
+          "name": "Morocco",
+          "code": "MAR"
         },
         "t2": {
           "id": "senegal",
@@ -1319,103 +1371,51 @@
           "code": "SEN"
         },
         "score": [
-          2,
+          1,
           1
         ],
         "winner": {
-          "id": "japan",
-          "name": "Japan",
-          "code": "JPN"
-        },
-        "loser": {
           "id": "senegal",
           "name": "Senegal",
           "code": "SEN"
-        }
-      },
-      {
-        "t1": {
-          "id": "germany",
-          "name": "Germany",
-          "code": "GER"
-        },
-        "t2": {
-          "id": "england",
-          "name": "England",
-          "code": "ENG"
-        },
-        "score": [
-          1,
-          2
-        ],
-        "winner": {
-          "id": "england",
-          "name": "England",
-          "code": "ENG"
         },
         "loser": {
-          "id": "germany",
-          "name": "Germany",
-          "code": "GER"
+          "id": "morocco",
+          "name": "Morocco",
+          "code": "MAR"
         }
       },
       {
         "t1": {
-          "id": "turkiye",
-          "name": "Turkiye",
-          "code": "TUR"
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
         },
         "t2": {
-          "id": "belgium",
-          "name": "Belgium",
-          "code": "BEL"
+          "id": "mexico",
+          "name": "Mexico",
+          "code": "MEX"
         },
         "score": [
           2,
           1
         ],
         "winner": {
-          "id": "turkiye",
-          "name": "Turkiye",
-          "code": "TUR"
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
         },
         "loser": {
-          "id": "belgium",
-          "name": "Belgium",
-          "code": "BEL"
+          "id": "mexico",
+          "name": "Mexico",
+          "code": "MEX"
         }
       },
       {
         "t1": {
-          "id": "colombia",
-          "name": "Colombia",
-          "code": "COL"
-        },
-        "t2": {
-          "id": "spain",
-          "name": "Spain",
-          "code": "ESP"
-        },
-        "score": [
-          1,
-          1
-        ],
-        "winner": {
-          "id": "colombia",
-          "name": "Colombia",
-          "code": "COL"
-        },
-        "loser": {
-          "id": "spain",
-          "name": "Spain",
-          "code": "ESP"
-        }
-      },
-      {
-        "t1": {
-          "id": "canada",
-          "name": "Canada",
-          "code": "CAN"
+          "id": "egypt",
+          "name": "Egypt",
+          "code": "EGY"
         },
         "t2": {
           "id": "portugal",
@@ -1423,7 +1423,7 @@
           "code": "POR"
         },
         "score": [
-          1,
+          0,
           2
         ],
         "winner": {
@@ -1432,25 +1432,25 @@
           "code": "POR"
         },
         "loser": {
-          "id": "canada",
-          "name": "Canada",
-          "code": "CAN"
+          "id": "egypt",
+          "name": "Egypt",
+          "code": "EGY"
         }
       },
       {
         "t1": {
+          "id": "iran",
+          "name": "Iran",
+          "code": "IRN"
+        },
+        "t2": {
           "id": "argentina",
           "name": "Argentina",
           "code": "ARG"
         },
-        "t2": {
-          "id": "usa",
-          "name": "USA",
-          "code": "USA"
-        },
         "score": [
-          2,
-          1
+          0,
+          3
         ],
         "winner": {
           "id": "argentina",
@@ -1458,9 +1458,9 @@
           "code": "ARG"
         },
         "loser": {
-          "id": "usa",
-          "name": "USA",
-          "code": "USA"
+          "id": "iran",
+          "name": "Iran",
+          "code": "IRN"
         }
       }
     ],
@@ -1472,18 +1472,18 @@
           "code": "NED"
         },
         "t2": {
-          "id": "france",
-          "name": "France",
-          "code": "FRA"
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
         },
         "score": [
-          1,
-          2
+          0,
+          1
         ],
         "winner": {
-          "id": "france",
-          "name": "France",
-          "code": "FRA"
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
         },
         "loser": {
           "id": "netherlands",
@@ -1493,9 +1493,35 @@
       },
       {
         "t1": {
-          "id": "japan",
-          "name": "Japan",
-          "code": "JPN"
+          "id": "belgium",
+          "name": "Belgium",
+          "code": "BEL"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          1,
+          2
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "belgium",
+          "name": "Belgium",
+          "code": "BEL"
+        }
+      },
+      {
+        "t1": {
+          "id": "senegal",
+          "name": "Senegal",
+          "code": "SEN"
         },
         "t2": {
           "id": "england",
@@ -1503,173 +1529,147 @@
           "code": "ENG"
         },
         "score": [
-          2,
-          1
+          1,
+          2
         ],
         "winner": {
-          "id": "japan",
-          "name": "Japan",
-          "code": "JPN"
-        },
-        "loser": {
           "id": "england",
           "name": "England",
           "code": "ENG"
+        },
+        "loser": {
+          "id": "senegal",
+          "name": "Senegal",
+          "code": "SEN"
         }
       },
       {
         "t1": {
-          "id": "turkiye",
-          "name": "Turkiye",
-          "code": "TUR"
+          "id": "portugal",
+          "name": "Portugal",
+          "code": "POR"
         },
         "t2": {
-          "id": "colombia",
-          "name": "Colombia",
-          "code": "COL"
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
         },
         "score": [
           0,
           2
         ],
         "winner": {
-          "id": "colombia",
-          "name": "Colombia",
-          "code": "COL"
-        },
-        "loser": {
-          "id": "turkiye",
-          "name": "Turkiye",
-          "code": "TUR"
-        }
-      },
-      {
-        "t1": {
-          "id": "portugal",
-          "name": "Portugal",
-          "code": "POR"
-        },
-        "t2": {
           "id": "argentina",
           "name": "Argentina",
           "code": "ARG"
         },
-        "score": [
-          1,
-          1
-        ],
-        "winner": {
+        "loser": {
           "id": "portugal",
           "name": "Portugal",
           "code": "POR"
-        },
-        "loser": {
-          "id": "argentina",
-          "name": "Argentina",
-          "code": "ARG"
         }
       }
     ],
     "semiFinals": [
       {
         "t1": {
-          "id": "france",
-          "name": "France",
-          "code": "FRA"
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
         },
         "t2": {
-          "id": "japan",
-          "name": "Japan",
-          "code": "JPN"
-        },
-        "score": [
-          2,
-          1
-        ],
-        "winner": {
-          "id": "france",
-          "name": "France",
-          "code": "FRA"
-        },
-        "loser": {
-          "id": "japan",
-          "name": "Japan",
-          "code": "JPN"
-        }
-      },
-      {
-        "t1": {
-          "id": "colombia",
-          "name": "Colombia",
-          "code": "COL"
-        },
-        "t2": {
-          "id": "portugal",
-          "name": "Portugal",
-          "code": "POR"
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
         },
         "score": [
           1,
           2
         ],
         "winner": {
-          "id": "portugal",
-          "name": "Portugal",
-          "code": "POR"
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
         },
         "loser": {
-          "id": "colombia",
-          "name": "Colombia",
-          "code": "COL"
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
+        }
+      },
+      {
+        "t1": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "t2": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "loser": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
         }
       }
     ],
     "final": {
       "t1": {
-        "id": "france",
-        "name": "France",
-        "code": "FRA"
+        "id": "spain",
+        "name": "Spain",
+        "code": "ESP"
       },
       "t2": {
-        "id": "portugal",
-        "name": "Portugal",
-        "code": "POR"
+        "id": "england",
+        "name": "England",
+        "code": "ENG"
       },
       "score": [
-        2,
-        1
+        1,
+        0
       ],
       "winner": {
-        "id": "france",
-        "name": "France",
-        "code": "FRA"
+        "id": "spain",
+        "name": "Spain",
+        "code": "ESP"
       }
     },
     "thirdPlace": {
       "t1": {
-        "id": "japan",
-        "name": "Japan",
-        "code": "JPN"
+        "id": "germany",
+        "name": "Germany",
+        "code": "GER"
       },
       "t2": {
-        "id": "colombia",
-        "name": "Colombia",
-        "code": "COL"
+        "id": "argentina",
+        "name": "Argentina",
+        "code": "ARG"
       },
       "score": [
-        2,
-        3
+        1,
+        1
       ],
       "winner": {
-        "id": "colombia",
-        "name": "Colombia",
-        "code": "COL"
+        "id": "argentina",
+        "name": "Argentina",
+        "code": "ARG"
       }
     },
     "winner": {
-      "id": "france",
-      "name": "France",
-      "code": "FRA"
+      "id": "spain",
+      "name": "Spain",
+      "code": "ESP"
     }
   }
 }
