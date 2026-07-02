@@ -15079,7 +15079,7 @@ export const matches = [
   {
     "id": "m82",
     "match_id": 82,
-    "date": "2026-07-01",
+    "date": "2026-06-29",
     "time": "20:00",
     "venue": "levis",
     "group": "R32",

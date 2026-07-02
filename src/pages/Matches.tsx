@@ -594,10 +594,10 @@ const Matches: React.FC = () => {
 
                 {/* Tabs Selector */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-                    <div className="flex gap-2 bg-slate-900/60 backdrop-blur-md p-1 rounded-xl w-fit border border-slate-800/80">
+                    <div className="grid grid-cols-2 sm:flex gap-2 bg-slate-900/60 backdrop-blur-md p-1 rounded-xl w-full sm:w-fit border border-slate-800/80">
                         <button
                             onClick={() => setActiveTab('upcoming')}
-                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'upcoming'
+                            className={`px-3 sm:px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'upcoming'
                                 ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10'
                                 : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
                                 }`}
@@ -606,7 +606,7 @@ const Matches: React.FC = () => {
                         </button>
                         <button
                             onClick={() => setActiveTab('past')}
-                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'past'
+                            className={`px-3 sm:px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'past'
                                 ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10'
                                 : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
                                 }`}
@@ -615,7 +615,7 @@ const Matches: React.FC = () => {
                         </button>
                         <button
                             onClick={() => setActiveTab('powerhouse')}
-                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'powerhouse'
+                            className={`px-3 sm:px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'powerhouse'
                                 ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10'
                                 : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
                                 }`}
@@ -624,7 +624,7 @@ const Matches: React.FC = () => {
                         </button>
                         <button
                             onClick={() => setActiveTab('knockout')}
-                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'knockout'
+                            className={`px-3 sm:px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'knockout'
                                 ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10'
                                 : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
                                 }`}

@@ -241,7 +241,7 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 -mt-16 relative z-20">
+      <div className="max-w-7xl mx-auto px-4 mt-8 md:-mt-16 relative z-20">
 
         {/* Upcoming Matches Section */}
         <section className="mb-16">
