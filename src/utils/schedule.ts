@@ -300,7 +300,9 @@ export const getMergedMatches = (resultsList: any[] = [], teamsList: any[] = ini
       homeTeam: (sched.match_id > 72 && result?.homeTeam) ? result.homeTeam : homeTeamId,
       awayTeam: (sched.match_id > 72 && result?.awayTeam) ? result.awayTeam : awayTeamId,
       stage: getMatchStage(sched.match_id),
-      location: sched.location
+      location: sched.location,
+      winner: result?.winner || null,
+      winnerId: result?.winnerId || null
     };
   });
 };

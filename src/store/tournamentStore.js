@@ -72,12 +72,28 @@ export const useTournamentStore = create((set) => ({
     isSimulating: false
   }),
 
-  updateMatchScore: (matchId, homeScore, awayScore, scorers, cards, playerOfMatch) => set((state) => {
-    const updatedMatches = state.matches.map(m =>
-      m.id === matchId
-        ? { ...m, homeScore, awayScore, scorers, cards, playerOfMatch, status: 'completed' }
-        : m
-    );
+  updateMatchScore: (matchId, homeScore, awayScore, scorers, cards, playerOfMatch, winnerId) => set((state) => {
+    const updatedMatches = state.matches.map(m => {
+      if (m.id === matchId) {
+        let finalWinnerId = winnerId;
+        if (!finalWinnerId) {
+          if (homeScore > awayScore) finalWinnerId = m.homeTeam;
+          else if (awayScore > homeScore) finalWinnerId = m.awayTeam;
+        }
+        return {
+          ...m,
+          homeScore,
+          awayScore,
+          scorers,
+          cards,
+          playerOfMatch,
+          winner: finalWinnerId,
+          winnerId: finalWinnerId,
+          status: 'completed'
+        };
+      }
+      return m;
+    });
     saveMatchesToServer(updatedMatches);
     return { matches: updatedMatches };
   }),

@@ -1,0 +1,842 @@
+{
+  "title": "sim 2",
+  "simulation_number": 2,
+  "results": {
+    "groupMatches": [],
+    "roundOf32": [
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        },
+        "score": [
+          2,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "portugal",
+          "name": "Portugal",
+          "code": "POR"
+        },
+        "t2": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "score": [
+          1,
+          2
+        ],
+        "winner": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "loser": {
+          "id": "portugal",
+          "name": "Portugal",
+          "code": "POR"
+        }
+      },
+      {
+        "t1": {
+          "id": "belgium",
+          "name": "Belgium",
+          "code": "BEL"
+        },
+        "t2": {
+          "id": "senegal",
+          "name": "Senegal",
+          "code": "SEN"
+        },
+        "score": [
+          1,
+          2
+        ],
+        "winner": {
+          "id": "senegal",
+          "name": "Senegal",
+          "code": "SEN"
+        },
+        "loser": {
+          "id": "belgium",
+          "name": "Belgium",
+          "code": "BEL"
+        }
+      },
+      {
+        "t1": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        },
+        "t2": {
+          "id": "bosniaandherzegovina",
+          "name": "Bosnia and Herzegovina",
+          "code": "BIH"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        },
+        "loser": {
+          "id": "bosniaandherzegovina",
+          "name": "Bosnia and Herzegovina",
+          "code": "BIH"
+        }
+      },
+      {
+        "t1": {
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
+        },
+        "t2": {
+          "id": "paraguay",
+          "name": "Paraguay",
+          "code": "PAR"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
+        },
+        "loser": {
+          "id": "paraguay",
+          "name": "Paraguay",
+          "code": "PAR"
+        }
+      },
+      {
+        "t1": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "t2": {
+          "id": "sweden",
+          "name": "Sweden",
+          "code": "SWE"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "loser": {
+          "id": "sweden",
+          "name": "Sweden",
+          "code": "SWE"
+        }
+      },
+      {
+        "t1": {
+          "id": "southafrica",
+          "name": "South Africa",
+          "code": "RSA"
+        },
+        "t2": {
+          "id": "canada",
+          "name": "Canada",
+          "code": "CAN"
+        },
+        "score": [
+          1,
+          2
+        ],
+        "winner": {
+          "id": "canada",
+          "name": "Canada",
+          "code": "CAN"
+        },
+        "loser": {
+          "id": "southafrica",
+          "name": "South Africa",
+          "code": "RSA"
+        }
+      },
+      {
+        "t1": {
+          "id": "netherlands",
+          "name": "Netherlands",
+          "code": "NED"
+        },
+        "t2": {
+          "id": "morocco",
+          "name": "Morocco",
+          "code": "MAR"
+        },
+        "score": [
+          1,
+          0
+        ],
+        "winner": {
+          "id": "netherlands",
+          "name": "Netherlands",
+          "code": "NED"
+        },
+        "loser": {
+          "id": "morocco",
+          "name": "Morocco",
+          "code": "MAR"
+        }
+      },
+      {
+        "t1": {
+          "id": "ivorycoast",
+          "name": "Ivory Coast",
+          "code": "CIV"
+        },
+        "t2": {
+          "id": "norway",
+          "name": "Norway",
+          "code": "NOR"
+        },
+        "score": [
+          1,
+          2
+        ],
+        "winner": {
+          "id": "norway",
+          "name": "Norway",
+          "code": "NOR"
+        },
+        "loser": {
+          "id": "ivorycoast",
+          "name": "Ivory Coast",
+          "code": "CIV"
+        }
+      },
+      {
+        "t1": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "t2": {
+          "id": "japan",
+          "name": "Japan",
+          "code": "JPN"
+        },
+        "score": [
+          1,
+          1
+        ],
+        "winner": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "loser": {
+          "id": "japan",
+          "name": "Japan",
+          "code": "JPN"
+        }
+      },
+      {
+        "t1": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "t2": {
+          "id": "drcongo",
+          "name": "DR Congo",
+          "code": "COD"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "loser": {
+          "id": "drcongo",
+          "name": "DR Congo",
+          "code": "COD"
+        }
+      },
+      {
+        "t1": {
+          "id": "mexico",
+          "name": "Mexico",
+          "code": "MEX"
+        },
+        "t2": {
+          "id": "ecuador",
+          "name": "Ecuador",
+          "code": "ECU"
+        },
+        "score": [
+          1,
+          2
+        ],
+        "winner": {
+          "id": "ecuador",
+          "name": "Ecuador",
+          "code": "ECU"
+        },
+        "loser": {
+          "id": "mexico",
+          "name": "Mexico",
+          "code": "MEX"
+        }
+      },
+      {
+        "t1": {
+          "id": "switzerland",
+          "name": "Switzerland",
+          "code": "SUI"
+        },
+        "t2": {
+          "id": "algeria",
+          "name": "Algeria",
+          "code": "ALG"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "switzerland",
+          "name": "Switzerland",
+          "code": "SUI"
+        },
+        "loser": {
+          "id": "algeria",
+          "name": "Algeria",
+          "code": "ALG"
+        }
+      },
+      {
+        "t1": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        },
+        "t2": {
+          "id": "ghana",
+          "name": "Ghana",
+          "code": "GHA"
+        },
+        "score": [
+          2,
+          0
+        ],
+        "winner": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        },
+        "loser": {
+          "id": "ghana",
+          "name": "Ghana",
+          "code": "GHA"
+        }
+      },
+      {
+        "t1": {
+          "id": "australia",
+          "name": "Australia",
+          "code": "AUS"
+        },
+        "t2": {
+          "id": "egypt",
+          "name": "Egypt",
+          "code": "EGY"
+        },
+        "score": [
+          0,
+          2
+        ],
+        "winner": {
+          "id": "egypt",
+          "name": "Egypt",
+          "code": "EGY"
+        },
+        "loser": {
+          "id": "australia",
+          "name": "Australia",
+          "code": "AUS"
+        }
+      },
+      {
+        "t1": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        },
+        "t2": {
+          "id": "capeverde",
+          "name": "Cape Verde",
+          "code": "CPV"
+        },
+        "score": [
+          4,
+          0
+        ],
+        "winner": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        },
+        "loser": {
+          "id": "capeverde",
+          "name": "Cape Verde",
+          "code": "CPV"
+        }
+      }
+    ],
+    "roundOf16": [
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "score": [
+          1,
+          2
+        ],
+        "winner": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "loser": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        }
+      },
+      {
+        "t1": {
+          "id": "senegal",
+          "name": "Senegal",
+          "code": "SEN"
+        },
+        "t2": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        },
+        "score": [
+          0,
+          1
+        ],
+        "winner": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        },
+        "loser": {
+          "id": "senegal",
+          "name": "Senegal",
+          "code": "SEN"
+        }
+      },
+      {
+        "t1": {
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
+        },
+        "t2": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "score": [
+          1,
+          2
+        ],
+        "winner": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "loser": {
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
+        }
+      },
+      {
+        "t1": {
+          "id": "canada",
+          "name": "Canada",
+          "code": "CAN"
+        },
+        "t2": {
+          "id": "netherlands",
+          "name": "Netherlands",
+          "code": "NED"
+        },
+        "score": [
+          0,
+          2
+        ],
+        "winner": {
+          "id": "netherlands",
+          "name": "Netherlands",
+          "code": "NED"
+        },
+        "loser": {
+          "id": "canada",
+          "name": "Canada",
+          "code": "CAN"
+        }
+      },
+      {
+        "t1": {
+          "id": "norway",
+          "name": "Norway",
+          "code": "NOR"
+        },
+        "t2": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "score": [
+          0,
+          1
+        ],
+        "winner": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "loser": {
+          "id": "norway",
+          "name": "Norway",
+          "code": "NOR"
+        }
+      },
+      {
+        "t1": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "t2": {
+          "id": "ecuador",
+          "name": "Ecuador",
+          "code": "ECU"
+        },
+        "score": [
+          1,
+          0
+        ],
+        "winner": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "loser": {
+          "id": "ecuador",
+          "name": "Ecuador",
+          "code": "ECU"
+        }
+      },
+      {
+        "t1": {
+          "id": "switzerland",
+          "name": "Switzerland",
+          "code": "SUI"
+        },
+        "t2": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        },
+        "score": [
+          1,
+          1
+        ],
+        "winner": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        },
+        "loser": {
+          "id": "switzerland",
+          "name": "Switzerland",
+          "code": "SUI"
+        }
+      },
+      {
+        "t1": {
+          "id": "egypt",
+          "name": "Egypt",
+          "code": "EGY"
+        },
+        "t2": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        },
+        "score": [
+          0,
+          2
+        ],
+        "winner": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        },
+        "loser": {
+          "id": "egypt",
+          "name": "Egypt",
+          "code": "EGY"
+        }
+      }
+    ],
+    "quarterFinals": [
+      {
+        "t1": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "t2": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        },
+        "score": [
+          1,
+          0
+        ],
+        "winner": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "loser": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        }
+      },
+      {
+        "t1": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "t2": {
+          "id": "netherlands",
+          "name": "Netherlands",
+          "code": "NED"
+        },
+        "score": [
+          1,
+          1
+        ],
+        "winner": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "loser": {
+          "id": "netherlands",
+          "name": "Netherlands",
+          "code": "NED"
+        }
+      },
+      {
+        "t1": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "t2": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "loser": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        }
+      },
+      {
+        "t1": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        },
+        "t2": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        },
+        "score": [
+          1,
+          3
+        ],
+        "winner": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        },
+        "loser": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        }
+      }
+    ],
+    "semiFinals": [
+      {
+        "t1": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "t2": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "loser": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        }
+      },
+      {
+        "t1": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "t2": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        },
+        "score": [
+          2,
+          1
+        ],
+        "winner": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "loser": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        }
+      }
+    ],
+    "final": {
+      "t1": {
+        "id": "croatia",
+        "name": "Croatia",
+        "code": "CRO"
+      },
+      "t2": {
+        "id": "brazil",
+        "name": "Brazil",
+        "code": "BRA"
+      },
+      "score": [
+        2,
+        3
+      ],
+      "winner": {
+        "id": "brazil",
+        "name": "Brazil",
+        "code": "BRA"
+      }
+    },
+    "thirdPlace": {
+      "t1": {
+        "id": "france",
+        "name": "France",
+        "code": "FRA"
+      },
+      "t2": {
+        "id": "argentina",
+        "name": "Argentina",
+        "code": "ARG"
+      },
+      "score": [
+        1,
+        2
+      ],
+      "winner": {
+        "id": "argentina",
+        "name": "Argentina",
+        "code": "ARG"
+      }
+    },
+    "winner": {
+      "id": "brazil",
+      "name": "Brazil",
+      "code": "BRA"
+    }
+  }
+}

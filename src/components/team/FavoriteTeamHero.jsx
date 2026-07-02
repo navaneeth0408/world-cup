@@ -3,9 +3,103 @@ import Card from '../ui/Card';
 import Badge from '../ui/Badge';
 import Flag from '../ui/Flag';
 import { Calendar, MapPin, Clock, Shield } from 'lucide-react';
+import { useTournament } from '../../hooks/useTournament';
 
 const FavoriteTeamHero = ({ team, nextMatch, opponent, onChangeTeam }) => {
+    const { matches } = useTournament();
     const [timeLeft, setTimeLeft] = useState(null);
+
+    const getTeamStatusDetails = () => {
+        if (!matches || matches.length === 0) {
+            return { status: 'Active (Group Stage)', qualification: 'Top 2 or Best 3rd' };
+        }
+        
+        const teamMatches = matches.filter(m => m.homeTeam === team.id || m.awayTeam === team.id);
+        if (teamMatches.length === 0) {
+            return { status: 'Inactive', qualification: 'Did not qualify' };
+        }
+
+        const upcomingMatch = teamMatches.find(m => m.status === 'upcoming');
+        if (upcomingMatch) {
+            let roundName = 'Group Stage';
+            if (upcomingMatch.group) {
+                roundName = 'Group Stage';
+            } else {
+                const matchId = upcomingMatch.match_id || upcomingMatch.matchId;
+                if (matchId >= 73 && matchId <= 88) {
+                    roundName = 'Round of 32';
+                } else if (matchId >= 89 && matchId <= 96) {
+                    roundName = 'Round of 16';
+                } else if (matchId >= 97 && matchId <= 100) {
+                    roundName = 'Quarter-finals';
+                } else if (matchId >= 101 && matchId <= 102) {
+                    roundName = 'Semi-finals';
+                } else if (matchId === 103) {
+                    roundName = 'Third Place Playoff';
+                } else if (matchId === 104) {
+                    roundName = 'Finals';
+                }
+            }
+            
+            let qualText = 'Group Stage';
+            if (roundName === 'Group Stage') {
+                qualText = 'Top 2 or Best 3rd';
+            } else if (roundName === 'Round of 32') {
+                qualText = 'Qualified for R32';
+            } else if (roundName === 'Round of 16') {
+                qualText = 'Qualified for R16';
+            } else if (roundName === 'Quarter-finals') {
+                qualText = 'Qualified for QF';
+            } else if (roundName === 'Semi-finals') {
+                qualText = 'Qualified for SF';
+            } else if (roundName === 'Finals' || roundName === 'Third Place Playoff') {
+                qualText = 'Qualified for Finals';
+            }
+
+            return { status: `Active (${roundName})`, qualification: qualText };
+        }
+
+        const sortedMatches = [...teamMatches].sort((a, b) => b.match_id - a.match_id);
+        const latestMatch = sortedMatches[0];
+
+        if (latestMatch.match_id <= 72) {
+            return { status: 'Eliminated', qualification: 'Group Stage exit' };
+        }
+
+        const isHome = latestMatch.homeTeam === team.id;
+        const homeScore = latestMatch.homeScore ?? 0;
+        const awayScore = latestMatch.awayScore ?? 0;
+        let wonLatest = false;
+        if (latestMatch.winner) {
+            wonLatest = latestMatch.winner === team.id;
+        } else {
+            wonLatest = isHome ? homeScore > awayScore : awayScore > homeScore;
+        }
+
+        if (latestMatch.match_id === 104 && wonLatest) {
+            return { status: 'Champion 🏆', qualification: 'Tournament Winner' };
+        }
+
+        let exitRound = 'Knockout Stage';
+        const matchId = latestMatch.match_id;
+        if (matchId >= 73 && matchId <= 88) {
+            exitRound = 'Round of 32';
+        } else if (matchId >= 89 && matchId <= 96) {
+            exitRound = 'Round of 16';
+        } else if (matchId >= 97 && matchId <= 100) {
+            exitRound = 'Quarter-finals';
+        } else if (matchId >= 101 && matchId <= 102) {
+            exitRound = 'Semi-finals';
+        } else if (matchId === 103) {
+            exitRound = 'Third Place Playoff';
+        } else if (matchId === 104) {
+            exitRound = 'Finals';
+        }
+
+        return { status: `Eliminated (${exitRound})`, qualification: `Exited in ${exitRound}` };
+    };
+
+    const statusDetails = getTeamStatusDetails();
 
     useEffect(() => {
         if (!nextMatch) return;
@@ -68,15 +162,15 @@ const FavoriteTeamHero = ({ team, nextMatch, opponent, onChangeTeam }) => {
                     <div className="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-slate-800/60 text-left">
                         <div>
                             <span className="text-[10px] text-slate-500 uppercase font-black tracking-widest block">World Cup Status</span>
-                            <span className="text-xs font-bold text-green-400 flex items-center gap-1 mt-0.5">
+                            <span className={`text-xs font-bold flex items-center gap-1 mt-0.5 ${statusDetails.status.startsWith('Active') ? 'text-green-400' : statusDetails.status.startsWith('Eliminated') ? 'text-red-400' : 'text-yellow-400'}`}>
                                 <Shield className="w-3.5 h-3.5" />
-                                Active (Group Stage)
+                                {statusDetails.status}
                             </span>
                         </div>
                         <div>
                             <span className="text-[10px] text-slate-500 uppercase font-black tracking-widest block">Qualification</span>
                             <span className="text-xs font-bold text-white mt-0.5 block">
-                                Top 2 or Best 3rd
+                                {statusDetails.qualification}
                             </span>
                         </div>
                     </div>

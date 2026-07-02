@@ -11,6 +11,7 @@ import Modal from '../ui/Modal';
 import Button from '../ui/Button';
 import Card from '../ui/Card';
 import Flag from '../ui/Flag';
+import Badge from '../ui/Badge';
 import { Star, Settings, ChevronRight, Award, Trophy, Users, HelpCircle, ExternalLink, Calendar, BarChart3, Calculator } from 'lucide-react';
 import favTeamStats from '../../data/fav team stats.json';
 
@@ -45,6 +46,209 @@ const FavoriteTeamHub = ({ teams, matches }) => {
         if (!favoriteTeamId) return null;
         return teams.find(t => t.id === favoriteTeamId);
     }, [favoriteTeamId, teams]);
+
+    // Compute group standings locally to check group stage elimination
+    const localGroupStandings = useMemo(() => {
+        if (!teams || !matches) return {};
+        const standings = {};
+
+        // Initialize standings for each team
+        teams.forEach(team => {
+            if (!standings[team.group]) {
+                standings[team.group] = [];
+            }
+
+            standings[team.group].push({
+                ...team,
+                played: 0,
+                won: 0,
+                drawn: 0,
+                lost: 0,
+                gf: 0,
+                ga: 0,
+                gd: 0,
+                pts: 0
+            });
+        });
+
+        // Update standings from completed group matches (match_id <= 72)
+        matches.filter(m => m.status === 'completed' && m.match_id <= 72).forEach(match => {
+            const group = standings[match.group];
+            if (!group) return;
+
+            const homeTeam = group.find(t => t.id === match.homeTeam);
+            const awayTeam = group.find(t => t.id === match.awayTeam);
+
+            if (!homeTeam || !awayTeam) return;
+
+            homeTeam.played += 1;
+            awayTeam.played += 1;
+            homeTeam.gf += match.homeScore;
+            homeTeam.ga += match.awayScore;
+            awayTeam.gf += match.awayScore;
+            awayTeam.ga += match.homeScore;
+
+            if (match.homeScore > match.awayScore) {
+                homeTeam.won += 1;
+                homeTeam.pts += 3;
+                awayTeam.lost += 1;
+            } else if (match.homeScore < match.awayScore) {
+                awayTeam.won += 1;
+                awayTeam.pts += 3;
+                homeTeam.lost += 1;
+            } else {
+                homeTeam.drawn += 1;
+                awayTeam.drawn += 1;
+                homeTeam.pts += 1;
+                awayTeam.pts += 1;
+            }
+
+            homeTeam.gd = homeTeam.gf - homeTeam.ga;
+            awayTeam.gd = awayTeam.gf - awayTeam.ga;
+        });
+
+        // Sort standings
+        Object.keys(standings).forEach(groupKey => {
+            standings[groupKey].sort((a, b) => {
+                if (b.pts !== a.pts) return b.pts - a.pts;
+                if (b.gd !== a.gd) return b.gd - a.gd;
+                return b.gf - a.gf;
+            });
+        });
+
+        return standings;
+    }, [teams, matches]);
+
+    // Check if favorite team is eliminated / knocked out
+    const eliminationInfo = useMemo(() => {
+        if (!favoriteTeamId || !matches || !teams || !favoriteTeam) return { isEliminated: false };
+
+        // 1. Get all matches involving our favorite team
+        const teamMatches = matches.filter(m => m.homeTeam === favoriteTeamId || m.awayTeam === favoriteTeamId);
+
+        // 2. Check knockout matches first (descending by match_id to find the latest knockout match first)
+        const knockoutMatches = teamMatches
+            .filter(m => m.match_id > 72)
+            .sort((a, b) => b.match_id - a.match_id);
+
+        for (const match of knockoutMatches) {
+            if (match.status === 'completed') {
+                const isHome = match.homeTeam === favoriteTeamId;
+                const isAway = match.awayTeam === favoriteTeamId;
+
+                // Determine winner
+                let won = false;
+                const winnerId = (match.winnerId || match.winner || '');
+                const winnerStr = typeof winnerId === 'object' ? (winnerId.id || '') : winnerId;
+
+                if (winnerStr) {
+                    won = winnerStr.toLowerCase() === favoriteTeamId.toLowerCase();
+                } else {
+                    // Fallback to score comparison
+                    if (match.homeScore !== null && match.awayScore !== null) {
+                        if (match.homeScore > match.awayScore) {
+                            won = isHome;
+                        } else if (match.awayScore > match.homeScore) {
+                            won = isAway;
+                        }
+                    }
+                }
+
+                const isSemi = match.stage === 'Semi-finals' || match.group === 'SF';
+                if (!won && !isSemi) {
+                    const isFinal = match.stage === 'Final' || match.stage === 'Grand Final' || match.group === 'F';
+                    if (isFinal) {
+                        return {
+                            isEliminated: true,
+                            stage: 'Runner-up',
+                            message: `🥈 What an incredible campaign! ${favoriteTeam.name} fought bravely to the final whistle and finishes as the World Cup 2026 Runner-up. The entire nation stands proud of this historic achievement!`,
+                            type: 'runner-up'
+                        };
+                    }
+
+                    const isThirdPlace = match.stage === 'Third Place' || match.stage === 'Third Place Play-off' || match.group === '3RD';
+                    if (isThirdPlace) {
+                        return {
+                            isEliminated: true,
+                            stage: '4th Place',
+                            message: `🥉 A phenomenal tournament! ${favoriteTeam.name} finished in 4th place at the World Cup 2026. Reaching the final four of the world's biggest stage is a monumental feat!`,
+                            type: 'fourth'
+                        };
+                    }
+
+                    return {
+                        isEliminated: true,
+                        stage: match.stage || 'Knockout Stage',
+                        message: `💔 Heartbreak! ${favoriteTeam.name}'s World Cup 2026 journey has come to an end after a hard-fought defeat in the ${match.stage || 'knockout rounds'}. Thank you for the memories and the passion!`,
+                        type: 'knockout'
+                    };
+                }
+
+                const isFinal = match.stage === 'Final' || match.stage === 'Grand Final' || match.group === 'F';
+                if (won && isFinal) {
+                    return {
+                        isEliminated: true, // completed tournament but as champion
+                        stage: 'Champion',
+                        message: `🏆 CHAMPIONS OF THE WORLD! ${favoriteTeam.name} has won the FIFA World Cup 2026! History has been written in gold! Congratulations to the players and fans! 🎉🥳`,
+                        type: 'champion'
+                    };
+                }
+
+                const isThirdPlace = match.stage === 'Third Place' || match.stage === 'Third Place Play-off' || match.group === '3RD';
+                if (won && isThirdPlace) {
+                    return {
+                        isEliminated: true,
+                        stage: '3rd Place',
+                        message: `🥉 Bronze Medalists! ${favoriteTeam.name} clinches 3rd place at the World Cup 2026 with a spectacular victory. A proud moment for the entire country!`,
+                        type: 'third'
+                    };
+                }
+            }
+        }
+
+        // 3. Check group stage status if no knockout losses are found
+        if (favoriteTeam && localGroupStandings[favoriteTeam.group]) {
+            const groupStandingsForTeam = localGroupStandings[favoriteTeam.group];
+            const groupMatchesForTeam = matches.filter(m => m.group === favoriteTeam.group && m.match_id <= 72);
+            const completedGroupMatches = groupMatchesForTeam.filter(m => m.status === 'completed');
+
+            if (completedGroupMatches.length === 6) {
+                // Group is completely finished
+                const teamIndex = groupStandingsForTeam.findIndex(t => t.id === favoriteTeamId);
+                const position = teamIndex + 1;
+
+                if (position === 4) {
+                    return {
+                        isEliminated: true,
+                        stage: 'Group Stage',
+                        message: `💔 Eliminated in the Group Stage. ${favoriteTeam.name} finished 4th in Group ${favoriteTeam.group}. We will keep our flags high, learn from this stage, and return stronger for 2030!`,
+                        type: 'group'
+                    };
+                }
+
+                if (position === 3) {
+                    // Check if the entire group stage of the tournament is finished (all 72 matches completed)
+                    const allGroupMatches = matches.filter(m => m.match_id <= 72);
+                    const completedAllGroupMatches = allGroupMatches.filter(m => m.status === 'completed');
+
+                    if (completedAllGroupMatches.length === 72) {
+                        // Check if this team is in any Round of 32 matches
+                        const hasRoundOf32Match = matches.some(m => m.match_id > 72 && (m.homeTeam === favoriteTeamId || m.awayTeam === favoriteTeamId));
+                        if (!hasRoundOf32Match) {
+                            return {
+                                isEliminated: true,
+                                stage: 'Group Stage',
+                                message: `💔 Eliminated in the Group Stage. ${favoriteTeam.name} finished 3rd in Group ${favoriteTeam.group} but did not qualify as one of the best 8 third-placed teams. We hold our heads high!`,
+                                type: 'group'
+                            };
+                        }
+                    }
+                }
+            }
+        }
+
+        return { isEliminated: false };
+    }, [favoriteTeamId, matches, teams, favoriteTeam, localGroupStandings]);
 
     // Handle selecting a team
     const handleSelectTeam = (teamId) => {
@@ -167,6 +371,36 @@ const FavoriteTeamHub = ({ teams, matches }) => {
 
             {/* Grid Dashboard Layout */}
             <div className="flex flex-col gap-6">
+                {/* Consoling / Celebration banner when knocked out or champion */}
+                {eliminationInfo.isEliminated && (
+                    <div className="w-full bg-gradient-to-r from-red-950/40 via-red-900/20 to-slate-900/40 border border-red-500/25 rounded-3xl p-5 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl shadow-red-950/10">
+                        <div className="flex items-center gap-4 text-center md:text-left flex-col md:flex-row">
+                            <div className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0">
+                                <span className="text-2xl">
+                                    {eliminationInfo.type === 'runner-up' ? '🥈' : 
+                                     eliminationInfo.type === 'third' ? '🥉' : 
+                                     eliminationInfo.type === 'champion' ? '🏆' : '💔'}
+                                </span>
+                            </div>
+                            <div>
+                                <h3 className="font-black text-white text-base md:text-lg uppercase tracking-tight italic">
+                                    {eliminationInfo.type === 'champion' ? 'World Cup Champions!' : 
+                                     eliminationInfo.type === 'runner-up' ? 'World Cup Runners-Up!' : 
+                                     'Tournament Journey Ended'}
+                                </h3>
+                                <p className="text-xs text-slate-350 font-semibold mt-1 leading-relaxed max-w-2xl">
+                                    {eliminationInfo.message}
+                                </p>
+                            </div>
+                        </div>
+                        <div className="shrink-0">
+                            <Badge variant={eliminationInfo.type === 'champion' ? 'green' : 'red'} className="text-[10px] font-black uppercase tracking-wider py-1 px-3">
+                                {eliminationInfo.stage}
+                            </Badge>
+                        </div>
+                    </div>
+                )}
+
                 {/* Hero Widget: spans full width */}
                 <FavoriteTeamHero 
                     team={favoriteTeam} 

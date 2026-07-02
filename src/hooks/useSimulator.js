@@ -196,6 +196,7 @@ export const useSimulator = () => {
     const formatTeam = (t) => t ? { id: t.id, name: t.name, code: t.code } : null;
     const simData = {
       realismCategory: 'realistic',
+      simulationMode: 'entire',
       groupMatches: simulatedMatches.map(m => ({
         id: m.id,
         homeTeam: m.homeTeam,

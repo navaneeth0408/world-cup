@@ -23,7 +23,7 @@ const MatchCard = ({ match, teams, timeZone = 'UTC' }) => {
             className="flex flex-col justify-between h-full !p-4"
         >
             <div className="flex justify-between items-center text-xs text-gray-400 font-medium mb-3">
-                <span>Group {match.group}</span>
+                <span>{match.stage === 'Group Stage' ? `Group ${match.group}` : match.stage}</span>
                 <Badge variant={statusVariants[match.status]}>
                     {match.status.toUpperCase()}
                 </Badge>
@@ -41,10 +41,22 @@ const MatchCard = ({ match, teams, timeZone = 'UTC' }) => {
                     {match.status === 'upcoming' ? (
                         <span className="text-xl font-black text-gray-700">VS</span>
                     ) : (
-                        <div className="flex items-center gap-2 text-2xl font-black text-white">
-                            <span>{match.homeScore}</span>
-                            <span className="text-gray-600">-</span>
-                            <span>{match.awayScore}</span>
+                        <div className="flex flex-col items-center">
+                            <div className="flex items-center gap-2 text-2xl font-black text-white">
+                                <span>{match.homeScore}</span>
+                                <span className="text-gray-600">-</span>
+                                <span>{match.awayScore}</span>
+                            </div>
+                            {((match.match_id > 72 || match.stage !== 'Group Stage') && match.homeScore === match.awayScore && (match.winner || match.winnerId)) && (() => {
+                                const winnerId = match.winner || match.winnerId;
+                                const winnerTeam = teams?.find(t => t.id === winnerId);
+                                if (!winnerTeam) return null;
+                                return (
+                                    <span className="text-[7.5px] font-extrabold text-amber-400 uppercase tracking-wider text-center mt-0.5 leading-none max-w-[80px] break-words">
+                                        {winnerTeam.name} on pens
+                                    </span>
+                                );
+                            })()}
                         </div>
                     )}
                     <span className="text-[9px] text-slate-400 uppercase tracking-widest text-center mt-1 leading-normal">

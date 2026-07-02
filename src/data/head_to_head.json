@@ -1,0 +1,3354 @@
+{
+  "Mexico_vs_South_Africa": {
+    "team1": "Mexico",
+    "team2": "South Africa",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Czechia_vs_South_Korea": {
+    "team1": "Czechia",
+    "team2": "South Korea",
+    "team1Wins": 13,
+    "team2Wins": 48,
+    "draws": 39,
+    "total": 100
+  },
+  "Bosnia_and_Herzegovina_vs_Canada": {
+    "team1": "Bosnia and Herzegovina",
+    "team2": "Canada",
+    "team1Wins": 2,
+    "team2Wins": 71,
+    "draws": 27,
+    "total": 100
+  },
+  "Paraguay_vs_United_States": {
+    "team1": "Paraguay",
+    "team2": "United States",
+    "team1Wins": 0,
+    "team2Wins": 100,
+    "draws": 0,
+    "total": 100
+  },
+  "Qatar_vs_Switzerland": {
+    "team1": "Qatar",
+    "team2": "Switzerland",
+    "team1Wins": 0,
+    "team2Wins": 93,
+    "draws": 7,
+    "total": 100
+  },
+  "Brazil_vs_Morocco": {
+    "team1": "Brazil",
+    "team2": "Morocco",
+    "team1Wins": 26,
+    "team2Wins": 28,
+    "draws": 51,
+    "total": 105
+  },
+  "Haiti_vs_Scotland": {
+    "team1": "Haiti",
+    "team2": "Scotland",
+    "team1Wins": 14,
+    "team2Wins": 35,
+    "draws": 51,
+    "total": 100
+  },
+  "Australia_vs_T\u00fcrkiye": {
+    "team1": "Australia",
+    "team2": "T\u00fcrkiye",
+    "team1Wins": 23,
+    "team2Wins": 21,
+    "draws": 56,
+    "total": 100
+  },
+  "Cura\u00e7ao_vs_Germany": {
+    "team1": "Cura\u00e7ao",
+    "team2": "Germany",
+    "team1Wins": 0,
+    "team2Wins": 100,
+    "draws": 0,
+    "total": 100
+  },
+  "Japan_vs_Netherlands": {
+    "team1": "Japan",
+    "team2": "Netherlands",
+    "team1Wins": 26,
+    "team2Wins": 39,
+    "draws": 36,
+    "total": 101
+  },
+  "Ecuador_vs_Ivory_Coast": {
+    "team1": "Ecuador",
+    "team2": "Ivory Coast",
+    "team1Wins": 25,
+    "team2Wins": 27,
+    "draws": 48,
+    "total": 100
+  },
+  "Sweden_vs_Tunisia": {
+    "team1": "Sweden",
+    "team2": "Tunisia",
+    "team1Wins": 48,
+    "team2Wins": 10,
+    "draws": 42,
+    "total": 100
+  },
+  "Cape_Verde_vs_Spain": {
+    "team1": "Cape Verde",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 98,
+    "draws": 2,
+    "total": 100
+  },
+  "Belgium_vs_Egypt": {
+    "team1": "Belgium",
+    "team2": "Egypt",
+    "team1Wins": 71,
+    "team2Wins": 5,
+    "draws": 24,
+    "total": 100
+  },
+  "Saudi_Arabia_vs_Uruguay": {
+    "team1": "Saudi Arabia",
+    "team2": "Uruguay",
+    "team1Wins": 0,
+    "team2Wins": 98,
+    "draws": 2,
+    "total": 100
+  },
+  "Iran_vs_New_Zealand": {
+    "team1": "Iran",
+    "team2": "New Zealand",
+    "team1Wins": 77,
+    "team2Wins": 0,
+    "draws": 23,
+    "total": 100
+  },
+  "France_vs_Senegal": {
+    "team1": "France",
+    "team2": "Senegal",
+    "team1Wins": 62,
+    "team2Wins": 3,
+    "draws": 38,
+    "total": 103
+  },
+  "Iraq_vs_Norway": {
+    "team1": "Iraq",
+    "team2": "Norway",
+    "team1Wins": 4,
+    "team2Wins": 67,
+    "draws": 29,
+    "total": 100
+  },
+  "Algeria_vs_Argentina": {
+    "team1": "Algeria",
+    "team2": "Argentina",
+    "team1Wins": 0,
+    "team2Wins": 100,
+    "draws": 0,
+    "total": 100
+  },
+  "Austria_vs_Jordan": {
+    "team1": "Austria",
+    "team2": "Jordan",
+    "team1Wins": 98,
+    "team2Wins": 0,
+    "draws": 2,
+    "total": 100
+  },
+  "DR_Congo_vs_Portugal": {
+    "team1": "DR Congo",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 98,
+    "draws": 2,
+    "total": 100
+  },
+  "Croatia_vs_England": {
+    "team1": "Croatia",
+    "team2": "England",
+    "team1Wins": 11,
+    "team2Wins": 48,
+    "draws": 42,
+    "total": 101
+  },
+  "Ghana_vs_Panama": {
+    "team1": "Ghana",
+    "team2": "Panama",
+    "team1Wins": 28,
+    "team2Wins": 20,
+    "draws": 52,
+    "total": 100
+  },
+  "Colombia_vs_Uzbekistan": {
+    "team1": "Colombia",
+    "team2": "Uzbekistan",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Czechia_vs_South_Africa": {
+    "team1": "Czechia",
+    "team2": "South Africa",
+    "team1Wins": 24,
+    "team2Wins": 15,
+    "draws": 61,
+    "total": 100
+  },
+  "Bosnia_and_Herzegovina_vs_Switzerland": {
+    "team1": "Bosnia and Herzegovina",
+    "team2": "Switzerland",
+    "team1Wins": 0,
+    "team2Wins": 100,
+    "draws": 0,
+    "total": 100
+  },
+  "Canada_vs_Qatar": {
+    "team1": "Canada",
+    "team2": "Qatar",
+    "team1Wins": 39,
+    "team2Wins": 16,
+    "draws": 45,
+    "total": 100
+  },
+  "Mexico_vs_South_Korea": {
+    "team1": "Mexico",
+    "team2": "South Korea",
+    "team1Wins": 45,
+    "team2Wins": 4,
+    "draws": 51,
+    "total": 100
+  },
+  "Australia_vs_United_States": {
+    "team1": "Australia",
+    "team2": "United States",
+    "team1Wins": 14,
+    "team2Wins": 52,
+    "draws": 34,
+    "total": 100
+  },
+  "Morocco_vs_Scotland": {
+    "team1": "Morocco",
+    "team2": "Scotland",
+    "team1Wins": 99,
+    "team2Wins": 0,
+    "draws": 1,
+    "total": 100
+  },
+  "Brazil_vs_Haiti": {
+    "team1": "Brazil",
+    "team2": "Haiti",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Paraguay_vs_T\u00fcrkiye": {
+    "team1": "Paraguay",
+    "team2": "T\u00fcrkiye",
+    "team1Wins": 10,
+    "team2Wins": 58,
+    "draws": 32,
+    "total": 100
+  },
+  "Netherlands_vs_Sweden": {
+    "team1": "Netherlands",
+    "team2": "Sweden",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Germany_vs_Ivory_Coast": {
+    "team1": "Germany",
+    "team2": "Ivory Coast",
+    "team1Wins": 76,
+    "team2Wins": 3,
+    "draws": 22,
+    "total": 101
+  },
+  "Cura\u00e7ao_vs_Ecuador": {
+    "team1": "Cura\u00e7ao",
+    "team2": "Ecuador",
+    "team1Wins": 0,
+    "team2Wins": 98,
+    "draws": 2,
+    "total": 100
+  },
+  "Japan_vs_Tunisia": {
+    "team1": "Japan",
+    "team2": "Tunisia",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Saudi_Arabia_vs_Spain": {
+    "team1": "Saudi Arabia",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 100,
+    "draws": 0,
+    "total": 100
+  },
+  "Belgium_vs_Iran": {
+    "team1": "Belgium",
+    "team2": "Iran",
+    "team1Wins": 61,
+    "team2Wins": 6,
+    "draws": 33,
+    "total": 100
+  },
+  "Cape_Verde_vs_Uruguay": {
+    "team1": "Cape Verde",
+    "team2": "Uruguay",
+    "team1Wins": 0,
+    "team2Wins": 98,
+    "draws": 2,
+    "total": 100
+  },
+  "Egypt_vs_New_Zealand": {
+    "team1": "Egypt",
+    "team2": "New Zealand",
+    "team1Wins": 71,
+    "team2Wins": 3,
+    "draws": 26,
+    "total": 100
+  },
+  "Argentina_vs_Austria": {
+    "team1": "Argentina",
+    "team2": "Austria",
+    "team1Wins": 102,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 102
+  },
+  "France_vs_Iraq": {
+    "team1": "France",
+    "team2": "Iraq",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Norway_vs_Senegal": {
+    "team1": "Norway",
+    "team2": "Senegal",
+    "team1Wins": 11,
+    "team2Wins": 46,
+    "draws": 43,
+    "total": 100
+  },
+  "Algeria_vs_Jordan": {
+    "team1": "Algeria",
+    "team2": "Jordan",
+    "team1Wins": 63,
+    "team2Wins": 4,
+    "draws": 33,
+    "total": 100
+  },
+  "Portugal_vs_Uzbekistan": {
+    "team1": "Portugal",
+    "team2": "Uzbekistan",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "England_vs_Ghana": {
+    "team1": "England",
+    "team2": "Ghana",
+    "team1Wins": 98,
+    "team2Wins": 0,
+    "draws": 2,
+    "total": 100
+  },
+  "Croatia_vs_Panama": {
+    "team1": "Croatia",
+    "team2": "Panama",
+    "team1Wins": 96,
+    "team2Wins": 0,
+    "draws": 4,
+    "total": 100
+  },
+  "Colombia_vs_DR_Congo": {
+    "team1": "Colombia",
+    "team2": "DR Congo",
+    "team1Wins": 94,
+    "team2Wins": 1,
+    "draws": 5,
+    "total": 100
+  },
+  "Canada_vs_Switzerland": {
+    "team1": "Canada",
+    "team2": "Switzerland",
+    "team1Wins": 22,
+    "team2Wins": 35,
+    "draws": 43,
+    "total": 100
+  },
+  "Bosnia_and_Herzegovina_vs_Qatar": {
+    "team1": "Bosnia and Herzegovina",
+    "team2": "Qatar",
+    "team1Wins": 27,
+    "team2Wins": 23,
+    "draws": 50,
+    "total": 100
+  },
+  "Haiti_vs_Morocco": {
+    "team1": "Haiti",
+    "team2": "Morocco",
+    "team1Wins": 0,
+    "team2Wins": 100,
+    "draws": 0,
+    "total": 100
+  },
+  "Brazil_vs_Scotland": {
+    "team1": "Brazil",
+    "team2": "Scotland",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "South_Africa_vs_South_Korea": {
+    "team1": "South Africa",
+    "team2": "South Korea",
+    "team1Wins": 14,
+    "team2Wins": 53,
+    "draws": 33,
+    "total": 100
+  },
+  "Czechia_vs_Mexico": {
+    "team1": "Czechia",
+    "team2": "Mexico",
+    "team1Wins": 0,
+    "team2Wins": 100,
+    "draws": 0,
+    "total": 100
+  },
+  "Cura\u00e7ao_vs_Ivory_Coast": {
+    "team1": "Cura\u00e7ao",
+    "team2": "Ivory Coast",
+    "team1Wins": 0,
+    "team2Wins": 99,
+    "draws": 1,
+    "total": 100
+  },
+  "Ecuador_vs_Germany": {
+    "team1": "Ecuador",
+    "team2": "Germany",
+    "team1Wins": 5,
+    "team2Wins": 75,
+    "draws": 20,
+    "total": 100
+  },
+  "Netherlands_vs_Tunisia": {
+    "team1": "Netherlands",
+    "team2": "Tunisia",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Japan_vs_Sweden": {
+    "team1": "Japan",
+    "team2": "Sweden",
+    "team1Wins": 54,
+    "team2Wins": 4,
+    "draws": 42,
+    "total": 100
+  },
+  "T\u00fcrkiye_vs_United_States": {
+    "team1": "T\u00fcrkiye",
+    "team2": "United States",
+    "team1Wins": 19,
+    "team2Wins": 28,
+    "draws": 53,
+    "total": 100
+  },
+  "Australia_vs_Paraguay": {
+    "team1": "Australia",
+    "team2": "Paraguay",
+    "team1Wins": 34,
+    "team2Wins": 16,
+    "draws": 50,
+    "total": 100
+  },
+  "France_vs_Norway": {
+    "team1": "France",
+    "team2": "Norway",
+    "team1Wins": 99,
+    "team2Wins": 0,
+    "draws": 1,
+    "total": 100
+  },
+  "Iraq_vs_Senegal": {
+    "team1": "Iraq",
+    "team2": "Senegal",
+    "team1Wins": 0,
+    "team2Wins": 100,
+    "draws": 0,
+    "total": 100
+  },
+  "Cape_Verde_vs_Saudi_Arabia": {
+    "team1": "Cape Verde",
+    "team2": "Saudi Arabia",
+    "team1Wins": 24,
+    "team2Wins": 25,
+    "draws": 51,
+    "total": 100
+  },
+  "Spain_vs_Uruguay": {
+    "team1": "Spain",
+    "team2": "Uruguay",
+    "team1Wins": 56,
+    "team2Wins": 7,
+    "draws": 37,
+    "total": 100
+  },
+  "Belgium_vs_New_Zealand": {
+    "team1": "Belgium",
+    "team2": "New Zealand",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Egypt_vs_Iran": {
+    "team1": "Egypt",
+    "team2": "Iran",
+    "team1Wins": 24,
+    "team2Wins": 25,
+    "draws": 51,
+    "total": 100
+  },
+  "England_vs_Panama": {
+    "team1": "England",
+    "team2": "Panama",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Croatia_vs_Ghana": {
+    "team1": "Croatia",
+    "team2": "Ghana",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Colombia_vs_Portugal": {
+    "team1": "Colombia",
+    "team2": "Portugal",
+    "team1Wins": 23,
+    "team2Wins": 30,
+    "draws": 48,
+    "total": 101
+  },
+  "DR_Congo_vs_Uzbekistan": {
+    "team1": "DR Congo",
+    "team2": "Uzbekistan",
+    "team1Wins": 23,
+    "team2Wins": 21,
+    "draws": 56,
+    "total": 100
+  },
+  "Algeria_vs_Austria": {
+    "team1": "Algeria",
+    "team2": "Austria",
+    "team1Wins": 28,
+    "team2Wins": 28,
+    "draws": 44,
+    "total": 100
+  },
+  "Argentina_vs_Jordan": {
+    "team1": "Argentina",
+    "team2": "Jordan",
+    "team1Wins": 100,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 100
+  },
+  "Czechia_vs_Switzerland": {
+    "team1": "Czechia",
+    "team2": "Switzerland",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "Morocco_vs_Netherlands": {
+    "team1": "Morocco",
+    "team2": "Netherlands",
+    "team1Wins": 26,
+    "team2Wins": 30,
+    "draws": 0,
+    "total": 56
+  },
+  "Germany_vs_Scotland": {
+    "team1": "Germany",
+    "team2": "Scotland",
+    "team1Wins": 17,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 17
+  },
+  "France_vs_Paraguay": {
+    "team1": "France",
+    "team2": "Paraguay",
+    "team1Wins": 7,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 7
+  },
+  "Belgium_vs_South_Korea": {
+    "team1": "Belgium",
+    "team2": "South Korea",
+    "team1Wins": 15,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 17
+  },
+  "Bosnia_and_Herzegovina_vs_USA": {
+    "team1": "Bosnia and Herzegovina",
+    "team2": "USA",
+    "team1Wins": 0,
+    "team2Wins": 13,
+    "draws": 0,
+    "total": 13
+  },
+  "Algeria_vs_Spain": {
+    "team1": "Algeria",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 32,
+    "draws": 0,
+    "total": 32
+  },
+  "Colombia_vs_Croatia": {
+    "team1": "Colombia",
+    "team2": "Croatia",
+    "team1Wins": 30,
+    "team2Wins": 29,
+    "draws": 0,
+    "total": 59
+  },
+  "Brazil_vs_Japan": {
+    "team1": "Brazil",
+    "team2": "Japan",
+    "team1Wins": 39,
+    "team2Wins": 15,
+    "draws": 0,
+    "total": 54
+  },
+  "Ivory_Coast_vs_Senegal": {
+    "team1": "Ivory Coast",
+    "team2": "Senegal",
+    "team1Wins": 17,
+    "team2Wins": 29,
+    "draws": 0,
+    "total": 46
+  },
+  "Austria_vs_England": {
+    "team1": "Austria",
+    "team2": "England",
+    "team1Wins": 0,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 5
+  },
+  "Ecuador_vs_Mexico": {
+    "team1": "Ecuador",
+    "team2": "Mexico",
+    "team1Wins": 13,
+    "team2Wins": 24,
+    "draws": 0,
+    "total": 37
+  },
+  "Canada_vs_Egypt": {
+    "team1": "Canada",
+    "team2": "Egypt",
+    "team1Wins": 3,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 8
+  },
+  "Norway_vs_Portugal": {
+    "team1": "Norway",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 19,
+    "draws": 0,
+    "total": 19
+  },
+  "Iran_vs_Turkiye": {
+    "team1": "Iran",
+    "team2": "Turkiye",
+    "team1Wins": 7,
+    "team2Wins": 14,
+    "draws": 0,
+    "total": 21
+  },
+  "Argentina_vs_Uruguay": {
+    "team1": "Argentina",
+    "team2": "Uruguay",
+    "team1Wins": 89,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 89
+  },
+  "Netherlands_vs_Switzerland": {
+    "team1": "Netherlands",
+    "team2": "Switzerland",
+    "team1Wins": 4,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 8
+  },
+  "France_vs_Germany": {
+    "team1": "France",
+    "team2": "Germany",
+    "team1Wins": 31,
+    "team2Wins": 47,
+    "draws": 0,
+    "total": 78
+  },
+  "South_Korea_vs_USA": {
+    "team1": "South Korea",
+    "team2": "USA",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Croatia_vs_Spain": {
+    "team1": "Croatia",
+    "team2": "Spain",
+    "team1Wins": 9,
+    "team2Wins": 26,
+    "draws": 0,
+    "total": 35
+  },
+  "Brazil_vs_Ivory_Coast": {
+    "team1": "Brazil",
+    "team2": "Ivory Coast",
+    "team1Wins": 10,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 11
+  },
+  "England_vs_Mexico": {
+    "team1": "England",
+    "team2": "Mexico",
+    "team1Wins": 46,
+    "team2Wins": 12,
+    "draws": 0,
+    "total": 58
+  },
+  "Canada_vs_Portugal": {
+    "team1": "Canada",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 8,
+    "draws": 0,
+    "total": 8
+  },
+  "Argentina_vs_Turkiye": {
+    "team1": "Argentina",
+    "team2": "Turkiye",
+    "team1Wins": 25,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 25
+  },
+  "Germany_vs_Switzerland": {
+    "team1": "Germany",
+    "team2": "Switzerland",
+    "team1Wins": 2,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 3
+  },
+  "Spain_vs_USA": {
+    "team1": "Spain",
+    "team2": "USA",
+    "team1Wins": 13,
+    "team2Wins": 6,
+    "draws": 0,
+    "total": 19
+  },
+  "Brazil_vs_England": {
+    "team1": "Brazil",
+    "team2": "England",
+    "team1Wins": 13,
+    "team2Wins": 6,
+    "draws": 0,
+    "total": 19
+  },
+  "Argentina_vs_Portugal": {
+    "team1": "Argentina",
+    "team2": "Portugal",
+    "team1Wins": 33,
+    "team2Wins": 23,
+    "draws": 0,
+    "total": 56
+  },
+  "Germany_vs_USA": {
+    "team1": "Germany",
+    "team2": "USA",
+    "team1Wins": 10,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 13
+  },
+  "Brazil_vs_Portugal": {
+    "team1": "Brazil",
+    "team2": "Portugal",
+    "team1Wins": 4,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 5
+  },
+  "Brazil_vs_Germany": {
+    "team1": "Brazil",
+    "team2": "Germany",
+    "team1Wins": 3,
+    "team2Wins": 10,
+    "draws": 0,
+    "total": 13
+  },
+  "Portugal_vs_USA": {
+    "team1": "Portugal",
+    "team2": "USA",
+    "team1Wins": 3,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 4
+  },
+  "Canada_vs_South_Korea": {
+    "team1": "Canada",
+    "team2": "South Korea",
+    "team1Wins": 20,
+    "team2Wins": 23,
+    "draws": 0,
+    "total": 43
+  },
+  "Brazil_vs_Netherlands": {
+    "team1": "Brazil",
+    "team2": "Netherlands",
+    "team1Wins": 17,
+    "team2Wins": 32,
+    "draws": 0,
+    "total": 49
+  },
+  "France_vs_Sweden": {
+    "team1": "France",
+    "team2": "Sweden",
+    "team1Wins": 50,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 50
+  },
+  "Austria_vs_Belgium": {
+    "team1": "Austria",
+    "team2": "Belgium",
+    "team1Wins": 2,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 7
+  },
+  "Australia_vs_Qatar": {
+    "team1": "Australia",
+    "team2": "Qatar",
+    "team1Wins": 7,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 7
+  },
+  "Croatia_vs_Portugal": {
+    "team1": "Croatia",
+    "team2": "Portugal",
+    "team1Wins": 11,
+    "team2Wins": 20,
+    "draws": 0,
+    "total": 31
+  },
+  "Japan_vs_Morocco": {
+    "team1": "Japan",
+    "team2": "Morocco",
+    "team1Wins": 15,
+    "team2Wins": 29,
+    "draws": 0,
+    "total": 44
+  },
+  "Ecuador_vs_Senegal": {
+    "team1": "Ecuador",
+    "team2": "Senegal",
+    "team1Wins": 12,
+    "team2Wins": 21,
+    "draws": 0,
+    "total": 33
+  },
+  "DR_Congo_vs_England": {
+    "team1": "DR Congo",
+    "team2": "England",
+    "team1Wins": 0,
+    "team2Wins": 23,
+    "draws": 0,
+    "total": 23
+  },
+  "Ivory_Coast_vs_Mexico": {
+    "team1": "Ivory Coast",
+    "team2": "Mexico",
+    "team1Wins": 15,
+    "team2Wins": 12,
+    "draws": 0,
+    "total": 27
+  },
+  "Egypt_vs_Switzerland": {
+    "team1": "Egypt",
+    "team2": "Switzerland",
+    "team1Wins": 13,
+    "team2Wins": 13,
+    "draws": 0,
+    "total": 26
+  },
+  "Colombia_vs_Norway": {
+    "team1": "Colombia",
+    "team2": "Norway",
+    "team1Wins": 7,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 11
+  },
+  "Canada_vs_Netherlands": {
+    "team1": "Canada",
+    "team2": "Netherlands",
+    "team1Wins": 0,
+    "team2Wins": 15,
+    "draws": 0,
+    "total": 15
+  },
+  "France_vs_USA": {
+    "team1": "France",
+    "team2": "USA",
+    "team1Wins": 7,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 9
+  },
+  "Australia_vs_Austria": {
+    "team1": "Australia",
+    "team2": "Austria",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Portugal_vs_Spain": {
+    "team1": "Portugal",
+    "team2": "Spain",
+    "team1Wins": 14,
+    "team2Wins": 15,
+    "draws": 0,
+    "total": 29
+  },
+  "Japan_vs_Senegal": {
+    "team1": "Japan",
+    "team2": "Senegal",
+    "team1Wins": 6,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 8
+  },
+  "Egypt_vs_Norway": {
+    "team1": "Egypt",
+    "team2": "Norway",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "France_vs_Netherlands": {
+    "team1": "France",
+    "team2": "Netherlands",
+    "team1Wins": 9,
+    "team2Wins": 10,
+    "draws": 0,
+    "total": 19
+  },
+  "Austria_vs_Spain": {
+    "team1": "Austria",
+    "team2": "Spain",
+    "team1Wins": 2,
+    "team2Wins": 58,
+    "draws": 0,
+    "total": 60
+  },
+  "England_vs_Senegal": {
+    "team1": "England",
+    "team2": "Senegal",
+    "team1Wins": 12,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 17
+  },
+  "Argentina_vs_Egypt": {
+    "team1": "Argentina",
+    "team2": "Egypt",
+    "team1Wins": 19,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 19
+  },
+  "France_vs_Spain": {
+    "team1": "France",
+    "team2": "Spain",
+    "team1Wins": 6,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 11
+  },
+  "Argentina_vs_Senegal": {
+    "team1": "Argentina",
+    "team2": "Senegal",
+    "team1Wins": 9,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 9
+  },
+  "Argentina_vs_Spain": {
+    "team1": "Argentina",
+    "team2": "Spain",
+    "team1Wins": 11,
+    "team2Wins": 15,
+    "draws": 0,
+    "total": 26
+  },
+  "Egypt_vs_France": {
+    "team1": "Egypt",
+    "team2": "France",
+    "team1Wins": 0,
+    "team2Wins": 10,
+    "draws": 0,
+    "total": 10
+  },
+  "Belgium_vs_Czechia": {
+    "team1": "Belgium",
+    "team2": "Czechia",
+    "team1Wins": 25,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 25
+  },
+  "Australia_vs_Bosnia_and_Herzegovina": {
+    "team1": "Australia",
+    "team2": "Bosnia and Herzegovina",
+    "team1Wins": 3,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 4
+  },
+  "Austria_vs_Switzerland": {
+    "team1": "Austria",
+    "team2": "Switzerland",
+    "team1Wins": 8,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 9
+  },
+  "Morocco_vs_South_Korea": {
+    "team1": "Morocco",
+    "team2": "South Korea",
+    "team1Wins": 12,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 12
+  },
+  "Australia_vs_Belgium": {
+    "team1": "Australia",
+    "team2": "Belgium",
+    "team1Wins": 3,
+    "team2Wins": 14,
+    "draws": 0,
+    "total": 17
+  },
+  "Colombia_vs_Spain": {
+    "team1": "Colombia",
+    "team2": "Spain",
+    "team1Wins": 6,
+    "team2Wins": 22,
+    "draws": 0,
+    "total": 28
+  },
+  "Brazil_vs_Senegal": {
+    "team1": "Brazil",
+    "team2": "Senegal",
+    "team1Wins": 11,
+    "team2Wins": 7,
+    "draws": 0,
+    "total": 18
+  },
+  "Austria_vs_Portugal": {
+    "team1": "Austria",
+    "team2": "Portugal",
+    "team1Wins": 1,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 6
+  },
+  "Argentina_vs_Iran": {
+    "team1": "Argentina",
+    "team2": "Iran",
+    "team1Wins": 22,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 22
+  },
+  "Germany_vs_Morocco": {
+    "team1": "Germany",
+    "team2": "Morocco",
+    "team1Wins": 5,
+    "team2Wins": 10,
+    "draws": 0,
+    "total": 15
+  },
+  "Belgium_vs_Spain": {
+    "team1": "Belgium",
+    "team2": "Spain",
+    "team1Wins": 15,
+    "team2Wins": 19,
+    "draws": 0,
+    "total": 34
+  },
+  "Morocco_vs_Spain": {
+    "team1": "Morocco",
+    "team2": "Spain",
+    "team1Wins": 4,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 7
+  },
+  "England_vs_Portugal": {
+    "team1": "England",
+    "team2": "Portugal",
+    "team1Wins": 8,
+    "team2Wins": 6,
+    "draws": 0,
+    "total": 14
+  },
+  "England_vs_Morocco": {
+    "team1": "England",
+    "team2": "Morocco",
+    "team1Wins": 4,
+    "team2Wins": 11,
+    "draws": 0,
+    "total": 15
+  },
+  "Canada_vs_Czechia": {
+    "team1": "Canada",
+    "team2": "Czechia",
+    "team1Wins": 5,
+    "team2Wins": 6,
+    "draws": 0,
+    "total": 11
+  },
+  "Germany_vs_Turkiye": {
+    "team1": "Germany",
+    "team2": "Turkiye",
+    "team1Wins": 21,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 24
+  },
+  "Jordan_vs_USA": {
+    "team1": "Jordan",
+    "team2": "USA",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "England_vs_Norway": {
+    "team1": "England",
+    "team2": "Norway",
+    "team1Wins": 24,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 25
+  },
+  "Iran_vs_Switzerland": {
+    "team1": "Iran",
+    "team2": "Switzerland",
+    "team1Wins": 9,
+    "team2Wins": 12,
+    "draws": 0,
+    "total": 21
+  },
+  "Ghana_vs_Portugal": {
+    "team1": "Ghana",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 17,
+    "draws": 0,
+    "total": 17
+  },
+  "Australia_vs_Egypt": {
+    "team1": "Australia",
+    "team2": "Egypt",
+    "team1Wins": 6,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 15
+  },
+  "Czechia_vs_Netherlands": {
+    "team1": "Czechia",
+    "team2": "Netherlands",
+    "team1Wins": 0,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 3
+  },
+  "Belgium_vs_USA": {
+    "team1": "Belgium",
+    "team2": "USA",
+    "team1Wins": 27,
+    "team2Wins": 22,
+    "draws": 0,
+    "total": 49
+  },
+  "Iran_vs_Portugal": {
+    "team1": "Iran",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 6,
+    "draws": 0,
+    "total": 6
+  },
+  "Argentina_vs_Australia": {
+    "team1": "Argentina",
+    "team2": "Australia",
+    "team1Wins": 12,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 12
+  },
+  "Germany_vs_Netherlands": {
+    "team1": "Germany",
+    "team2": "Netherlands",
+    "team1Wins": 13,
+    "team2Wins": 12,
+    "draws": 0,
+    "total": 25
+  },
+  "Brazil_vs_Mexico": {
+    "team1": "Brazil",
+    "team2": "Mexico",
+    "team1Wins": 4,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 8
+  },
+  "Germany_vs_Spain": {
+    "team1": "Germany",
+    "team2": "Spain",
+    "team1Wins": 6,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 11
+  },
+  "Argentina_vs_Brazil": {
+    "team1": "Argentina",
+    "team2": "Brazil",
+    "team1Wins": 7,
+    "team2Wins": 10,
+    "draws": 0,
+    "total": 17
+  },
+  "Australia_vs_Ecuador": {
+    "team1": "Australia",
+    "team2": "Ecuador",
+    "team1Wins": 1,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 3
+  },
+  "Norway_vs_USA": {
+    "team1": "Norway",
+    "team2": "USA",
+    "team1Wins": 0,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 5
+  },
+  "Germany_vs_Senegal": {
+    "team1": "Germany",
+    "team2": "Senegal",
+    "team1Wins": 11,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 16
+  },
+  "Cape_Verde_vs_Mexico": {
+    "team1": "Cape Verde",
+    "team2": "Mexico",
+    "team1Wins": 0,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 9
+  },
+  "Ivory_Coast_vs_Switzerland": {
+    "team1": "Ivory Coast",
+    "team2": "Switzerland",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Panama_vs_Portugal": {
+    "team1": "Panama",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 12,
+    "draws": 0,
+    "total": 12
+  },
+  "Egypt_vs_Turkiye": {
+    "team1": "Egypt",
+    "team2": "Turkiye",
+    "team1Wins": 6,
+    "team2Wins": 12,
+    "draws": 0,
+    "total": 18
+  },
+  "Canada_vs_Japan": {
+    "team1": "Canada",
+    "team2": "Japan",
+    "team1Wins": 1,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 5
+  },
+  "Ecuador_vs_France": {
+    "team1": "Ecuador",
+    "team2": "France",
+    "team1Wins": 0,
+    "team2Wins": 7,
+    "draws": 0,
+    "total": 7
+  },
+  "Portugal_vs_Switzerland": {
+    "team1": "Portugal",
+    "team2": "Switzerland",
+    "team1Wins": 22,
+    "team2Wins": 8,
+    "draws": 0,
+    "total": 30
+  },
+  "France_vs_Japan": {
+    "team1": "France",
+    "team2": "Japan",
+    "team1Wins": 8,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 9
+  },
+  "England_vs_Germany": {
+    "team1": "England",
+    "team2": "Germany",
+    "team1Wins": 8,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 11
+  },
+  "Argentina_vs_Switzerland": {
+    "team1": "Argentina",
+    "team2": "Switzerland",
+    "team1Wins": 14,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 14
+  },
+  "Belgium_vs_France": {
+    "team1": "Belgium",
+    "team2": "France",
+    "team1Wins": 0,
+    "team2Wins": 7,
+    "draws": 0,
+    "total": 7
+  },
+  "Argentina_vs_England": {
+    "team1": "Argentina",
+    "team2": "England",
+    "team1Wins": 8,
+    "team2Wins": 20,
+    "draws": 0,
+    "total": 28
+  },
+  "Argentina_vs_France": {
+    "team1": "Argentina",
+    "team2": "France",
+    "team1Wins": 4,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 8
+  },
+  "Belgium_vs_England": {
+    "team1": "Belgium",
+    "team2": "England",
+    "team1Wins": 4,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 8
+  },
+  "South_Korea_vs_Switzerland": {
+    "team1": "South Korea",
+    "team2": "Switzerland",
+    "team1Wins": 5,
+    "team2Wins": 8,
+    "draws": 0,
+    "total": 13
+  },
+  "Germany_vs_Haiti": {
+    "team1": "Germany",
+    "team2": "Haiti",
+    "team1Wins": 4,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 4
+  },
+  "France_vs_Turkiye": {
+    "team1": "France",
+    "team2": "Turkiye",
+    "team1Wins": 10,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 10
+  },
+  "Algeria_vs_Belgium": {
+    "team1": "Algeria",
+    "team2": "Belgium",
+    "team1Wins": 0,
+    "team2Wins": 6,
+    "draws": 0,
+    "total": 6
+  },
+  "Ecuador_vs_Portugal": {
+    "team1": "Ecuador",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 9
+  },
+  "Australia_vs_Iran": {
+    "team1": "Australia",
+    "team2": "Iran",
+    "team1Wins": 5,
+    "team2Wins": 8,
+    "draws": 0,
+    "total": 13
+  },
+  "Ivory_Coast_vs_Morocco": {
+    "team1": "Ivory Coast",
+    "team2": "Morocco",
+    "team1Wins": 2,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 4
+  },
+  "Egypt_vs_Portugal": {
+    "team1": "Egypt",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 12,
+    "draws": 0,
+    "total": 12
+  },
+  "England_vs_Ivory_Coast": {
+    "team1": "England",
+    "team2": "Ivory Coast",
+    "team1Wins": 17,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 17
+  },
+  "England_vs_France": {
+    "team1": "England",
+    "team2": "France",
+    "team1Wins": 8,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 11
+  },
+  "Argentina_vs_USA": {
+    "team1": "Argentina",
+    "team2": "USA",
+    "team1Wins": 14,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 18
+  },
+  "South_Africa_vs_Switzerland": {
+    "team1": "South Africa",
+    "team2": "Switzerland",
+    "team1Wins": 0,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 4
+  },
+  "Cape_Verde_vs_France": {
+    "team1": "Cape Verde",
+    "team2": "France",
+    "team1Wins": 0,
+    "team2Wins": 6,
+    "draws": 0,
+    "total": 6
+  },
+  "Australia_vs_Canada": {
+    "team1": "Australia",
+    "team2": "Canada",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Ivory_Coast_vs_Norway": {
+    "team1": "Ivory Coast",
+    "team2": "Norway",
+    "team1Wins": 3,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 5
+  },
+  "Austria_vs_Qatar": {
+    "team1": "Austria",
+    "team2": "Qatar",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Colombia_vs_Panama": {
+    "team1": "Colombia",
+    "team2": "Panama",
+    "team1Wins": 5,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 5
+  },
+  "Iran_vs_USA": {
+    "team1": "Iran",
+    "team2": "USA",
+    "team1Wins": 6,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 15
+  },
+  "Morocco_vs_Switzerland": {
+    "team1": "Morocco",
+    "team2": "Switzerland",
+    "team1Wins": 4,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 5
+  },
+  "Belgium_vs_Canada": {
+    "team1": "Belgium",
+    "team2": "Canada",
+    "team1Wins": 2,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 3
+  },
+  "Mexico_vs_Senegal": {
+    "team1": "Mexico",
+    "team2": "Senegal",
+    "team1Wins": 1,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 5
+  },
+  "Austria_vs_Colombia": {
+    "team1": "Austria",
+    "team2": "Colombia",
+    "team1Wins": 2,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 5
+  },
+  "France_vs_Morocco": {
+    "team1": "France",
+    "team2": "Morocco",
+    "team1Wins": 6,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 15
+  },
+  "Belgium_vs_Croatia": {
+    "team1": "Belgium",
+    "team2": "Croatia",
+    "team1Wins": 3,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 8
+  },
+  "Austria_vs_USA": {
+    "team1": "Austria",
+    "team2": "USA",
+    "team1Wins": 3,
+    "team2Wins": 8,
+    "draws": 0,
+    "total": 11
+  },
+  "Belgium_vs_Morocco": {
+    "team1": "Belgium",
+    "team2": "Morocco",
+    "team1Wins": 2,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 3
+  },
+  "Mexico_vs_USA": {
+    "team1": "Mexico",
+    "team2": "USA",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Mexico_vs_Morocco": {
+    "team1": "Mexico",
+    "team2": "Morocco",
+    "team1Wins": 4,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 5
+  },
+  "Australia_vs_France": {
+    "team1": "Australia",
+    "team2": "France",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "Algeria_vs_Turkiye": {
+    "team1": "Algeria",
+    "team2": "Turkiye",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "England_vs_Uzbekistan": {
+    "team1": "England",
+    "team2": "Uzbekistan",
+    "team1Wins": 16,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 16
+  },
+  "Morocco_vs_Senegal": {
+    "team1": "Morocco",
+    "team2": "Senegal",
+    "team1Wins": 14,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 23
+  },
+  "Switzerland_vs_USA": {
+    "team1": "Switzerland",
+    "team2": "USA",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Belgium_vs_Germany": {
+    "team1": "Belgium",
+    "team2": "Germany",
+    "team1Wins": 6,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 9
+  },
+  "Belgium_vs_Switzerland": {
+    "team1": "Belgium",
+    "team2": "Switzerland",
+    "team1Wins": 1,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 4
+  },
+  "Belgium_vs_South_Africa": {
+    "team1": "Belgium",
+    "team2": "South Africa",
+    "team1Wins": 24,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 24
+  },
+  "Ecuador_vs_England": {
+    "team1": "Ecuador",
+    "team2": "England",
+    "team1Wins": 0,
+    "team2Wins": 15,
+    "draws": 0,
+    "total": 15
+  },
+  "Brazil_vs_South_Korea": {
+    "team1": "Brazil",
+    "team2": "South Korea",
+    "team1Wins": 7,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 7
+  },
+  "Brazil_vs_France": {
+    "team1": "Brazil",
+    "team2": "France",
+    "team1Wins": 6,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 10
+  },
+  "Brazil_vs_Spain": {
+    "team1": "Brazil",
+    "team2": "Spain",
+    "team1Wins": 2,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 6
+  },
+  "England_vs_Spain": {
+    "team1": "England",
+    "team2": "Spain",
+    "team1Wins": 11,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 20
+  },
+  "Mexico_vs_Qatar": {
+    "team1": "Mexico",
+    "team2": "Qatar",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Germany_vs_Sweden": {
+    "team1": "Germany",
+    "team2": "Sweden",
+    "team1Wins": 6,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 6
+  },
+  "Iran_vs_Senegal": {
+    "team1": "Iran",
+    "team2": "Senegal",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "France_vs_Ivory_Coast": {
+    "team1": "France",
+    "team2": "Ivory Coast",
+    "team1Wins": 4,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 4
+  },
+  "Ecuador_vs_South_Korea": {
+    "team1": "Ecuador",
+    "team2": "South Korea",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Algeria_vs_Switzerland": {
+    "team1": "Algeria",
+    "team2": "Switzerland",
+    "team1Wins": 5,
+    "team2Wins": 11,
+    "draws": 0,
+    "total": 16
+  },
+  "Egypt_vs_Paraguay": {
+    "team1": "Egypt",
+    "team2": "Paraguay",
+    "team1Wins": 3,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 3
+  },
+  "England_vs_South_Korea": {
+    "team1": "England",
+    "team2": "South Korea",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Algeria_vs_Portugal": {
+    "team1": "Algeria",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 7,
+    "draws": 0,
+    "total": 7
+  },
+  "Australia_vs_Germany": {
+    "team1": "Australia",
+    "team2": "Germany",
+    "team1Wins": 0,
+    "team2Wins": 18,
+    "draws": 0,
+    "total": 18
+  },
+  "France_vs_Tunisia": {
+    "team1": "France",
+    "team2": "Tunisia",
+    "team1Wins": 8,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 8
+  },
+  "Czechia_vs_Egypt": {
+    "team1": "Czechia",
+    "team2": "Egypt",
+    "team1Wins": 0,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 4
+  },
+  "Bosnia_and_Herzegovina_vs_Turkiye": {
+    "team1": "Bosnia and Herzegovina",
+    "team2": "Turkiye",
+    "team1Wins": 0,
+    "team2Wins": 6,
+    "draws": 0,
+    "total": 6
+  },
+  "Norway_vs_Switzerland": {
+    "team1": "Norway",
+    "team2": "Switzerland",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Ecuador_vs_Netherlands": {
+    "team1": "Ecuador",
+    "team2": "Netherlands",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Colombia_vs_Switzerland": {
+    "team1": "Colombia",
+    "team2": "Switzerland",
+    "team1Wins": 4,
+    "team2Wins": 7,
+    "draws": 0,
+    "total": 11
+  },
+  "Spain_vs_Turkiye": {
+    "team1": "Spain",
+    "team2": "Turkiye",
+    "team1Wins": 3,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 3
+  },
+  "England_vs_USA": {
+    "team1": "England",
+    "team2": "USA",
+    "team1Wins": 1,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 4
+  },
+  "Morocco_vs_USA": {
+    "team1": "Morocco",
+    "team2": "USA",
+    "team1Wins": 2,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 5
+  },
+  "Egypt_vs_South_Africa": {
+    "team1": "Egypt",
+    "team2": "South Africa",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Algeria_vs_USA": {
+    "team1": "Algeria",
+    "team2": "USA",
+    "team1Wins": 0,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 5
+  },
+  "Colombia_vs_Ivory_Coast": {
+    "team1": "Colombia",
+    "team2": "Ivory Coast",
+    "team1Wins": 3,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 4
+  },
+  "Egypt_vs_USA": {
+    "team1": "Egypt",
+    "team2": "USA",
+    "team1Wins": 2,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 11
+  },
+  "Belgium_vs_Colombia": {
+    "team1": "Belgium",
+    "team2": "Colombia",
+    "team1Wins": 4,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 5
+  },
+  "Egypt_vs_Spain": {
+    "team1": "Egypt",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Argentina_vs_Belgium": {
+    "team1": "Argentina",
+    "team2": "Belgium",
+    "team1Wins": 11,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 13
+  },
+  "Argentina_vs_Morocco": {
+    "team1": "Argentina",
+    "team2": "Morocco",
+    "team1Wins": 10,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 13
+  },
+  "Canada_vs_South_Africa": {
+    "team1": "Canada",
+    "team2": "South Africa",
+    "team1Wins": 6,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 8
+  },
+  "Iran_vs_South_Korea": {
+    "team1": "Iran",
+    "team2": "South Korea",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Qatar_vs_USA": {
+    "team1": "Qatar",
+    "team2": "USA",
+    "team1Wins": 0,
+    "team2Wins": 19,
+    "draws": 0,
+    "total": 19
+  },
+  "Colombia_vs_England": {
+    "team1": "Colombia",
+    "team2": "England",
+    "team1Wins": 2,
+    "team2Wins": 7,
+    "draws": 0,
+    "total": 9
+  },
+  "Algeria_vs_Croatia": {
+    "team1": "Algeria",
+    "team2": "Croatia",
+    "team1Wins": 0,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 4
+  },
+  "Portugal_vs_Senegal": {
+    "team1": "Portugal",
+    "team2": "Senegal",
+    "team1Wins": 5,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 6
+  },
+  "Japan_vs_South_Africa": {
+    "team1": "Japan",
+    "team2": "South Africa",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Morocco_vs_Norway": {
+    "team1": "Morocco",
+    "team2": "Norway",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_Ecuador": {
+    "team1": "Croatia",
+    "team2": "Ecuador",
+    "team1Wins": 2,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 5
+  },
+  "Senegal_vs_Switzerland": {
+    "team1": "Senegal",
+    "team2": "Switzerland",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Germany_vs_Japan": {
+    "team1": "Germany",
+    "team2": "Japan",
+    "team1Wins": 2,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 6
+  },
+  "Ecuador_vs_Morocco": {
+    "team1": "Ecuador",
+    "team2": "Morocco",
+    "team1Wins": 1,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 5
+  },
+  "Japan_vs_USA": {
+    "team1": "Japan",
+    "team2": "USA",
+    "team1Wins": 1,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 3
+  },
+  "Argentina_vs_Japan": {
+    "team1": "Argentina",
+    "team2": "Japan",
+    "team1Wins": 5,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 5
+  },
+  "Algeria_vs_England": {
+    "team1": "Algeria",
+    "team2": "England",
+    "team1Wins": 0,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 9
+  },
+  "Mexico_vs_Saudi_Arabia": {
+    "team1": "Mexico",
+    "team2": "Saudi Arabia",
+    "team1Wins": 12,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 12
+  },
+  "Brazil_vs_Czechia": {
+    "team1": "Brazil",
+    "team2": "Czechia",
+    "team1Wins": 3,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 3
+  },
+  "Canada_vs_Mexico": {
+    "team1": "Canada",
+    "team2": "Mexico",
+    "team1Wins": 0,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 3
+  },
+  "Senegal_vs_Sweden": {
+    "team1": "Senegal",
+    "team2": "Sweden",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Algeria_vs_Egypt": {
+    "team1": "Algeria",
+    "team2": "Egypt",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Australia_vs_Ivory_Coast": {
+    "team1": "Australia",
+    "team2": "Ivory Coast",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Scotland_vs_South_Korea": {
+    "team1": "Scotland",
+    "team2": "South Korea",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Colombia_vs_Ghana": {
+    "team1": "Colombia",
+    "team2": "Ghana",
+    "team1Wins": 9,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 9
+  },
+  "Belgium_vs_Turkiye": {
+    "team1": "Belgium",
+    "team2": "Turkiye",
+    "team1Wins": 10,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 13
+  },
+  "Mexico_vs_Netherlands": {
+    "team1": "Mexico",
+    "team2": "Netherlands",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Norway_vs_South_Korea": {
+    "team1": "Norway",
+    "team2": "South Korea",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Brazil_vs_Norway": {
+    "team1": "Brazil",
+    "team2": "Norway",
+    "team1Wins": 3,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 3
+  },
+  "Argentina_vs_Colombia": {
+    "team1": "Argentina",
+    "team2": "Colombia",
+    "team1Wins": 13,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 14
+  },
+  "Netherlands_vs_Portugal": {
+    "team1": "Netherlands",
+    "team2": "Portugal",
+    "team1Wins": 5,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 10
+  },
+  "Brazil_vs_Colombia": {
+    "team1": "Brazil",
+    "team2": "Colombia",
+    "team1Wins": 4,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 4
+  },
+  "Germany_vs_Paraguay": {
+    "team1": "Germany",
+    "team2": "Paraguay",
+    "team1Wins": 8,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 8
+  },
+  "Belgium_vs_Senegal": {
+    "team1": "Belgium",
+    "team2": "Senegal",
+    "team1Wins": 0,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 4
+  },
+  "Argentina_vs_Cape_Verde": {
+    "team1": "Argentina",
+    "team2": "Cape Verde",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Canada_vs_Morocco": {
+    "team1": "Canada",
+    "team2": "Morocco",
+    "team1Wins": 0,
+    "team2Wins": 8,
+    "draws": 0,
+    "total": 8
+  },
+  "Senegal_vs_USA": {
+    "team1": "Senegal",
+    "team2": "USA",
+    "team1Wins": 4,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 4
+  },
+  "Austria_vs_Croatia": {
+    "team1": "Austria",
+    "team2": "Croatia",
+    "team1Wins": 3,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 5
+  },
+  "Austria_vs_Senegal": {
+    "team1": "Austria",
+    "team2": "Senegal",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "Netherlands_vs_Senegal": {
+    "team1": "Netherlands",
+    "team2": "Senegal",
+    "team1Wins": 4,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 6
+  },
+  "Belgium_vs_Portugal": {
+    "team1": "Belgium",
+    "team2": "Portugal",
+    "team1Wins": 6,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 9
+  },
+  "England_vs_Netherlands": {
+    "team1": "England",
+    "team2": "Netherlands",
+    "team1Wins": 4,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 8
+  },
+  "Belgium_vs_Brazil": {
+    "team1": "Belgium",
+    "team2": "Brazil",
+    "team1Wins": 3,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 6
+  },
+  "Argentina_vs_Netherlands": {
+    "team1": "Argentina",
+    "team2": "Netherlands",
+    "team1Wins": 6,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 11
+  },
+  "France_vs_Saudi_Arabia": {
+    "team1": "France",
+    "team2": "Saudi Arabia",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Ecuador_vs_USA": {
+    "team1": "Ecuador",
+    "team2": "USA",
+    "team1Wins": 3,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 4
+  },
+  "France_vs_Iran": {
+    "team1": "France",
+    "team2": "Iran",
+    "team1Wins": 5,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 5
+  },
+  "Germany_vs_Mexico": {
+    "team1": "Germany",
+    "team2": "Mexico",
+    "team1Wins": 1,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 4
+  },
+  "Bosnia_and_Herzegovina_vs_South_Korea": {
+    "team1": "Bosnia and Herzegovina",
+    "team2": "South Korea",
+    "team1Wins": 0,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 4
+  },
+  "Norway_vs_Turkiye": {
+    "team1": "Norway",
+    "team2": "Turkiye",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_DR_Congo": {
+    "team1": "Croatia",
+    "team2": "DR Congo",
+    "team1Wins": 3,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 3
+  },
+  "Ecuador_vs_Japan": {
+    "team1": "Ecuador",
+    "team2": "Japan",
+    "team1Wins": 2,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 4
+  },
+  "Croatia_vs_Mexico": {
+    "team1": "Croatia",
+    "team2": "Mexico",
+    "team1Wins": 6,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 8
+  },
+  "Germany_vs_Portugal": {
+    "team1": "Germany",
+    "team2": "Portugal",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Qatar_vs_Turkiye": {
+    "team1": "Qatar",
+    "team2": "Turkiye",
+    "team1Wins": 1,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 6
+  },
+  "Algeria_vs_Colombia": {
+    "team1": "Algeria",
+    "team2": "Colombia",
+    "team1Wins": 1,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 3
+  },
+  "Argentina_vs_Ecuador": {
+    "team1": "Argentina",
+    "team2": "Ecuador",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Brazil_vs_Ecuador": {
+    "team1": "Brazil",
+    "team2": "Ecuador",
+    "team1Wins": 6,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 6
+  },
+  "Belgium_vs_Cape_Verde": {
+    "team1": "Belgium",
+    "team2": "Cape Verde",
+    "team1Wins": 5,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 5
+  },
+  "Mexico_vs_Scotland": {
+    "team1": "Mexico",
+    "team2": "Scotland",
+    "team1Wins": 7,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 7
+  },
+  "Canada_vs_Iran": {
+    "team1": "Canada",
+    "team2": "Iran",
+    "team1Wins": 5,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 7
+  },
+  "England_vs_Japan": {
+    "team1": "England",
+    "team2": "Japan",
+    "team1Wins": 6,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 9
+  },
+  "Austria_vs_Uruguay": {
+    "team1": "Austria",
+    "team2": "Uruguay",
+    "team1Wins": 2,
+    "team2Wins": 5,
+    "draws": 0,
+    "total": 7
+  },
+  "Colombia_vs_Uruguay": {
+    "team1": "Colombia",
+    "team2": "Uruguay",
+    "team1Wins": 2,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 4
+  },
+  "Belgium_vs_Uruguay": {
+    "team1": "Belgium",
+    "team2": "Uruguay",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Morocco_vs_Uruguay": {
+    "team1": "Morocco",
+    "team2": "Uruguay",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Qatar_vs_South_Korea": {
+    "team1": "Qatar",
+    "team2": "South Korea",
+    "team1Wins": 1,
+    "team2Wins": 8,
+    "draws": 0,
+    "total": 9
+  },
+  "Canada_vs_USA": {
+    "team1": "Canada",
+    "team2": "USA",
+    "team1Wins": 2,
+    "team2Wins": 9,
+    "draws": 0,
+    "total": 11
+  },
+  "Ivory_Coast_vs_Portugal": {
+    "team1": "Ivory Coast",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 7,
+    "draws": 0,
+    "total": 7
+  },
+  "Brazil_vs_Croatia": {
+    "team1": "Brazil",
+    "team2": "Croatia",
+    "team1Wins": 2,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 3
+  },
+  "Morocco_vs_Portugal": {
+    "team1": "Morocco",
+    "team2": "Portugal",
+    "team1Wins": 5,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 5
+  },
+  "Japan_vs_South_Korea": {
+    "team1": "Japan",
+    "team2": "South Korea",
+    "team1Wins": 4,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 5
+  },
+  "Colombia_vs_USA": {
+    "team1": "Colombia",
+    "team2": "USA",
+    "team1Wins": 2,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 4
+  },
+  "Czechia_vs_Iran": {
+    "team1": "Czechia",
+    "team2": "Iran",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "Ecuador_vs_Norway": {
+    "team1": "Ecuador",
+    "team2": "Norway",
+    "team1Wins": 2,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 3
+  },
+  "Jordan_vs_Switzerland": {
+    "team1": "Jordan",
+    "team2": "Switzerland",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Iran_vs_Spain": {
+    "team1": "Iran",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 4,
+    "draws": 0,
+    "total": 4
+  },
+  "Mexico_vs_Portugal": {
+    "team1": "Mexico",
+    "team2": "Portugal",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "France_vs_Portugal": {
+    "team1": "France",
+    "team2": "Portugal",
+    "team1Wins": 4,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 4
+  },
+  "Mexico_vs_Spain": {
+    "team1": "Mexico",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Colombia_vs_Ecuador": {
+    "team1": "Colombia",
+    "team2": "Ecuador",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Netherlands_vs_South_Korea": {
+    "team1": "Netherlands",
+    "team2": "South Korea",
+    "team1Wins": 16,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 16
+  },
+  "Argentina_vs_Germany": {
+    "team1": "Argentina",
+    "team2": "Germany",
+    "team1Wins": 3,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 5
+  },
+  "Algeria_vs_Uruguay": {
+    "team1": "Algeria",
+    "team2": "Uruguay",
+    "team1Wins": 2,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 3
+  },
+  "Austria_vs_Canada": {
+    "team1": "Austria",
+    "team2": "Canada",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Saudi_Arabia_vs_South_Korea": {
+    "team1": "Saudi Arabia",
+    "team2": "South Korea",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Colombia_vs_Egypt": {
+    "team1": "Colombia",
+    "team2": "Egypt",
+    "team1Wins": 5,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 6
+  },
+  "France_vs_Mexico": {
+    "team1": "France",
+    "team2": "Mexico",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Ivory_Coast_vs_Turkiye": {
+    "team1": "Ivory Coast",
+    "team2": "Turkiye",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "Brazil_vs_Switzerland": {
+    "team1": "Brazil",
+    "team2": "Switzerland",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Colombia_vs_Iran": {
+    "team1": "Colombia",
+    "team2": "Iran",
+    "team1Wins": 2,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 3
+  },
+  "Netherlands_vs_Spain": {
+    "team1": "Netherlands",
+    "team2": "Spain",
+    "team1Wins": 6,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 9
+  },
+  "Croatia_vs_Uzbekistan": {
+    "team1": "Croatia",
+    "team2": "Uzbekistan",
+    "team1Wins": 4,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 4
+  },
+  "Belgium_vs_Netherlands": {
+    "team1": "Belgium",
+    "team2": "Netherlands",
+    "team1Wins": 4,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 5
+  },
+  "Canada_vs_Paraguay": {
+    "team1": "Canada",
+    "team2": "Paraguay",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Belgium_vs_Paraguay": {
+    "team1": "Belgium",
+    "team2": "Paraguay",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Japan_vs_Spain": {
+    "team1": "Japan",
+    "team2": "Spain",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Haiti_vs_Mexico": {
+    "team1": "Haiti",
+    "team2": "Mexico",
+    "team1Wins": 0,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 3
+  },
+  "Australia_vs_Spain": {
+    "team1": "Australia",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "Croatia_vs_Ivory_Coast": {
+    "team1": "Croatia",
+    "team2": "Ivory Coast",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Australia_vs_Senegal": {
+    "team1": "Australia",
+    "team2": "Senegal",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_Netherlands": {
+    "team1": "Croatia",
+    "team2": "Netherlands",
+    "team1Wins": 0,
+    "team2Wins": 3,
+    "draws": 0,
+    "total": 3
+  },
+  "Iran_vs_Paraguay": {
+    "team1": "Iran",
+    "team2": "Paraguay",
+    "team1Wins": 3,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 4
+  },
+  "Brazil_vs_Canada": {
+    "team1": "Brazil",
+    "team2": "Canada",
+    "team1Wins": 3,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 3
+  },
+  "Croatia_vs_Morocco": {
+    "team1": "Croatia",
+    "team2": "Morocco",
+    "team1Wins": 2,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 4
+  },
+  "England_vs_Iraq": {
+    "team1": "England",
+    "team2": "Iraq",
+    "team1Wins": 3,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 3
+  },
+  "Croatia_vs_Germany": {
+    "team1": "Croatia",
+    "team2": "Germany",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Ecuador_vs_Haiti": {
+    "team1": "Ecuador",
+    "team2": "Haiti",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Algeria_vs_Australia": {
+    "team1": "Algeria",
+    "team2": "Australia",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "France_vs_Switzerland": {
+    "team1": "France",
+    "team2": "Switzerland",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Ecuador_vs_Turkiye": {
+    "team1": "Ecuador",
+    "team2": "Turkiye",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Netherlands_vs_South_Africa": {
+    "team1": "Netherlands",
+    "team2": "South Africa",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Belgium_vs_Norway": {
+    "team1": "Belgium",
+    "team2": "Norway",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Australia_vs_Switzerland": {
+    "team1": "Australia",
+    "team2": "Switzerland",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Ivory_Coast_vs_Japan": {
+    "team1": "Ivory Coast",
+    "team2": "Japan",
+    "team1Wins": 1,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 3
+  },
+  "England_vs_Switzerland": {
+    "team1": "England",
+    "team2": "Switzerland",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Japan_vs_Mexico": {
+    "team1": "Japan",
+    "team2": "Mexico",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Argentina_vs_Mexico": {
+    "team1": "Argentina",
+    "team2": "Mexico",
+    "team1Wins": 6,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 6
+  },
+  "Belgium_vs_Saudi_Arabia": {
+    "team1": "Belgium",
+    "team2": "Saudi Arabia",
+    "team1Wins": 5,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 5
+  },
+  "Algeria_vs_Canada": {
+    "team1": "Algeria",
+    "team2": "Canada",
+    "team1Wins": 2,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 3
+  },
+  "Morocco_vs_Sweden": {
+    "team1": "Morocco",
+    "team2": "Sweden",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Ecuador_vs_Switzerland": {
+    "team1": "Ecuador",
+    "team2": "Switzerland",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "New_Zealand_vs_Turkiye": {
+    "team1": "New Zealand",
+    "team2": "Turkiye",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Senegal_vs_Spain": {
+    "team1": "Senegal",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Belgium_vs_Qatar": {
+    "team1": "Belgium",
+    "team2": "Qatar",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_France": {
+    "team1": "Croatia",
+    "team2": "France",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "Croatia_vs_Norway": {
+    "team1": "Croatia",
+    "team2": "Norway",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Netherlands_vs_Qatar": {
+    "team1": "Netherlands",
+    "team2": "Qatar",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Belgium_vs_Ecuador": {
+    "team1": "Belgium",
+    "team2": "Ecuador",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Paraguay_vs_Spain": {
+    "team1": "Paraguay",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_USA": {
+    "team1": "Croatia",
+    "team2": "USA",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Netherlands_vs_USA": {
+    "team1": "Netherlands",
+    "team2": "USA",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Ivory_Coast_vs_Paraguay": {
+    "team1": "Ivory Coast",
+    "team2": "Paraguay",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Belgium_vs_Ivory_Coast": {
+    "team1": "Belgium",
+    "team2": "Ivory Coast",
+    "team1Wins": 2,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 3
+  },
+  "Ivory_Coast_vs_Spain": {
+    "team1": "Ivory Coast",
+    "team2": "Spain",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "France_vs_South_Korea": {
+    "team1": "France",
+    "team2": "South Korea",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Argentina_vs_Ivory_Coast": {
+    "team1": "Argentina",
+    "team2": "Ivory Coast",
+    "team1Wins": 3,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 3
+  },
+  "England_vs_Scotland": {
+    "team1": "England",
+    "team2": "Scotland",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Belgium_vs_Mexico": {
+    "team1": "Belgium",
+    "team2": "Mexico",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "New_Zealand_vs_Switzerland": {
+    "team1": "New Zealand",
+    "team2": "Switzerland",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "Colombia_vs_Morocco": {
+    "team1": "Colombia",
+    "team2": "Morocco",
+    "team1Wins": 0,
+    "team2Wins": 2,
+    "draws": 0,
+    "total": 2
+  },
+  "Ivory_Coast_vs_USA": {
+    "team1": "Ivory Coast",
+    "team2": "USA",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Portugal_vs_Turkiye": {
+    "team1": "Portugal",
+    "team2": "Turkiye",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Portugal_vs_Uruguay": {
+    "team1": "Portugal",
+    "team2": "Uruguay",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_Uruguay": {
+    "team1": "Croatia",
+    "team2": "Uruguay",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_Switzerland": {
+    "team1": "Croatia",
+    "team2": "Switzerland",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Argentina_vs_Croatia": {
+    "team1": "Argentina",
+    "team2": "Croatia",
+    "team1Wins": 3,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 3
+  },
+  "Ivory_Coast_vs_Netherlands": {
+    "team1": "Ivory Coast",
+    "team2": "Netherlands",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Australia_vs_Uruguay": {
+    "team1": "Australia",
+    "team2": "Uruguay",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Germany_vs_Uruguay": {
+    "team1": "Germany",
+    "team2": "Uruguay",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Mexico_vs_Uruguay": {
+    "team1": "Mexico",
+    "team2": "Uruguay",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Belgium_vs_Japan": {
+    "team1": "Belgium",
+    "team2": "Japan",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Japan_vs_Portugal": {
+    "team1": "Japan",
+    "team2": "Portugal",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Ivory_Coast_vs_Scotland": {
+    "team1": "Ivory Coast",
+    "team2": "Scotland",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Argentina_vs_Norway": {
+    "team1": "Argentina",
+    "team2": "Norway",
+    "team1Wins": 2,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 2
+  },
+  "Austria_vs_Iran": {
+    "team1": "Austria",
+    "team2": "Iran",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Czechia_vs_Germany": {
+    "team1": "Czechia",
+    "team2": "Germany",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Colombia_vs_Turkiye": {
+    "team1": "Colombia",
+    "team2": "Turkiye",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Colombia_vs_Mexico": {
+    "team1": "Colombia",
+    "team2": "Mexico",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Ecuador_vs_Scotland": {
+    "team1": "Ecuador",
+    "team2": "Scotland",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Australia_vs_New_Zealand": {
+    "team1": "Australia",
+    "team2": "New Zealand",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Canada_vs_Norway": {
+    "team1": "Canada",
+    "team2": "Norway",
+    "team1Wins": 1,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 2
+  },
+  "Argentina_vs_Canada": {
+    "team1": "Argentina",
+    "team2": "Canada",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Japan_vs_Switzerland": {
+    "team1": "Japan",
+    "team2": "Switzerland",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Germany_vs_Tunisia": {
+    "team1": "Germany",
+    "team2": "Tunisia",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Brazil_vs_Sweden": {
+    "team1": "Brazil",
+    "team2": "Sweden",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Mexico_vs_Norway": {
+    "team1": "Mexico",
+    "team2": "Norway",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Iran_vs_Ivory_Coast": {
+    "team1": "Iran",
+    "team2": "Ivory Coast",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_Japan": {
+    "team1": "Croatia",
+    "team2": "Japan",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Colombia_vs_Germany": {
+    "team1": "Colombia",
+    "team2": "Germany",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Belgium_vs_Bosnia_and_Herzegovina": {
+    "team1": "Belgium",
+    "team2": "Bosnia and Herzegovina",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Czechia_vs_Qatar": {
+    "team1": "Czechia",
+    "team2": "Qatar",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Czechia_vs_Morocco": {
+    "team1": "Czechia",
+    "team2": "Morocco",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_South_Korea": {
+    "team1": "Croatia",
+    "team2": "South Korea",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Croatia_vs_Senegal": {
+    "team1": "Croatia",
+    "team2": "Senegal",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Bosnia_and_Herzegovina_vs_Czechia": {
+    "team1": "Bosnia and Herzegovina",
+    "team2": "Czechia",
+    "team1Wins": 1,
+    "team2Wins": 0,
+    "draws": 0,
+    "total": 1
+  },
+  "Bosnia_and_Herzegovina_vs_Japan": {
+    "team1": "Bosnia and Herzegovina",
+    "team2": "Japan",
+    "team1Wins": 0,
+    "team2Wins": 1,
+    "draws": 0,
+    "total": 1
+  }
+}

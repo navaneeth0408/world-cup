@@ -64,7 +64,7 @@ const FavoriteTeamFixtures = ({ team, teamMatches, teams, selectedTimeZone }) =>
                                 {/* Group Stage Badge */}
                                 <div className="hidden lg:block shrink-0">
                                     <span className="text-[9px] text-slate-400 font-black border border-slate-800 bg-slate-950/40 px-2.5 py-1 rounded-lg uppercase tracking-wider">
-                                        Group {match.group}
+                                        {match.stage === 'Group Stage' ? `Group ${match.group}` : match.stage}
                                     </span>
                                 </div>
                             </Card>

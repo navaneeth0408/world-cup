@@ -100,7 +100,9 @@
     "homeTeam": "mexico",
     "awayTeam": "southafrica",
     "stage": "Group Stage",
-    "location": "Mexico City"
+    "location": "Mexico City",
+    "winner": "mexico",
+    "winnerId": "mexico"
   },
   {
     "id": "m2",
@@ -179,7 +181,9 @@
     "homeTeam": "southkorea",
     "awayTeam": "czechia",
     "stage": "Group Stage",
-    "location": "Zapopan"
+    "location": "Zapopan",
+    "winner": "southkorea",
+    "winnerId": "southkorea"
   },
   {
     "id": "m3",
@@ -399,7 +403,9 @@
     "homeTeam": "usa",
     "awayTeam": "paraguay",
     "stage": "Group Stage",
-    "location": "Los Angeles"
+    "location": "Los Angeles",
+    "winner": "usa",
+    "winnerId": "usa"
   },
   {
     "id": "m5",
@@ -650,7 +656,9 @@
     "homeTeam": "haiti",
     "awayTeam": "scotland",
     "stage": "Group Stage",
-    "location": "Foxborough"
+    "location": "Foxborough",
+    "winner": "scotland",
+    "winnerId": "scotland"
   },
   {
     "id": "m8",
@@ -723,7 +731,9 @@
     "homeTeam": "australia",
     "awayTeam": "turkiye",
     "stage": "Group Stage",
-    "location": "Vancouver"
+    "location": "Vancouver",
+    "winner": "australia",
+    "winnerId": "australia"
   },
   {
     "id": "m9",
@@ -827,7 +837,9 @@
     "homeTeam": "germany",
     "awayTeam": "curacao",
     "stage": "Group Stage",
-    "location": "Houston"
+    "location": "Houston",
+    "winner": "germany",
+    "winnerId": "germany"
   },
   {
     "id": "m10",
@@ -1009,7 +1021,9 @@
     "homeTeam": "ivorycoast",
     "awayTeam": "ecuador",
     "stage": "Group Stage",
-    "location": "Philadelphia"
+    "location": "Philadelphia",
+    "winner": "ivorycoast",
+    "winnerId": "ivorycoast"
   },
   {
     "id": "m12",
@@ -1106,7 +1120,9 @@
     "homeTeam": "sweden",
     "awayTeam": "tunisia",
     "stage": "Group Stage",
-    "location": "Guadalajara"
+    "location": "Guadalajara",
+    "winner": "sweden",
+    "winnerId": "sweden"
   },
   {
     "id": "m13",
@@ -1503,7 +1519,9 @@
     "homeTeam": "france",
     "awayTeam": "senegal",
     "stage": "Group Stage",
-    "location": "New Jersey"
+    "location": "New Jersey",
+    "winner": "france",
+    "winnerId": "france"
   },
   {
     "id": "m18",
@@ -1604,7 +1622,9 @@
     "homeTeam": "iraq",
     "awayTeam": "norway",
     "stage": "Group Stage",
-    "location": "Foxborough"
+    "location": "Foxborough",
+    "winner": "norway",
+    "winnerId": "norway"
   },
   {
     "id": "m19",
@@ -1682,7 +1702,9 @@
     "homeTeam": "argentina",
     "awayTeam": "algeria",
     "stage": "Group Stage",
-    "location": "Kansas City"
+    "location": "Kansas City",
+    "winner": "argentina",
+    "winnerId": "argentina"
   },
   {
     "id": "m20",
@@ -1775,7 +1797,9 @@
     "homeTeam": "austria",
     "awayTeam": "jordan",
     "stage": "Group Stage",
-    "location": "Santa Clara"
+    "location": "Santa Clara",
+    "winner": "austria",
+    "winnerId": "austria"
   },
   {
     "id": "m21",
@@ -1956,7 +1980,9 @@
     "homeTeam": "england",
     "awayTeam": "croatia",
     "stage": "Group Stage",
-    "location": "Arlington"
+    "location": "Arlington",
+    "winner": "england",
+    "winnerId": "england"
   },
   {
     "id": "m23",
@@ -2035,7 +2061,9 @@
     "homeTeam": "ghana",
     "awayTeam": "panama",
     "stage": "Group Stage",
-    "location": "Toronto"
+    "location": "Toronto",
+    "winner": "ghana",
+    "winnerId": "ghana"
   },
   {
     "id": "m24",
@@ -2125,7 +2153,9 @@
     "homeTeam": "uzbekistan",
     "awayTeam": "colombia",
     "stage": "Group Stage",
-    "location": "Mexico City"
+    "location": "Mexico City",
+    "winner": "colombia",
+    "winnerId": "colombia"
   },
   {
     "id": "m25",
@@ -2323,7 +2353,9 @@
     "homeTeam": "switzerland",
     "awayTeam": "bosniaandherzegovina",
     "stage": "Group Stage",
-    "location": "Los Angeles"
+    "location": "Los Angeles",
+    "winner": "switzerland",
+    "winnerId": "switzerland"
   },
   {
     "id": "m27",
@@ -2440,7 +2472,9 @@
     "homeTeam": "canada",
     "awayTeam": "qatar",
     "stage": "Group Stage",
-    "location": "Vancouver"
+    "location": "Vancouver",
+    "winner": "canada",
+    "winnerId": "canada"
   },
   {
     "id": "m28",
@@ -2513,7 +2547,9 @@
     "homeTeam": "mexico",
     "awayTeam": "southkorea",
     "stage": "Group Stage",
-    "location": "Zapopan"
+    "location": "Zapopan",
+    "winner": "mexico",
+    "winnerId": "mexico"
   },
   {
     "id": "m29",
@@ -2624,7 +2660,9 @@
     "homeTeam": "usa",
     "awayTeam": "australia",
     "stage": "Group Stage",
-    "location": "Seattle"
+    "location": "Seattle",
+    "winner": "usa",
+    "winnerId": "usa"
   },
   {
     "id": "m30",
@@ -2697,7 +2735,9 @@
     "homeTeam": "scotland",
     "awayTeam": "morocco",
     "stage": "Group Stage",
-    "location": "Foxborough"
+    "location": "Foxborough",
+    "winner": "morocco",
+    "winnerId": "morocco"
   },
   {
     "id": "m31",
@@ -2794,7 +2834,9 @@
     "homeTeam": "brazil",
     "awayTeam": "haiti",
     "stage": "Group Stage",
-    "location": "Philadelphia"
+    "location": "Philadelphia",
+    "winner": "brazil",
+    "winnerId": "brazil"
   },
   {
     "id": "m32",
@@ -2873,7 +2915,9 @@
     "homeTeam": "turkiye",
     "awayTeam": "paraguay",
     "stage": "Group Stage",
-    "location": "Santa Clara"
+    "location": "Santa Clara",
+    "winner": "paraguay",
+    "winnerId": "paraguay"
   },
   {
     "id": "m33",
@@ -2982,7 +3026,9 @@
     "homeTeam": "netherlands",
     "awayTeam": "sweden",
     "stage": "Group Stage",
-    "location": "Houston"
+    "location": "Houston",
+    "winner": "netherlands",
+    "winnerId": "netherlands"
   },
   {
     "id": "m34",
@@ -3054,7 +3100,9 @@
     "homeTeam": "germany",
     "awayTeam": "ivorycoast",
     "stage": "Group Stage",
-    "location": "Toronto"
+    "location": "Toronto",
+    "winner": "germany",
+    "winnerId": "germany"
   },
   {
     "id": "m35",
@@ -3222,7 +3270,9 @@
     "homeTeam": "tunisia",
     "awayTeam": "japan",
     "stage": "Group Stage",
-    "location": "Guadalajara"
+    "location": "Guadalajara",
+    "winner": "japan",
+    "winnerId": "japan"
   },
   {
     "id": "m37",
@@ -3315,7 +3365,9 @@
     "homeTeam": "spain",
     "awayTeam": "saudiarabia",
     "stage": "Group Stage",
-    "location": "Atlanta"
+    "location": "Atlanta",
+    "winner": "spain",
+    "winnerId": "spain"
   },
   {
     "id": "m38",
@@ -3587,7 +3639,9 @@
     "homeTeam": "newzealand",
     "awayTeam": "egypt",
     "stage": "Group Stage",
-    "location": "Vancouver"
+    "location": "Vancouver",
+    "winner": "egypt",
+    "winnerId": "egypt"
   },
   {
     "id": "m41",
@@ -3678,7 +3732,9 @@
     "homeTeam": "argentina",
     "awayTeam": "austria",
     "stage": "Group Stage",
-    "location": "Arlington"
+    "location": "Arlington",
+    "winner": "argentina",
+    "winnerId": "argentina"
   },
   {
     "id": "m42",
@@ -3757,7 +3813,9 @@
     "homeTeam": "france",
     "awayTeam": "iraq",
     "stage": "Group Stage",
-    "location": "Philadelphia"
+    "location": "Philadelphia",
+    "winner": "france",
+    "winnerId": "france"
   },
   {
     "id": "m43",
@@ -3841,7 +3899,9 @@
     "homeTeam": "norway",
     "awayTeam": "senegal",
     "stage": "Group Stage",
-    "location": "Toronto"
+    "location": "Toronto",
+    "winner": "norway",
+    "winnerId": "norway"
   },
   {
     "id": "m44",
@@ -3926,7 +3986,9 @@
     "homeTeam": "jordan",
     "awayTeam": "algeria",
     "stage": "Group Stage",
-    "location": "Santa Clara"
+    "location": "Santa Clara",
+    "winner": "algeria",
+    "winnerId": "algeria"
   },
   {
     "id": "m45",
@@ -4024,7 +4086,9 @@
     "homeTeam": "portugal",
     "awayTeam": "uzbekistan",
     "stage": "Group Stage",
-    "location": "Houston"
+    "location": "Houston",
+    "winner": "portugal",
+    "winnerId": "portugal"
   },
   {
     "id": "m46",
@@ -4163,7 +4227,9 @@
     "homeTeam": "panama",
     "awayTeam": "croatia",
     "stage": "Group Stage",
-    "location": "Foxborough"
+    "location": "Foxborough",
+    "winner": "croatia",
+    "winnerId": "croatia"
   },
   {
     "id": "m48",
@@ -4242,7 +4308,9 @@
     "homeTeam": "colombia",
     "awayTeam": "drcongo",
     "stage": "Group Stage",
-    "location": "Zapopan"
+    "location": "Zapopan",
+    "winner": "colombia",
+    "winnerId": "colombia"
   },
   {
     "id": "m49",
@@ -4339,7 +4407,9 @@
     "homeTeam": "switzerland",
     "awayTeam": "canada",
     "stage": "Group Stage",
-    "location": "Vancouver"
+    "location": "Vancouver",
+    "winner": "switzerland",
+    "winnerId": "switzerland"
   },
   {
     "id": "m50",
@@ -4438,7 +4508,9 @@
     "homeTeam": "bosniaandherzegovina",
     "awayTeam": "qatar",
     "stage": "Group Stage",
-    "location": "Seattle"
+    "location": "Seattle",
+    "winner": "bosniaandherzegovina",
+    "winnerId": "bosniaandherzegovina"
   },
   {
     "id": "m51",
@@ -4559,7 +4631,9 @@
     "homeTeam": "morocco",
     "awayTeam": "haiti",
     "stage": "Group Stage",
-    "location": "Atlanta"
+    "location": "Atlanta",
+    "winner": "morocco",
+    "winnerId": "morocco"
   },
   {
     "id": "m52",
@@ -4656,7 +4730,9 @@
     "homeTeam": "scotland",
     "awayTeam": "brazil",
     "stage": "Group Stage",
-    "location": "Miami"
+    "location": "Miami",
+    "winner": "brazil",
+    "winnerId": "brazil"
   },
   {
     "id": "m53",
@@ -4731,7 +4807,9 @@
     "homeTeam": "southafrica",
     "awayTeam": "southkorea",
     "stage": "Group Stage",
-    "location": "Guadalajara"
+    "location": "Guadalajara",
+    "winner": "southafrica",
+    "winnerId": "southafrica"
   },
   {
     "id": "m54",
@@ -4816,7 +4894,9 @@
     "homeTeam": "czechia",
     "awayTeam": "mexico",
     "stage": "Group Stage",
-    "location": "Mexico City"
+    "location": "Mexico City",
+    "winner": "mexico",
+    "winnerId": "mexico"
   },
   {
     "id": "m55",
@@ -4905,7 +4985,9 @@
     "homeTeam": "curacao",
     "awayTeam": "ivorycoast",
     "stage": "Group Stage",
-    "location": "Philadelphia"
+    "location": "Philadelphia",
+    "winner": "ivorycoast",
+    "winnerId": "ivorycoast"
   },
   {
     "id": "m56",
@@ -5008,7 +5090,9 @@
     "homeTeam": "ecuador",
     "awayTeam": "germany",
     "stage": "Group Stage",
-    "location": "New Jersey"
+    "location": "New Jersey",
+    "winner": "ecuador",
+    "winnerId": "ecuador"
   },
   {
     "id": "m57",
@@ -5094,7 +5178,9 @@
     "homeTeam": "tunisia",
     "awayTeam": "netherlands",
     "stage": "Group Stage",
-    "location": "Kansas City"
+    "location": "Kansas City",
+    "winner": "netherlands",
+    "winnerId": "netherlands"
   },
   {
     "id": "m58",
@@ -5284,7 +5370,9 @@
     "homeTeam": "turkiye",
     "awayTeam": "usa",
     "stage": "Group Stage",
-    "location": "Los Angeles"
+    "location": "Los Angeles",
+    "winner": "turkiye",
+    "winnerId": "turkiye"
   },
   {
     "id": "m60",
@@ -5447,7 +5535,9 @@
     "homeTeam": "norway",
     "awayTeam": "france",
     "stage": "Group Stage",
-    "location": "Foxborough"
+    "location": "Foxborough",
+    "winner": "france",
+    "winnerId": "france"
   },
   {
     "id": "m62",
@@ -5562,7 +5652,9 @@
     "homeTeam": "senegal",
     "awayTeam": "iraq",
     "stage": "Group Stage",
-    "location": "Toronto"
+    "location": "Toronto",
+    "winner": "senegal",
+    "winnerId": "senegal"
   },
   {
     "id": "m63",
@@ -5731,7 +5823,9 @@
     "homeTeam": "uruguay",
     "awayTeam": "spain",
     "stage": "Group Stage",
-    "location": "Zapopan"
+    "location": "Zapopan",
+    "winner": "spain",
+    "winnerId": "spain"
   },
   {
     "id": "m65",
@@ -5840,7 +5934,9 @@
     "homeTeam": "newzealand",
     "awayTeam": "belgium",
     "stage": "Group Stage",
-    "location": "Vancouver"
+    "location": "Vancouver",
+    "winner": "belgium",
+    "winnerId": "belgium"
   },
   {
     "id": "m66",
@@ -6032,7 +6128,9 @@
     "homeTeam": "panama",
     "awayTeam": "england",
     "stage": "Group Stage",
-    "location": "New Jersey"
+    "location": "New Jersey",
+    "winner": "england",
+    "winnerId": "england"
   },
   {
     "id": "m68",
@@ -6117,7 +6215,9 @@
     "homeTeam": "croatia",
     "awayTeam": "ghana",
     "stage": "Group Stage",
-    "location": "Philadelphia"
+    "location": "Philadelphia",
+    "winner": "croatia",
+    "winnerId": "croatia"
   },
   {
     "id": "m69",
@@ -6282,7 +6382,9 @@
     "homeTeam": "drcongo",
     "awayTeam": "uzbekistan",
     "stage": "Group Stage",
-    "location": "Atlanta"
+    "location": "Atlanta",
+    "winner": "drcongo",
+    "winnerId": "drcongo"
   },
   {
     "id": "m71",
@@ -6490,7 +6592,9 @@
     "homeTeam": "jordan",
     "awayTeam": "argentina",
     "stage": "Group Stage",
-    "location": "Arlington"
+    "location": "Arlington",
+    "winner": "argentina",
+    "winnerId": "argentina"
   },
   {
     "id": "m73",
@@ -6519,13 +6623,15 @@
     "homeTeam": "southafrica",
     "awayTeam": "canada",
     "stage": "Round of 32",
-    "location": "Los Angeles"
+    "location": "Los Angeles",
+    "winner": "canada",
+    "winnerId": "canada"
   },
   {
     "id": "m74",
     "match_id": 74,
-    "date": "2026-06-29",
-    "time": "17:00",
+    "date": "2026-07-02",
+    "time": "05:30",
     "venue": "nrg",
     "group": "R32",
     "status": "upcoming",
@@ -6548,18 +6654,37 @@
     "time": "20:30",
     "venue": "gillette",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Julio Enciso",
+        "teamId": "paraguay",
+        "minute": "42",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Kai Havertz",
+        "teamId": "germany",
+        "minute": "54",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
     "cards": [],
-    "playerOfMatch": "",
+    "playerOfMatch": "Julio Enciso",
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "germany",
     "awayTeam": "paraguay",
     "stage": "Round of 32",
-    "location": "Foxborough"
+    "location": "Foxborough",
+    "winner": "paraguay",
+    "winnerId": "paraguay"
   },
   {
     "id": "m76",
@@ -6568,24 +6693,43 @@
     "time": "01:00",
     "venue": "akron",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Cody Gakpo",
+        "teamId": "netherlands",
+        "minute": "70",
+        "assist": "Crysencio Summerville",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Issa Diop",
+        "teamId": "morocco",
+        "minute": "92",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
     "cards": [],
-    "playerOfMatch": "",
+    "playerOfMatch": "Issa Diop",
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "netherlands",
     "awayTeam": "morocco",
     "stage": "Round of 32",
-    "location": "Guadalajara"
+    "location": "Guadalajara",
+    "winner": "morocco",
+    "winnerId": "morocco"
   },
   {
     "id": "m77",
     "match_id": 77,
-    "date": "2026-06-30",
-    "time": "17:00",
+    "date": "2026-07-02",
+    "time": "01:30",
     "venue": "attstadium",
     "group": "R32",
     "status": "upcoming",
@@ -6608,24 +6752,51 @@
     "time": "21:00",
     "venue": "metlife",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Kylian Mbappé",
+        "teamId": "france",
+        "minute": "45",
+        "assist": "Ousmane Dembélé",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Bradley Barcola",
+        "teamId": "france",
+        "minute": "53",
+        "assist": "Michael Olise",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Kylian Mbappé",
+        "teamId": "france",
+        "minute": "74",
+        "assist": "Michael Olise",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
     "cards": [],
-    "playerOfMatch": "",
+    "playerOfMatch": "Kylian Mbappé",
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "france",
     "awayTeam": "sweden",
     "stage": "Round of 32",
-    "location": "New Jersey"
+    "location": "New Jersey",
+    "winner": "france",
+    "winnerId": "france"
   },
   {
     "id": "m79",
     "match_id": 79,
-    "date": "2026-07-01",
-    "time": "01:00",
+    "date": "2026-07-03",
+    "time": "04:30",
     "venue": "azteca",
     "group": "R32",
     "status": "upcoming",
@@ -6644,8 +6815,8 @@
   {
     "id": "m80",
     "match_id": 80,
-    "date": "2026-07-01",
-    "time": "16:00",
+    "date": "2026-07-03",
+    "time": "00:30",
     "venue": "mercedesbenz",
     "group": "R32",
     "status": "upcoming",
@@ -6664,22 +6835,56 @@
   {
     "id": "m81",
     "match_id": 81,
-    "date": "2026-07-01",
-    "time": "20:00",
+    "date": "2026-06-30",
+    "time": "22:30",
     "venue": "lumen",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
+    "status": "completed",
+    "homeScore": 1,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Antonio Nusa",
+        "teamId": "norway",
+        "minute": "39",
+        "assist": "Martin Ødegaard",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Amad Diallo",
+        "teamId": "ivorycoast",
+        "minute": "74",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Erling Haaland",
+        "teamId": "norway",
+        "minute": "86",
+        "assist": "Patrick Berg",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Antonio Nusa",
+        "teamId": "norway",
+        "type": "yellow",
+        "minute": "45+1"
+      }
+    ],
+    "playerOfMatch": "Patrick Berg",
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "ivorycoast",
     "awayTeam": "norway",
     "stage": "Round of 32",
-    "location": "Seattle"
+    "location": "Seattle",
+    "winner": "norway",
+    "winnerId": "norway"
   },
   {
     "id": "m82",
@@ -6688,64 +6893,169 @@
     "time": "20:00",
     "venue": "levis",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Kaishu Sano",
+        "teamId": "japan",
+        "minute": "29",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Casemiro",
+        "teamId": "brazil",
+        "minute": "56",
+        "assist": "Gabriel Magalhães",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Gabriel Martinelli",
+        "teamId": "brazil",
+        "minute": "90+6",
+        "assist": "Bruno Guimarães",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
     "cards": [],
-    "playerOfMatch": "",
+    "playerOfMatch": "Casemiro",
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "brazil",
     "awayTeam": "japan",
     "stage": "Round of 32",
-    "location": "Santa Clara"
+    "location": "Santa Clara",
+    "winner": "brazil",
+    "winnerId": "brazil"
   },
   {
     "id": "m83",
     "match_id": 83,
-    "date": "2026-07-02",
-    "time": "00:00",
+    "date": "2026-07-01",
+    "time": "21:30",
     "venue": "sofi",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 1,
+    "scorers": [
+      {
+        "name": "Brian Cipenga",
+        "teamId": "drcongo",
+        "minute": "7",
+        "assist": "Chancel Mbemba",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Harry Kane",
+        "teamId": "england",
+        "minute": "75",
+        "assist": "Anthony Gordon",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Harry Kane",
+        "teamId": "england",
+        "minute": "86",
+        "assist": "Anthony Gordon",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Jude Bellingham",
+        "teamId": "england",
+        "type": "yellow",
+        "minute": "19"
+      },
+      {
+        "name": "Noah Sadiki",
+        "teamId": "drcongo",
+        "type": "yellow",
+        "minute": "28"
+      }
+    ],
+    "playerOfMatch": "Harry Kane",
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "england",
     "awayTeam": "drcongo",
     "stage": "Round of 32",
-    "location": "Los Angeles"
+    "location": "Los Angeles",
+    "winner": "england",
+    "winnerId": "england"
   },
   {
     "id": "m84",
     "match_id": 84,
-    "date": "2026-07-02",
-    "time": "19:00",
+    "date": "2026-07-01",
+    "time": "06:30",
     "venue": "bmo",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Julián Quiñones",
+        "teamId": "mexico",
+        "minute": "22",
+        "assist": "Roberto Alvarado",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Raúl Jiménez",
+        "teamId": "mexico",
+        "minute": "31",
+        "assist": "Julián Quiñones",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Piero Hincapié",
+        "teamId": "ecuador",
+        "type": "red",
+        "minute": "90+5"
+      },
+      {
+        "name": "Kendry Páez",
+        "teamId": "ecuador",
+        "type": "yellow",
+        "minute": "90+3"
+      },
+      {
+        "name": "Moisés Caicedo",
+        "teamId": "ecuador",
+        "type": "yellow",
+        "minute": "90+8"
+      }
+    ],
+    "playerOfMatch": "Julián Quiñones",
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "mexico",
     "awayTeam": "ecuador",
     "stage": "Round of 32",
-    "location": "Toronto"
+    "location": "Toronto",
+    "winner": "mexico",
+    "winnerId": "mexico"
   },
   {
     "id": "m85",
     "match_id": 85,
-    "date": "2026-07-02",
-    "time": "23:00",
+    "date": "2026-07-03",
+    "time": "08:30",
     "venue": "bcplace",
     "group": "R32",
     "status": "upcoming",
@@ -6765,7 +7075,7 @@
     "id": "m86",
     "match_id": 86,
     "date": "2026-07-03",
-    "time": "03:00",
+    "time": "23:30",
     "venue": "attstadium",
     "group": "R32",
     "status": "upcoming",
@@ -6784,8 +7094,8 @@
   {
     "id": "m87",
     "match_id": 87,
-    "date": "2026-07-03",
-    "time": "18:00",
+    "date": "2026-07-04",
+    "time": "03:30",
     "venue": "hardrock",
     "group": "R32",
     "status": "upcoming",
@@ -6804,8 +7114,8 @@
   {
     "id": "m88",
     "match_id": 88,
-    "date": "2026-07-03",
-    "time": "22:00",
+    "date": "2026-07-04",
+    "time": "07:00",
     "venue": "arrowhead",
     "group": "R32",
     "status": "upcoming",
@@ -6824,8 +7134,8 @@
   {
     "id": "m89",
     "match_id": 89,
-    "date": "2026-07-04",
-    "time": "01:30",
+    "date": "2026-07-05",
+    "time": "02:30",
     "venue": "nrg",
     "group": "R16",
     "status": "upcoming",
@@ -6836,16 +7146,16 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 75",
-    "awayTeam": "Winner Match 78",
+    "homeTeam": "paraguay",
+    "awayTeam": "france",
     "stage": "Round of 16",
     "location": "Houston"
   },
   {
     "id": "m90",
     "match_id": 90,
-    "date": "2026-07-04",
-    "time": "17:00",
+    "date": "2026-07-06",
+    "time": "01:30",
     "venue": "lincoln",
     "group": "R16",
     "status": "upcoming",
@@ -6856,8 +7166,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 82",
-    "awayTeam": "Winner Match 81",
+    "homeTeam": "brazil",
+    "awayTeam": "norway",
     "stage": "Round of 16",
     "location": "Philadelphia"
   },
@@ -6865,7 +7175,7 @@
     "id": "m91",
     "match_id": 91,
     "date": "2026-07-04",
-    "time": "21:00",
+    "time": "22:30",
     "venue": "metlife",
     "group": "R16",
     "status": "upcoming",
@@ -6877,7 +7187,7 @@
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "canada",
-    "awayTeam": "Winner Match 76",
+    "awayTeam": "morocco",
     "stage": "Round of 16",
     "location": "New Jersey"
   },
@@ -6896,8 +7206,8 @@
     "playerOfMatch": "",
     "stats": null,
     "highlightUrl": "",
-    "homeTeam": "Winner Match 84",
-    "awayTeam": "Winner Match 83",
+    "homeTeam": "mexico",
+    "awayTeam": "england",
     "stage": "Round of 16",
     "location": "Mexico City"
   },

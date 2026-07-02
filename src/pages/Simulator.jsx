@@ -157,6 +157,8 @@ const Simulator = () => {
   const [simState, setSimState] = useState(() => savedState ? savedState.simState : 'idle'); // idle | simulating_groups | groups_completed | simulating_knockouts | completed
   const [simMatches, setSimMatches] = useState(() => savedState ? savedState.simMatches : []);
   const [currentGroupMatchIndex, setCurrentGroupMatchIndex] = useState(() => savedState ? savedState.currentGroupMatchIndex : 0);
+  const [simulationMode, setSimulationMode] = useState(() => savedState ? savedState.simulationMode || 'entire' : 'entire'); // entire | knockout
+  const [setupTargetMode, setSetupTargetMode] = useState('entire'); // entire | knockout
   
   // Setup configuration states
   const [showSetupModal, setShowSetupModal] = useState(false);
@@ -254,7 +256,8 @@ const Simulator = () => {
         knockoutRounds,
         currentKnockoutRound,
         currentKnockoutMatchIndex,
-        playerStats
+        playerStats,
+        simulationMode
       };
       localStorage.setItem('wc2026_simulator_save', JSON.stringify(stateToSave));
     } catch (e) {
@@ -271,7 +274,8 @@ const Simulator = () => {
     knockoutRounds,
     currentKnockoutRound,
     currentKnockoutMatchIndex,
-    playerStats
+    playerStats,
+    simulationMode
   ]);
 
   // Adjust manual scorers array when scores change
@@ -412,13 +416,58 @@ const Simulator = () => {
 
   // Launch simulator with setup parameters
   const executeLaunchSimulation = () => {
-    if (scriptedMatchup.enabled && (!scriptedMatchup.team1 || !scriptedMatchup.team2)) {
+    if (setupTargetMode !== 'knockout' && scriptedMatchup.enabled && (!scriptedMatchup.team1 || !scriptedMatchup.team2)) {
       alert("Please select both teams for the custom scripted matchup, or disable the option.");
       return;
     }
     setShowSetupModal(false);
     
-    // Reset state
+    if (setupTargetMode === 'knockout') {
+      // Order the matches exactly so that the binary tree propagation aligns with the real-world bracket paths:
+      // Match 80 vs 79, Match 77 vs 74, Match 75 vs 78, Match 73 vs 76 (Left side)
+      // Match 81 vs 82, Match 83 vs 84, Match 85 vs 88, Match 86 vs 87 (Right side)
+      const knockoutMatchOrder = [80, 79, 77, 74, 75, 78, 73, 76, 81, 82, 83, 84, 85, 88, 86, 87];
+      const r32MatchesData = knockoutMatchOrder.map(id => matches.find(m => m.match_id === id)).filter(Boolean);
+      
+      const r32Matches = r32MatchesData.map(m => {
+        const t1 = teams.find(t => t.id === m.homeTeam);
+        const t2 = teams.find(t => t.id === m.awayTeam);
+        return {
+          t1: t1 || { id: m.homeTeam, name: m.homeTeam, code: m.homeTeam.substring(0, 3).toUpperCase(), countryCode: '' },
+          t2: t2 || { id: m.awayTeam, name: m.awayTeam, code: m.awayTeam.substring(0, 3).toUpperCase(), countryCode: '' },
+          score: [null, null],
+          winner: null,
+          status: 'scheduled'
+        };
+      });
+
+      setSimMatches([]); // Clear group matches
+      setPlayerStats({ goals: {}, assists: {}, cleanSheets: {} });
+      setKnockoutRounds({
+        roundOf32: r32Matches,
+        roundOf16: [],
+        quarterFinals: [],
+        semiFinals: [],
+        thirdPlace: null,
+        final: null,
+        winner: null
+      });
+      setCurrentKnockoutRound('roundOf32');
+      setCurrentKnockoutMatchIndex(0);
+      setIsPaused(false);
+
+      // Initial manual match reset
+      setManualHomeScore(0);
+      setManualAwayScore(0);
+      setManualHomeScorers([]);
+      setManualAwayScorers([]);
+
+      setSimulationMode('knockout');
+      setSimState('simulating_knockouts');
+      return;
+    }
+
+    // Reset state for entire tournament simulation
     const cleaned = matches.map(m => ({
       ...m,
       status: 'upcoming',
@@ -450,6 +499,7 @@ const Simulator = () => {
     setManualAwayScorers([]);
 
     // Open screen
+    setSimulationMode('entire');
     setSimState('simulating_groups');
   };
 
@@ -1500,6 +1550,7 @@ const Simulator = () => {
       const formatTeam = (t) => t ? { id: t.id, name: t.name, code: t.code } : null;
       const simData = {
         realismCategory: realismCategory,
+        simulationMode: simulationMode,
         groupMatches: simMatches.map(m => ({
           id: m.id,
           homeTeam: m.homeTeam,
@@ -1738,6 +1789,41 @@ const Simulator = () => {
 
     savedSimRef.current = false;
 
+    if (simulationMode === 'knockout') {
+      // Order the matches exactly so that the binary tree propagation aligns with the real-world bracket paths:
+      // Match 80 vs 79, Match 77 vs 74, Match 75 vs 78, Match 73 vs 76 (Left side)
+      // Match 81 vs 82, Match 83 vs 84, Match 85 vs 88, Match 86 vs 87 (Right side)
+      const knockoutMatchOrder = [80, 79, 77, 74, 75, 78, 73, 76, 81, 82, 83, 84, 85, 88, 86, 87];
+      const r32MatchesData = knockoutMatchOrder.map(id => matches.find(m => m.match_id === id)).filter(Boolean);
+      
+      const r32Matches = r32MatchesData.map(m => {
+        const t1 = teams.find(t => t.id === m.homeTeam);
+        const t2 = teams.find(t => t.id === m.awayTeam);
+        return {
+          t1: t1 || { id: m.homeTeam, name: m.homeTeam, code: m.homeTeam.substring(0, 3).toUpperCase(), countryCode: '' },
+          t2: t2 || { id: m.awayTeam, name: m.awayTeam, code: m.awayTeam.substring(0, 3).toUpperCase(), countryCode: '' },
+          score: [null, null],
+          winner: null,
+          status: 'scheduled'
+        };
+      });
+
+      setKnockoutRounds({
+        roundOf32: r32Matches,
+        roundOf16: [],
+        quarterFinals: [],
+        semiFinals: [],
+        thirdPlace: null,
+        final: null,
+        winner: null
+      });
+      setCurrentKnockoutRound('roundOf32');
+      setCurrentKnockoutMatchIndex(0);
+      setPlayerStats({ goals: {}, assists: {}, cleanSheets: {} });
+      setSimState('simulating_knockouts');
+      return;
+    }
+
     // 1. Reset knockout rounds
     setKnockoutRounds({
       roundOf32: [],
@@ -1838,6 +1924,7 @@ const Simulator = () => {
       cleanSheets: {}
     });
 
+    setSimulationMode('entire');
     setSimState('idle');
   };
 
@@ -1883,25 +1970,62 @@ const Simulator = () => {
         {/* 1. IDLE STATE: Starting Screen */}
         {simState === 'idle' && (
           <div className="space-y-12">
-            <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 p-8 rounded-3xl text-center max-w-2xl mx-auto shadow-2xl relative overflow-hidden backdrop-blur-sm">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl" />
-              <div className="relative z-10 flex flex-col items-center">
-                <Trophy className="w-16 h-16 text-yellow-500 mb-4 animate-pulse" />
-                <h3 className="text-2xl font-black text-white uppercase italic tracking-tight mb-2">Simulate the World Cup</h3>
-                <p className="text-gray-400 text-sm leading-relaxed max-w-md mb-6 font-medium">
-                  Experience a realistic 48-team simulation. Choose to run automatically with custom realism categories, or manually dictate scorelines and goal scorers!
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 mt-2 justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              
+              {/* Card 1: Entire Tournament */}
+              <div className="bg-gradient-to-br from-green-500/5 to-slate-900 border border-slate-800 p-8 rounded-3xl flex flex-col justify-between shadow-2xl relative overflow-hidden backdrop-blur-sm group hover:border-green-500/30 transition-all duration-300">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center mb-5 border border-green-500/20 group-hover:scale-105 transition-transform">
+                    <Trophy className="w-8 h-8 text-green-400" />
+                  </div>
+                  <h3 className="text-lg font-black text-white uppercase italic tracking-tight mb-2">Entire Tournament Simulator</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed max-w-sm mb-6 font-semibold">
+                    Simulate the complete 48-team World Cup from the group stages to the final. Generates group standings, top 3rd-place qualifiers, and the bracket path.
+                  </p>
+                </div>
+                <div className="flex justify-center relative z-10">
                   <Button
                     variant="primary"
-                    onClick={() => setShowSetupModal(true)}
-                    className="px-8 py-4 rounded-2xl text-sm font-black uppercase tracking-wider bg-green-500 text-gray-950 hover:bg-green-400 shadow-lg shadow-green-500/25 flex items-center gap-3 transition-transform hover:scale-[1.03]"
+                    onClick={() => {
+                      setSetupTargetMode('entire');
+                      setShowSetupModal(true);
+                    }}
+                    className="w-full py-3.5 rounded-2xl text-xs font-black uppercase tracking-wider bg-green-500 text-gray-950 hover:bg-green-400 shadow-lg shadow-green-500/25 flex items-center justify-center gap-2 transition-transform active:scale-95"
                   >
-                    <Play className="w-5 h-5 fill-current" />
-                    Run Tournament Simulation
+                    <Play className="w-4 h-4 fill-current" />
+                    Simulate Entire Tournament
                   </Button>
                 </div>
               </div>
+
+              {/* Card 2: Knockout Simulator */}
+              <div className="bg-gradient-to-br from-blue-500/5 to-slate-900 border border-slate-800 p-8 rounded-3xl flex flex-col justify-between shadow-2xl relative overflow-hidden backdrop-blur-sm group hover:border-blue-500/30 transition-all duration-300">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-5 border border-blue-500/20 group-hover:scale-105 transition-transform">
+                    <Trophy className="w-8 h-8 text-blue-400" />
+                  </div>
+                  <h3 className="text-lg font-black text-white uppercase italic tracking-tight mb-2">Knockout-Only Simulator</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed max-w-sm mb-6 font-semibold">
+                    Skip the group stage entirely. Uses the exact real-world bracket pairings and matchups from the Round of 32 onwards to simulate the champion.
+                  </p>
+                </div>
+                <div className="flex justify-center relative z-10">
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      setSetupTargetMode('knockout');
+                      setShowSetupModal(true);
+                    }}
+                    className="w-full py-3.5 rounded-2xl text-xs font-black uppercase tracking-wider bg-blue-500 text-white hover:bg-blue-400 shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition-transform active:scale-95"
+                  >
+                    <Play className="w-4 h-4 fill-current" />
+                    Simulate Knockout Stage
+                  </Button>
+                </div>
+              </div>
+
             </div>
 
 
@@ -2025,73 +2149,75 @@ const Simulator = () => {
               )}
 
               {/* Custom Matchup Scripting */}
-              <div className="border-t border-gray-800 pt-4 space-y-3">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-[10px] text-gray-500 uppercase font-black tracking-widest block">Script Custom Matchup</span>
-                    <span className="text-[10px] text-gray-405 text-gray-500 block leading-tight mt-0.5">Force two teams to meet at a specific stage.</span>
-                  </div>
-                  <input
-                    type="checkbox"
-                    checked={scriptedMatchup.enabled}
-                    onChange={(e) => setScriptedMatchup(prev => ({ ...prev, enabled: e.target.checked }))}
-                    className="w-4 h-4 rounded border-gray-800 text-green-500 focus:ring-green-500/20 bg-gray-950 accent-green-500 cursor-pointer"
-                  />
-                </div>
-
-                {scriptedMatchup.enabled && (
-                  <div className="space-y-3 bg-gray-950 border border-gray-850 p-3.5 rounded-2xl">
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-1">Team 1</label>
-                        <select
-                          value={scriptedMatchup.team1}
-                          onChange={(e) => setScriptedMatchup(prev => ({ ...prev, team1: e.target.value }))}
-                          className="w-full bg-gray-900 border border-gray-850 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-green-500"
-                        >
-                          <option value="">Select Team 1</option>
-                          {teams.map(t => (
-                            <option key={t.id} value={t.id} disabled={t.id === scriptedMatchup.team2}>
-                              {t.name.toUpperCase()}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-
-                      <div>
-                        <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-1">Team 2</label>
-                        <select
-                          value={scriptedMatchup.team2}
-                          onChange={(e) => setScriptedMatchup(prev => ({ ...prev, team2: e.target.value }))}
-                          className="w-full bg-gray-900 border border-gray-850 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-green-500"
-                        >
-                          <option value="">Select Team 2</option>
-                          {teams.map(t => (
-                            <option key={t.id} value={t.id} disabled={t.id === scriptedMatchup.team1}>
-                              {t.name.toUpperCase()}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
+              {setupTargetMode !== 'knockout' && (
+                <div className="border-t border-gray-800 pt-4 space-y-3">
+                  <div className="flex items-center justify-between">
                     <div>
-                      <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-1">Target Stage</label>
-                      <select
-                        value={scriptedMatchup.stage}
-                        onChange={(e) => setScriptedMatchup(prev => ({ ...prev, stage: e.target.value }))}
-                        className="w-full bg-gray-900 border border-gray-850 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-green-500"
-                      >
-                        <option value="roundOf32">Round of 32</option>
-                        <option value="roundOf16">Round of 16</option>
-                        <option value="quarterFinals">Quarterfinals</option>
-                        <option value="semiFinals">Semifinals</option>
-                        <option value="final">Final</option>
-                      </select>
+                      <span className="text-[10px] text-gray-500 uppercase font-black tracking-widest block">Script Custom Matchup</span>
+                      <span className="text-[10px] text-gray-405 text-gray-500 block leading-tight mt-0.5">Force two teams to meet at a specific stage.</span>
                     </div>
+                    <input
+                      type="checkbox"
+                      checked={scriptedMatchup.enabled}
+                      onChange={(e) => setScriptedMatchup(prev => ({ ...prev, enabled: e.target.checked }))}
+                      className="w-4 h-4 rounded border-gray-800 text-green-500 focus:ring-green-500/20 bg-gray-950 accent-green-500 cursor-pointer"
+                    />
                   </div>
-                )}
-              </div>
+
+                  {scriptedMatchup.enabled && (
+                    <div className="space-y-3 bg-gray-950 border border-gray-850 p-3.5 rounded-2xl">
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-1">Team 1</label>
+                          <select
+                            value={scriptedMatchup.team1}
+                            onChange={(e) => setScriptedMatchup(prev => ({ ...prev, team1: e.target.value }))}
+                            className="w-full bg-gray-900 border border-gray-850 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-green-500"
+                          >
+                            <option value="">Select Team 1</option>
+                            {teams.map(t => (
+                              <option key={t.id} value={t.id} disabled={t.id === scriptedMatchup.team2}>
+                                {t.name.toUpperCase()}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-1">Team 2</label>
+                          <select
+                            value={scriptedMatchup.team2}
+                            onChange={(e) => setScriptedMatchup(prev => ({ ...prev, team2: e.target.value }))}
+                            className="w-full bg-gray-900 border border-gray-850 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-green-500"
+                          >
+                            <option value="">Select Team 2</option>
+                            {teams.map(t => (
+                              <option key={t.id} value={t.id} disabled={t.id === scriptedMatchup.team1}>
+                                {t.name.toUpperCase()}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-1">Target Stage</label>
+                        <select
+                          value={scriptedMatchup.stage}
+                          onChange={(e) => setScriptedMatchup(prev => ({ ...prev, stage: e.target.value }))}
+                          className="w-full bg-gray-900 border border-gray-850 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-green-500"
+                        >
+                          <option value="roundOf32">Round of 32</option>
+                          <option value="roundOf16">Round of 16</option>
+                          <option value="quarterFinals">Quarterfinals</option>
+                          <option value="semiFinals">Semifinals</option>
+                          <option value="final">Final</option>
+                        </select>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
 
               <div className="flex gap-3 justify-end pt-4 border-t border-gray-800">
                 <Button
@@ -3267,31 +3393,35 @@ const Simulator = () => {
                     >
                       Knockout Bracket
                     </button>
-                    <button
-                      onClick={() => setKnockoutViewTab('standings')}
-                      className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
-                        knockoutViewTab === 'standings'
-                          ? 'bg-yellow-500 text-gray-950 shadow-md'
-                          : 'text-gray-400 hover:text-white'
-                      }`}
-                    >
-                      Group Standings
-                    </button>
-                    <button
-                      onClick={() => setKnockoutViewTab('thirdPlace')}
-                      className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
-                        knockoutViewTab === 'thirdPlace'
-                          ? 'bg-yellow-500 text-gray-950 shadow-md'
-                          : 'text-gray-400 hover:text-white'
-                      }`}
-                    >
-                      Best 3rd Place
-                    </button>
+                    {simulationMode !== 'knockout' && (
+                      <>
+                        <button
+                          onClick={() => setKnockoutViewTab('standings')}
+                          className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                            knockoutViewTab === 'standings'
+                              ? 'bg-yellow-500 text-gray-950 shadow-md'
+                              : 'text-gray-400 hover:text-white'
+                          }`}
+                        >
+                          Group Standings
+                        </button>
+                        <button
+                          onClick={() => setKnockoutViewTab('thirdPlace')}
+                          className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
+                            knockoutViewTab === 'thirdPlace'
+                              ? 'bg-yellow-500 text-gray-950 shadow-md'
+                              : 'text-gray-400 hover:text-white'
+                          }`}
+                        >
+                          Best 3rd Place
+                        </button>
+                      </>
+                    )}
                   </div>
                   <Button
                     variant="secondary"
                     onClick={() => {
-                      setResultsModalTab(simState === 'completed' ? 'knockouts' : 'groups');
+                      setResultsModalTab(simulationMode === 'knockout' ? 'knockouts' : (simState === 'completed' ? 'knockouts' : 'groups'));
                       setShowAllResultsModal(true);
                     }}
                     className="px-4 py-2 text-xs font-black uppercase tracking-wider rounded-xl border border-gray-800 hover:bg-gray-855 flex items-center gap-1.5"
@@ -3473,7 +3603,7 @@ const Simulator = () => {
               </div>
 
               {/* Tab Selector inside modal if tournament is completed */}
-              {simState === 'completed' && (
+              {simState === 'completed' && simulationMode !== 'knockout' && (
                 <div className="flex bg-gray-950 p-1 rounded-xl border border-gray-850 gap-1 self-start">
                   <button
                     onClick={() => setResultsModalTab('groups')}

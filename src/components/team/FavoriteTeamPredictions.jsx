@@ -2,31 +2,34 @@ import React, { useMemo } from 'react';
 import Card from '../ui/Card';
 import { Cpu, Sparkles, TrendingUp } from 'lucide-react';
 import { getTeamStrengthDetails } from '../../utils/simulationHelpers';
+import predictionPercentagesData from '../../data/prediction_percentages.json';
 
 const FavoriteTeamPredictions = ({ team }) => {
     const probabilities = useMemo(() => {
         // Calculate power score using the centralized system helper
         const details = getTeamStrengthDetails(team);
         const powerScore = details.powerScore;
-
         const ps = Math.max(10, Math.min(98, powerScore));
 
-        // Group Stage qualification
+        const teamProg = predictionPercentagesData.progression?.[team.name];
+        if (teamProg) {
+            return {
+                group: teamProg.roundOf32,
+                r16: teamProg.roundOf16,
+                qf: teamProg.quarterFinal,
+                sf: teamProg.semiFinal,
+                final: teamProg.final,
+                winner: teamProg.champion,
+                powerScore: Math.round(ps)
+            };
+        }
+
+        // Fallback to original calculation if not found
         const pGroup = Math.min(99, Math.max(5, Math.round(15 + ps * 0.85 + (20 - (team.fifaRanking || 50)) * 0.3)));
-        
-        // R16 qualification (clamped)
         const pR16 = Math.min(pGroup - 2, Math.max(2, Math.round(pGroup * (ps / 115))));
-        
-        // QF qualification (clamped)
         const pQF = Math.min(pR16 - 2, Math.max(1, Math.round(pR16 * (ps / 135))));
-        
-        // SF qualification (clamped)
         const pSF = Math.min(pQF - 1, Math.max(0.5, Math.round(pQF * (ps / 160) * 10) / 10));
-        
-        // Finalist qualification (clamped)
         const pFinal = Math.min(pSF - 0.2, Math.max(0.2, Math.round(pSF * (ps / 185) * 10) / 10));
-        
-        // Winner qualification (clamped)
         const pWinner = Math.min(pFinal - 0.1, Math.max(0.1, Math.round(pFinal * (ps / 215) * 10) / 10));
 
         return {

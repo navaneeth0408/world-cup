@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Trophy, Users, LayoutDashboard, Calculator, History, BarChart3, Calendar, Menu, X } from 'lucide-react';
+import { Trophy, Users, LayoutDashboard, Calculator, History, BarChart3, Calendar, Menu, X, TrendingUp } from 'lucide-react';
 
 const Navbar = () => {
     const location = useLocation();
@@ -14,6 +14,7 @@ const Navbar = () => {
         { name: 'Stats', path: '/standings', icon: BarChart3 },
         { name: 'Simulator', path: '/simulator', icon: Trophy },
         { name: 'Historical', path: '/simulator/historical', icon: History },
+        { name: 'Insights', path: '/insights', icon: TrendingUp },
     ];
 
     return (

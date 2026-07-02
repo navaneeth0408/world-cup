@@ -345,6 +345,7 @@ const Matches: React.FC = () => {
                 if (!isAllowedClash(teamA.id, teamB.id)) continue;
 
                 const meetingMatch = matches.find(m => m.match_id === commonMatchId);
+                if (meetingMatch && meetingMatch.status === 'completed') continue;
 
                 results.push({
                     teamA,
@@ -847,6 +848,10 @@ const Matches: React.FC = () => {
                                             const homeCards = match.cards?.filter(c => c.teamId === match.homeTeam && c.type === 'red') || [];
                                             const awayCards = match.cards?.filter(c => c.teamId === match.awayTeam && c.type === 'red') || [];
 
+                                            const winnerId = match.winner || match.winnerId;
+                                            const winnerTeam = winnerId ? teams.find(t => t.id === winnerId) : null;
+                                            const isKnockoutDraw = (match.match_id > 72 || match.stage !== 'Group Stage') && match.homeScore === match.awayScore && !!winnerId;
+
                                             return (
                                                 <div
                                                     key={match.id}
@@ -906,7 +911,6 @@ const Matches: React.FC = () => {
                                                                             <span className="text-slate-800 font-black text-sm">:</span>
                                                                             <span className="text-xl md:text-2xl font-black text-white group-hover:text-green-400 transition-colors">{match.awayScore}</span>
                                                                         </div>
-                                                                        
                                                                         {/* Status and stage details */}
                                                                         <div className="flex items-center gap-1.5 text-[9px] text-slate-500 font-extrabold uppercase tracking-widest">
                                                                             <span className="px-1.5 py-0.5 bg-slate-800 border border-slate-700/60 text-slate-300 rounded-md text-[8px] font-black leading-none">FT</span>
@@ -1030,7 +1034,7 @@ const Matches: React.FC = () => {
 
                                                     {/* Combined POTM & Highlights Row */}
                                                     {(match.playerOfMatch || match.status === 'completed') && (
-                                                        <div className="flex items-center justify-between px-4 py-2 border-t border-slate-800/40 bg-slate-950/20 backdrop-blur-sm">
+                                                        <div className="relative flex items-center justify-between px-4 py-2 border-t border-slate-800/40 bg-slate-950/20 backdrop-blur-sm">
                                                             {match.playerOfMatch ? (
                                                                 <div className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-gradient-to-r from-amber-500/15 via-yellow-500/5 to-amber-500/15 border border-amber-500/30 rounded-full text-[9px] font-extrabold uppercase text-amber-400 select-none shadow-sm shadow-amber-500/5">
                                                                     <Star className="w-2.5 h-2.5 fill-amber-400 mr-0.5" />
@@ -1038,6 +1042,14 @@ const Matches: React.FC = () => {
                                                                 </div>
                                                             ) : (
                                                                 <div />
+                                                            )}
+
+                                                            {isKnockoutDraw && winnerTeam && (
+                                                                <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
+                                                                    <span className="text-[7.5px] md:text-[8.5px] font-black text-green-400 uppercase tracking-widest text-center select-none bg-green-500/10 px-3 py-0.5 border border-green-500/20 rounded-full animate-pulse shadow-sm shadow-green-500/5">
+                                                                        {winnerTeam.name} went through after penalties
+                                                                    </span>
+                                                                </div>
                                                             )}
 
                                                             {match.status === 'completed' && (() => {

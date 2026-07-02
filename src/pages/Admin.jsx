@@ -367,7 +367,8 @@ For teamId use lowercase country name without spaces.`;
                 awayScore: match.awayScore ?? 0,
                 scorers: match.scorers || [],
                 cards: match.cards || [],
-                playerOfMatch: match.playerOfMatch || ''
+                playerOfMatch: match.playerOfMatch || '',
+                winnerId: match.winnerId || match.winner || ''
             };
         }
         return localState[match.id];
@@ -381,11 +382,26 @@ For teamId use lowercase country name without spaces.`;
                 awayScore: match.awayScore ?? 0,
                 scorers: match.scorers || [],
                 cards: match.cards || [],
-                playerOfMatch: match.playerOfMatch || ''
+                playerOfMatch: match.playerOfMatch || '',
+                winnerId: match.winnerId || match.winner || ''
             };
+            const updated = { ...current, [side]: parseInt(value) || 0 };
+            
+            // Auto-calculate winnerId if scores are not equal
+            if (updated.homeScore > updated.awayScore) {
+                updated.winnerId = match.homeTeam;
+            } else if (updated.awayScore > updated.homeScore) {
+                updated.winnerId = match.awayTeam;
+            } else {
+                // If it's a draw, reset winnerId unless it's a knockout match, in which case they'll select it
+                if (match.match_id <= 72 && match.stage === 'Group Stage') {
+                    updated.winnerId = '';
+                }
+            }
+
             return {
                 ...prev,
-                [matchId]: { ...current, [side]: parseInt(value) || 0 }
+                [matchId]: updated
             };
         });
     };
@@ -398,7 +414,8 @@ For teamId use lowercase country name without spaces.`;
                 awayScore: match.awayScore ?? 0,
                 scorers: match.scorers || [],
                 cards: match.cards || [],
-                playerOfMatch: match.playerOfMatch || ''
+                playerOfMatch: match.playerOfMatch || '',
+                winnerId: match.winnerId || match.winner || ''
             };
             return {
                 ...prev,
@@ -418,7 +435,8 @@ For teamId use lowercase country name without spaces.`;
                 awayScore: match.awayScore ?? 0,
                 scorers: match.scorers || [],
                 cards: match.cards || [],
-                playerOfMatch: match.playerOfMatch || ''
+                playerOfMatch: match.playerOfMatch || '',
+                winnerId: match.winnerId || match.winner || ''
             };
             return {
                 ...prev,
@@ -438,7 +456,8 @@ For teamId use lowercase country name without spaces.`;
                 awayScore: match.awayScore ?? 0, 
                 scorers: match.scorers || [], 
                 cards: match.cards || [],
-                playerOfMatch: match.playerOfMatch || ''
+                playerOfMatch: match.playerOfMatch || '',
+                winnerId: match.winnerId || match.winner || ''
             };
             const newList = [...current[listType]];
             newList[index] = { ...newList[index], [field]: value };
@@ -454,7 +473,8 @@ For teamId use lowercase country name without spaces.`;
                 awayScore: match.awayScore ?? 0, 
                 scorers: match.scorers || [], 
                 cards: match.cards || [],
-                playerOfMatch: match.playerOfMatch || ''
+                playerOfMatch: match.playerOfMatch || '',
+                winnerId: match.winnerId || match.winner || ''
             };
             const newList = current[listType].filter((_, i) => i !== index);
             return { ...prev, [matchId]: { ...current, [listType]: newList } };
@@ -462,9 +482,16 @@ For teamId use lowercase country name without spaces.`;
     };
 
     const handleUpdate = (matchId) => {
-        const state = localState[matchId];
+        const state = localState[matchId] || getMatchState(matches.find(m => m.id === matchId));
         if (state) {
-            updateMatchScore(matchId, state.homeScore, state.awayScore, state.scorers, state.cards, state.playerOfMatch);
+            // Check if knockout match ends in a draw and no winner selected
+            const match = matches.find(m => m.id === matchId);
+            const isKnockout = match.match_id > 72 || match.stage !== 'Group Stage';
+            if (isKnockout && state.homeScore === state.awayScore && !state.winnerId) {
+                alert('Knockout matches cannot end in a draw without a penalty shootout winner. Please select the team that advanced!');
+                return;
+            }
+            updateMatchScore(matchId, state.homeScore, state.awayScore, state.scorers, state.cards, state.playerOfMatch, state.winnerId);
             alert('Match data updated successfully!');
         }
     };
@@ -766,6 +793,48 @@ For teamId use lowercase country name without spaces.`;
                                                     );
                                                 })}
                                             </div>
+
+                                            {/* Penalty Shootout Selector for Knockout Matches in case of a Draw */}
+                                            {(match.match_id > 72 || match.stage !== 'Group Stage') && state.homeScore === state.awayScore && (
+                                                <div className="mt-6 pt-6 border-t border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-yellow-500/[0.03] p-4 rounded-xl border border-yellow-500/15">
+                                                    <div className="flex flex-col">
+                                                        <span className="text-xs font-black text-yellow-500 uppercase tracking-wider flex items-center gap-1.5">
+                                                            ⚡ Penalty Shootout Required
+                                                        </span>
+                                                        <span className="text-[10px] text-gray-500 font-semibold mt-0.5">
+                                                            Knockout matches cannot end in a draw. Select the team that advanced via shootout:
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex gap-2">
+                                                        <button
+                                                            onClick={() => setLocalState(prev => {
+                                                                const current = prev[match.id] || getMatchState(match);
+                                                                return { ...prev, [match.id]: { ...current, winnerId: match.homeTeam } };
+                                                            })}
+                                                            className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider border transition-all ${
+                                                                state.winnerId === match.homeTeam
+                                                                    ? 'bg-green-500 text-gray-950 border-green-500 shadow-md shadow-green-500/10 font-bold'
+                                                                    : 'bg-gray-950 text-gray-400 border-gray-850 hover:text-white'
+                                                            }`}
+                                                        >
+                                                            {homeTeam?.name} Advanced
+                                                        </button>
+                                                        <button
+                                                            onClick={() => setLocalState(prev => {
+                                                                const current = prev[match.id] || getMatchState(match);
+                                                                return { ...prev, [match.id]: { ...current, winnerId: match.awayTeam } };
+                                                            })}
+                                                            className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider border transition-all ${
+                                                                state.winnerId === match.awayTeam
+                                                                    ? 'bg-green-500 text-gray-950 border-green-500 shadow-md shadow-green-500/10 font-bold'
+                                                                    : 'bg-gray-950 text-gray-400 border-gray-850 hover:text-white'
+                                                            }`}
+                                                        >
+                                                            {awayTeam?.name} Advanced
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            )}
 
                                             {/* Player of the Match Selection */}
                                             <div className="mt-6 pt-6 border-t border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">

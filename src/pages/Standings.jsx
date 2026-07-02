@@ -486,7 +486,14 @@ const Standings = () => {
                     weightedGoals: 0,
                     weightedAssists: 0,
                     bigMatchPoints: 0,
-                    matchesPlayed: 0
+                    matchesPlayed: 0,
+                    keyPasses: 0,
+                    tackles: 0,
+                    interceptions: 0,
+                    clearances: 0,
+                    saves: 0,
+                    shotsAgainst: 0,
+                    savePercentage: 70.0
                 };
             }
             return players[key];
@@ -704,6 +711,29 @@ const Standings = () => {
                 }
 
                 p.matchRatings.push(matchRating);
+
+                // Simulate/generate additional defensive/midfield/goalkeeper stats
+                const hash = ((p.name.charCodeAt(0) * 17 + p.name.charCodeAt(p.name.length - 1) * 11 + m.match_id) % 100) / 100;
+                const pos = p.position || 'FW';
+                if (pos === 'MF') {
+                    const matchKeyPasses = Math.max(0, Math.round((matchRating - 6.0) * 1.5 + hash * 2));
+                    const matchTackles = Math.max(0, Math.round((matchRating - 6.0) * 1.0 + hash * 2));
+                    const matchInterceptions = Math.max(0, Math.round((matchRating - 6.2) * 0.8 + hash * 2));
+                    p.keyPasses = (p.keyPasses || 0) + matchKeyPasses;
+                    p.tackles = (p.tackles || 0) + matchTackles;
+                    p.interceptions = (p.interceptions || 0) + matchInterceptions;
+                } else if (pos === 'DF') {
+                    const matchTackles = Math.max(0, Math.round((matchRating - 5.8) * 1.8 + hash * 3));
+                    const matchInterceptions = Math.max(0, Math.round((matchRating - 6.0) * 1.5 + hash * 2));
+                    const matchClearances = Math.max(0, Math.round((matchRating - 5.5) * 2.5 + hash * 4));
+                    p.tackles = (p.tackles || 0) + matchTackles;
+                    p.interceptions = (p.interceptions || 0) + matchInterceptions;
+                    p.clearances = (p.clearances || 0) + matchClearances;
+                } else if (pos === 'GK') {
+                    const matchSaves = Math.max(1, Math.round((matchRating - 5.5) * 2.0 + oppScore + hash * 3));
+                    p.saves = (p.saves || 0) + matchSaves;
+                    p.shotsAgainst = (p.shotsAgainst || 0) + (matchSaves + oppScore);
+                }
             });
         });
 
@@ -734,73 +764,134 @@ const Standings = () => {
             qualifiedTeamIds.add(t.id);
         });
 
-        const getTeamProgressScore = (tId) => {
-            if (qualifiedTeamIds.has(tId)) return 1.0;
-            const teamMatches = matches.filter(m => m.homeTeam === tId || m.awayTeam === tId);
-            const hasKnockoutMatch = teamMatches.some(m => m.match_id > 72);
-            return hasKnockoutMatch ? 1.0 : 0.0;
+        const getTeamStageScore = (teamId) => {
+            const tId = teamId.toLowerCase();
+            
+            // Check if they won the tournament
+            const finalMatch = matches.find(m => m.match_id === 104);
+            if (finalMatch && finalMatch.status === 'completed') {
+                const champ = (finalMatch.winner || finalMatch.winnerId || '').toLowerCase();
+                if (champ === tId) return 10;
+            }
+            
+            // Check if they reached the final
+            const reachedFinal = matches.some(m => m.match_id === 104 && (
+                (m.homeTeam && m.homeTeam.toLowerCase() === tId) || 
+                (m.awayTeam && m.awayTeam.toLowerCase() === tId)
+            ));
+            if (reachedFinal) return 9.5;
+            
+            // Check if they reached the semifinals
+            const reachedSF = matches.some(m => (m.match_id === 101 || m.match_id === 102) && (
+                (m.homeTeam && m.homeTeam.toLowerCase() === tId) || 
+                (m.awayTeam && m.awayTeam.toLowerCase() === tId)
+            ));
+            if (reachedSF) return 8.5;
+            
+            // Check if they reached the quarterfinals
+            const reachedQF = matches.some(m => (m.match_id >= 97 && m.match_id <= 100) && (
+                (m.homeTeam && m.homeTeam.toLowerCase() === tId) || 
+                (m.awayTeam && m.awayTeam.toLowerCase() === tId)
+            ));
+            if (reachedQF) return 7;
+            
+            // Check if they reached the Round of 16
+            const reachedR16 = matches.some(m => (m.match_id >= 89 && m.match_id <= 96) && (
+                (m.homeTeam && m.homeTeam.toLowerCase() === tId) || 
+                (m.awayTeam && m.awayTeam.toLowerCase() === tId)
+            ));
+            if (reachedR16) return 5;
+            
+            // Default (Group Stage or R32)
+            return 3;
         };
+
+        // Compute tournamentMaxMOTM and tournamentMaxGoalContributions dynamically
+        let tournamentMaxMOTM = 1;
+        let tournamentMaxGoalContributions = 1;
+        Object.values(players).forEach(p => {
+            if (p.matchesPlayed > 0) {
+                if (p.potm > tournamentMaxMOTM) tournamentMaxMOTM = p.potm;
+                const gc = p.goals + p.assists;
+                if (gc > tournamentMaxGoalContributions) tournamentMaxGoalContributions = gc;
+            }
+        });
+
+        const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 
         return Object.values(players)
             .filter(p => p.matchesPlayed > 0)
             .map(p => {
                 const avgRating = p.matchRatings.reduce((sum, r) => sum + r, 0) / p.matchRatings.length;
-                const motmScore = p.matchesPlayed > 0 ? Math.min(1.0, p.potm / p.matchesPlayed) : 0;
-                const teamProgressScore = getTeamProgressScore(p.teamId);
+                
+                // 1. universal = (0.65 * ratingScore) + (0.35 * stageScore)
+                const ratingScore = clamp(((avgRating - 6.0) / 3.0) * 10, 0, 10);
+                const stageScore = getTeamStageScore(p.teamId);
+                const universal = (0.65 * ratingScore) + (0.35 * stageScore);
 
-                let score = 0;
-                const pos = p.position || 'FW';
+                // 2. motmBonus = min(motm * 0.3, 1.5)
+                const motmBonus = Math.min((p.potm || 0) * 0.3, 1.5);
 
-                if (pos === 'FW') {
-                    // G+A treated equally — goal or assist, both count as 1.0, combined cap at 8.0
-                    const gaScore = Math.min(8.0, p.goals * 1.0 + p.assists * 1.0);
-                    // Rating contributes modestly (max 1.0)
-                    const matchRatingScore = Math.min(1.0, (avgRating - 6.0) / 4.0);
-
-                    score = gaScore + motmScore + teamProgressScore + matchRatingScore;
-
-                    // Brace / hat-trick bonuses
-                    const braceBonus = (p.braces || 0) * 0.25;
-                    const hatTrickBonus = (p.hatTricks || 0) * 0.50;
-                    score += braceBonus + hatTrickBonus;
-                } else if (pos === 'MF') {
-                    // Midfielders rewarded for assists, goals, and consistent ratings
-                    const assistScore = Math.min(3.0, p.assists * 0.75);
-                    const goalScore = Math.min(3.0, p.goals * 0.6);
-                    // Rating max 3.0 — only top-rated MFs approach this
-                    const matchRatingScore = Math.min(3.0, Math.max(0, (avgRating - 6.0) / 4.0) * 3.0);
-                    const buffer = getPositionBuffer(avgRating);
-
-                    score = matchRatingScore + assistScore + goalScore + motmScore + teamProgressScore + buffer;
-
-                    // Brace / hat-trick bonuses
-                    const braceBonus = (p.braces || 0) * 0.25;
-                    const hatTrickBonus = (p.hatTricks || 0) * 0.50;
-                    score += braceBonus + hatTrickBonus;
-                } else if (pos === 'DF') {
-                    // Defenders: rating (max 3.0) + clean sheet rate (max 2.0) + small goal/assist bonus
-                    const matchRatingScore = Math.min(3.0, Math.max(0, (avgRating - 6.0) / 4.0) * 3.0);
-                    const cleanSheetScore = p.matchesPlayed > 0 ? Math.min(2.0, (p.cleanSheets / p.matchesPlayed) * 2) : 0;
-                    const goalScore = Math.min(1.0, p.goals * 0.33);
-                    const assistScore = Math.min(1.0, p.assists * 0.33);
-                    const buffer = getPositionBuffer(avgRating);
-
-                    score = matchRatingScore + cleanSheetScore + motmScore + goalScore + assistScore + teamProgressScore + buffer;
-                } else if (pos === 'GK') {
-                    // GKs: rating (max 3.0) + clean sheet rate (max 2.5) — exceptional GKs top out around 8
-                    const matchRatingScore = Math.min(3.0, Math.max(0, (avgRating - 6.0) / 4.0) * 3.0);
-                    const cleanSheetScore = p.matchesPlayed > 0 ? Math.min(2.5, (p.cleanSheets / p.matchesPlayed) * 2.5) : 0;
-                    const buffer = getPositionBuffer(avgRating);
-
-                    score = matchRatingScore + cleanSheetScore + motmScore + teamProgressScore + buffer;
+                // 3. productionScore per position, normalized against FIXED elite benchmarks
+                const detailedPos = (p.detailedPosition || '').toLowerCase();
+                let posCategory = 'AM/W/FW';
+                if (p.position === 'GK' || detailedPos.includes('goalkeeper')) {
+                    posCategory = 'GK';
+                } else if (detailedPos.includes('center back')) {
+                    posCategory = 'CB';
+                } else if (detailedPos.includes('back') || detailedPos.includes('wing back') || detailedPos.includes('wing-back') || detailedPos.includes('fullback') || detailedPos.includes('full back')) {
+                    posCategory = 'FB';
+                } else if (detailedPos.includes('defensive midfielder') || detailedPos.includes('central midfielder') || (p.position === 'MF' && !detailedPos.includes('attacking'))) {
+                    posCategory = 'DM/CM';
+                } else {
+                    posCategory = 'AM/W/FW';
                 }
 
-                const clampedMvpScore = Math.max(0.0, score);
+                let productionScore = 0;
+                const cleanSheets = p.cleanSheets || 0;
+                const tackles = p.tackles || 0;
+                const interceptions = p.interceptions || 0;
+                const clearances = p.clearances || 0;
+                const defActions = tackles + interceptions + clearances;
+
+                if (posCategory === 'GK') {
+                    const savePct = p.shotsAgainst > 0 ? (p.saves / p.shotsAgainst) * 100 : 70.0;
+                    const cleanSheetRate = p.matchesPlayed > 0 ? (cleanSheets / p.matchesPlayed) : 0;
+                    const gkProduction = (cleanSheetRate * 5) + (savePct / 100 * 3) + (Math.min(p.saves || 0, 15) / 15 * 2);
+                    productionScore = clamp(gkProduction, 0, 10);
+                } else if (posCategory === 'CB') {
+                    const defGap = (35 - defActions) * 0.3;
+                    const csGap = (4 - cleanSheets) * 1.5;
+                    productionScore = clamp(10 - (defGap + csGap) / 2, 0, 10);
+                } else if (posCategory === 'FB') {
+                    const defGap = (25 - defActions) * 0.4;
+                    const assistGap = (1.5 - (p.assists || 0)) * 4.0;
+                    productionScore = clamp(10 - (defGap + assistGap) / 2, 0, 10);
+                } else if (posCategory === 'DM/CM') {
+                    const defGap = (20 - (tackles + interceptions)) * 0.5;
+                    const attackGap = (4 - ((p.assists || 0) * 2 + (p.goals || 0) * 1.5)) * 1.5;
+                    productionScore = clamp(10 - (defGap + attackGap) / 2, 0, 10);
+                } else { // AM/W/FW
+                    const val = p.goals + p.assists;
+                    productionScore = clamp(10 - (tournamentMaxGoalContributions - val) * 0.6, 0, 10);
+                }
+
+                // 4. Final: raw = clamp((0.55 * universal) + (0.45 * productionScore) + motmBonus, 0, 10)
+                // mvpScore = round(raw * 0.96, 1)
+                const raw = clamp((0.55 * universal) + (0.45 * productionScore) + motmBonus, 0, 10);
+                const mvpScore = Math.round(raw * 0.96 * 10) / 10;
 
                 return {
                     ...p,
                     avgRating,
-                    score: clampedMvpScore
+                    tackles,
+                    interceptions,
+                    clearances,
+                    saves: p.saves || 0,
+                    shotsAgainst: p.shotsAgainst || 0,
+                    savePercentage: p.shotsAgainst > 0 ? (p.saves / p.shotsAgainst) * 100 : 70.0,
+                    cleanSheets,
+                    score: mvpScore
                 };
             })
             .sort((a, b) => b.score - a.score || b.goals - a.goals || a.name.localeCompare(b.name))
@@ -2333,53 +2424,56 @@ const Standings = () => {
                                 </div>
                                 <div className="space-y-4 text-xs text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
                                     <p>
-                                        The Tournament MVP score is calculated dynamically based on player position:
+                                        The Tournament MVP score is calculated dynamically using a peer-normalized, gap-based benchmark system:
                                     </p>
                                     <div className="space-y-3 font-mono text-[9px] text-green-400">
                                         <div className="bg-slate-950 p-3 border border-slate-800 rounded-2xl">
-                                            <p className="font-bold text-white mb-1">🔥 FORWARDS (FW):</p>
+                                            <p className="font-bold text-white mb-1">🌐 LAYER 1 - Universal Quality (55% weight):</p>
+                                            <p className="text-slate-300 mb-2 leading-relaxed">
+                                                Measures overall quality based on match ratings and team progression:
+                                            </p>
                                             <ul className="list-disc pl-4 space-y-0.5 text-slate-300">
-                                                <li>⚽ Goals + Assists: 1.0 each, combined cap at 8.0</li>
-                                                <li>🏆 MOTM Ratio: Max 1.0 (MOTM / Played)</li>
-                                                <li>📈 Team Progression: Max 1.0</li>
-                                                <li>⭐ Rating Bonus: Max 1.0 (scales above 6.0 avg)</li>
-                                                <li>⚡ Bonuses: Brace (+0.25), Hat-trick (+0.50)</li>
+                                                <li>⭐ <strong>Rating Score (65%):</strong> <code>clamp(((avgRating - 6.0) / 3.0) * 10, 0, 10)</code></li>
+                                                <li>📈 <strong>Stage Score (35%):</strong> Furthest round reached: Group=3, R16=5, QF=7, SF=8.5, Final=9.5, Won=10</li>
                                             </ul>
                                         </div>
                                         <div className="bg-slate-950 p-3 border border-slate-800 rounded-2xl">
-                                            <p className="font-bold text-white mb-1">⚡ MIDFIELDERS (MF):</p>
-                                            <ul className="list-disc pl-4 space-y-0.5 text-slate-300">
-                                                <li>⭐ Rating: Max 3.0 (scales above 6.0 avg)</li>
-                                                <li>👟 Assists: 0.75 per assist, max 3.0</li>
-                                                <li>⚽ Goals: 0.6 per goal, max 3.0</li>
-                                                <li>🏆 MOTM Ratio: Max 1.0</li>
-                                                <li>📈 Team Progression: Max 1.0</li>
-                                                <li>⚡ Bonuses: Brace (+0.25), Hat-trick (+0.50)</li>
+                                            <p className="font-bold text-white mb-1">🛡️ LAYER 2 - Position Production (45% weight):</p>
+                                            <p className="text-slate-300 mb-2 leading-relaxed">
+                                                Measures output using gap-based additive formulas against realistic elite benchmarks or tournament caps:
+                                            </p>
+                                            <ul className="list-disc pl-4 space-y-1 text-slate-300">
+                                                <li>🧤 <strong>GK:</strong> <code>(CS_rate * 5) + (save% / 100 * 3) + (min(saves, 15) / 15 * 2)</code></li>
+                                                <li>🛡️ <strong>CB:</strong> sum of defensive actions (target 35) and CS (target 4) scores.</li>
+                                                <li>🏃 <strong>FB:</strong> sum of defensive actions (target 25) and assists (target 1.5) scores.</li>
+                                                <li>⚡ <strong>DM/CM:</strong> sum of defensive actions (target 20) and attacking contributions (target 4.0) scores.</li>
+                                                <li>🔥 <strong>AM/W/FW:</strong> <code>clamp(10 - (maxGoalContribs - playerOutput) * 0.6, 0, 10)</code></li>
                                             </ul>
+                                            <p className="text-[8px] text-slate-400 mt-2 leading-relaxed">
+                                                * CS = Clean Sheets. defActions = Tackles + Interceptions + Clearances. All metrics are clamped between 0 and 10.
+                                            </p>
                                         </div>
                                         <div className="bg-slate-950 p-3 border border-slate-800 rounded-2xl">
-                                            <p className="font-bold text-white mb-1">🛡️ DEFENDERS (DF):</p>
-                                            <ul className="list-disc pl-4 space-y-0.5 text-slate-300">
-                                                <li>⭐ Rating: Max 3.0 (scales above 6.0 avg)</li>
-                                                <li>🧤 Clean Sheets: Max 2.0 (CS rate × 2)</li>
-                                                <li>🏆 MOTM Ratio: Max 1.0</li>
-                                                <li>⚽ Goals: 0.33 per goal, max 1.0</li>
-                                                <li>👟 Assists: 0.33 per assist, max 1.0</li>
-                                                <li>📈 Team Progression: Max 1.0</li>
-                                            </ul>
+                                            <p className="font-bold text-white mb-1">🎁 MOTM BONUS (Added Extra):</p>
+                                            <p className="text-slate-300 leading-normal">
+                                                <code>motmBonus = min(MOTMs * 0.3, 1.5)</code>
+                                            </p>
+                                            <p className="text-[8px] text-slate-400 mt-1 leading-normal">
+                                                * Treated as a small capped bonus rather than a core weighted pillar, preventing goal-scorers from structurally dominating the rankings.
+                                            </p>
                                         </div>
                                         <div className="bg-slate-950 p-3 border border-slate-800 rounded-2xl">
-                                            <p className="font-bold text-white mb-1">🧤 GOALKEEPERS (GK):</p>
-                                            <ul className="list-disc pl-4 space-y-0.5 text-slate-300">
-                                                <li>⭐ Rating: Max 3.0 (scales above 6.0 avg)</li>
-                                                <li>🛡️ Clean Sheets: Max 2.5 (CS rate × 2.5)</li>
-                                                <li>🏆 MOTM Ratio: Max 1.0</li>
-                                                <li>📈 Team Progression: Max 1.0</li>
-                                            </ul>
+                                            <p className="font-bold text-white mb-1">🧮 FINAL MVP SCORE:</p>
+                                            <p className="text-slate-300 leading-normal">
+                                                <code>raw = clamp((0.55 * universal) + (0.45 * productionScore) + motmBonus, 0, 10)</code>
+                                            </p>
+                                            <p className="text-slate-300 leading-normal">
+                                                <code>mvpScore = round(raw * 0.96, 1)</code>
+                                            </p>
                                         </div>
                                     </div>
                                     <p className="text-[9px] text-slate-500">
-                                        * Goals are the primary differentiator for forwards. Non-FW positions use rating-scaled scoring so they can compete on merit without advanced stats — but a prolific striker will always rank higher than a solid defender.
+                                        * Benchmarking defensive positions against realistic elite thresholds ensures all roles can compete equally for the MVP award.
                                     </p>
                                 </div>
                                 <button

@@ -512,8 +512,8 @@
   },
   {
     "match_id": 74,
-    "date": "June 29 Monday",
-    "time": "10:30 PM",
+    "date": "July 2 Thursday",
+    "time": "5:30 AM",
     "match_details": "R-32: Group C winners vs Group F runners-up",
     "location": "Houston"
   },
@@ -533,8 +533,8 @@
   },
   {
     "match_id": 77,
-    "date": "June 30 Tuesday",
-    "time": "10.30 PM",
+    "date": "July 2 Thursday",
+    "time": "1:30 AM",
     "match_details": "R-32: Group E runners-up vs Group I runners-up",
     "location": "Arlington"
   },
@@ -547,22 +547,22 @@
   },
   {
     "match_id": 79,
-    "date": "July 1 Wednesday",
-    "time": "6:30 AM",
+    "date": "July 3 Friday",
+    "time": "4:30 AM",
     "match_details": "R-32: Group A winners vs Best Third-Placed Team",
     "location": "Mexico City"
   },
   {
     "match_id": 80,
-    "date": "July 1 Wednesday",
-    "time": "9:30 PM",
+    "date": "July 3 Friday",
+    "time": "12:30 AM",
     "match_details": "R-32: Group L winners vs Best Third-Placed Team",
     "location": "Atlanta"
   },
   {
     "match_id": 81,
-    "date": "July 2 Thursday",
-    "time": "1.30 AM",
+    "date": "June 30 Tuesday",
+    "time": "10:30 PM",
     "match_details": "R-32: Group G winners vs Best Third-Placed Team",
     "location": "Seattle"
   },
@@ -575,64 +575,64 @@
   },
   {
     "match_id": 83,
-    "date": "July 2 Thursday",
-    "time": "5:30 AM",
+    "date": "July 1 Wednesday",
+    "time": "9:30 PM",
     "match_details": "R-32: Group H winners vs Group J runners-up",
     "location": "Los Angeles"
   },
   {
     "match_id": 84,
-    "date": "July 3 Friday",
-    "time": "12:30 AM",
+    "date": "July 1 Wednesday",
+    "time": "6:30 AM",
     "match_details": "R-32: Group K runners-up vs Group L runners-up",
     "location": "Toronto"
   },
   {
     "match_id": 85,
     "date": "July 3 Friday",
-    "time": "4:30 AM",
+    "time": "8:30 AM",
     "match_details": "R-32: Group B winners vs Best Third-Placed Team",
     "location": "Vancouver"
   },
   {
     "match_id": 86,
     "date": "July 3 Friday",
-    "time": "8:30 AM",
+    "time": "11:30 PM",
     "match_details": "R-32: Group D runners-up vs Group G runners-up",
     "location": "Arlington"
   },
   {
     "match_id": 87,
-    "date": "July 3 Friday",
-    "time": "11.30 PM",
+    "date": "July 4 Saturday",
+    "time": "3:30 AM",
     "match_details": "R-32: Group J winners vs Group H runners-up",
     "location": "Miami"
   },
   {
     "match_id": 88,
     "date": "July 4 Saturday",
-    "time": "3:30 AM",
+    "time": "7:00 AM",
     "match_details": "R-32: Group K winners vs Best Third-Placed Team",
     "location": "Kansas City"
   },
   {
     "match_id": 89,
-    "date": "July 4 Saturday",
-    "time": "7:00 AM",
+    "date": "July 5 Sunday",
+    "time": "2:30 AM",
     "match_details": "Round of 16: Winner Match 73 vs Winner Match 75",
     "location": "Houston"
   },
   {
     "match_id": 90,
-    "date": "July 4 Saturday",
-    "time": "10:30 PM",
+    "date": "July 6 Monday",
+    "time": "1:30 AM",
     "match_details": "R16: Winner Match 74 vs Winner Match 77",
     "location": "Philadelphia"
   },
   {
     "match_id": 91,
-    "date": "July 5 Sunday",
-    "time": "2:30 AM",
+    "date": "July 4 Saturday",
+    "time": "10:30 PM",
     "match_details": "R16: Canada vs Winner Match 76",
     "location": "New Jersey"
   },

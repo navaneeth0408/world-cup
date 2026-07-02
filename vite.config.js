@@ -207,7 +207,11 @@ export default defineConfig({
                 const allowedFolderNames = ['favorites dominate', 'normal', 'moderately realistic', 'wild card - unrealistic', 'underdog story'];
 
                 const dirPath = path.resolve(__dirname, 'simulation_results');
-                const categoryDirPath = path.resolve(dirPath, category);
+                const isKnockoutOnly = data.simulationMode === 'knockout';
+                const categoryDirPath = isKnockoutOnly 
+                  ? path.resolve(dirPath, 'knockout_only', category)
+                  : path.resolve(dirPath, category);
+                  
                 if (!fs.existsSync(categoryDirPath)) {
                   fs.mkdirSync(categoryDirPath, { recursive: true });
                 }

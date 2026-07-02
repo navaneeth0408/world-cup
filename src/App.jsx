@@ -13,6 +13,7 @@ import MatchDetail from './pages/MatchDetail'
 import Matches from './pages/Matches'
 import Admin from './pages/Admin'
 import PlayerArticle from './pages/PlayerArticle'
+import Insights from './pages/Insights'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -46,6 +47,7 @@ export default function App() {
         <Route path="/match/:id" element={<MatchDetail />} />
         <Route path="/player/:id" element={<PlayerArticle />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/insights" element={<Insights />} />
       </Routes>
     </BrowserRouter>
   )

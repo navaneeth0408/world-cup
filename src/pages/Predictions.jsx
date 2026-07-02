@@ -13,6 +13,7 @@ import Modal from '../components/ui/Modal';
 import Button from '../components/ui/Button';
 import { getPrediction } from '../utils/getPrediction';
 import { useTournamentStore } from '../store/tournamentStore';
+import predictionPercentagesData from '../data/prediction_percentages.json';
 
 const Predictions = () => {
   const { teams, matches, loading } = useTournament();
@@ -555,29 +556,90 @@ const computeKnockouts = (teams, matches, groupStandings) => {
     let finalGoalsB = goalsB;
     let winner;
 
-    if (goalsA > goalsB) {
-      winner = teamA;
-    } else if (goalsB > goalsA) {
-      winner = teamB;
-    } else {
-      // Tie-breaker: compare probabilities
-      if (pred.homeProbability > pred.awayProbability) {
-        winner = teamA;
-        finalGoalsA += 1;
-      } else if (pred.awayProbability > pred.homeProbability) {
-        winner = teamB;
-        finalGoalsB += 1;
+    // Check if we have simulation data in prediction_percentages.json
+    const name1 = teamA.name;
+    const name2 = teamB.name;
+    const sorted = [name1, name2].sort();
+    const team1 = sorted[0];
+    const team2 = sorted[1];
+    const key = `${team1.replace(/\s+/g, '_')}_vs_${team2.replace(/\s+/g, '_')}`;
+    const simPred = predictionPercentagesData.predictions?.[key];
+
+    if (simPred) {
+      let winsA = 0;
+      let winsB = 0;
+      if (simPred.homeTeam === name1) {
+        winsA = simPred.homeWins;
+        winsB = simPred.awayWins;
       } else {
-        // FIFA ranking fallback (lower number is better rank)
-        if ((teamA.fifaRanking || 50) < (teamB.fifaRanking || 50)) {
+        winsA = simPred.awayWins;
+        winsB = simPred.homeWins;
+      }
+
+      // If one team has a clear majority in head-to-head, they win.
+      // But if it's close (e.g. difference is <= 3 wins) or never played,
+      // we use the team's overall champion rate from the simulation to resolve.
+      const totalWins = winsA + winsB;
+      const winDiff = Math.abs(winsA - winsB);
+      
+      const championRateA = predictionPercentagesData.progression?.[name1]?.champion || 0;
+      const championRateB = predictionPercentagesData.progression?.[name2]?.champion || 0;
+
+      let chooseA = false;
+      if (totalWins > 0 && winDiff > 3) {
+        chooseA = winsA > winsB;
+      } else {
+        if (championRateA !== championRateB) {
+          chooseA = championRateA > championRateB;
+        } else {
+          // Fall back to next round progression
+          const nextRoundA = predictionPercentagesData.progression?.[name1]?.roundOf16 || 0;
+          const nextRoundB = predictionPercentagesData.progression?.[name2]?.roundOf16 || 0;
+          if (nextRoundA !== nextRoundB) {
+            chooseA = nextRoundA > nextRoundB;
+          } else {
+            chooseA = winsA >= winsB;
+          }
+        }
+      }
+
+      if (chooseA) {
+        winner = teamA;
+        if (finalGoalsA <= finalGoalsB) {
+          finalGoalsA = finalGoalsB + 1;
+        }
+      } else {
+        winner = teamB;
+        if (finalGoalsB <= finalGoalsA) {
+          finalGoalsB = finalGoalsA + 1;
+        }
+      }
+    } else {
+      if (goalsA > goalsB) {
+        winner = teamA;
+      } else if (goalsB > goalsA) {
+        winner = teamB;
+      } else {
+        // Tie-breaker: compare probabilities
+        if (pred.homeProbability > pred.awayProbability) {
           winner = teamA;
           finalGoalsA += 1;
-        } else {
+        } else if (pred.awayProbability > pred.homeProbability) {
           winner = teamB;
           finalGoalsB += 1;
+        } else {
+          // FIFA ranking fallback (lower number is better rank)
+          if ((teamA.fifaRanking || 50) < (teamB.fifaRanking || 50)) {
+            winner = teamA;
+            finalGoalsA += 1;
+          } else {
+            winner = teamB;
+            finalGoalsB += 1;
+          }
         }
       }
     }
+
     const loser = (winner && teamA && winner.id === teamA.id) ? teamB : teamA;
     return { t1: teamA, t2: teamB, score: [finalGoalsA, finalGoalsB], winner, loser };
   };
