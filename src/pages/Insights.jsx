@@ -70,10 +70,13 @@ const CustomConfedTooltip = ({ active, payload }) => {
 };
 
 const Insights = () => {
-    const { data, loading } = useSimulationData();
+    const { entireData, knockoutData, loading } = useSimulationData();
+    const [simulationType, setSimulationType] = useState('entire'); // 'entire' or 'knockout'
     const [showAllOdds, setShowAllOdds] = useState(false);
     const [heatmapConfed, setHeatmapConfed] = useState('ALL');
     const [heatmapSearch, setHeatmapSearch] = useState('');
+
+    const data = simulationType === 'knockout' ? knockoutData : entireData;
 
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
@@ -231,10 +234,10 @@ const Insights = () => {
                             Predictive Insights
                         </span>
                         <h1 className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter text-white max-w-3xl mx-auto leading-none mb-4">
-                            100 Simulations. <br className="hidden md:inline" /> Here's What They Reveal.
+                            100 {simulationType === 'knockout' ? 'Knockout Stage' : 'Entire Tournament'} Sims. <br className="hidden md:inline" /> Here's What They Reveal.
                         </h1>
                         <p className="text-gray-400 text-sm md:text-base font-semibold max-w-xl mx-auto leading-relaxed">
-                            A deep dive into pre-tournament Monte Carlo simulations. This represents statistical probability projections, not live-tracking.
+                            A deep dive into pre-tournament Monte Carlo {simulationType === 'knockout' ? 'Knockout-Only' : 'Entire Tournament'} simulations. This represents statistical probability projections, not live-tracking.
                         </p>
                     </motion.div>
                 </div>
@@ -242,16 +245,34 @@ const Insights = () => {
 
             {/* Sticky Table of Contents */}
             <div className="sticky top-16 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-900 py-3.5 shadow-lg">
-                <div className="max-w-7xl mx-auto px-4 flex items-center gap-4 overflow-x-auto scrollbar-hide text-[10px] font-black uppercase tracking-wider text-slate-500">
-                    <button onClick={() => scrollToSection('tier-breakdown')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Tier Breakdown</button>
-                    <span className="text-slate-800 font-normal shrink-0">|</span>
-                    <button onClick={() => scrollToSection('title-odds')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Title Odds</button>
-                    <span className="text-slate-800 font-normal shrink-0">|</span>
-                    <button onClick={() => scrollToSection('heatmap')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Stage Survival</button>
-                    <span className="text-slate-800 font-normal shrink-0">|</span>
-                    <button onClick={() => scrollToSection('anomalies')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Anomalies</button>
-                    <span className="text-slate-800 font-normal shrink-0">|</span>
-                    <button onClick={() => scrollToSection('confederations')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Confederations</button>
+                <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide text-[10px] font-black uppercase tracking-wider text-slate-500">
+                        <button onClick={() => scrollToSection('tier-breakdown')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Tier Breakdown</button>
+                        <span className="text-slate-800 font-normal shrink-0">|</span>
+                        <button onClick={() => scrollToSection('title-odds')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Title Odds</button>
+                        <span className="text-slate-800 font-normal shrink-0">|</span>
+                        <button onClick={() => scrollToSection('heatmap')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Stage Survival</button>
+                        <span className="text-slate-800 font-normal shrink-0">|</span>
+                        <button onClick={() => scrollToSection('anomalies')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Anomalies</button>
+                        <span className="text-slate-800 font-normal shrink-0">|</span>
+                        <button onClick={() => scrollToSection('confederations')} className="hover:text-green-400 transition-colors border-none bg-transparent cursor-pointer shrink-0">Confederations</button>
+                    </div>
+
+                    {/* Toggle Switch */}
+                    <div className="flex bg-slate-900/60 border border-slate-800/80 p-0.5 rounded-lg text-[9px] font-black uppercase tracking-wider">
+                        <button 
+                            onClick={() => setSimulationType('entire')} 
+                            className={`px-3 py-1 rounded-md transition-all cursor-pointer ${simulationType === 'entire' ? 'bg-green-500 text-slate-950 font-black shadow-sm' : 'text-slate-400 hover:text-white'}`}
+                        >
+                            Entire Tournament
+                        </button>
+                        <button 
+                            onClick={() => setSimulationType('knockout')} 
+                            className={`px-3 py-1 rounded-md transition-all cursor-pointer ${simulationType === 'knockout' ? 'bg-green-500 text-slate-950 font-black shadow-sm' : 'text-slate-400 hover:text-white'}`}
+                        >
+                            Knockout Only
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -327,7 +348,7 @@ const Insights = () => {
                                     📊 Champion Probability Projections
                                 </h2>
                                 <p className="text-xs text-slate-500 font-semibold leading-relaxed">
-                                    Odds of winning the World Cup based on 100 Monte Carlo simulations.
+                                    Odds of winning the World Cup based on 100 Monte Carlo {simulationType === 'knockout' ? 'Knockout-Only' : 'Entire Tournament'} simulations.
                                 </p>
                             </div>
                             <button

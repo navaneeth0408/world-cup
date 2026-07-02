@@ -1,0 +1,843 @@
+{
+  "title": "sim 1",
+  "simulation_number": 1,
+  "results": {
+    "simulationMode": "knockout",
+    "groupMatches": [],
+    "roundOf32": [
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "portugal",
+          "name": "Portugal",
+          "code": "POR"
+        },
+        "t2": {
+          "id": "croatia",
+          "name": "Croatia",
+          "code": "CRO"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "belgium",
+          "name": "Belgium",
+          "code": "BEL"
+        },
+        "t2": {
+          "id": "senegal",
+          "name": "Senegal",
+          "code": "SEN"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "usa",
+          "name": "USA",
+          "code": "USA"
+        },
+        "t2": {
+          "id": "bosniaandherzegovina",
+          "name": "Bosnia and Herzegovina",
+          "code": "BIH"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "germany",
+          "name": "Germany",
+          "code": "GER"
+        },
+        "t2": {
+          "id": "paraguay",
+          "name": "Paraguay",
+          "code": "PAR"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "france",
+          "name": "France",
+          "code": "FRA"
+        },
+        "t2": {
+          "id": "sweden",
+          "name": "Sweden",
+          "code": "SWE"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "southafrica",
+          "name": "South Africa",
+          "code": "RSA"
+        },
+        "t2": {
+          "id": "canada",
+          "name": "Canada",
+          "code": "CAN"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "netherlands",
+          "name": "Netherlands",
+          "code": "NED"
+        },
+        "t2": {
+          "id": "morocco",
+          "name": "Morocco",
+          "code": "MAR"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "ivorycoast",
+          "name": "Ivory Coast",
+          "code": "CIV"
+        },
+        "t2": {
+          "id": "norway",
+          "name": "Norway",
+          "code": "NOR"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "brazil",
+          "name": "Brazil",
+          "code": "BRA"
+        },
+        "t2": {
+          "id": "japan",
+          "name": "Japan",
+          "code": "JPN"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "england",
+          "name": "England",
+          "code": "ENG"
+        },
+        "t2": {
+          "id": "drcongo",
+          "name": "DR Congo",
+          "code": "COD"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "mexico",
+          "name": "Mexico",
+          "code": "MEX"
+        },
+        "t2": {
+          "id": "ecuador",
+          "name": "Ecuador",
+          "code": "ECU"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "switzerland",
+          "name": "Switzerland",
+          "code": "SUI"
+        },
+        "t2": {
+          "id": "algeria",
+          "name": "Algeria",
+          "code": "ALG"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "colombia",
+          "name": "Colombia",
+          "code": "COL"
+        },
+        "t2": {
+          "id": "ghana",
+          "name": "Ghana",
+          "code": "GHA"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "australia",
+          "name": "Australia",
+          "code": "AUS"
+        },
+        "t2": {
+          "id": "egypt",
+          "name": "Egypt",
+          "code": "EGY"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "argentina",
+          "name": "Argentina",
+          "code": "ARG"
+        },
+        "t2": {
+          "id": "capeverde",
+          "name": "Cape Verde",
+          "code": "CPV"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      }
+    ],
+    "roundOf16": [
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      }
+    ],
+    "quarterFinals": [
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      }
+    ],
+    "semiFinals": [
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      },
+      {
+        "t1": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "t2": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "score": [
+          3,
+          0
+        ],
+        "winner": {
+          "id": "spain",
+          "name": "Spain",
+          "code": "ESP"
+        },
+        "loser": {
+          "id": "austria",
+          "name": "Austria",
+          "code": "AUT"
+        }
+      }
+    ],
+    "final": {
+      "t1": {
+        "id": "spain",
+        "name": "Spain",
+        "code": "ESP"
+      },
+      "t2": {
+        "id": "spain",
+        "name": "Spain",
+        "code": "ESP"
+      },
+      "score": [
+        3,
+        0
+      ],
+      "winner": {
+        "id": "spain",
+        "name": "Spain",
+        "code": "ESP"
+      }
+    },
+    "thirdPlace": {
+      "t1": {
+        "id": "austria",
+        "name": "Austria",
+        "code": "AUT"
+      },
+      "t2": {
+        "id": "austria",
+        "name": "Austria",
+        "code": "AUT"
+      },
+      "score": [
+        3,
+        0
+      ],
+      "winner": {
+        "id": "spain",
+        "name": "Spain",
+        "code": "ESP"
+      }
+    },
+    "winner": {
+      "id": "spain",
+      "name": "Spain",
+      "code": "ESP"
+    }
+  }
+}

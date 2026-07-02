@@ -3,12 +3,7 @@ import Card from '../ui/Card';
 import ProbabilityBar from '../match/ProbabilityBar';
 import ConfidenceBadge from './ConfidenceBadge';
 import Flag from '../ui/Flag';
-import { useTournamentStore } from '../../store/tournamentStore';
-
-const PredictionCard = ({ match, teams, prediction, onPredict }) => {
-    const userPredictions = useTournamentStore(state => state.userPredictions);
-    const userPred = userPredictions[match.id];
-
+const PredictionCard = ({ match, teams, prediction }) => {
     const homeTeam = teams?.find(t => t.id === match.homeTeam);
     const awayTeam = teams?.find(t => t.id === match.awayTeam);
 
@@ -40,28 +35,10 @@ const PredictionCard = ({ match, teams, prediction, onPredict }) => {
                 awayProb={prediction?.awayProbability}
             />
 
-            <div className="grid grid-cols-3 gap-2 text-center border-t border-gray-800/80 pt-3 mt-1">
+            <div className="grid grid-cols-2 gap-2 text-center border-t border-gray-800/80 pt-3 mt-1">
                 <div>
                     <span className="text-[9px] text-gray-500 uppercase font-extrabold tracking-wider block mb-0.5">AI Predicts</span>
                     <span className="font-black text-green-400 text-sm">{prediction?.predictedScore}</span>
-                </div>
-                <div>
-                    <span className="text-[9px] text-gray-500 uppercase font-extrabold tracking-wider block mb-0.5">Your Predicts</span>
-                    {userPred ? (
-                        <button
-                            onClick={() => onPredict && onPredict(match)}
-                            className="font-black text-blue-400 text-sm hover:text-blue-300 transition-colors uppercase cursor-pointer"
-                        >
-                            {userPred.homeScore} - {userPred.awayScore}
-                        </button>
-                    ) : (
-                        <button
-                            onClick={() => onPredict && onPredict(match)}
-                            className="text-[9px] font-black text-blue-400 hover:bg-blue-500/20 hover:text-blue-300 transition-all uppercase tracking-wider bg-blue-500/10 border border-blue-500/20 px-2 py-0.5 rounded cursor-pointer"
-                        >
-                            Predict
-                        </button>
-                    )}
                 </div>
                 <div>
                     <span className="text-[9px] text-gray-500 uppercase font-extrabold tracking-wider block mb-0.5">Actual Score</span>

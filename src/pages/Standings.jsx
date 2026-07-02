@@ -110,8 +110,15 @@ const Standings = () => {
     const [summaryModalType, setSummaryModalType] = useState(null);
     const [drillDownTeamId, setDrillDownTeamId] = useState(null);
     const [activeMvpReason, setActiveMvpReason] = useState(null);
+    const [goalsSubTab, setGoalsSubTab] = useState('scored');
     const [showMvpFormulaModal, setShowMvpFormulaModal] = useState(false);
     const scrollContainerRef = useRef(null);
+
+    useEffect(() => {
+        if (!summaryModalType) {
+            setGoalsSubTab('scored');
+        }
+    }, [summaryModalType]);
 
     useEffect(() => {
         const isModalOpen = !!(selectedStatModal || showThirdPlaceModal || summaryModalType || activeMvpReason || showMvpFormulaModal);
@@ -899,7 +906,7 @@ const Standings = () => {
     }, [completedMatches, teams, matches, groupStandings, thirdPlaceStandings]);
 
     const mvpCandidates = useMemo(() => {
-        return allMvpCandidates.slice(0, 20);
+        return allMvpCandidates.slice(0, 5);
     }, [allMvpCandidates]);
 
     const bestXI = useMemo(() => {
@@ -1255,6 +1262,11 @@ const Standings = () => {
             .filter(t => t.matchesPlayed > 0)
             .sort((a, b) => b.goalsScored - a.goalsScored || a.name.localeCompare(b.name));
 
+        // 1b. Goals Conceded (all active teams sorted descending by goalsConceded)
+        const goalsConcededList = [...allTeamStats]
+            .filter(t => t.matchesPlayed > 0)
+            .sort((a, b) => b.goalsConceded - a.goalsConceded || a.name.localeCompare(b.name));
+
         const addEvent = (category, teamId, playerName) => {
             const team = teams.find(t => t.id === teamId);
             if (!team) return;
@@ -1304,6 +1316,7 @@ const Standings = () => {
 
         return {
             goals: data.goals,
+            goalsConceded: goalsConcededList,
             yellowCards: sortCategory('yellowCards'),
             redCards: sortCategory('redCards'),
             penalties: sortCategory('penalties'),
@@ -2217,6 +2230,30 @@ const Standings = () => {
                         </div>
                     ) : (
                         <div className="flex flex-col gap-2">
+                            {summaryModalType === 'goals' && (
+                                <div className="flex bg-slate-900 border border-slate-800 p-1.5 rounded-xl w-full max-w-xs mx-auto mb-6 shrink-0">
+                                    <button
+                                        onClick={() => setGoalsSubTab('scored')}
+                                        className={`flex-1 px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all cursor-pointer border-none ${
+                                            goalsSubTab === 'scored' 
+                                                ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10' 
+                                                : 'bg-transparent text-slate-400 hover:text-white'
+                                        }`}
+                                    >
+                                        Goals to Score
+                                    </button>
+                                    <button
+                                        onClick={() => setGoalsSubTab('conceded')}
+                                        className={`flex-1 px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all cursor-pointer border-none ${
+                                            goalsSubTab === 'conceded' 
+                                                ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10' 
+                                                : 'bg-transparent text-slate-400 hover:text-white'
+                                        }`}
+                                    >
+                                        Goals Considered
+                                    </button>
+                                </div>
+                            )}
                             {summaryModalType !== 'goals' && (
                                 <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wider mb-2">
                                     Click on a team name to view the player-wise breakdown.
@@ -2233,18 +2270,33 @@ const Standings = () => {
                                     </thead>
                                     <tbody className="divide-y divide-gray-800/40">
                                         {summaryModalType === 'goals' ? (
-                                            summaryBreakdownData.goals.map((team, idx) => (
-                                                <tr key={team.id} className="border-b border-gray-800/40 hover:bg-gray-800/20 transition-colors">
-                                                    <td className="px-4 py-3 text-center font-black text-gray-400">#{idx + 1}</td>
-                                                    <td className="px-2 py-3">
-                                                        <div className="flex items-center gap-3">
-                                                            <Flag code={team.countryCode} circular={true} className="w-6 h-6 border border-gray-800" style={{ width: '24px', height: '24px' }} />
-                                                            <span className="font-bold text-white uppercase">{team.name}</span>
-                                                        </div>
-                                                    </td>
-                                                    <td className="px-4 py-3 text-right font-black text-green-400 text-sm">{team.goalsScored}</td>
-                                                </tr>
-                                            ))
+                                            goalsSubTab === 'scored' ? (
+                                                summaryBreakdownData.goals.map((team, idx) => (
+                                                    <tr key={team.id} className="border-b border-gray-800/40 hover:bg-gray-800/20 transition-colors">
+                                                        <td className="px-4 py-3 text-center font-black text-gray-400">#{idx + 1}</td>
+                                                        <td className="px-2 py-3">
+                                                            <div className="flex items-center gap-3">
+                                                                <Flag code={team.countryCode} circular={true} className="w-6 h-6 border border-gray-800" style={{ width: '24px', height: '24px' }} />
+                                                                <span className="font-bold text-white uppercase">{team.name}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-4 py-3 text-right font-black text-green-400 text-sm">{team.goalsScored}</td>
+                                                    </tr>
+                                                ))
+                                            ) : (
+                                                summaryBreakdownData.goalsConceded.map((team, idx) => (
+                                                    <tr key={team.id} className="border-b border-gray-800/40 hover:bg-gray-800/20 transition-colors">
+                                                        <td className="px-4 py-3 text-center font-black text-gray-400">#{idx + 1}</td>
+                                                        <td className="px-2 py-3">
+                                                            <div className="flex items-center gap-3">
+                                                                <Flag code={team.countryCode} circular={true} className="w-6 h-6 border border-gray-800" style={{ width: '24px', height: '24px' }} />
+                                                                <span className="font-bold text-white uppercase">{team.name}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-4 py-3 text-right font-black text-green-400 text-sm">{team.goalsConceded}</td>
+                                                    </tr>
+                                                ))
+                                            )
                                         ) : (
                                             (summaryBreakdownData[summaryModalType] || []).map((team, idx) => (
                                                 <tr key={team.id} className="border-b border-gray-800/40 hover:bg-gray-800/20 transition-colors">

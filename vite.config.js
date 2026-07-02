@@ -245,7 +245,7 @@ export default defineConfig({
 
                 // Regenerate prediction_percentages.json based on all simulation files recursively
                 try {
-                  const getAllSimulationFiles = (dir) => {
+                   const getAllSimulationFiles = (dir) => {
                     let resList = [];
                     if (!fs.existsSync(dir)) return resList;
                     const list = fs.readdirSync(dir);
@@ -253,8 +253,14 @@ export default defineConfig({
                       const fPath = path.resolve(dir, file);
                       const stat = fs.statSync(fPath);
                       if (stat && stat.isDirectory()) {
-                        if (allowedFolderNames.includes(file)) {
-                          resList = resList.concat(getAllSimulationFiles(fPath));
+                        if (isKnockoutOnly) {
+                          if (file === 'knockout_only' || file === 'background_simulations' || allowedFolderNames.includes(file)) {
+                            resList = resList.concat(getAllSimulationFiles(fPath));
+                          }
+                        } else {
+                          if (allowedFolderNames.includes(file)) {
+                            resList = resList.concat(getAllSimulationFiles(fPath));
+                          }
                         }
                       } else if (file.match(/^sim_(\d+)\.json$/)) {
                         resList.push(fPath);
@@ -263,7 +269,16 @@ export default defineConfig({
                     return resList;
                   };
 
-                  const simFiles = getAllSimulationFiles(dirPath);
+                  let simFiles = [];
+                  if (isKnockoutOnly) {
+                    const koPath = path.resolve(dirPath, 'knockout_only');
+                    const bgPath = path.resolve(dirPath, 'background_simulations');
+                    simFiles = simFiles.concat(getAllSimulationFiles(koPath));
+                    simFiles = simFiles.concat(getAllSimulationFiles(bgPath));
+                  } else {
+                    simFiles = getAllSimulationFiles(dirPath);
+                  }
+                  
                   const totalSims = simFiles.length;
                   if (totalSims > 0) {
                     const matchAggregates = {};
@@ -322,6 +337,10 @@ export default defineConfig({
 
                             const homeScore = m.homeScore;
                             const awayScore = m.awayScore;
+
+                            if (homeScore === null || awayScore === null || homeScore === undefined || awayScore === undefined) {
+                              return;
+                            }
 
                             if (homeName === team1) {
                               if (homeScore > awayScore) {
@@ -483,7 +502,8 @@ export default defineConfig({
                       progression
                     };
 
-                    const outputPath = path.resolve(__dirname, 'src/data/prediction_percentages.json');
+                    const outputFilename = isKnockoutOnly ? 'prediction_percentages_knockout.json' : 'prediction_percentages.json';
+                    const outputPath = path.resolve(__dirname, `src/data/${outputFilename}`);
                     fs.writeFileSync(outputPath, JSON.stringify(outputData, null, 2), 'utf8');
                   }
                 } catch (e) {

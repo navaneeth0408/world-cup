@@ -1,18 +1,19 @@
 import { useMemo } from 'react';
 import { useTournament } from './useTournament';
 import predictionPercentagesData from '../data/prediction_percentages.json';
+import predictionPercentagesKnockoutData from '../data/prediction_percentages_knockout.json';
 
 export const useSimulationData = () => {
   const { teams, loading } = useTournament();
 
-  const simulationData = useMemo(() => {
-    if (loading || !teams || teams.length === 0) {
+  const mapData = (teamsList, percentagesData) => {
+    if (!teamsList || teamsList.length === 0) {
       return { teams: [], totalSims: 100 };
     }
-
-    const totalSims = predictionPercentagesData.totalSimulations || 100;
-    const mappedTeams = teams.map(t => {
-      const prog = predictionPercentagesData.progression?.[t.name] || {
+    
+    const totalSims = percentagesData.totalSimulations || 100;
+    const mappedTeams = teamsList.map(t => {
+      const prog = percentagesData.progression?.[t.name] || {
         roundOf32: 0,
         roundOf16: 0,
         quarterFinal: 0,
@@ -48,7 +49,13 @@ export const useSimulationData = () => {
         confederation: t.confederation || 'UEFA',
         stageExits,
         stageReached,
-        totalSims
+        totalSims,
+        champion: stageReached.champion,
+        final: stageReached.final,
+        sf: stageReached.sf,
+        qf: stageReached.qf,
+        r16: stageReached.r16,
+        r32: stageReached.r32
       };
     });
 
@@ -56,7 +63,21 @@ export const useSimulationData = () => {
       teams: mappedTeams,
       totalSims
     };
+  };
+
+  const entireData = useMemo(() => {
+    if (loading || !teams || teams.length === 0) {
+      return { teams: [], totalSims: 100 };
+    }
+    return mapData(teams, predictionPercentagesData);
   }, [teams, loading]);
 
-  return { data: simulationData, loading };
+  const knockoutData = useMemo(() => {
+    if (loading || !teams || teams.length === 0) {
+      return { teams: [], totalSims: 100 };
+    }
+    return mapData(teams, predictionPercentagesKnockoutData);
+  }, [teams, loading]);
+
+  return { entireData, knockoutData, loading };
 };

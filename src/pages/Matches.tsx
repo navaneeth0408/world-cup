@@ -5,6 +5,8 @@ import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Flag from '../components/ui/Flag';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
+// @ts-ignore
+import KnockoutBracket from '../components/simulator/KnockoutBracket';
 import { Calendar, MapPin, ChevronRight, Play, Trophy, Star, Clock } from 'lucide-react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
@@ -65,8 +67,12 @@ const Matches: React.FC = () => {
         venues: Venue[],
         loading: boolean
     };
-    const [activeTab, setActiveTab] = useState<'upcoming' | 'past' | 'powerhouse'>('upcoming');
+    const [activeTab, setActiveTab] = useState<'upcoming' | 'past' | 'powerhouse' | 'knockout'>('upcoming');
     const navigate = useNavigate();
+
+    const knockoutBracket = useMemo(() => {
+        return computeActualKnockouts(teams, matches);
+    }, [teams, matches]);
 
     const [searchParams] = useSearchParams();
     const teamParam = searchParams.get('team') || '';
@@ -616,10 +622,19 @@ const Matches: React.FC = () => {
                         >
                             Powerhouse Clashes
                         </button>
+                        <button
+                            onClick={() => setActiveTab('knockout')}
+                            className={`px-6 py-2.5 rounded-lg text-xs font-black transition-all uppercase tracking-wider ${activeTab === 'knockout'
+                                ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-gray-950 shadow-md shadow-green-500/10'
+                                : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
+                                }`}
+                        >
+                            Knockout Bracket
+                        </button>
                     </div>
                 </div>
 
-                {activeTab !== 'powerhouse' && (
+                {activeTab !== 'powerhouse' && activeTab !== 'knockout' && (
                     <>
                         {/* Filters & Today Button */}
                         <div className="flex flex-wrap items-center justify-between gap-4 mb-8 bg-slate-900/30 p-4 rounded-2xl border border-slate-800/40 backdrop-blur-sm shadow-md">
@@ -815,7 +830,7 @@ const Matches: React.FC = () => {
                 )}
 
                 {/* Match List */}
-                {activeTab !== 'powerhouse' && (
+                {activeTab !== 'powerhouse' && activeTab !== 'knockout' && (
                     <div className="space-y-10">
                     {sortedGroupedDates.length === 0 ? (
                         <div className="text-center py-20 bg-slate-900/10 rounded-3xl border border-slate-800/80 border-dashed animate-pulse">
@@ -1084,6 +1099,36 @@ const Matches: React.FC = () => {
                     )}
                 </div>
                 )}
+
+                {activeTab === 'knockout' && (
+                    <div className="space-y-8 animate-in fade-in duration-500 max-w-7xl mx-auto w-full">
+                        <div className="bg-slate-900/30 border border-slate-800/40 backdrop-blur-sm p-6 rounded-3xl relative overflow-hidden shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div className="space-y-1">
+                                <h3 className="font-bold text-white uppercase tracking-wider text-sm flex items-center gap-2">
+                                    <Trophy className="w-4 h-4 text-green-500" />
+                                    Knockout Bracket
+                                </h3>
+                                <p className="text-xs text-slate-400 leading-relaxed max-w-2xl">
+                                    Real-world tournament progress. Completed matches show actual results; upcoming matches are TBD.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Bracket Display */}
+                        <div className="bg-gray-900/40 p-6 rounded-2xl border border-gray-800/80 shadow-inner overflow-hidden">
+                            <KnockoutBracket
+                                rounds={{
+                                    roundOf32: knockoutBracket.roundOf32,
+                                    roundOf16: knockoutBracket.roundOf16,
+                                    quarterFinals: knockoutBracket.quarterFinals,
+                                    semiFinals: knockoutBracket.semiFinals,
+                                    final: [knockoutBracket.final],
+                                    thirdPlace: knockoutBracket.thirdPlace
+                                }}
+                            />
+                        </div>
+                    </div>
+                )}
             </main>
 
             {/* Path Modal Overlay */}
@@ -1240,6 +1285,80 @@ const Matches: React.FC = () => {
             )}
         </div>
     );
+};
+
+const computeActualKnockouts = (teams: any[], matches: any[]) => {
+  const resolveTeam = (teamId: string, r32: any[], r16: any[], qf: any[], sf: any[]) => {
+    if (!teamId) return null;
+    const cleanId = teamId.toLowerCase();
+    const directTeam = teams.find(t => t.id === cleanId);
+    if (directTeam) return directTeam;
+
+    if (cleanId.startsWith("winner match ")) {
+      const matchNum = parseInt(cleanId.replace("winner match ", ""), 10);
+      let prevMatch;
+      if (matchNum >= 73 && matchNum <= 88) prevMatch = r32.find(m => m.match_id === matchNum);
+      else if (matchNum >= 89 && matchNum <= 96) prevMatch = r16.find(m => m.match_id === matchNum);
+      else if (matchNum >= 97 && matchNum <= 100) prevMatch = qf.find(m => m.match_id === matchNum);
+      else if (matchNum >= 101 && matchNum <= 102) prevMatch = sf.find(m => m.match_id === matchNum);
+      return prevMatch?.winner || null;
+    }
+
+    if (cleanId.startsWith("loser match ")) {
+      const matchNum = parseInt(cleanId.replace("loser match ", ""), 10);
+      let prevMatch;
+      if (matchNum >= 101 && matchNum <= 102) prevMatch = sf.find(m => m.match_id === matchNum);
+      return prevMatch?.loser || null;
+    }
+
+    return null;
+  };
+
+  const getTeam = (teamId: string) => teams.find(t => t.id === teamId) || null;
+
+  const mapMatch = (m: any, r32: any[] = [], r16: any[] = [], qf: any[] = [], sf: any[] = []) => {
+    if (!m) return { t1: null, t2: null, score: [null, null] as [number | null, number | null], winner: null, loser: null };
+    const t1 = resolveTeam(m.homeTeam, r32, r16, qf, sf);
+    const t2 = resolveTeam(m.awayTeam, r32, r16, qf, sf);
+    const isCompleted = m.status === 'completed' && m.homeScore !== null && m.awayScore !== null;
+    const score = isCompleted ? [m.homeScore, m.awayScore] as [number | null, number | null] : [null, null] as [number | null, number | null];
+    const winner = isCompleted ? getTeam(m.winnerId || m.winner) : null;
+    const loser = isCompleted ? (winner?.id === t1?.id ? t2 : t1) : null;
+    return {
+      t1,
+      t2,
+      score,
+      winner,
+      loser,
+      id: m.id,
+      match_id: m.match_id
+    };
+  };
+
+  const getMatchByNum = (num: number, r32: any[] = [], r16: any[] = [], qf: any[] = [], sf: any[] = []) => {
+    const m = matches.find(x => x.match_id === num);
+    return mapMatch(m, r32, r16, qf, sf);
+  };
+
+  const roundOf32 = [73, 76, 75, 78, 74, 77, 79, 80, 82, 81, 84, 83, 85, 88, 86, 87].map(num => getMatchByNum(num));
+  const roundOf16 = [91, 89, 94, 93, 90, 92, 95, 96].map(num => getMatchByNum(num, roundOf32));
+  const quarterFinals = [99, 97, 98, 100].map(num => getMatchByNum(num, roundOf32, roundOf16));
+  const semiFinals = [102, 101].map(num => getMatchByNum(num, roundOf32, roundOf16, quarterFinals));
+  const final = getMatchByNum(104, roundOf32, roundOf16, quarterFinals, semiFinals);
+  const thirdPlace = getMatchByNum(103, roundOf32, roundOf16, quarterFinals, semiFinals);
+
+  // Winner of the final
+  const winner = final.winner || null;
+
+  return {
+    roundOf32,
+    roundOf16,
+    quarterFinals,
+    semiFinals,
+    final,
+    thirdPlace,
+    winner
+  };
 };
 
 export default Matches;

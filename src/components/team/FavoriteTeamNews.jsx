@@ -36,7 +36,7 @@ const actualNewsArticles = {
         },
         {
             id: 'br-2',
-            headline: 'Dorival Júnior outlines tactical shifts for Brazil qualifiers',
+            headline: 'Carlo Ancelotti outlines tactical shifts for Brazil qualifiers',
             summary: 'The new head coach details his plans to integrate Real Madrid stars Vinícius Júnior and Endrick into a dynamic new Brazilian front line.',
             date: 'June 08, 2026',
             source: 'Sky Sports',

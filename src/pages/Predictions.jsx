@@ -9,107 +9,35 @@ import { LayoutGrid, Filter, Trophy, User, Cpu, Award } from 'lucide-react';
 import GroupTable from '../components/simulator/GroupTable';
 import KnockoutBracket from '../components/simulator/KnockoutBracket';
 import Flag from '../components/ui/Flag';
-import Modal from '../components/ui/Modal';
-import Button from '../components/ui/Button';
 import { getPrediction } from '../utils/getPrediction';
-import { useTournamentStore } from '../store/tournamentStore';
 import predictionPercentagesData from '../data/prediction_percentages.json';
+import predictionPercentagesKnockoutData from '../data/prediction_percentages_knockout.json';
 
 const Predictions = () => {
-  const { teams, matches, loading } = useTournament();
+  const { teams, matches, groupStandings, loading } = useTournament();
   const [activeGroup, setActiveGroup] = useState('A');
   const [showStandings, setShowStandings] = useState(false);
-  const [activePredictMatch, setActivePredictMatch] = useState(null);
-  const [knockoutViewMode, setKnockoutViewMode] = useState('user');
-
-  const { userPredictions, setUserPrediction } = useTournamentStore();
+  const [knockoutViewMode, setKnockoutViewMode] = useState('actual');
 
   const groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
   const groupMatches = matches.filter(m => m.group === activeGroup);
 
-  // Compute live prediction stats comparing AI vs User
-  const predictionStats = useMemo(() => {
-    // Find all completed matches
-    const completedMatches = matches.filter(
-      m => m.status === 'completed' && m.homeScore !== null && m.awayScore !== null
-    );
-
-    let userCorrectOutcomes = 0;
-    let userExactScores = 0;
-    let userTotalPredictions = 0;
-
-    let aiCorrectOutcomes = 0;
-    let aiExactScores = 0;
-
-    completedMatches.forEach(match => {
-      const homeTeam = teams.find(t => t.id === match.homeTeam);
-      const awayTeam = teams.find(t => t.id === match.awayTeam);
-      if (!homeTeam || !awayTeam) return;
-
-      // Actual outcome
-      const actualDiff = match.homeScore - match.awayScore;
-      const actualOutcome = actualDiff > 0 ? 'home' : (actualDiff < 0 ? 'away' : 'draw');
-
-      // AI Prediction
-      const aiPred = getPrediction(homeTeam, awayTeam);
-      if (aiPred && aiPred.predictedScore) {
-        const [aiHome, aiAway] = aiPred.predictedScore.split('-').map(x => parseInt(x.trim(), 10));
-        const aiDiff = aiHome - aiAway;
-        const aiOutcome = aiDiff > 0 ? 'home' : (aiDiff < 0 ? 'away' : 'draw');
-
-        if (aiOutcome === actualOutcome) aiCorrectOutcomes++;
-        if (aiHome === match.homeScore && aiAway === match.awayScore) aiExactScores++;
-      }
-
-      // User Prediction
-      const userPred = userPredictions[match.id];
-      if (userPred) {
-        userTotalPredictions++;
-        const userDiff = userPred.homeScore - userPred.awayScore;
-        const userOutcome = userDiff > 0 ? 'home' : (userDiff < 0 ? 'away' : 'draw');
-
-        if (userOutcome === actualOutcome) userCorrectOutcomes++;
-        if (userPred.homeScore === match.homeScore && userPred.awayScore === match.awayScore) userExactScores++;
-      }
-    });
-
-    // Scoring system: 1 point for outcome, 3 points for exact score
-    const userPoints = (userCorrectOutcomes - userExactScores) * 1 + userExactScores * 3;
-    const aiPoints = (aiCorrectOutcomes - aiExactScores) * 1 + aiExactScores * 3;
-
-    return {
-      completedCount: completedMatches.length,
-      userTotalPredictions,
-      userCorrectOutcomes,
-      userExactScores,
-      userPoints,
-      aiCorrectOutcomes,
-      aiExactScores,
-      aiPoints
-    };
-  }, [matches, teams, userPredictions]);
-
   // Compute predicted group standings (AI)
   const predictedGroupStandings = useMemo(() => {
-    return computeStandings(teams, matches, {}, false);
+    return computeStandings(teams, matches, {}, false, true);
   }, [teams, matches]);
-
-  // Compute predicted group standings (User)
-  const userPredictedGroupStandings = useMemo(() => {
-    return computeStandings(teams, matches, userPredictions, true);
-  }, [teams, matches, userPredictions]);
 
   // Compute predicted knockout stages (AI)
   const predictedKnockouts = useMemo(() => {
     return computeKnockouts(teams, matches, predictedGroupStandings);
   }, [teams, matches, predictedGroupStandings]);
 
-  // Compute predicted knockout stages (User)
-  const userPredictedKnockouts = useMemo(() => {
-    return computeKnockouts(teams, matches, userPredictedGroupStandings);
-  }, [teams, matches, userPredictedGroupStandings]);
+  // Compute actual knockout stages
+  const actualKnockouts = useMemo(() => {
+    return computeActualKnockouts(teams, matches);
+  }, [teams, matches]);
 
-  const activeKnockouts = knockoutViewMode === 'user' ? userPredictedKnockouts : predictedKnockouts;
+  const activeKnockouts = knockoutViewMode === 'actual' ? actualKnockouts : predictedKnockouts;
 
   if (loading) return <LoadingSpinner size="lg" className="min-h-screen" />;
 
@@ -130,65 +58,7 @@ const Predictions = () => {
           </div>
         </div>
 
-        {/* Prediction Leaderboard / Dashboard */}
-        <div className="mb-10 bg-gray-900/40 border border-gray-800 rounded-3xl p-6 md:p-8 backdrop-blur-md">
-          <div className="flex items-center gap-3 mb-6">
-            <Trophy className="w-6 h-6 text-yellow-500" />
-            <h2 className="text-xl font-black text-white uppercase italic tracking-tighter">AI vs User Prediction Challenge</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            {/* User Stats Card */}
-            <div className="bg-blue-500/5 border border-blue-500/10 p-5 rounded-2xl flex items-center gap-4">
-              <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400">
-                <User className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="text-[10px] text-gray-500 uppercase font-black block">Your Score</span>
-                <span className="text-2xl font-black text-white">{predictionStats.userPoints} pts</span>
-                <span className="text-[10px] text-gray-400 block mt-0.5 font-bold">
-                  {predictionStats.userExactScores} exact · {predictionStats.userCorrectOutcomes} correct ({predictionStats.userTotalPredictions} predicted)
-                </span>
-              </div>
-            </div>
 
-            {/* Verdict Center Card */}
-            <div className="flex flex-col items-center justify-center text-center p-4">
-              {predictionStats.completedCount === 0 ? (
-                <>
-                  <span className="text-xs font-black text-gray-500 uppercase tracking-widest mb-1">Challenge Status</span>
-                  <p className="text-xs text-gray-400 font-bold leading-relaxed">No completed matches yet. Predictions will update live as soon as matches finish!</p>
-                </>
-              ) : (
-                <>
-                  <span className="text-xs font-black text-gray-500 uppercase tracking-widest mb-1">Current Leader</span>
-                  <p className="text-xl font-black uppercase tracking-tight italic text-yellow-500">
-                    {predictionStats.userPoints > predictionStats.aiPoints ? 'You are leading!' : 
-                     predictionStats.aiPoints > predictionStats.userPoints ? 'AI is in the lead!' : 
-                     "It's a dead heat!"}
-                  </p>
-                  <span className="text-xs text-gray-400 font-bold block mt-1">
-                    {predictionStats.completedCount} match{predictionStats.completedCount > 1 ? 'es' : ''} completed
-                  </span>
-                </>
-              )}
-            </div>
-
-            {/* AI Stats Card */}
-            <div className="bg-green-500/5 border border-green-500/10 p-5 rounded-2xl flex items-center gap-4">
-              <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center text-green-400">
-                <Cpu className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="text-[10px] text-gray-500 uppercase font-black block">AI Score</span>
-                <span className="text-2xl font-black text-white">{predictionStats.aiPoints} pts</span>
-                <span className="text-[10px] text-gray-400 block mt-0.5 font-bold">
-                  {predictionStats.aiExactScores} exact · {predictionStats.aiCorrectOutcomes} correct ({predictionStats.completedCount} predicted)
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Group Tabs */}
         <div className="flex overflow-x-auto gap-2 mb-8 pb-2 scrollbar-hide">
@@ -213,11 +83,10 @@ const Predictions = () => {
           </h2>
           <button
             onClick={() => setShowStandings(!showStandings)}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl border transition-all ${
-              showStandings 
-                ? 'bg-green-500 text-gray-950 border-green-500 hover:bg-green-600' 
-                : 'bg-gray-900 text-gray-400 hover:text-white border-gray-800 hover:border-gray-700'
-            }`}
+            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl border transition-all ${showStandings
+              ? 'bg-green-500 text-gray-950 border-green-500 hover:bg-green-600'
+              : 'bg-gray-900 text-gray-400 hover:text-white border-gray-800 hover:border-gray-700'
+              }`}
           >
             {showStandings ? 'Show Predicted Matches' : 'View Group Standings'}
           </button>
@@ -225,20 +94,20 @@ const Predictions = () => {
 
         {showStandings ? (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Actual group standings */}
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-2xl flex flex-col gap-4">
+              <h3 className="text-xs font-black text-blue-400 uppercase tracking-widest px-2 border-l-2 border-blue-500">
+                Actual Group Standings
+              </h3>
+              <GroupTable teams={groupStandings[activeGroup] || []} />
+            </div>
+
             {/* AI predicted standings */}
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-2xl flex flex-col gap-4">
               <h3 className="text-xs font-black text-green-400 uppercase tracking-widest px-2 border-l-2 border-green-500">
                 AI Predicted Standings
               </h3>
               <GroupTable teams={predictedGroupStandings[activeGroup] || []} />
-            </div>
-            
-            {/* User predicted standings */}
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-2xl flex flex-col gap-4">
-              <h3 className="text-xs font-black text-blue-400 uppercase tracking-widest px-2 border-l-2 border-blue-500">
-                Your Predicted Standings
-              </h3>
-              <GroupTable teams={userPredictedGroupStandings[activeGroup] || []} />
             </div>
           </div>
         ) : (
@@ -248,7 +117,6 @@ const Predictions = () => {
                 key={match.id}
                 match={match}
                 teams={teams}
-                onPredict={setActivePredictMatch}
               />
             ))}
           </div>
@@ -263,42 +131,42 @@ const Predictions = () => {
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
                   <h2 className="text-3xl font-black text-white uppercase italic tracking-tighter mb-2 flex items-center gap-3">
-                    <Trophy className="w-8 h-8 text-green-500" />
-                    Knockout Stage Predictions
+                    <Trophy className={`w-8 h-8 ${knockoutViewMode === 'actual' ? 'text-blue-500' : 'text-green-500'}`} />
+                    {knockoutViewMode === 'actual' ? 'Actual Knockout Bracket' : 'AI Knockout Predictions'}
                   </h2>
                   <p className="text-gray-500 font-medium text-xs md:text-sm">
-                    Bracket generated from group stage standings. All knockout matches are resolved deterministically using team strengths and FIFA rankings.
+                    {knockoutViewMode === 'actual'
+                      ? 'Real-world tournament progress. Completed matches show actual results; upcoming matches are TBD.'
+                      : 'Bracket generated from group stage standings. All knockout matches are resolved using the 100 simulations.'}
                   </p>
                 </div>
 
                 {/* Bracket view toggle */}
-                <div className="flex bg-gray-900 border border-gray-800 p-1.5 rounded-xl self-start md:self-auto">
+                <div className="flex bg-gray-900 border border-gray-800 p-1.5 rounded-xl self-start md:self-auto shrink-0">
                   <button
-                    onClick={() => setKnockoutViewMode('user')}
-                    className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all ${
-                      knockoutViewMode === 'user' 
-                        ? 'bg-blue-500 text-white shadow-lg' 
-                        : 'text-gray-400 hover:text-white'
-                    }`}
+                    onClick={() => setKnockoutViewMode('actual')}
+                    className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all cursor-pointer ${knockoutViewMode === 'actual'
+                      ? 'bg-blue-500 text-white shadow-lg'
+                      : 'text-gray-400 hover:text-white'
+                      }`}
                   >
-                    Your Prediction
+                    Actual Bracket
                   </button>
                   <button
                     onClick={() => setKnockoutViewMode('ai')}
-                    className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all ${
-                      knockoutViewMode === 'ai' 
-                        ? 'bg-green-500 text-gray-950 shadow-lg' 
-                        : 'text-gray-400 hover:text-white'
-                    }`}
+                    className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all cursor-pointer ${knockoutViewMode === 'ai'
+                      ? 'bg-green-500 text-gray-950 shadow-lg'
+                      : 'text-gray-400 hover:text-white'
+                      }`}
                   >
-                    AI Prediction
+                    AI Predictions
                   </button>
                 </div>
               </div>
 
               {/* Winner Banner */}
-              {activeKnockouts.winner && (
-                <div className={`bg-gradient-to-r ${knockoutViewMode === 'user' ? 'from-blue-500/10 to-indigo-500/10 border-blue-500/20' : 'from-green-500/10 to-blue-500/10 border-green-500/20'} border p-8 rounded-3xl text-center relative overflow-hidden max-w-2xl mx-auto shadow-2xl`}>
+              {knockoutViewMode === 'ai' && activeKnockouts.winner && (
+                <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 p-8 rounded-3xl text-center relative overflow-hidden max-w-2xl mx-auto shadow-2xl animate-in">
                   <div className="relative z-10 flex flex-col items-center">
                     <div className="mb-4">
                       <Flag code={activeKnockouts.winner.countryCode} style={{ fontSize: '6rem' }} />
@@ -306,8 +174,23 @@ const Predictions = () => {
                     <h3 className="text-4xl font-black text-white uppercase italic tracking-tighter mb-1">
                       {activeKnockouts.winner.name}
                     </h3>
-                    <p className={`${knockoutViewMode === 'user' ? 'text-blue-400' : 'text-green-400'} font-black text-xs uppercase tracking-widest`}>
-                      {knockoutViewMode === 'user' ? 'YOUR PREDICTED CHAMPION' : 'AI PREDICTED CHAMPION'}
+                    <p className="text-green-400 font-black text-xs uppercase tracking-widest">
+                      AI PREDICTED CHAMPION
+                    </p>
+                  </div>
+                </div>
+              )}
+              {knockoutViewMode === 'actual' && activeKnockouts.winner && (
+                <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 border border-blue-500/20 p-8 rounded-3xl text-center relative overflow-hidden max-w-2xl mx-auto shadow-2xl animate-in">
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="mb-4">
+                      <Flag code={activeKnockouts.winner.countryCode} style={{ fontSize: '6rem' }} />
+                    </div>
+                    <h3 className="text-4xl font-black text-white uppercase italic tracking-tighter mb-1">
+                      {activeKnockouts.winner.name}
+                    </h3>
+                    <p className="text-blue-400 font-black text-xs uppercase tracking-widest">
+                      ACTUAL CHAMPION
                     </p>
                   </div>
                 </div>
@@ -331,91 +214,18 @@ const Predictions = () => {
         )}
       </main>
 
-      {/* Predict Score Modal */}
-      <Modal
-        isOpen={!!activePredictMatch}
-        onClose={() => setActivePredictMatch(null)}
-        title="Enter Your Prediction"
-      >
-        {activePredictMatch && (
-          <PredictionInputForm
-            match={activePredictMatch}
-            teams={teams}
-            onSave={(homeScore, awayScore) => {
-              setUserPrediction(activePredictMatch.id, homeScore, awayScore);
-              setActivePredictMatch(null);
-            }}
-            onCancel={() => setActivePredictMatch(null)}
-            initialHome={userPredictions[activePredictMatch.id]?.homeScore}
-            initialAway={userPredictions[activePredictMatch.id]?.awayScore}
-          />
-        )}
-      </Modal>
     </div>
   );
 };
 
-const PredictionGridItem = ({ match, teams, onPredict }) => {
+const PredictionGridItem = ({ match, teams }) => {
   const prediction = usePrediction(match, teams);
-  return <PredictionCard match={match} teams={teams} prediction={prediction} onPredict={onPredict} />;
-};
-
-const PredictionInputForm = ({ match, teams, onSave, onCancel, initialHome, initialAway }) => {
-  const homeTeam = teams.find(t => t.id === match.homeTeam);
-  const awayTeam = teams.find(t => t.id === match.awayTeam);
-  const [homeScore, setHomeScore] = useState(initialHome !== undefined ? initialHome : 0);
-  const [awayScore, setAwayScore] = useState(initialAway !== undefined ? initialAway : 0);
-
-  return (
-    <div className="flex flex-col gap-6 items-center">
-      <div className="flex items-center justify-between w-full max-w-md gap-4 py-4">
-        {/* Home Team */}
-        <div className="flex flex-col items-center gap-2 flex-1">
-          <Flag code={homeTeam?.countryCode} style={{ fontSize: '3.5rem' }} />
-          <span className="font-black text-white text-sm text-center leading-tight">{homeTeam?.name}</span>
-          <input
-            type="number"
-            min="0"
-            max="20"
-            value={homeScore}
-            onChange={(e) => setHomeScore(Math.max(0, parseInt(e.target.value, 10) || 0))}
-            className="w-16 h-12 bg-gray-800 border border-gray-700 rounded-xl text-center font-black text-xl text-white focus:outline-none focus:border-green-500 transition-colors"
-          />
-        </div>
-
-        {/* VS Spacer */}
-        <div className="text-gray-600 font-black text-2xl italic">VS</div>
-
-        {/* Away Team */}
-        <div className="flex flex-col items-center gap-2 flex-1">
-          <Flag code={awayTeam?.countryCode} style={{ fontSize: '3.5rem' }} />
-          <span className="font-black text-white text-sm text-center leading-tight">{awayTeam?.name}</span>
-          <input
-            type="number"
-            min="0"
-            max="20"
-            value={awayScore}
-            onChange={(e) => setAwayScore(Math.max(0, parseInt(e.target.value, 10) || 0))}
-            className="w-16 h-12 bg-gray-800 border border-gray-700 rounded-xl text-center font-black text-xl text-white focus:outline-none focus:border-green-500 transition-colors"
-          />
-        </div>
-      </div>
-
-      <div className="flex gap-3 justify-end w-full max-w-md mt-4 border-t border-gray-800 pt-4">
-        <Button variant="secondary" onClick={onCancel} className="px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-wider">
-          Cancel
-        </Button>
-        <Button variant="primary" onClick={() => onSave(homeScore, awayScore)} className="px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-wider">
-          Save Prediction
-        </Button>
-      </div>
-    </div>
-  );
+  return <PredictionCard match={match} teams={teams} prediction={prediction} />;
 };
 
 
 
-const computeStandings = (teams, matches, userPredictions, isUser = false) => {
+const computeStandings = (teams, matches, userPredictions, isUser = false, forceAIPrediction = false) => {
   if (!teams.length || !matches.length) return {};
 
   const standings = {};
@@ -452,23 +262,16 @@ const computeStandings = (teams, matches, userPredictions, isUser = false) => {
     let homeScore = 0;
     let awayScore = 0;
 
-    if (match.status === 'completed' && match.homeScore !== null && match.awayScore !== null) {
+    if (!forceAIPrediction && match.status === 'completed' && match.homeScore !== null && match.awayScore !== null) {
       homeScore = match.homeScore;
       awayScore = match.awayScore;
     } else {
-      // For upcoming matches
-      const userPred = userPredictions[match.id];
-      if (isUser && userPred) {
-        homeScore = userPred.homeScore;
-        awayScore = userPred.awayScore;
-      } else {
-        // Fallback to AI prediction
-        const prediction = getPrediction(homeTeam, awayTeam);
-        if (prediction && prediction.predictedScore) {
-          const parts = prediction.predictedScore.split('-');
-          homeScore = parseInt(parts[0].trim(), 10);
-          awayScore = parseInt(parts[1].trim(), 10);
-        }
+      // Fallback to AI prediction
+      const prediction = getPrediction(homeTeam, awayTeam);
+      if (prediction && prediction.predictedScore) {
+        const parts = prediction.predictedScore.split('-');
+        homeScore = parseInt(parts[0].trim(), 10);
+        awayScore = parseInt(parts[1].trim(), 10);
       }
     }
 
@@ -542,10 +345,10 @@ const computeKnockouts = (teams, matches, groupStandings) => {
     if (!teamA || !teamB || teamA.id === 'tbd' || teamB.id === 'tbd') {
       return { t1: teamA, t2: teamB, score: [0, 0], winner: teamA || teamB, loser: null };
     }
-    const pred = getPrediction(teamA, teamB);
+    const pred = getPrediction(teamA, teamB, true);
     let goalsA = 0;
     let goalsB = 0;
-    
+
     if (pred && pred.predictedScore) {
       const parts = pred.predictedScore.split('-');
       goalsA = parseInt(parts[0].trim(), 10);
@@ -556,14 +359,14 @@ const computeKnockouts = (teams, matches, groupStandings) => {
     let finalGoalsB = goalsB;
     let winner;
 
-    // Check if we have simulation data in prediction_percentages.json
+    // Check if we have simulation data in prediction_percentages_knockout.json
     const name1 = teamA.name;
     const name2 = teamB.name;
     const sorted = [name1, name2].sort();
     const team1 = sorted[0];
     const team2 = sorted[1];
     const key = `${team1.replace(/\s+/g, '_')}_vs_${team2.replace(/\s+/g, '_')}`;
-    const simPred = predictionPercentagesData.predictions?.[key];
+    const simPred = predictionPercentagesKnockoutData.predictions?.[key];
 
     if (simPred) {
       let winsA = 0;
@@ -581,9 +384,9 @@ const computeKnockouts = (teams, matches, groupStandings) => {
       // we use the team's overall champion rate from the simulation to resolve.
       const totalWins = winsA + winsB;
       const winDiff = Math.abs(winsA - winsB);
-      
-      const championRateA = predictionPercentagesData.progression?.[name1]?.champion || 0;
-      const championRateB = predictionPercentagesData.progression?.[name2]?.champion || 0;
+
+      const championRateA = predictionPercentagesKnockoutData.progression?.[name1]?.champion || 0;
+      const championRateB = predictionPercentagesKnockoutData.progression?.[name2]?.champion || 0;
 
       let chooseA = false;
       if (totalWins > 0 && winDiff > 3) {
@@ -593,8 +396,8 @@ const computeKnockouts = (teams, matches, groupStandings) => {
           chooseA = championRateA > championRateB;
         } else {
           // Fall back to next round progression
-          const nextRoundA = predictionPercentagesData.progression?.[name1]?.roundOf16 || 0;
-          const nextRoundB = predictionPercentagesData.progression?.[name2]?.roundOf16 || 0;
+          const nextRoundA = predictionPercentagesKnockoutData.progression?.[name1]?.roundOf16 || 0;
+          const nextRoundB = predictionPercentagesKnockoutData.progression?.[name2]?.roundOf16 || 0;
           if (nextRoundA !== nextRoundB) {
             chooseA = nextRoundA > nextRoundB;
           } else {
@@ -650,10 +453,10 @@ const computeKnockouts = (teams, matches, groupStandings) => {
     for (let i = 0; i < roundMatches.length; i += 2) {
       const m1 = roundMatches[i];
       const m2 = roundMatches[i + 1];
-      
+
       const t1 = m1.winner || m1.t1;
       const t2 = m2.winner || m2.t2;
-      
+
       const res = predictKnockoutMatch(t1, t2);
       nextRound.push(res.winner);
       outMatches.push(res);
@@ -676,6 +479,80 @@ const computeKnockouts = (teams, matches, groupStandings) => {
     final: finalMatch,
     thirdPlace: thirdPlaceMatch,
     winner: finalMatch.winner
+  };
+};
+
+const computeActualKnockouts = (teams, matches) => {
+  const resolveTeam = (teamId, r32, r16, qf, sf) => {
+    if (!teamId) return null;
+    const cleanId = teamId.toLowerCase();
+    const directTeam = teams.find(t => t.id === cleanId);
+    if (directTeam) return directTeam;
+
+    if (cleanId.startsWith("winner match ")) {
+      const matchNum = parseInt(cleanId.replace("winner match ", ""), 10);
+      let prevMatch;
+      if (matchNum >= 73 && matchNum <= 88) prevMatch = r32.find(m => m.match_id === matchNum);
+      else if (matchNum >= 89 && matchNum <= 96) prevMatch = r16.find(m => m.match_id === matchNum);
+      else if (matchNum >= 97 && matchNum <= 100) prevMatch = qf.find(m => m.match_id === matchNum);
+      else if (matchNum >= 101 && matchNum <= 102) prevMatch = sf.find(m => m.match_id === matchNum);
+      return prevMatch?.winner || null;
+    }
+
+    if (cleanId.startsWith("loser match ")) {
+      const matchNum = parseInt(cleanId.replace("loser match ", ""), 10);
+      let prevMatch;
+      if (matchNum >= 101 && matchNum <= 102) prevMatch = sf.find(m => m.match_id === matchNum);
+      return prevMatch?.loser || null;
+    }
+
+    return null;
+  };
+
+  const getTeam = (teamId) => teams.find(t => t.id === teamId) || null;
+
+  const mapMatch = (m, r32 = [], r16 = [], qf = [], sf = []) => {
+    if (!m) return { t1: null, t2: null, score: [null, null], winner: null, loser: null };
+    const t1 = resolveTeam(m.homeTeam, r32, r16, qf, sf);
+    const t2 = resolveTeam(m.awayTeam, r32, r16, qf, sf);
+    const isCompleted = m.status === 'completed' && m.homeScore !== null && m.awayScore !== null;
+    const score = isCompleted ? [m.homeScore, m.awayScore] : [null, null];
+    const winner = isCompleted ? getTeam(m.winnerId || m.winner) : null;
+    const loser = isCompleted ? (winner?.id === t1?.id ? t2 : t1) : null;
+    return {
+      t1,
+      t2,
+      score,
+      winner,
+      loser,
+      id: m.id,
+      match_id: m.match_id
+    };
+  };
+
+  const getMatchByNum = (num, r32 = [], r16 = [], qf = [], sf = []) => {
+    const m = matches.find(x => x.match_id === num);
+    return mapMatch(m, r32, r16, qf, sf);
+  };
+
+  const roundOf32 = [73, 76, 75, 78, 74, 77, 79, 80, 82, 81, 84, 83, 85, 88, 86, 87].map(num => getMatchByNum(num));
+  const roundOf16 = [91, 89, 94, 93, 90, 92, 95, 96].map(num => getMatchByNum(num, roundOf32));
+  const quarterFinals = [99, 97, 98, 100].map(num => getMatchByNum(num, roundOf32, roundOf16));
+  const semiFinals = [102, 101].map(num => getMatchByNum(num, roundOf32, roundOf16, quarterFinals));
+  const final = getMatchByNum(104, roundOf32, roundOf16, quarterFinals, semiFinals);
+  const thirdPlace = getMatchByNum(103, roundOf32, roundOf16, quarterFinals, semiFinals);
+
+  // Winner of the final
+  const winner = final.winner || null;
+
+  return {
+    roundOf32,
+    roundOf16,
+    quarterFinals,
+    semiFinals,
+    final,
+    thirdPlace,
+    winner
   };
 };
 

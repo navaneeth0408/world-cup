@@ -6634,18 +6634,44 @@
     "time": "05:30",
     "venue": "nrg",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
+    "status": "completed",
+    "homeScore": 2,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Folarin Balogun",
+        "teamId": "usa",
+        "minute": "45",
+        "assist": "Malik Tillman",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Malik Tillman",
+        "teamId": "usa",
+        "minute": "82",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      }
+    ],
+    "cards": [
+      {
+        "name": "Folarin Balogun",
+        "teamId": "usa",
+        "type": "red",
+        "minute": "64"
+      }
+    ],
+    "playerOfMatch": "Malik Tillman",
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "usa",
     "awayTeam": "bosniaandherzegovina",
     "stage": "Round of 32",
-    "location": "Houston"
+    "location": "Houston",
+    "winner": "usa",
+    "winnerId": "usa"
   },
   {
     "id": "m75",
@@ -6732,18 +6758,74 @@
     "time": "01:30",
     "venue": "attstadium",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
-    "cards": [],
-    "playerOfMatch": "",
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 2,
+    "scorers": [
+      {
+        "name": "Habib Diarra",
+        "teamId": "senegal",
+        "minute": "24",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Ismaïla Sarr",
+        "teamId": "senegal",
+        "minute": "51",
+        "assist": "Moussa Niakhaté",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Romelu Lukaku",
+        "teamId": "belgium",
+        "minute": "86",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Youri Tielemans",
+        "teamId": "belgium",
+        "minute": "89",
+        "assist": "Leandro Trossard",
+        "ownGoal": false,
+        "penalty": false
+      },
+      {
+        "name": "Youri Tielemans",
+        "teamId": "belgium",
+        "minute": "125",
+        "assist": "",
+        "ownGoal": false,
+        "penalty": true
+      }
+    ],
+    "cards": [
+      {
+        "name": "Brandon Mechele",
+        "teamId": "belgium",
+        "type": "yellow",
+        "minute": "45"
+      },
+      {
+        "name": "Lamine Camara",
+        "teamId": "senegal",
+        "type": "yellow",
+        "minute": "124"
+      }
+    ],
+    "playerOfMatch": "Youri Tielemans",
     "stats": null,
     "highlightUrl": "",
     "homeTeam": "belgium",
     "awayTeam": "senegal",
     "stage": "Round of 32",
-    "location": "Arlington"
+    "location": "Arlington",
+    "winner": "belgium",
+    "winnerId": "belgium"
   },
   {
     "id": "m78",

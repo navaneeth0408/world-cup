@@ -1,12 +1,15 @@
 import { calculateTeamStrength } from './simulationHelpers';
 import predictionPercentagesData from '../data/prediction_percentages.json';
+import predictionPercentagesKnockoutData from '../data/prediction_percentages_knockout.json';
 
 /**
  * Deterministically generates a prediction for a match between two teams.
  * Uses match statistics from the 100 simulations if available, otherwise falls back to power scores.
  */
-export const getPrediction = (homeTeam, awayTeam) => {
+export const getPrediction = (homeTeam, awayTeam, isKnockout = false) => {
     if (!homeTeam || !awayTeam) return null;
+
+    const predictionData = isKnockout ? predictionPercentagesKnockoutData : predictionPercentagesData;
 
     // Create a stable seed from team IDs
     const str = homeTeam.id + awayTeam.id;
@@ -51,7 +54,7 @@ export const getPrediction = (homeTeam, awayTeam) => {
 
     const finalDiff = finalH - finalA;
 
-    // Look up in 100 simulations prediction_percentages.json
+    // Look up in 100 simulations predictions
     const name1 = homeTeam.name;
     const name2 = awayTeam.name;
     const sorted = [name1, name2].sort();
@@ -60,19 +63,47 @@ export const getPrediction = (homeTeam, awayTeam) => {
     const key = `${team1.replace(/\s+/g, '_')}_vs_${team2.replace(/\s+/g, '_')}`;
 
     let homeProb, awayProb, drawProb;
-    const simPred = predictionPercentagesData.predictions?.[key];
+    const simPredEntire = predictionPercentagesData.predictions?.[key];
+    const simPredKO = predictionPercentagesKnockoutData.predictions?.[key];
+    const simPred = simPredKO || simPredEntire;
 
-    if (simPred) {
-        if (simPred.homeTeam === name1) {
-            homeProb = simPred.homeWinPercentage / 100;
-            awayProb = simPred.awayWinPercentage / 100;
+    let homeWins = 0;
+    let awayWins = 0;
+    let draws = 0;
+    let hasSimData = false;
+
+    if (simPredEntire) {
+        hasSimData = true;
+        if (simPredEntire.homeTeam === name1) {
+            homeWins += simPredEntire.homeWins || 0;
+            awayWins += simPredEntire.awayWins || 0;
         } else {
-            homeProb = simPred.awayWinPercentage / 100;
-            awayProb = simPred.homeWinPercentage / 100;
+            homeWins += simPredEntire.awayWins || 0;
+            awayWins += simPredEntire.homeWins || 0;
         }
-        drawProb = simPred.drawPercentage / 100;
+        draws += simPredEntire.draws || 0;
+    }
+
+    if (simPredKO) {
+        hasSimData = true;
+        if (simPredKO.homeTeam === name1) {
+            homeWins += simPredKO.homeWins || 0;
+            awayWins += simPredKO.awayWins || 0;
+        } else {
+            homeWins += simPredKO.awayWins || 0;
+            awayWins += simPredKO.homeWins || 0;
+        }
+        draws += simPredKO.draws || 0;
+    }
+
+    const totalWins = homeWins + awayWins + draws;
+
+    if (hasSimData && totalWins > 0) {
+        homeProb = homeWins / totalWins;
+        awayProb = awayWins / totalWins;
+        drawProb = draws / totalWins;
     } else {
-        // Base probabilities based on adjusted Power Scores
+        // Base probabilities based on adjusted Power Scores (fallback)
         homeProb = 0.38 + (finalDiff * 0.01);
         awayProb = 0.32 - (finalDiff * 0.01);
 
@@ -82,9 +113,66 @@ export const getPrediction = (homeTeam, awayTeam) => {
         drawProb = 1 - homeProb - awayProb;
     }
 
-    // Deterministic scores based on seed and adjusted difference (fallback)
-    let homeScore = (seed % 3) + (finalDiff > 15 ? 1 : 0);
-    let awayScore = ((seed >> 2) % 3) + (finalDiff < -15 ? 1 : 0);
+    if (isKnockout) {
+        const total = homeProb + awayProb;
+        if (total > 0) {
+            homeProb = homeProb / total;
+            awayProb = awayProb / total;
+        } else {
+            homeProb = 0.5;
+            awayProb = 0.5;
+        }
+        drawProb = 0;
+    }
+
+    // Deterministic scores that align logically with the calculated win probabilities
+    let homeScore = 1;
+    let awayScore = 1;
+    
+    if (homeProb > awayProb) {
+        const diff = homeProb - awayProb;
+        if (diff > 0.6) {
+            homeScore = 3;
+            awayScore = 0;
+        } else if (diff > 0.3) {
+            homeScore = 2;
+            awayScore = 0;
+        } else {
+            homeScore = 2;
+            awayScore = 1;
+        }
+    } else if (awayProb > homeProb) {
+        const diff = awayProb - homeProb;
+        if (diff > 0.6) {
+            homeScore = 0;
+            awayScore = 3;
+        } else if (diff > 0.3) {
+            homeScore = 0;
+            awayScore = 2;
+        } else {
+            homeScore = 1;
+            awayScore = 2;
+        }
+    } else {
+        if (isKnockout) {
+            if (seed % 2 === 0) {
+                homeScore = 2;
+                awayScore = 1;
+            } else {
+                homeScore = 1;
+                awayScore = 2;
+            }
+        } else {
+            if (homeProb > 0.35) {
+                homeScore = 2;
+                awayScore = 2;
+            } else {
+                homeScore = 1;
+                awayScore = 1;
+            }
+        }
+    }
+    
     let predictedScoreVal = `${homeScore} - ${awayScore}`;
 
     if (simPred && simPred.mostCommonScore) {

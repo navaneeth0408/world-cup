@@ -4,6 +4,7 @@ import Badge from '../ui/Badge';
 import Flag from '../ui/Flag';
 import { Calendar, MapPin, Clock, Shield } from 'lucide-react';
 import { useTournament } from '../../hooks/useTournament';
+import teamExpectations from '../../data/team_expectations.json';
 
 const FavoriteTeamHero = ({ team, nextMatch, opponent, onChangeTeam }) => {
     const { matches } = useTournament();
@@ -22,7 +23,7 @@ const FavoriteTeamHero = ({ team, nextMatch, opponent, onChangeTeam }) => {
         const upcomingMatch = teamMatches.find(m => m.status === 'upcoming');
         if (upcomingMatch) {
             let roundName = 'Group Stage';
-            if (upcomingMatch.group) {
+            if (upcomingMatch.stage === 'Group Stage' || (upcomingMatch.group && upcomingMatch.group.length === 1)) {
                 roundName = 'Group Stage';
             } else {
                 const matchId = upcomingMatch.match_id || upcomingMatch.matchId;
@@ -157,9 +158,14 @@ const FavoriteTeamHero = ({ team, nextMatch, opponent, onChangeTeam }) => {
                         <p className="text-slate-400 font-semibold text-sm">
                             Manager: <span className="text-slate-200 font-bold">{team.manager || 'TBD'}</span>
                         </p>
+                         {team.id && teamExpectations[team.id.toLowerCase().replace(/[\s\-_]+/g, '')] && (
+                             <p className="text-sm text-slate-400 font-semibold mt-2 leading-relaxed max-w-xs md:max-w-md italic">
+                                 "{teamExpectations[team.id.toLowerCase().replace(/[\s\-_]+/g, '')]}"
+                             </p>
+                         )}
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-slate-800/60 text-left">
+                    <div className="grid grid-cols-2 gap-4 mt-4 pt-3 border-t border-slate-800/60 text-left">
                         <div>
                             <span className="text-[10px] text-slate-500 uppercase font-black tracking-widest block">World Cup Status</span>
                             <span className={`text-xs font-bold flex items-center gap-1 mt-0.5 ${statusDetails.status.startsWith('Active') ? 'text-green-400' : statusDetails.status.startsWith('Eliminated') ? 'text-red-400' : 'text-yellow-400'}`}>
