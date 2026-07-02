@@ -2240,7 +2240,7 @@ const Standings = () => {
                                                 : 'bg-transparent text-slate-400 hover:text-white'
                                         }`}
                                     >
-                                        Goals to Score
+                                        Goals Scored
                                     </button>
                                     <button
                                         onClick={() => setGoalsSubTab('conceded')}
@@ -2250,7 +2250,7 @@ const Standings = () => {
                                                 : 'bg-transparent text-slate-400 hover:text-white'
                                         }`}
                                     >
-                                        Goals Considered
+                                        Goals Conceded
                                     </button>
                                 </div>
                             )}
