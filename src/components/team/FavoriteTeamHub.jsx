@@ -470,14 +470,6 @@ const FavoriteTeamHub = ({ teams, matches }) => {
                                     <Calculator className="w-3.5 h-3.5 text-slate-450" />
                                     Simulation
                                 </Button>
-                                <Button 
-                                    variant="secondary" 
-                                    className="col-span-2 text-xs py-2.5 font-bold uppercase tracking-wider border-slate-800 bg-slate-950/30 flex items-center justify-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800/80"
-                                    onClick={handleSearchTransfermarkt}
-                                >
-                                    <ExternalLink className="w-3.5 h-3.5 text-blue-400" />
-                                    Transfermarkt Profiles
-                                </Button>
                             </div>
                         </Card>
 

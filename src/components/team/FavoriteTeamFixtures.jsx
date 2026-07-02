@@ -34,37 +34,44 @@ const FavoriteTeamFixtures = ({ team, teamMatches, teams, selectedTimeZone }) =>
                         return (
                             <Card 
                                 key={match.id}
-                                className="bg-slate-900/30 border border-slate-800/80 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 hover:border-green-500/20 hover:bg-slate-900/40 transition-all duration-300"
+                                className="bg-slate-900/30 border border-slate-800/80 p-4.5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 hover:border-green-500/20 hover:bg-slate-900/40 transition-all duration-300"
                             >
+                                {/* Group Stage Badge / Stage info */}
+                                <div className="shrink-0 order-first sm:order-last">
+                                    <span className="text-[9px] text-slate-400 font-black border border-slate-800 bg-slate-950/40 px-2.5 py-1 rounded-lg uppercase tracking-wider">
+                                        {match.stage === 'Group Stage' ? `Group ${match.group}` : match.stage}
+                                    </span>
+                                </div>
+
                                 {/* Matchup info */}
-                                <div className="flex items-center gap-3.5 flex-1 min-w-0 w-full sm:w-auto">
-                                    <div className="flex items-center gap-2 shrink-0">
-                                        <Flag code={team.countryCode} style={{ fontSize: '1.8rem' }} className="shadow border border-slate-800" />
-                                        <span className="text-xs font-black text-white uppercase tracking-tight">{team.name}</span>
+                                <div className="grid grid-cols-[1fr_auto_1fr] gap-3 items-center w-full max-w-[340px] sm:w-[320px] shrink-0">
+                                    {/* Team A */}
+                                    <div className="flex items-center justify-end gap-2.5 text-right min-w-0">
+                                        <span className="text-xs font-black text-white uppercase tracking-tight truncate">{isHome ? team.name : (opponent?.name || opponentId)}</span>
+                                        <Flag code={isHome ? team.countryCode : opponent?.countryCode} style={{ fontSize: '1.8rem' }} className="shadow border border-slate-800 shrink-0" />
                                     </div>
-                                    <span className="text-[10px] font-black text-green-500 bg-green-500/10 px-1.5 py-0.5 rounded leading-none shrink-0">VS</span>
-                                    <div className="flex items-center gap-2 shrink-0">
-                                        <Flag code={opponent?.countryCode} style={{ fontSize: '1.8rem' }} className="shadow border border-slate-800" />
-                                        <span className="text-xs font-black text-slate-300 uppercase tracking-tight">{opponent?.name || opponentId}</span>
+
+                                    {/* VS Badge */}
+                                    <div className="flex justify-center shrink-0">
+                                        <span className="text-[9px] font-black text-green-400 bg-green-500/10 border border-green-500/20 px-2 py-0.5 rounded-full leading-none">VS</span>
+                                    </div>
+
+                                    {/* Team B */}
+                                    <div className="flex items-center justify-start gap-2.5 text-left min-w-0">
+                                        <Flag code={isHome ? opponent?.countryCode : team.countryCode} style={{ fontSize: '1.8rem' }} className="shadow border border-slate-800 shrink-0" />
+                                        <span className="text-xs font-black text-slate-300 uppercase tracking-tight truncate">{isHome ? (opponent?.name || opponentId) : team.name}</span>
                                     </div>
                                 </div>
 
                                 {/* Date, time and venue info */}
-                                <div className="flex flex-col sm:items-end text-center sm:text-right gap-1 shrink-0 w-full sm:w-auto border-t sm:border-t-0 border-slate-800/60 pt-2 sm:pt-0">
+                                <div className="flex flex-col items-center sm:items-end text-center sm:text-right gap-1.5 shrink-0 w-full sm:w-auto border-t sm:border-t-0 border-slate-800/60 pt-3 sm:pt-0">
                                     <span className="text-[11px] font-black text-white flex items-center justify-center sm:justify-end gap-1.5 leading-none">
                                         <Calendar className="w-3.5 h-3.5 text-green-400" />
                                         {formatDate(match.date)} · {formatTime(match.time)} UTC
                                     </span>
-                                    <span className="text-[9px] text-slate-500 font-extrabold uppercase tracking-wide flex items-center justify-center sm:justify-end gap-1 mt-0.5">
-                                        <MapPin className="w-2.5 h-2.5 text-slate-650" />
+                                    <span className="text-[9.5px] text-slate-500 font-extrabold uppercase tracking-wide flex items-center justify-center sm:justify-end gap-1.5 mt-0.5">
+                                        <MapPin className="w-3 h-3 text-slate-650" />
                                         {match.location || match.venue}
-                                    </span>
-                                </div>
-
-                                {/* Group Stage Badge */}
-                                <div className="hidden lg:block shrink-0">
-                                    <span className="text-[9px] text-slate-400 font-black border border-slate-800 bg-slate-950/40 px-2.5 py-1 rounded-lg uppercase tracking-wider">
-                                        {match.stage === 'Group Stage' ? `Group ${match.group}` : match.stage}
                                     </span>
                                 </div>
                             </Card>
