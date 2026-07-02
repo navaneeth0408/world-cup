@@ -9,7 +9,7 @@ import {
     ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
     BarChart, Bar, Cell, Legend
 } from 'recharts';
-import { Trophy, HelpCircle, BarChart3, ShieldAlert, Globe2, ArrowRight } from 'lucide-react';
+import { Trophy, BarChart3, ShieldAlert, Globe2, ArrowRight } from 'lucide-react';
 
 const confedColors = {
     UEFA: '#3b82f6',
@@ -159,42 +159,6 @@ const Insights = () => {
             .slice(0, 5);
     }, [data]);
 
-    // 5. Identical Odds Worth Double-Checking
-    const identicalOdds = useMemo(() => {
-        if (!data.teams) return [];
-        const groups = {};
-        data.teams.forEach(t => {
-            const c = t.stageReached.champion;
-            if (c > 0) {
-                if (!groups[c]) groups[c] = [];
-                groups[c].push(t);
-            }
-        });
-
-        const results = [];
-        Object.entries(groups).forEach(([champVal, gTeams]) => {
-            if (gTeams.length >= 2) {
-                for (let i = 0; i < gTeams.length; i++) {
-                    for (let j = i + 1; j < gTeams.length; j++) {
-                        const t1 = gTeams[i];
-                        const t2 = gTeams[j];
-                        if (Math.abs(t1.stageReached.qf - t2.stageReached.qf) > 5) {
-                            results.push({
-                                t1: t1.name,
-                                t2: t2.name,
-                                championVal: champVal,
-                                qf1: t1.stageReached.qf,
-                                qf2: t2.stageReached.qf,
-                                r161: t1.stageReached.r16,
-                                r162: t2.stageReached.r16
-                            });
-                        }
-                    }
-                }
-            }
-        });
-        return results.slice(0, 3); // Top 3 double check cards
-    }, [data]);
 
     // 6. Confederation Sumo
     const confedData = useMemo(() => {
@@ -510,78 +474,34 @@ const Insights = () => {
 
                 {/* 5. ANOMALY CALLOUTS */}
                 <section id="anomalies" className="scroll-mt-36">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {/* Round over Round steepest drop */}
-                        <Card className="p-6 bg-slate-900/30 border border-slate-900">
-                            <div className="flex items-center gap-2 mb-4">
-                                <ShieldAlert className="w-5 h-5 text-green-400" />
-                                <h2 className="text-lg font-black uppercase tracking-tight text-white">
-                                    🚨 Steepest Round Drop-offs
-                                </h2>
-                            </div>
-                            <p className="text-xs text-slate-500 font-semibold mb-6">
-                                Teams who suffer the single largest percentage-point drop between consecutive tournament phases. Represents critical choke/barrier points.
-                            </p>
+                    {/* Round over Round steepest drop */}
+                    <Card className="p-6 bg-slate-900/30 border border-slate-900">
+                        <div className="flex items-center gap-2 mb-4">
+                            <ShieldAlert className="w-5 h-5 text-green-400" />
+                            <h2 className="text-lg font-black uppercase tracking-tight text-white">
+                                🚨 Steepest Round Drop-offs
+                            </h2>
+                        </div>
+                        <p className="text-xs text-slate-500 font-semibold mb-6">
+                            Teams who suffer the single largest percentage-point drop between consecutive tournament phases. Represents critical choke/barrier points.
+                        </p>
 
-                            <div className="space-y-4">
-                                {dropAnomalies.map((a, index) => (
-                                    <div key={index} className="bg-slate-950 p-4 border border-slate-900 rounded-2xl flex items-start gap-4 hover:border-green-500/10 transition-colors">
-                                        <div className="bg-green-500/10 text-green-400 text-xs font-black w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-green-500/15">
-                                            {index + 1}
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-black text-white">{a.name}</p>
-                                            <p className="text-[11px] text-slate-400 mt-1 font-semibold leading-relaxed">
-                                                Steepest drop is <span className="text-green-400 font-black">{a.drop}%</span> going from the <span className="text-white font-extrabold">{a.stage.from}</span> ({a.stage.keyFrom === 'group' ? 100 : data.teams.find(x => x.name === a.name).stageReached[a.stage.keyFrom]}%) to the <span className="text-white font-extrabold">{a.stage.to}</span> ({data.teams.find(x => x.name === a.name).stageReached[a.stage.keyTo]}%).
-                                            </p>
-                                        </div>
+                        <div className="space-y-4">
+                            {dropAnomalies.map((a, index) => (
+                                <div key={index} className="bg-slate-950 p-4 border border-slate-900 rounded-2xl flex items-start gap-4 hover:border-green-500/10 transition-colors">
+                                    <div className="bg-green-500/10 text-green-400 text-xs font-black w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-green-500/15">
+                                        {index + 1}
                                     </div>
-                                ))}
-                            </div>
-                        </Card>
-
-                        {/* Worth Double Checking */}
-                        <Card className="p-6 bg-slate-900/30 border border-slate-900">
-                            <div className="flex items-center gap-2 mb-4">
-                                <HelpCircle className="w-5 h-5 text-amber-400" />
-                                <h2 className="text-lg font-black uppercase tracking-tight text-white">
-                                    🤔 Worth Double-Checking
-                                </h2>
-                            </div>
-                            <p className="text-xs text-slate-500 font-semibold mb-6">
-                                Stat anomalies where teams have identical championship odds despite significantly different survival profiles in earlier rounds.
-                            </p>
-
-                            <div className="space-y-4">
-                                {identicalOdds.length > 0 ? (
-                                    identicalOdds.map((item, index) => (
-                                        <div key={index} className="bg-slate-950 p-4 border border-amber-500/20 rounded-2xl flex items-start gap-4 hover:border-amber-500/30 transition-colors">
-                                            <div className="bg-amber-500/10 text-amber-400 text-xs font-black w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-amber-500/15">
-                                                {index + 1}
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-black text-white flex items-center gap-2">
-                                                    <span>{item.t1}</span>
-                                                    <span className="text-slate-600 font-medium">vs</span>
-                                                    <span>{item.t2}</span>
-                                                    <span className="text-[10px] font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full uppercase tracking-wider ml-auto">
-                                                        {item.championVal}% Win Odds
-                                                    </span>
-                                                </p>
-                                                <p className="text-[11px] text-slate-400 mt-2 font-semibold leading-relaxed">
-                                                    Both have identical {item.championVal}% title odds. However, <span className="text-white font-extrabold">{item.t1}</span> has a <span className="text-amber-400 font-black">{item.qf1}%</span> QF reach rate (R16={item.r161}%) compared to <span className="text-white font-extrabold">{item.t2}</span>'s <span className="text-amber-400 font-black">{item.qf2}%</span> QF reach rate (R16={item.r162}%).
-                                                </p>
-                                            </div>
-                                        </div>
-                                    ))
-                                ) : (
-                                    <div className="py-12 text-center text-xs font-bold text-slate-500 border border-slate-900 border-dashed rounded-2xl">
-                                        No significant stage path anomalies found.
+                                    <div>
+                                        <p className="text-sm font-black text-white">{a.name}</p>
+                                        <p className="text-[11px] text-slate-400 mt-1 font-semibold leading-relaxed">
+                                            Steepest drop is <span className="text-green-400 font-black">{a.drop}%</span> going from the <span className="text-white font-extrabold">{a.stage.from}</span> ({a.stage.keyFrom === 'group' ? 100 : data.teams.find(x => x.name === a.name).stageReached[a.stage.keyFrom]}%) to the <span className="text-white font-extrabold">{a.stage.to}</span> ({data.teams.find(x => x.name === a.name).stageReached[a.stage.keyTo]}%).
+                                        </p>
                                     </div>
-                                )}
-                            </div>
-                        </Card>
-                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </Card>
                 </section>
 
                 {/* 6. CONFEDERATION BREAKDOWN */}

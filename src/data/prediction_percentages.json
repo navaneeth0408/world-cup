@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-02T20:35:58.514Z",
-  "totalSimulations": 103,
+  "generatedAt": "2026-07-02T21:27:57.504Z",
+  "totalSimulations": 105,
   "predictions": {
     "Mexico_vs_South_Africa": {
       "homeTeam": "Mexico",
@@ -8,28 +8,28 @@
       "homeWinPercentage": 98,
       "drawPercentage": 2,
       "awayWinPercentage": 0,
-      "homeWins": 101,
+      "homeWins": 103,
       "draws": 2,
       "awayWins": 0
     },
     "Czechia_vs_South_Korea": {
       "homeTeam": "Czechia",
       "awayTeam": "South Korea",
-      "homeWinPercentage": 13,
-      "drawPercentage": 38,
+      "homeWinPercentage": 12,
+      "drawPercentage": 37,
       "awayWinPercentage": 50,
       "homeWins": 13,
       "draws": 39,
-      "awayWins": 51
+      "awayWins": 53
     },
     "Bosnia_and_Herzegovina_vs_Canada": {
       "homeTeam": "Bosnia and Herzegovina",
       "awayTeam": "Canada",
       "homeWinPercentage": 2,
-      "drawPercentage": 27,
-      "awayWinPercentage": 71,
+      "drawPercentage": 29,
+      "awayWinPercentage": 70,
       "homeWins": 2,
-      "draws": 28,
+      "draws": 30,
       "awayWins": 73
     },
     "Paraguay_vs_United_States": {
@@ -40,45 +40,45 @@
       "awayWinPercentage": 98,
       "homeWins": 2,
       "draws": 0,
-      "awayWins": 101
+      "awayWins": 103
     },
     "Qatar_vs_Switzerland": {
       "homeTeam": "Qatar",
       "awayTeam": "Switzerland",
       "homeWinPercentage": 0,
-      "drawPercentage": 10,
-      "awayWinPercentage": 90,
+      "drawPercentage": 11,
+      "awayWinPercentage": 89,
       "homeWins": 0,
-      "draws": 10,
+      "draws": 12,
       "awayWins": 93
     },
     "Brazil_vs_Morocco": {
       "homeTeam": "Brazil",
       "awayTeam": "Morocco",
       "homeWinPercentage": 25,
-      "drawPercentage": 50,
+      "drawPercentage": 51,
       "awayWinPercentage": 29,
       "homeWins": 26,
-      "draws": 52,
+      "draws": 54,
       "awayWins": 30
     },
     "Haiti_vs_Scotland": {
       "homeTeam": "Haiti",
       "awayTeam": "Scotland",
-      "homeWinPercentage": 16,
-      "drawPercentage": 50,
-      "awayWinPercentage": 35,
+      "homeWinPercentage": 15,
+      "drawPercentage": 49,
+      "awayWinPercentage": 36,
       "homeWins": 16,
       "draws": 51,
-      "awayWins": 36
+      "awayWins": 38
     },
     "Australia_vs_Türkiye": {
       "homeTeam": "Australia",
       "awayTeam": "Türkiye",
-      "homeWinPercentage": 25,
-      "drawPercentage": 54,
+      "homeWinPercentage": 27,
+      "drawPercentage": 53,
       "awayWinPercentage": 20,
-      "homeWins": 26,
+      "homeWins": 28,
       "draws": 56,
       "awayWins": 21
     },
@@ -90,35 +90,35 @@
       "awayWinPercentage": 98,
       "homeWins": 0,
       "draws": 2,
-      "awayWins": 101
+      "awayWins": 103
     },
     "Japan_vs_Netherlands": {
       "homeTeam": "Japan",
       "awayTeam": "Netherlands",
       "homeWinPercentage": 25,
-      "drawPercentage": 38,
-      "awayWinPercentage": 40,
+      "drawPercentage": 39,
+      "awayWinPercentage": 39,
       "homeWins": 26,
-      "draws": 39,
+      "draws": 41,
       "awayWins": 41
     },
     "Ecuador_vs_Ivory_Coast": {
       "homeTeam": "Ecuador",
       "awayTeam": "Ivory Coast",
       "homeWinPercentage": 24,
-      "drawPercentage": 49,
-      "awayWinPercentage": 27,
+      "drawPercentage": 48,
+      "awayWinPercentage": 29,
       "homeWins": 25,
       "draws": 50,
-      "awayWins": 28
+      "awayWins": 30
     },
     "Sweden_vs_Tunisia": {
       "homeTeam": "Sweden",
       "awayTeam": "Tunisia",
       "homeWinPercentage": 50,
-      "drawPercentage": 41,
+      "drawPercentage": 40,
       "awayWinPercentage": 10,
-      "homeWins": 51,
+      "homeWins": 53,
       "draws": 42,
       "awayWins": 10
     },
@@ -126,49 +126,49 @@
       "homeTeam": "Cape Verde",
       "awayTeam": "Spain",
       "homeWinPercentage": 0,
-      "drawPercentage": 3,
-      "awayWinPercentage": 97,
+      "drawPercentage": 5,
+      "awayWinPercentage": 95,
       "homeWins": 0,
-      "draws": 3,
+      "draws": 5,
       "awayWins": 100
     },
     "Belgium_vs_Egypt": {
       "homeTeam": "Belgium",
       "awayTeam": "Egypt",
-      "homeWinPercentage": 71,
-      "drawPercentage": 24,
+      "homeWinPercentage": 70,
+      "drawPercentage": 26,
       "awayWinPercentage": 5,
       "homeWins": 73,
-      "draws": 25,
+      "draws": 27,
       "awayWins": 5
     },
     "Saudi_Arabia_vs_Uruguay": {
       "homeTeam": "Saudi Arabia",
       "awayTeam": "Uruguay",
       "homeWinPercentage": 0,
-      "drawPercentage": 3,
-      "awayWinPercentage": 97,
+      "drawPercentage": 5,
+      "awayWinPercentage": 95,
       "homeWins": 0,
-      "draws": 3,
+      "draws": 5,
       "awayWins": 100
     },
     "Iran_vs_New_Zealand": {
       "homeTeam": "Iran",
       "awayTeam": "New Zealand",
-      "homeWinPercentage": 77,
-      "drawPercentage": 23,
+      "homeWinPercentage": 75,
+      "drawPercentage": 25,
       "awayWinPercentage": 0,
       "homeWins": 79,
-      "draws": 24,
+      "draws": 26,
       "awayWins": 0
     },
     "France_vs_Senegal": {
       "homeTeam": "France",
       "awayTeam": "Senegal",
-      "homeWinPercentage": 63,
-      "drawPercentage": 37,
+      "homeWinPercentage": 64,
+      "drawPercentage": 36,
       "awayWinPercentage": 3,
-      "homeWins": 65,
+      "homeWins": 67,
       "draws": 38,
       "awayWins": 3
     },
@@ -177,20 +177,20 @@
       "awayTeam": "Norway",
       "homeWinPercentage": 6,
       "drawPercentage": 28,
-      "awayWinPercentage": 66,
+      "awayWinPercentage": 67,
       "homeWins": 6,
       "draws": 29,
-      "awayWins": 68
+      "awayWins": 70
     },
     "Algeria_vs_Argentina": {
       "homeTeam": "Algeria",
       "awayTeam": "Argentina",
       "homeWinPercentage": 0,
       "drawPercentage": 0,
-      "awayWinPercentage": 101,
+      "awayWinPercentage": 103,
       "homeWins": 0,
       "draws": 0,
-      "awayWins": 104
+      "awayWins": 108
     },
     "Austria_vs_Jordan": {
       "homeTeam": "Austria",
@@ -198,7 +198,7 @@
       "homeWinPercentage": 96,
       "drawPercentage": 4,
       "awayWinPercentage": 0,
-      "homeWins": 99,
+      "homeWins": 101,
       "draws": 4,
       "awayWins": 0
     },
@@ -206,29 +206,29 @@
       "homeTeam": "DR Congo",
       "awayTeam": "Portugal",
       "homeWinPercentage": 2,
-      "drawPercentage": 3,
-      "awayWinPercentage": 95,
+      "drawPercentage": 5,
+      "awayWinPercentage": 93,
       "homeWins": 2,
-      "draws": 3,
+      "draws": 5,
       "awayWins": 98
     },
     "Croatia_vs_England": {
       "homeTeam": "Croatia",
       "awayTeam": "England",
-      "homeWinPercentage": 13,
-      "drawPercentage": 41,
-      "awayWinPercentage": 48,
+      "homeWinPercentage": 12,
+      "drawPercentage": 40,
+      "awayWinPercentage": 49,
       "homeWins": 13,
       "draws": 42,
-      "awayWins": 49
+      "awayWins": 51
     },
     "Ghana_vs_Panama": {
       "homeTeam": "Ghana",
       "awayTeam": "Panama",
-      "homeWinPercentage": 28,
+      "homeWinPercentage": 30,
       "drawPercentage": 50,
       "awayWinPercentage": 21,
-      "homeWins": 29,
+      "homeWins": 31,
       "draws": 52,
       "awayWins": 22
     },
@@ -238,7 +238,7 @@
       "homeWinPercentage": 98,
       "drawPercentage": 2,
       "awayWinPercentage": 0,
-      "homeWins": 101,
+      "homeWins": 103,
       "draws": 2,
       "awayWins": 0
     },
@@ -246,10 +246,10 @@
       "homeTeam": "Czechia",
       "awayTeam": "South Africa",
       "homeWinPercentage": 23,
-      "drawPercentage": 62,
-      "awayWinPercentage": 15,
+      "drawPercentage": 63,
+      "awayWinPercentage": 14,
       "homeWins": 24,
-      "draws": 64,
+      "draws": 66,
       "awayWins": 15
     },
     "Bosnia_and_Herzegovina_vs_Switzerland": {
@@ -260,37 +260,37 @@
       "awayWinPercentage": 100,
       "homeWins": 0,
       "draws": 0,
-      "awayWins": 103
+      "awayWins": 105
     },
     "Canada_vs_Qatar": {
       "homeTeam": "Canada",
       "awayTeam": "Qatar",
-      "homeWinPercentage": 39,
-      "drawPercentage": 44,
+      "homeWinPercentage": 40,
+      "drawPercentage": 43,
       "awayWinPercentage": 17,
-      "homeWins": 40,
+      "homeWins": 42,
       "draws": 45,
       "awayWins": 18
     },
     "Mexico_vs_South_Korea": {
       "homeTeam": "Mexico",
       "awayTeam": "South Korea",
-      "homeWinPercentage": 45,
-      "drawPercentage": 51,
+      "homeWinPercentage": 46,
+      "drawPercentage": 50,
       "awayWinPercentage": 4,
-      "homeWins": 46,
+      "homeWins": 48,
       "draws": 53,
       "awayWins": 4
     },
     "Australia_vs_United_States": {
       "homeTeam": "Australia",
       "awayTeam": "United States",
-      "homeWinPercentage": 14,
-      "drawPercentage": 35,
-      "awayWinPercentage": 51,
+      "homeWinPercentage": 13,
+      "drawPercentage": 34,
+      "awayWinPercentage": 52,
       "homeWins": 14,
       "draws": 36,
-      "awayWins": 53
+      "awayWins": 55
     },
     "Morocco_vs_Scotland": {
       "homeTeam": "Morocco",
@@ -298,7 +298,7 @@
       "homeWinPercentage": 97,
       "drawPercentage": 1,
       "awayWinPercentage": 2,
-      "homeWins": 100,
+      "homeWins": 102,
       "draws": 1,
       "awayWins": 2
     },
@@ -308,17 +308,17 @@
       "homeWinPercentage": 100,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 103,
+      "homeWins": 105,
       "draws": 0,
       "awayWins": 0
     },
     "Paraguay_vs_Türkiye": {
       "homeTeam": "Paraguay",
       "awayTeam": "Türkiye",
-      "homeWinPercentage": 11,
-      "drawPercentage": 31,
-      "awayWinPercentage": 58,
-      "homeWins": 11,
+      "homeWinPercentage": 12,
+      "drawPercentage": 30,
+      "awayWinPercentage": 57,
+      "homeWins": 13,
       "draws": 32,
       "awayWins": 60
     },
@@ -328,7 +328,7 @@
       "homeWinPercentage": 100,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 103,
+      "homeWins": 105,
       "draws": 0,
       "awayWins": 0
     },
@@ -338,7 +338,7 @@
       "homeWinPercentage": 77,
       "drawPercentage": 21,
       "awayWinPercentage": 3,
-      "homeWins": 79,
+      "homeWins": 81,
       "draws": 22,
       "awayWins": 3
     },
@@ -346,10 +346,10 @@
       "homeTeam": "Curaçao",
       "awayTeam": "Ecuador",
       "homeWinPercentage": 0,
-      "drawPercentage": 5,
-      "awayWinPercentage": 95,
+      "drawPercentage": 7,
+      "awayWinPercentage": 93,
       "homeWins": 0,
-      "draws": 5,
+      "draws": 7,
       "awayWins": 98
     },
     "Japan_vs_Tunisia": {
@@ -358,7 +358,7 @@
       "homeWinPercentage": 98,
       "drawPercentage": 0,
       "awayWinPercentage": 2,
-      "homeWins": 101,
+      "homeWins": 103,
       "draws": 0,
       "awayWins": 2
     },
@@ -370,26 +370,26 @@
       "awayWinPercentage": 100,
       "homeWins": 0,
       "draws": 0,
-      "awayWins": 103
+      "awayWins": 105
     },
     "Belgium_vs_Iran": {
       "homeTeam": "Belgium",
       "awayTeam": "Iran",
-      "homeWinPercentage": 59,
-      "drawPercentage": 35,
+      "homeWinPercentage": 58,
+      "drawPercentage": 36,
       "awayWinPercentage": 6,
       "homeWins": 61,
-      "draws": 36,
+      "draws": 38,
       "awayWins": 6
     },
     "Cape_Verde_vs_Uruguay": {
       "homeTeam": "Cape Verde",
       "awayTeam": "Uruguay",
       "homeWinPercentage": 0,
-      "drawPercentage": 3,
-      "awayWinPercentage": 97,
+      "drawPercentage": 5,
+      "awayWinPercentage": 95,
       "homeWins": 0,
-      "draws": 3,
+      "draws": 5,
       "awayWins": 100
     },
     "Egypt_vs_New_Zealand": {
@@ -398,7 +398,7 @@
       "homeWinPercentage": 70,
       "drawPercentage": 25,
       "awayWinPercentage": 5,
-      "homeWins": 72,
+      "homeWins": 74,
       "draws": 26,
       "awayWins": 5
     },
@@ -408,7 +408,7 @@
       "homeWinPercentage": 100,
       "drawPercentage": 2,
       "awayWinPercentage": 0,
-      "homeWins": 103,
+      "homeWins": 105,
       "draws": 2,
       "awayWins": 0
     },
@@ -418,27 +418,27 @@
       "homeWinPercentage": 98,
       "drawPercentage": 2,
       "awayWinPercentage": 0,
-      "homeWins": 101,
+      "homeWins": 103,
       "draws": 2,
       "awayWins": 0
     },
     "Norway_vs_Senegal": {
       "homeTeam": "Norway",
       "awayTeam": "Senegal",
-      "homeWinPercentage": 14,
-      "drawPercentage": 42,
-      "awayWinPercentage": 45,
-      "homeWins": 14,
+      "homeWinPercentage": 15,
+      "drawPercentage": 41,
+      "awayWinPercentage": 44,
+      "homeWins": 16,
       "draws": 43,
       "awayWins": 46
     },
     "Algeria_vs_Jordan": {
       "homeTeam": "Algeria",
       "awayTeam": "Jordan",
-      "homeWinPercentage": 64,
-      "drawPercentage": 32,
+      "homeWinPercentage": 65,
+      "drawPercentage": 31,
       "awayWinPercentage": 4,
-      "homeWins": 66,
+      "homeWins": 68,
       "draws": 33,
       "awayWins": 4
     },
@@ -448,18 +448,18 @@
       "homeWinPercentage": 100,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 103,
+      "homeWins": 105,
       "draws": 0,
       "awayWins": 0
     },
     "England_vs_Ghana": {
       "homeTeam": "England",
       "awayTeam": "Ghana",
-      "homeWinPercentage": 95,
-      "drawPercentage": 5,
+      "homeWinPercentage": 93,
+      "drawPercentage": 7,
       "awayWinPercentage": 0,
       "homeWins": 98,
-      "draws": 5,
+      "draws": 7,
       "awayWins": 0
     },
     "Croatia_vs_Panama": {
@@ -468,7 +468,7 @@
       "homeWinPercentage": 96,
       "drawPercentage": 4,
       "awayWinPercentage": 0,
-      "homeWins": 99,
+      "homeWins": 101,
       "draws": 4,
       "awayWins": 0
     },
@@ -478,7 +478,7 @@
       "homeWinPercentage": 94,
       "drawPercentage": 5,
       "awayWinPercentage": 1,
-      "homeWins": 97,
+      "homeWins": 99,
       "draws": 5,
       "awayWins": 1
     },
@@ -486,19 +486,19 @@
       "homeTeam": "Canada",
       "awayTeam": "Switzerland",
       "homeWinPercentage": 21,
-      "drawPercentage": 42,
-      "awayWinPercentage": 37,
+      "drawPercentage": 41,
+      "awayWinPercentage": 38,
       "homeWins": 22,
       "draws": 43,
-      "awayWins": 38
+      "awayWins": 40
     },
     "Bosnia_and_Herzegovina_vs_Qatar": {
       "homeTeam": "Bosnia and Herzegovina",
       "awayTeam": "Qatar",
-      "homeWinPercentage": 27,
+      "homeWinPercentage": 29,
       "drawPercentage": 50,
       "awayWinPercentage": 22,
-      "homeWins": 28,
+      "homeWins": 30,
       "draws": 52,
       "awayWins": 23
     },
@@ -510,7 +510,7 @@
       "awayWinPercentage": 98,
       "homeWins": 0,
       "draws": 2,
-      "awayWins": 101
+      "awayWins": 103
     },
     "Brazil_vs_Scotland": {
       "homeTeam": "Brazil",
@@ -518,17 +518,17 @@
       "homeWinPercentage": 98,
       "drawPercentage": 2,
       "awayWinPercentage": 0,
-      "homeWins": 101,
+      "homeWins": 103,
       "draws": 2,
       "awayWins": 0
     },
     "South_Africa_vs_South_Korea": {
       "homeTeam": "South Africa",
       "awayTeam": "South Korea",
-      "homeWinPercentage": 15,
-      "drawPercentage": 32,
-      "awayWinPercentage": 53,
-      "homeWins": 15,
+      "homeWinPercentage": 16,
+      "drawPercentage": 31,
+      "awayWinPercentage": 52,
+      "homeWins": 17,
       "draws": 33,
       "awayWins": 55
     },
@@ -540,7 +540,7 @@
       "awayWinPercentage": 100,
       "homeWins": 0,
       "draws": 0,
-      "awayWins": 103
+      "awayWins": 105
     },
     "Curaçao_vs_Ivory_Coast": {
       "homeTeam": "Curaçao",
@@ -550,15 +550,15 @@
       "awayWinPercentage": 99,
       "homeWins": 0,
       "draws": 1,
-      "awayWins": 102
+      "awayWins": 104
     },
     "Ecuador_vs_Germany": {
       "homeTeam": "Ecuador",
       "awayTeam": "Germany",
-      "homeWinPercentage": 6,
+      "homeWinPercentage": 8,
       "drawPercentage": 19,
-      "awayWinPercentage": 75,
-      "homeWins": 6,
+      "awayWinPercentage": 73,
+      "homeWins": 8,
       "draws": 20,
       "awayWins": 77
     },
@@ -568,38 +568,38 @@
       "homeWinPercentage": 98,
       "drawPercentage": 2,
       "awayWinPercentage": 0,
-      "homeWins": 101,
+      "homeWins": 103,
       "draws": 2,
       "awayWins": 0
     },
     "Japan_vs_Sweden": {
       "homeTeam": "Japan",
       "awayTeam": "Sweden",
-      "homeWinPercentage": 54,
-      "drawPercentage": 42,
+      "homeWinPercentage": 53,
+      "drawPercentage": 43,
       "awayWinPercentage": 4,
       "homeWins": 56,
-      "draws": 43,
+      "draws": 45,
       "awayWins": 4
     },
     "Türkiye_vs_United_States": {
       "homeTeam": "Türkiye",
       "awayTeam": "United States",
-      "homeWinPercentage": 21,
-      "drawPercentage": 51,
+      "homeWinPercentage": 23,
+      "drawPercentage": 50,
       "awayWinPercentage": 27,
-      "homeWins": 22,
+      "homeWins": 24,
       "draws": 53,
       "awayWins": 28
     },
     "Australia_vs_Paraguay": {
       "homeTeam": "Australia",
       "awayTeam": "Paraguay",
-      "homeWinPercentage": 35,
+      "homeWinPercentage": 34,
       "drawPercentage": 50,
-      "awayWinPercentage": 16,
+      "awayWinPercentage": 15,
       "homeWins": 36,
-      "draws": 51,
+      "draws": 53,
       "awayWins": 16
     },
     "France_vs_Norway": {
@@ -608,7 +608,7 @@
       "homeWinPercentage": 97,
       "drawPercentage": 3,
       "awayWinPercentage": 0,
-      "homeWins": 100,
+      "homeWins": 102,
       "draws": 3,
       "awayWins": 0
     },
@@ -620,25 +620,25 @@
       "awayWinPercentage": 98,
       "homeWins": 0,
       "draws": 2,
-      "awayWins": 101
+      "awayWins": 103
     },
     "Cape_Verde_vs_Saudi_Arabia": {
       "homeTeam": "Cape Verde",
       "awayTeam": "Saudi Arabia",
       "homeWinPercentage": 25,
-      "drawPercentage": 50,
+      "drawPercentage": 51,
       "awayWinPercentage": 24,
       "homeWins": 26,
-      "draws": 52,
+      "draws": 54,
       "awayWins": 25
     },
     "Spain_vs_Uruguay": {
       "homeTeam": "Spain",
       "awayTeam": "Uruguay",
-      "homeWinPercentage": 57,
-      "drawPercentage": 36,
+      "homeWinPercentage": 58,
+      "drawPercentage": 35,
       "awayWinPercentage": 7,
-      "homeWins": 59,
+      "homeWins": 61,
       "draws": 37,
       "awayWins": 7
     },
@@ -648,7 +648,7 @@
       "homeWinPercentage": 98,
       "drawPercentage": 2,
       "awayWinPercentage": 0,
-      "homeWins": 101,
+      "homeWins": 103,
       "draws": 2,
       "awayWins": 0
     },
@@ -656,10 +656,10 @@
       "homeTeam": "Egypt",
       "awayTeam": "Iran",
       "homeWinPercentage": 23,
-      "drawPercentage": 50,
+      "drawPercentage": 51,
       "awayWinPercentage": 26,
       "homeWins": 24,
-      "draws": 52,
+      "draws": 54,
       "awayWins": 27
     },
     "England_vs_Panama": {
@@ -668,7 +668,7 @@
       "homeWinPercentage": 98,
       "drawPercentage": 2,
       "awayWinPercentage": 0,
-      "homeWins": 101,
+      "homeWins": 103,
       "draws": 2,
       "awayWins": 0
     },
@@ -678,7 +678,7 @@
       "homeWinPercentage": 100,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 103,
+      "homeWins": 105,
       "draws": 0,
       "awayWins": 0
     },
@@ -689,16 +689,16 @@
       "drawPercentage": 50,
       "awayWinPercentage": 29,
       "homeWins": 23,
-      "draws": 51,
+      "draws": 53,
       "awayWins": 30
     },
     "DR_Congo_vs_Uzbekistan": {
       "homeTeam": "DR Congo",
       "awayTeam": "Uzbekistan",
-      "homeWinPercentage": 23,
-      "drawPercentage": 56,
+      "homeWinPercentage": 25,
+      "drawPercentage": 55,
       "awayWinPercentage": 20,
-      "homeWins": 24,
+      "homeWins": 26,
       "draws": 58,
       "awayWins": 21
     },
@@ -706,10 +706,10 @@
       "homeTeam": "Algeria",
       "awayTeam": "Austria",
       "homeWinPercentage": 27,
-      "drawPercentage": 46,
+      "drawPercentage": 47,
       "awayWinPercentage": 27,
       "homeWins": 28,
-      "draws": 47,
+      "draws": 49,
       "awayWins": 28
     },
     "Argentina_vs_Jordan": {
@@ -718,7 +718,7 @@
       "homeWinPercentage": 100,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 103,
+      "homeWins": 105,
       "draws": 0,
       "awayWins": 0
     },
@@ -727,10 +727,10 @@
       "awayTeam": "South Africa",
       "homeWinPercentage": 6,
       "drawPercentage": 0,
-      "awayWinPercentage": 3,
+      "awayWinPercentage": 5,
       "homeWins": 6,
       "draws": 0,
-      "awayWins": 3
+      "awayWins": 5
     },
     "Bosnia_and_Herzegovina_vs_United_States": {
       "homeTeam": "Bosnia and Herzegovina",
@@ -745,10 +745,10 @@
     "Germany_vs_Paraguay": {
       "homeTeam": "Germany",
       "awayTeam": "Paraguay",
-      "homeWinPercentage": 9,
+      "homeWinPercentage": 10,
       "drawPercentage": 0,
       "awayWinPercentage": 2,
-      "homeWins": 9,
+      "homeWins": 11,
       "draws": 0,
       "awayWins": 2
     },
@@ -757,18 +757,18 @@
       "awayTeam": "Netherlands",
       "homeWinPercentage": 25,
       "drawPercentage": 0,
-      "awayWinPercentage": 30,
+      "awayWinPercentage": 31,
       "homeWins": 26,
       "draws": 0,
-      "awayWins": 31
+      "awayWins": 33
     },
     "Belgium_vs_Senegal": {
       "homeTeam": "Belgium",
       "awayTeam": "Senegal",
-      "homeWinPercentage": 1,
+      "homeWinPercentage": 3,
       "drawPercentage": 0,
       "awayWinPercentage": 4,
-      "homeWins": 1,
+      "homeWins": 3,
       "draws": 0,
       "awayWins": 4
     },
@@ -778,47 +778,47 @@
       "homeWinPercentage": 50,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 51,
+      "homeWins": 53,
       "draws": 0,
       "awayWins": 0
     },
     "Croatia_vs_Portugal": {
       "homeTeam": "Croatia",
       "awayTeam": "Portugal",
-      "homeWinPercentage": 11,
+      "homeWinPercentage": 10,
       "drawPercentage": 0,
-      "awayWinPercentage": 20,
+      "awayWinPercentage": 22,
       "homeWins": 11,
       "draws": 0,
-      "awayWins": 21
+      "awayWins": 23
     },
     "Austria_vs_Spain": {
       "homeTeam": "Austria",
       "awayTeam": "Spain",
       "homeWinPercentage": 2,
       "drawPercentage": 0,
-      "awayWinPercentage": 57,
+      "awayWinPercentage": 58,
       "homeWins": 2,
       "draws": 0,
-      "awayWins": 59
+      "awayWins": 61
     },
     "Ivory_Coast_vs_Norway": {
       "homeTeam": "Ivory Coast",
       "awayTeam": "Norway",
       "homeWinPercentage": 3,
       "drawPercentage": 0,
-      "awayWinPercentage": 3,
+      "awayWinPercentage": 5,
       "homeWins": 3,
       "draws": 0,
-      "awayWins": 3
+      "awayWins": 5
     },
     "Brazil_vs_Japan": {
       "homeTeam": "Brazil",
       "awayTeam": "Japan",
-      "homeWinPercentage": 39,
+      "homeWinPercentage": 40,
       "drawPercentage": 0,
-      "awayWinPercentage": 17,
-      "homeWins": 40,
+      "awayWinPercentage": 16,
+      "homeWins": 42,
       "draws": 0,
       "awayWins": 17
     },
@@ -827,58 +827,58 @@
       "awayTeam": "England",
       "homeWinPercentage": 0,
       "drawPercentage": 0,
-      "awayWinPercentage": 23,
+      "awayWinPercentage": 25,
       "homeWins": 0,
       "draws": 0,
-      "awayWins": 24
+      "awayWins": 26
     },
     "Ecuador_vs_Mexico": {
       "homeTeam": "Ecuador",
       "awayTeam": "Mexico",
-      "homeWinPercentage": 13,
+      "homeWinPercentage": 12,
       "drawPercentage": 0,
-      "awayWinPercentage": 24,
+      "awayWinPercentage": 26,
       "homeWins": 13,
       "draws": 0,
-      "awayWins": 25
+      "awayWins": 27
     },
     "Algeria_vs_Switzerland": {
       "homeTeam": "Algeria",
       "awayTeam": "Switzerland",
-      "homeWinPercentage": 6,
+      "homeWinPercentage": 8,
       "drawPercentage": 0,
-      "awayWinPercentage": 11,
-      "homeWins": 6,
+      "awayWinPercentage": 10,
+      "homeWins": 8,
       "draws": 0,
       "awayWins": 11
     },
     "Australia_vs_Egypt": {
       "homeTeam": "Australia",
       "awayTeam": "Egypt",
-      "homeWinPercentage": 7,
+      "homeWinPercentage": 9,
       "drawPercentage": 0,
       "awayWinPercentage": 9,
-      "homeWins": 7,
+      "homeWins": 9,
       "draws": 0,
       "awayWins": 9
     },
     "Argentina_vs_Cape_Verde": {
       "homeTeam": "Argentina",
       "awayTeam": "Cape Verde",
-      "homeWinPercentage": 3,
+      "homeWinPercentage": 5,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 3,
+      "homeWins": 5,
       "draws": 0,
       "awayWins": 0
     },
     "Colombia_vs_Ghana": {
       "homeTeam": "Colombia",
       "awayTeam": "Ghana",
-      "homeWinPercentage": 10,
+      "homeWinPercentage": 11,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 10,
+      "homeWins": 12,
       "draws": 0,
       "awayWins": 0
     },
@@ -1097,7 +1097,7 @@
       "awayTeam": "Spain",
       "homeWinPercentage": 0,
       "drawPercentage": 0,
-      "awayWinPercentage": 33,
+      "awayWinPercentage": 32,
       "homeWins": 0,
       "draws": 0,
       "awayWins": 34
@@ -1107,7 +1107,7 @@
       "awayTeam": "Portugal",
       "homeWinPercentage": 0,
       "drawPercentage": 0,
-      "awayWinPercentage": 14,
+      "awayWinPercentage": 13,
       "homeWins": 0,
       "draws": 0,
       "awayWins": 14
@@ -1165,7 +1165,7 @@
     "Belgium_vs_Turkiye": {
       "homeTeam": "Belgium",
       "awayTeam": "Turkiye",
-      "homeWinPercentage": 12,
+      "homeWinPercentage": 11,
       "drawPercentage": 0,
       "awayWinPercentage": 3,
       "homeWins": 12,
@@ -1175,7 +1175,7 @@
     "Argentina_vs_Uruguay": {
       "homeTeam": "Argentina",
       "awayTeam": "Uruguay",
-      "homeWinPercentage": 86,
+      "homeWinPercentage": 85,
       "drawPercentage": 0,
       "awayWinPercentage": 2,
       "homeWins": 89,
@@ -1215,12 +1215,12 @@
     "Portugal_vs_Spain": {
       "homeTeam": "Portugal",
       "awayTeam": "Spain",
-      "homeWinPercentage": 14,
+      "homeWinPercentage": 13,
       "drawPercentage": 0,
-      "awayWinPercentage": 17,
+      "awayWinPercentage": 19,
       "homeWins": 14,
       "draws": 0,
-      "awayWins": 18
+      "awayWins": 20
     },
     "Ivory_Coast_vs_Japan": {
       "homeTeam": "Ivory Coast",
@@ -1345,7 +1345,7 @@
     "Germany_vs_Scotland": {
       "homeTeam": "Germany",
       "awayTeam": "Scotland",
-      "homeWinPercentage": 17,
+      "homeWinPercentage": 16,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
       "homeWins": 17,
@@ -1365,7 +1365,7 @@
     "Belgium_vs_South_Korea": {
       "homeTeam": "Belgium",
       "awayTeam": "South Korea",
-      "homeWinPercentage": 15,
+      "homeWinPercentage": 14,
       "drawPercentage": 0,
       "awayWinPercentage": 2,
       "homeWins": 15,
@@ -1377,10 +1377,10 @@
       "awayTeam": "USA",
       "homeWinPercentage": 0,
       "drawPercentage": 0,
-      "awayWinPercentage": 14,
+      "awayWinPercentage": 15,
       "homeWins": 0,
       "draws": 0,
-      "awayWins": 14
+      "awayWins": 16
     },
     "Colombia_vs_Croatia": {
       "homeTeam": "Colombia",
@@ -1395,7 +1395,7 @@
     "Ivory_Coast_vs_Senegal": {
       "homeTeam": "Ivory Coast",
       "awayTeam": "Senegal",
-      "homeWinPercentage": 17,
+      "homeWinPercentage": 16,
       "drawPercentage": 0,
       "awayWinPercentage": 28,
       "homeWins": 17,
@@ -1437,7 +1437,7 @@
       "awayTeam": "Turkiye",
       "homeWinPercentage": 7,
       "drawPercentage": 0,
-      "awayWinPercentage": 14,
+      "awayWinPercentage": 13,
       "homeWins": 7,
       "draws": 0,
       "awayWins": 14
@@ -1457,10 +1457,10 @@
       "awayTeam": "Germany",
       "homeWinPercentage": 30,
       "drawPercentage": 0,
-      "awayWinPercentage": 47,
+      "awayWinPercentage": 48,
       "homeWins": 31,
       "draws": 0,
-      "awayWins": 48
+      "awayWins": 50
     },
     "South_Korea_vs_USA": {
       "homeTeam": "South Korea",
@@ -1495,10 +1495,10 @@
     "England_vs_Mexico": {
       "homeTeam": "England",
       "awayTeam": "Mexico",
-      "homeWinPercentage": 46,
+      "homeWinPercentage": 47,
       "drawPercentage": 0,
-      "awayWinPercentage": 12,
-      "homeWins": 47,
+      "awayWinPercentage": 11,
+      "homeWins": 49,
       "draws": 0,
       "awayWins": 12
     },
@@ -1535,27 +1535,27 @@
     "Spain_vs_USA": {
       "homeTeam": "Spain",
       "awayTeam": "USA",
-      "homeWinPercentage": 14,
+      "homeWinPercentage": 15,
       "drawPercentage": 0,
       "awayWinPercentage": 6,
-      "homeWins": 14,
+      "homeWins": 16,
       "draws": 0,
       "awayWins": 6
     },
     "Brazil_vs_England": {
       "homeTeam": "Brazil",
       "awayTeam": "England",
-      "homeWinPercentage": 13,
+      "homeWinPercentage": 12,
       "drawPercentage": 0,
-      "awayWinPercentage": 7,
+      "awayWinPercentage": 9,
       "homeWins": 13,
       "draws": 0,
-      "awayWins": 7
+      "awayWins": 9
     },
     "Argentina_vs_Portugal": {
       "homeTeam": "Argentina",
       "awayTeam": "Portugal",
-      "homeWinPercentage": 32,
+      "homeWinPercentage": 31,
       "drawPercentage": 0,
       "awayWinPercentage": 22,
       "homeWins": 33,
@@ -1615,9 +1615,9 @@
     "Brazil_vs_Netherlands": {
       "homeTeam": "Brazil",
       "awayTeam": "Netherlands",
-      "homeWinPercentage": 17,
+      "homeWinPercentage": 16,
       "drawPercentage": 0,
-      "awayWinPercentage": 31,
+      "awayWinPercentage": 30,
       "homeWins": 17,
       "draws": 0,
       "awayWins": 32
@@ -1645,7 +1645,7 @@
     "Japan_vs_Morocco": {
       "homeTeam": "Japan",
       "awayTeam": "Morocco",
-      "homeWinPercentage": 15,
+      "homeWinPercentage": 14,
       "drawPercentage": 0,
       "awayWinPercentage": 28,
       "homeWins": 15,
@@ -1655,7 +1655,7 @@
     "Ecuador_vs_Senegal": {
       "homeTeam": "Ecuador",
       "awayTeam": "Senegal",
-      "homeWinPercentage": 12,
+      "homeWinPercentage": 11,
       "drawPercentage": 0,
       "awayWinPercentage": 20,
       "homeWins": 12,
@@ -1665,9 +1665,9 @@
     "Ivory_Coast_vs_Mexico": {
       "homeTeam": "Ivory Coast",
       "awayTeam": "Mexico",
-      "homeWinPercentage": 15,
+      "homeWinPercentage": 14,
       "drawPercentage": 0,
-      "awayWinPercentage": 12,
+      "awayWinPercentage": 11,
       "homeWins": 15,
       "draws": 0,
       "awayWins": 12
@@ -1675,9 +1675,9 @@
     "Egypt_vs_Switzerland": {
       "homeTeam": "Egypt",
       "awayTeam": "Switzerland",
-      "homeWinPercentage": 13,
+      "homeWinPercentage": 12,
       "drawPercentage": 0,
-      "awayWinPercentage": 13,
+      "awayWinPercentage": 12,
       "homeWins": 13,
       "draws": 0,
       "awayWins": 13
@@ -1687,7 +1687,7 @@
       "awayTeam": "Netherlands",
       "homeWinPercentage": 0,
       "drawPercentage": 0,
-      "awayWinPercentage": 15,
+      "awayWinPercentage": 14,
       "homeWins": 0,
       "draws": 0,
       "awayWins": 15
@@ -1745,7 +1745,7 @@
     "England_vs_Senegal": {
       "homeTeam": "England",
       "awayTeam": "Senegal",
-      "homeWinPercentage": 12,
+      "homeWinPercentage": 11,
       "drawPercentage": 0,
       "awayWinPercentage": 5,
       "homeWins": 12,
@@ -1785,12 +1785,12 @@
     "Argentina_vs_Spain": {
       "homeTeam": "Argentina",
       "awayTeam": "Spain",
-      "homeWinPercentage": 11,
+      "homeWinPercentage": 10,
       "drawPercentage": 0,
-      "awayWinPercentage": 16,
+      "awayWinPercentage": 17,
       "homeWins": 11,
       "draws": 0,
-      "awayWins": 16
+      "awayWins": 18
     },
     "Paraguay_vs_Winner_Match_78": {
       "homeTeam": "Paraguay",
@@ -1865,7 +1865,7 @@
     "Morocco_vs_South_Korea": {
       "homeTeam": "Morocco",
       "awayTeam": "South Korea",
-      "homeWinPercentage": 12,
+      "homeWinPercentage": 11,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
       "homeWins": 12,
@@ -1877,7 +1877,7 @@
       "awayTeam": "Belgium",
       "homeWinPercentage": 3,
       "drawPercentage": 0,
-      "awayWinPercentage": 14,
+      "awayWinPercentage": 13,
       "homeWins": 3,
       "draws": 0,
       "awayWins": 14
@@ -1895,7 +1895,7 @@
     "Brazil_vs_Senegal": {
       "homeTeam": "Brazil",
       "awayTeam": "Senegal",
-      "homeWinPercentage": 11,
+      "homeWinPercentage": 10,
       "drawPercentage": 0,
       "awayWinPercentage": 7,
       "homeWins": 11,
@@ -1935,7 +1935,7 @@
     "Belgium_vs_Spain": {
       "homeTeam": "Belgium",
       "awayTeam": "Spain",
-      "homeWinPercentage": 15,
+      "homeWinPercentage": 14,
       "drawPercentage": 0,
       "awayWinPercentage": 18,
       "homeWins": 15,
@@ -1967,7 +1967,7 @@
       "awayTeam": "Morocco",
       "homeWinPercentage": 4,
       "drawPercentage": 0,
-      "awayWinPercentage": 11,
+      "awayWinPercentage": 10,
       "homeWins": 4,
       "draws": 0,
       "awayWins": 11
@@ -1975,20 +1975,20 @@
     "Brazil_vs_Norway": {
       "homeTeam": "Brazil",
       "awayTeam": "Norway",
-      "homeWinPercentage": 4,
+      "homeWinPercentage": 6,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 4,
+      "homeWins": 6,
       "draws": 0,
       "awayWins": 0
     },
     "Netherlands_vs_South_Africa": {
       "homeTeam": "Netherlands",
       "awayTeam": "South Africa",
-      "homeWinPercentage": 2,
+      "homeWinPercentage": 4,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 2,
+      "homeWins": 4,
       "draws": 0,
       "awayWins": 0
     },
@@ -1997,48 +1997,48 @@
       "awayTeam": "USA",
       "homeWinPercentage": 26,
       "drawPercentage": 0,
-      "awayWinPercentage": 22,
+      "awayWinPercentage": 24,
       "homeWins": 27,
       "draws": 0,
-      "awayWins": 23
+      "awayWins": 25
     },
     "Algeria_vs_Colombia": {
       "homeTeam": "Algeria",
       "awayTeam": "Colombia",
-      "homeWinPercentage": 2,
+      "homeWinPercentage": 4,
       "drawPercentage": 0,
       "awayWinPercentage": 2,
-      "homeWins": 2,
+      "homeWins": 4,
       "draws": 0,
       "awayWins": 2
     },
     "Argentina_vs_Australia": {
       "homeTeam": "Argentina",
       "awayTeam": "Australia",
-      "homeWinPercentage": 13,
+      "homeWinPercentage": 14,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
-      "homeWins": 13,
+      "homeWins": 15,
       "draws": 0,
       "awayWins": 0
     },
     "Germany_vs_Netherlands": {
       "homeTeam": "Germany",
       "awayTeam": "Netherlands",
-      "homeWinPercentage": 14,
+      "homeWinPercentage": 15,
       "drawPercentage": 0,
-      "awayWinPercentage": 12,
-      "homeWins": 14,
+      "awayWinPercentage": 11,
+      "homeWins": 16,
       "draws": 0,
       "awayWins": 12
     },
     "Germany_vs_Spain": {
       "homeTeam": "Germany",
       "awayTeam": "Spain",
-      "homeWinPercentage": 7,
+      "homeWinPercentage": 9,
       "drawPercentage": 0,
       "awayWinPercentage": 5,
-      "homeWins": 7,
+      "homeWins": 9,
       "draws": 0,
       "awayWins": 5
     },
@@ -2047,18 +2047,18 @@
       "awayTeam": "England",
       "homeWinPercentage": 8,
       "drawPercentage": 0,
-      "awayWinPercentage": 20,
+      "awayWinPercentage": 22,
       "homeWins": 8,
       "draws": 0,
-      "awayWins": 21
+      "awayWins": 23
     },
     "England_vs_Germany": {
       "homeTeam": "England",
       "awayTeam": "Germany",
-      "homeWinPercentage": 9,
+      "homeWinPercentage": 10,
       "drawPercentage": 0,
       "awayWinPercentage": 3,
-      "homeWins": 9,
+      "homeWins": 11,
       "draws": 0,
       "awayWins": 3
     },
@@ -2107,7 +2107,7 @@
       "awayTeam": "Switzerland",
       "homeWinPercentage": 9,
       "drawPercentage": 0,
-      "awayWinPercentage": 12,
+      "awayWinPercentage": 11,
       "homeWins": 9,
       "draws": 0,
       "awayWins": 12
@@ -2117,7 +2117,7 @@
       "awayTeam": "Portugal",
       "homeWinPercentage": 0,
       "drawPercentage": 0,
-      "awayWinPercentage": 17,
+      "awayWinPercentage": 16,
       "homeWins": 0,
       "draws": 0,
       "awayWins": 17
@@ -2185,7 +2185,7 @@
     "Germany_vs_Senegal": {
       "homeTeam": "Germany",
       "awayTeam": "Senegal",
-      "homeWinPercentage": 11,
+      "homeWinPercentage": 10,
       "drawPercentage": 0,
       "awayWinPercentage": 5,
       "homeWins": 11,
@@ -2217,7 +2217,7 @@
       "awayTeam": "Turkiye",
       "homeWinPercentage": 6,
       "drawPercentage": 0,
-      "awayWinPercentage": 12,
+      "awayWinPercentage": 11,
       "homeWins": 6,
       "draws": 0,
       "awayWins": 12
@@ -2265,7 +2265,7 @@
     "Argentina_vs_Switzerland": {
       "homeTeam": "Argentina",
       "awayTeam": "Switzerland",
-      "homeWinPercentage": 14,
+      "homeWinPercentage": 13,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
       "homeWins": 14,
@@ -2367,7 +2367,7 @@
       "awayTeam": "Portugal",
       "homeWinPercentage": 0,
       "drawPercentage": 0,
-      "awayWinPercentage": 12,
+      "awayWinPercentage": 11,
       "homeWins": 0,
       "draws": 0,
       "awayWins": 12
@@ -2375,7 +2375,7 @@
     "England_vs_Ivory_Coast": {
       "homeTeam": "England",
       "awayTeam": "Ivory Coast",
-      "homeWinPercentage": 17,
+      "homeWinPercentage": 16,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
       "homeWins": 17,
@@ -2395,7 +2395,7 @@
     "Argentina_vs_USA": {
       "homeTeam": "Argentina",
       "awayTeam": "USA",
-      "homeWinPercentage": 14,
+      "homeWinPercentage": 13,
       "drawPercentage": 0,
       "awayWinPercentage": 4,
       "homeWins": 14,
@@ -2575,7 +2575,7 @@
     "England_vs_Uzbekistan": {
       "homeTeam": "England",
       "awayTeam": "Uzbekistan",
-      "homeWinPercentage": 16,
+      "homeWinPercentage": 15,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
       "homeWins": 16,
@@ -2585,7 +2585,7 @@
     "Morocco_vs_Senegal": {
       "homeTeam": "Morocco",
       "awayTeam": "Senegal",
-      "homeWinPercentage": 14,
+      "homeWinPercentage": 13,
       "drawPercentage": 0,
       "awayWinPercentage": 9,
       "homeWins": 14,
@@ -2627,7 +2627,7 @@
       "awayTeam": "England",
       "homeWinPercentage": 0,
       "drawPercentage": 0,
-      "awayWinPercentage": 15,
+      "awayWinPercentage": 14,
       "homeWins": 0,
       "draws": 0,
       "awayWins": 15
@@ -2665,7 +2665,7 @@
     "England_vs_Spain": {
       "homeTeam": "England",
       "awayTeam": "Spain",
-      "homeWinPercentage": 11,
+      "homeWinPercentage": 10,
       "drawPercentage": 0,
       "awayWinPercentage": 9,
       "homeWins": 11,
@@ -2885,7 +2885,7 @@
     "Argentina_vs_Belgium": {
       "homeTeam": "Argentina",
       "awayTeam": "Belgium",
-      "homeWinPercentage": 11,
+      "homeWinPercentage": 10,
       "drawPercentage": 0,
       "awayWinPercentage": 2,
       "homeWins": 11,
@@ -3045,7 +3045,7 @@
     "Mexico_vs_Saudi_Arabia": {
       "homeTeam": "Mexico",
       "awayTeam": "Saudi Arabia",
-      "homeWinPercentage": 12,
+      "homeWinPercentage": 11,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
       "homeWins": 12,
@@ -3135,7 +3135,7 @@
     "Argentina_vs_Colombia": {
       "homeTeam": "Argentina",
       "awayTeam": "Colombia",
-      "homeWinPercentage": 13,
+      "homeWinPercentage": 12,
       "drawPercentage": 0,
       "awayWinPercentage": 1,
       "homeWins": 13,
@@ -3575,7 +3575,7 @@
     "Netherlands_vs_South_Korea": {
       "homeTeam": "Netherlands",
       "awayTeam": "South Korea",
-      "homeWinPercentage": 16,
+      "homeWinPercentage": 15,
       "drawPercentage": 0,
       "awayWinPercentage": 0,
       "homeWins": 16,
@@ -4453,7 +4453,7 @@
       "champion": 0
     },
     "Qatar": {
-      "roundOf32": 45,
+      "roundOf32": 44,
       "roundOf16": 4,
       "quarterFinal": 0,
       "semiFinal": 0,
@@ -4462,8 +4462,8 @@
     },
     "Netherlands": {
       "roundOf32": 100,
-      "roundOf16": 58,
-      "quarterFinal": 49,
+      "roundOf16": 59,
+      "quarterFinal": 50,
       "semiFinal": 26,
       "final": 18,
       "champion": 9
@@ -4479,13 +4479,13 @@
     "Germany": {
       "roundOf32": 100,
       "roundOf16": 90,
-      "quarterFinal": 52,
-      "semiFinal": 25,
-      "final": 14,
+      "quarterFinal": 53,
+      "semiFinal": 27,
+      "final": 15,
       "champion": 7
     },
     "Paraguay": {
-      "roundOf32": 26,
+      "roundOf32": 28,
       "roundOf16": 4,
       "quarterFinal": 2,
       "semiFinal": 0,
@@ -4501,7 +4501,7 @@
       "champion": 0
     },
     "Tunisia": {
-      "roundOf32": 11,
+      "roundOf32": 10,
       "roundOf16": 0,
       "quarterFinal": 0,
       "semiFinal": 0,
@@ -4509,8 +4509,8 @@
       "champion": 0
     },
     "Iran": {
-      "roundOf32": 88,
-      "roundOf16": 37,
+      "roundOf32": 87,
+      "roundOf16": 36,
       "quarterFinal": 3,
       "semiFinal": 0,
       "final": 0,
@@ -4526,7 +4526,7 @@
     },
     "Australia": {
       "roundOf32": 74,
-      "roundOf16": 30,
+      "roundOf16": 31,
       "quarterFinal": 5,
       "semiFinal": 2,
       "final": 0,
@@ -4534,7 +4534,7 @@
     },
     "Canada": {
       "roundOf32": 97,
-      "roundOf16": 43,
+      "roundOf16": 42,
       "quarterFinal": 2,
       "semiFinal": 0,
       "final": 0,
@@ -4543,25 +4543,25 @@
     "Spain": {
       "roundOf32": 100,
       "roundOf16": 92,
-      "quarterFinal": 66,
-      "semiFinal": 43,
+      "quarterFinal": 67,
+      "semiFinal": 44,
       "final": 17,
-      "champion": 14
+      "champion": 13
     },
     "Algeria": {
       "roundOf32": 82,
-      "roundOf16": 12,
-      "quarterFinal": 1,
+      "roundOf16": 13,
+      "quarterFinal": 3,
       "semiFinal": 0,
       "final": 0,
       "champion": 0
     },
     "Portugal": {
       "roundOf32": 100,
-      "roundOf16": 88,
-      "quarterFinal": 66,
+      "roundOf16": 89,
+      "quarterFinal": 65,
       "semiFinal": 28,
-      "final": 11,
+      "final": 10,
       "champion": 2
     },
     "Panama": {
@@ -4574,15 +4574,15 @@
     },
     "Brazil": {
       "roundOf32": 100,
-      "roundOf16": 56,
-      "quarterFinal": 43,
+      "roundOf16": 57,
+      "quarterFinal": 44,
       "semiFinal": 25,
-      "final": 17,
+      "final": 16,
       "champion": 8
     },
     "Japan": {
       "roundOf32": 100,
-      "roundOf16": 31,
+      "roundOf16": 30,
       "quarterFinal": 23,
       "semiFinal": 9,
       "final": 5,
@@ -4590,7 +4590,7 @@
     },
     "Ivory Coast": {
       "roundOf32": 100,
-      "roundOf16": 39,
+      "roundOf16": 38,
       "quarterFinal": 7,
       "semiFinal": 2,
       "final": 0,
@@ -4599,21 +4599,21 @@
     "France": {
       "roundOf32": 100,
       "roundOf16": 98,
-      "quarterFinal": 49,
+      "quarterFinal": 48,
       "semiFinal": 25,
       "final": 18,
       "champion": 8
     },
     "Croatia": {
       "roundOf32": 100,
-      "roundOf16": 51,
+      "roundOf16": 50,
       "quarterFinal": 18,
       "semiFinal": 10,
       "final": 2,
       "champion": 0
     },
     "DR Congo": {
-      "roundOf32": 28,
+      "roundOf32": 30,
       "roundOf16": 0,
       "quarterFinal": 0,
       "semiFinal": 0,
@@ -4621,8 +4621,8 @@
       "champion": 0
     },
     "South Korea": {
-      "roundOf32": 90,
-      "roundOf16": 46,
+      "roundOf32": 89,
+      "roundOf16": 45,
       "quarterFinal": 4,
       "semiFinal": 0,
       "final": 0,
@@ -4638,7 +4638,7 @@
     },
     "Switzerland": {
       "roundOf32": 100,
-      "roundOf16": 59,
+      "roundOf16": 58,
       "quarterFinal": 23,
       "semiFinal": 4,
       "final": 0,
@@ -4654,7 +4654,7 @@
     },
     "Colombia": {
       "roundOf32": 100,
-      "roundOf16": 59,
+      "roundOf16": 60,
       "quarterFinal": 22,
       "semiFinal": 5,
       "final": 1,
@@ -4662,15 +4662,15 @@
     },
     "Norway": {
       "roundOf32": 74,
-      "roundOf16": 10,
+      "roundOf16": 11,
       "quarterFinal": 3,
       "semiFinal": 0,
       "final": 0,
       "champion": 0
     },
     "Turkiye": {
-      "roundOf32": 86,
-      "roundOf16": 44,
+      "roundOf32": 85,
+      "roundOf16": 43,
       "quarterFinal": 4,
       "semiFinal": 0,
       "final": 0,
@@ -4678,22 +4678,22 @@
     },
     "Belgium": {
       "roundOf32": 100,
-      "roundOf16": 89,
-      "quarterFinal": 56,
+      "roundOf16": 90,
+      "quarterFinal": 55,
       "semiFinal": 26,
-      "final": 14,
+      "final": 13,
       "champion": 8
     },
     "Argentina": {
       "roundOf32": 100,
       "roundOf16": 94,
       "quarterFinal": 90,
-      "semiFinal": 67,
-      "final": 35,
+      "semiFinal": 68,
+      "final": 34,
       "champion": 18
     },
     "Uruguay": {
-      "roundOf32": 97,
+      "roundOf32": 95,
       "roundOf16": 8,
       "quarterFinal": 2,
       "semiFinal": 2,
@@ -4701,7 +4701,7 @@
       "champion": 0
     },
     "Czechia": {
-      "roundOf32": 46,
+      "roundOf32": 45,
       "roundOf16": 7,
       "quarterFinal": 0,
       "semiFinal": 0,
@@ -4710,22 +4710,22 @@
     },
     "Morocco": {
       "roundOf32": 98,
-      "roundOf16": 54,
-      "quarterFinal": 42,
+      "roundOf16": 53,
+      "quarterFinal": 41,
       "semiFinal": 27,
-      "final": 16,
+      "final": 15,
       "champion": 8
     },
     "USA": {
       "roundOf32": 97,
       "roundOf16": 77,
-      "quarterFinal": 30,
-      "semiFinal": 15,
+      "quarterFinal": 31,
+      "semiFinal": 14,
       "final": 2,
       "champion": 1
     },
     "Bosnia and Herzegovina": {
-      "roundOf32": 28,
+      "roundOf32": 30,
       "roundOf16": 2,
       "quarterFinal": 0,
       "semiFinal": 0,
@@ -4734,9 +4734,9 @@
     },
     "Senegal": {
       "roundOf32": 98,
-      "roundOf16": 58,
+      "roundOf16": 57,
       "quarterFinal": 26,
-      "semiFinal": 11,
+      "semiFinal": 10,
       "final": 1,
       "champion": 1
     },
@@ -4744,28 +4744,28 @@
       "roundOf32": 98,
       "roundOf16": 91,
       "quarterFinal": 75,
-      "semiFinal": 40,
-      "final": 30,
-      "champion": 17
+      "semiFinal": 41,
+      "final": 31,
+      "champion": 19
     },
     "Ecuador": {
       "roundOf32": 98,
-      "roundOf16": 33,
+      "roundOf16": 32,
       "quarterFinal": 7,
       "semiFinal": 1,
       "final": 0,
       "champion": 0
     },
     "Egypt": {
-      "roundOf32": 88,
-      "roundOf16": 41,
+      "roundOf32": 89,
+      "roundOf16": 40,
       "quarterFinal": 4,
       "semiFinal": 0,
       "final": 0,
       "champion": 0
     },
     "Sweden": {
-      "roundOf32": 59,
+      "roundOf32": 60,
       "roundOf16": 0,
       "quarterFinal": 0,
       "semiFinal": 0,
@@ -4773,15 +4773,15 @@
       "champion": 0
     },
     "South Africa": {
-      "roundOf32": 37,
-      "roundOf16": 3,
+      "roundOf32": 38,
+      "roundOf16": 5,
       "quarterFinal": 0,
       "semiFinal": 0,
       "final": 0,
       "champion": 0
     },
     "Ghana": {
-      "roundOf32": 26,
+      "roundOf32": 28,
       "roundOf16": 0,
       "quarterFinal": 0,
       "semiFinal": 0,
@@ -4789,7 +4789,7 @@
       "champion": 0
     },
     "Cape Verde": {
-      "roundOf32": 22,
+      "roundOf32": 24,
       "roundOf16": 0,
       "quarterFinal": 0,
       "semiFinal": 0,

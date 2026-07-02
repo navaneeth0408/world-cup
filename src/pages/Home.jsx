@@ -411,10 +411,10 @@ const Home = () => {
                   Quick Match Predictor
                 </h3>
                 <p className="text-white/95 text-base font-medium max-w-2xl leading-relaxed">
-                  Put our machine learning engine to the test! Our advanced AI model parses team form, historic head-to-head records, home advantage, and player ratings to generate detailed probability distributions, score forecasts, and custom tactical recommendations for every single match. Log your own score votes and track your prediction accuracy leaderboard against fans worldwide!
+                  Put our machine learning engine to the test! Our advanced AI model parses team form, historic head-to-head records, home advantage, and player ratings to generate detailed probability distributions, score forecasts, and custom tactical recommendations for every single match.
                 </p>
                 <Button variant="primary" className="bg-white text-indigo-950 border-none hover:bg-gray-100 px-6 py-3 font-black text-sm uppercase tracking-wider">
-                  Predict Matches
+                  View AI Predictions
                 </Button>
               </div>
 
@@ -472,27 +472,12 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Detail Info Panels */}
-                <div className="grid grid-cols-2 gap-2 text-[10px] relative z-10">
-                  <div className="bg-white/5 p-2.5 rounded-lg border border-white/5 flex flex-col justify-between">
-                    <span className="text-purple-300 uppercase tracking-wider text-[8px] font-bold">Key Insight</span>
-                    <span className="font-bold text-white mt-1 leading-tight">Giménez in hot goalscoring form</span>
-                  </div>
-                  <div className="bg-white/5 p-2.5 rounded-lg border border-white/5 flex flex-col justify-between">
-                    <span className="text-purple-300 uppercase tracking-wider text-[8px] font-bold">AI Recommended Tip</span>
-                    <span className="font-bold text-amber-300 mt-1 leading-tight">Double Chance (1X)</span>
-                  </div>
-                </div>
 
                 {/* Comparative Metrics */}
-                <div className="border-t border-white/10 pt-3 grid grid-cols-3 gap-2 text-center text-[9px] relative z-10">
+                <div className="border-t border-white/10 pt-3 grid grid-cols-2 gap-2 text-center text-[9px] relative z-10">
                   <div className="bg-white/5 py-1.5 px-1 rounded border border-white/5">
                     <span className="text-purple-300 block mb-0.5 uppercase text-[8px]">AI Predicts</span>
                     <span className="font-black text-sm text-white">1 - 1</span>
-                  </div>
-                  <div className="bg-white/5 py-1.5 px-1 rounded border border-white/5">
-                    <span className="text-purple-300 block mb-0.5 uppercase text-[8px]">Your Predicts</span>
-                    <span className="font-black text-sm text-white">1 - 0</span>
                   </div>
                   <div className="bg-emerald-500/20 py-1.5 px-1 rounded border border-emerald-500/30">
                     <span className="text-emerald-400 block mb-0.5 uppercase text-[8px]">Actual Score</span>

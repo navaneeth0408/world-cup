@@ -793,7 +793,7 @@ const Matches: React.FC = () => {
                                                 <div className="w-12 h-8 rounded overflow-hidden shadow-sm mb-2 shrink-0 flex items-center justify-center bg-slate-950/20 group-hover:scale-105 transition-transform">
                                                     <Flag code={pm.teamA.countryCode} style={{ fontSize: '24px' }} />
                                                 </div>
-                                                <span className="font-black text-white text-xs sm:text-sm uppercase tracking-tight truncate w-full">{pm.teamA.name}</span>
+                                                <span className="font-black text-white text-xs sm:text-sm uppercase tracking-tight whitespace-normal break-words sm:truncate w-full">{pm.teamA.name}</span>
                                             </div>
 
                                             <div className="text-[10px] font-black text-slate-500 border border-slate-850 bg-slate-950 rounded-full w-7 h-7 flex items-center justify-center shrink-0">
@@ -804,7 +804,7 @@ const Matches: React.FC = () => {
                                                 <div className="w-12 h-8 rounded overflow-hidden shadow-sm mb-2 shrink-0 flex items-center justify-center bg-slate-950/20 group-hover:scale-105 transition-transform">
                                                     <Flag code={pm.teamB.countryCode} style={{ fontSize: '24px' }} />
                                                 </div>
-                                                <span className="font-black text-white text-xs sm:text-sm uppercase tracking-tight truncate w-full">{pm.teamB.name}</span>
+                                                <span className="font-black text-white text-xs sm:text-sm uppercase tracking-tight whitespace-normal break-words sm:truncate w-full">{pm.teamB.name}</span>
                                             </div>
                                         </div>
 
@@ -879,7 +879,7 @@ const Matches: React.FC = () => {
                                                             {/* Home Team */}
                                                             <div className="flex items-center justify-end gap-3 flex-1 min-w-0 text-right">
                                                                 <div className="flex flex-col items-end min-w-0">
-                                                                    <span className="text-xs md:text-sm font-black text-white uppercase truncate tracking-tight w-full leading-normal">
+                                                                    <span className="text-xs md:text-sm font-black text-white uppercase whitespace-normal break-words md:truncate tracking-tight w-full leading-normal">
                                                                         {homeTeam?.name || match.homeTeam}
                                                                     </span>
                                                                     
@@ -969,7 +969,7 @@ const Matches: React.FC = () => {
                                                                 
                                                                 <div className="flex flex-col items-start min-w-0">
                                                                     <div className="w-full">
-                                                                        <span className="text-xs md:text-sm font-black text-white uppercase truncate tracking-tight w-full leading-normal">
+                                                                        <span className="text-xs md:text-sm font-black text-white uppercase whitespace-normal break-words md:truncate tracking-tight w-full leading-normal">
                                                                             {awayTeam?.name || match.awayTeam}
                                                                         </span>
                                                                     </div>

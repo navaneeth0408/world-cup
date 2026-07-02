@@ -6901,18 +6901,69 @@
     "time": "00:30",
     "venue": "mercedesbenz",
     "group": "R32",
-    "status": "upcoming",
-    "homeScore": null,
-    "awayScore": null,
-    "scorers": [],
+    "status": "completed",
+    "homeScore": 3,
+    "awayScore": 0,
+    "scorers": [
+      {
+        "name": "Mikel Oyarzabal",
+        "teamId": "spain",
+        "minute": 36
+      },
+      {
+        "name": "Pedro Porro",
+        "teamId": "spain",
+        "minute": 66
+      },
+      {
+        "name": "Mikel Oyarzabal",
+        "teamId": "spain",
+        "minute": 88
+      }
+    ],
     "cards": [],
-    "playerOfMatch": "",
-    "stats": null,
+    "playerOfMatch": "Mikel Oyarzabal",
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "expectedGoals": [
+        2.34,
+        0.45
+      ],
+      "shots": [
+        15,
+        6
+      ],
+      "shotsOnTarget": [
+        7,
+        1
+      ],
+      "passes": [
+        510,
+        360
+      ],
+      "passAccuracy": [
+        87,
+        80
+      ],
+      "corners": [
+        6,
+        2
+      ],
+      "fouls": [
+        11,
+        14
+      ]
+    },
     "highlightUrl": "",
     "homeTeam": "spain",
     "awayTeam": "austria",
     "stage": "Round of 32",
-    "location": "Atlanta"
+    "location": "Atlanta",
+    "winner": "spain",
+    "winnerId": "spain"
   },
   {
     "id": "m81",

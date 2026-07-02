@@ -415,11 +415,13 @@ const FavoriteTeamHub = ({ teams, matches }) => {
                     {/* Left Column (2/3 width on large screens): Fixtures & Lineup */}
                     <div className="lg:col-span-2 flex flex-col gap-6">
                         {/* Reusable Fixtures Component */}
-                        <FavoriteTeamFixtures 
-                            team={favoriteTeam} 
-                            teamMatches={teamMatchesData.upcoming}
-                            teams={teams}
-                        />
+                        <div className="hidden md:block">
+                            <FavoriteTeamFixtures 
+                                team={favoriteTeam} 
+                                teamMatches={teamMatchesData.upcoming}
+                                teams={teams}
+                            />
+                        </div>
 
                         {/* Predicted Starting XI Lineup */}
                         <FavoriteTeamLineup team={favoriteTeam} />

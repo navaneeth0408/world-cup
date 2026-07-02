@@ -66,7 +66,7 @@ const MatchDetail = () => {
         {/* Scoreboard / Hero */}
         <section className="mb-12">
           <Card className="p-6 md:p-12 relative overflow-hidden border-blue-500/20 backdrop-blur-xl bg-gray-900/50">
-            <div className="absolute top-0 right-0 p-4">
+            <div className="absolute top-3.5 left-1/2 -translate-x-1/2 md:top-0 md:right-0 md:left-auto md:translate-x-0 md:p-4 z-10">
               <Badge variant={match.status === 'completed' ? 'green' : 'gray'}>
                 {match.status.toUpperCase()}
               </Badge>
